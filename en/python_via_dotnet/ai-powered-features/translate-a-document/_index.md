@@ -17,22 +17,22 @@ timestamp: 2026-02-03-11-08-55
 
 *Purpose Summary. What is this page about?*
 
-This page shows how to translate a document with Aspose.Words for Python via .NET using Google generative AI models, including a code example with the Gemini 1.5 Flash model.
+This page shows how to translate a document with Aspose.Words for Python via .NET using Google generative AI models, including a code example with the Gemini Flash Latest model.
 
 {{% /alert %}}
 
 Document translation is a frequently needed option in the age of high digitalization. Aspose.Words supports document translation using *Google* generative language models, which allows developers to translate texts content into more than 300 languages.
 
-Use the [Translate](https://reference.aspose.com/words/python-net/aspose.words.ai/aimodel/translate/) method to translate your documents into any language represented in the [Language](https://reference.aspose.com/words/python-net/aspose.words.ai/language/) enumeration. Note that if the source document contains several languages, the Google AI-based model will be able to translate all supported languages. If the model cannot recognize the language in some text fragments, then you will be returned a document with these untranslated fragments and with the rest of the text translated.
+Use the [translate](https://reference.aspose.com/words/python-net/aspose.words.ai/aimodel/translate/) method to translate your documents into any language represented in the [Language](https://reference.aspose.com/words/python-net/aspose.words.ai/language/) enumeration. Note that if the source document contains several languages, the Google AI-based model will be able to translate all supported languages. If the model cannot recognize the language in some text fragments, then you will be returned a document with these untranslated fragments and with the rest of the text translated.
 
-The following code example shows how to use the *Gemini 1.5 Flash* model in Aspose.Words to translate a document into Arabic:
+The following code example shows how to use a Google Gemini model to translate a document into Arabic:
 
-{{< highlight csharp >}}
+{{< highlight python >}}
 doc = aw.Document(file_name=MY_DIR + "Document.docx")
 
 api_key = system_helper.environment.Environment.get_environment_variable("API_KEY")
 # Use Google generative language models.
-model = aw.ai.AiModel.create(aw.ai.AiModelType.GEMINI_15_FLASH).with_api_key(api_key).as_google_ai_model()
+model = aw.ai.AiModel.create(aw.ai.AiModelType.GEMINI_FLASH_LATEST).with_api_key(api_key)
 
 translated_doc = model.translate(doc, aw.ai.Language.ARABIC)
 translated_doc.save(file_name=ARTIFACTS_DIR + "AI.AiTranslate.docx")
@@ -61,4 +61,4 @@ Translating documents with Aspose.Words saves time and makes it easy to integrat
    **A:** Translation works on any document that can be loaded into an `aw.Document` object (e.g., DOCX, DOC, RTF, HTML, PDF). The output format is determined by the format you save the translated document in.
 
 5. **Q:** How can I change the AI model used for translation?  
-   **A:** Create the model with a different `AiModelType` (e.g., `AiModelType.GEMINI_15_FLASH`, `AiModelType.GEMINI_1_0_PRO`) before calling `translate`. The rest of the code remains the same.
+   **A:** Select another supported Google model from `AiModelType` when calling `AiModel.create`. The rest of the code remains the same.

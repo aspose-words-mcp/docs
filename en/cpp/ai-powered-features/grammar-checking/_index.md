@@ -15,7 +15,7 @@ timestamp: 2025-03-17-19-00-00
 
 Checking grammar in documents is important to ensure clarity, professionalism, and accuracy. Well-written documents leave a positive impression and avoid misunderstandings. Grammar checks help identify and correct errors quickly, saving time and improving quality.
 
-Aspose.Words allows users to check grammar and detect errors in documents using the OpenAI, Google, and Claude models' families listed in the [AiModelType](https://reference.aspose.com/words/cpp/aspose.words.ai/aimodeltype/) enumeration. Use the [CheckGrammar](https://reference.aspose.com/words/cpp/aspose.words.ai/iaimodeltext/checkgrammar/) method, available in the [Aspose.Words.AI](https://reference.aspose.com/words/cpp/aspose.words.ai/) namespace. **CheckGrammar** analyzes the text in a document and highlights grammatical problems.
+Aspose.Words allows users to check grammar and detect errors in documents using the OpenAI, Google, and Claude model families listed in the [AiModelType](https://reference.aspose.com/words/cpp/aspose.words.ai/aimodeltype/) enumeration. Use the [CheckGrammar](https://reference.aspose.com/words/cpp/aspose.words.ai/aimodel/checkgrammar/) method, available in the [Aspose.Words.AI](https://reference.aspose.com/words/cpp/aspose.words.ai/) namespace. **CheckGrammar** returns a new document with checked grammar.
 
 The following code example shows how to use the GPT‑4o mini model in Aspose.Words to check grammar:
 
@@ -24,7 +24,7 @@ void AiGrammar()
 {
     auto doc = MakeObject<Document>(MyDir + u"Big document.docx");
 
-    SharedPtr<IAiModelText> model = System::ExplicitCast<OpenAiModel>(MakeObject<AiModel>()->Create(AiModelType::Gpt4OMini)->WithApiKey(u"API_KEY"));
+    SharedPtr<AiModel> model = AiModel::Create(AiModelType::Gpt4OMini)->WithApiKey(u"API_KEY");
 
     auto grammarOptions = MakeObject<CheckGrammarOptions>();
     grammarOptions->set_ImproveStylistics(true);

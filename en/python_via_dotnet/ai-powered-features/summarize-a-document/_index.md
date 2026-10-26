@@ -26,18 +26,18 @@ You can specify various options for summarizing document content. Use the [summa
 With Aspose.Words, implementing document summarization is straightforward. The following code example shows how to summarize a document using GPT-4o model:
 
 {{< highlight python >}}
-first_doc = aw.Document(MyDir + "Big document.docx")
-second_doc = aw.Document(MyDir + "Document.docx")
-api_key = os.getenv("API_KEY")
-# Use OpenAI or Google generative language models.
-model = aw.ai.AiModel.create(aw.ai.AiModelType.GPT_4O_MINI).with_api_key(api_key).as_open_ai_model()
+first_doc = aw.Document(MY_DIR + "Big document.docx")
+second_doc = aw.Document(MY_DIR + "Document.docx")
+api_key = system_helper.environment.Environment.get_environment_variable("API_KEY")
+# Use an OpenAI generative language model.
+model = aw.ai.AiModel.create(aw.ai.AiModelType.GPT_4O_MINI).with_api_key(api_key)
 options = aw.ai.SummarizeOptions()
 options.summary_length = aw.ai.SummaryLength.SHORT
-one_document_summary = model.summarize(first_doc, options)
-oneDocumentSummary.save(ArtifactsDir + "AI.AiSummarize.One.docx")
+one_document_summary = model.summarize(source_document=first_doc, options=options)
+one_document_summary.save(ARTIFACTS_DIR + "AI.AiSummarize.One.docx")
 options.summary_length = aw.ai.SummaryLength.LONG
-multi_document_summary = model.summarize([first_doc, second_doc], options)
-multiDocumentSummary.save(ArtifactsDir + "AI.AiSummarize.Multi.docx")
+multi_document_summary = model.summarize(source_documents=[first_doc, second_doc], options=options)
+multi_document_summary.save(ARTIFACTS_DIR + "AI.AiSummarize.Multi.docx")
 {{< /highlight >}}
 
 {{% alert color="primary" %}}
@@ -54,10 +54,10 @@ Summarizing documents with Aspose.Words saves time and helps you focus on essent
    **A:** Aspose.Words for Python via .NET supports OpenAI models (e.g., GPT‑4o, GPT‑4o‑mini), Google Gemini models, and Anthropic Claude models. The full list is defined in the `aw.ai.AiModelType` enumeration.
 
 2. **Q:** How do I control the length of the generated summary?  
-   **A:** Set the `summary_length` property of `aw.ai.SummarizeOptions` to one of the values in `aw.ai.SummaryLength` (e.g., `SHORT`, `MEDIUM`, `LONG`). The chosen value influences how concise or detailed the summary will be.
+   **A:** Set the `summary_length` property of `aw.ai.SummarizeOptions` to `VERY_SHORT`, `SHORT`, `MEDIUM`, `LONG`, or `VERY_LONG`.
 
 3. **Q:** Can I summarize more than one document in a single request?  
-   **A:** Yes. Pass a list of `aw.Document` objects to the `summarize` method. The model will generate a combined summary for all supplied documents.
+   **A:** Yes. Pass a list of `aw.Document` objects to the `summarize` method. It returns a single document containing the combined summary.
 
 4. **Q:** Do I need a separate license for using the AI summarization feature?  
    **A:** No additional license is required beyond a valid Aspose.Words for Python via .NET license. The AI features are included with the standard product license.
