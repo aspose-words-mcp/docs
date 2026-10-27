@@ -5,7 +5,7 @@ articleTitle: Supported AI Models
 linktitle: Supported AI Models
 type: docs
 weight: 10
-description: "Aspose.Words for C++ supports OpenAI and Google AI models for summarization and translation documents. Use Aspose.Words with Gpt-4o, Gpt-4o mini, Gpt-4 Turbo, GPT-3.5 Turbo, Gemini 1.5 Flash, Gemini 1.5 Flash-8B, Gemini 1.5 Pro."
+description: "Aspose.Words for C++ supports OpenAI, Google, and Claude models for document summarization, translation, and grammar checking."
 ai_search_scope: words_cpp
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
 ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
@@ -36,7 +36,7 @@ You can create a model instance using the [Create](https://reference.aspose.com/
 The following code example shows how to create a new instance of **AiModel** class:
 
 {{< highlight cpp >}}
-static System::SharedPtr<Aspose::Words::AI::AiModel> Aspose::Words::AI::AiModel::Create(Aspose::Words::AI::AiModelType modelType)
+SharedPtr<AiModel> model = AiModel::Create(AiModelType::Gpt4OMini)->WithApiKey(u"API_KEY");
 {{< /highlight >}}
 
 {{% alert color="primary" %}}
@@ -49,35 +49,12 @@ For more information, check the [Aspose.Words.AI](https://reference.aspose.com/w
 
 With Aspose.Words, developers can also integrate self-hosted LLMs (Large Language Models), providing an alternative to OpenAI/Anthropic/Google's hosted services.
 
-The following code example shows how to create a self-hosted LLM based on OpenAI's generative language model:
+The following code example shows how to configure an OpenAI-compatible endpoint:
 
 {{< highlight cpp >}}
-void SelfHostedModel()
+void ChangeDefaultUrl()
 {
-    auto doc = MakeObject<Document>(MyDir + u"Big document.docx");
-
-    SharedPtr<AiModel> model = SharedPtr<CustomAiModel>()->WithApiKey(u"API_KEY");
-
-    auto translatedDoc = model->Translate(doc, Language::Russian);
-    translatedDoc->Save(ArtifactsDir + u"AI.SelfHostedModel.docx");
-}
-
-class CustomAiModel : public OpenAiModel
-{
-    /// <summary>
-    /// Gets custom URL of the model.
-    /// </summary>
-    System::String get_Url() override
-    {
-        return u"https://localhost/";
-    }
-
-    /// <summary>
-    /// Gets model name.
-    /// </summary>
-    System::String get_Name() override
-    {
-        return u"my-model-24b";
-    }
+    SharedPtr<AiModel> model = AiModel::Create(AiModelType::Gpt4OMini)->WithApiKey(u"API_KEY");
+    model->set_Url(u"https://my.a.com/");
 }
 {{< /highlight >}}
