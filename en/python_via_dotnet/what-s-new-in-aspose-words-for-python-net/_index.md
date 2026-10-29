@@ -10,7 +10,7 @@ ai_search_scope: words_python
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
 ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
 url: /python-net/what-s-new-in-aspose-words-for-python-net/
-timestamp: 2026-09-24-09-12-25
+timestamp: 2026-10-29-03-12-25
 ---
 
 {{% alert color="grey" %}}
@@ -23,15 +23,49 @@ This page lists the most notable new features and enhancements introduced in rec
 
 This page describes the most interesting new Aspose.Words features introduced in recent releases.
 
-## Aspose.Words for Python via .NET 26.9
+## Aspose.Words for Python via .NET 26.9, 26.10
 
 Aspose.Words 26.9 adds more control over document comparison and digital signature timestamping, and improves PDF accessibility. The release also enhances PDF layout tagging for footnotes and endnotes.
+
+Aspose.Words 26.10 introduces on-premise AI-powered document processing, improves floating table positioning, and expands chart customization capabilities. The release also enhances MathML and mathematical formula rendering and strengthens PDF/UA-2 compliance.
+
+### AI-powered Features
+
+#### On-premise AI Engine Integration <sup>26.10</sup>
+
+The ability to process documents using AI without sending document content outside the machine has been introduced by integrating Aspose.LLM into Aspose.Words, enabling on-premise inference entirely within the current process.
+
+### Converting, Loading, and Saving Documents
+
+#### PDF/UA-2 Compliance <sup>26.10</sup>
+
+PDF export has been enhanced by implementing structure destination (`/SD`) generation for document outline entries, ensuring compliance with PDF/UA-2 requirements.
 
 ### Rendering
 
 #### Improved PDF Accessibility <sup>26.9</sup>
 
 PDF layout tagging has been improved by placing footnote and endnote tags according to accessibility best practices.
+
+#### Improved Floating Table Positioning <sup>26.10</sup>
+
+Floating table positioning has been improved by implementing Microsoft Word-like behavior when balancing floating tables against footnotes, resulting in more accurate document layout.
+
+#### Enhanced Chart Plot Area Formatting <sup>26.10</sup>
+
+The ability to customize the fill and line formatting of a chart's plot area has been introduced, providing greater control over chart appearance.
+
+#### Waterfall Chart Total Data Points <sup>26.10</sup>
+
+The ability to determine whether a data point represents a total in a waterfall chart has been introduced, enabling more precise identification of total columns.
+
+#### MathML Background Color Remapping <sup>26.10</sup>
+
+MathML background rendering has been improved by implementing color remapping according to compatibility settings, ensuring more accurate rendering across different document compatibility modes.
+
+#### Rendering FormCheckBox Fields in OfficeMath <sup>26.10</sup>
+
+The ability to render `FormCheckBox` fields located within `OfficeMath` formulas has been introduced, improving the rendering of documents containing mathematical expressions and form fields.
 
 ### Other
 
@@ -41,6 +75,8 @@ PDF layout tagging has been improved by placing footnote and endnote tags accord
 {{% alert color="primary" %}}
 
 Learn more about [Aspose.Words for Python via .NET 26.9 Release Notes](https://releases.aspose.com/words/python/release-notes/2026/aspose-words-for-python-via-dotnet-26-9-release-notes/).
+
+Learn more about [Aspose.Words for Python via .NET 26.10 Release Notes](https://releases.aspose.com/words/python/release-notes/2026/aspose-words-for-python-via-dotnet-26-10-release-notes/).
 
 {{% /alert %}}
 
