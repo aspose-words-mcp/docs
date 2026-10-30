@@ -21,27 +21,27 @@ This page describes how Aspose.Words handles Windows Metafiles during rendering.
 
 {{% /alert %}}
 
-Windows Metafile format is an image file format that can contain both vector and raster graphics.This format is used to store graphics data in memory or on-disk files. Ametafile stores a list of function calls in the Windows Graphics Device Interface (GDI) that must be executed to display the image on the screen. The system interprets and executes these commands in the display context.
+Windows Metafile format is an image file format that can contain both vector and raster graphics. This format is used to store graphics data in memory or on-disk files. A metafile stores a list of function calls in the Windows Graphics Device Interface (GDI) that must be executed to display the image on the screen. The system interprets and executes these commands in the display context.
 
-Formerly,Windows Metafile was the only vector image format supported by Microsoft Word. MicrosoftWord now also supports SVG format, but the metafile format is still commonly used in Word documents. Also, Metafile could be an interchange format for some other applications, such as Microsoft Visio.Essentially, the main purpose of Metafile is to ensure the exchange of graphical information between Windows applications.
+Formerly, Windows Metafile was the only vector image format supported by Microsoft Word. Microsoft Word now also supports SVG format, but the metafile format is still commonly used in Word documents. Also, Metafile could be an interchange format for some other applications, such as Microsoft Visio. Essentially, the main purpose of Metafile is to ensure the exchange of graphical information between Windows applications.
 
 There are 3 versions of Windows Metafile:
 
-- WMF –stores call to 16bit GDI.
-- EMF–stores call toWin32/GDI.
+- WMF – stores call to 16bit GDI.
+- EMF – stores call to Win32/GDI.
 - EMF+ Metafile stores call to GDI+. EMF+ Metafile may also be dual, describing the same graphics with both EMF and EMF+ parts.
 
-The existing issue with Windows Metafile is that it is not supported by most non-Word formats, to which documents are usually saved. Therefore, it is required to convert the Metafileformat to other raster or vector formats.It is easy to convert Windows Metafile to raster image on .NET by simply passing it to GDI+, but it is not possible on other platforms since even GDI+ does not provide the functionality to extract the vector graphics from Metafile. To solve these issues, Aspose.Words implements its own Windows Metafile player, which is able to play Metafile format both vector and raster graphics on all platforms.
+The existing issue with Windows Metafile is that it is not supported by most non-Word formats, to which documents are usually saved. Therefore, it is required to convert the Metafile format to other raster or vector formats. It is easy to convert Windows Metafile to raster image on .NET by simply passing it to GDI+, but it is not possible on other platforms since even GDI+ does not provide the functionality to extract the vector graphics from Metafile. To solve these issues, Aspose.Words implements its own Windows Metafile player, which is able to play Metafile format both vector and raster graphics on all platforms.
 
 ## Controlling the Aspose.Words Metafile Player
 
-The [MetafileRenderingOptions](https://reference.aspose.com/words/net/aspose.words.saving/metafilerenderingoptions/) class enables you to control the metafile player. For example, you can determine how metafile images should be rendered using the [RenderingMode](https://reference.aspose.com/words/net/aspose.words.saving/metafilerenderingoptions/renderingmode/) property,which has a special meaning when converting to bitmaps (see also the [MetafileRenderingOptions](https://reference.aspose.com/words/net/aspose.words.saving/imagesaveoptions/metafilerenderingoptions/) property).
+The [MetafileRenderingOptions](https://reference.aspose.com/words/net/aspose.words.saving/metafilerenderingoptions/) class enables you to control the metafile player. For example, you can determine how metafile images should be rendered using the [RenderingMode](https://reference.aspose.com/words/net/aspose.words.saving/metafilerenderingoptions/renderingmode/) property, which has a special meaning when converting to bitmaps (see also the [MetafileRenderingOptions](https://reference.aspose.com/words/net/aspose.words.saving/imagesaveoptions/metafilerenderingoptions/) property).
 
 Saving to a bitmap works differently on platforms other than .NET. While .NET GDI+ rendering is a reference that works almost perfect even for the most complex metafile format, on other platforms it may cause issues or not be supported at all.
 
 ## Supporting Raster Operations
 
-Raster operations is a complex metafile feature, that currently has limited support.Raster operations are available in WMF and EMF metafile formats. TheEMF+ metafile format does not use raster operations directly but can contain EMF parts, embedded WMF or EMF metafiles.
+Raster operations is a complex metafile feature, that currently has limited support. Raster operations are available in WMF and EMF metafile formats. The EMF+ metafile format does not use raster operations directly but can contain EMF parts, embedded WMF or EMF metafiles.
 
 There are binary and ternary raster operations:
 
@@ -49,7 +49,7 @@ There are binary and ternary raster operations:
 
 <img src="handling-windows-metafiles-1.png" alt="handling-windows-metafiles-aspose-words-net-1" style="width:650px"/>
 
-- Ternary raster operations are applied when drawing bitmap images. They combine colors of corresponding bitmap image pixels, the brush, and the destination bitmap by using bitwise logical operations with specifiedhex color values. One of the most common purposes of using ternary raster operations is the emulation of transparency. The image provided in theexamplebelow demonstrates how icon transparency can be emulated. There are two types of bitmaps:the b/w mask bitmap and the color bitmap. First, the mask bitmap is drawn with the SRCAND raster operation. It changes the opaque icon region to black and white, leaving the transparent region unchanged. Then the second bitmap is drawn with the SRCINVERT raster operation. It displays the color pixels on the black region, leavingthe transparent region unchanged.
+- Ternary raster operations are applied when drawing bitmap images. They combine colors of corresponding bitmap image pixels, the brush, and the destination bitmap by using bitwise logical operations with specified hex color values. One of the most common purposes of using ternary raster operations is the emulation of transparency. The image provided in the example below demonstrates how icon transparency can be emulated. There are two types of bitmaps: the b/w mask bitmap and the color bitmap. First, the mask bitmap is drawn with the SRCAND raster operation. It changes the opaque icon region to black and white, leaving the transparent region unchanged. Then the second bitmap is drawn with the SRCINVERT raster operation. It displays the color pixels on the black region, leaving the transparent region unchanged.
 
 <img src="handling-windows-metafiles-2.png" alt="handling-windows-metafiles-aspose-words-net-2" style="width:650px"/>
 
@@ -61,15 +61,15 @@ While binary raster operations are not currently supported and the limited numbe
 
 {{% /alert %}}
 
-The example shown below demonstrates how Aspose.Words renders a metafile to a bitmap when it is not possibleto correctly render some of metafile records to vector graphics:
+The example shown below demonstrates how Aspose.Words renders a metafile to a bitmap when it is not possible to correctly render some of metafile records to vector graphics:
 
 {{< gist "aspose-words-gists" "f9c5250f94e595ea3590b3be679475ba" "pdf-render-warnings.cs" >}}
 
 ## Metafile Fallback Settings
 
-Aspose.Words does not support a number of metafile features that are most complex or rare.Users can implement the [IWarningCallBack](https://reference.aspose.com/words/net/aspose.words/iwarningcallback/) interface and receive warningmessages. IfAspose.Words encounters unsupportedfeatures in a metafile, it issues a warning message with [WarningSource](https://reference.aspose.com/words/net/aspose.words/warningsource/).**Metafile**. In this case Aspose.Wordsmay perform fallback to a different type of metafile player. The warning message regarding fallback is also issued.
+Aspose.Words does not support a number of metafile features that are most complex or rare. Users can implement the [IWarningCallBack](https://reference.aspose.com/words/net/aspose.words/iwarningcallback/) interface and receive warning messages. If Aspose.Words encounters unsupported features in a metafile, it issues a warning message with [WarningSource](https://reference.aspose.com/words/net/aspose.words/warningsource/).**Metafile**. In this case Aspose.Words may perform fallback to a different type of metafile player. The warning message regarding fallback is also issued.
 
-Firstly, Aspose.Words performs fallback from the vector metafile player to raster, which It is controlled by the [RenderingMode](https://reference.aspose.com/words/net/aspose.words.saving/metafilerenderingoptions/renderingmode/) property. If the fallback feature is disabled,Aspose.Words tries to render some substitution graphics instead of the features that are not supported.
+Firstly, Aspose.Words performs fallback from the vector metafile player to raster, which It is controlled by the [RenderingMode](https://reference.aspose.com/words/net/aspose.words.saving/metafilerenderingoptions/renderingmode/) property. If the fallback feature is disabled, Aspose.Words tries to render some substitution graphics instead of the features that are not supported.
 
 Aspose.Words successfully plays metafile to raster using GDI+ on .NET, which makes this callback option safe.
 

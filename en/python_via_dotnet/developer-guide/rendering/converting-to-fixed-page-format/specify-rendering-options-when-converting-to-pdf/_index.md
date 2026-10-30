@@ -66,7 +66,7 @@ Aspose.Words also allows you to export document custom properties to PDF, which 
 
 ## Exporting Outlines from Bookmarks and Headings in Output PDF
 
-If you want to export bookmarks as outlines in output PDF, you can use the [default_bookmarks_outline_level](https://reference.aspose.com/words/python-net/aspose.words.saving/outlineoptions/default_bookmarks_outline_level/) property. This property specifies the default level in the document outline, at which Microsoft Word bookmarks are displayed. If the document contains bookmarks in the header/footer of the document, you can set the [header_footer_bookmarks_export_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/header_footer_bookmarks_export_mode/) property to [HeaderFooterBookmarksExportMode.FIRST](https://reference.aspose.com/words/python-net/aspose.words.saving/headerfooterbookmarksexportmode/#first) or [HeaderFooterBookmarksExportMode.ALL](https://reference.aspose.com/words/python-net/aspose.words.saving/headerfooterbookmarksexportmode/#all) in order to specify how they are exported in output PDF. The bookmarks in headers/footers are not exported when the value of **HeaderFooterBookmarksExportMode** is [None](https://reference.aspose.com/words/python-net/aspose.words.saving/headerfooterbookmarksexportmode/).
+If you want to export bookmarks as outlines in output PDF, you can use the [default_bookmarks_outline_level](https://reference.aspose.com/words/python-net/aspose.words.saving/outlineoptions/default_bookmarks_outline_level/) property. This property specifies the default level in the document outline, at which Microsoft Word bookmarks are displayed. If the document contains bookmarks in the header/footer of the document, you can set the [header_footer_bookmarks_export_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/header_footer_bookmarks_export_mode/) property to [HeaderFooterBookmarksExportMode.FIRST](https://reference.aspose.com/words/python-net/aspose.words.saving/headerfooterbookmarksexportmode/#first) or [HeaderFooterBookmarksExportMode.ALL](https://reference.aspose.com/words/python-net/aspose.words.saving/headerfooterbookmarksexportmode/#all) in order to specify how they are exported in output PDF. The bookmarks in headers/footers are not exported when the value of **header_footer_bookmarks_export_mode** is [HeaderFooterBookmarksExportMode.NONE](https://reference.aspose.com/words/python-net/aspose.words.saving/headerfooterbookmarksexportmode/#none).
 
 The code example below shows how to export bookmarks from the first header/footer of a section:
 
@@ -203,16 +203,16 @@ This setting works only for ANSI (Windows-1252) encoding text. Writing a non-ANS
 - [DownsampleOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/downsampleoptions/)
 
 Properties of PdfSaveOptions:
-- [PreserveFormFields](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/preserve_form_fields/)
-- [ExportDocumentStructure](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/export_document_structure/)
-- [DefaultBookmarksOutlineLevel](https://reference.aspose.com/words/python-net/aspose.words.saving/outlineoptions/default_bookmarks_outline_level/)
-- [HeaderFooterBookmarksExportMode](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/header_footer_bookmarks_export_mode/)
-- [HeadingsOutlineLevels](https://reference.aspose.com/words/python-net/aspose.words.saving/outlineoptions/headings_outline_levels/)
-- [DownsampleImages](https://reference.aspose.com/words/python-net/aspose.words.saving/downsampleoptions/downsample_images/)
-- [Resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/downsampleoptions/resolution/)
-- [EmbedFullFonts](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/embed_full_fonts/)
-- [UseCoreFonts](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/use_core_fonts/)
-- [FontEmbeddingMode](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/font_embedding_mode/) 
+- [preserve_form_fields](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/preserve_form_fields/)
+- [export_document_structure](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/export_document_structure/)
+- [default_bookmarks_outline_level](https://reference.aspose.com/words/python-net/aspose.words.saving/outlineoptions/default_bookmarks_outline_level/)
+- [header_footer_bookmarks_export_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/header_footer_bookmarks_export_mode/)
+- [headings_outline_levels](https://reference.aspose.com/words/python-net/aspose.words.saving/outlineoptions/headings_outline_levels/)
+- [downsample_images](https://reference.aspose.com/words/python-net/aspose.words.saving/downsampleoptions/downsample_images/)
+- [resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/downsampleoptions/resolution/)
+- [embed_full_fonts](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/embed_full_fonts/)
+- [use_core_fonts](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/use_core_fonts/)
+- [font_embedding_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/font_embedding_mode/) 
 
 ## FAQ
 
@@ -253,14 +253,14 @@ Properties of PdfSaveOptions:
    ```
 
 4. **Q:** How can I export Word bookmarks and headings as PDF outlines/bookmarks?  
-   **A:** Set `header_footer_bookmarks_export_mode` (if you need header/footer bookmarks) and `headings_outline_levels` to the desired depth. Example for three heading levels:
+   **A:** Set `header_footer_bookmarks_export_mode` (if you need header/footer bookmarks) and `outline_options.headings_outline_levels` to the desired depth. Example for three heading levels:
 
    ```python
    import aspose.words as aw
 
    doc = aw.Document("bookmarks.docx")
    options = aw.saving.PdfSaveOptions()
-   options.headings_outline_levels = 3
+   options.outline_options.headings_outline_levels = 3
    options.header_footer_bookmarks_export_mode = aw.saving.HeaderFooterBookmarksExportMode.ALL
    doc.save("with_outlines.pdf", options)
    ```

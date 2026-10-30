@@ -31,6 +31,6 @@ To replace text using Aspose.Words Java in Python, simply invoke the replace() m
 
 ## Download Running Code
 
-Download **Find And Replace(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Find And Replace (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Python/tests/quickstart/findandreplace/findandreplace.py)

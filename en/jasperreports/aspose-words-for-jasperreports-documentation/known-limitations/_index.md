@@ -15,7 +15,7 @@ timestamp: 2024-01-27-14-07-04
 The following features are not currently supported by Aspose.Words for JasperReports:
 
 - There is no automatic installer. Aspose.Words for JasperReports is distributed as a ZIP archive. [To install Aspose.Words for JasperReports](/words/jasperreports/installation/), you need to extract, copy files into appropriate location and possibly edit some XML configuration files. An automatic installer will be provided in the future.
-- The only supported layout of the exported documents is flow layout (normal paragraphs, tables and images). We will add support for positioned layouts (textboxes, floating tables and images) in the future.
-- Images cannot be viewed when exporting a report to HTML. The reason is that images cannot be sent within the same response as HTML itself. This will become available with the support of MHTML in the future.
+- The exported documents use flow layout (normal paragraphs, tables and images). Overlapping and positioned report elements are approximated with [frames](/words/jasperreports/frames/), [positioning tables](/words/jasperreports/positioning-tables/) and [overlap resolution](/words/jasperreports/overlapping-items/).
+- In HTML output, images are saved as separate files and cannot be sent in the same response as the HTML itself. To show them, save them to a folder the HTML page can reach (see [Processing Images for HTML Output](/words/jasperreports/processing-images-for-html-output/)).
 
 {{% /alert %}}

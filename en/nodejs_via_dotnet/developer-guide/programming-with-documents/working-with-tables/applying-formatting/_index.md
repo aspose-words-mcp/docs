@@ -174,8 +174,8 @@ The desired width of a table or individual cells is defined through the preferre
 The appropriate preferred width type and value are set using the methods of the [PreferredWidth](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidth/) class:
 
 - the [Auto](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype/) method to specify auto or “no preferred width”
-- the [FromPercent](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype//) method to specify a percentage width
-- the [FromPoints](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype/) method to specify the width in points
+- the [fromPercent](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidth/fromPercent/) method to specify a percentage width
+- the [fromPoints](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidth/fromPoints/) method to specify the width in points
 
 The pictures below show a representation of the *preferred width setting features* in Microsoft Word and their corresponding properties in Aspose.Words.
 
@@ -237,7 +237,7 @@ The [allowAutoFit](https://reference.aspose.com/words/nodejs-net/aspose.words/ta
 
 {{% alert color="primary" %}}
 
-Additionally, the **AllowAutoFit** property can be used in conjunction with a preferred cell width to format a cell that automatically fits its content, but also has an initial width. If necessary, the cell width can then grow past this width.
+Additionally, the **allowAutoFit** property can be used in conjunction with a preferred cell width to format a cell that automatically fits its content, but also has an initial width. If necessary, the cell width can then grow past this width.
 
 {{% /alert %}}
 
@@ -253,8 +253,8 @@ The following code example shows how to set a table to shrink or grow each cell 
 
 When autofitting to a window is applied to a table, the following operations are actually performed behind the scenes:
 
-1. The **Table.AllowAutoFit** property is enabled to automatically resize columns to fit the available content, using a **Table.PreferredWidth** value of 100%
-2. **CellFormat.PreferredWidth** is removed from all table cells
+1. The **Table.allowAutoFit** property is enabled to automatically resize columns to fit the available content, using a **Table.preferredWidth** value of 100%
+2. **CellFormat.preferredWidth** is removed from all table cells
    {{% alert color="primary" %}}
    Note that this is slightly different from the Microsoft Word behavior, where each cell's preferred width is set to appropriate values based on their current size and content. Aspose.Words does not update the preferred width so they just get cleared instead.
    {{% /alert %}}
@@ -275,12 +275,12 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 When the table is autofitted the content, the following steps are actually performed behind the scenes:
 
-1. The **Table.AllowAutoFit** property is enabled to automatically resize each cell according to its content
+1. The **Table.allowAutoFit** property is enabled to automatically resize each cell according to its content
 
-2. The preferred table width is removed from **Table.PreferredWidth**, **CellFormat.PreferredWidth** is removed for each table cell
+2. The preferred table width is removed from **Table.preferredWidth**, **CellFormat.preferredWidth** is removed for each table cell
    {{% alert color="primary" %}}
 
-   Note that this autofit option removes the preferred width from cells, just like in Microsoft Word. If you want to keep the column sizes and increase or decrease the columns to fit the content, you should set the **Table.AllowAutoFit** property to **True** on its own rather than using the autofit shortcut.{{% /alert %}}
+   Note that this autofit option removes the preferred width from cells, just like in Microsoft Word. If you want to keep the column sizes and increase or decrease the columns to fit the content, you should set the **Table.allowAutoFit** property to **True** on its own rather than using the autofit shortcut.{{% /alert %}}
 
 3. Column widths are recalculated for the current table content – the end result is a table where the column widths and the width of the entire table are automatically resized to best fit the content as the user edits the text
 
@@ -298,13 +298,13 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 If a table has autofit disabled and fixed column widths are used instead, the following steps are performed:
 
-1. **Table.AllowAutoFit** property is disabled so columns do not grow or shrink to their content
-2. The preferred width of the entire table is removed from **Table.PreferredWidth**, **CellFormat.PreferredWidth** is removed from all table cells
+1. **Table.allowAutoFit** property is disabled so columns do not grow or shrink to their content
+2. The preferred width of the entire table is removed from **Table.preferredWidth**, **CellFormat.preferredWidth** is removed from all table cells
 3. The end result is a table whose column widths are determined by the [CellFormat.width](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/cellformat/width/) property, and whose columns are not automatically resized when the user enters text or when the page is resized
 
 {{% alert color="primary" %}}
 
-Note that if no width is specified for **CellFormat.Width**, the default value of one inch (72 points) is used.
+Note that if no width is specified for **CellFormat.width**, the default value of one inch (72 points) is used.
 
 {{% /alert %}}
 
@@ -322,15 +322,15 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 Aspose.Words allows users to define the width of a table or cell through multiple objects, including [CellFormat](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/cellformat/) – its [width](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/cellformat/width/) property is mostly left over from previous versions, however, it is still useful for simplifying setting the cell width.
 
-It is important to know that the **CellFormat.Width** property works differently depending on which of the other width properties already exist in the table.
+It is important to know that the **CellFormat.width** property works differently depending on which of the other width properties already exist in the table.
 
 Aspose.Words uses the following order for calculating cell widths:
 
 | Order | Property                                                     | Description |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1     | [allowAutoFit](https://reference.aspose.com/words/nodejs-net/aspose.words/table/allowautofit/) is determined | If **AutoFit** is enabled:<br>- the table may grow past the preferred width to accommodate the content – it usually does not shrink below the preferred width<br>- any change to the **CellFormat.Width** value is ignored and the cell will fit to its contents instead |
-| 2     | [PreferredWidthType](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype/) with a value of **Points** or **Percent** | **CellFormat.Width** is ignored                              |
-| 3     | [PreferredWidthType](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype/) with a value of **Auto** | The value from **CellFormat.Width** is copied and becomes the cell's preferred width (in points) |
+| 1     | [allowAutoFit](https://reference.aspose.com/words/nodejs-net/aspose.words/table/allowautofit/) is determined | If **AutoFit** is enabled:<br>- the table may grow past the preferred width to accommodate the content – it usually does not shrink below the preferred width<br>- any change to the **CellFormat.width** value is ignored and the cell will fit to its contents instead |
+| 2     | [PreferredWidthType](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype/) with a value of **Points** or **Percent** | **CellFormat.width** is ignored                              |
+| 3     | [PreferredWidthType](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/preferredwidthtype/) with a value of **Auto** | The value from **CellFormat.width** is copied and becomes the cell's preferred width (in points) |
 
 {{% alert color="primary" %}}
 
@@ -346,7 +346,7 @@ While creating a fixed table layout, specify the cell width. A cell without widt
 
 ## Allow Spacing Between Cells
 
-You can get or set any additional space between table cells similar to the "Сell spacing" option in Microsoft Word. This can be done using the [allowCellSpacing](https://reference.aspose.com/words/nodejs-net/aspose.words/table/allowcellspacing/) property.
+You can get or set any additional space between table cells similar to the "Cell spacing" option in Microsoft Word. This can be done using the [allowCellSpacing](https://reference.aspose.com/words/nodejs-net/aspose.words/table/allowcellspacing/) property.
 
 An example of how these options are applied to a real table in a document can be seen in the picture below.
 
@@ -375,16 +375,16 @@ The following code example shows how to format a table and cell with different b
 ## FAQ
 
 1. Q: How can I set a table's width to a specific percentage of the page?  
-   A: Use the `PreferredWidth.FromPercent` method on the table's `PreferredWidth` property, e.g., `table.preferredWidth = PreferredWidth.fromPercent(50);`. This makes the table occupy 50 % of the available page width.
+   A: Use the `PreferredWidth.fromPercent` method on the table's `preferredWidth` property, e.g., `table.preferredWidth = PreferredWidth.fromPercent(50);`. This makes the table occupy 50 % of the available page width.
 
 2. Q: How do I disable AutoFit and give each column a fixed width?  
    A: Set `table.allowAutoFit = false;` and then assign a width to each cell via `cell.cellFormat.width = 72;` (points). Fixed widths remain unchanged when the content grows.
 
 3. Q: What properties control row height and its rule?  
-   A: Use `row.rowFormat.height = 30;` to set the height in points and `row.rowFormat.heightRule = HeightRule.atLeast;` (or `exactly`, `auto`) to define how the height is applied.
+   A: Use `row.rowFormat.height = 30;` to set the height in points and `row.rowFormat.heightRule = aw.HeightRule.AtLeast;` (or `Exactly`, `Auto`) to define how the height is applied.
 
 4. Q: How can I add spacing between cells?  
    A: Enable cell spacing with `table.allowCellSpacing = true;` and optionally set `table.cellSpacing = 5;` (points) to control the amount of space.
 
 5. Q: What is the difference between applying borders to a table versus a cell?  
-   A: Use `table.setBorders(border);` to affect the whole table, while `cell.cellFormat.borders` lets you style individual cells. Row borders can be set via `row.rowFormat.borders`, but shading is only available on tables and cells.
+   A: Use `table.setBorders(lineStyle, lineWidth, color);` to affect the whole table, while `cell.cellFormat.borders` lets you style individual cells. Row borders can be set via `row.rowFormat.borders`, but shading is only available on tables and cells.

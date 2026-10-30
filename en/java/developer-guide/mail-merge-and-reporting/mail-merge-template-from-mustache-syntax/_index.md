@@ -54,13 +54,13 @@ As you notice from the example above, in Mustache you need to use curly braces f
 
 ## Work with Mustache Syntax
 
-Mustache is represented as a logic-less order as it lacks any specific control flow statements such as *for* loops and *if* and *else* conditions. But you can use the section tags processing lists and lambdas to achieve conditional evaluation and looping. So to include the Mustache syntax within the Mail Merge operation, you will need to use the [UseNonMergeFields](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getUseNonMergeFields) property and set its value to *True*.
+Mustache is represented as a logic-less order as it lacks any specific control flow statements such as *for* loops and *if* and *else* conditions. But you can use the section tags processing lists and lambdas to achieve conditional evaluation and looping. So to include the Mustache syntax within the Mail Merge operation, you will need to use the [getUseNonMergeFields()](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getUseNonMergeFields) property and set its value to *True*.
 
 The following code example shows how to replace the Mustache tags with specific data:
 
 {{< gist "aspose-words-gists" "c0c6109b3d172b64370a9684b6330fe4" "mustache-syntax-using-data-table.java" >}}
 
-You can notice the difference between the document before executing the Mail Merge with regions along with applying the **UseNonMergeFields** property:
+You can notice the difference between the document before executing the Mail Merge with regions along with applying the **getUseNonMergeFields()** property:
 
 <img src="mustache-syntax-1.png" alt="mustache_syntax_aspose_words_java" style="width:400px"/>
 
@@ -94,11 +94,11 @@ The following code example shows how to perform a Mail Merge operation with Must
 
 {{< gist "aspose-words-gists" "c0c6109b3d172b64370a9684b6330fe4" "use-if-else-mustache.java" >}}
 
-You can notice the difference between the document before applying the **UseNonMergeFields** property:
+You can notice the difference between the document before applying the **getUseNonMergeFields()** property:
 
 <img src="mustache-if-field-1.png" alt="mustache_if_field_aspose_words_java" style="width:800px"/>
 
-And after applying the **UseNonMergeFields** property:
+And after applying the **getUseNonMergeFields()** property:
 
 <img src="mustache-if-field-2.png" alt="mustache_if_field_2_aspose_words_java" style="width:800px"/>
 
@@ -107,16 +107,16 @@ And after applying the **UseNonMergeFields** property:
 ## FAQ
 
 1. **Q:** How do I enable Mustache syntax processing in a Word template?  
-   **A:** Set the `MailMerge.UseNonMergeFields` property to `true` before calling any mail‑merge methods. This tells Aspose.Words to treat `{{…}}` tags as Mustache placeholders instead of regular merge fields.
+   **A:** Call `MailMerge.setUseNonMergeFields(true)` before calling any mail‑merge methods. This tells Aspose.Words to treat `{{…}}` tags as Mustache placeholders instead of regular merge fields.
 
 2. **Q:** How can I iterate over a collection using Mustache in a mail‑merge operation?  
-   **A:** Use the `{{#foreach collection}} … {{/foreach collection}}` section tags. After enabling `UseNonMergeFields`, call `MailMerge.ExecuteWithRegions` (or the equivalent API) and pass a data source that contains the collection.
+   **A:** Use the `{{#foreach collection}} … {{/foreach collection}}` section tags. After calling `setUseNonMergeFields(true)`, call `MailMerge.executeWithRegions` (or the equivalent API) and pass a data source that contains the collection.
 
 3. **Q:** Is it possible to mix regular Mail Merge fields with Mustache tags in the same document?  
-   **A:** Yes. When `UseNonMergeFields` is `true`, Aspose.Words first processes standard merge fields and then replaces Mustache tags. This allows you to combine both approaches in a single template.
+   **A:** Yes. When `getUseNonMergeFields()` is `true`, Aspose.Words first processes standard merge fields and then replaces Mustache tags. This allows you to combine both approaches in a single template.
 
 4. **Q:** How can I add conditional logic with Mustache tags?  
    **A:** Use Word's built‑in `IF` field and reference a Mustache tag inside the condition, e.g. `{ IF "{{ GENDER }}" = MALE "He" "She" }`. The `IF` field evaluates the value that the Mustache tag resolves to after the merge.
 
-5. **Q:** Why do I get a “Tag end is unexpected” error when using Mustache syntax?  
-   **A:** This error usually means a section tag is not closed correctly or contains extra whitespace. Ensure every opening tag like `{{#foreach list}}` has a matching closing tag `{{/foreach list}}` and that there are no stray characters inside the braces.
+5. **Q:** Why do I get an error about a mail merge region without a matching end when using Mustache syntax?  
+   **A:** This error (e.g., “Found start of mail merge region 'list' without matching end”) means a section tag is not closed. Ensure every opening tag like `{{#foreach list}}` has a matching closing tag `{{/foreach list}}` and that there are no stray characters inside the braces.

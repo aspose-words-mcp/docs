@@ -15,22 +15,22 @@ timestamp: 2024-07-11-16-13-28
 ---
 
 Qt is a C++ based cross-platform application development framework which is widely used to develop a variety of desktop, mobile, and embedded system applications. Aspose.Words for C++ can be integrated within Qt in order to create and manipulate Word documents in your Qt applications.
-You can find complete Qt example at [GitHub](https://github.com/btolfa/Aspose.Words-for-C/tree/master/Showcases/DocumentExplorer)
+You can find complete Qt example at [GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Showcases/DocumentExplorer)
 
 ## Using Aspose.Words for C++ within Qt Creator
 
-For using Aspose.Words for C++ in your Qt application download the latest version of the API from the [downloads](https://releases.aspose.com/words/cpp/)section. Once the API is downloaded, you can use integrate the C++ library within Qt Creator or you can use with Visual Studio.
+For using Aspose.Words for C++ in your Qt application download the latest version of the API from the [downloads](https://releases.aspose.com/words/cpp/) section. Once the API is downloaded, you can use integrate the C++ library within Qt Creator or you can use with Visual Studio.
 
-In orderto integrate and use Aspose.Words for C++ library within a Qt Console Application developed in Qt Creator, please follow the steps given below:
+In order to integrate and use Aspose.Words for C++ library within a Qt Console Application developed in Qt Creator, please follow the steps given below:
 
-- Open Qt Creator and create a new*Qt Console Application*
+- Open Qt Creator and create a new *Qt Console Application*
 
-- Select the `QMake` option from the*Build System*dropdown
+- Select the `QMake` option from the *Build System* dropdown
 
 - Select the appropriate kit and finish the wizard.
-- Copy*Aspose.Words.Cpp*and*CodePorting.Native.Cs2Cpp*folders from the extracted package of Aspose.Words for C++ into the root of the project
+- Copy *Aspose.Words.Cpp* and *CodePorting.Native.Cs2Cpp* folders from the extracted package of Aspose.Words for C++ into the root of the project
 
-- In order to add paths to lib and include folders, right-click on the project in the LHS panel and select*Add Library*
+- In order to add paths to lib and include folders, right-click on the project in the LHS panel and select *Add Library*
 
 - Select the External Library option and browse paths to include and lib folders one by one
 
@@ -46,15 +46,15 @@ In orderto integrate and use Aspose.Words for C++ library within a Qt Console Ap
 
 ## Using Aspose.Words for C++ in Qt Applications within Visual Studio
 
-For developing a Qt application using Visual Studio, you require to install [Qt Visual Studio Tools](https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools-19123). Once you have the installation,download the latest version of the API from the [downloads](https://releases.aspose.com/pdf/cpp/) section and follow the steps given below:
+For developing a Qt application using Visual Studio, you require to install [Qt Visual Studio Tools](https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools-19123). Once you have the installation, download the latest version of the API from the [downloads](https://releases.aspose.com/pdf/cpp/) section and follow the steps given below:
 
 - Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.17.1/cmake-3.17.1-win64-x64.msi).
 - Download and unpack [Aspose.Words for C++](https://releases.aspose.com/words/cpp/).
-- Create a new folder for your project files and copy/paste*Aspose.Words.Cpp*and*CodePorting.Native.Cs2Cpp*folders from unpacked package.
-- Create a new file named*CMakeLists.txt*in the same folder.
-- Copy and paste the following content within the*CMakeLists.txt*file.
+- Create a new folder for your project files and copy/paste *Aspose.Words.Cpp* and *CodePorting.Native.Cs2Cpp* folders from unpacked package.
+- Create a new file named *CMakeLists.txt* in the same folder.
+- Copy and paste the following content within the *CMakeLists.txt* file.
 
-{{< highlight cpp >}}
+{{< highlight cmake >}}
 cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 project(Qt_AsposeWords_CMake)
 set(CMAKE_AUTOMOC ON)
@@ -74,8 +74,8 @@ file(TO_NATIVE_PATH "${Qt5_DIR}/../../../bin" Qt5_DLL_PATH)
 set_target_properties(Qt_AsposeWords_CMake PROPERTIES VS_DEBUGGER_ENVIRONMENT "PATH=${Aspose.Words.Cpp_DLL_PATH}\\$<CONFIG>;${CodePorting.Native.Cs2Cpp_DLL_PATH};${Qt5_DLL_PATH};$(Path)")
 {{< /highlight >}}
 
-- Open*Command Prompt*and*cd*to the project folder.
-- Run the following command by replacing*<path-to-qt5>*with the path to*Qt5Config.cmake*file.
+- Open *Command Prompt* and *cd* to the project folder.
+- Run the following command by replacing *<path-to-qt5>* with the path to *Qt5Config.cmake* file.
 
 {{< highlight bash >}}
 cmake -G "Visual Studio 17 2022" -Thost=x64 -Ax64 -S . -B build -D"Qt5_DIR=<path-to-qt5>"

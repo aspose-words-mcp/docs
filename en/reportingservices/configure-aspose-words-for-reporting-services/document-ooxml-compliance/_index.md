@@ -24,10 +24,10 @@ There are [a few approaches](/words/reportingservices/configuration-explained/) 
 
 To switch to the Transitional compliance, add the following lines to the *<Extension>* element corresponding to the specific renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
-<Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">
+<Extension Name="AWDOCX" Type="Aspose.Words.ReportingServices.DocxRenderer,Aspose.Words.ReportingServices">
 <Configuration>
     <DocumentOoxmlCompliance>Iso29500_Transitional</DocumentOoxmlCompliance>
 </Configuration>

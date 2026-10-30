@@ -35,7 +35,7 @@ You often need to specify additional options, which affect the rendering result.
 
 - Save format to determine the list of available options ([save_format](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/save_format/))
 - Resolution ([horizontal_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/horizontal_resolution/), [vertical_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/vertical_resolution/), [page_set](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/page_set/))
-- Number of pages ([PageIndex](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/), [PageCount](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/))
+- Pages to render ([page_set](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/page_set/))
 - Color and lighting settings ([paper_color](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/), [image_color_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_color_mode/), [image_brightness](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_brightness/), [image_contrast](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_contrast/))
 - Image quality ([jpeg_quality](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/jpeg_quality/), [scale](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/scale/), [tiff_compression](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_compression/), [use_anti_aliasing](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/use_anti_aliasing/), [use_high_quality_rendering](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/use_high_quality_rendering/))
 - Method used to binarize the image ([tiff_binarization_method](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_binarization_method/), [threshold_for_floyd_steinberg_dithering](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/threshold_for_floyd_steinberg_dithering/))
@@ -63,24 +63,23 @@ Below you can compare images on which TIFF binarization was performed at various
 
 ## Related APIs
 
-- [Document.Save](https://reference.aspose.com/words/python-net/aspose.words/document/save/)
+- [Document.save](https://reference.aspose.com/words/python-net/aspose.words/document/save/)
 - [ImageSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/)
-- [SaveFormat](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/save_format/)
+- [save_format](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/save_format/)
 - [Resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/)
-- [HorizontalResolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/horizontal_resolution/)
-- [VerticalResolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/vertical_resolution/)
-- [PageIndex](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/)
-- [PageCount](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/)
-- [TiffCompression](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_compression/)
-- [TiffBinarizationMethod](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_binarization_method/)
-- [ThresholdForFloydSteinbergDithering](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/threshold_for_floyd_steinberg_dithering/)
-- [PixelFormat](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/pixel_format/)
-- [PaperColor](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/)
-- [ImageColorMode](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_color_mode/)
-- [ImageBrightness](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_brightness/)
-- [ImageContrast](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_contrast/)
-- [MetafileRenderingOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/metafile_rendering_options/)
-- [UseGdiEmfRenderer](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/use_gdi_emf_renderer/)
+- [horizontal_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/horizontal_resolution/)
+- [vertical_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/vertical_resolution/)
+- [page_set](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/page_set/)
+- [tiff_compression](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_compression/)
+- [tiff_binarization_method](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_binarization_method/)
+- [threshold_for_floyd_steinberg_dithering](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/threshold_for_floyd_steinberg_dithering/)
+- [pixel_format](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/pixel_format/)
+- [paper_color](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/)
+- [image_color_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_color_mode/)
+- [image_brightness](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_brightness/)
+- [image_contrast](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_contrast/)
+- [metafile_rendering_options](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/metafile_rendering_options/)
+- [use_gdi_emf_renderer](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/use_gdi_emf_renderer/)
 - [use_anti_aliasing](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/use_anti_aliasing/)
 - [use_high_quality_rendering](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/use_high_quality_rendering/) 
 
@@ -90,22 +89,22 @@ Below you can compare images on which TIFF binarization was performed at various
    **A:** Use the `horizontal_resolution` and `vertical_resolution` properties of `ImageSaveOptions`. Set them to the desired DPI before calling `document.save`. Example:  
 
    ```python
-   from aspose.words import Document, ImageSaveOptions, SaveFormat
-   doc = Document("input.docx")
-   options = ImageSaveOptions(SaveFormat.TIFF)
+   import aspose.words as aw
+   doc = aw.Document("input.docx")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
    options.horizontal_resolution = 300
    options.vertical_resolution = 300
    doc.save("output.tiff", options)
    ```
 
 2. **Q:** How do I save only specific pages of a document to a multi‑page TIFF?  
-   **A:** Configure the `page_set` property with a `PageSet` that lists the required page numbers. Example:  
+   **A:** Configure the `page_set` property with a `PageSet` that lists the required zero-based page indices. Example:  
 
    ```python
-   from aspose.words import Document, ImageSaveOptions, SaveFormat, PageSet
-   doc = Document("input.docx")
-   options = ImageSaveOptions(SaveFormat.TIFF)
-   options.page_set = PageSet(1, 3, 5)   # saves pages 1, 3 and 5
+   import aspose.words as aw
+   doc = aw.Document("input.docx")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
+   options.page_set = aw.saving.PageSet([0, 2, 4])   # saves the 1st, 3rd and 5th pages
    doc.save("selected_pages.tiff", options)
    ```
 
@@ -113,22 +112,22 @@ Below you can compare images on which TIFF binarization was performed at various
    **A:** Set the `tiff_compression` property of `ImageSaveOptions` to `TiffCompression.CCITT4`. This is suitable for 1‑bit black‑and‑white images. Example:  
 
    ```python
-   from aspose.words import Document, ImageSaveOptions, SaveFormat, TiffCompression
-   doc = Document("input.docx")
-   options = ImageSaveOptions(SaveFormat.TIFF)
-   options.tiff_compression = TiffCompression.CCITT4
+   import aspose.words as aw
+   doc = aw.Document("input.docx")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
+   options.tiff_compression = aw.saving.TiffCompression.CCITT4
    doc.save("compressed.tiff", options)
    ```
 
 4. **Q:** How can I produce a 1‑bit black‑and‑white TIFF image?  
-   **A:** Set `pixel_format` to `ImagePixelFormat.FORMAT1BPP_INDEXED` and choose an appropriate compression (CCITT3 or CCITT4). Example:  
+   **A:** Set `pixel_format` to `ImagePixelFormat.FORMAT_1BPP_INDEXED` and choose an appropriate compression (CCITT3 or CCITT4). Example:  
 
    ```python
-   from aspose.words import Document, ImageSaveOptions, SaveFormat, ImagePixelFormat, TiffCompression
-   doc = Document("input.docx")
-   options = ImageSaveOptions(SaveFormat.TIFF)
-   options.pixel_format = ImagePixelFormat.FORMAT1BPP_INDEXED
-   options.tiff_compression = TiffCompression.CCITT3
+   import aspose.words as aw
+   doc = aw.Document("input.docx")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
+   options.pixel_format = aw.saving.ImagePixelFormat.FORMAT_1BPP_INDEXED
+   options.tiff_compression = aw.saving.TiffCompression.CCITT3
    doc.save("bw.tiff", options)
    ```
 
@@ -136,10 +135,10 @@ Below you can compare images on which TIFF binarization was performed at various
    **A:** Use the `threshold_for_floyd_steinberg_dithering` property. The default is 128; increase the value for a darker image. Example:  
 
    ```python
-   from aspose.words import Document, ImageSaveOptions, SaveFormat, TiffBinarizationMethod
-   doc = Document("input.docx")
-   options = ImageSaveOptions(SaveFormat.TIFF)
-   options.tiff_binarization_method = TiffBinarizationMethod.FLOYD_STEINBERG_DITHERING
+   import aspose.words as aw
+   doc = aw.Document("input.docx")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
+   options.tiff_binarization_method = aw.saving.ImageBinarizationMethod.FLOYD_STEINBERG_DITHERING
    options.threshold_for_floyd_steinberg_dithering = 150
    doc.save("threshold.tiff", options)
    ```

@@ -149,7 +149,7 @@ The following code example shows how to apply different properties with revision
    ```
 
 5. **Q:** How do I identify move revisions (move‑from and move‑to) after moving a node while tracking is enabled?  
-   **A:** After a move operation, the moved node will have `IsMoveFromRevision` and `IsMoveToRevision` flags set. You can inspect these properties on any `Node` (e.g., a `Paragraph`). Example:  
+   **A:** A move is stored as two revisions: the content at the original location has `IsMoveFromRevision` set to `true`, and the content at the new location has `IsMoveToRevision` set to `true`. These properties are available on `Paragraph` and on inline nodes such as `Run`. Example:  
 
    ```csharp
    Paragraph para = (Paragraph)doc.GetChild(NodeType.Paragraph, 0, true);

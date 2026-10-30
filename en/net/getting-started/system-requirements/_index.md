@@ -34,7 +34,7 @@ Aspose.Words for .NET supports any 64-bit or 32-bit operating system where .NET 
 		</tr>
   <tr>
 			<td>Microsoft Windows</td>
-			<td><ul><li>Windows 2003 Server(x64, x86)</li><li>Windows 2008 Server(x64, x86)</li><li>Windows 2012 Server(x64, x86)</li><li>Windows 2012 R2 Server(x64, x86)</li><li>Windows 2016 Server(x64, x86)</li><li>Windows 2019 Server(x64, x86)</li><li>Windows XP (x64, x86)</li><li>Windows Vista(x64, x86)</li><li>Windows 7(x64, x86)</li><li>Windows 8, 8.1 (x64, x86)</li><li>Windows 10(x64, x86)</li><li>Windows 11(x64, x86)</li></ul></td>
+			<td><ul><li>Windows 2003 Server (x64, x86)</li><li>Windows 2008 Server (x64, x86)</li><li>Windows 2012 Server (x64, x86)</li><li>Windows 2012 R2 Server (x64, x86)</li><li>Windows 2016 Server (x64, x86)</li><li>Windows 2019 Server (x64, x86)</li><li>Windows XP (x64, x86)</li><li>Windows Vista (x64, x86)</li><li>Windows 7 (x64, x86)</li><li>Windows 8, 8.1 (x64, x86)</li><li>Windows 10 (x64, x86)</li><li>Windows 11 (x64, x86)</li></ul></td>
 		</tr>
   <tr>
 			<td>Linux</td>
@@ -97,7 +97,7 @@ Aspose.Words for .NET also supports .NET Standard 2.0 specification and its impl
 
 ## Development Environment
 
-Aspose.Wordsfor .NET can be used to develop applications in any development environment targeting the .NET platform, but the environments listed in the following table are explicitly supported:
+Aspose.Words for .NET can be used to develop applications in any development environment targeting the .NET platform, but the environments listed in the following table are explicitly supported:
 
 <table>  
 	<tr>
@@ -116,7 +116,7 @@ Aspose.Wordsfor .NET can be used to develop applications in any development envi
    **A:** No. Aspose.Words is a standalone engine and does not require Microsoft Word or any other third‑party Office product to be installed on the target machine.
 
 2. **Q:** Is a license required for production use?  
-   **A:** Yes. While a free evaluation license is available for testing, a commercial license must be applied for any production deployment. Licenses are forward compatible with newer library versions, but older library versions may not accept licenses generated for newer releases.
+   **A:** Yes. While a free evaluation license is available for testing, a commercial license must be applied for any production deployment. A license works with library versions released before its subscription expiry date; to use later versions, renew the subscription and apply the new license file.
 
 3. **Q:** Can I run Aspose.Words on cloud platforms such as AWS or Azure?  
    **A:** Absolutely. The library works on any cloud service that supports the required .NET runtime, including Amazon Web Services, Microsoft Azure, and other platforms that can host .NET Core/.NET 5+ applications.

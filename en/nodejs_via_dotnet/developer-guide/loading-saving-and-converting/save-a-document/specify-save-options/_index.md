@@ -14,7 +14,7 @@ aliases: [/nodejs/specify-save-options/]
 timestamp: 2025-04-21-14-07-04
 ---
 
-When saving a document, you can set some advanced properties. Aspose.Words provides you with the [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/) class, which allows more precise control of the save process. There are overloads of the [save](https://reference.aspose.com/words/nodejs-net/aspose.words/document/save/) method that accept a [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/) object – it should be an object of a class derived from the [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/) class. Each save format has a corresponding class that holds save options for this save format, for example, there is [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) for saving to PDF format or [ImageSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/imagesaveoptions/) for saving to an image.This article provides examples of working with some options classes derived from [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/).
+When saving a document, you can set some advanced properties. Aspose.Words provides you with the [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/) class, which allows more precise control of the save process. There are overloads of the [save](https://reference.aspose.com/words/nodejs-net/aspose.words/document/save/) method that accept a [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/) object – it should be an object of a class derived from the [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/) class. Each save format has a corresponding class that holds save options for this save format, for example, there is [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) for saving to PDF format or [ImageSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/imagesaveoptions/) for saving to an image. This article provides examples of working with some options classes derived from [SaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/).
 
 The following code example shows how to set the save options before saving the document into HTML:
 
@@ -30,7 +30,7 @@ The article describes a few properties you can control when saving a document.
 
 ## Encrypt a Document With a Password
 
-Use the**password**property to get or set a password for an encrypted document.Use the **password**property of the corresponding class to work with the selected document format.
+Use the **password** property to get or set a password for an encrypted document. Use the **password** property of the corresponding class to work with the selected document format.
 
 For example, when saving a document to DOC or DOT format, use the [password](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/docsaveoptions/password/) property of the [DocSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/docsaveoptions/) class.
 
@@ -42,7 +42,7 @@ When saving a document to Docx format, use the [password](https://reference.aspo
 
 The following code example shows how to load and save Docx encrypted with a password:
 
-{{< gist "aspose-words-gists" "50a58d2d88c2177a9a4888b5d0e4de81" "encrypt-docx-with-password.js" >}}
+{{< gist "aspose-words-gists" "50a58d2d88c2177a9a4888b5d0e4de81" "load-save-encrypted-document.js" >}}
 
 Not all formats support encryption and the use of **password** property.
 
@@ -56,9 +56,9 @@ The following code example shows how to update the document creation time:
 
 ## Update Last Saved Property
 
-Aspose.Words provides anability to use the [updateLastSavedTimeProperty](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/updatelastsavedtimeproperty/) property to get or set a value determining whether the [lastSavedTime](https://reference.aspose.com/words/nodejs-net/aspose.words.properties/builtindocumentproperties/lastsavedtime/) property is updated before saving.
+Aspose.Words provides an ability to use the [updateLastSavedTimeProperty](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/saveoptions/updatelastsavedtimeproperty/) property to get or set a value determining whether the [lastSavedTime](https://reference.aspose.com/words/nodejs-net/aspose.words.properties/builtindocumentproperties/lastsavedtime/) property is updated before saving.
 
-The followingcode example shows how to set this property and save the document:
+The following code example shows how to set this property and save the document:
 
 {{< gist "aspose-words-gists" "03144d2d1bfafb75c89d385616fdf674" "update-last-saved-time.js" >}}
 

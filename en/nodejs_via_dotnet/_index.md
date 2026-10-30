@@ -40,7 +40,7 @@ With Aspose.Words for Node.js via .NET, you can generate, modify, convert, and r
 			</ul>
 			<p>USEFUL RESOURCES</p>
 			<ul>
-				<li><a href="https://helpdesk.aspose.com/">Aspose.Words for .NET Paid Support Helpdesk</a></li>
+				<li><a href="https://helpdesk.aspose.com/">Aspose.Words for Node.js via .NET Paid Support Helpdesk</a></li>
 				<li><a href="https://releases.aspose.com/words/nodejs-net">Download Aspose.Words for Node.js via .NET</a></li>
 				<li><a href="https://github.com/aspose-words/Aspose.Words-for-Node.js-via-.NET">Download Examples at GitHub Repository</a></li>
 			</ul>

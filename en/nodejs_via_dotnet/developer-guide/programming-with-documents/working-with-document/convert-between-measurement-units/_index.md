@@ -30,8 +30,8 @@ The following code example shows how to specify page properties in inches:
 1. **Q:** How do I convert inches to points using `ConvertUtil`?  
    **A:** Use the static method `ConvertUtil.inchToPoint`. Pass the number of inches and the method returns the equivalent points (1 inch = 72 points).  
    ```javascript
-   const aspose = require('aspose.words');
-   const ConvertUtil = aspose.ConvertUtil;
+   const aw = require('@aspose/words');
+   const ConvertUtil = aw.ConvertUtil;
 
    const inches = 2.5;
    const points = ConvertUtil.inchToPoint(inches); // 180 points

@@ -51,7 +51,6 @@ You can download Aspose .NET Word Import for DNN Module from one of the followin
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_DNN/releases)
 - [Sourceforge](https://sourceforge.net/projects/asposednn/files/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-dnn/downloads/)
 
 ## Installing
 
@@ -98,12 +97,11 @@ From the very first days of Aspose, we knew that just giving our customers good 
 
 This is why we offer free support. Anyone who uses our product, whether they have bought them or are using an evaluation, deserves our full attention and respect.
 
-You can log any issues or suggestions related toAspose.Words .NET for DNN Modules using any of the following platforms
+You can log any issues or suggestions related to Aspose.Words .NET for DNN Modules using any of the following platforms
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_DNN/issues)
 - [Sourceforge](https://sourceforge.net/projects/asposednn/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-dnn/issues?status=new&status=open)
-- [DNN Store](https://www.dnnsoftware.com/services/customer-support)
+- [DNN Store ](https://www.dnnsoftware.com/services/customer-support)
 
 ### Extend and Contribute
 
@@ -115,7 +113,6 @@ You can get the latest source code from one of the following locations
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_DNN)
 - [Sourceforge](https://sourceforge.net/p/asposednn/code/ci/master/tree/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-dnn/src)
 
 #### How to configure the source code
 

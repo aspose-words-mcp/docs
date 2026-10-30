@@ -45,10 +45,10 @@ The table below lists the formats and encryption algorithms supported by Aspose.
 
 | Format | Supported Encryption while Loading                          | Supported Encryption while Saving            |
 | ------------------------------------------------------------ | ----------------------------------------------------------- | -------------------------------------------- |
-| DOC, DOT                                                     | XOR encryption40-bit RC4 EncryptionCryptoAPI RC4 Encryption | RC4 Encryption (40-bit)                      |
-| DOCX, DOTX, DOCM, DOTM, FlatOPC, FlatOpcTemplate, FlatOpcMacroEnabled, FlatOpcTemplateMacroEnabled | ECMA-376 Standard EncryptionECMA-376 Agile Encryption       | ECMA-376 Standard Encryption (AES128 + SHA1) |
+| DOC, DOT                                                     | XOR encryption<br>40-bit RC4 Encryption<br>CryptoAPI RC4 Encryption | RC4 Encryption (40-bit)                      |
+| DOCX, DOTX, DOCM, DOTM, FlatOPC, FlatOpcTemplate, FlatOpcMacroEnabled, FlatOpcTemplateMacroEnabled | ECMA-376 Standard Encryption<br>ECMA-376 Agile Encryption       | ECMA-376 Standard Encryption (AES128 + SHA1) |
 | ODT, OTT                                                     | ODF Encryption (Blowfish/AES)                               | ODF Encryption (AES256 + SHA256)             |
-| PDF | -                                                           | RC4 Encryption (40/128 bit)                  |
+| PDF | -                                                           | AES-128 / AES-256                            |
 
 The following code example shows how to encrypt a document with a password:
 
@@ -82,13 +82,11 @@ The following code example shows how to try opening an encrypted document with a
 
 This section covers specific constraints and important considerations for document encryption using Aspose.Words:
 
-- **Encryption is write-only**: Once a document is loaded and then saved with encryption, the original unencrypted content is no longer retained in memory. There is no way to extract or retrieve the original plaintext from an encrypted document in Aspose.Words.
-
 - **Encryption algorithm selection**: Aspose.Words does not expose a direct property to choose the encryption algorithm. The algorithm used depends on the output format and save options:
   - For DOC: RC4 40-bit.
   - For DOCX/DOTX/DOCM/DOTM/FlatOPC: ECMA-376 Standard Encryption using AES128 + SHA1.
   - For ODT/OTT: ODF Encryption using AES256 + SHA256.
-  - For PDF: RC4 40-bit or 128-bit, depending on save options.
+  - For PDF: AES-128 (PDF 1.7 based compliance) or AES-256 (PDF 2.0 based compliance), set with `PdfSaveOptions.EncryptionDetails`.
 
 - **Password policies are not enforced**: Aspose.Words does not validate or enforce password strength or complexity. It is the application developer's responsibility to enforce appropriate password policies if required.
 
@@ -119,13 +117,13 @@ This section covers specific constraints and important considerations for docume
    **A:** Create the appropriate save options object for the target format (e.g., `DocSaveOptions` for DOC or `OoxmlSaveOptions` for DOCX) and set its `Password` property. Then call `Document.Save` with those options. The document will be saved encrypted and will require the password to open.
 
 2. **Q:** Which file formats support encryption when saving with Aspose.Words?  
-   **A:** Encryption is supported for DOC/DOT (RC4 40‑bit), DOCX/DOTX/DOCM/DOTM/FlatOPC families (ECMA‑376 AES‑128 + SHA‑1), ODT/OTT (AES‑256 + SHA‑256), and PDF (RC4 40/128‑bit). Formats such as RTF do not support encryption.
+   **A:** Encryption is supported for DOC/DOT (RC4 40‑bit), DOCX/DOTX/DOCM/DOTM/FlatOPC families (ECMA‑376 AES‑128 + SHA‑1), ODT/OTT (AES‑256 + SHA‑256), and PDF (AES‑128 or AES‑256, depending on the PDF version). Formats such as RTF do not support encryption.
 
 3. **Q:** How can I determine whether a document is encrypted before loading it?  
-   **A:** Use `FileFormatInfo.IsEncrypted`. Pass a stream or file path to `FileFormatInfo` and check the `IsEncrypted` boolean. This lets you prompt the user for a password only when necessary.
+   **A:** Call `FileFormatUtil.DetectFileFormat` with a file path or stream and check the `IsEncrypted` property of the returned `FileFormatInfo`. This lets you prompt the user for a password only when necessary.
 
 4. **Q:** What happens if I try to open an encrypted document without providing a password?  
    **A:** Aspose.Words throws an `IncorrectPasswordException`. Catch this exception, inform the user that a password is required, and optionally request the password to retry loading the document.
 
 5. **Q:** Can I change the encryption algorithm of an already encrypted document?  
-   **A:** Yes. Load the document using the existing password, then save it again with new save options that specify a different `Password` and, if needed, a different encryption algorithm supported by the target format. This re‑encrypts the document using the new settings.
+   **A:** No. The algorithm is determined by the output format (see the Limitations section above). You can change the password: load the document using the existing password, then save it again with new save options that specify a different `Password`. This re‑encrypts the document using the new settings.

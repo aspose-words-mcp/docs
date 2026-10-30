@@ -168,7 +168,7 @@ Let's take a closer look at these ways of creating tables and compare their pros
    **A:** Use `DocumentBuilder.StartTable()`, then repeatedly call `InsertCell()`, add content with methods such as `Writeln()`, finish each row with `EndRow()`, and close the table with `EndTable()`. This sequence builds a table with the default Word styling.
 
 2. **Q:** How can I change the borders or shading of cells in a table?  
-   **A:** After calling `InsertCell()`, modify the `CellFormat` property of the builder, e.g., `builder.CellFormat.Borders.LineStyle = BorderStyle.Single; builder.CellFormat.Shading.BackgroundPatternColor = Color.LightGray;`. The settings apply to the current cell until changed again.
+   **A:** After calling `InsertCell()`, modify the `CellFormat` property of the builder, e.g., `builder.CellFormat.Borders.LineStyle = LineStyle.Single; builder.CellFormat.Shading.BackgroundPatternColor = Color.LightGray;`. The settings apply to the current cell until changed again.
 
 3. **Q:** Is it possible to insert a table from an HTML snippet?  
    **A:** Yes. Use `DocumentBuilder.InsertHtml(htmlString)` where the HTML contains `<table>`, `<tr>`, and `<td>` tags. Aspose.Words converts the HTML table into a Word table, preserving basic structure and formatting.

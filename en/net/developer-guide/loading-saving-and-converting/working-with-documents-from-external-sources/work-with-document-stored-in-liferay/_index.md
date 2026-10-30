@@ -38,7 +38,7 @@ In this article, we will cover a common scenario for comparing documents uploade
 
 2. Sign in to [Liferay](http://localhost:8080) using the email address `test@liferay.com` and password `test`.
 3. When prompted, change your password.
-4. Retrieve the site identifier using [this tutorial](https://learn.liferay.com/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-site-containing-the-data).
+4. Retrieve the site identifier using [this tutorial](https://learn.liferay.com/w/dxp/integration/headless-apis/using-liferay-as-a-headless-platform/consuming-apis/consuming-rest-services#identify-the-site-containing-the-data).
 5. Purchase an Aspose.Words license or use a [Free Trial or 30-day Temporary License](/words/net/licensing/).
 
 {{% alert color="primary" %}}
@@ -390,5 +390,5 @@ As a result, the "DocumentCompared.docx" file should be placed in the root of Do
 
 ## See Also
 
-- The article [Work with a Document Stored in a `SharePoint` Online](/words/net/work-with-document-stored-in-sharepoint)
+- The article [Work with a Document Stored in a SharePoint Online](/words/net/work-with-document-stored-in-sharepoint)
 - The article [Work with a Document Marked by a Sensitivity Label](/words/net/work-with-document-market-by-sensitivity-label/)

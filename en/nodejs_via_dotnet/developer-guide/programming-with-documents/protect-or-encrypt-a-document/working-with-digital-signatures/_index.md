@@ -65,7 +65,7 @@ You can download template file of this example from [here](https://github.com/as
 
 ## Retrieve the Digital Signature Value
 
-Aspose.Words also provides the ability to retrieve the digital signature value from a digitally signed document as a byte array using the [SignatureValue](https://reference.aspose.com/words/nodejs-net/aspose.words/digitalsignature/signatureValue/) property.
+Aspose.Words also provides the ability to retrieve the digital signature value from a digitally signed document as a byte array using the [signatureValue](https://reference.aspose.com/words/nodejs-net/aspose.words/digitalsignature/signatureValue/) property.
 
 The following code example shows how to obtain the digital signature value as a byte array from a document:
 
@@ -93,13 +93,13 @@ Note that you can not remove only one digital signature within your document.
    **A:** Use `FileFormatUtil.detectFileFormat(filePath)` to obtain a `FileFormatInfo` object, then check its `hasDigitalSignature` property. This method reads only the file header, so it is fast and does not modify the document.
 
 2. **Q:** After loading a document, how do I verify that all its digital signatures are valid?  
-   **A:** Load the document with `new Document(filePath)`, then call `document.digitalSignatures.isValid()`. The method returns `true` only if every signature in the collection is valid; otherwise it returns `false`.
+   **A:** Load the document with `new Document(filePath)`, then read `document.digitalSignatures.isValid`. The property returns `true` only if every signature in the collection is valid; otherwise it returns `false`.
 
 3. **Q:** How can I retrieve the raw signature data from a digital signature?  
    **A:** Iterate through `document.digitalSignatures` and for each `DigitalSignature` use the `signatureValue` property. The property returns a `Uint8Array` (byte array) that contains the raw signature bytes.
 
 4. **Q:** What is the correct way to remove digital signatures from a signed document?  
-   **A:** Use `DigitalSignatureUtil.removeAllSignatures(document)`. This static method removes every signature in the document; Aspose.Words does not support removing a single signature.
+   **A:** Use `DigitalSignatureUtil.removeAllSignatures(srcFileName, dstFileName)`. This static method removes every signature from the source file and saves the result to the destination file; Aspose.Words does not support removing a single signature.
 
 5. **Q:** Why are digital signatures lost when I open and then save a document with Aspose.Words?  
    **A:** Saving a document modifies its content, which invalidates any existing digital signatures. Aspose.Words intentionally discards signatures on save to preserve the integrity of the signing process. To avoid losing signatures, check for them first and avoid saving the document unless you intend to re‑sign it.

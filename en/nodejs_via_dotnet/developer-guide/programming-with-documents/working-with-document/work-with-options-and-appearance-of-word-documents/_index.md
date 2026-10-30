@@ -71,7 +71,7 @@ The following code example shows how to set Russian as the default editing langu
 
 ## Optimize a Document for a Particular Word Version
 
-The [optimize_for](https://reference.aspose.com/words/nodejs-net/aspose.words.settings/compatibilityoptions/optimizeFor/) method allows optimizing document content, as well as default Aspose.Words behaviour for a particular version of Microsoft Word. You can use this method to prevent Microsoft Word from displaying the “Compatibility mode” ribbon upon document loading. Note that you may also need to set the [compliance](https://reference.aspose.com/words/nodejs-net/aspose.words/document/compliance/) property to [Iso29500_2008_Transitional](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/ooxmlcompliance/) or higher.
+The [optimizeFor](https://reference.aspose.com/words/nodejs-net/aspose.words.settings/compatibilityoptions/optimizeFor/) method allows optimizing document content, as well as default Aspose.Words behaviour for a particular version of Microsoft Word. You can use this method to prevent Microsoft Word from displaying the “Compatibility mode” ribbon upon document loading. Note that you may also need to set the [compliance](https://reference.aspose.com/words/nodejs-net/aspose.words/document/compliance/) property to [Iso29500_2008_Transitional](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/ooxmlcompliance/) or higher.
 
 The following code example shows how to optimize document content for Microsoft Word 2016:
 

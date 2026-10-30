@@ -34,6 +34,6 @@ section.getBody().appendChild(para)
 
 ## Download Running Code
 
-Download **Working With Nodes(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Working With Nodes (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Python/tests/quickstart/workingwithnodes/WorkingWithNodes.py)

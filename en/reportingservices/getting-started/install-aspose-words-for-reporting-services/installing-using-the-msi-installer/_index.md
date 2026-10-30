@@ -18,7 +18,7 @@ The installer will perform the following steps:
 
 - Copy assemblies and help files to the specified directory.
 - Copy and register the product with all Reporting Services instances of all SQL Server versions found on the machine.
-- Integrate the product with Business Intelligence Development Studio if it is detected on the machine.
+- Integrate the product with Visual Studio Report Designer if it is detected on the machine.
 
 You do not need to copy or modify any files manually unless you want to add special configuration parameters.
 

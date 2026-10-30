@@ -80,15 +80,15 @@ The following code example shows how to set the advanced comparing properties:
    **A:** Load the license file using the `License` class before creating any `Document` objects. For example:  
 
    ```javascript
-   const asposewords = require('aspose.words');
-   let license = new asposewords.License();
+   const aw = require('@aspose/words');
+   let license = new aw.License();
    license.setLicense("Aspose.Words.lic");
    ```
 
    This ensures that all subsequent operations, including comparison, run without evaluation limitations.
 
 2. **Q:** How can I determine programmatically whether two documents are identical after comparison?  
-   **A:** After calling `document1.compare(document2, "Author", compareOptions)`, inspect the `revisions` collection of the first document. If `document1.getRevisions().getCount()` returns zero, the documents are considered equal.
+   **A:** After calling `document1.compare(document2, "Author", new Date(), compareOptions)`, inspect the `revisions` collection of the first document. If `document1.revisions.count` is zero, the documents are considered equal.
 
 3. **Q:** Which option should I use to ignore formatting changes during comparison?  
    **A:** Set the `ignoreFormatting` property of `CompareOptions` to `true`. This tells the engine to treat font, style, and other formatting modifications as non‑significant, so only textual changes appear as revisions.
@@ -98,7 +98,7 @@ The following code example shows how to set the advanced comparing properties:
 
    ```javascript
    let stream = fs.readFileSync("doc1");
-   let doc1 = new asposewords.Document(stream, new asposewords.LoadOptions());
+   let doc1 = new aw.Document(stream, new aw.Loading.LoadOptions());
    ```
 
 5. **Q:** What file formats are supported for document comparison?  

@@ -20,7 +20,7 @@ Aspose.Words for JasperReports (from v 2.0.0) can be used with JasperServer Web 
 
 Here is a description how to do this with JasperServer Web Services sample application (which is included in JasperServer distribution package):
 
-1. Install Aspose.Words for JasperReports as described above in this document
+1. [Install Aspose.Words for JasperReports](/words/jasperreports/installation/)
 1. Install jasperserver-ws-sample application from <Jasper Server>\samples\java-webapp-sample
 1. Replace 2 files inside root folder of this app by those from demo\webservices folder in Aspose.Words for JasperReports distribution package. Note: new code fragments are included between lines containing Aspose.Words for JasperReports START and Aspose.Words for JasperReports END
 1. Modify jasperserver/WEB-INF/applicationContext-web-services.xml as described [here](/words/jasperreports/installation/).

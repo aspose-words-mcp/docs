@@ -223,7 +223,7 @@ In this case, the engine produces a report as follows.
 
 The following code example demonstrates how to set chart series names dynamically.
 
-{{< gist "aspose-com-gists" "0b968ac8900f80c11e109dffb105f3da" "Examples-CSharp-LINQ-ChartSeries-SetChartSeriesNameDynamically.cs" >}}
+{{< gist "aspose-words-gists" "396ec359e1983055f29e969c4497dc7b" "chart-series-name-dynamically.cs" >}}
 
 {{% alert color="primary" %}}
 

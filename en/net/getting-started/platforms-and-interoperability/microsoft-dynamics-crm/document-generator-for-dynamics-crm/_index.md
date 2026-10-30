@@ -55,7 +55,6 @@ You can download Aspose .NET Document Generator for CRM from one of the followin
 
 - [Github](https://github.com/asposemarketplace/asposenetcrm/wiki/Aspose-.NET-Document-Generator)
 - [Sourceforge](https://sourceforge.net/p/asposenetcrm/wiki/Aspose%20.NET%20Document%20Generator/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-.net-for-dynamics-crm/wiki/Aspose%20.NET%20Document%20Generator)
 
 ## Installing or Uninstalling
 
@@ -122,7 +121,6 @@ You can log any issues or suggestions related to Aspose .NET Document Generator 
 
 - [Github](https://github.com/asposemarketplace/asposenetcrm/wiki/Aspose-.NET-Document-Generator)
 - [Sourceforge](https://sourceforge.net/p/asposenetcrm/wiki/Aspose%20.NET%20Document%20Generator/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-.net-for-dynamics-crm/wiki/Aspose%20.NET%20Document%20Generator)
 
 ### Extend and Contribute
 
@@ -130,7 +128,6 @@ You can download the latest source code at:
 
 - [CodePlex](https://www.microsoft.com/ru-ru/?p=asposenetcrm).
 - [GitHub](https://github.com/asposemarketplace/asposenetcrm/tree/AsposeDocumentGenerator-1.0.0.2011/Aspose%20.NET%20Document%20Generator/Source%20Code).
-- [BitBucket](https://bitbucket.org/asposemarketplace/aspose-.net-for-dynamics-crm/src/7ce93ebc181bba2b22539bfe183c68872f812070/Aspose%20.NET%20Document%20Generator/Source%20Code/?at=master).
 - [SourceForge](https://sourceforge.net/p/asposenetcrm/code/ci/master/tree/Aspose%20.NET%20Document%20Generator/Source%20Code/).
 
 Retrieve Note and Read in FileStream. Then read the list of Fields from CRM

@@ -169,7 +169,7 @@ sw.Close();
 
 ## Download Running Code
 
-Download**Add bullets or numbers to a list** form any of the below mentioned social coding sites:
+Download **Add bullets or numbers to a list** form any of the below mentioned social coding sites:
 
 - [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/releases/download/Aspose.WordsVsNPOI_1.0/Add.bullets.or.numbers.to.a.list.Aspose.Words.zip)
 

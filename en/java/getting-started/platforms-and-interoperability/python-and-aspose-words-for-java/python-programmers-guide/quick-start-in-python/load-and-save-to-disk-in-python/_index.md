@@ -13,7 +13,7 @@ url: /java/load-and-save-to-disk-in-python/
 timestamp: 2024-01-27-14-07-04
 ---
 
-## Aspose.Words -Load And Save To Disk
+## Aspose.Words - Load And Save To Disk
 
 To load a word Document using Aspose.Words for Java in Python, simply create Document Object by providing it a document name with full path.
 To save a word Document using Aspose.Words for Java in Python, simply invoke save method of Document object.
@@ -34,6 +34,6 @@ doc.save(dataDir + "Document Out.docx")
 
 ## Download Running Code
 
-Download **Load And Save To Disk(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Load And Save To Disk (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Python/tests/quickstart/loadandsavetodisk/LoadAndSaveToDisk.py)

@@ -81,22 +81,22 @@ Note that the [font](https://reference.aspose.com/words/nodejs-net/aspose.words/
 1. **Q:** How do I apply a license to Aspose.Words for Node.js?  
    **A:** Create a `License` object and call `setLicense` with the path to your `.lic` file before using any Aspose.Words classes. Example:  
    ```javascript
-   const asposewords = require("aspose.words");
-   let license = new asposewords.License();
+   const aw = require('@aspose/words');
+   let license = new aw.License();
    license.setLicense("Aspose.Words.lic");
    ```
 
 2. **Q:** How can I insert an image at the current cursor position?  
    **A:** Use `DocumentBuilder.insertImage` and provide the image file path or a stream. Example:  
    ```javascript
-   let builder = new asposewords.DocumentBuilder(document);
+   let builder = new aw.DocumentBuilder(document);
    builder.insertImage("sample.png");
    ```
 
 3. **Q:** What is the correct way to move the cursor to a bookmark before inserting content?  
    **A:** Call `moveToBookmark` with the bookmark name. After moving, any subsequent insertions occur at that location. Example:  
    ```javascript
-   let builder = new asposewords.DocumentBuilder(document);
+   let builder = new aw.DocumentBuilder(document);
    builder.moveToBookmark("MyBookmark");
    builder.writeln("Text after the bookmark");
    ```
@@ -104,17 +104,17 @@ Note that the [font](https://reference.aspose.com/words/nodejs-net/aspose.words/
 4. **Q:** How do I add a page break using DocumentBuilder?  
    **A:** Use `insertBreak` with `BreakType.PageBreak`. Example:  
    ```javascript
-   let builder = new asposewords.DocumentBuilder(document);
-   builder.insertBreak(asposewords.BreakType.PageBreak);
+   let builder = new aw.DocumentBuilder(document);
+   builder.insertBreak(aw.BreakType.PageBreak);
    ```
 
 5. **Q:** Can I format text (font name, size, bold, color) while writing with DocumentBuilder?  
    **A:** Yes. Set properties on the `font` object of the builder before calling `write` or `writeln`. Example:  
    ```javascript
-   let builder = new asposewords.DocumentBuilder(document);
+   let builder = new aw.DocumentBuilder(document);
    builder.font.name = "Arial";
    builder.font.size = 14;
    builder.font.bold = true;
-   builder.font.color = asposewords.Color.fromArgb(0, 0, 255); // blue
+   builder.font.color = "#0000FF"; // blue
    builder.writeln("Formatted text");
    ```

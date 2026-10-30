@@ -47,7 +47,7 @@ The following code example shows how to add a header for odd document pages:
 
 ### Specify Whether to Display Different Headers or Footers for the First Page
 
-As said above, you can also set a different header or footer for the first page. To do this, you need to set the [different_first_page_header_footer](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/different_first_page_header_footer/) flag to `true` and then specyfy the **HeaderFirst** or **FooterFirst** value.
+As said above, you can also set a different header or footer for the first page. To do this, you need to set the [different_first_page_header_footer](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/different_first_page_header_footer/) flag to `true` and then specify the **HEADER_FIRST** or **FOOTER_FIRST** value.
 
 The following code example shows how to set the header for the first page only:
 
@@ -55,13 +55,13 @@ The following code example shows how to set the header for the first page only:
 
 ### Specify Whether to Display Different Headers or Footers for Odd or Even Pages
 
- Next, you will want to set different headers or footers for odd and even pages in a document. To do this, you need to set the [odd_and_even_pages_header_footer](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/odd_and_even_pages_header_footer/) flag to `true` and then specyfy the values **HeaderPrimary** and **HeaderEven**, or **FooterPrimary** and **FooterEven**.
+ Next, you will want to set different headers or footers for odd and even pages in a document. To do this, you need to set the [odd_and_even_pages_header_footer](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/odd_and_even_pages_header_footer/) flag to `true` and then specify the values **HEADER_PRIMARY** and **HEADER_EVEN**, or **FOOTER_PRIMARY** and **FOOTER_EVEN**.
 
 {{< gist "aspose-words-gists" "2e1b2b28253780881d116e3a873ee668" "odd-even-pages.py" >}}
 
 ### Insert an Absolutely Positioned Image into the Header
 
-To place an image in a header or footer, use the **HeaderPrimary** header type or the **FooterPrimary** footer type and the [insert_image](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_image/) method.
+To place an image in a header or footer, use the **HEADER_PRIMARY** header type or the **FOOTER_PRIMARY** footer type and the [insert_image](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_image/) method.
 
 The following code example shows how to add an image to a header:
 
@@ -69,7 +69,7 @@ The following code example shows how to add an image to a header:
 
 ### Set Font and Paragraph Properties for Header or Footer Text
 
-With Aspose.Words you can set the font and paragraph properties, use the **HeaderPrimary** header type or the **FooterPrimary** footer type, as well as methods and properties for working with the fonts and paragraphs you use for the document body.
+With Aspose.Words you can set the font and paragraph properties, use the **HEADER_PRIMARY** header type or the **FOOTER_PRIMARY** footer type, as well as methods and properties for working with the fonts and paragraphs you use for the document body.
 
 The following code example shows how to set the text in the header to Arial, bold, size 14, and center alignment:
 
@@ -77,7 +77,7 @@ The following code example shows how to set the text in the header to Arial, bol
 
 ### Insert Page Numbers into the Header or Footer
 
-If necessary, you can add page numbers to the header or footer. To do this, use the **HeaderPrimary** header type or the **FooterPrimary** footer type and the [insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/) method to add the required field.
+If necessary, you can add page numbers to the header or footer. To do this, use the **HEADER_PRIMARY** header type or the **FOOTER_PRIMARY** footer type and the [insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/) method to add the required field.
 
 The following code example shows how to add page numbers to the footer on the right:
 
@@ -116,27 +116,27 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 ## FAQ
 
 1. **Q:** Does `Document.get_child_nodes(NodeType.PARAGRAPH, True)` include paragraphs that are inside headers or footers?  
-   **A:** Yes. When `is_deep` is set to `True`, the method traverses the entire document tree, including `HeaderFooter` nodes. To obtain only body paragraphs you must filter out nodes whose `ParentNode` is a `HeaderFooter` object.
+   **A:** Yes. When `is_deep` is set to `True`, the method traverses the entire document tree, including `HeaderFooter` nodes. To obtain only body paragraphs you must filter out nodes whose `parent_node` is a `HeaderFooter` object.
 
 2. **Q:** How can I retrieve all paragraphs from a specific header, for example the odd‑page header?  
-   **A:** Access the header through the section's `HeadersFooters` collection and then iterate its `Paragraphs` collection:  
+   **A:** Access the header through the section's `headers_footers` collection and then iterate its `paragraphs` collection:  
 
    ```python
-   from aspose.words import Document, HeaderFooterType
+   from aspose.words import Document
    doc = Document("input.docx")
-   header = doc.sections[0].headers_footers[HeaderFooterType.HEADER_PRIMARY]
+   header = doc.sections[0].headers_footers.header_primary
    for paragraph in header.paragraphs:
-       print(paragraph.to_txt())
+       print(paragraph.get_text())
    ```
 
 3. **Q:** What is the recommended way to copy a header from the previous section into the current one?  
-   **A:** Clone the header node from the previous section and assign it to the current section's `HeadersFooters` collection:  
+   **A:** Clone the header node from the previous section and assign it to the current section's `headers_footers` collection:  
 
    ```python
-   from aspose.words import Document, HeaderFooterType
+   from aspose.words import Document
    doc = Document("input.docx")
-   prev_header = doc.sections[0].headers_footers[HeaderFooterType.HEADER_PRIMARY]
-   cloned_header = prev_header.clone()
+   prev_header = doc.sections[0].headers_footers.header_primary
+   cloned_header = prev_header.clone(True)
    doc.sections[1].headers_footers.add(cloned_header)
    ```
 
@@ -144,7 +144,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
    **A:** Enable the corresponding flags on `PageSetup` and then create headers of the appropriate `HeaderFooterType`:  
 
    ```python
-   from aspose.words import Document, HeaderFooterType, PageSetup
+   from aspose.words import Document, DocumentBuilder, HeaderFooterType
    doc = Document()
    section = doc.sections[0]
    section.page_setup.different_first_page_header_footer = True
@@ -166,7 +166,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
    **A:** The field must be evaluated. Call `Document.update_fields()` before saving, or open the document in a viewer that updates fields automatically:  
 
    ```python
-   from aspose.words import Document, DocumentBuilder
+   from aspose.words import Document, DocumentBuilder, HeaderFooterType
    doc = Document()
    builder = DocumentBuilder(doc)
    builder.move_to_header_footer(HeaderFooterType.FOOTER_PRIMARY)

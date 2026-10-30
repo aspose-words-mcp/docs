@@ -111,7 +111,7 @@ The new licensing mechanism will be used along with the existing licensing metho
 
 After completing all the necessary steps to obtain this type of license, you will receive the keys, not the license file. This metered key can be applied using the [Metered](https://reference.aspose.com/words/python-net/aspose.words/metered/) class specially introduced for this purpose.
 
-Do not call the **SetMeteredKey** method frequently so that this licensing method properly accumulates consumption and reports it to us. Just instantiate the Aspose.Words library, call **SetMeteredKey** once, then leave the library instantiated and reuse it.
+Do not call the **set_metered_key** method frequently so that this licensing method properly accumulates consumption and reports it to us. Just instantiate the Aspose.Words library, call **set_metered_key** once, then leave the library instantiated and reuse it.
 
 The following code example shows how to set metered public and private keys:
 
@@ -141,24 +141,24 @@ To solve the problem, rename the file to remove the invisible .xml extension. We
 
 If you use multiple Aspose products in your application, such as Aspose.Words and `Aspose.Cells`, here are a few useful tips:
 
-* Set the License for each Aspose product separately. Even if you have a single license file for all components, for example, "Aspose.Total.lic", you still need to call [set_license](https://reference.aspose.com/words/python-net/aspose.words/license/set_license/) separately for each Aspose product that you use in your application.
+* Set the License for each Aspose product separately. Even if you have a single license file for all components, for example, "Aspose.Total.Python.NET.lic", you still need to call [set_license](https://reference.aspose.com/words/python-net/aspose.words/license/set_license/) separately for each Aspose product that you use in your application.
 * Use the Fully Qualified License Class Name. Each Aspose product has a **License** class in its own namespace. For example, Aspose.Words has [aspose.words.License](https://reference.aspose.com/words/python-net/aspose.words/license/) and `Aspose.Cells` has **aspose.cells.License** class. Using the fully qualified class name allows you to avoid confusion as to which license applies to which product.
 
 ------ 
 
 ## FAQ
 
-1. Q: How do I apply a license from a file in Python via .NET?  
-   A: Call `aspose.words.License().set_license("path/to/your/license.file")` early in your application, before creating any Aspose.Words objects. The method searches the specified path and loads the XML license. If the file is in the same folder as your script, you can pass just the file name.
+1. **Q:** How do I apply a license from a file in Python via .NET?  
+   **A:** Call `aspose.words.License().set_license("path/to/your/license.file")` early in your application, before creating any Aspose.Words objects. The method searches the specified path and loads the XML license. If the file is in the same folder as your script, you can pass just the file name.
 
-2. Q: I get a “Cannot find license filename” exception – what should I check?  
-   A: Verify that the actual file name matches what you pass to `set_license`. Windows may hide the “.xml” extension added by the browser, resulting in a name like `Aspose.Words.Python.NET.lic.XML`. Rename the file to remove the hidden extension or disable “hide extensions” in Explorer, then provide the correct name to `set_license`.
+2. **Q:** I get a “Cannot find license filename” exception – what should I check?  
+   **A:** Verify that the actual file name matches what you pass to `set_license`. Windows may hide the “.xml” extension added by the browser, resulting in a name like `Aspose.Words.Python.NET.lic.XML`. Rename the file to remove the hidden extension or disable “hide extensions” in Explorer, then provide the correct name to `set_license`.
 
-3. Q: Can an Aspose.Total .NET license be used with Aspose.Words for Python via .NET?  
-   A: Yes. The Aspose.Total .NET license file can be used, but you must call `set_license` for each product you use (e.g., `aspose.words.License().set_license(...)` and `aspose.cells.License().set_license(...)`). The same license file works for all products when applied separately.
+3. **Q:** Can an Aspose.Total .NET license be used with Aspose.Words for Python via .NET?  
+   **A:** No. A .NET license is not valid for this product. Use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`). With an Aspose.Total license, call `set_license` for each product you use (e.g., `aspose.words.License().set_license(...)` and `aspose.cells.License().set_license(...)`).
 
-4. Q: What are the requirements for using a metered license?  
-   A: Obtain the public and private keys from the Aspose portal, then call `aspose.words.Metered.set_metered_key(public_key, private_key)`. A stable Internet connection is required because the library contacts Aspose servers to record usage. Call this once at startup; if connectivity is lost for more than 24 hours, the library reverts to evaluation mode, so you may need to re‑apply the key.
+4. **Q:** What are the requirements for using a metered license?  
+   **A:** Obtain the public and private keys from the Aspose portal, then call `aspose.words.Metered.set_metered_key(public_key, private_key)`. A stable Internet connection is required because the library contacts Aspose servers to record usage. Call this once at startup; if connectivity is lost for more than 24 hours, the library reverts to evaluation mode, so you may need to re‑apply the key.
 
-5. Q: Is it safe to call `set_license` multiple times in my code?  
-   A: Yes. Re‑calling `set_license` does not cause errors, but it adds unnecessary overhead. It is best practice to set the license once during application initialization and avoid repeated calls.
+5. **Q:** Is it safe to call `set_license` multiple times in my code?  
+   **A:** Yes. Re‑calling `set_license` does not cause errors, but it adds unnecessary overhead. It is best practice to set the license once during application initialization and avoid repeated calls.

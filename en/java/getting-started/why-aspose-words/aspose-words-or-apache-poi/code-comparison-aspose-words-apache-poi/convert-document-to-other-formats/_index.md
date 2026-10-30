@@ -84,6 +84,6 @@ outputStream.close();
 
 {{% alert color="primary" %}}
 
-For more details, visit [How to Convert a Document to PDF](/words/java/convert-a-document-to-pdf/#convert-a-document-to-pdf).
+For more details, visit [How to Convert a Document to PDF](/words/java/convert-a-document-to-pdf/#convert-a-word-document-to-pdf).
 
 {{% /alert %}}

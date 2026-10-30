@@ -31,7 +31,7 @@ When choosing a specific solution, users compare products and evaluate the benef
 
 The answer to the first question is simple – no. Aspose components are completely independent and are not affiliated with, authorized, sponsored, or otherwise approved by Microsoft Corporation.
 
-The shortest answer we could give to the second question is that the main reason for a variety of reasons is that Microsoft itself strongly recommends against using Office Automation from software solutions: [Considerations for server-side Automation of Office](https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2).
+The shortest answer we could give to the second question is that the main reason for a variety of reasons is that Microsoft itself strongly recommends against using Office Automation from software solutions: [Considerations for server-side Automation of Office](https://support.microsoft.com/en-us/visio/considerations-for-server-side-automation-of-office).
 
 {{% alert color="primary" %}}
 
@@ -101,4 +101,4 @@ The best part of purchasing an Aspose component or a component suite is accessin
 
 ## See Also
 
-* [Considerations for server-side Automation of Office](https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2)
+* [Considerations for server-side Automation of Office](https://support.microsoft.com/en-us/visio/considerations-for-server-side-automation-of-office)

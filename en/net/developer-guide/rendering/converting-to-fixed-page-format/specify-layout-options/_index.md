@@ -29,10 +29,10 @@ For a complete list of parameters such as [ContinuousSectionPageNumberingRestart
 
 Aspose.Words allows to manage formatting marks using the following properties:
 
-- [ShowHiddenText](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/showhiddentext/)– a `Boolean` value, which specifies whether the hidden text is rendered.
-- [ShowParagraphMarks](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/showparagraphmarks/)– a `Boolean` value, which specifies whether paragraph mark characters are rendered.
+- [ShowHiddenText](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/showhiddentext/) – a `Boolean` value, which specifies whether the hidden text is rendered.
+- [ShowParagraphMarks](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/showparagraphmarks/) – a `Boolean` value, which specifies whether paragraph mark characters are rendered.
 
-The page depicted in the example below contains three paragraphs. The second one is hidden. A user can change the**ShowHiddenText**option to display this hidden text on the page.Also, each paragraph has a paragraph mark at the end. The paragraph mark usually is not visible unless the**ShowParagraphMarks**propertyis set to render it.
+The page depicted in the example below contains three paragraphs. The second one is hidden. A user can change the **ShowHiddenText** option to display this hidden text on the page. Also, each paragraph has a paragraph mark at the end. The paragraph mark usually is not visible unless the **ShowParagraphMarks** property is set to render it.
 
 ![specify-layout-options_1](specify-layout-options-1.png)
 
@@ -42,13 +42,13 @@ In Microsoft Word, these parameters are set using the "File → Options → Disp
 
 ## Comments and Revisions
 
-With Aspose.Words, you can render document comments that will look the same as in Microsoft Word.To specify whether comments are rendered, use the [CommentDisplayMode](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/commentdisplaymode/)property.
+With Aspose.Words, you can render document comments that will look the same as in Microsoft Word. To specify whether comments are rendered, use the [CommentDisplayMode](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/commentdisplaymode/) property.
 
 In Microsoft Word, this parameter is set using the "Track Changes Options" dialog box, as shown below:
 
 ![specify-layout-options_3](specify-layout-options-3.jpg)
 
-Also, Aspose.Words allows you to display revisions in a document. Use the [RevisionOptions](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/revisionoptions/) property of the**LayoutOptions**class to define whether the document revisions are displayed. To control their appearance (revision highlighting color, revision bar color, etc.), use the [RevisonOptions](https://reference.aspose.com/words/net/aspose.words.layout/revisionoptions/) class.
+Also, Aspose.Words allows you to display revisions in a document. Use the [RevisionOptions](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/revisionoptions/) property of the **LayoutOptions** class to define whether the document revisions are displayed. To control their appearance (revision highlighting color, revision bar color, etc.), use the [RevisonOptions](https://reference.aspose.com/words/net/aspose.words.layout/revisionoptions/) class.
 
 You can also have revisions displayed as comments to the content. For this purpose, use the [CommentDisplayMode](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/commentdisplaymode/) property and [ShowInBalloons](https://reference.aspose.com/words/net/aspose.words.layout/commentdisplaymode/) value.
 
@@ -60,7 +60,7 @@ The image below shows how Aspose.Words renders comments and the Delete revisions
 
 <img src="specify-layout-options-4.png" alt="comments_and_revisions_example_aspose_words_net" style="width:800px"/>
 
-## Text Shaperfor Advanced Typography Rendering
+## Text Shaper for Advanced Typography Rendering
 
 The [TextShaperFactory](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/textshaperfactory/) property enables you to set the text shaping functionality, as well as the `OpenType` features support.
 
@@ -78,10 +78,10 @@ Text shaping will be enabled only when exporting a document to PDF or XPS.
 ## Related APIs
 
 
-- [`LayoutOptions`](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/)
-- [`RevisionOptions`](https://reference.aspose.com/words/net/aspose.words.layout/revisionoptions/)
-- [`CommentDisplayMode`](https://reference.aspose.com/words/net/aspose.words.layout/commentdisplaymode/)
-- [`TextShaperFactory`](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/textshaperfactory/)
+- [LayoutOptions](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/)
+- [RevisionOptions](https://reference.aspose.com/words/net/aspose.words.layout/revisionoptions/)
+- [CommentDisplayMode](https://reference.aspose.com/words/net/aspose.words.layout/commentdisplaymode/)
+- [TextShaperFactory](https://reference.aspose.com/words/net/aspose.words.layout/layoutoptions/textshaperfactory/)
 
 ## FAQ
 
@@ -96,23 +96,23 @@ Text shaping will be enabled only when exporting a document to PDF or XPS.
    ```
 
 2. **Q:** My revisions are not appearing in the output; how do I display them?  
-   **A:** Enable revision rendering by configuring `RevisionOptions` and, if desired, `CommentDisplayMode`. Set `RevisionOptions.ShowRevisions` to `true` and choose how revisions are shown (e.g., as balloons). Example:  
+   **A:** Enable revision rendering by configuring `RevisionOptions` and, if desired, `CommentDisplayMode`. Set `RevisionOptions.ShowRevisionMarks` to `true` and choose how revisions are shown (e.g., in balloons with `RevisionOptions.ShowInBalloons`). Example:  
 
    ```csharp
    Document doc = new Document("tracked.docx");
    LayoutOptions layout = doc.LayoutOptions;
-   layout.RevisionOptions.ShowRevisions = true;
+   layout.RevisionOptions.ShowRevisionMarks = true;
    layout.CommentDisplayMode = CommentDisplayMode.ShowInBalloons;
    doc.Save("tracked_output.pdf");
    ```
 
 3. **Q:** How do I enable proper rendering of complex scripts and OpenType features?  
-   **A:** Assign a text shaper to `LayoutOptions.TextShaperFactory`. The default shaper handles most cases, but you can specify a custom one if needed. Example:  
+   **A:** Assign a text shaper factory to `LayoutOptions.TextShaperFactory`, for example `HarfBuzzTextShaperFactory.Instance` from the Aspose.Words.Shaping.HarfBuzz package. Example:  
 
    ```csharp
    Document doc = new Document("complex_script.docx");
    LayoutOptions layout = doc.LayoutOptions;
-   layout.TextShaperFactory = TextShaperFactory.Default;
+   layout.TextShaperFactory = HarfBuzzTextShaperFactory.Instance;
    doc.Save("complex_output.pdf");
    ```
 

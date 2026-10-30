@@ -54,7 +54,7 @@ The following table contains some of the popular features supported by Aspose.Wo
 | Protect or encrypt a document in a variety of ways           | The [Protect or Encrypt a Document](/words/java/protect-or-encrypt-a-document/) section |
 | Manipulate tables                                            | The [Working with Tables](/words/java/working-with-tables/) section |
 | Manipulate form fields                                       | The [Working with Form Fields](/words/java/working-with-form-fields/) article |
-| Manipulate graphic elements such as images, charts, watermark, and others | The [Working with Graphic Elements](/words/java/working-with-graphic-elements/) section |
+| Manipulate graphic elements such as images, charts, watermark, and others | The [Programming with Documents](/words/java/programming-with-documents/) section |
 
 The table is not complete, so you can check [our documentation](/words/java/) for the feature you are interested in.
 

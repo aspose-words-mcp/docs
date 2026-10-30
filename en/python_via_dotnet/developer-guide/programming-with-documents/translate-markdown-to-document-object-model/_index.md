@@ -120,16 +120,16 @@ Aspose.Words also allows to translate tables into DOM, as shown below:
 ## FAQ
 
 1. **Q:** How should heading styles be named when translating Markdown headings to the Aspose.Words DOM?  
-   **A:** Use built‑in heading styles with the exact pattern `Heading N` where **N** is the level (1‑9). For Setext headings the importer creates a style named `SetextHeading` that is based on the corresponding `Heading N` style. Do not add any extra prefixes or suffixes; otherwise the paragraph will be treated as a normal paragraph.
+   **A:** Use built‑in heading styles with the exact pattern `Heading N` where **N** is the level (1‑9). Do not add any prefixes or suffixes to `Heading N`; otherwise the paragraph will be treated as a normal paragraph. For Setext headings the importer creates a `SetextHeading` style with a suffix (it uses `1` and `2`; any suffix is allowed) that is based on the corresponding `Heading N` style.
 
 2. **Q:** How can I change the bullet or number format of a Markdown list after it has been imported?  
-   **A:** After creating the list with `builder.list_format.apply_bullet_default()` or `apply_number_default()`, modify the first level’s `number_format` property. For example, `builder.list_format.list.list_levels[0].number_format = "-"` changes a bulleted list to use a hyphen, and `builder.list_format.list.list_levels[0].number_format = "1)"` changes an ordered list to use a closing parenthesis.
+   **A:** After creating the list with `builder.list_format.apply_bullet_default()` or `apply_number_default()`, modify the first level’s `number_format` property. For example, `builder.list_format.list.list_levels[0].number_format = "-"` changes a bulleted list to use a hyphen, and `builder.list_format.list.list_levels[0].number_format = "\x00)"` (`\x00` is the placeholder for the level number) changes an ordered list to use a closing parenthesis.
 
 3. **Q:** What is the recommended way to represent nested blockquotes in the DOM?  
    **A:** Create a paragraph style named `Quote` for the first level. For each deeper level, add a new paragraph style (e.g., `Quote1`, `Quote2`) and set its `base_style_name` to the style of the previous level. The importer will then map nested `>` symbols to these inherited styles.
 
 4. **Q:** How can I adjust the font size of Markdown content that has been imported into a document?  
-   **A:** Use `DocumentBuilder` to set the font size before writing the text, e.g., `builder.font.size = 14`. If the content is already present, retrieve the relevant paragraphs and set `paragraph.paragraph_format.font.size = 14` for each paragraph that needs resizing.
+   **A:** Use `DocumentBuilder` to set the font size before writing the text, e.g., `builder.font.size = 14`. If the content is already present, retrieve the relevant paragraphs and set `run.font.size = 14` for the runs of each paragraph that needs resizing (or change `font.size` of the paragraph style).
 
 5. **Q:** How are indented and fenced code blocks represented, and can I customize their appearance?  
-   **A:** Indented code blocks use a paragraph style `IndentedCode[...]`; fenced code blocks use `FencedCode[.][info]`. You can create or modify these styles via `doc.styles.add(aw.StyleType.PARAGRAPH, "IndentedCode")` or `FencedCode.C#`, then adjust properties such as `paragraph_format.font.name`, `font.size`, or `paragraph_format.shading` to change the visual appearance of the code blocks.
+   **A:** Indented code blocks use a paragraph style `IndentedCode[...]`; fenced code blocks use `FencedCode[.][info]`. You can create or modify these styles, e.g., `style = doc.styles.add(aw.StyleType.PARAGRAPH, "IndentedCode")` (or `"FencedCode.C#"` for a fenced block with the `C#` info string), then adjust properties such as `style.font.name`, `style.font.size`, or `style.paragraph_format.shading` to change the visual appearance of the code blocks.

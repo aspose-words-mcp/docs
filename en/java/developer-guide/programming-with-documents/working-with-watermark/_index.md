@@ -22,7 +22,7 @@ This page explains how to work with watermarks in Word documents.
 
 {{% /alert %}}
 
-This topic discusses how to work programmatically with watermark using Aspose.Words. A watermark is a background image that displays behind the text in a document.A watermark can contain a text or an image represented by the [Watermark](https://reference.aspose.com/words/java/com.aspose.words/watermark/) class.
+This topic discusses how to work programmatically with watermark using Aspose.Words. A watermark is a background image that displays behind the text in a document. A watermark can contain a text or an image represented by the [Watermark](https://reference.aspose.com/words/java/com.aspose.words/watermark/) class.
 
 {{% alert color="primary" %}}
 
@@ -38,13 +38,13 @@ In Microsoft Word, a watermark can easily be inserted in a document using the In
 
 ### Add Text Watermark
 
-The following code example demonstrates how to insert a text watermark in a document by defining [TextWatermarkOptions](https://reference.aspose.com/words/java/com.aspose.words/textwatermarkoptions/) using the [SetText](https://reference.aspose.com/words/java/com.aspose.words/watermark/#setText-java.lang.String) method:
+The following code example demonstrates how to insert a text watermark in a document by defining [TextWatermarkOptions](https://reference.aspose.com/words/java/com.aspose.words/textwatermarkoptions/) using the [setText()](https://reference.aspose.com/words/java/com.aspose.words/watermark/#setText-java.lang.String) method:
 
 {{< gist "aspose-words-gists" "45164877cf7053ae51abc84d2e3bc172" "add-text-watermark.java" >}}
 
 ### Add Image Watermark
 
-The following code example demonstrates how to insert an image watermark in a document by defining [ImageWatermarkOptions](https://reference.aspose.com/words/java/com.aspose.words/imagewatermarkoptions/) using the [SetImage](https://reference.aspose.com/words/java/com.aspose.words/watermark/#setImage-java.awt.image.BufferedImage) method:
+The following code example demonstrates how to insert an image watermark in a document by defining [ImageWatermarkOptions](https://reference.aspose.com/words/java/com.aspose.words/imagewatermarkoptions/) using the [setImage()](https://reference.aspose.com/words/java/com.aspose.words/watermark/#setImage-java.awt.image.BufferedImage) method:
 
 {{< gist "aspose-words-gists" "45164877cf7053ae51abc84d2e3bc172" "add-image-watermark.java" >}}
 
@@ -81,7 +81,7 @@ The following code example show you how to set the name of the watermark shape a
 
 ## Add a Watermark into a Table Cell
 
-Sometimes you need to insert a watermark/image into a table's cell and display it outside the table,you can use the [IsLayoutInCell](https://reference.aspose.com/words/java/com.aspose.words/shapebase/#isLayoutInCell-boolean) property. This property gets or sets a flag indicating whether the shape is displayed inside a table or outside of it. Note that this property works only when you optimize the document forMicrosoftWord2010 usingthe [OptimizeFor](https://reference.aspose.com/words/java/com.aspose.words/compatibilityoptions/#optimizeFor-int) method.
+Sometimes you need to insert a watermark/image into a table's cell and display it outside the table, you can use the [isLayoutInCell()](https://reference.aspose.com/words/java/com.aspose.words/shapebase/#isLayoutInCell-boolean) property. This property gets or sets a flag indicating whether the shape is displayed inside a table or outside of it. Note that this property works only when you optimize the document for Microsoft Word 2010 using the [optimizeFor()](https://reference.aspose.com/words/java/com.aspose.words/compatibilityoptions/#optimizeFor-int) method.
 
 The following code example shows how to use this property:
 
@@ -93,13 +93,13 @@ The following code example shows how to use this property:
    **A:** Insert the watermark into a header/footer that is linked only to the desired page (e.g., using a different first‑page header). Set the watermark's `Name` property so you can later remove or modify it without affecting other pages.
 
 2. **Q:** Can I control the opacity of a text or image watermark?  
-   **A:** Yes. Use `TextWatermarkOptions.setOpacity(double)` for text watermarks or `ImageWatermarkOptions.setOpacity(double)` for image watermarks. The value ranges from 0.0 (fully transparent) to 1.0 (fully opaque).
+   **A:** Not with an exact opacity value. For text watermarks, `TextWatermarkOptions.isSemitrasparent(true)` makes the text semi-transparent; for image watermarks, `ImageWatermarkOptions.isWashout(true)` applies a washout effect.
 
 3. **Q:** How do I remove a watermark that was added without specifying a name?  
-   **A:** If the watermark was added without a name, you can retrieve all shapes of type `ShapeType.WATERMARK` from the document's headers/footers and call `remove()` on the matching shape. Naming the watermark when adding it (`watermark.Name("MyMark")`) simplifies later removal.
+   **A:** Call `doc.getWatermark().remove()`; it removes the watermark added with `Watermark.setText` or `Watermark.setImage`, with or without a name. For a watermark shape you added yourself, naming it (`watermark.setName("MyMark")`) makes it easy to find and remove later.
 
 4. **Q:** Is it possible to add a watermark inside a table cell and have it appear behind the cell's text?  
-   **A:** Yes. Set `ShapeBase.setIsLayoutInCell(false)` on the watermark shape and ensure the document is optimized for Word 2010 (`CompatibilityOptions.optimizeFor(CompatibilityOptions.OPTIMIZE_FOR_WORD_2010)`). This places the watermark outside the cell layout while keeping it visually aligned with the table.
+   **A:** Yes. Call `isLayoutInCell(false)` on the watermark shape and ensure the document is optimized for Word 2010 (`doc.getCompatibilityOptions().optimizeFor(MsWordVersion.WORD_2010)`). This places the watermark outside the cell layout while keeping it visually aligned with the table.
 
 5. **Q:** Can I add a watermark to a document that is being generated in memory (without saving to disk first)?  
    **A:** Absolutely. Create a `Document` instance from a stream or from scratch, apply the watermark using the `Watermark` class, and then save the document directly to a `ByteArrayOutputStream` or any other output stream. No intermediate file is required.

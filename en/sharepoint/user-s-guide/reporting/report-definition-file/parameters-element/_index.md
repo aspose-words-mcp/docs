@@ -10,7 +10,7 @@ url: /sharepoint/parameters-element/
 timestamp: 2024-10-21-11-17-44
 ---
 
-The Parameters element contains information about report parameters. Aspose.Words for SharePoint requests the parameter values from a user when making a report via user interface. When generating controls for entering parameters, it takes parameter type into account.You set the parameters through the API when making a report programmatically.
+The Parameters element contains information about report parameters. Aspose.Words for SharePoint requests the parameter values from a user when making a report via user interface. When generating controls for entering parameters, it takes parameter type into account. You set the parameters through the API when making a report programmatically.
 
 | Name | Cardinality | Has Children | Description |
 | :- | :- | :- | :- |

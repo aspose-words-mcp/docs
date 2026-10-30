@@ -136,7 +136,7 @@ Please see the result below:
 
 ## How to Define Default Options for ChartDataLabels of ChartSeries
 
-The [ChartDataLabelCollection](https://reference.aspose.com/words/net/aspose.words.drawing.charts/chartdatalabelcollection/) class defines properties which can be used to set default options for **ChartDataLabels** for Chart **Series**. These properties includeShowCategoryName, ShowBubbleSize, ShowPercentage, ShowSeriesName, ShowValue etc:
+The [ChartDataLabelCollection](https://reference.aspose.com/words/net/aspose.words.drawing.charts/chartdatalabelcollection/) class defines properties which can be used to set default options for **ChartDataLabels** for Chart **Series**. These properties include ShowCategoryName, ShowBubbleSize, ShowPercentage, ShowSeriesName, ShowValue etc:
 
 {{< gist "aspose-words-gists" "23d39c0b874655d7e7354f1ecc122e39" "default-options-for-data-labels.cs" >}}
 
@@ -152,7 +152,7 @@ The following code example shows how to format a number of the data label:
 
 {{< gist "aspose-words-gists" "23d39c0b874655d7e7354f1ecc122e39" "format-number-of-data-label.cs" >}}
 
-## How toSet Chart Axis Properties
+## How to Set Chart Axis Properties
 
 If you want to work with chart axis, scaling, and display units for the value axis, please use [ChartAxis](https://reference.aspose.com/words/net/aspose.words.drawing.charts/chartaxis/), [AxisDisplayUnit](https://reference.aspose.com/words/net/aspose.words.drawing.charts/axisdisplayunit/), and [AxisScaling](https://reference.aspose.com/words/net/aspose.words.drawing.charts/axisscaling/) classes.
 
@@ -168,7 +168,7 @@ The following code example shows how to set date/time values to axis properties:
 
 ### How to Format Number Value of Axis
 
-The following code example shows how tochange the format of numbers on the value axis:
+The following code example shows how to change the format of numbers on the value axis:
 
 {{< gist "aspose-words-gists" "23d39c0b874655d7e7354f1ecc122e39" "number-format-for-axis.cs" >}}
 
@@ -176,13 +176,13 @@ The following code example shows how tochange the format of numbers on the value
 
 The `AxisBound` class represents a minimum or maximum bound of axis values. Bound can be specified as a numeric, date-time or a special "auto" value.
 
-The following code example shows howto set bounds of an axis:
+The following code example shows how to set bounds of an axis:
 
 {{< gist "aspose-words-gists" "23d39c0b874655d7e7354f1ecc122e39" "bounds-of-axis.cs" >}}
 
 ### How to Set Interval Unit Between Labels
 
-The following code example shows howto setthe interval unit between labels on an axis:
+The following code example shows how to set the interval unit between labels on an axis:
 
 {{< gist "aspose-words-gists" "23d39c0b874655d7e7354f1ecc122e39" "interval-unit-between-labels-on-axis.cs" >}}
 

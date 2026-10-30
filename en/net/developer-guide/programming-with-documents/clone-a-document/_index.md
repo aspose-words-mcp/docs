@@ -51,7 +51,7 @@ The following code example shows how to clone a document and create a duplicate 
 
 - [Document.Clone()](https://reference.aspose.com/words/net/aspose.words/document/clone/)
 - [Node.Clone()](https://reference.aspose.com/words/net/aspose.words/node/clone/)
-- [Node.Clone(CloneOptions)](https://reference.aspose.com/words/net/aspose.words/node/clone/)
+- [Node.Clone(Boolean)](https://reference.aspose.com/words/net/aspose.words/node/clone/)
 
 ## FAQ
 
@@ -62,7 +62,7 @@ The following code example shows how to clone a document and create a duplicate 
    **A:** Yes. The `Clone` method performs a deep copy of the entire document object model, including page setup, styles, custom document properties, headers/footers, and any other settings. The cloned document is an independent replica that can be saved or edited separately.
 
 3. **Q:** How can I clone only a specific part of a document, like a section or a paragraph?  
-   **A:** Individual nodes also implement a `Clone` method. Retrieve the node you want to duplicate (e.g., a `Section` or `Paragraph`) and call its `Clone` method, optionally passing `CloneOptions` to include or exclude child nodes. The returned node can then be inserted into another document.
+   **A:** Individual nodes also implement a `Clone` method. Retrieve the node you want to duplicate (e.g., a `Section` or `Paragraph`) and call its `Clone(bool isCloneChildren)` method: `true` copies the node with all its child nodes, `false` copies only the node itself. The clone belongs to the same document; to insert a node into another document, use `ImportNode` on the target document instead.
 
 4. **Q:** Will cloning a protected document retain its protection settings, and can I modify them after cloning?  
    **A:** The protection settings are part of the document's properties, so they are cloned as well. After cloning, you can change or remove protection on the cloned document using the `Protection` API without affecting the original document's protection.

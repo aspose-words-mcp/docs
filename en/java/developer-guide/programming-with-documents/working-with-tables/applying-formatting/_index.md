@@ -38,7 +38,7 @@ To apply formatting to a table, you can use the properties available on the corr
 
 {{% alert color="primary" %}}
 
-Note that the table must have at least one row before the table properties can be applied. This means that when building a table with the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/), this formatting must be done after the first call to [InsertCell](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCell(), or after the first row is added to the table, or when nodes are inserted directly into the DOM.
+Note that the table must have at least one row before the table properties can be applied. This means that when building a table with the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/), this formatting must be done after the first call to [insertCell()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCell), or after the first row is added to the table, or when nodes are inserted directly into the DOM.
 
 {{% /alert %}}
 
@@ -130,8 +130,8 @@ The simplest way to set the row height is to use the **DocumentBuilder**. Using 
 
 In Aspose.Words, table row height is controlled by:
 
-- the row height property – [Height](https://reference.aspose.com/words/java/com.aspose.words/row/format#Height)
-- the height rule property for the given row – [HeightRule](https://reference.aspose.com/words/java/com.aspose.words/row/format#HeightRule)
+- the row height property – [getHeight()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getHeight)
+- the height rule property for the given row – [getHeightRule()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getHeightRule)
 
 At the same time, a different height can be set for each row – this allows you to widely control the table settings.
 
@@ -180,9 +180,9 @@ The desired width of a table or individual cells is defined through the preferre
 
 The appropriate preferred width type and value are set using the methods of the [PreferredWidth](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/) class:
 
-* the [Auto](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#AUTO) method to specify auto or “no preferred width”
-* the [FromPercent](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#fromPercent-double) method to specify a percentage width
-* the [FromPoints](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#fromPoints-double) method to specify the width in points
+* the [AUTO](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#AUTO) field to specify auto or “no preferred width”
+* the [fromPercent()](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#fromPercent-double) method to specify a percentage width
+* the [fromPoints()](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#fromPoints-double) method to specify the width in points
 
 The pictures below show a representation of the *preferred width setting features* in Microsoft Word and their corresponding properties in Aspose.Words.
 
@@ -200,7 +200,7 @@ Before you can use the preferred width in a table, you must ensure that the tabl
 
 #### Specify the Preferred Table or Cell Width
 
-In Aspose.Words, table and cell widths are set using the [Table.PreferredWidth](https://reference.aspose.com/words/java/com.aspose.words/table/#getPreferredWidth) property and the [CellFormat.PreferredWidth](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getPreferredWidth) property, with options available in the [PreferredWidthType](https://reference.aspose.com/words/java/com.aspose.words/preferredwidthtype/) enumeration:
+In Aspose.Words, table and cell widths are set using the [Table.getPreferredWidth()](https://reference.aspose.com/words/java/com.aspose.words/table/#getPreferredWidth) property and the [CellFormat.getPreferredWidth()](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getPreferredWidth) property, with options available in the [PreferredWidthType](https://reference.aspose.com/words/java/com.aspose.words/preferredwidthtype/) enumeration:
 
 - **Auto**, which is equivalent to no preferred width set
 - **Percent**, which fits the element relative to the available space in the window or container size, and recalculates the value when the available width changes
@@ -212,13 +212,13 @@ By default, a table can be described as being fitted to 100% of the available sp
 
 {{% /alert %}}
 
-Using the [Table.PreferredWidth](https://reference.aspose.com/words/java/com.aspose.words/table/#getPreferredWidth) property will adjust its preferred width relative to its container: page, text column, or outer table cell if it is a nested table.
+Using the [Table.getPreferredWidth()](https://reference.aspose.com/words/java/com.aspose.words/table/#getPreferredWidth) property will adjust its preferred width relative to its container: page, text column, or outer table cell if it is a nested table.
 
 The following code example shows how to set the table to auto-fit to 50% of the page width:
 
 {{< gist "aspose-words-gists" "1c794bd06eb1e3b67f0368daa6f23b1f" "auto-fit-page-width.java" >}}
 
-Using the [CellFormat.PreferredWidth](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getPreferredWidth) property on a given cell will adjust its preferred width.
+Using the [CellFormat.getPreferredWidth()](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getPreferredWidth) property on a given cell will adjust its preferred width.
 
 The following code example shows how to set the different preferred width settings:
 
@@ -226,7 +226,7 @@ The following code example shows how to set the different preferred width settin
 
 #### Find Preferred Width Type and Value
 
-You can use the [Type](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#getType) and [Value](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#getValue) properties to find the preferred width details of the desired table or cell.
+You can use the [getType()](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#getType) and [getValue()](https://reference.aspose.com/words/java/com.aspose.words/preferredwidth/#getValue) properties to find the preferred width details of the desired table or cell.
 
 The following code example shows how to retrieve the preferred width type of a table cell:
 
@@ -240,11 +240,11 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ### How to Set Autofit
 
-The [AllowAutoFit](https://reference.aspose.com/words/java/com.aspose.words/table/#getAllowAutoFit) property allows cells in a table to grow and shrink according to a selected criterion. For example, you can use the **AutoFit to Window** option to fit the table to the width of the page, and the **AutoFit to Content** option to allow each cell to grow or shrink according to its content.
+The [getAllowAutoFit()](https://reference.aspose.com/words/java/com.aspose.words/table/#getAllowAutoFit) property allows cells in a table to grow and shrink according to a selected criterion. For example, you can use the **AutoFit to Window** option to fit the table to the width of the page, and the **AutoFit to Content** option to allow each cell to grow or shrink according to its content.
 
 {{% alert color="primary" %}}
 
-Additionally, the **AllowAutoFit** property can be used in conjunction with a preferred cell width to format a cell that automatically fits its content, but also has an initial width. If necessary, the cell width can then grow past this width.
+Additionally, the **getAllowAutoFit()** property can be used in conjunction with a preferred cell width to format a cell that automatically fits its content, but also has an initial width. If necessary, the cell width can then grow past this width.
 
 {{% /alert %}}
 
@@ -260,8 +260,8 @@ The following code example shows how to set a table to shrink or grow each cell 
 
 When autofitting to a window is applied to a table, the following operations are actually performed behind the scenes:
 
-1. The **Table.AllowAutoFit** property is enabled to automatically resize columns to fit the available content, using a **Table.PreferredWidth** value of 100%
-2. **CellFormat.PreferredWidth** is removed from all table cells
+1. The **Table.getAllowAutoFit()** property is enabled to automatically resize columns to fit the available content, using a **Table.getPreferredWidth()** value of 100%
+2. **CellFormat.getPreferredWidth()** is removed from all table cells
    {{% alert color="primary" %}}
    Note that this is slightly different from the Microsoft Word behavior, where each cell's preferred width is set to appropriate values based on their current size and content. Aspose.Words does not update the preferred width so they just get cleared instead.
    {{% /alert %}}
@@ -282,12 +282,12 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 When the table is autofitted the content, the following steps are actually performed behind the scenes:
 
-1. The **Table.AllowAutoFit** property is enabled to automatically resize each cell according to its content
+1. The **Table.getAllowAutoFit()** property is enabled to automatically resize each cell according to its content
 
-2. The preferred table width is removed from **Table.PreferredWidth**, **CellFormat.PreferredWidth** is removed for each table cell
+2. The preferred table width is removed from **Table.getPreferredWidth()**, **CellFormat.getPreferredWidth()** is removed for each table cell
    {{% alert color="primary" %}}
 
-   Note that this autofit option removes the preferred width from cells, just like in Microsoft Word. If you want to keep the column sizes and increase or decrease the columns to fit the content, you should set the **Table.AllowAutoFit** property to **True** on its own rather than using the autofit shortcut.{{% /alert %}}
+   Note that this autofit option removes the preferred width from cells, just like in Microsoft Word. If you want to keep the column sizes and increase or decrease the columns to fit the content, you should call **Table.setAllowAutoFit(true)** on its own rather than using the autofit shortcut.{{% /alert %}}
 
 3. Column widths are recalculated for the current table content – the end result is a table where the column widths and the width of the entire table are automatically resized to best fit the content as the user edits the text
 
@@ -305,13 +305,13 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 If a table has autofit disabled and fixed column widths are used instead, the following steps are performed:
 
-1. **Table.AllowAutoFit** property is disabled so columns do not grow or shrink to their content
-2. The preferred width of the entire table is removed from **Table.PreferredWidth**, **CellFormat.PreferredWidth** is removed from all table cells
-3. The end result is a table whose column widths are determined by the [CellFormat.Width](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getWidth) property, and whose columns are not automatically resized when the user enters text or when the page is resized
+1. **Table.getAllowAutoFit()** property is disabled so columns do not grow or shrink to their content
+2. The preferred width of the entire table is removed from **Table.getPreferredWidth()**, **CellFormat.getPreferredWidth()** is removed from all table cells
+3. The end result is a table whose column widths are determined by the [CellFormat.getWidth()](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getWidth) property, and whose columns are not automatically resized when the user enters text or when the page is resized
 
 {{% alert color="primary" %}}
 
-Note that if no width is specified for **CellFormat.Width**, the default value of one inch (72 points) is used.
+Note that if no width is specified for **CellFormat.getWidth()**, the default value of one inch (72 points) is used.
 
 {{% /alert %}}
 
@@ -327,17 +327,17 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ### Order of Precedence when Calculating Cell Width
 
-Aspose.Words allows users to define the width of a table or cell through multiple objects, including [CellFormat](https://reference.aspose.com/words/java/com.aspose.words/cellformat/) – its [Width](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getWidth) property is mostly left over from previous versions, however, it is still useful for simplifying setting the cell width.
+Aspose.Words allows users to define the width of a table or cell through multiple objects, including [CellFormat](https://reference.aspose.com/words/java/com.aspose.words/cellformat/) – its [getWidth()](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getWidth) property is mostly left over from previous versions, however, it is still useful for simplifying setting the cell width.
 
-It is important to know that the **CellFormat.Width** property works differently depending on which of the other width properties already exist in the table.
+It is important to know that the **CellFormat.getWidth()** property works differently depending on which of the other width properties already exist in the table.
 
 Aspose.Words uses the following order for calculating cell widths:
 
 | Order | Property                                                     | Description |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1     | [AllowAutoFit](https://reference.aspose.com/words/java/com.aspose.words/table/#getAllowAutoFit) is determined | If **AutoFit** is enabled:<br>- the table may grow past the preferred width to accommodate the content - it usually does not shrink below the preferred width<br>- any change to the **CellFormat.Width** value is ignored and the cell will fit to its contents instead |
-| 2     | [PreferredWidthType](https://reference.aspose.com/words/java/com.aspose.words/preferredwidthtype/) with a value of **Points** or **Percent** | **CellFormat.Width** is ignored                              |
-| 3     | [PreferredWidthType](https://reference.aspose.com/words/java/com.aspose.words/preferredwidthtype/) with a value of **Auto** | The value from **CellFormat.Width** is copied and becomes the cell's preferred width (in points) |
+| 1     | [getAllowAutoFit()](https://reference.aspose.com/words/java/com.aspose.words/table/#getAllowAutoFit) is determined | If **AutoFit** is enabled:<br>- the table may grow past the preferred width to accommodate the content - it usually does not shrink below the preferred width<br>- any change to the **CellFormat.getWidth()** value is ignored and the cell will fit to its contents instead |
+| 2     | [PreferredWidthType](https://reference.aspose.com/words/java/com.aspose.words/preferredwidthtype/) with a value of **Points** or **Percent** | **CellFormat.getWidth()** is ignored                              |
+| 3     | [PreferredWidthType](https://reference.aspose.com/words/java/com.aspose.words/preferredwidthtype/) with a value of **Auto** | The value from **CellFormat.getWidth()** is copied and becomes the cell's preferred width (in points) |
 
 {{% alert color="primary" %}}
 
@@ -353,7 +353,7 @@ While creating a fixed table layout, specify the cell width. A cell without widt
 
 ## Allow Spacing Between Cells
 
-You can get or set any additional space between table cells similar to the "Cell spacing" option in Microsoft Word. This can be done using the [AllowCellSpacing](https://reference.aspose.com/words/java/com.aspose.words/table/#getAllowCellSpacing) property.
+You can get or set any additional space between table cells similar to the "Cell spacing" option in Microsoft Word. This can be done using the [getAllowCellSpacing()](https://reference.aspose.com/words/java/com.aspose.words/table/#getAllowCellSpacing) property.
 
 An example of how these options are applied to a real table in a document can be seen in the picture below.
 
@@ -365,7 +365,7 @@ The following code example shows how to set the spacing between cells:
 
 ## Apply Borders and Shading
 
-Borders and shading can be applied either to the entire table using [Table.SetBorder](https://reference.aspose.com/words/java/com.aspose.words/table/#setBorder-int-int-double-java.awt.Color-boolean), [Table.SetBorders](https://reference.aspose.com/words/java/com.aspose.words/table/#setBorders-int-double-java.awt.Color) and [Table.SetShading](https://reference.aspose.com/words/java/com.aspose.words/table/#setShading-int-java.awt.Color-java.awt.Color), or only to specific cells using [CellFormat.Borders](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getBorders) and [CellFormat.Shading](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getShading). Additionally, row borders can be set using [RowFormat.Borders](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getBorders), however shading cannot be applied in this way.
+Borders and shading can be applied either to the entire table using [Table.setBorder](https://reference.aspose.com/words/java/com.aspose.words/table/#setBorder-int-int-double-java.awt.Color-boolean), [Table.setBorders](https://reference.aspose.com/words/java/com.aspose.words/table/#setBorders-int-double-java.awt.Color) and [Table.setShading](https://reference.aspose.com/words/java/com.aspose.words/table/#setShading-int-java.awt.Color-java.awt.Color), or only to specific cells using [CellFormat.getBorders()](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getBorders) and [CellFormat.getShading()](https://reference.aspose.com/words/java/com.aspose.words/cellformat/#getShading). Additionally, row borders can be set using [RowFormat.getBorders()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getBorders), however shading cannot be applied in this way.
 
 The pictures below show the border and shadow settings in Microsoft Word and their corresponding properties in Aspose.Words.
 
@@ -380,10 +380,10 @@ The following code example shows how to format a table and cell with different b
 ## FAQ
 
 1. **Q:** How can I set a fixed width for a specific table column?  
-   **A:** Use the `CellFormat.PreferredWidth` property on the target cell and set it with `PreferredWidth.fromPoints(double)` or `PreferredWidth.fromPercent(double)`. The column will adopt this width unless AutoFit overrides it.
+   **A:** Call `CellFormat.setPreferredWidth` on the target cell with `PreferredWidth.fromPoints(double)` or `PreferredWidth.fromPercent(double)`. The column will adopt this width unless AutoFit overrides it.
 
-2. **Q:** What is the difference between `AllowAutoFit` and `PreferredWidth`?  
-   **A:** `AllowAutoFit` lets the table automatically resize columns based on content. `PreferredWidth` defines an explicit width that the table or cell tries to achieve. If AutoFit is enabled, explicit widths may be ignored.
+2. **Q:** What is the difference between `getAllowAutoFit()` and `PreferredWidth`?  
+   **A:** `getAllowAutoFit()` lets the table automatically resize columns based on content. `PreferredWidth` defines an explicit width that the table or cell tries to achieve. If AutoFit is enabled, explicit widths may be ignored.
 
 3. **Q:** How do I add spacing between cells (cell spacing) programmatically?  
    **A:** Set `Table.setAllowCellSpacing(true)` and then assign a spacing value with `Table.setCellSpacing(double)` (the spacing is measured in points).
@@ -392,4 +392,4 @@ The following code example shows how to format a table and cell with different b
    **A:** Access the first `Row` object, retrieve its `RowFormat`, and use `RowFormat.getBorders().setLineStyle(LineStyle.SINGLE)` (or other styles) to customize the borders for that row alone.
 
 5. **Q:** How do I control row height and ensure it is respected?  
-   **A:** Use `Row.getRowFormat().setHeight(double)` to set the height in points and `Row.getRowFormat().setHeightRule(HeightRule.EXACT)` to enforce the exact height, preventing Word from adjusting it automatically.
+   **A:** Use `Row.getRowFormat().setHeight(double)` to set the height in points and `Row.getRowFormat().setHeightRule(HeightRule.EXACTLY)` to enforce the exact height, preventing Word from adjusting it automatically.

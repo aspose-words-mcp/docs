@@ -66,7 +66,7 @@ The code in this section addresses all of the possible situations described abov
 
 To extract the content from your document you need to call the **ExtractContent** method below and pass the appropriate parameters. The underlying basis of this method involves finding block level nodes (paragraphs and tables) and cloning them to create identical copies. If the marker nodes passed are block level then the method is able to simply copy the content on that level and add it to the array.
 
-However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc.Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
+However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc. Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
 
 1. **StartNode** and **EndNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block level ([Paragraph](https://reference.aspose.com/words/java/com.aspose.words/paragraph/) , [Table](https://reference.aspose.com/words/java/com.aspose.words/table/)) or inline level (e.g [Run](https://reference.aspose.com/words/java/com.aspose.words/run/) , [FieldStart](https://reference.aspose.com/words/java/com.aspose.words/fieldstart/) , [BookmarkStart](https://reference.aspose.com/words/java/com.aspose.words/bookmarkstart/) etc.):
    1. To pass a field you should pass the corresponding **FieldStart** object
@@ -87,7 +87,7 @@ The following code example shows how to take a list of nodes and inserts them in
 
 ## Extract Content Between Paragraphs
 
-This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document.We can tell that this is between the 7th and 11th paragraphs.
+This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document. We can tell that this is between the 7th and 11th paragraphs.
 
 The code below accomplishes this task. The appropriate paragraphs are extracted using the [getChild](https://reference.aspose.com/words/java/com.aspose.words/compositenode/#getChild-int-int-boolean) method on the document and passing the specified indices. We then pass these nodes to the **ExtractContent** method and state that these are to be included in the extraction. This method will return the copied content between these nodes which are then inserted into a new document.
 
@@ -149,7 +149,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content using a Field
 
-To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not.Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [moveToMergeField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToMergeField(java.lang.String) method of [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
+To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not. Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [moveToMergeField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToMergeField-java.lang.String) method of [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
 
 In our case let's set the last parameter passed to the **ExtractContent** method to false to exclude the field from the extraction. We will render the extracted content to PDF.
 
@@ -165,7 +165,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content from a Bookmark
 
-In a document the content that is defined within a bookmark is encapsulated by the `BookmarkStart` and BookmarkEnd nodes. Content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document.We will extract this content into a new document using the code below. The **IsInclusive** parameter option shows how to retain or discard the bookmark.
+In a document the content that is defined within a bookmark is encapsulated by the `BookmarkStart` and BookmarkEnd nodes. Content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document. We will extract this content into a new document using the code below. The **IsInclusive** parameter option shows how to retain or discard the bookmark.
 
 The following code example shows how to extract the content referenced a bookmark using the **ExtractContent** method:
 
@@ -199,7 +199,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 Use the [DocumentVisitor](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/) class to implement this usage scenario. This class corresponds to the well-known Visitor design pattern. With **DocumentVisitor** **,** you can define and execute custom operations that require enumeration over the document tree.
 
-**DocumentVisitor** provides a set of **VisitXXX** methods that are invoked when a particular document element (node) is encountered. For example, [DocumentVisitor](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/) is called when the beginning of a text paragraph is found and [VisitParagraphStart](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/#visitParagraphStart-com.aspose.words.Paragraph) is called when the end of a text paragraph is found. Each **DocumentVisitor.VisitXXX** method accepts the corresponding object that it encounters so you can use it as needed (say retrieve the formatting), e.g. both **DocumentVisitor.VisitParagraphStart** and **DocumentVisitor.VisitParagraphEnd** accept a [VisitParagraphEnd](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/#visitParagraphEnd-com.aspose.words.Paragraph) object.
+**DocumentVisitor** provides a set of **VisitXXX** methods that are invoked when a particular document element (node) is encountered. For example, [DocumentVisitor](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/) is called when the beginning of a text paragraph is found and [visitParagraphStart()](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/#visitParagraphStart-com.aspose.words.Paragraph) is called when the end of a text paragraph is found. Each **DocumentVisitor.VisitXXX** method accepts the corresponding object that it encounters so you can use it as needed (say retrieve the formatting), e.g. both **DocumentVisitor.visitParagraphStart** and **DocumentVisitor.visitParagraphEnd** accept a [visitParagraphEnd()](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/#visitParagraphEnd-com.aspose.words.Paragraph) object.
 
 Each **DocumentVisitor.VisitXXX** method returns a [VisitorAction](https://reference.aspose.com/words/java/com.aspose.words/visitoraction/) value that controls the enumeration of nodes. You can request either to continue the enumeration, skip the current node (but continue the enumeration), or stop the enumeration of nodes.
 
@@ -228,17 +228,17 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 The ways to retrieve text from the document are:
 
 - Use [Document.save](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.io.OutputStream-com.aspose.words.SaveOptions) with [SaveFormat](https://reference.aspose.com/words/java/com.aspose.words/saveformat/) to save as plain text into a file or stream
-- Use [Node.toString](https://reference.aspose.com/words/java/com.aspose.words/node/#toString-com.aspose.words.SaveOptions) and pass the **SaveFormat.Text** parameter. Internally, this invokes save as text into a memory stream and returns the resulting string
+- Use [Node.toString](https://reference.aspose.com/words/java/com.aspose.words/node/#toString-com.aspose.words.SaveOptions) and pass the **SaveFormat.TEXT** parameter. Internally, this invokes save as text into a memory stream and returns the resulting string
 - Use [Node.getText](https://reference.aspose.com/words/java/com.aspose.words/node/#getText) to retrieve text with all Microsoft Word control characters including field codes
 - Implement a custom [DocumentVisitor](https://reference.aspose.com/words/java/com.aspose.words/documentvisitor/) to perform customized extraction
 
 ### Using `node.getText()` and `node.toString()`
 
-A Word document can contains control characters that designate special elements such as field, end of cell, end of section etc. The full list of possible Word control characters is defined in the **ControlChar** class. The **Node.GetText** method returns text with all of the control character characters present in the node.
+A Word document can contains control characters that designate special elements such as field, end of cell, end of section etc. The full list of possible Word control characters is defined in the **ControlChar** class. The **Node.getText** method returns text with all of the control character characters present in the node.
 
-Calling **ToString** returns the plain text representation of the document only without control characters. For further information on exporting as plain text see following section **"Using SaveFormat.Text"**.
+Calling **toString()** returns the plain text representation of the document only without control characters. For further information on exporting as plain text see following section **"Using SaveFormat.TEXT"**.
 
-The following code example shows the difference between calling the **GetText** and **ToString** methods on a node:
+The following code example shows the difference between calling the **GetText** and **toString()** methods on a node:
 
 {{< gist "aspose-words-gists" "1975a35426bcd195a2e7c61d20a1580c" "simple-extract-text.java" >}}
 
@@ -257,15 +257,15 @@ The following code example shows how to extract images from a document:
 - [Run](https://reference.aspose.com/words/java/com.aspose.words/run/)
 - [FieldStart](https://reference.aspose.com/words/java/com.aspose.words/fieldstart/)
 - [FieldEnd](https://reference.aspose.com/words/java/com.aspose.words/fieldend/)
-- [BookmarkStart](https://reference.aspose.com/words/java/com.aspose.words/bookmark/#getBookmarkStart)
-- [BookmarkEnd](https://reference.aspose.com/words/java/com.aspose.words/bookmark/#getBookmarkEnd)
+- [getBookmarkStart()](https://reference.aspose.com/words/java/com.aspose.words/bookmark/#getBookmarkStart)
+- [getBookmarkEnd()](https://reference.aspose.com/words/java/com.aspose.words/bookmark/#getBookmarkEnd)
 - [CommentRangeStart](https://reference.aspose.com/words/java/com.aspose.words/commentrangestart/)
 - [CommentRangeEnd](https://reference.aspose.com/words/java/com.aspose.words/commentrangeend/) 
 
 ## FAQ
 
 1. **Q:** How can I extract content between two specific nodes in a Word document using Aspose.Words for Java?  
-   **A:** Locate the start and end nodes (e.g., Paragraph, Run, FieldStart, BookmarkStart) using the document object model, then call the provided `ExtractContent(Node startNode, Node endNode, boolean isInclusive)` helper. The method returns a list of cloned nodes that you can insert into a new `Document` with `Document.appendDocument` or by importing each node individually.
+   **A:** Locate the start and end nodes (e.g., Paragraph, Run, FieldStart, BookmarkStart) using the document object model, then call the `ExtractContentHelper.extractContent(startNode, endNode, isInclusive, copySection)` helper from the example. The method returns a list of cloned nodes; the example's `ExtractContentHelper.generateDocument(srcDoc, nodes)` puts them into a new `Document`, or you can import each node individually.
 
 2. **Q:** What does the **IsInclusive** parameter control in the `ExtractContent` method?  
    **A:** When **IsInclusive** is `true`, the start and end marker nodes themselves are included in the extracted range. When `false`, only the content *between* the markers is returned. This is useful for excluding merge fields, bookmarks, or comment markers from the result.
@@ -274,7 +274,7 @@ The following code example shows how to extract images from a document:
    **A:** Yes. Pass the `BookmarkStart`/`BookmarkEnd` nodes or the `CommentRangeStart`/`CommentRangeEnd` nodes as the start and end parameters. The helper will correctly handle inline markers and will retain or discard the bookmark/comment based on the **IsInclusive** flag.
 
 4. **Q:** How do I extract only the plain text of a document without formatting or control characters?  
-   **A:** Use `Node.getText()` for raw text with control characters, or `Node.toString(new SaveOptions(SaveFormat.Text))` to obtain clean plain text. Alternatively, save the whole document with `Document.save(outputStream, SaveFormat.Text)` for a UTF‑8 encoded text file.
+   **A:** Use `Node.getText()` for raw text with control characters, or `Node.toString(SaveFormat.TEXT)` to obtain clean plain text. Alternatively, save the whole document with `Document.save(outputStream, SaveFormat.TEXT)` for a UTF‑8 encoded text file.
 
 5. **Q:** Is it possible to extract images from a document while extracting other content?  
    **A:** Yes. Iterate through the document's `NodeType.SHAPE` nodes, check `Shape.getShapeType() == ShapeType.IMAGE`, and call `Shape.getImageData().toByteArray()` to obtain the image bytes. You can store the images separately and still use the `ExtractContent` method for the surrounding text, tables, or paragraphs.

@@ -25,7 +25,7 @@ A font is a set of characters with a certain size, color, and design. Aspose.Wor
 
 ## Font Formatting
 
-The current font formatting is represented by the **Font** object returned by the [Font](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getFont) property. The **Font** class contains a wide variety of font properties, replicating those available in Microsoft Word.
+The current font formatting is represented by the **Font** object returned by the [getFont()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getFont) property. The **Font** class contains a wide variety of font properties, replicating those available in Microsoft Word.
 
 The following code example shows how to set font formatting:
 
@@ -37,13 +37,13 @@ Fill properties are also available for fonts to set text fill formatting. This m
 
 Font line spacing is the vertical distance between the baselines of two consecutive lines of text. So line spacing includes the blank space between lines along with the height of the character itself.
 
-The [LineSpacing](https://reference.aspose.com/words/java/com.aspose.words/font/#getLineSpacing) property was introduced to the **Font** class to obtain this value, as shown in the example below:
+The [getLineSpacing()](https://reference.aspose.com/words/java/com.aspose.words/font/#getLineSpacing) property was introduced to the **Font** class to obtain this value, as shown in the example below:
 
 {{< gist "aspose-words-gists" "28f3c389a64ddf0eb53893ec121575c2" "get-font-line-spacing.java" >}}
 
-## FontEmphasisMark
+## Font EmphasisMark
 
-Some East Asian languages use a special emphasis mark to indicate an emphasis. The **Font** class provides the [EmphasisMark](https://reference.aspose.com/words/java/com.aspose.words/font/#getEmphasisMark) property to get or set the [EmphasisMark](https://reference.aspose.com/words/java/com.aspose.words/emphasismark/) enumeration values to be applied when formatting.
+Some East Asian languages use a special emphasis mark to indicate an emphasis. The **Font** class provides the [getEmphasisMark()](https://reference.aspose.com/words/java/com.aspose.words/font/#getEmphasisMark) property to get or set the [getEmphasisMark()](https://reference.aspose.com/words/java/com.aspose.words/emphasismark/) enumeration values to be applied when formatting.
 
 The following code example shows how to set the **EphasisMark** property:
 

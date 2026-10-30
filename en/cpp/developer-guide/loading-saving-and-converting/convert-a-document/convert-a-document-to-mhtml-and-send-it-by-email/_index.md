@@ -48,7 +48,7 @@ The following code example shows how to convert any document to MHTML and send i
    ```
 
 4. **Q: Can I embed images in the MHTML output so they appear correctly in the e‑mail?**  
-   **A:** Yes. When saving to MHTML, Aspose.Words automatically embeds all images as base‑64 data URIs inside the file. The resulting MHTML can be opened directly in a browser or attached to an e‑mail without additional handling.
+   **A:** Yes. When saving to MHTML, Aspose.Words embeds all images in the file as separate MIME parts, referenced by `Content-Location` (or by `cid:` URLs when `HtmlSaveOptions::set_ExportCidUrlsForMhtmlResources(true)` is set). The resulting MHTML can be opened directly in a browser or attached to an e‑mail without additional handling.
 
 5. **Q: What should I do if the conversion throws an “Unsupported file format” exception?**  
    **A:** Verify that the source file's extension matches a format supported by Aspose.Words and that the file is not corrupted. If the file is in a proprietary format, consider converting it to a supported format (e.g., DOCX) before loading it with Aspose.Words. Also ensure you are using the latest version of the library, as newer releases add support for additional formats.

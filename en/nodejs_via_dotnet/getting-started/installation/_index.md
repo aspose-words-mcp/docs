@@ -18,7 +18,7 @@ Make sure your machine meets the [system requirements](/words/nodejs-net/system-
 
 This article explains how to install Aspose.Words for Node.js via .NET on your computer.
 
-[`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is the easiest way to download and install [Aspose.Words for Node.js via .NET](https://www.npmjs.com/package/@aspose/words) APIs. To do this run the following command:
+[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is the easiest way to download and install [Aspose.Words for Node.js via .NET](https://www.npmjs.com/package/@aspose/words) APIs. To do this run the following command:
 
 `npm add @aspose/words`
 

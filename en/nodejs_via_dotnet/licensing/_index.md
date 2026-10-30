@@ -75,7 +75,7 @@ Use the [setLicense](https://reference.aspose.com/words/nodejs-net/aspose.words/
 
 Calling [setLicense](https://reference.aspose.com/words/nodejs-net/aspose.words/license/setLicense/) multiple times is not harmful, it just wastes processor time.
 
-Calling [setMeteredKey](https://reference.aspose.com/words/nodejs-net/aspose.words/metered/setMeteredKey/#str_str) multiple times is not harmful either, but just wastes processor time and can accumulate consumption improperly.
+Calling setMeteredKey multiple times is not harmful either, but just wastes processor time and can accumulate consumption improperly.
 
 {{% /alert %}}
 
@@ -103,7 +103,7 @@ Aspose.Words allows developers to apply a metered key. This is a new licensing m
 
 The new licensing mechanism will be used along with the existing licensing method. Those customers who want to be billed based on the use of API features can use the Metered Licensing.
 
-After completing all the necessary steps to obtain this type of license, you will receive the keys, not the license file. This metered key can be applied using the [Metered](https://reference.aspose.com/words/nodejs-net/aspose.words/metered/) class specially introduced for this purpose.
+After completing all the necessary steps to obtain this type of license, you will receive the keys, not the license file. This metered key can be applied using the Metered class specially introduced for this purpose.
 
 Do not call the **setMeteredKey** method frequently so that this licensing method properly accumulates consumption and reports it to us. Just instantiate the Aspose.Words library, call **setMeteredKey** once, then leave the library instantiated and reuse it.
 
@@ -141,7 +141,7 @@ If you use multiple Aspose products in your application, such as Aspose.Words an
 ## FAQ
 
 1. Q: How do I apply a license in Aspose.Words for Node.js via .NET?  
-   A: Call the `aspose.words.License.setLicense()` method before using any other Aspose.Words classes. You can pass a file path, a Buffer object, or use the metered licensing API. The call should be made once per application domain, typically at startup.
+   A: Call the `setLicense()` method of an `aw.License` instance before using any other Aspose.Words classes. You can pass a file path, a Buffer object, or use the metered licensing API. The call should be made once per application domain, typically at startup.
 
 2. Q: What is the difference between a trial license and a temporary license?  
    A: A trial license is free and provides full functionality but adds an evaluative watermark and limits document size. A temporary license removes these restrictions for 30 days and requires you to request a key from the Aspose website.

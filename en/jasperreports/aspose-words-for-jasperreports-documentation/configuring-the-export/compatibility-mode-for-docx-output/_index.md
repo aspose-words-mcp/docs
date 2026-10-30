@@ -20,7 +20,7 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
 import com.aspose.words.jasperreports.*;
 AWDocExporter exporter = new AWDocExporter();
 exporter.setParameter(AWExporterParameter.DOCX_COMPATIBILITY, 2019);
@@ -31,7 +31,7 @@ In JasperServer:
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="docxCompatibility" value="2019"/>
 </bean> 

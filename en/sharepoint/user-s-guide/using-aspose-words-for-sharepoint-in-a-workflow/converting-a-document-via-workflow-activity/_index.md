@@ -31,7 +31,7 @@ To create a new workflow:
 
 1. Give the new workflow a descriptive name.<br>
    **Add the Convert via Aspose.Words action to your workflow**
-1. Clicking **Next**.<br>
+1. Click **Next**.<br>
    A workflow steps editor appears.
 1. Add an action that tries to convert every new document without any conditions.
 1. Click **Actions** and select **Convert via Aspose.Words** from the list. You may need to select **More Actions** to produce the complete action list.<br>

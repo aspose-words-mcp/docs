@@ -131,7 +131,7 @@ For a tag with its name prepended with an exclamation mark, the engine treats a 
    **A:** Set the `ReportBuildOptions.REMOVE_EMPTY_PARAGRAPHS` flag on the `ReportingEngine` before calling `buildReport`. This tells the engine to delete any paragraph that contains only template tags that resolve to empty values.  
 
 2. **Q:** Can I apply the removal behavior only to specific tags instead of the entire document?  
-   **A:** Yes. Prefix the tag name with an exclamation mark in the template (e.g., `<<![...]>`, `<<!foreach [...]>>`). The engine will treat paragraphs containing those tags as empty, while other tags will follow the default behavior.  
+   **A:** Yes. Prefix the tag name with an exclamation mark in the template (e.g., `<<![...]>>`, `<<!foreach [...]>>`). The engine will treat paragraphs containing those tags as empty, while other tags will follow the default behavior.  
 
 3. **Q:** Will a paragraph that contains whitespace or line‑break characters be removed when the option is enabled?  
    **A:** The engine treats a paragraph as empty if, after tag processing, it contains no visible characters. Whitespace and line‑breaks are ignored, so such a paragraph will still be removed.  

@@ -23,7 +23,7 @@ The following sections describe the logical levels of nodes in Aspose.Words and 
 
 A Word document consists of one or more sections, represented by the [Section](https://reference.aspose.com/words/cpp/aspose.words/section) class and separated by section breaks. A section can define its own page size, margins, orientation, number of text columns, and headers and footers.
 
-[Document](https://reference.aspose.com/words/cpp/aspose.words/document/) and [Section](https://www.aspose.com/api/words/cpp/aspose.words/section/) level nodes have the structure as shown in the following diagram.
+[Document](https://reference.aspose.com/words/cpp/aspose.words/document/) and [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) level nodes have the structure as shown in the following diagram.
 
 <img src="document-and-section-level.png" alt="document-and-section-level-aspose-words-cpp" style="width:700px"/>
 
@@ -31,7 +31,7 @@ A section contains the main text, as well as headers and footers for the first, 
 
 In Aspose.Words, the **Section** node contains the [Body](https://reference.aspose.com/words/cpp/aspose.words/body/) and [HeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/headerfooter/) story nodes. The **Body** object stores the main text. The **HeaderFooter** objects store the text for each header and footer. The text of any story consists of paragraphs and tables, respectively represented by the **Paragraph** and **Table** objects of the Block-level.
 
-Additionally, each Word document can contain a glossary, which is represented by the [GlossaryDocument](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/glossarydocument/) node in Aspose.Words. A glossary document contains [BuildingBlocks](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/glossarydocument/get_buildingblocks/), [AutoText](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/buildingblocktype/), and [AutoCorrect](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/buildingblocktype/) entries.
+Additionally, each Word document can contain a glossary, which is represented by the [GlossaryDocument](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/glossarydocument/) node in Aspose.Words. A glossary document contains [get_BuildingBlocks()](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/glossarydocument/get_buildingblocks/), [AutoText](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/buildingblocktype/), and [AutoCorrect](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/buildingblocktype/) entries.
 
 **GlossaryDocument** includes [BuildingBlock](https://reference.aspose.com/words/cpp/aspose.words.buildingblocks/buildingblock/) nodes representing different types of glossary document entries. Each **BuildingBlock** contains sections that can be inserted, removed, and copied into documents.
 

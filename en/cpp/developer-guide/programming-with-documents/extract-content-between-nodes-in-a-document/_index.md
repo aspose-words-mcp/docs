@@ -58,19 +58,19 @@ The code in this section addresses all of the possible situations described abov
 
 To extract the content from your document you need to call the `ExtractContent` method below and pass the appropriate parameters. The underlying basis of this method involves finding block-level nodes (paragraphs and tables) and cloning them to create identical copies. If the marker nodes passed are block-level then the method is able to simply copy the content on that level and add it to the array.
 
-However, if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc.Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
+However, if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc. Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
 
-1. **StartNode**and**EndNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block-level (Paragraph,Table) or inline-level (e.gRun,FieldStart,BookmarkStartetc.):
-   1. To pass a field you should pass the corresponding**FieldStart**object.
-   1. To pass bookmarks, the**BookmarkStart**andBookmarkEndnodes should be passed.
-   1. To pass comments, theCommentRangeStartandCommentRangeEndnodes should be used.
+1. **StartNode** and **EndNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block-level (Paragraph, Table) or inline-level (e.g., Run, FieldStart, BookmarkStart etc.):
+   1. To pass a field you should pass the corresponding **FieldStart** object.
+   1. To pass bookmarks, the **BookmarkStart** and BookmarkEnd nodes should be passed.
+   1. To pass comments, the CommentRangeStart and CommentRangeEnd nodes should be used.
 1. **IsInclusive**. Defines if the markers are included in the extraction or not. If this option is set to false and the same node or consecutive nodes are passed, then an empty list will be returned:
 
-      1. If a**FieldStart**node is passed then this option defines if the whole field is to be included or excluded.
-      1. If a**BookmarkStart**or**BookmarkEnd**node is passed, this option defines if the bookmark is included or just the content between the bookmark range.
-      1. If a**CommentRangeStart**or**CommentRangeEnd**node is passed, this option defines if the comment itself is to be included or just the content in the comment range.
+      1. If a **FieldStart** node is passed then this option defines if the whole field is to be included or excluded.
+      1. If a **BookmarkStart** or **BookmarkEnd** node is passed, this option defines if the bookmark is included or just the content between the bookmark range.
+      1. If a **CommentRangeStart** or **CommentRangeEnd** node is passed, this option defines if the comment itself is to be included or just the content in the comment range.
 
-The implementation of the**ExtractContent**method you can find [here](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/DocsExamples/source/Programming%20with%20Documents/Contents%20Management/Extract%20content%20helper.h). This method will be referred to in the scenarios in this article.
+The implementation of the **ExtractContent** method you can find [here](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/DocsExamples/source/Programming%20with%20Documents/Contents%20Management/Extract%20content%20helper.h). This method will be referred to in the scenarios in this article.
 
 We will also define a custom method to easily generate a document from extracted nodes. This method is used in many of the scenarios below and simply creates a new document and imports the extracted content into it.
 
@@ -80,9 +80,9 @@ The following code example shows how to take a list of nodes and inserts them in
 
 ## Extract Content Between Paragraphs
 
-This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document.We can tell that this is between the 7th and 11th paragraphs.
+This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document. We can tell that this is between the 7th and 11th paragraphs.
 
-The code below accomplishes this task. The appropriate paragraphs are extracted using the [GetChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchild/) method on the document and passing the specified indices. We then pass these nodes to the**ExtractContent**method and state that these are to be included in the extraction. This method will return the copied content between these nodes which are then inserted into a new document.
+The code below accomplishes this task. The appropriate paragraphs are extracted using the [GetChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchild/) method on the document and passing the specified indices. We then pass these nodes to the **ExtractContent** method and state that these are to be included in the extraction. This method will return the copied content between these nodes which are then inserted into a new document.
 
 The following code example shows how to extract the content between specific paragraphs using the `ExtractContent` method above:
 
@@ -90,7 +90,7 @@ The following code example shows how to extract the content between specific par
 
 ## Extract Content Between Different Types of Nodes
 
-We can extract content between any combinations of block-level or inline nodes. In this scenario below we will extract the content between the first paragraph and the table in the second section inclusively. We get the markers nodes by calling `Body.FirstParagraph`and [GetChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchild/) method on the second section of the document to retrieve the appropriate Paragraph and Table nodes. For a slight variation let's instead duplicate the content and insert it below the original.
+We can extract content between any combinations of block-level or inline nodes. In this scenario below we will extract the content between the first paragraph and the table in the second section inclusively. We get the markers nodes by calling `Body::FirstParagraph` and [GetChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchild/) method on the second section of the document to retrieve the appropriate Paragraph and Table nodes. For a slight variation let's instead duplicate the content and insert it below the original.
 
 The following code example shows how to extract the content between a paragraph and table using the `ExtractContent` method:
 
@@ -110,7 +110,7 @@ The following code example shows how to extract content between paragraphs with 
 
 ## Extract Content Between Specific Runs
 
-You can extract content between inline nodes such as a [Run](https://reference.aspose.com/words/cpp/aspose.words/run/) as well. **Runs** from different paragraphs can be passed as markers. The code below shows how to extract specific text in-between the same**Paragraph**node.
+You can extract content between inline nodes such as a [Run](https://reference.aspose.com/words/cpp/aspose.words/run/) as well. **Runs** from different paragraphs can be passed as markers. The code below shows how to extract specific text in-between the same **Paragraph** node.
 
 The following code example shows how to extract content between specific runs of the same paragraph using the **ExtractContent** method:
 
@@ -118,7 +118,7 @@ The following code example shows how to extract content between specific runs of
 
 ## Extract Content using a Field
 
-To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not.Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [MoveToMergeField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetomergefield/) method of [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
+To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not. Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [MoveToMergeField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetomergefield/) method of [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
 
 In our case let's set the last parameter passed to the **ExtractContent** method to false to exclude the field from the extraction. We will render the extracted content to PDF.
 
@@ -128,7 +128,7 @@ The following code example shows how to extract content between a specific field
 
 ## Extract Content from a Bookmark
 
-In a document, the content that is defined within a bookmark is encapsulated by the `BookmarkStart` and BookmarkEnd nodes. The content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document.We will extract this content into a new document using the code below. The**IsInclusive**parameter option shows how to retain or discard the bookmark.
+In a document, the content that is defined within a bookmark is encapsulated by the `BookmarkStart` and BookmarkEnd nodes. The content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document. We will extract this content into a new document using the code below. The **IsInclusive** parameter option shows how to retain or discard the bookmark.
 
 The following code example shows how to extract the content referenced a bookmark using the **ExtractContent** method:
 
@@ -138,9 +138,9 @@ The following code example shows how to extract the content referenced a bookmar
 
 A comment is made up of the CommentRangeStart, CommentRangeEnd and Comment nodes. All of these nodes are inline. The first two nodes encapsulate the content in the document which is referenced by the comment, as seen in the screenshot below.
 
-The**Comment**node itself is anInlineStorythat can contain paragraphs and runs. It represents the message of the comment as seen as a comment bubble in the preview pane. As this node is inline and a descendant of a body you can also extract the content from inside this message as well.
+The **Comment** node itself is an InlineStory that can contain paragraphs and runs. It represents the message of the comment as seen as a comment bubble in the preview pane. As this node is inline and a descendant of a body you can also extract the content from inside this message as well.
 
-The comment encapsulates the heading, first paragraph and the table in the second section. Let's extract this comment into a new document. The**IsInclusive**option dictates if the comment itself is kept or discarded.
+The comment encapsulates the heading, first paragraph and the table in the second section. Let's extract this comment into a new document. The **IsInclusive** option dictates if the comment itself is kept or discarded.
 
 The following code example shows how to do this:
 
@@ -148,19 +148,19 @@ The following code example shows how to do this:
 
 ## How to Extract Content using DocumentVisitor
 
-Use the [DocumentVisitor](https://reference.aspose.com/words/cpp/aspose.words/documentvisitor/) class to implement this usage scenario. This class corresponds to the well-known Visitor design pattern. With **DocumentVisitor,**you can define and execute custom operations that require enumeration over the document tree.
+Use the [DocumentVisitor](https://reference.aspose.com/words/cpp/aspose.words/documentvisitor/) class to implement this usage scenario. This class corresponds to the well-known Visitor design pattern. With **DocumentVisitor,** you can define and execute custom operations that require enumeration over the document tree.
 
-**DocumentVisitor**provides a set of**VisitXXX**methods that are invoked when a particular document element (node) is encountered. For example, `DocumentVisitor.VisitParagraphStart`is called when the beginning of a text paragraph is found and `DocumentVisitor.VisitParagraphEnd`is called when the end of a text paragraph is found. Each**DocumentVisitor.VisitXXX**method accepts the corresponding object that it encounters so you can use it as needed (say retrieve the formatting), e.g. both**DocumentVisitor.VisitParagraphStart**and**DocumentVisitor.VisitParagraphEnd**accepts a [Paragraph](https://reference.aspose.com/words/net/aspose.words/paragraph/) object.
+**DocumentVisitor** provides a set of **VisitXXX** methods that are invoked when a particular document element (node) is encountered. For example, `DocumentVisitor::VisitParagraphStart` is called when the beginning of a text paragraph is found and `DocumentVisitor::VisitParagraphEnd` is called when the end of a text paragraph is found. Each **DocumentVisitor::VisitXXX** method accepts the corresponding object that it encounters so you can use it as needed (say retrieve the formatting), e.g. both **DocumentVisitor::VisitParagraphStart** and **DocumentVisitor::VisitParagraphEnd** accepts a [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/) object.
 
-Each**DocumentVisitor.VisitXXX**method returns a [VisitorAction](https://reference.aspose.com/words/net/aspose.words/visitoraction/) value that controls the enumeration of nodes. You can request either to continue the enumeration, skip the current node (but continue the enumeration), or stop the enumeration of nodes.
+Each **DocumentVisitor::VisitXXX** method returns a [VisitorAction](https://reference.aspose.com/words/cpp/aspose.words/visitoraction/) value that controls the enumeration of nodes. You can request either to continue the enumeration, skip the current node (but continue the enumeration), or stop the enumeration of nodes.
 
 These are the steps you should follow to programmatically determine and extract various parts of a document:
 
 - Create a class derived from **DocumentVisitor**
-- Override and provide implementations for some or all of the**DocumentVisitor.VisitXXX**methods to perform some custom operations
-- Call `Node.Accept`on the node from where you want to start the enumeration. For example, if you want to enumerate the whole document, use `Document.Accept`
+- Override and provide implementations for some or all of the **DocumentVisitor::VisitXXX** methods to perform some custom operations
+- Call `Node::Accept` on the node from where you want to start the enumeration. For example, if you want to enumerate the whole document, use `Document::Accept`
 
-**DocumentVisitor**provides default implementations for all of the**DocumentVisitor.VisitXXX**methods. This makes it easier to create new document visitors as only the methods required for the particular visitor need to be overridden. It is not necessary to override all of the visitor methods.
+**DocumentVisitor** provides default implementations for all of the **DocumentVisitor::VisitXXX** methods. This makes it easier to create new document visitors as only the methods required for the particular visitor need to be overridden. It is not necessary to override all of the visitor methods.
 
 This example shows how to use the Visitor pattern to add new operations to the Aspose.Words object model. In this case, we create a simple document converter into a text format:
 
@@ -178,14 +178,14 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 The ways to retrieve text from the document are:
 
-- Use [Document.Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) with [SaveFormat.Text](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) to save as plain text into a file or stream
-- Use [Node.ToString](https://reference.aspose.com/words/cpp/aspose.words/node/tostring/) and pass the **SaveFormat.Text** parameter. Internally, this invokes save as text into a memory stream and returns the resulting string
-- Use [Node.GetText](https://reference.aspose.com/words/cpp/aspose.words/node/gettext/) to retrieve text with all Microsoft Word control characters including field codes
+- Use [Document::Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) with [SaveFormat::Text](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) to save as plain text into a file or stream
+- Use [Node::ToString](https://reference.aspose.com/words/cpp/aspose.words/node/tostring/) and pass the **SaveFormat::Text** parameter. Internally, this invokes save as text into a memory stream and returns the resulting string
+- Use [Node::GetText](https://reference.aspose.com/words/cpp/aspose.words/node/gettext/) to retrieve text with all Microsoft Word control characters including field codes
 - Implement a custom [DocumentVisitor](https://reference.aspose.com/words/cpp/aspose.words/documentvisitor/) to perform customized extraction
 
-### Using `Node.GetText` and `Node.ToString`
+### Using `Node::GetText` and `Node::ToString`
 
-A Word document can contain control characters that designate special elements such as field, end of the cell, end of section etc. The full list of possible Word control characters is defined in the [ControlChar](https://reference.aspose.com/words/cpp/aspose.words/controlchar/) class. The **Node.GetText** method returns text with all of the control character characters present in the node.
+A Word document can contain control characters that designate special elements such as field, end of the cell, end of section etc. The full list of possible Word control characters is defined in the [ControlChar](https://reference.aspose.com/words/cpp/aspose.words/controlchar/) class. The **Node::GetText** method returns text with all of the control character characters present in the node.
 
 Calling **ToString** returns the plain text representation of the document only without control characters.
 
@@ -193,12 +193,12 @@ The following code example shows the difference between calling the **GetText** 
 
 {{< gist "aspose-words-gists" "922a9c5d9606a0c5cf0682b4aadfaf29" "simple-extract-text.h" >}}
 
-### Using `SaveFormat.Text`
+### Using `SaveFormat::Text`
 
 This example saves the document as follows:
 
 - Filters out field characters and field codes, shape, footnote, endnote and comment references
-- Replaces end of paragraph **ControlChar.Cr** characters with **ControlChar.CrLf** combinations
+- Replaces end of paragraph **ControlChar::Cr** characters with **ControlChar::CrLf** combinations
 - Uses UTF8 encoding
 
 The following code example shows how to save a document in TXT format:

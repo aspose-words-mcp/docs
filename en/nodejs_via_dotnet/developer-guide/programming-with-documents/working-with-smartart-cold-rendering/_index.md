@@ -73,4 +73,4 @@ The table below shows example pictures of Aspose.Words Cold Rendering of some st
    **A:** Fully supported groups include **List**, **Process**, **Matrix**, and **Relationship** layouts. The documentation lists the exact layouts within each group that render completely.
 
 5. **Q:** How can I determine whether a SmartArt diagram was rendered using cold rendering?  
-   **A:** After loading the document, inspect the `Shape` object's `IsSmartArt` property and compare the rendered appearance with the original. If the pre‑rendered drawing is missing or you have called `updateSmartArtDrawing()`, the diagram has been cold‑rendered.
+   **A:** After loading the document, inspect the `Shape` object's `hasSmartArt` property and compare the rendered appearance with the original. If the pre‑rendered drawing is missing or you have called `updateSmartArtDrawing()`, the diagram has been cold‑rendered.

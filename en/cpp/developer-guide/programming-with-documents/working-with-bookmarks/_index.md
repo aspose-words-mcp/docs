@@ -27,7 +27,7 @@ The following code example shows how to create a new bookmark:
 
 ## Obtain Bookmarks
 
-Sometimes it is necessary to obtain a bookmark collection to iterate through bookmarks or for other purposes. Use the [Node.Range](https://reference.aspose.com/words/cpp/aspose.words/node/get_range/) property exposed by any document node that returns a [Range](https://reference.aspose.com/words/cpp/aspose.words/range/) object representing the portion of the document contained in this node. Use this object to retrieve a [BookmarkCollection](https://reference.aspose.com/words/cpp/aspose.words/bookmarkcollection/) and then use the collection indexer to get a specific bookmark.
+Sometimes it is necessary to obtain a bookmark collection to iterate through bookmarks or for other purposes. Use the [Node::get_Range()](https://reference.aspose.com/words/cpp/aspose.words/node/get_range/) property exposed by any document node that returns a [Range](https://reference.aspose.com/words/cpp/aspose.words/range/) object representing the portion of the document contained in this node. Use this object to retrieve a [BookmarkCollection](https://reference.aspose.com/words/cpp/aspose.words/bookmarkcollection/) and then use the collection indexer to get a specific bookmark.
 
 The following code example shows how to obtain bookmarks from a bookmark collection:
 

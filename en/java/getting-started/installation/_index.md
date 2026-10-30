@@ -31,7 +31,7 @@ Aspose hosts all Java APIs in [Maven repository](https://releases.aspose.com/wor
 		</repository>
 	</repositories>
 	{{< /highlight >}}
-2. Then, define the Aspose.Words for Java API dependencyin your pom.xml as follows:
+2. Then, define the Aspose.Words for Java API dependency in your pom.xml as follows:
 	{{< highlight html >}}
 	<dependencies>
 		<dependency>

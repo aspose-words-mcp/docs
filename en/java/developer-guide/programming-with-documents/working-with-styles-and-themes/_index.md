@@ -29,7 +29,7 @@ The [StyleCollection](https://reference.aspose.com/words/java/com.aspose.words/s
 
 ## Accessing Styles
 
-You can get a collection of styles defined in the document using the [Document.getStyles()](https://reference.aspose.com/words/java/com.aspose.words/document/#getStyles) property. This collection holds both the built-in and user-defined styles in a document. A particular style could be obtained by its name/alias, style identifier, or index. The following code example demonstrateshow to get access to the collection of styles defined in the document.
+You can get a collection of styles defined in the document using the [Document.getStyles()](https://reference.aspose.com/words/java/com.aspose.words/document/#getStyles) property. This collection holds both the built-in and user-defined styles in a document. A particular style could be obtained by its name/alias, style identifier, or index. The following code example demonstrates how to get access to the collection of styles defined in the document.
 
 {{< gist "aspose-words-gists" "f1e523d4c5e156a1e42b86f56c70bf53" "access-styles.java" >}}
 
@@ -51,23 +51,23 @@ In this sample document, the text formatted with the ‘Heading 1' paragraph sty
 
 ### The Code
 
-The implementation of a style-based query is quite simple in the Aspose.Words document object model, as it simply uses tools that are already in place. Two class methods are implemented for this solution: **ParagraphsByStyleName** – This method retrieves an array of those paragraphs in the document that have a specific style name. **RunsByStyleName** – This method retrieves an array of those runs in the document that have a specific style name. Both these methods are very similar, the only differences being the node types and the representation of the style information within the paragraph and run nodes.Here is an implementation of ParagraphsByStyleName :Below example find all paragraphs formatted with the specified style.
+The implementation of a style-based query is quite simple in the Aspose.Words document object model, as it simply uses tools that are already in place. Two class methods are implemented for this solution: **ParagraphsByStyleName** – This method retrieves an array of those paragraphs in the document that have a specific style name. **RunsByStyleName** – This method retrieves an array of those runs in the document that have a specific style name. Both these methods are very similar, the only differences being the node types and the representation of the style information within the paragraph and run nodes. Here is an implementation of ParagraphsByStyleName : Below example find all paragraphs formatted with the specified style.
 
 {{< gist "aspose-words-gists" "1975a35426bcd195a2e7c61d20a1580c" "paragraphs-by-style-name.java" >}}
 
 {{% alert color="primary" %}}
 
-This implementation also uses the `Document.GetChildNodes` method of the `Document` class, which returns a collection of all nodes with the specified type, which in this case in all paragraphs.
+This implementation also uses the `Document.getChildNodes` method of the `Document` class, which returns a collection of all nodes with the specified type, which in this case in all paragraphs.
 
-Note that the second parameter of the **Document.GetChildNodes** method is set to true. This forces the **Document.GetChildNodes** method to select from all child nodes recursively, rather than selecting the immediate children only.
+Note that the second parameter of the **Document.getChildNodes** method is set to true. This forces the **Document.getChildNodes** method to select from all child nodes recursively, rather than selecting the immediate children only.
 
 {{% /alert %}}
 
-It's also worth pointing out that the paragraphs collection does not create an immediate overhead because paragraphs are loaded into this collection only when you access items in them. Then, all you need to do is to go through the collection, using the standard foreach operator and add paragraphs that have the specified style to the paragraphsWithStyle array. The `Paragraph` style name can be found in the [Style.Name](https://reference.aspose.com/words/net/aspose.words/style/name/) property of the [Paragraph.ParagraphFormat](https://reference.aspose.com/words/net/aspose.words/paragraph/paragraphformat/) object. The implementation of RunsByStyleName is almost the same, although we're obviously using [NodeType.Run](https://reference.aspose.com/words/net/aspose.words/nodetype/) to retrieve run nodes. The [Font.Style](https://reference.aspose.com/words/net/aspose.words/font/style/) property of a [Run](https://reference.aspose.com/words/net/aspose.words/run/) object is used to access style information in the **Run** nodes.Below example find all runs formatted with the specified style.
+It's also worth pointing out that the paragraphs collection does not create an immediate overhead because paragraphs are loaded into this collection only when you access items in them. Then, all you need to do is to go through the collection, using the standard foreach operator and add paragraphs that have the specified style to the paragraphsWithStyle array. The `Paragraph` style name can be found in the [Style.getName()](https://reference.aspose.com/words/java/com.aspose.words/style/#getName) property of the object returned by [Paragraph.getParagraphFormat()](https://reference.aspose.com/words/java/com.aspose.words/paragraph/#getParagraphFormat). The implementation of RunsByStyleName is almost the same, although we're obviously using [NodeType.RUN](https://reference.aspose.com/words/java/com.aspose.words/nodetype/#RUN) to retrieve run nodes. The [Font.getStyle()](https://reference.aspose.com/words/java/com.aspose.words/font/#getStyle) property of a [Run](https://reference.aspose.com/words/java/com.aspose.words/run/) object is used to access style information in the **Run** nodes. Below example find all runs formatted with the specified style.
 
 {{< gist "aspose-words-gists" "f1e523d4c5e156a1e42b86f56c70bf53" "runs-by-style-name.java" >}}
 
-When both queries are implemented, all you need to do is to pass a document object and specify the style names of the content you want to retrieve:Below example run queries and display results. You can download the template file of this example from [here](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Styles.docx).
+When both queries are implemented, all you need to do is to pass a document object and specify the style names of the content you want to retrieve: Below example run queries and display results. You can download the template file of this example from [here](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Styles.docx).
 
 {{< gist "aspose-words-gists" "f1e523d4c5e156a1e42b86f56c70bf53" "extract-content-based-on-styles.java" >}}
 
@@ -81,7 +81,7 @@ As you can see, this is a very simple example, showing the number and text of th
 
 ## Copy All Styles from Template
 
-There are cases when you want to copy all styles from one document into another. You can use `Document.CopyStylesFromTemplate` method to copy styles from the specified template to a document. When styles are copied from a template to a document, like-named styles in the document are redefined to match the style descriptions in the template. Unique styles from the template are copied to the document. Unique styles in the document remain intact. Below code example shows how to copy styles from one document into another.
+There are cases when you want to copy all styles from one document into another. You can use `Document.copyStylesFromTemplate` method to copy styles from the specified template to a document. When styles are copied from a template to a document, like-named styles in the document are redefined to match the style descriptions in the template. Unique styles from the template are copied to the document. Unique styles in the document remain intact. Below code example shows how to copy styles from one document into another.
 
 {{< gist "aspose-words-gists" "f1e523d4c5e156a1e42b86f56c70bf53" "copy-styles.java" >}}
 
@@ -103,14 +103,14 @@ And here is how you can set theme properties:
 
 ## Related APIs
 
-- [StyleCollection](https://reference.aspose.com/words/net/aspose.words/stylecollection/) - Manages built-in and user-defined styles in a document.
-- [Document.Styles](https://reference.aspose.com/words/net/aspose.words/documentbase/styles/) - Gets the collection of styles defined in the document.
-- [Document.CopyStylesFromTemplate](https://reference.aspose.com/words/net/aspose.words/documentbase/copystylesfromtemplate/) - Copies all styles from a template document to the current document.
-- [Theme](https://reference.aspose.com/words/net/aspose.words/theme/) - Represents the theme settings of a document.
-- [ThemeFonts](https://reference.aspose.com/words/net/aspose.words/themefonts/) - Represents the fonts used in the document theme.
-- [ThemeColors](https://reference.aspose.com/words/net/aspose.words/themecolors/) - Represents the color scheme used in the document theme.
-- [Paragraph.ParagraphFormat.Style](https://reference.aspose.com/words/net/aspose.words/paragraph/paragraphformat/style/) - Gets or sets the paragraph style applied to the paragraph.
-- [Run.Font.StyleName](https://reference.aspose.com/words/net/aspose.words/font/style/) - Gets or sets the name of the character style applied to the run.
+- [StyleCollection](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/) - Manages built-in and user-defined styles in a document.
+- [Document.getStyles()](https://reference.aspose.com/words/java/com.aspose.words/document/#getStyles) - Gets the collection of styles defined in the document.
+- [Document.copyStylesFromTemplate()](https://reference.aspose.com/words/java/com.aspose.words/document/#copyStylesFromTemplate-com.aspose.words.Document) - Copies all styles from a template document to the current document.
+- [Theme](https://reference.aspose.com/words/java/com.aspose.words/theme/) - Represents the theme settings of a document.
+- [ThemeFonts](https://reference.aspose.com/words/java/com.aspose.words/themefonts/) - Represents the fonts used in the document theme.
+- [ThemeColors](https://reference.aspose.com/words/java/com.aspose.words/themecolors/) - Represents the color scheme used in the document theme.
+- [ParagraphFormat.getStyle()](https://reference.aspose.com/words/java/com.aspose.words/paragraphformat/#getStyle) - Gets or sets the paragraph style applied to the paragraph.
+- [Font.getStyleName()](https://reference.aspose.com/words/java/com.aspose.words/font/#getStyleName) - Gets or sets the name of the character style applied to the run.
 
 ------
 
@@ -123,10 +123,10 @@ And here is how you can set theme properties:
    **A:** Call `Document.getChildNodes(NodeType.RUN, true)` to collect all runs, and filter with `run.getFont().getStyle().getName()`. The `RunsByStyleName` method in the article provides a ready‑to‑use example.
 
 3. **Q:** How can I insert a style separator so that a single line contains two different paragraph styles?  
-   **A:** Insert a `StyleSeparator` node at the desired position inside a paragraph. In Java you can create it with `StyleSeparator separator = new StyleSeparator(document); paragraph.appendChild(separator);` and then add the second run with the alternate style after the separator.
+   **A:** Insert a style separator at the desired position. In Java, move a `DocumentBuilder` to that position, call `builder.insertStyleSeparator()`, and then write the second run with the alternate style after the separator.
 
 4. **Q:** How do I copy all styles from a template document into another document?  
    **A:** Load the template with `Document template = new Document("Template.docx");` and the target document with `Document target = new Document("Target.docx");`. Then call `target.copyStylesFromTemplate(template);`. This copies matching styles and adds any unique styles from the template.
 
 5. **Q:** How can I read or modify the theme colors, fonts, or other theme properties of a document?  
-   **A:** Access the theme via `Theme theme = document.getTheme();`. You can read colors with `theme.getColors().getAccent1()` and fonts with `theme.getFonts().getMajor()`. To change a property, assign a new value, e.g., `theme.getColors().setAccent1(Color.getBlue());` and then save the document. The code snippets in the “How to Manipulate Theme Properties” section illustrate both reading and setting these values.
+   **A:** Access the theme via `Theme theme = document.getTheme();`. You can read colors with `theme.getColors().getAccent1()` and fonts with `theme.getMajorFonts().getLatin()`. To change a property, call its setter, e.g., `theme.getColors().setAccent1(Color.BLUE);` and then save the document. The code snippets in the “How to Manipulate Theme Properties” section illustrate both reading and setting these values.

@@ -13,7 +13,7 @@ url: /java/apply-license-in-python/
 timestamp: 2024-01-27-14-07-04
 ---
 
-## Aspose.Words -Apply License/Python
+## Aspose.Words - Apply License/Python
 
 To set license of Aspose.Words Java in Python, simply invoke the setLicense() method of License class.
 
@@ -26,6 +26,6 @@ license.setLicense("Aspose.Words.lic")
 
 ## Download Running Code
 
-Download**Apply License(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Apply License (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Python/tests/quickstart/applylicense/ApplyLicense.py)

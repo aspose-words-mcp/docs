@@ -18,7 +18,7 @@ By default, when exporting reports to HTML format, Aspose.Words for Reporting Se
 
 To specify the path, add the following lines to the *<Extension>* element corresponding to the HTML renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWHTML" Type="Aspose.Words.ReportingServices.HtmlRenderer,Aspose.Words.ReportingServices">

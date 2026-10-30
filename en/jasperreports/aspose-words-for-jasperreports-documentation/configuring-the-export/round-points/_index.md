@@ -22,7 +22,7 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
    import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
    exporter.setParameter(AWExporterParameter.ROUND_POINTS, 5);
@@ -33,7 +33,7 @@ In JasperServer:
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="roundPoints" value="5"/>
 </bean>

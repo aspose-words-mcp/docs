@@ -39,7 +39,7 @@ The following code example shows how to convert any document to MHTML and send i
    **A:** After saving the document as MHTML (`document.save("output.mht", aw.SaveFormat.MHTML)`), you can create an `aspose.email.MailMessage`, set the `content_type` of the attachment, and specify the desired charset before sending.
 
 4. **Q:** Is it possible to convert a document to MHTML without loading the entire file into memory?  
-   **A:** Yes. You can open the source document from a stream (`doc = aw.Document(stream)`) and save it directly to a stream in MHTML format, which reduces memory usage for large files.
+   **A:** No. Aspose.Words always loads the whole document into memory. You can still open the source document from a stream (`doc = aw.Document(stream)`) and save it directly to a stream in MHTML format, so no temporary files are needed.
 
 5. **Q:** How can I ensure the generated MHTML preserves the original document’s fonts and images?  
-   **A:** Aspose.Words embeds referenced resources (fonts, images, CSS) into the MHTML file automatically. Ensure the source document has access to the required resources, or embed them manually using `Document.font_settings` before saving.
+   **A:** Images and CSS are embedded into the MHTML file automatically. Fonts are not exported by default: save with `aw.saving.HtmlSaveOptions(aw.SaveFormat.MHTML)` and set its `export_font_resources` property to `True` to embed them.

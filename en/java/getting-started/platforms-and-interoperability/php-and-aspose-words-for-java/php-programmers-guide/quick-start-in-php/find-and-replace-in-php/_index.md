@@ -31,6 +31,6 @@ To replace text using Aspose.Words Java in php, simply invoke the replace() meth
 
 ## Download Running Code
 
-Download **Find And Replace(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Find And Replace (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_PHP/src/quickstart/findandreplace/php/FindAndReplace.php)

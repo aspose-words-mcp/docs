@@ -55,10 +55,10 @@ The following code example shows how to get such a list of add-ins:
 
 ## FAQ
 1. **Q:** How can I add a task pane add‑in to a Word document using Aspose.Words?  
-   **A:** Create a `WebExtension` object, set its `Type` to `TaskPane`, and configure properties such as `Id` and `Description`. Add the web extension to the document via `Document.WebExtensionList.Add(webExtension)`. Then create a `TaskPane` object, set its appearance properties (e.g., `Width`, `Height`, `DockState`), and add it to the web extension with `webExtension.TaskPane.Add(taskPane)`.
+   **A:** Create a `TaskPane` object and add it to the document with `doc.WebExtensionTaskPanes.Add(taskPane)`. Set its appearance properties (e.g., `DockState`, `IsVisible`, `Width`), then describe the add-in through `taskPane.WebExtension.Reference` (`Id`, `Version`, `StoreType`, `Store`).
 
 2. **Q:** How do I retrieve the list of task pane add‑ins that are already attached to a document?  
-   **A:** Use the `Document.WebExtensionTaskPanes` property, which returns a `WebExtensionTaskPaneCollection`. Iterate through this collection to read each task pane's `Id`, `Description`, and other attributes.
+   **A:** Use the `Document.WebExtensionTaskPanes` property, which returns a `TaskPaneCollection` of `TaskPane` objects. For each task pane, read `DockState`, `IsVisible`, `Width`, and `WebExtension.Reference.Id` (the add-in ID).
 
 3. **Q:** Can I add more than one task pane to the same Word document?  
-   **A:** Yes. A document can contain multiple `WebExtension` objects, each with its own `TaskPane` collection. Simply create additional `WebExtension` instances and add their `TaskPane` objects to the document's `WebExtensionList`.
+   **A:** Yes. Create another `TaskPane` and add it to `Document.WebExtensionTaskPanes`. Each task pane has its own add-in, which you configure through `taskPane.WebExtension`.

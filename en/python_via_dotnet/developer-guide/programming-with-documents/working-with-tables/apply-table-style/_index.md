@@ -30,7 +30,7 @@ Aspose.Words supports applying a table style to a table and also reading propert
 
 ## Create a Table Style
 
-The user can create a new style and add it to style collection. The [Add](https://reference.aspose.com/words/python-net/aspose.words/stylecollection/add/) method is used to create a new table style.
+The user can create a new style and add it to style collection. The [add](https://reference.aspose.com/words/python-net/aspose.words/stylecollection/add/) method is used to create a new table style.
 
 The following code example shows how to create a new user defined table style:
 
@@ -48,9 +48,9 @@ The following code example shows how to import a style from one document to anot
 
 ## Apply an Existing Table Style
 
-Aspose.Words provides a [TableStyle](https://reference.aspose.com/words/python-net/aspose.words/tablestyle/) inherited from the [Style](https://reference.aspose.com/words/python-net/aspose.words/style/) class. **TableStyle** facilitates the user to apply different style options like as shading, padding, indentation, [CellSpacing](https://reference.aspose.com/words/python-net/aspose.words/tablestyle/cell_spacing/) and [Font](https://reference.aspose.com/words/python-net/aspose.words/style/font/), etc.
+Aspose.Words provides a [TableStyle](https://reference.aspose.com/words/python-net/aspose.words/tablestyle/) inherited from the [Style](https://reference.aspose.com/words/python-net/aspose.words/style/) class. **TableStyle** facilitates the user to apply different style options like as shading, padding, indentation, [cell_spacing](https://reference.aspose.com/words/python-net/aspose.words/tablestyle/cell_spacing/) and [font](https://reference.aspose.com/words/python-net/aspose.words/style/font/), etc.
 
-In addition, Aspose.Words provides the [StyleCollection](https://reference.aspose.com/words/python-net/aspose.words/stylecollection/) class and a few properties of the `Table` class to specify which table style we will work with: [Style](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style/), [StyleIdentifier](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_identifier/), [StyleName](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_name/), and [StyleOptions](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_options/).
+In addition, Aspose.Words provides the [StyleCollection](https://reference.aspose.com/words/python-net/aspose.words/stylecollection/) class and a few properties of the `Table` class to specify which table style we will work with: [style](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style/), [style_identifier](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_identifier/), [style_name](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_name/), and [style_options](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_options/).
 
 Aspose.Words also provides [ConditionalStyle](https://reference.aspose.com/words/python-net/aspose.words/conditionalstyle/) class that represents special formatting applied to some area of a table with an assigned table style, and the [ConditionalStyleCollection](https://reference.aspose.com/words/python-net/aspose.words/conditionalstylecollection/) that represents a collection of **ConditionalStyle** objects. This collection contains a permanent set of items representing one item for each value of the [ConditionalStyleType](https://reference.aspose.com/words/python-net/aspose.words/conditionalstyletype/) enumeration type. The **ConditionalStyleType** enumeration defines all possible table areas to which conditional formatting may be defined in a table style.
 
@@ -60,7 +60,7 @@ The following code example shows how to define conditional formatting for header
 
 {{< gist "aspose-words-gists" "1825da859a3400b9777f6c745a0889aa" "define-conditional-formatting.py" >}}
 
-You can also choose which table parts to apply styles to, such as first column, last column, banded rows. They are listed in the [TableStyleOptions](https://reference.aspose.com/words/python-net/aspose.words.tables/tablestyleoptions/) enumeration and are applied through the [StyleOptions](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_options/) property. The **TableStyleOptions** enumeration allows a bitwise combination of these features.
+You can also choose which table parts to apply styles to, such as first column, last column, banded rows. They are listed in the [TableStyleOptions](https://reference.aspose.com/words/python-net/aspose.words.tables/tablestyleoptions/) enumeration and are applied through the [style_options](https://reference.aspose.com/words/python-net/aspose.words.tables/table/style_options/) property. The **TableStyleOptions** enumeration allows a bitwise combination of these features.
 
 The following code example shows how to create a new table with a table style applied:
 

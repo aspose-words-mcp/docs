@@ -55,7 +55,7 @@ You can download the template file of this example from [Aspose.Words GitHub](ht
 
 ## Send a Document to a Client Browser {#sending-a-document-to-a-client-browser}
 
-In order to send a document to a client browser, use a special overload that takes four parameters: file name, save format, save type, and an ASP.NETHttpResponse object. The way the document will be presented to the user is represented by the [ContentDisposition](https://reference.aspose.com/words/net/aspose.words/contentdisposition/) enumeration, which determines whether the document sent to the browser will provide an option to open itself directly in the browser or in the application associated with the file extension.
+In order to send a document to a client browser, use a special overload that takes four parameters: file name, save format, save type, and an ASP.NET HttpResponse object. The way the document will be presented to the user is represented by the [ContentDisposition](https://reference.aspose.com/words/net/aspose.words/contentdisposition/) enumeration, which determines whether the document sent to the browser will provide an option to open itself directly in the browser or in the application associated with the file extension.
 
 The following code example shows how to send a document to the client browser from an ASP.NET code:
 

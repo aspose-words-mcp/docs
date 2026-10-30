@@ -31,7 +31,7 @@ This article explains how to work with sections and section breaks.
 
 ## What Section and Section Break Is
 
-Document sections are represented by the [Section](https://reference.aspose.com/words/python-net/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/python-net/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) node and can be accessed via the [Sections](https://reference.aspose.com/words/python-net/aspose.words/document/sections/) property. You can manage those nodes by using some methods such as [Remove](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/remove/#node), [Add](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/add/#node), [IndexOf](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/index_of/#node), and others.
+Document sections are represented by the [Section](https://reference.aspose.com/words/python-net/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/python-net/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) node and can be accessed via the [sections](https://reference.aspose.com/words/python-net/aspose.words/document/sections/) property. You can manage those nodes by using some methods such as [remove](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/remove/#node), [add](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/add/#node), [index_of](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/index_of/#node), and others.
 
 Section break is an option that divides document pages into sections with customizable layouts.
 
@@ -61,7 +61,7 @@ The following code example shows how to insert a section break into a document:
 
 {{< gist "aspose-words-gists" "000cda3bfe9679c09bfd03617bd1f9e8" "insert-section-breaks.py" >}}
 
-Use the [Remove](https://reference.aspose.com/words/python-net/aspose.words/node/remove/#default) method to delete a section break. If you do not need to remove a specific section break and instead delete the content of that section, you can use the [ClearContent](https://reference.aspose.com/words/python-net/aspose.words/section/clear_content/#default) method.
+Use the [remove](https://reference.aspose.com/words/python-net/aspose.words/node/remove/#default) method to delete a section break. If you do not need to remove a specific section break and instead delete the content of that section, you can use the [clear_content](https://reference.aspose.com/words/python-net/aspose.words/section/clear_content/#default) method.
 
 The following code example shows how to remove sections breaks: 
 
@@ -75,7 +75,7 @@ Note that a section break has information about the section that goes before it,
 
 ## Move a Section
 
-If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/python-net/aspose.words/sectioncollection/) by using the [Item](https://reference.aspose.com/words/python-net/aspose.words/sectioncollection/) property. You can use the [Sections](https://reference.aspose.com/words/python-net/aspose.words/document/sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [FirstSection](https://reference.aspose.com/words/python-net/aspose.words/document/first_section/) property.
+If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/python-net/aspose.words/sectioncollection/) by index, using the [indexer](https://reference.aspose.com/words/python-net/aspose.words/sectioncollection/__getitem__/). You can use the [sections](https://reference.aspose.com/words/python-net/aspose.words/document/sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [first_section](https://reference.aspose.com/words/python-net/aspose.words/document/first_section/) property.
 
 The following code example shows how to access the first section and iterate through the children of a composite node:
 
@@ -96,15 +96,15 @@ The following code example shows how to limit the number of lines that each page
 
 ## Edit a Section
 
-When you add a new section to your document, there will be no body or paragraph that you can edit. Aspose.Words allows you to guarantee that a section contains a body with at least one paragraph using the [EnsureMinimum](https://reference.aspose.com/words/python-net/aspose.words/section/ensure_minimum/#default) method – it will automatically add a Body (or HeaderFooter) node to the document and then add a Paragraph to it.
+When you add a new section to your document, there will be no body or paragraph that you can edit. Aspose.Words allows you to guarantee that a section contains a body with at least one paragraph using the [ensure_minimum](https://reference.aspose.com/words/python-net/aspose.words/section/ensure_minimum/#default) method – it will automatically add a Body (or HeaderFooter) node to the document and then add a Paragraph to it.
 
-The following code example shows how to prepare a new section node using **EnsureMinimum**:
+The following code example shows how to prepare a new section node using **ensure_minimum**:
 
 {{< gist "aspose-words-gists" "000cda3bfe9679c09bfd03617bd1f9e8" "ensure-minimum.py" >}}
 
 ### Append or Prepend Content
 
-If you want to draw some shape or add text or image at the beginning/end of a section, you can use the [AppendContent](https://reference.aspose.com/words/python-net/aspose.words/section/append_content/#section) and [PrependContent](https://reference.aspose.com/words/python-net/aspose.words/section/prepend_content/#section) methods of the [Section](https://reference.aspose.com/words/python-net/aspose.words/section/) class.
+If you want to draw some shape or add text or image at the beginning/end of a section, you can use the [append_content](https://reference.aspose.com/words/python-net/aspose.words/section/append_content/#section) and [prepend_content](https://reference.aspose.com/words/python-net/aspose.words/section/prepend_content/#section) methods of the [Section](https://reference.aspose.com/words/python-net/aspose.words/section/) class.
 
 The following code example shows how to append content of an existing section:
 
@@ -112,7 +112,7 @@ The following code example shows how to append content of an existing section:
 
 ### Clone a Section
 
-Aspose.Words allows you to duplicate a section by creating a full copy of it using the [Clone](https://reference.aspose.com/words/python-net/aspose.words/section/clone/#default) method.
+Aspose.Words allows you to duplicate a section by creating a full copy of it using the [clone](https://reference.aspose.com/words/python-net/aspose.words/section/clone/#default) method.
 
 The following code example shows how to clone the first section in your document:
 
@@ -122,7 +122,7 @@ The following code example shows how to clone the first section in your document
 
 In some cases, you may have large documents with many sections and you want to copy the content of a section from one document to another.
 
-Aspose.Words allows you to copy sections between documents using the [ImportNode](https://reference.aspose.com/words/python-net/aspose.words/nodeimporter/import_node/#node_bool) method.
+Aspose.Words allows you to copy sections between documents using the [import_node](https://reference.aspose.com/words/python-net/aspose.words/nodeimporter/import_node/#node_bool) method.
 
 The following code example shows how to copy sections between documents:
 
@@ -139,7 +139,7 @@ The following code example shows how to create 2 sections with different headers
 
 {{< gist "aspose-words-gists" "2e1b2b28253780881d116e3a873ee668" "link-to-previous-header-footer.py" >}}
 
-If you want to remove the text of headers and footers without removing [HeaderFooter](https://reference.aspose.com/words/python-net/aspose.words/headerfooter/) objects in your document, you can use the [ClearHeadersFooters](https://reference.aspose.com/words/python-net/aspose.words/section/clear_headers_footers/#default) method. In addition, you can use the [DeleteHeaderFooterShapes](https://reference.aspose.com/words/python-net/aspose.words/section/delete_header_footer_shapes/#default) method to remove all shapes from headers and footers in your document.
+If you want to remove the text of headers and footers without removing [HeaderFooter](https://reference.aspose.com/words/python-net/aspose.words/headerfooter/) objects in your document, you can use the [clear_headers_footers](https://reference.aspose.com/words/python-net/aspose.words/section/clear_headers_footers/#default) method. In addition, you can use the [delete_header_footer_shapes](https://reference.aspose.com/words/python-net/aspose.words/section/delete_header_footer_shapes/#default) method to remove all shapes from headers and footers in your document.
 
 The following code example shows how to clear content of all headers and footers in a section:
 
@@ -172,19 +172,15 @@ The following code example shows how to modify the page properties in all sectio
 
 - When removing a section break, the section *before* the break adopts the formatting (including page setup, headers, and footers) of the section *after* the break. This is the opposite of what many developers expect. To avoid unintended layout changes, ensure you understand the section order before removal.
 
-- The `ensure_minimum()` method only ensures the presence of a `Body` and at least one `Paragraph`. It does *not* create `HeaderFooter` nodes. To ensure headers/footers exist, call `section.headers_footers.ensure_minimum()` (available since Aspose.Words 22.12+).
+- The `ensure_minimum()` method only ensures the presence of a `Body` and at least one `Paragraph`. It does *not* create `HeaderFooter` nodes. To add a header or footer, create it and add it to the section, e.g., `section.headers_footers.add(aw.HeaderFooter(doc, aw.HeaderFooterType.HEADER_PRIMARY))`.
 
-- When cloning a Section using `section.clone()`, the resulting section includes all `HeaderFooter` nodes, but they remain linked to the source document's formatting. If inserting the clone into another document, consider calling `header_footer.remove_header_footer_link_to_previous()` (or equivalent) to break inherited formatting.
+- `section.clone()` copies the section together with its `HeaderFooter` nodes. To insert the copy into another document, import it with `import_node` or `NodeImporter`. To stop a section from using the headers and footers of the previous section, call `section.headers_footers.link_to_previous(False)`.
 
 - When copying sections between documents using `node_importer.import_node()`, specify `aw.ImportFormatMode.KEEP_SOURCE_FORMATTING` to preserve source formatting. Without it, the section may adopt formatting from the target document, potentially causing layout shifts.
 
-- Headers and footers are inherited from the previous section *unless* the current section has its own `HeaderFooter` nodes. To break the inheritance and enable independent editing, create or import a `HeaderFooter` for the desired type (e.g., HeaderFooterType.HEADER_PRIMARY) and ensure the section's `page_setup.different_first_page` and `page_setup.different_odd_even` settings match your intent.
+- Headers and footers are inherited from the previous section *unless* the current section has its own `HeaderFooter` nodes. To break the inheritance and enable independent editing, create or import a `HeaderFooter` for the desired type (e.g., HeaderFooterType.HEADER_PRIMARY) and ensure the section's `page_setup.different_first_page_header_footer` and `page_setup.odd_and_even_pages_header_footer` settings match your intent.
 
-- Section layout modes (via `section.layout_mode`) affect only line grid alignment for East Asian content and have no effect on Western text unless explicitly enabled in `options`.
-
-- When applying SectionStart.NEW_PAGE, SectionStart.EVEN_PAGE, or SectionStart.ODD_PAGE, ensure the preceding section has a closing section break — otherwise, new content may appear on the wrong page.
-
-- A document must contain at least one section. Removing all sections results in an invalid document state and will throw an `InvalidOperationException`.
+- `page_setup.layout_mode` (see `SectionLayoutMode`) defines the document grid behavior of a section.
 
 {{% alert color="primary" %}}
 
@@ -205,7 +201,7 @@ For additional details, see the official documentation:
    **A:** Retrieve the section from the `Document.sections` collection, remove it with `sections.remove(section)`, and then insert it at the new index using `sections.insert(index, section)`. This preserves the section's formatting and content.
 
 3. **Q:** How do I copy a section from one document into another without losing its formatting?  
-   **A:** Load both documents, obtain the source `Section`, and import it into the target document with `NodeImporter.import_node(source_section, True, ImportFormatMode.KEEP_SOURCE_FORMATTING)`. Then add the imported node to the target document's `Sections` collection.
+   **A:** Load both documents, obtain the source `Section`, and import it into the target document with a `NodeImporter`: `importer = aw.NodeImporter(src_doc, dst_doc, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)`, then `importer.import_node(source_section, True)`. Then add the imported node to the target document's `sections` collection.
 
 4. **Q:** Can I clear the text of headers and footers without deleting the header/footer objects themselves?  
    **A:** Yes. Call `Section.clear_headers_footers()` to remove all header/footer text while keeping the objects intact. If you also need to remove shapes, use `Section.delete_header_footer_shapes()` afterwards.

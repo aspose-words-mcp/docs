@@ -31,7 +31,7 @@ The following code example shows how to retrieve the index of a table in a docum
 
 Similarly, you may need to make changes to a specific row in a selected table. To do this, you can also refer to a row by its index.
 
-The following code example showshow to retrieve the index of a row in a table:
+The following code example shows how to retrieve the index of a row in a table:
 
 {{< gist "aspose-words-gists" "08b4741d451b8f6519bcb0b916f18bb8" "retrieve-row-index.h" >}}
 
@@ -69,9 +69,9 @@ The following code example shows how to remove a column from a table in a docume
 
 ## Specify Rows as Header Rows
 
-You can choose to repeat the first row in the table as the Header Row only on the first page or on each page if the table is split into several. In Aspose.Words, you can repeat the Header Row on every page using the [HeadingFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_headingformat/) property.
+You can choose to repeat the first row in the table as the Header Row only on the first page or on each page if the table is split into several. In Aspose.Words, you can repeat the Header Row on every page using the [get_HeadingFormat()](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_headingformat/) property.
 
-You can also mark multiple header rows if such rows are located one after the other at the beginning of the table. To do this, you need to apply the **HeadingFormat** properties to these rows.
+You can also mark multiple header rows if such rows are located one after the other at the beginning of the table. To do this, you need to apply the **get_HeadingFormat()** properties to these rows.
 
 {{% alert color="primary" %}}
 
@@ -96,7 +96,7 @@ By default, the above properties are disabled.
 
 ### Keep a Row from Breaking Across Pages {#keep-a-row-from-breaking-across-pages}
 
-This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”.In Aspose.Words this is found under the [RowFormat](hhttps://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) as the property [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_allowbreakacrosspages/).
+This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can be found under Table Properties as the option “Allow row to break across pages”. In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) as the property [RowFormat::get_AllowBreakAcrossPages()](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_allowbreakacrosspages/).
 
 The following code example shows how to disable breaking rows across pages for each row in a table:
 
@@ -106,7 +106,7 @@ The following code example shows how to disable breaking rows across pages for e
 
 To stop the table from splitting across pages, we need to specify that we want the content contained within the table to stay together.
 
-To do this, Aspose.Words uses a method, which allows users to select a table and enable the [KeepWithNext](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/get_keepwithnext/) parameter to true for each paragraph within the table cells. The exception is the last paragraph in the table, which should be set to false.
+To do this, Aspose.Words uses a method, which allows users to select a table and enable the [get_KeepWithNext()](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/get_keepwithnext/) parameter to true for each paragraph within the table cells. The exception is the last paragraph in the table, which should be set to false.
 
 The following code example shows how to set a table to stay together on the same page:
 

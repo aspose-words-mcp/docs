@@ -95,10 +95,10 @@ The following code example shows how to insert an online video into a document u
 ## FAQ
 
 1. **Q:** How can I insert an OLE object as an icon instead of displaying its full content?  
-   **A:** Use `DocumentBuilder.insert_ole_object_as_icon`. Provide the OLE object's ProgId (or stream), the icon image (optional), and set the `display_as_icon` flag to `True`. The method creates an `Shape` that represents the icon in the document.
+   **A:** Use `DocumentBuilder.insert_ole_object_as_icon`. Pass the file name (or a stream and its ProgId), the icon file, and the icon caption, e.g., `insert_ole_object_as_icon(file_name, is_linked, icon_file, icon_caption)`. The method creates a `Shape` that represents the icon in the document.
 
 2. **Q:** I need to set a custom file name and extension for an OLE package that has no native handler. How is this done?  
-   **A:** Create an `OlePackage` instance, set its `file_name`, `file_extension`, and `display_name` properties, then pass the package to `DocumentBuilder.insert_ole_object`. This embeds the data with the specified metadata, allowing Word to recognize the file type.
+   **A:** Insert the data with `DocumentBuilder.insert_ole_object(stream, "Package", False, None)`, then set `file_name` (including the extension) and `display_name` on the `ole_format.ole_package` of the returned shape. This embeds the data with the specified file name, allowing Word to recognize the file type.
 
 3. **Q:** How can I retrieve the raw binary data of an embedded OLE object?  
    **A:** Access the `OleFormat` of the shape that contains the OLE object and call `OleFormat.get_raw_data()`. The method returns a `bytes` array containing the original embedded file data.
@@ -107,4 +107,4 @@ The following code example shows how to insert an online video into a document u
    **A:** The overload works directly with YouTube and Vimeo URLs. For other platforms you must use the overload that accepts embedded HTML code, providing the HTML snippet and an optional poster image.
 
 5. **Q:** My inserted online video does not display in Word 2013. What should I check?  
-   **A:** Ensure the document is saved after insertion; Word 2013 automatically optimizes the document for online video. Also verify that the video URL is reachable and that the width/height parameters are set to reasonable values (e.g., 360 × 270).
+   **A:** If the video is not displayed correctly, insert it with the overload that takes the embed HTML code and a thumbnail image: `insert_online_video(video_url, video_embed_code, thumbnail_image_bytes, width, height)`. Also verify that the video URL is reachable and that the width/height parameters are set to reasonable values (e.g., 360 × 270).

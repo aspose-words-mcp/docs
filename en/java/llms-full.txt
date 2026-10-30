@@ -35,7 +35,7 @@ Comprehensive documentation index for Aspose.Words for Java — developer guide,
 - [Convert a Document](https://docs.aspose.com/words/java/convert-a-document/): Convert documents between Word, PDF, OpenOffice, and more formats. For example, convert Word to PDF, Image to PDF, PDF to Word, PDF to JPG, Image to JPG, HTML to PDF, HTML to Markdown, etc.
 
 ### Rendering & Printing
-- [Rendering](https://docs.aspose.com/words/java/rendering/): What is Rendering and Page layout?Flow-layout or Fixed-layout document formats
+- [Rendering](https://docs.aspose.com/words/java/rendering/): What is Rendering and Page layout? Flow-layout or Fixed-layout document formats
 - [Converting to Fixed-page Format](https://docs.aspose.com/words/java/converting-to-fixed-page-format/): Convert documents to fixed-page formats like PDF, XPS, and images. Which PDF Standard Is Better to Choose? Working with PDF/A or PDF/UA
 - [Using TrueType Fonts](https://docs.aspose.com/words/java/using-truetype-fonts/): Configure and embed TrueType fonts when rendering documents. Manipulate and Substitute TrueType Fonts
 - [Enable OpenType Features](https://docs.aspose.com/words/java/enable-opentype-features/): Render documents with advanced OpenType typography features

@@ -49,13 +49,13 @@ The following code example shows how to set the position of footnote and endnote
    **A:** Use the `insertFootnote` method of `DocumentBuilder`. Pass the `FootnoteType.Footnote` or `FootnoteType.Endnote` enum value and the footnote text. The method returns a `Footnote` object that you can further customize.
 
 2. **Q:** How can I change the numbering format of footnotes or endnotes?  
-   **A:** Create an instance of `FootnoteOptions` or `EndnoteOptions` and set its `numberStyle` property (e.g., `NumberStyle.LowerRoman`). Assign the options object to the document's `footnoteOptions` or `endnoteOptions` property before inserting notes.
+   **A:** Set the `numberStyle` property of the document's `footnoteOptions` or `endnoteOptions` object (e.g., `doc.footnoteOptions.numberStyle = aw.NumberStyle.LowercaseRoman;`).
 
 3. **Q:** How do I set the number of columns for footnote layout?  
    **A:** Set the `columns` property of `FootnoteOptions`. A value of `0` lets Word decide based on the page layout; any positive integer forces that many columns.
 
 4. **Q:** How can I control where footnotes and endnotes appear in the document?  
-   **A:** Use the `position` property of `FootnoteOptions` (`FootnotePosition.Bottom` or `FootnotePosition.BeneathText`) and the `position` property of `EndnoteOptions` (`EndnotePosition.EndOfSection` or `EndnotePosition.EndOfDocument`). Apply the options to the document before adding notes.
+   **A:** Use the `position` property of `FootnoteOptions` (`FootnotePosition.BottomOfPage` or `FootnotePosition.BeneathText`) and the `position` property of `EndnoteOptions` (`EndnotePosition.EndOfSection` or `EndnotePosition.EndOfDocument`). Both objects are available through the document's `footnoteOptions` and `endnoteOptions` properties.
 
 5. **Q:** I have HTML that contains `<sup>` endnote tags—how can I convert them to Word endnotes?  
    **A:** Load the HTML into a `Document`, then iterate through the `Paragraph` nodes looking for `Superscript` runs that contain the endnote marker. Replace each marker with an `Endnote` using `DocumentBuilder.insertFootnote(FootnoteType.Endnote, “text”)`. Finally, save the document in the desired format.

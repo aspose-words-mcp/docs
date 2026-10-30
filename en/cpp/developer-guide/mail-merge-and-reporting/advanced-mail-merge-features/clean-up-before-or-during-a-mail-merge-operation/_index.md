@@ -18,7 +18,7 @@ Aspose.Words allows you to apply different cleaning and removing options such as
 
 ## Delete Merged Fields
 
-When you are using some long template that is created by someone else, you may want to delete all the merge fields that already exist in that template before performing a Mail Merge operation. You can use the [DeleteFields](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/deletefields/) method if you want to delete all merge fields from a document without executing a Mail Merge operation. This method is not affected by any removing options of the [CleanupOptions](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/get_cleanupoptions/) property and executing it only removes merged fields, not any containing fields or empty paragraphs.
+When you are using some long template that is created by someone else, you may want to delete all the merge fields that already exist in that template before performing a Mail Merge operation. You can use the [DeleteFields](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/deletefields/) method if you want to delete all merge fields from a document without executing a Mail Merge operation. This method is not affected by any removing options of the [get_CleanupOptions()](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/get_cleanupoptions/) property and executing it only removes merged fields, not any containing fields or empty paragraphs.
 
 The following code example shows how to delete all merge fields from your template without executing a Mail Merge operation:
 
@@ -93,8 +93,6 @@ The following code example shows how to remove empty table rows that contain Mai
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Mail-Merge-MailMergeCleanUp-RemoveEmptyTableRows.cpp" >}}
 
-```
-
 ------ 
 
 ## FAQ
@@ -115,7 +113,8 @@ The following code example shows how to remove empty table rows that contain Mai
    System::SharedPtr<Aspose::Words::Document> doc = MakeObject<Aspose::Words::Document>(u"Template.docx");
    doc->get_MailMerge()->set_CleanupOptions(
        Aspose::Words::MailMerging::MailMergeCleanupOptions::RemoveEmptyParagraphs);
-   doc->get_MailMerge()->Execute(u"DataSource");
+   doc->get_MailMerge()->Execute(System::MakeArray<System::String>({u"FullName"}),
+       System::MakeArray<System::SharedPtr<System::Object>>({System::ObjectExt::Box<System::String>(u"James Bond")}));
    ```
 
 3. **Q:** How do I automatically remove merge fields that have no matching column in the data source?  
@@ -125,7 +124,8 @@ The following code example shows how to remove empty table rows that contain Mai
    System::SharedPtr<Aspose::Words::Document> doc = MakeObject<Aspose::Words::Document>(u"Template.docx");
    doc->get_MailMerge()->set_CleanupOptions(
        Aspose::Words::MailMerging::MailMergeCleanupOptions::RemoveUnusedFields);
-   doc->get_MailMerge()->Execute(u"DataSource");
+   doc->get_MailMerge()->Execute(System::MakeArray<System::String>({u"FullName"}),
+       System::MakeArray<System::SharedPtr<System::Object>>({System::ObjectExt::Box<System::String>(u"James Bond")}));
    ```
 
 4. **Q:** What is the best way to delete outer fields (e.g., IF, formula) that contain a merge field after the merge?  
@@ -135,7 +135,8 @@ The following code example shows how to remove empty table rows that contain Mai
    System::SharedPtr<Aspose::Words::Document> doc = MakeObject<Aspose::Words::Document>(u"Template.docx");
    doc->get_MailMerge()->set_CleanupOptions(
        Aspose::Words::MailMerging::MailMergeCleanupOptions::RemoveContainingFields);
-   doc->get_MailMerge()->Execute(u"DataSource");
+   doc->get_MailMerge()->Execute(System::MakeArray<System::String>({u"FullName"}),
+       System::MakeArray<System::SharedPtr<System::Object>>({System::ObjectExt::Box<System::String>(u"James Bond")}));
    ```
 
 5. **Q:** How can I get rid of empty table rows that only contain merge fields?  
@@ -146,5 +147,6 @@ The following code example shows how to remove empty table rows that contain Mai
    doc->get_MailMerge()->set_CleanupOptions(
        Aspose::Words::MailMerging::MailMergeCleanupOptions::RemoveEmptyTableRows |
        Aspose::Words::MailMerging::MailMergeCleanupOptions::RemoveEmptyParagraphs);
-   doc->get_MailMerge()->Execute(u"DataSource");
+   doc->get_MailMerge()->Execute(System::MakeArray<System::String>({u"FullName"}),
+       System::MakeArray<System::SharedPtr<System::Object>>({System::ObjectExt::Box<System::String>(u"James Bond")}));
    ```

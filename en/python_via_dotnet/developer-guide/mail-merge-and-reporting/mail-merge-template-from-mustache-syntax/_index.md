@@ -87,8 +87,8 @@ And after applying the [use_non_merge_fields](https://reference.aspose.com/words
 
 ## Related APIs
 
-- [`aspose.words.Document`](https://reference.aspose.com/words/python-net/aspose.words/document/)
-- [`aspose.words.mailmerging.MailMerge`](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/mailmerge/)
-- [`use_non_merge_fields`](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/mailmerge/use_non_merge_fields/)
-- [`execute_with_regions`](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/mailmerge/execute_with_regions/)
-- [`aspose.words.LoadFormat`](https://reference.aspose.com/words/python-net/aspose.words/loadformat/)
+- [aspose.words.Document](https://reference.aspose.com/words/python-net/aspose.words/document/)
+- [aspose.words.mailmerging.MailMerge](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/mailmerge/)
+- [use_non_merge_fields](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/mailmerge/use_non_merge_fields/)
+- [execute_with_regions](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/mailmerge/execute_with_regions/)
+- [aspose.words.LoadFormat](https://reference.aspose.com/words/python-net/aspose.words/loadformat/)

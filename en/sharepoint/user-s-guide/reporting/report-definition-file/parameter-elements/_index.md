@@ -10,7 +10,7 @@ url: /sharepoint/parameter-elements/
 timestamp: 2024-10-21-11-17-44
 ---
 
-Currently String, Int32, DateTime and Decimal parameter elements all have the same child elements. However, parameter data type, specified by the element name is important. Aspose.Words for SharePoint uses is to generate controls for parameter entering. Parameter type also affects how the supplied values are converted when passed to queries.
+Currently String, Int32, DateTime and Decimal parameter elements all have the same child elements. However, parameter data type, specified by the element name is important. Aspose.Words for SharePoint uses it to generate controls for parameter entering. Parameter type also affects how the supplied values are converted when passed to queries.
 
 | Name | Cardinality | Has Children | Description |
 | :- | :- | :- | :- |

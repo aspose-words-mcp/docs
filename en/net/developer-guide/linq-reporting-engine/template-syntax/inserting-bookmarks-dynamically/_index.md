@@ -42,7 +42,7 @@ Here, `bookmark_expression` defines the name of a bookmark to be inserted during
 
 - [Bookmark](https://reference.aspose.com/words/net/aspose.words/bookmark/)
 - [BookmarkCollection](https://reference.aspose.com/words/net/aspose.words/bookmarkcollection/)
-- [Document.Bookmarks](https://reference.aspose.com/words/net/aspose.words/document/bookmarks/)
+- [Range.Bookmarks](https://reference.aspose.com/words/net/aspose.words/range/bookmarks/)
 
 ------
 
@@ -58,4 +58,4 @@ Here, `bookmark_expression` defines the name of a bookmark to be inserted during
    **A:** The tag is ignored and no bookmark is created. Because the expression must return a non‑empty value, an empty result will cause the engine to skip the bookmark insertion without raising an error.
 
 4. **Q:** How can I reference a bookmark that was created dynamically later in the same report?  
-   **A:** Use the standard Aspose.Words field syntax, such as a `REF` field: `<<field REF [bookmark_name]>>`. The `[bookmark_name]` part should match the expression used when the bookmark was created, allowing you to cross‑reference the dynamic bookmark elsewhere in the document.
+   **A:** Use a `link` tag with the same expression that named the bookmark, e.g., `<<link ["Section_" + Id] ["Go to section"]>>`. The engine inserts a hyperlink to the dynamically created bookmark. For a bookmark with a fixed name, a regular `REF` field in the template works as well.

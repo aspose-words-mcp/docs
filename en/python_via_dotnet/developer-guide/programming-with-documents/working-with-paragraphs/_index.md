@@ -46,7 +46,7 @@ The following code example shows how to set paragraph formatting:
 
 Some formatting objects, such as **Font** or **ParagraphFormat**, support styles. One built-in or user-defined style is represented by a [Style](https://reference.aspose.com/words/python-net/aspose.words/style/) object, which contains the appropriate style properties like name, base style, font, style paragraph formatting, and so on.
 
-In addition, the **Style** object exposes the [StyleIdentifier](https://reference.aspose.com/words/python-net/aspose.words/styleidentifier/) property, which returns the locale-independent style identifier represented by the [Style.style_identifier](https://reference.aspose.com/words/python-net/aspose.words/style/style_identifier/) enumeration value. The fact is that the names of the built-in styles in Microsoft Word are localized for different languages. Using the style identifier, you can find the correct style regardless of the document language. The enumeration values correspond to the built-in Microsoft Word styles such as *Normal*, *Heading 1*, *Heading 2*  and so on. All user-defined styles are set to the **StyleIdentifier.User** enumeration value.
+In addition, the **Style** object exposes the [StyleIdentifier](https://reference.aspose.com/words/python-net/aspose.words/styleidentifier/) property, which returns the locale-independent style identifier represented by the [Style.style_identifier](https://reference.aspose.com/words/python-net/aspose.words/style/style_identifier/) enumeration value. The fact is that the names of the built-in styles in Microsoft Word are localized for different languages. Using the style identifier, you can find the correct style regardless of the document language. The enumeration values correspond to the built-in Microsoft Word styles such as *Normal*, *Heading 1*, *Heading 2*  and so on. All user-defined styles are set to the **StyleIdentifier.USER** enumeration value.
 
 The following code example shows how to apply a paragraph style:
 
@@ -78,7 +78,7 @@ Note that when the border properties are reset to their default values, the bord
 
 {{% /alert %}}
 
-Aspose.Words also has the [Shading](https://reference.aspose.com/words/python-net/aspose.words/shading/) class that contains shading attributes for document elements. You can set the desired shading texture and colors that are applied to the background and foreground of an element using the [TextureIndex](https://reference.aspose.com/words/python-net/aspose.words/textureindex/) enumeration value. **TextureIndex** also allows you to apply different patterns to the **Shading** object. For example, to set the background color for a document element, use the **TextureIndex.TextureSolid** value and set the foreground shading color as appropriate.
+Aspose.Words also has the [Shading](https://reference.aspose.com/words/python-net/aspose.words/shading/) class that contains shading attributes for document elements. You can set the desired shading texture and colors that are applied to the background and foreground of an element using the [TextureIndex](https://reference.aspose.com/words/python-net/aspose.words/textureindex/) enumeration value. **TextureIndex** also allows you to apply different patterns to the **Shading** object. For example, to set the background color for a document element, use the **TextureIndex.TEXTURE_SOLID** value and set the foreground shading color as appropriate.
 
 The following code example shows how to apply borders and shading to a paragraph:
 

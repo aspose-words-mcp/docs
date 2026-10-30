@@ -34,7 +34,7 @@ The following code example shows how to merge rows from two tables into one:
 
 - `com.aspose.words.Table` — Represents a table in the document.
 - `com.aspose.words.Row` — Represents a table row.
-- `Document.importNode(Node, boolean)` — Imports a node from another document, preserving formatting when the second parameter is `true`.
+- `Document.importNode(Node, boolean)` — Imports a node from another document; `true` imports its child nodes as well.
 - `RowCollection.add(Node)` — Adds a row to the table's row collection.
 - `Node.remove()` — Removes the node from the document. 
 
@@ -47,4 +47,4 @@ The following code example shows how to merge rows from two tables into one:
    **A:** Create a new `Table` instance, move the rows you want to separate from the original table into the new one, and insert the new table at the desired position using `firstTable.getParentNode().insertAfter(newTable, firstTable)`. Adjust any required formatting on the new table's rows and cells.
 
 3. **Q:** The joined table loses its original formatting after moving rows. What should I do?  
-   **A:** Preserve formatting by cloning the row with `row.deepClone(true)`, which copies both content and formatting. After the join, call `firstTable.ensureMinimum()` and `doc.updatePageLayout()` to make sure the table layout is recalculated and the formatting is applied correctly.
+   **A:** Moving a row with `appendChild` keeps the row, its cells, and their formatting, so cloning is not needed. If the tables are in different documents, import the row with `firstTable.getDocument().importNode(row, true)`; `true` imports the row together with its cells.

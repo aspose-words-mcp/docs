@@ -15,7 +15,7 @@ timestamp: 2024-01-27-14-07-04
 
 ## Aspose.Words - Format Text in Document
 
-Current font formatting is represented by a**Font**object returned by the**DocumentBuilder.Font**property. The**Font**class contains a wide variety of the font properties possible in Microsoft Word.
+Current font formatting is represented by a **Font** object returned by the **DocumentBuilder.getFont()** property. The **Font** class contains a wide variety of the font properties possible in Microsoft Word.
 
 **Java**
 
@@ -94,6 +94,6 @@ out.close();
 
 {{% alert color="primary" %}}
 
-For more details, visit [Specifying Formatting](/words/java/working-with-styles/).
+For more details, visit [Specifying Formatting](/words/java/document-builder-overview/#specify-document-formatting).
 
 {{% /alert %}}

@@ -66,7 +66,7 @@ An opening `foreach` tag defines a `foreach` statement enclosed by brackets. The
     <tr>
 			<td>Sequence Expression</td>
       <td>No</td>
-      <td>A sequence expression must return an <ahref="https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0">IEnumerable implementor</a>.</td>
+      <td>A sequence expression must return an <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0">IEnumerable implementor</a>.</td>
 		</tr>
 	</tbody>
 </table>
@@ -82,9 +82,9 @@ data_band_body
 **This section includes the following topics:** 
 
 - [Working with Common Data Bands](/words/net/working-with-common-data-bands/)
-- [Working with Table-Row Data Bands](/words/net/working-with-table-row-data-bands/)
+- [Working with Table-Row Data Bands](/words/net/working-with-table-row-data-bands-linq/)
 - [Working with Table-Column Data Bands](/words/net/working-with-table-column-data-bands/)
-- [Working with Cross (Pivot) Tabless](/words/net/working-with-cross-pivot-tables/)
+- [Working with Cross (Pivot) Tables](/words/net/working-with-cross-pivot-tables/)
 - [Working With Charts](/words/net/linq-working-with-charts/)
 - [Using Extension Methods of Iteration Variables](/words/net/using-extension-methods-of-iteration-variables/)
 - [Forcing Movement to Next Item within Data Band](/words/net/forcing-movement-to-next-item-within-data-band/)
@@ -97,13 +97,13 @@ data_band_body
    **A:** No. The type is optional. If you omit it, the engine infers the type from the sequence you provide. Specify the type only when you need the engine to recognize a custom or external type.
 
 2. **Q:** How can I access the members of the iteration variable without giving it a name?  
-   **A:** When you omit the variable name, you can use the contextual object member access syntax, e.g., `{{Field}}`, to refer directly to the current element's members inside the data band.
+   **A:** When you omit the variable name, you can use the contextual object member access syntax, e.g., `<<[Field]>>` inside `<<foreach [in Items]>>`, to refer directly to the current element's members inside the data band.
 
 3. **Q:** Is it possible to place a data band inside another data band?  
    **A:** Yes. Data band bodies may contain nested `foreach` tags, allowing you to output hierarchical data such as master‑detail relationships.
 
 4. **Q:** How do I force the engine to skip to the next item before the current data band body finishes?  
-   **A:** Use the `<<break>>` tag inside the data band body. When the engine encounters this tag, it stops processing the current iteration and moves to the next element in the sequence.
+   **A:** Use the `<<next>>` tag inside the data band body. When the engine encounters this tag, it moves to the next element in the sequence, and the rest of the body is filled with that element's data. This is useful for label-print-like layouts with several items in one table row.
 
 5. **Q:** What kind of expression can I use after the `in` keyword?  
    **A:** The expression must evaluate to an object that implements `IEnumerable`. Typical examples are collections like `List<T>`, arrays, or any custom enumerable type that the engine can iterate over.

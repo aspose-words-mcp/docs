@@ -10,7 +10,7 @@ url: /sharepoint/credentials-element/
 timestamp: 2024-10-21-11-17-44
 ---
 
-The Credentials element contains information about user name and password to use to connect to a SharePoint site. You can omit it to use the current user credentials.Please note that storing user name and password in a report definition file may be insecure.
+The Credentials element contains information about user name and password to use to connect to a SharePoint site. You can omit it to use the current user credentials. Please note that storing user name and password in a report definition file may be insecure.
 
 | Name | Cardinality | Has Children | Description |
 | :- | :- | :- | :- |

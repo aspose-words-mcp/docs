@@ -39,13 +39,13 @@ For example, using Aspose.Words API, you can add a task pane add-in and customiz
 
 Web Extensions are tools that expand the capabilities of Office applications and interact with Office document content. Web Extensions provide additional functionality to Office clients for improving user experience.
 
-Aspose.Words provides the ability to add Web Extensions of the Task Pane type using the [WebExtension](https://reference.aspose.com/words/java/com.aspose.words.webextension/) and [TaskPane](https://reference.aspose.com/words/java/com.aspose.words.taskpane/) classes, and also allows you to customize the pane and extension properties.
+Aspose.Words provides the ability to add Web Extensions of the Task Pane type using the [WebExtension](https://reference.aspose.com/words/java/com.aspose.words/webextension/) and [TaskPane](https://reference.aspose.com/words/java/com.aspose.words/taskpane/) classes, and also allows you to customize the pane and extension properties.
 
 The following code example shows how to create task panes and add to web extension task panes with basic properties:
 
 {{< gist "aspose-words-gists" "b91d438dcc82b6b4a3c8db34ad732c7d" "web-extension-task-panes.java" >}}
 
-To see a list of task pane add‑ins, use the [WebExtensionTaskPanes](https://reference.aspose.com/words/java/com.aspose.words.document/#getWebExtensionTaskPanes) property.
+To see a list of task pane add‑ins, use the [getWebExtensionTaskPanes()](https://reference.aspose.com/words/java/com.aspose.words/document/#getWebExtensionTaskPanes) property.
 
 The following code example shows how to get such a list of add-ins:
 
@@ -54,16 +54,16 @@ The following code example shows how to get such a list of add-ins:
 ## FAQ
 
 1. **Q:** How do I add a Task Pane add‑in to a Word document using Aspose.Words for Java?  
-   **A:** Create a `WebExtension` object, set its `Id` to the Office add‑in GUID, and add a `TaskPane` object to the extension's `TaskPaneCollection`. Finally, add the `WebExtension` to the document's `WebExtensionCollection`. The API handles the required XML for the add‑in.
+   **A:** Create a `TaskPane` object and add it to the document with `doc.getWebExtensionTaskPanes().add(taskPane)`. Then set up the add‑in through `taskPane.getWebExtension()`, e.g., `getReference().setId(...)`, `getReference().setStore(...)`, and `getReference().setStoreType(...)`. The API handles the required XML for the add‑in.
 
 2. **Q:** Which class lets me retrieve the list of Task Pane add‑ins already present in a document?  
-   **A:** Use the `Document.getWebExtensionTaskPanes()` property. It returns a collection of `WebExtensionTaskPane` objects that represent each task pane defined in the document.
+   **A:** Use the `Document.getWebExtensionTaskPanes()` property. It returns a `TaskPaneCollection` of `TaskPane` objects that represent each task pane defined in the document.
 
 3. **Q:** Can I customize the appearance (size, visibility, docking state) of a Task Pane programmatically?  
-   **A:** Yes. After creating a `TaskPane` instance, set its `DockState`, `Visible`, `Width`, and `Height` properties before adding it to the `WebExtension`. These properties control how the pane is displayed in Word.
+   **A:** Partly. `TaskPane` has `setDockState`, `isVisible(boolean)`, `setWidth`, `setRow`, and `isLocked(boolean)`; there is no height setting. Set them on a `TaskPane` from `doc.getWebExtensionTaskPanes()`. These properties control how the pane is displayed in Word.
 
 4. **Q:** Is it possible to add other types of Web Extensions (e.g., content add‑ins) with Aspose.Words for Java?  
    **A:** Aspose.Words currently supports only the Task Pane type of Web Extensions. For other extension types you would need to manipulate the underlying XML manually, which is not covered by the high‑level API.
 
 5. **Q:** Do I need a licensed version of Aspose.Words to use Web Extensions?  
-   **A:** Yes. The Web Extensions functionality is part of the full Aspose.Words library, and a valid license is required to avoid evaluation watermarks and to access all features.
+   **A:** Not to use the feature. Without a license, Aspose.Words for Java works in evaluation mode with full functionality, but it adds an evaluation watermark and limits the document size to a few hundred paragraphs. To remove these limitations, apply a license: `License license = new License(); license.setLicense("Aspose.Words.Java.lic");`.

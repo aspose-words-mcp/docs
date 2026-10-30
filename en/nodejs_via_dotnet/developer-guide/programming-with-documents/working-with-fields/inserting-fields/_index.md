@@ -134,7 +134,7 @@ The following code example shows how to add the `AUTHOR` Field using DOM to a pa
 
 ### Inserting `INCLUDETEXT` field into a Document without using DocumentBuilder
 
-The `INCLUDETEXT` field inserts the text and graphics contained in the document named in the field code. You can insert the entire document or a portion of the document referred to by a bookmark. This fieldin Word document is represented by INCLUDETEXT. You can use [FieldIncludeText](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldincludetext/) class to perform the following operations:
+The `INCLUDETEXT` field inserts the text and graphics contained in the document named in the field code. You can insert the entire document or a portion of the document referred to by a bookmark. This field in Word document is represented by INCLUDETEXT. You can use [FieldIncludeText](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldincludetext/) class to perform the following operations:
 
 - specify the bookmark's name of the included document
 - specify the location of the document
@@ -145,7 +145,7 @@ The following code example shows how to add the `INCLUDETEXT` field using DOM to
 
 ### Inserting `TOA` field into a Document without using DocumentBuilder
 
-The `TOA` (*Table of Authorities*) field builds and inserts a table of authorities. The `TOA` field collects entries marked by `TA` (*Table of Authorities Entry*) fields. Microsoft Office Word inserts the `TOA` field when you click *Insert Table of Authorities* in the **Table of Authorities** group on the **References** tab.When you view the `TOA` field in your document, the syntax looks like this:
+The `TOA` (*Table of Authorities*) field builds and inserts a table of authorities. The `TOA` field collects entries marked by `TA` (*Table of Authorities Entry*) fields. Microsoft Office Word inserts the `TOA` field when you click *Insert Table of Authorities* in the **Table of Authorities** group on the **References** tab. When you view the `TOA` field in your document, the syntax looks like this:
 
 { `TOA` [Switches ] }
 
@@ -160,16 +160,16 @@ The following code example shows how to add the `TOA` field using DOM to a parag
 ## FAQ
 
 1. **Q:** How do I insert a field using `DocumentBuilder` in Node.js?  
-   **A:** Create a `DocumentBuilder` instance for your document and call `insertField(fieldCode, fieldResult)`. The `fieldCode` is the full Word field code (e.g., `"MERGEFIELD  CustomerName"`). If you pass `null` for `fieldResult`, Aspose.Words will automatically update the field value when the document is saved.
+   **A:** Create a `DocumentBuilder` instance for your document and call `insertField(fieldCode)`. The `fieldCode` is the full Word field code (e.g., `"MERGEFIELD  CustomerName"`); the field result is updated immediately. Use `insertField(fieldCode, fieldValue)` to insert the field with your own result text without updating it.
 
 2. **Q:** How can I insert nested fields or fields whose parameters contain spaces?  
-   **A:** Enclose parameters that contain spaces in double quotes inside the field code. For nested fields, build the inner field first, obtain its field code string, and include it in the outer field code. Example: `builder.insertField('IF "{ MERGEFIELD  Amount }" > 1000 "High" "Low"', null);`.
+   **A:** Enclose parameters that contain spaces in double quotes inside the field code. For nested fields, use `FieldBuilder`: pass the builder of the inner field to `addArgument` of the outer one, then call `buildAndInsert`. Braces typed in an `insertField` string are inserted as plain text, not as a nested field.
 
 3. **Q:** How do I insert an empty (untyped) field such as `{}`?  
    **A:** Use `insertField` with `FieldType.FieldNone`. Example:  
    ```javascript
-   let builder = new aspose.words.DocumentBuilder(doc);
-   builder.insertField(aspose.words.fields.FieldType.FieldNone, null);
+   let builder = new aw.DocumentBuilder(doc);
+   builder.insertField(aw.Fields.FieldType.FieldNone, false);
    ```  
    This creates a placeholder field that can later be edited manually in Word.
 
@@ -179,7 +179,7 @@ The following code example shows how to add the `TOA` field using DOM to a parag
 5. **Q:** How can I set the locale for a field to control its formatting (e.g., dates, numbers)?  
    **A:** After inserting the field, set its `localeId` property to the desired LCID. Example:  
    ```javascript
-   let builder = new aspose.words.DocumentBuilder(doc);
+   let builder = new aw.DocumentBuilder(doc);
    let field = builder.insertField('MERGEFIELD  OrderDate \\@ "MM/dd/yyyy"', null);
    field.localeId = 1033; // English - United States
    ```  

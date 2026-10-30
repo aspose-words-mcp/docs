@@ -13,11 +13,11 @@ url: /java/how-to-build-aspose-words-for-python-via-java/
 timestamp: 2024-01-27-14-07-04
 ---
 
-To create "Aspose Words for Python via Java" package we use[JCC](https://lucene.apache.org/pylucene/jcc/index.html)
+To create "Aspose Words for Python via Java" package we use [JCC](https://lucene.apache.org/pylucene/jcc/index.html)
 
 ## How to build JCC on Windows
 
-Download and install [JRE](https://www.oracle.com/java/technologies/downloads/#java8) (it is notnecessary because you can use %JDK_HOME%\jre)
+Download and install [JRE](https://www.oracle.com/java/technologies/downloads/#java8) (it is not necessary because you can use %JDK_HOME%\jre)
 
 JCC requires [JDK](https://www.oracle.com/java/technologies/downloads/#java8) so download and install it.
 
@@ -123,7 +123,7 @@ The third is the python module name.
 
 Result *.whl* file will be saved in *.\dist* directory
 
-## How to install"Aspose Words for Python via Java" on Windows
+## How to install "Aspose Words for Python via Java" on Windows
 
 1. Download and install [JRE](https://www.oracle.com/java/technologies/downloads/#java8). We use JRE x64 version because our .whl was built for Windows x64;
 1. Download and install [Python](https://www.python.org/ftp/python/2.7.14/python-2.7.14.amd64.msi). At the moment 2.7 version is used;
@@ -134,7 +134,7 @@ Result *.whl* file will be saved in *.\dist* directory
 > pip install .\aspose_words-17.8-cp27-none-win_amd64.whl
 {{< /highlight >}}
 
-## How to install"Aspose Words for Python via Java" on Ubuntu
+## How to install "Aspose Words for Python via Java" on Ubuntu
 
 Check if python is installed
 

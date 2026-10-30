@@ -40,7 +40,7 @@ Aspose.Words has the public class [WriteProtection](https://reference.aspose.com
 
 Write protection shows whether the author has recommended opening a document as read-only and/or requiring a password to modify the document.
 
-Aspose.Words allows you to make a document read-only to restrict editing by using the [ReadOnlyRecommended](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#getReadOnlyRecommended) property and the [SetPassword](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#setPassword-java.lang.String) method.
+Aspose.Words allows you to make a document read-only to restrict editing by using the [getReadOnlyRecommended()](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#getReadOnlyRecommended) property and the [setPassword()](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#setPassword-java.lang.String) method.
 
 {{% alert color="primary" %}}
 
@@ -53,13 +53,13 @@ In Microsoft Word, you can create a Read-Only document in a similar way using bo
 
 {{% alert color="primary" %}}
 
-Users can also restrict document editing by selecting [ProtectionType](https://reference.aspose.com/words/java/com.aspose.words/protectiontype/) as **ReadOnly**, but this is another feature that provides more advanced protection capabilities. There is such a function in Microsoft Word, respectively, it is implemented in Aspose.Words.
+Users can also restrict document editing by selecting [ProtectionType](https://reference.aspose.com/words/java/com.aspose.words/protectiontype/) as **READ_ONLY**, but this is another feature that provides more advanced protection capabilities. There is such a function in Microsoft Word, respectively, it is implemented in Aspose.Words.
 
 **ProtectionType** will be described in detail in one of the following articles – “Restrict Document Editing”.
 
 {{% /alert %}}
 
-The **ReadOnlyRecommended** property is password‑secured, so if you do not set a password before applying the **ReadOnlyRecommended** property, then other users can simply open the document as if it were unprotected. You access the document protection settings and set a write protection password via the **SetPassword** method.
+The **getReadOnlyRecommended()** property is password‑secured, so if you do not set a password before applying the **getReadOnlyRecommended()** property, then other users can simply open the document as if it were unprotected. You access the document protection settings and set a write protection password via the **SetPassword** method.
 
 {{% alert color="primary" %}}
 
@@ -67,7 +67,7 @@ Note that the password being set is just a property in a document that can be re
 
 {{% /alert %}}
 
-If you need to check if a document has a write protection password that restricts it from editing, you can use the [IsWriteProtected](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#isWriteProtected) property.
+If you need to check if a document has a write protection password that restricts it from editing, you can use the [isWriteProtected()](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#isWriteProtected) property.
 
 The following code example shows how to make a document read-only:
 
@@ -75,7 +75,7 @@ The following code example shows how to make a document read-only:
 
 ## Remove Read-Only Restriction
 
-If you do not want a user to open your document as read-only, you can simply set the **ReadOnlyRecommened** property to *false* or select **ProtectionType** as **NoProtection**.
+If you do not want a user to open your document as read-only, you can simply set the **ReadOnlyRecommened** property to *false* or select **ProtectionType** as **NO_PROTECTION**.
 
 The following code example shows how to remove read-only access for a document:
 
@@ -84,21 +84,21 @@ The following code example shows how to remove read-only access for a document:
 ## Related APIs
 
 - [WriteProtection](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/)  
-- [WriteProtection.ReadOnlyRecommended](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#getReadOnlyRecommended)  
-- [WriteProtection.SetPassword](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#setPassword-java.lang.String)  
-- [WriteProtection.IsWriteProtected](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#isWriteProtected)  
+- [WriteProtection.getReadOnlyRecommended()](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#getReadOnlyRecommended)  
+- [WriteProtection.setPassword](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#setPassword-java.lang.String)  
+- [WriteProtection.isWriteProtected](https://reference.aspose.com/words/java/com.aspose.words/writeprotection/#isWriteProtected)  
 - [ProtectionType](https://reference.aspose.com/words/java/com.aspose.words/protectiontype/)
 
 ## FAQ
 
 1. **Q:** How do I make a document read‑only with Aspose.Words for Java?  
-   **A:** Load the document, obtain its `WriteProtection` object via `document.getProtection()`, set `setReadOnlyRecommended(true)`, optionally call `setPassword("yourPassword")`, and then save the document. The `ReadOnlyRecommended` flag tells Word to open the file in read‑only mode.
+   **A:** Load the document, obtain its `WriteProtection` object via `document.getWriteProtection()`, call `setReadOnlyRecommended(true)`, optionally call `setPassword("yourPassword")`, and then save the document. This flag tells Word to open the file in read‑only mode.
 
 2. **Q:** Can I require a password to modify the document while still allowing read‑only access?  
-   **A:** Yes. After enabling `ReadOnlyRecommended`, call `writeProtection.setPassword("modifyPassword")`. Users can open the file without a password, but any attempt to edit will prompt for the password you supplied.
+   **A:** Yes. After enabling `getReadOnlyRecommended()`, call `writeProtection.setPassword("modifyPassword")`. Users can open the file without a password, but any attempt to edit will prompt for the password you supplied.
 
 3. **Q:** How can I verify whether a document is write‑protected?  
-   **A:** Use the `WriteProtection` object's `isWriteProtected()` property. It returns `true` if a password has been set or if `ReadOnlyRecommended` is enabled.
+   **A:** Use the `WriteProtection` object's `isWriteProtected()` property. It returns `true` when a write protection password is set; the read‑only recommendation alone does not make it `true`.
 
 4. **Q:** How do I remove the read‑only recommendation or any write protection from a document?  
-   **A:** Set `writeProtection.setReadOnlyRecommended(false)` and optionally `writeProtection.setPassword(null)`. You can also change the protection type to `ProtectionType.NO_PROTECTION` before saving. This restores normal editing capabilities.
+   **A:** Call `writeProtection.setReadOnlyRecommended(false)` and, to remove the password, `writeProtection.setPassword("")`. Then save the document. Document protection (`Document.protect` / `Document.unprotect`) is a separate feature and does not change write protection.

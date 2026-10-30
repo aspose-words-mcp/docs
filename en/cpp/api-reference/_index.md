@@ -13,7 +13,7 @@ url: /cpp/api-reference/
 timestamp: 2024-01-30-16-22-34
 ---
 
-Aspose.Words for C++ is anativeclass library that enables your applications to perform a great range of document processing tasks. With Aspose.Words you can generate, modify, and convert documents without utilizing Microsoft Word, that is, Microsoft Word is not required in order to use `Aspose.Word`.
+Aspose.Words for C++ is a native class library that enables your applications to perform a great range of document processing tasks. With Aspose.Words you can generate, modify, and convert documents without utilizing Microsoft Word, that is, Microsoft Word is not required in order to use `Aspose.Word`.
 
 Aspose.Words for C++ is written in C++. 
 

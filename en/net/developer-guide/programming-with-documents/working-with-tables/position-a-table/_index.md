@@ -52,15 +52,15 @@ The following code example shows how to get the table's alignment:
 
  The position of a floating table is determined using the following properties: 
 
-* [HorizontalAnchor](https://reference.aspose.com/words/net/aspose.words.tables/table/horizontalanchor/) –an object for calculating the horizontal positioning of a floating table
+* [HorizontalAnchor](https://reference.aspose.com/words/net/aspose.words.tables/table/horizontalanchor/) – an object for calculating the horizontal positioning of a floating table
 * [VerticalAnchor](https://reference.aspose.com/words/net/aspose.words.tables/table/verticalanchor/) – an object for calculating the vertical positioning of a floating table
-* [AbsoluteHorizontalDistance](https://reference.aspose.com/words/net/aspose.words.tables/table/absolutehorizontaldistance/) –absolute horizontal floating table position
+* [AbsoluteHorizontalDistance](https://reference.aspose.com/words/net/aspose.words.tables/table/absolutehorizontaldistance/) – absolute horizontal floating table position
 * [AbsoluteVerticalDistance](https://reference.aspose.com/words/net/aspose.words.tables/table/absoluteverticaldistance/) – absolute vertical floating table position
-* [AllowOverlap](https://reference.aspose.com/words/net/aspose.words.tables/table/allowoverlap/) –option to enable/disable overlap with other floating objects
+* [AllowOverlap](https://reference.aspose.com/words/net/aspose.words.tables/table/allowoverlap/) – option to enable/disable overlap with other floating objects
 * [RelativeHorizontalAlignment](https://reference.aspose.com/words/net/aspose.words.tables/table/relativehorizontalalignment/) – floating table relative horizontal alignment.
 * [RelativeVerticalAlignment](https://reference.aspose.com/words/net/aspose.words.tables/table/relativeverticalalignment/) –  floating table relative vertical alignment.
 
-The following code exampleshows how to get the position of a floating table:
+The following code example shows how to get the position of a floating table:
 
 {{< gist "aspose-words-gists" "8df1ad0825619cab7c80b571c6e6ba99" "get-floating-table-position.cs" >}}
 
@@ -96,7 +96,6 @@ Limitations and considerations for table positioning in Aspose.Words include:
 * Floating tables require proper anchor setup and their position is always relative to a paragraph anchor, even when using absolute distances.
 * The `AllowOverlap` property only affects the visual layering of floating objects and does not prevent layout conflicts.
 * Distance properties (`DistanceTop`, `DistanceBottom`, etc.) apply to both inline and floating tables but may behave differently depending on text wrapping settings.
-* Table positioning properties only take effect when the document is rendered in a layout-aware context (such as PDF export or print preview).
 
 ## Related APIs
 
@@ -121,7 +120,7 @@ Limitations and considerations for table positioning in Aspose.Words include:
    **A:** Use the `Table.Alignment` property. For example, `Table.Alignment = TableAlignment.Center;` aligns the table to the center of the page. The property works only for inline tables.
 
 2. **Q:** How can I retrieve the horizontal and vertical alignment of a floating table?  
-   **A:** Access the `Table.RelativeHorizontalAlignment` and `Table.RelativeVerticalAlignment` properties. These return values such as `RelativeHorizontalAlignment.Page` or `RelativeVerticalAlignment.Margin`, indicating how the floating table is positioned relative to its anchor.
+   **A:** Access the `Table.RelativeHorizontalAlignment` and `Table.RelativeVerticalAlignment` properties. They return `HorizontalAlignment` and `VerticalAlignment` values, such as `HorizontalAlignment.Center`. What the floating table is positioned relative to comes from `Table.HorizontalAnchor` and `Table.VerticalAnchor`, which return values such as `RelativeHorizontalPosition.Page` or `RelativeVerticalPosition.Margin`.
 
 3. **Q:** What properties are required to set the position of a floating table?  
    **A:** Set `HorizontalAnchor`, `VerticalAnchor`, `AbsoluteHorizontalDistance`, and `AbsoluteVerticalDistance`. You can also use `RelativeHorizontalAlignment` or `RelativeVerticalAlignment`. Note that changing an alignment property resets the corresponding absolute distance to its default.
@@ -130,4 +129,4 @@ Limitations and considerations for table positioning in Aspose.Words include:
    **A:** Use the `DistanceTop`, `DistanceBottom`, `DistanceLeft`, and `DistanceRight` properties of the `Table` object. These properties specify the amount of space on each side of the table in points.
 
 5. **Q:** What does the `AllowOverlap` property do for floating tables?  
-   **A:** `AllowOverlap` determines whether the floating table may overlap other floating objects. Set `Table.AllowOverlap = true;` to permit overlapping, or `false` to prevent it, ensuring the layout respects other objects.
+   **A:** `AllowOverlap` tells whether the floating table allows other floating objects to overlap it when displayed (the default is `true`). The property is read-only: you can read the value stored in the document, but not change it.

@@ -106,7 +106,7 @@ The following code example shows how to save a document to PCL using save option
    **A:** Absolutely. Create an `io.BytesIO` stream, call `doc.save(stream, aw.SaveFormat.PDF)`, and then use the stream’s contents as needed, such as sending it over a network or attaching it to an email.
 
 4. **Q:** What options are available when saving a document to PCL?  
-   **A:** Use the `PclSaveOptions` class to control PCL‑specific settings, such as rasterizing transformed elements, setting the resolution, or specifying whether to embed fonts. Pass an instance of this class to `document.save(stream, pcl_save_options)`.
+   **A:** Use the `PclSaveOptions` class to control PCL‑specific settings, such as rasterizing transformed elements (`rasterize_transformed_elements`), the fallback font (`fallback_font_name`), or printer fonts (`add_printer_font`). Pass an instance of this class to `document.save(stream, pcl_save_options)`.
 
 5. **Q:** Is it possible to change the font size of the entire document while saving?  
    **A:** Font size changes must be applied to the document’s content before calling `save`. You can iterate through all `Run` nodes, modify their `Font.size` property, and then save the document in the desired format.

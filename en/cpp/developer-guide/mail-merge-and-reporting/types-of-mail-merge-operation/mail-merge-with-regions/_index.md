@@ -49,7 +49,7 @@ And after executing Mail Merge with regions:
 There are some important points that you need to consider when performing a Mail Merge with regions:
 
 * The start point *TableStart:Orders* and the end point *TableEnd:Orders* both need to be in the same row or cell. For example, if you start a merge region in a cell of a table, you must end the merge region in the same row as the first cell.  
-  The merge field name must match the column name in your DataTable. Unless you specify mapped fields, Mail Merge with regions will not succeed for any merge field that has a name other than the column name.
+  The merge field name must match the column name in your data source. Unless you specify mapped fields, Mail Merge with regions will not succeed for any merge field that has a name other than the column name.
 * Aspose.Words for C++ only supports [IMailMergeDataSource](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imailmergedatasource/) and [IMailMergeDataSourceRoot](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imailmergedatasourceroot/) based data sources. Unlike .NET and Java, C++ does not have a generally accepted cross‑platform API for working with databases (like ADODB, ODBC, or JDBC). In order to work with a specific data source, you have to implement [IMailMergeDataSource](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imailmergedatasource/) or [IMailMergeDataSourceRoot](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imailmergedatasourceroot/) interface.
 
 If one of these rules is broken, you will get unexpected results or an exception may be thrown.
@@ -65,16 +65,16 @@ If you do not use Mail Merge regions, then it will be similar to Microsoft Word 
 ## FAQ
 
 1. **Q:** How do I implement a custom `IMailMergeDataSource` in C++?  
-   **A:** Create a class that inherits from `Aspose::Words::MailMerging::IMailMergeDataSource` and implement the required members: `GetValue`, `MoveNext`, `GetChildDataSource`, and `GetRecordCount`. In `GetValue` return the field value for the current record, and in `MoveNext` advance to the next record. Register the data source with `MailMerge::ExecuteWithRegions`.
+   **A:** Create a class that inherits from `Aspose::Words::MailMerging::IMailMergeDataSource` and implement the required members: `get_TableName`, `GetValue`, `MoveNext`, and `GetChildDataSource`. In `GetValue` return the field value for the current record, and in `MoveNext` advance to the next record. Register the data source with `MailMerge::ExecuteWithRegions`.
 
 2. **Q:** Can I use nested mail‑merge regions, and how are they defined?  
    **A:** Yes. Define inner regions with their own `TableStart:ChildRegion` and `TableEnd:ChildRegion` fields inside the outer region. When executing, the outer region's data source must provide a child data source (via `GetChildDataSource`) for each record to populate the inner region.
 
 3. **Q:** What happens if the start and end merge fields of a region are not in the same row or cell?  
-   **A:** Aspose.Words will throw an `ArgumentException` or produce malformed output because the region boundaries must be within a single row or cell. Ensure both `TableStart` and `TableEnd` tags are placed in the same table row or cell.
+   **A:** Aspose.Words throws an `InvalidOperationException`: "Mail merge region '...' is badly formed. TableStart and TableEnd should be in the same section, same table row or same table cell." Ensure both `TableStart` and `TableEnd` tags are placed in the same table row or cell.
 
 4. **Q:** Do the merge field names have to match the column names in my data source?  
-   **A:** By default, yes. The field name in the document must exactly match a column name returned by `GetValue`. If you need different names, use `MailMerge::ExecuteWithRegions` overload that accepts a field‑mapping dictionary.
+   **A:** By default, yes. The field name in the document must exactly match a column name returned by `GetValue`. If you need different names, map them with `MailMerge::get_MappedDataFields()->Add(documentFieldName, dataSourceFieldName)` before calling `ExecuteWithRegions`.
 
 5. **Q:** Is it possible to use a `DataTable` directly with `ExecuteWithRegions` in C++?  
    **A:** No. Unlike .NET, the C++ API does not provide a built‑in `DataTable` implementation. You must wrap your tabular data in a custom class that implements `IMailMergeDataSource` (or use `IMailMergeDataSourceRoot` for hierarchical data).

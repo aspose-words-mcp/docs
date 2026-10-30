@@ -53,7 +53,6 @@ You can log any issues or suggestions related to Aspose.Words .NET for Sitefinit
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Sitefinity/issues)
 - [Sourceforge](https://sourceforge.net/projects/asposesitefinity/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-sitefinity/issues?status=new&status=open)
 
 **Sitefinity Export to Word and PDF**
 
@@ -71,7 +70,6 @@ You can get the latest source code from one of the following locations
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Sitefinity)
 - [Sourceforge](https://sourceforge.net/p/asposesitefinity/code/ci/master/tree/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-sitefinity/src)
 
 #### How to configure the source code
 
@@ -95,7 +93,6 @@ You can download Aspose .NET Word Import for Sitefinity module from one of the f
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Sitefinity/releases)
 - [Sourceforge](https://sourceforge.net/projects/asposesitefinity/files/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-sitefinity/downloads/)
 
 #### Installing
 

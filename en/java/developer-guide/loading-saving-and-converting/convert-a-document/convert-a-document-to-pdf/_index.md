@@ -41,14 +41,14 @@ Note that the number of pages in a document affects the conversion time.
 
 Converting from the DOC or DOCX document format into the PDF format in Aspose.Words is very easy and can be accomplished with just two lines of code that:
 
-1. Load your document into a[Document](https://reference.aspose.com/words/java/com.aspose.words/document/) object using one of its constructors by specifying the document name with its format extension.
-1. Invoke one of the [Document.Save](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String-int) methodson the**Document**object and specify the desired output format as PDF by entering afile name with the “.PDF” extension.
+1. Load your document into a [Document](https://reference.aspose.com/words/java/com.aspose.words/document/) object using one of its constructors by specifying the document name with its format extension.
+1. Invoke one of the [Document.save](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String-int) methods on the **Document** object and specify the desired output format as PDF by entering a file name with the “.PDF” extension.
 
-The following code example shows how to convert a document from DOCX into PDF using the [Save](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String) method:
+The following code example shows how to convert a document from DOCX into PDF using the [save()](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String) method:
 
 {{< gist "aspose-words-gists" "b237846932dfcde42358bd0c887661a5" "docx-to-pdf.java" >}}
 
-You can download the template file of this example from[Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Examples/src/main/resources/com/aspose/words/examples/loading_saving/ConvertImageToPdf/Template.doc).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.docx).
 
 {{% alert color="primary" %}}
 
@@ -60,15 +60,15 @@ Note that with the same technique, you can convert any flow-layout format docume
 
 ### Convert to Different PDF Standards
 
-Aspose.Words provides the [PdfCompliance](https://reference.aspose.com/words/java/com.aspose.words/pdfcompliance/) enumeration to support the conversion of DOC orDOCX into various PDF format standards (such as PDF 1.7, PDF 1.5, etc.).
+Aspose.Words provides the [PdfCompliance](https://reference.aspose.com/words/java/com.aspose.words/pdfcompliance/) enumeration to support the conversion of DOC or DOCX into various PDF format standards (such as PDF 1.7, PDF 1.5, etc.).
 
-The following code example demonstrates how to convert a document to PDF 1.7 using[PdfSaveOptions](https://reference.aspose.com/words/java/com.aspose.words/pdfsaveoptions/) with compliance to PDF17:
+The following code example demonstrates how to convert a document to PDF 1.7 using [PdfSaveOptions](https://reference.aspose.com/words/java/com.aspose.words/pdfsaveoptions/) with compliance to PDF17:
 
 {{< gist "aspose-words-gists" "b237846932dfcde42358bd0c887661a5" "conversion-to-pdf17.java" >}}
 
 ## Convert Images to PDF
 
-Converting to PDF is not restricted byMicrosoft Word document formats. Any format supported by Aspose.Words, including programmatically created, can also be converted to PDF. For example, we can convert single-page images, such as JPEG, PNG, BMP, EMF, or WMF, as well as multi-page images, such as TIFF and GIF, to PDF.
+Converting to PDF is not restricted by Microsoft Word document formats. Any format supported by Aspose.Words, including programmatically created, can also be converted to PDF. For example, we can convert single-page images, such as JPEG, PNG, BMP, EMF, or WMF, as well as multi-page images, such as TIFF and GIF, to PDF.
 
 The following code example shows how to convert JPEG and TIFF images to PDF:
 
@@ -80,7 +80,7 @@ To make this code work, you need to add references to Aspose.Words, Java.awt.ima
 
 ## Reduce PDF Output Size
 
-When saving to PDF, you can specify whether you want to optimize the output. To do this, you need to set the [OptimizeOutput](https://reference.aspose.com/words/java/com.aspose.words/fixedpagesaveoptions/#getOptimizeOutput) flag to true, and then redundant nested canvases and empty canvases will be removed, neighbor glyphs with the same formatting will be concatenated.
+When saving to PDF, you can specify whether you want to optimize the output. To do this, you need to set the [getOptimizeOutput()](https://reference.aspose.com/words/java/com.aspose.words/fixedpagesaveoptions/#getOptimizeOutput) flag to true, and then redundant nested canvases and empty canvases will be removed, neighbor glyphs with the same formatting will be concatenated.
 
 The following code example shows how to optimize the output:
 
@@ -88,12 +88,12 @@ The following code example shows how to optimize the output:
 
 {{% alert color="primary" %}}
 
-Using the **OptimizeOutput** property may affect the accuracy of content display.
+Using the **getOptimizeOutput()** property may affect the accuracy of content display.
 
 {{% /alert %}}
 
 ## See Also
 
-- The article[Rendering](/words/java/rendering/) for more information on the fixed-page and flow-layout formats
-- The article[Converting to Fixed-page Format](/words/java/converting-to-fixed-page-format/#what-is-a-page-layout) for more information on the page layout
-- The article[Specify Rendering Options When Converting to PDF](/words/java/specify-rendering-options-when-converting-to-pdf/) for more information on using the `PdfSaveOptions` class
+- The article [Rendering](/words/java/rendering/) for more information on the fixed-page and flow-layout formats
+- The article [Converting to Fixed-page Format](/words/java/converting-to-fixed-page-format/#what-is-a-page-layout) for more information on the page layout
+- The article [Specify Rendering Options When Converting to PDF](/words/java/specify-rendering-options-when-converting-to-pdf/) for more information on using the `PdfSaveOptions` class

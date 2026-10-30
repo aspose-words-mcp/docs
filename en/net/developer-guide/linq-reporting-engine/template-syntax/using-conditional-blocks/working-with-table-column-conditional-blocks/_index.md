@@ -315,7 +315,7 @@ Limitations and considerations for table-column conditional blocks include:
 
 - **Horizontal switch requirement**: The `-horz` switch is required for column-level conditional logic. Without it, the conditional block operates on rows instead of columns, so columns will not be hidden or shown as intended.
 
-- **Field validation**: The engine throws a `TemplateException` indicating an unknown field when the condition expression references a property that does not exist in the data source. Ensure property names match exactly (case-sensitive) the members of the object supplied to the reporting engine.
+- **Field validation**: The engine throws an `InvalidOperationException` saying that it cannot get the value of the member when the condition expression references a property that does not exist in the data source. Ensure property names match exactly (case-sensitive) the members of the object supplied to the reporting engine.
 
 - **Empty collection handling**: When using table-column data bands with collections, provide alternate content for empty collections using conditional blocks that check with the `Any()` method, e.g., `<<if [!persons.Any()] -horz>>No data<<else>>...<</if>>`.
 
@@ -332,7 +332,7 @@ Note that table-column conditional blocks themselves can be nested inside table-
    **A:** No. Table‑column conditional blocks may contain table‑column data bands, but nesting table‑row data bands or row‑level conditional blocks inside a column block is prohibited. Attempting this will raise a template‑validation error.
 
 3. **Q:** What happens if the condition expression references a property that does not exist in the data source?  
-   **A:** The engine throws a `TemplateException` indicating an unknown field. Ensure that the property name matches exactly (case‑sensitive) the members of the object supplied to the reporting engine.
+   **A:** The engine throws an `InvalidOperationException` saying that it cannot get the value of the member. Ensure that the property name matches exactly (case‑sensitive) the members of the object supplied to the reporting engine.
 
 4. **Q:** How can I provide an alternate view when a collection used in a column data band is empty?  
    **A:** Use an `if` block that checks the collection with the `Any()` method, e.g. `<<if [!persons.Any()] -horz>>No data<<else>>...<</if>>`. Place the alternate content inside the `if` branch.

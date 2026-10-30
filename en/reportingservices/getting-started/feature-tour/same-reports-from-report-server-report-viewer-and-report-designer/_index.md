@@ -1,6 +1,6 @@
 ---
 title: Reports – Report Server, Report Viewer, Report Designer
-second_title: Aspose.Words
+second_title: Aspose.Words for Reporting Services
 articleTitle: Same Reports from Report Server, Report Viewer and Report Designer
 linktitle: Same Reports from Report Server, Report Viewer and Report Designer
 description: "Technologies which may be used to export reports using the Aspose.Words for Reporting Services."
@@ -12,13 +12,13 @@ timestamp: 2024-11-13-12-00-30
 
 {{% alert color="primary" %}}
 
-Whenever you are a database administrator or an application developer, with Aspose.Words for Reporting Services you can give your users the ability to export reports to Microsoft Word documents and other popular formats.
+Whether you are a database administrator or an application developer, with Aspose.Words for Reporting Services you can give your users the ability to export reports to Microsoft Word documents and other popular formats.
 
 Aspose.Words for Reporting Services supports the following technologies:
 
 - Microsoft SQL Server Reporting Services
 - Microsoft Report Viewer
-- Business Intelligence Development Studio
+- Visual Studio Report Designer (SQL Server Data Tools)
 
 {{% /alert %}}
 
@@ -45,7 +45,7 @@ Microsoft Report Viewer can generate reports independently using a built-in engi
 
 When you add and deploy Aspose.Words for Reporting Services with your application, the new report formats are available in the local mode. When Aspose.Words for Reporting Services is installed on the server, the new report formats are available only in the remote mode in Microsoft Report Viewer.
 
-## Business Intelligence Development Studio
+## Visual Studio Report Designer
 
 If you are designing reports in Microsoft Visual Studio Report Designer, the ability to run reports at design time without connecting to a server is a very useful feature. Aspose.Words for Reporting Services integrates with Microsoft Visual Studio and provides you access to the new report formats at design time.
 

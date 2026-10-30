@@ -17,7 +17,7 @@ timestamp: 2024-01-27-14-07-04
 
 {{% alert color="primary" %}}
 
-Note that before you apply table properties there must be at least one row present in the table. This means when building a table using **DocumentBuilder**, such formatting must be done after the first call to **DocumentBuilder.InsertCell** or after adding the first row to a table or when inserting nodes directly into the DOM.
+Note that before you apply table properties there must be at least one row present in the table. This means when building a table using **DocumentBuilder**, such formatting must be done after the first call to **DocumentBuilder.insertCell** or after adding the first row to a table or when inserting nodes directly into the DOM.
 
 {{% /alert %}}
 

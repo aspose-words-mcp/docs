@@ -15,7 +15,7 @@ url: /cpp/working-with-watermark/
 timestamp: 2025-05-07-07-22-34
 ---
 
-This topic discusses how to work programmatically with watermark using Aspose.Words. A watermark is a background image that displays behind the text in a document.A watermark can contain a text or an image represented by the [Watermark](https://reference.aspose.com/words/cpp/aspose.words/watermark/) class.
+This topic discusses how to work programmatically with watermark using Aspose.Words. A watermark is a background image that displays behind the text in a document. A watermark can contain a text or an image represented by the [Watermark](https://reference.aspose.com/words/cpp/aspose.words/watermark/) class.
 
 {{% alert color="primary" %}}
 
@@ -68,7 +68,7 @@ If the watermarks are added using the [Shape](https://reference.aspose.com/words
 
 The following code example show you how to set the name of the watermark shape and remove it from the document:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 
 // Set name to be able to remove it afterwards
 watermark->set_Name(u"WaterMark");
@@ -79,7 +79,7 @@ watermark->set_Name(u"WaterMark");
 
 ## Add a Watermark in Table Cell
 
-Sometimes you need to insert a watermark/image into a table's cell and display it outside the table,you can use [IsLayoutInCell](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_islayoutincell/) property. This property gets or sets a flag indicating whether the shape is displayed inside a table or outside of it. Note that this property works only when you optimize the document forMicrosoftWord2010 usingthe [OptimizeFor](https://reference.aspose.com/words/cpp/aspose.words.settings/compatibilityoptions/optimizefor/) method.
+Sometimes you need to insert a watermark/image into a table's cell and display it outside the table, you can use [get_IsLayoutInCell()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_islayoutincell/) property. This property gets or sets a flag indicating whether the shape is displayed inside a table or outside of it. Note that this property works only when you optimize the document for Microsoft Word 2010 using the [OptimizeFor](https://reference.aspose.com/words/cpp/aspose.words.settings/compatibilityoptions/optimizefor/) method.
 
 The following code example shows how to use this property:
 

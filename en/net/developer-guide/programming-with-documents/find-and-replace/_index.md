@@ -143,10 +143,10 @@ The following code example shows how to prepend a line number to each line:
    **A:** Use the overload of `Range.Replace` that accepts a `Regex` object. Pass the pattern to the `Regex` parameter and provide the replacement string. The method will replace every match that satisfies the regular expression.
 
 3. **Q:** How can I replace text only in the main body and ignore headers, footers, or footnotes?  
-   **A:** Configure a `FindReplaceOptions` instance and set `IgnoreHeaderFooter`, `IgnoreFootnotes`, and `IgnoreEndnotes` to `true`. Then pass this options object to the `Replace` method; the operation will be limited to the document body.
+   **A:** Call `Replace` on the body of each section instead of `doc.Range`: `foreach (Section section in doc.Sections) section.Body.Range.Replace("old", "new", options);`. Headers and footers are not part of the body. To skip footnotes and endnotes as well, set `FindReplaceOptions.IgnoreFootnotes` to `true`.
 
 4. **Q:** How do I replace a match with HTML markup?  
-   **A:** Implement the `IReplacingCallback` interface and, in the `Replacing` method, insert an `HtmlFragment` node created from the HTML string. Register the callback with `FindReplaceOptions.ReplacingCallback` before calling `Range.Replace`.
+   **A:** Pass the HTML as the replacement string and implement the `IReplacingCallback` interface. In the `Replacing` method, move a `DocumentBuilder` to `args.MatchNode`, call `builder.InsertHtml(args.Replacement)`, remove `args.MatchNode`, and return `ReplaceAction.Skip`. Register the callback with `FindReplaceOptions.ReplacingCallback` before calling `Range.Replace`. This works when the placeholder (for example `{PLACEHOLDER}`) is a run of its own.
 
 5. **Q:** How can I highlight all occurrences of a word instead of replacing it?  
-   **A:** Use `FindReplaceOptions` with `ApplyFont.HighlightColor` set to the desired color and `UseSubstitutions` set to `false`. Call `Range.Replace` with the same search string and an empty replacement; the API will apply the highlight to each found occurrence.
+   **A:** Set `ApplyFont.HighlightColor` of `FindReplaceOptions` to the desired color and call `Range.Replace` with the word as both the search string and the replacement, for example `doc.Range.Replace("Customer", "Customer", options)`. The text stays the same and each occurrence gets the highlight. Do not pass an empty replacement: it deletes every match. For a regular expression, use `"$0"` as the replacement and set `UseSubstitutions` to `true` to keep each match's own text.

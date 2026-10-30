@@ -20,7 +20,7 @@ timestamp: 2026-02-05-11-08-55
 This page describes the Aspose.Words for Docling plugin, including its features, installation steps, API usage, licensing requirements, and how to run its tests.
 {{% /alert %}}
 
-**Aspose.Words for Docling** is a free plugin for [Docling](https://github.com/docling-project/docling) based on [Aspose.Words for Python via .Net](https://products.aspose.com/words/python-net/) commercial library.  
+**Aspose.Words for Docling** is a free plugin for [Docling](https://github.com/docling-project/docling) based on [Aspose.Words for Python via .NET](https://products.aspose.com/words/python-net/) commercial library.  
 The plugin is designed for parsing multiple document formats and converting them into Docling Documents suitable for AI processing.  
 You can find the project source code in the [GitHub repository](https://github.com/aspose-words/Aspose.Words-for-Docling).  
 
@@ -34,7 +34,7 @@ Aspose.Words for Docling supports the following features:
 ## Requirements
 
 - [Docling](https://github.com/docling-project/docling) version 2.60.0 or higher.
-- [Aspose.Words for Python via .Net](https://products.aspose.com/words/python-net/). This library is a [commercial product](https://purchase.aspose.com/buy/words/python).  
+- [Aspose.Words for Python via .NET](https://products.aspose.com/words/python-net/). This library is a [commercial product](https://purchase.aspose.com/buy/words/python).  
 You'll need to obtain a valid license for Aspose.Words. The package will install this dependency, but you're responsible for complying with Aspose's licensing terms.
 
 ## How to Install Aspose.Words for Docling
@@ -61,9 +61,9 @@ print(md)
 
 {{% alert color="primary" %}}
 
-This package is licensed under the MIT License. However, it depends on Aspose.Words for Python via .Net library, which is proprietary, closed-source library.
+This package is licensed under the MIT License. However, it depends on Aspose.Words for Python via .NET library, which is proprietary, closed-source library.
 
-You must obtain valid license for Aspose.Words for Python via .Net library. This repository does not include or distribute any proprietary components.
+You must obtain valid license for Aspose.Words for Python via .NET library. This repository does not include or distribute any proprietary components.
 
 {{% /alert %}}
 
@@ -73,18 +73,18 @@ Refer to the OS-specific instructions below:
 
 **Unix-based (Linux/macOS):**
 ```
-export ASPOSE_WORDS_LICENSE_PATH="/path/to/license/aspose.words.lic"
+export ASPOSE_WORDS_LICENSE_PATH="/path/to/license/Aspose.Words.Python.NET.lic"
 ```
 
 **Windows-based:**
 ```
-set ASPOSE_WORDS_LICENSE_PATH=c:\path\to\license\aspose.words.lic
+set ASPOSE_WORDS_LICENSE_PATH=c:\path\to\license\Aspose.Words.Python.NET.lic
 ```
 
 **Python API:**
 {{< highlight python >}}  
 from aspose_words_docling import LicenseManager
-LicenseManager().apply_license("/path/to/license/aspose.words.lic")
+LicenseManager().apply_license("/path/to/license/Aspose.Words.Python.NET.lic")
 {{< /highlight >}}  
 
 ## How to Run Tests
@@ -110,21 +110,21 @@ To run unit tests for **Aspose.Words for Docling**, follow these steps:
 
 ## FAQ  
 
-1. **Q:** Can a **Aspose.Total.NET** license be used with the Aspose.Words for Python via .Net library?  
-   **A:** No. A license file that is issued for the .NET version of Aspose.Total (e.g., `Aspose.Total.NET.lic`) is not valid for the Aspose.Words for Python via .Net library. You must obtain a license specifically for **Aspose.Words for Python via .Net**. Using a .NET‑only license will result in a “license is not valid for this product” error.
+1. **Q:** Can an **Aspose.Total.NET** license be used with the Aspose.Words for Python via .NET library?  
+   **A:** No. A license issued for a .NET product (e.g., `Aspose.Total.NET.lic`) is not valid for Aspose.Words for Python via .NET. Use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`). Using a .NET license results in a “license is not valid for this product” error.
 
 2. **Q:** How do I apply the Aspose.Words license when using the Docling plugin in Python?  
-   **A:** Set the environment variable `ASPOSE_WORDS_LICENSE_PATH` to the full path of your `aspose.words.lic` file, or call the helper class provided by the plugin:  
+   **A:** Set the environment variable `ASPOSE_WORDS_LICENSE_PATH` to the full path of your `Aspose.Words.Python.NET.lic` file, or call the helper class provided by the plugin:  
 
    ```python
    from aspose_words_docling import LicenseManager
-   LicenseManager().apply_license("/path/to/license/aspose.words.lic")
+   LicenseManager().apply_license("/path/to/license/Aspose.Words.Python.NET.lic")
    ```  
 
    This must be done before any conversion operation is executed.
 
 3. **Q:** Why do I receive the error **“RuntimeError: Proxy error(InvalidOperationException): The license is not valid for this product.”**?  
-   **A:** This error occurs when the license file does not match the product you are using. Common causes are: using a .NET‑only license, using an expired or corrupted license file, or the license file not being found at the path specified by the environment variable. Verify that you are using a valid **Aspose.Words for Python via .Net** license and that the path is correct.
+   **A:** This error occurs when the license file was issued for another product, for example, a .NET license such as `Aspose.Total.NET.lic`. A modified or corrupted license file gives the “Invalid license signature” error instead, and a missing file gives “Cannot find license”. Verify that you are using a valid **Aspose.Words for Python via .NET** or **Aspose.Total for Python via .NET** license and that the path is correct.
 
 4. **Q:** Does the Docling plugin require a separate license from the Aspose.Words library?  
-   **A:** No. The plugin itself is open‑source and distributed under the MIT license. It only depends on the commercial **Aspose.Words for Python via .Net** library, so you need a license only for that library, not for the plugin.
+   **A:** No. The plugin itself is open‑source and distributed under the MIT license. It only depends on the commercial **Aspose.Words for Python via .NET** library, so you need a license only for that library, not for the plugin.

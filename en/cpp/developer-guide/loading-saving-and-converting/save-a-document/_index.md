@@ -64,11 +64,11 @@ The following code example shows how to save a document to PCL using save option
 
 ## FAQ
 
-1. **Q:** How does Aspose.Words determine the file format when I call `Document::Save("output.pdf")`?  
+1. **Q:** How does Aspose.Words determine the file format when I call `Document::Save(u"output.pdf")`?  
    **A:** The library infers the format from the file extension. In the example, the `.pdf` extension tells Aspose.Words to save the document as PDF. If you need to override this behavior, pass a `SaveOptions` object with the desired `SaveFormat`.
 
 2. **Q:** Can I save a document directly to a memory stream in C++?  
-   **A:** Yes. Create a `System::IO::MemoryStream`, then call `document.Save(memoryStream, SaveFormat::Pdf)` (or any other format). After saving, you can retrieve the byte array with `memoryStream->ToArray()`.
+   **A:** Yes. Create a `System::IO::MemoryStream`, then call `doc->Save(memoryStream, SaveFormat::Pdf)` (or any other format). After saving, you can retrieve the byte array with `memoryStream->ToArray()`.
 
 3. **Q:** Which file formats are supported for saving with Aspose.Words for C++?  
    **A:** All formats listed in the `SaveFormat` enumeration are supported, including DOC, DOCX, PDF, XPS, PCL, HTML, EPUB, and many others. Refer to the [SaveFormat](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) documentation for the complete list.

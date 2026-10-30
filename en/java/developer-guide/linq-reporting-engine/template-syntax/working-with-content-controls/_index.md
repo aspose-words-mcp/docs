@@ -95,7 +95,7 @@ You can normally use common expression tags in content control titles, thus form
    **A:** Yes. Insert an expression tag directly in the title, such as `<<[customer.Name]>>`. The expression is evaluated and the resulting string becomes the control's title.
 
 4. **Q:** Can I conditionally add a combobox item?  
-   **A:** Combine `if` and `item` tags: `<<if [product.InStock]>> <<item [product.Id] [product.Name]>> <<endif>>`. The item is added only when the condition evaluates to true.
+   **A:** Combine `if` and `item` tags: `<<if [product.InStock]>> <<item [product.Id] [product.Name]>> <</if>>`. The item is added only when the condition evaluates to true.
 
 5. **Q:** Word adds a default item to a new combobox; how do I remove it?  
-   **A:** The default item must be removed manually in the template before processing, or you can delete it programmatically after the document is generated using the `ContentControl.Remove` method.
+   **A:** The default item must be removed manually in the template before processing, or you can delete it after the report is built: get the combobox `StructuredDocumentTag` and call `sdt.getListItems().removeAt(0)`.

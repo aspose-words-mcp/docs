@@ -67,4 +67,4 @@ engine.buildReport(...);
    **A:** No. The custom message is only applied to plain member references (e.g., `<<[obj.Missing]>>`). If the missing member participates in a binary operation, the engine still treats the result as `null` and does not replace it with the custom message.
 
 5. **Q:** Is the `ALLOW_MISSING_MEMBERS` option available in other language APIs (e.g., .NET)?  
-   **A:** Yes. The same functionality exists in the .NET version of Aspose.Words under `ReportBuildOptions.AllowMissingMembers`. The usage pattern is analogous—set the option on the reporting engine before building the report.
+   **A:** Yes. The same functionality exists in the .NET version of Aspose.Words under `ReportBuildOptions.ALLOW_MISSING_MEMBERS`. The usage pattern is analogous—set the option on the reporting engine before building the report.

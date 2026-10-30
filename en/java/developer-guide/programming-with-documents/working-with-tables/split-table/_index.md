@@ -36,7 +36,7 @@ The following code example shows how to split a table into two tables on a speci
 
 ## Limitations and Considerations
 
-- **Merged cells**: If a cell spans rows that are divided between the two tables, Aspose.Words will automatically adjust the cell's `RowSpan` so that each table contains a valid cell structure. Cells that no longer span the required rows are split into separate cells.
+- **Merged cells**: Aspose.Words does not change merge flags when rows are moved. If a vertically merged cell spans the split row, the first moved cell keeps `CellMerge.PREVIOUS`; set its `getCellFormat().setVerticalMerge(CellMerge.FIRST)` so that the merged block starts correctly in the new table.
 
 - **Formatting preservation**: The formatting applied to rows, cells, and the table itself is retained because the rows are moved, not recreated. Any style or direct formatting on the moved rows remains unchanged in the new table.
 
@@ -45,11 +45,11 @@ The following code example shows how to split a table into two tables on a speci
 ## Related APIs
 
 
-- [`Table`](https://reference.aspose.com/words/java/com.aspose.words/table/)
-- [`Row`](https://reference.aspose.com/words/java/com.aspose.words/row/)
-- [`Cell`](https://reference.aspose.com/words/java/com.aspose.words/cell/)
-- [`DocumentBuilder`](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/)
-- [`NodeCollection`](https://reference.aspose.com/words/java/com.aspose.words/nodecollection/)
+- [Table](https://reference.aspose.com/words/java/com.aspose.words/table/)
+- [Row](https://reference.aspose.com/words/java/com.aspose.words/row/)
+- [Cell](https://reference.aspose.com/words/java/com.aspose.words/cell/)
+- [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/)
+- [NodeCollection](https://reference.aspose.com/words/java/com.aspose.words/nodecollection/)
 
 ## FAQ
 
@@ -60,7 +60,7 @@ The following code example shows how to split a table into two tables on a speci
    **A:** By default `deepClone(true)` copies the table together with all its rows and cells. To split a table you should use `deepClone(false)` so only the table structure is cloned; the rows are then moved manually to the new table.
 
 3. **Q:** After splitting, how do I preserve the original table's formatting in the new table?  
-   **A:** The cloned table inherits the original table's formatting (borders, shading, width, etc.) because the clone copies the table's properties. Since you move existing `Row` objects, their individual formatting is retained as well. If you need to adjust spacing, modify `Table.setAllowAutoFit(false)` or set `Table.getRowFormat().setHeight(...)` on the new table.
+   **A:** The cloned table inherits the original table's formatting (borders, shading, width, etc.) because the clone copies the table's properties. Since you move existing `Row` objects, their individual formatting is retained as well. If you need to adjust spacing, modify `Table.setAllowAutoFit(false)` or call `getRowFormat().setHeight(...)` on the rows of the new table.
 
 4. **Q:** Can I split a table without affecting the surrounding document layout (e.g., page breaks or spacing)?  
-   **A:** Yes. Insert the cloned table immediately after the original with `originalTable.getParentNode().insertAfter(clonedTable, originalTable);`. This keeps the flow of paragraphs unchanged. If a page break is required, insert a `Paragraph` with a page break (`Paragraph pageBreak = new Paragraph(doc); pageBreak.appendChild(new Break(BreakType.PAGE_BREAK));`) between the two tables.
+   **A:** Yes. Insert the cloned table immediately after the original with `originalTable.getParentNode().insertAfter(clonedTable, originalTable);`. This keeps the flow of paragraphs unchanged. If a page break is required, insert a `Paragraph` between the two tables, move a `DocumentBuilder` to it, and call `builder.insertBreak(BreakType.PAGE_BREAK)`.

@@ -13,7 +13,7 @@ url: /java/your-first-application/
 timestamp: 2024-01-27-14-07-04
 ---
 
-This article gives you an idea of getting started with Aspose.Words for Android via Java. It will demonstrate how to set up a new Android project from scratch, add a reference to the Aspose.Words JAR and create a new document which is saved to disk in DOCX format.This example uses [Android Studio](https://developer.android.com/studio/index.html) for development and the application is run on the Android Emulator.To get started with Aspose.Words for Androidvia Java, please follow this step-by-step tutorial to create an app which uses Aspose.Words for Androidvia Java:
+This article gives you an idea of getting started with Aspose.Words for Android via Java. It will demonstrate how to set up a new Android project from scratch, add a reference to the Aspose.Words JAR and create a new document which is saved to disk in DOCX format. This example uses [Android Studio](https://developer.android.com/studio/index.html) for development and the application is run on the Android Emulator. To get started with Aspose.Words for Android via Java, please follow this step-by-step tutorial to create an app which uses Aspose.Words for Android via Java:
 
 1. Download and the [Android Studio](https://developer.android.com/studio/index.html) and install it to any location.
 1. Run the Android Studio.
@@ -31,7 +31,7 @@ This article gives you an idea of getting started with Aspose.Words for Android 
    ![install-aspose-words-for-android-via-java-9](install-aspose-words-for-android-via-java-9.png)
 1. Sync the project with Gradle files if needed<br>
 ![install-aspose-words-for-android-via-java-10](install-aspose-words-for-android-via-java-10.png)
-1. In order to access the SDcard special permissions must be added. Click on the AndroidManifest.xml file and choose the XML view. Add the following line to the file<uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <br>
+1. In order to access the SDcard special permissions must be added. Click on the AndroidManifest.xml file and choose the XML view. Add the following line to the file <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <br>
 ![install-aspose-words-for-android-via-java-11](install-aspose-words-for-android-via-java-11.jpg)
 1. Navigate back to the code section of the app and add the following imports:<br>
 {{< highlight csharp >}}

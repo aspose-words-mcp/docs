@@ -105,11 +105,11 @@ And after applying the **UseNonMergeFields** property:
 ## Related APIs
 
 
-- [`Aspose.Words.Document`](https://reference.aspose.com/words/net/aspose.words/document/)
-- [`Aspose.Words.MailMerge`](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/)
-- [`UseNonMergeFields`](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/usenonmergefields/)
-- [`ExecuteWithRegions`](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/executewithregions/)
-- [`Aspose.Words.LoadFormat`](https://reference.aspose.com/words/net/aspose.words/loadformat/)
+- [Aspose.Words.Document](https://reference.aspose.com/words/net/aspose.words/document/)
+- [Aspose.Words.MailMerge](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/)
+- [UseNonMergeFields](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/usenonmergefields/)
+- [ExecuteWithRegions](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/executewithregions/)
+- [Aspose.Words.LoadFormat](https://reference.aspose.com/words/net/aspose.words/loadformat/)
 
 ------
 
@@ -128,4 +128,4 @@ And after applying the **UseNonMergeFields** property:
    **A:** Build a `Document` object, insert the required Mustache placeholders as plain text (e.g., `DocumentBuilder.Write("{{FirstName}}")`), and then save the document in a supported format. The resulting file can be used as a template for mail‑merge.
 
 5. **Q:** After a mail‑merge, why do I sometimes see an empty paragraph above a merged field?  
-   **A:** Empty paragraphs can be introduced when the source template contains a paragraph mark after a placeholder. Remove the extra paragraph mark in the template or trim the result using `DocumentBuilder.MoveToMergeField` and `Paragraph.Remove` after the merge.
+   **A:** Empty paragraphs can be introduced when the source template contains a paragraph mark after a placeholder. Remove the extra paragraph mark in the template, or set `doc.MailMerge.CleanupOptions = MailMergeCleanupOptions.RemoveEmptyParagraphs` before the merge so that paragraphs left empty by the merge are removed.

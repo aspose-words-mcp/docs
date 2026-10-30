@@ -31,7 +31,7 @@ This section provides information on using Aspose.Words for Java in some platfor
    **A:** Yes. Aspose.Words for Java is regularly updated to support new Java releases. The library targets the minimum Java version specified in its release notes and works on all later versions, provided the runtime meets the minimum requirements.
 
 3. **Q:** Can I use Aspose.Words for Java from other programming languages such as PHP or Python?  
-   **A:** While the core library is Java‑based, Aspose provides language‑specific wrappers (e.g., for PHP, Python) that internally call the Java API via JNI or REST services. You can therefore integrate Aspose.Words functionality into non‑Java applications by using the appropriate wrapper or the Aspose Cloud REST API.
+   **A:** Yes, through a Java bridge. The articles in this section show how to use Aspose.Words for Java from PHP (PHP/Java Bridge), Python (Jython or JPype), Perl (Inline::Java), Ruby, and ColdFusion. Aspose.Words for Python via .NET is a separate product.
 
 4. **Q:** What fonts are available by default on Linux when processing documents with Aspose.Words for Java?  
    **A:** On Linux, Aspose.Words uses the fonts installed on the system. If you need specific fonts (e.g., Arial, Times New Roman), install the corresponding font packages or use `FontSettings` to point to a custom font folder containing the required fonts.

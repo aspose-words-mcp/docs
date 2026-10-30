@@ -33,16 +33,16 @@ LINQ Reporting Engine enables you to use the following built‑in extension meth
 ## FAQ
 
 1. **Q:** How can I call a custom static method as an extension method in a LINQ Reporting Engine template?  
-   **A:** Place the method in a public static class, make the method itself public static, and reference it directly in the template expression using the full class name, e.g., `MyUtilities.FormatDate(DateTime.Now)`. No additional registration is required.
+   **A:** Custom extension methods cannot be called with extension-method syntax; call them as plain static methods. Make the class and the method public, add the class to the known types (`engine.KnownTypes.Add(typeof(MyUtilities))`), and call the method with the class name, e.g., `<<[MyUtilities.FormatDate(order.Date)]>>`.
 
-2. **Q:** Are the built‑in extension methods available for iteration variables such as `$row$`?  
-   **A:** Yes. Iteration variables expose the same enumeration extension methods as `IEnumerable<T>`, so you can write expressions like `$row$.Where(r => r.Price > 100)` directly in the template.
+2. **Q:** Which built‑in extension methods are available for iteration variables?  
+   **A:** Iteration variables have the `IndexOf()` and `NumberOf()` methods (see "Using Extension Methods of Iteration Variables"), e.g., `<<[item.NumberOf()]>>`. Enumeration extension methods such as `Where` are applied to sequences, e.g., `<<foreach [p in Products.Where(p => p.Price > 100)]>>`.
 
 3. **Q:** Can I use full LINQ query operators like `Select` or `OrderBy` inside a template expression?  
-   **A:** Only the extension methods listed in the documentation are supported. Full LINQ syntax is not available in template expressions; use the provided enumeration extension methods instead.
+   **A:** Yes, in method syntax: `Select`, `OrderBy`, and the other methods listed in "Appendix A. Enumeration Extension Methods" can be used, e.g., `Persons.OrderBy(p => p.Age)`. LINQ query syntax (`from … select …`) is not supported.
 
 4. **Q:** Why do I receive a “Method not found” error when using an extension method in a template?  
-   **A:** The method must be public, static, and located in an assembly that the reporting engine can load. Also ensure the method signature uses only supported parameter types (primitive types, `string`, `DateTime`, etc.). Overloads with unsupported types will cause the engine to fail to locate the method.
+   **A:** Custom methods must be public and static, their class must be added to `ReportingEngine.KnownTypes`, and they must be called as static methods (`MyUtilities.Method(value)`), not with extension-method syntax (`value.Method()`). Otherwise the engine cannot resolve the member and throws an exception.
 
 5. **Q:** Can I return a custom object type from an extension method used in a template?  
-   **A:** The engine can render only primitive types, `string`, and `DateTime` directly. If your method returns a custom type, convert it to a supported type (e.g., `ToString()`) before using it in the template.
+   **A:** Yes. An expression tag outputs the result's `ToString()` value, so a custom object is rendered with its `ToString()` implementation. You can also access the object's public members in the template, e.g., `<<[MyUtilities.GetPoint().X]>>`.

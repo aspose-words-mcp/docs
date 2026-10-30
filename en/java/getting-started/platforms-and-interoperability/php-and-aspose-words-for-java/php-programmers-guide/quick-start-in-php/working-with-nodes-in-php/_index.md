@@ -30,6 +30,6 @@ echo "NodeType: " . $node->nodeTypeToString($nodeType);
 
 ## Download Running Code
 
-Download **Working With Nodes(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Working With Nodes (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_PHP/src/quickstart/workingwithnodes/php/WorkingWithNodes.php)

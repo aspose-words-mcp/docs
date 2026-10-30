@@ -26,10 +26,10 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
    import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
-   exporter.setParameter(AWExporterParameter. EXPORT_RECTANGLES_AS_FRAMES, false);
+   exporter.setParameter(AWExporterParameter.EXPORT_RECTANGLES_AS_FRAMES, false);
    exporter.exportReport();
 {{< /highlight >}}
 
@@ -37,7 +37,7 @@ In JasperServer:
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="exportRectanglesAsFrames" value="false"/>
 </bean>
@@ -49,10 +49,10 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
    import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
-   exporter.setParameter(AWExporterParameter. MOVE_ELEMENTS_TO_FRAMES, false);
+   exporter.setParameter(AWExporterParameter.MOVE_ELEMENTS_TO_FRAMES, false);
    exporter.exportReport();
 {{< /highlight >}}
 
@@ -60,7 +60,7 @@ In JasperServer:
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="moveElementsToFrames" value="false"/>
 </bean>

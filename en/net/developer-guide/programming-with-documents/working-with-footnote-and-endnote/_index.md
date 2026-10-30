@@ -37,7 +37,7 @@ The following code example shows how to insert endnote into the document and set
 
 You can set the number of footnote layout columns using the [Columns](https://reference.aspose.com/words/net/aspose.words.notes/footnoteoptions/columns/) property. If this property has the value of 0, the footnotes area is formatted with a number of columns based on the number of columns on the displayed page.
 
-The following code example showshow to set the number of columns for footnote layout:
+The following code example shows how to set the number of columns for footnote layout:
 
 {{< gist "aspose-words-gists" "3b39c2019380ee905e7d9596494916a4" "set-footnote-columns.cs" >}}
 
@@ -54,25 +54,23 @@ The following code example shows how to set the position of footnote and endnote
 ## FAQ
 
 1. **Q:** How do I insert a footnote or an endnote with DocumentBuilder?  
-   **A:** Use the `DocumentBuilder.InsertFootnote` method and specify the `FootnoteType` enumeration value (`FootnoteType.Footnote` or `FootnoteType.Endnote`). The method returns a `Footnote` object that you can populate with text.
+   **A:** Use the `DocumentBuilder.InsertFootnote` method: pass the `FootnoteType` enumeration value (`FootnoteType.Footnote` or `FootnoteType.Endnote`) and the note text. The method returns the inserted `Footnote` object.
 
    ```csharp
    Document doc = new Document();
    DocumentBuilder builder = new DocumentBuilder(doc);
    // Insert a footnote
-   Footnote footnote = builder.InsertFootnote(FootnoteType.Footnote, true);
-   footnote.AppendChild(new Run(doc, "This is a footnote."));
+   Footnote footnote = builder.InsertFootnote(FootnoteType.Footnote, "This is a footnote.");
    // Insert an endnote
-   Footnote endnote = builder.InsertFootnote(FootnoteType.Endnote, true);
-   endnote.AppendChild(new Run(doc, "This is an endnote."));
+   Footnote endnote = builder.InsertFootnote(FootnoteType.Endnote, "This is an endnote.");
    ```
 
 2. **Q:** How can I change the numbering style of footnotes or endnotes?  
-   **A:** Modify the `NumberStyle` property of `FootnoteOptions` or `EndnoteOptions` on the `Document` object. Supported styles include Arabic, UpperRoman, LowerRoman, UpperLetter, and LowerLetter.
+   **A:** Modify the `NumberStyle` property of `FootnoteOptions` or `EndnoteOptions` on the `Document` object. Supported styles include Arabic, UppercaseRoman, LowercaseRoman, UppercaseLetter, and LowercaseLetter.
 
    ```csharp
-   doc.FootnoteOptions.NumberStyle = NumberStyle.UpperRoman;
-   doc.EndnoteOptions.NumberStyle = NumberStyle.LowerLetter;
+   doc.FootnoteOptions.NumberStyle = NumberStyle.UppercaseRoman;
+   doc.EndnoteOptions.NumberStyle = NumberStyle.LowercaseLetter;
    ```
 
 3. **Q:** What property controls the number of columns used for footnote layout?  
@@ -91,11 +89,13 @@ The following code example shows how to set the position of footnote and endnote
    ```
 
 5. **Q:** Can I convert an existing footnote to an endnote (or vice‑versa) without recreating it?  
-   **A:** Retrieve the `Footnote` node, change its `FootnoteType` property, and optionally move it to the appropriate collection. The change updates the numbering and placement automatically.
+   **A:** Not directly: `Footnote.FootnoteType` is read-only. Insert a note of the other type at the same position with the same text, then remove the original note. The new note gets the plain text only; formatting inside the original note is not copied.
 
    ```csharp
    // Convert the first footnote to an endnote
    Footnote footnote = (Footnote)doc.GetChild(NodeType.Footnote, 0, true);
-   footnote.FootnoteType = FootnoteType.Endnote;
-   // After changing the type, the document will treat it as an endnote
+   DocumentBuilder builder = new DocumentBuilder(doc);
+   builder.MoveTo(footnote);
+   builder.InsertFootnote(FootnoteType.Endnote, footnote.ToString(SaveFormat.Text).Trim());
+   footnote.Remove();
    ```

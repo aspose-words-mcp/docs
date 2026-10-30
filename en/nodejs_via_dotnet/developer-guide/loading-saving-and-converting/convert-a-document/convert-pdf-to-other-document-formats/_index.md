@@ -71,7 +71,7 @@ During a PDF document conversion, one of the following exceptions might happen:
 ## Troubleshoot
 
 1. **Problem:** *FileLoadException* is thrown when loading a PDF.  
-   **Solution:** Verify that the file path is correct and the file is not corrupted. Ensure the PDF version is supported by Aspose.Words. If the file is large, increase the memory limit for the Node.js process or load the document in smaller page ranges using `PdfLoadOptions.PageIndex` and `PdfLoadOptions.PageCount`.
+   **Solution:** Verify that the file path is correct and the file is not corrupted. Ensure the PDF version is supported by Aspose.Words. If the file is large, increase the memory limit for the Node.js process or load the document in smaller page ranges using `PdfLoadOptions.pageIndex` and `PdfLoadOptions.pageCount`.
 
 2. **Problem:** *DrmProtectedFileException* occurs during conversion.  
    **Solution:** Aspose.Words does not support Adobe DRM‑protected PDFs. Remove DRM protection with a tool that can legally decrypt the file before loading it with Aspose.Words, or obtain an unprotected version of the PDF.
@@ -88,7 +88,7 @@ During a PDF document conversion, one of the following exceptions might happen:
    ```
 
 4. **Problem:** Images are missing in the converted Word document.  
-   **Solution:** Ensure that `PdfLoadOptions.SkipPdfImages` is set to `false` (the default). If it has been changed, reset it:  
+   **Solution:** Ensure that `PdfLoadOptions.skipPdfImages` is set to `false` (the default). If it has been changed, reset it:  
 
    ```javascript
    const loadOptions = new aspose.words.loading.PdfLoadOptions();
@@ -97,7 +97,7 @@ During a PDF document conversion, one of the following exceptions might happen:
    ```
 
 5. **Problem:** Only a subset of pages is converted or the output is empty.  
-   **Solution:** Check the values of `PdfLoadOptions.PageIndex` and `PdfLoadOptions.PageCount`. Setting `PageIndex` to `0` and `PageCount` to a value greater than the total pages loads the entire document. Example:  
+   **Solution:** Check the values of `PdfLoadOptions.pageIndex` and `PdfLoadOptions.pageCount`. Setting `pageIndex` to `0` and `pageCount` to a value greater than the total pages loads the entire document. Example:  
 
    ```javascript
    const loadOptions = new aspose.words.loading.PdfLoadOptions();

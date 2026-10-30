@@ -105,7 +105,7 @@ And after applying footer string replacement:
 
 While applying the find and replace operation, you can ignore certain segments of the text. So, certain parts of the text can be excluded from the search, and the find and replace can be applied only to the remaining parts.
 
-Aspose.Words provides many find and replace properties for ignoring text such as [ignore_deleted](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_deleted/), [IgnoreFieldCodes](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_field_codes/), [ignore_fields](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_fields/), [IgnoreFootnotes](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_footnotes/), and [ignore_inserted](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_inserted/).
+Aspose.Words provides many find and replace properties for ignoring text such as [ignore_deleted](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_deleted/), [ignore_field_codes](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_field_codes/), [ignore_fields](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_fields/), [ignore_footnotes](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_footnotes/), and [ignore_inserted](https://reference.aspose.com/words/python-net/aspose.words.replacing/findreplaceoptions/ignore_inserted/).
 
 The following code example shows how to ignore text inside delete revisions:
 
@@ -164,12 +164,13 @@ The following code example shows how to prepend a line number to each line:
    ```
 
 4. **Q:** How do I replace repeated words using a regular expression?  
-   **A:** Supply a regex pattern to `replace_regex`. To collapse double words:
+   **A:** Supply a regex pattern to `replace_regex`. Aspose.Words uses .NET substitutions: refer to a captured group as `$1` and set `use_substitutions` to `True`. To collapse double words:
 
    ```python
    pattern = r"([a-zA-Z]+) \1"
-   replacement = r"\1"
-   doc.range.replace_regex(pattern, replacement, aw.replacing.FindReplaceOptions())
+   options = aw.replacing.FindReplaceOptions()
+   options.use_substitutions = True
+   doc.range.replace_regex(pattern, "$1", options)
    ```
 
 5. **Q:** How can I insert line, paragraph, or page breaks in the replacement text?  

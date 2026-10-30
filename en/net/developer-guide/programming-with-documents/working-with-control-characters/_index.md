@@ -27,6 +27,6 @@ Sometimes you may need to add or remove characters to/from the text. For instanc
 
 The [ControlChar](https://reference.aspose.com/words/net/aspose.words/controlchar/) class is a repository for the constants that represent control characters often encountered in documents. It provides both char and string versions of the same constants. For example, string [LineBreak](https://reference.aspose.com/words/net/aspose.words/controlchar/linebreak/) and char [LineBreakChar](https://reference.aspose.com/words/net/aspose.words/controlchar/linebreakchar) has the same value.
 
-The following code example showshow to use control characters:
+The following code example shows how to use control characters:
 
 {{< gist "aspose-words-gists" "6269ddb6427f9ad20623d975774a615e" "use-control-characters.cs" >}}

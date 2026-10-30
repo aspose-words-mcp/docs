@@ -18,7 +18,7 @@ By default, value of **CHECK_VERSION** parameter is **true**. This means that As
 
 **In JasperReports:**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
 import com.aspose.words.jasperreports.*;
 AWDocExporter exporter = new AWDocExporter();
 exporter.setParameter(AWExporterParameter.CHECK_VERSION, false); 
@@ -27,7 +27,7 @@ exporter.exportReport();
 
 **In JasperServer:**
 
-{{< highlight html >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="checkVersion" value="false"/>
 </bean>

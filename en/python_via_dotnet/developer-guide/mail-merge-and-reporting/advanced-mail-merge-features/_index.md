@@ -118,4 +118,4 @@ The following code example shows how to add a mapped field using the [add](https
    **A:** Use the `mail_merge.mapped_data_fields` collection. Add a mapping with `doc.mail_merge.mapped_data_fields.add("MergeFieldName", "DataSourceColumn")`; Aspose.Words will then match the source column to the appropriate merge field during the merge.
 
 4. **Q:** What is the difference between the **NextIf** and **SkipIf** fields?
-   **A:** `NextIf` merges the next record into the current document only when the specified condition evaluates to true; otherwise it starts a new document. `SkipIf` cancels the current document and moves to the next record when the condition is true, effectively skipping the current record.
+   **A:** `NextIf` merges the next record into the current document when the specified condition evaluates to true; otherwise it does nothing. `SkipIf` cancels the current document and moves to the next record when the condition is true, effectively skipping the current record.

@@ -27,7 +27,7 @@ In case you are targeting microservices, or if the main technology in your stack
 
 ## Prerequisites
 
-- Docker must be installed onyoursystem. For information on how to install Docker on Windows or Mac, refer to the links in the "See Also" section.
+- Docker must be installed on your system. For information on how to install Docker on Windows or Mac, refer to the links in the "See Also" section.
 
 - Also, note that Visual Studio 2017, .NET Core 2.2 SDK is used in the example, provided below.
 
@@ -38,8 +38,8 @@ In this example, you create a simple Hello World console application that makes 
 
 ### Creating the Console Application
 
-To create the Hello World program, followthe steps below:
-1. Once Docker is installed, make sure that it uses Linux Containers (default). If necessary, select theSwitch to Linux containersoption from the Docker Desktops menu.
+To create the Hello World program, follow the steps below:
+1. Once Docker is installed, make sure that it uses Linux Containers (default). If necessary, select the Switch to Linux containers option from the Docker Desktops menu.
 1. In Visual Studio, create a .NET Core console application.<br>
 ![net-console-application](https://lh5.googleusercontent.com/PArWoC8_leOnhtaF-5BMb3b4jHwI3G03WoyMK3bXZpsQKN50YzvEQBwoRniyCWKIcdR0EZGuwn3S8Z0ZK6FQ4cjMSWgH3CwSqReW4bMt-3OjZjrdt9yuWbkMdhyNjwwaaYPC5Ylr)<br>
 1. Install the latest Aspose.Words version from NuGet. SkiaSharp will be installed as a dependency of Aspose.Words.<br>
@@ -71,7 +71,7 @@ The above is a simple Dockerfile, which contains the following instructions:
 
 - The SDK image to be used. Here it is the .NET Core SDK 2.2 image. Docker will download it when the build is run. The version of SDK is specified as a tag.
 - The working directory, which is specified in the next line.
-- The command to install libfontconfig1 is run in the container.This isrequired by SkiaSharp.
+- The command to install libfontconfig1 is run in the container. This is required by SkiaSharp.
 - The command to copy everything to container, publish the application, and specify the entry point.
 
 ### Building and Running the Application in Docker
@@ -126,10 +126,10 @@ SkiaSharp is a wrapper around the native Skia library. The following runtimes ar
 
 To run it in Linux, you should use additional NuGet packages with the corresponding native assets, such as native builds of Skia library, listed below:
 
-- *SkiaSharp.NativeAssets.Linux*– provides a native Skia build for x64 Debian based Linux distributions.
-- *SkiaSharp.NativeAssets.Linux.NoDependencies*– the package is intended to be used in Linux distributions that do not have the libfontconfig dependency. Tested onRHEL 7 (x64).
-- *Goelze.SkiaSharp.NativeAssets.AlpineLinux*– provides a native Skia build for x64 Alpine Linux 3.9.
-- *Jellyfin.SkiaSharp.NativeAssets.LinuxArm*– provides a native Skia build for arm32 and arm64 Debian based Linux distributions.
+- *SkiaSharp.NativeAssets.Linux* – provides a native Skia build for x64 Debian based Linux distributions.
+- *SkiaSharp.NativeAssets.Linux.NoDependencies* – the package is intended to be used in Linux distributions that do not have the libfontconfig dependency. Tested on RHEL 7 (x64).
+- *Goelze.SkiaSharp.NativeAssets.AlpineLinux* – provides a native Skia build for x64 Alpine Linux 3.9.
+- *Jellyfin.SkiaSharp.NativeAssets.LinuxArm* – provides a native Skia build for arm32 and arm64 Debian based Linux distributions.
 
 ## More Examples
 
@@ -177,7 +177,7 @@ RUN apt install libharfbuzz-icu0
 COPY --from=build /app/Aspose.Words.Docker.Sample/out ./
 ENTRYPOINT ["dotnet", "Aspose.Words.Docker.Sample.dll"]
 {{< /highlight >}}
-3. To run the application in Alpine Linux, it is required to add the SkiaSharp native assetsand use the following Dockerfile:<br>
+3. To run the application in Alpine Linux, it is required to add the SkiaSharp native assets and use the following Dockerfile:<br>
 {{< highlight plain >}}
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine3.9 AS build
 WORKDIR /app
@@ -198,7 +198,7 @@ RUN apk update && apk upgrade && apk add fontconfig && apk add harfbuzz
 COPY --from=build /app/Aspose.Words.Docker.Sample/out ./
 ENTRYPOINT ["dotnet", "Aspose.Words.Docker.Sample.dll"]
 {{< /highlight >}}
-4. To run the application in RHEL 7, it is required to add the SkiaSharp native assetsand use the following Dockerfile:<br>
+4. To run the application in RHEL 7, it is required to add the SkiaSharp native assets and use the following Dockerfile:<br>
 {{< highlight plain >}}
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build
 WORKDIR /app
@@ -220,12 +220,12 @@ ENTRYPOINT ["/opt/rh/rh-dotnet21/root/usr/bin/dotnet", "Aspose.Words.Docker.Samp
 
 ## See Also
 
-- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
-- [Install Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/)
+- [Install Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+- [Install Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
 - [Visual Studio 2017, .NET Core 2.2 SDK](https://docs.microsoft.com/en-us/dotnet/core/install/windows?tabs=netcore22#dependencies)
-- [Switch to Linux containers](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers)option
+- [Switch to Linux containers](https://docs.docker.com/desktop/setup/install/windows-install/#windows-containers) option
 - Install [SkiaSharp.NativeAssets.Linux](https://www.nuget.org/packages/SkiaSharp.NativeAssets.Linux)
-- Additional information on [.NET Core SDK](https://hub.docker.com/_/microsoft-dotnet-sdk)
+- Additional information on [.NET Core SDK](https://hub.docker.com/r/microsoft/dotnet-sdk)
 - Use additional NuGet packages: [SkiaSharp.NativeAssets.Linux](https://www.nuget.org/packages/SkiaSharp.NativeAssets.Linux), [SkiaSharp.NativeAssets.Linux.NoDependencies](https://www.nuget.org/packages/SkiaSharp.NativeAssets.Linux.NoDependencies), [Goelze.SkiaSharp.NativeAssets.AlpineLinux](https://www.nuget.org/packages/Goelze.SkiaSharp.NativeAssets.AlpineLinux), [Jellyfin.SkiaSharp.NativeAssets.LinuxArm](https://www.nuget.org/packages/Jellyfin.SkiaSharp.NativeAssets.LinuxArm)
 - [RHEL 7 (x64)](https://hub.docker.com/r/kkamberta/dotnet-21-rhel7)
 

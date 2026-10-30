@@ -28,7 +28,7 @@ Aspose.Words for Reporting Services supports the following RDL elements:
 - Lists
 - Tables
 - Matrices
-- Tablix (Reporting Services 2008, 2012 and 2014)
+- Tablix (Reporting Services 2008 and later)
 - Styles
 - Rectangles, lines
 - Subreports

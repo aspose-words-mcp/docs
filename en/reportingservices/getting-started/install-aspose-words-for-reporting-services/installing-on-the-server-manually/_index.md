@@ -30,9 +30,9 @@ In the following steps, you will need to copy and modify files in the directory 
 
 The root directory for Microsoft SQL Server is usually C:\Program Files\Microsoft SQL Server. From there the Report Server directory can be found as follows:
 
-- **Microsoft SQL Server 2012** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server\MSRS11.MSSQLSERVER\ Reporting Services\ReportServer` directory.
-- **Microsoft SQL Server 2014** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server\MSRS12.MSSQLSERVER\ Reporting Services\ReportServer` directory.
-- **Microsoft SQL Server 2016** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\ Reporting Services\ReportServer` directory.
+- **Microsoft SQL Server 2012** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server\MSRS11.MSSQLSERVER\Reporting Services\ReportServer` directory.
+- **Microsoft SQL Server 2014** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server\MSRS12.MSSQLSERVER\Reporting Services\ReportServer` directory.
+- **Microsoft SQL Server 2016** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\Reporting Services\ReportServer` directory.
 - **Microsoft SQL Server 2017** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server Reporting Services` directory.
 - **Microsoft SQL Server 2019** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server Reporting Services` directory.
 - **Microsoft SQL Server 2022** - Report Server is installed in the `C:\Program Files\Microsoft SQL Server Reporting Services` directory.
@@ -52,7 +52,7 @@ To make sure NTFS permissions are correct, right click on `Aspose.Words.Reportin
 
 Open *C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Services\ReportServer\rsreportserver.config* or *C:\Program Files\Microsoft Power BI Report Server\PBIRS\ReportServer\rsreportserver.config* (in the case of Power BI Report Server) and add the following lines into the *&lt;Render&gt;* element:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <!--Start here.-->
@@ -62,6 +62,7 @@ Open *C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Servi
 <Extension Name="AWDOCX" Type="Aspose.Words.ReportingServices.DocxRenderer,Aspose.Words.ReportingServices"/>
 <Extension Name="AWHTML" Type="Aspose.Words.ReportingServices.HtmlRenderer,Aspose.Words.ReportingServices"/>
 <Extension Name="AWMHTML" Type="Aspose.Words.ReportingServices.MhtmlRenderer,Aspose.Words.ReportingServices"/>
+<Extension Name="AWODT" Type="Aspose.Words.ReportingServices.OdtRenderer,Aspose.Words.ReportingServices"/>
 <Extension Name="AWTXT" Type="Aspose.Words.ReportingServices.TxtRenderer,Aspose.Words.ReportingServices"/>
 <Extension Name="AWXPS" Type="Aspose.Words.ReportingServices.XpsRenderer,Aspose.Words.ReportingServices"/>
 <Extension Name="AWEPUB" Type="Aspose.Words.ReportingServices.EpubRenderer,Aspose.Words.ReportingServices"/>
@@ -69,13 +70,11 @@ Open *C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Servi
 </Render>
 {{< /highlight >}}
 
-Note:
-
 ## Step 4. Give Aspose.Words for Reporting Services permissions to execute.
 
 Open *C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Services\ReportServer\rssrvpolicy.config* or *C:\Program Files\Microsoft Power BI Report Server\PBIRS\ReportServer\rssrvpolicy.config* (in the case of Power BI Report Server) and add the following as the last item in the second to outer *&lt;CodeGroup&gt;* element (which should be *&lt;CodeGroup class="FirstMatchCodeGroup" version="1" PermissionSetName="Execution" Description="This code group grants MyComputer code Execution permission. "&gt;*):
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <CodeGroup>
 ...
 <CodeGroup>
@@ -99,7 +98,7 @@ PublicKeyBlob="00240000048000009400000006020000002400005253413100040000010001005
 
 ## Step 5. Verify that Aspose.Words for Reporting Services was installed successfully.
 
-Launch Report Manager by opening your browser (Microsoft Internet Explorer 6.0 or later). Type the Report Manager `URL` in the address bar (by default it is *https://&lt;ComputerName&gt;/Reports*).
+Open the web portal (Report Manager in SQL Server 2012 and 2014) in a browser. Type its `URL` in the address bar (by default it is *https://&lt;ComputerName&gt;/Reports*).
 
 Select one of the reports you have on your server and open the Select Format combo box. You should see the list of export formats provided by Aspose.Words for Reporting Services. Select DOC – Word Document via Aspose.Words.
 

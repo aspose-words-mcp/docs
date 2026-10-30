@@ -79,7 +79,7 @@ Although there are over 150 public classes and enumerations in Aspose.Words, the
 
 Developers who have previously used Microsoft Word Automation in their projects will find the names and behavior of many classes, methods, and properties familiar.
 
-[Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/), [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/), [Bookmark](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmark/), [Range](https://reference.aspose.com/words/nodejs-net/aspose.words/range/), [Section.page_setup](https://reference.aspose.com/words/nodejs-net/aspose.words/section/page_setup/) and [Paragraph.paragraph_format](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/paragraph_format/) are some of the Aspose.Words classes. At the same time, Aspose.Words is quite different from the Microsoft Word Object Model in that it represents a document as a tree of objects, more like an XML DOM tree. If you have worked with any XML DOM library, you will find it is easy to understand and work with Aspose.Words.
+[Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/), [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/), [Bookmark](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmark/), [Range](https://reference.aspose.com/words/nodejs-net/aspose.words/range/), [Section.pageSetup](https://reference.aspose.com/words/nodejs-net/aspose.words/section/pageSetup/) and [Paragraph.paragraphFormat](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/paragraphFormat/) are some of the Aspose.Words classes. At the same time, Aspose.Words is quite different from the Microsoft Word Object Model in that it represents a document as a tree of objects, more like an XML DOM tree. If you have worked with any XML DOM library, you will find it is easy to understand and work with Aspose.Words.
 
 ## Pricing and Policies
 
@@ -94,23 +94,24 @@ For more information on Aspose.Words technical support, take a look at the [supp
 ## FAQ
 
 1. **Q:** How do I apply a license for Aspose.Words for Node.js via .NET?  
-   **A:** Create an instance of `Aspose.Words.License` in your .NET code and call `SetLicense` with the path to your `.lic` file. Example:  
+   **A:** Create an instance of `aw.License` and call `setLicense` with the path to your `.lic` file. Example:  
 
-   ```csharp
-   Aspose.Words.License license = new Aspose.Words.License();
-   license.SetLicense("Aspose.Words.lic");
+   ```js
+   const aw = require('@aspose/words');
+   const license = new aw.License();
+   license.setLicense("Aspose.Words.lic");
    ```
 
    Place the license file in a location accessible to the application (e.g., the project root or a secure folder). The license is applied globally for the process.
 
 2. **Q:** Is Aspose.Words for Node.js via .NET compatible with .NET 8?  
-   **A:** Yes. The library targets .NET Standard 2.0 and .NET 6, which are both compatible with .NET 8. You can reference the NuGet package in a .NET 8 project without additional configuration.
+   **A:** Aspose.Words for Node.js via .NET is used from Node.js, not referenced from .NET projects: install the npm package `@aspose/words`, which includes everything it needs. For .NET 8 projects, use Aspose.Words for .NET.
 
 3. **Q:** Where can I find detailed pricing and licensing information?  
    **A:** All pricing tiers, subscription options, and license types are listed on the [Pricing Information](https://purchase.aspose.com/pricing/words/family/) page. Licensing details, including how to obtain and apply a license, are described on the [Licensing](/words/nodejs-net/licensing/) page.
 
 4. **Q:** Does the free trial have any limitations?  
-   **A:** The trial version is fully functional but adds a small watermark to generated documents and is limited to 30 days of use. For production use, purchase a license to remove the watermark and unlock unlimited usage.
+   **A:** The trial version is fully functional, but it adds an evaluation watermark to documents and limits the maximum document size to a few hundred paragraphs. It has no time limit. To evaluate without these limitations, request a free 30-day temporary license; for production use, purchase a license.
 
 5. **Q:** How can I safely use Aspose.Words in a multithreaded environment?  
    **A:** Aspose.Words is thread‑safe as long as each thread works with its own `Document` instance. Do not share a single `Document` object across threads. Create and dispose of documents within the thread that uses them, or use a thread‑local pool if you need to reuse objects.

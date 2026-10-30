@@ -13,7 +13,7 @@ url: /java/working-with-comments-in-python/
 timestamp: 2024-01-27-14-07-04
 ---
 
-## Aspose.Words -Process Comments
+## Aspose.Words - Process Comments
 
 **Python Code**
 

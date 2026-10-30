@@ -502,7 +502,7 @@ Private Use Area (PUA) characters appear mostly for Windows symbolic fonts like 
    ```
 
 2. **Q:** How can I specify the PDF/A compliance level when saving a document?  
-   **A:** Use the `PdfSaveOptions.Compliance` property. The enum `PdfCompliance` includes values such as `PdfA1b`, `PdfA2a`, `PdfA4`, and `PdfUa`. Set the desired value before calling `Document.Save`.
+   **A:** Use the `PdfSaveOptions.Compliance` property. The enum `PdfCompliance` includes values such as `PdfA1b`, `PdfA2a`, `PdfA4`, and `PdfUa1`. Set the desired value before calling `Document.Save`.
 
 3. **Q:** What should I do to ensure all required fonts are embedded for PDF/A compliance?  
    **A:** No extra settings are required. PDF/A compliance requires all fonts to be embedded, so Aspose.Words automatically uses `PdfFontEmbeddingMode.EmbedAll` when saving to PDF/A, regardless of the `PdfSaveOptions.FontEmbeddingMode` value. Fonts are embedded as subsets by default; set `PdfSaveOptions.EmbedFullFonts` to `true` if you need complete font files.

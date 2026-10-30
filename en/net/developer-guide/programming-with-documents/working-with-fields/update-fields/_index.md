@@ -132,7 +132,7 @@ The following code example shows how to update this property:
 
    ```csharp
    Document doc = new Document("input.docx");
-   SaveOptions saveOptions = new SaveOptions
+   OoxmlSaveOptions saveOptions = new OoxmlSaveOptions
    {
        UpdateLastSavedTimeProperty = true
    };

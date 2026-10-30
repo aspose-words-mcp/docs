@@ -29,6 +29,6 @@ builder.writeln('Hello World!')
 
 ## Download Running Code
 
-Download **Hello World(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Hello World (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Python/tests/quickstart/HelloWorld/HelloWorld.py)

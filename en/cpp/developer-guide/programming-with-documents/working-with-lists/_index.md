@@ -27,7 +27,7 @@ List-level objects are created automatically when a list is created. Use the pro
 
 ## Restart List for each Section
 
-You can restart a list for each section using the [IsRestartAtEachSection](https://reference.aspose.com/words/cpp/aspose.words.lists/list/get_isrestartateachsection/) property. Note that this option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if OoxmlCompliance is higher then Ecma376.
+You can restart a list for each section using the [get_IsRestartAtEachSection()](https://reference.aspose.com/words/cpp/aspose.words.lists/list/get_isrestartateachsection/) property. Note that this option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if OoxmlCompliance is higher then Ecma376.
 
 The following code example shows how to create a list and restart it for each section:
 

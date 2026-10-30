@@ -246,12 +246,11 @@ public static ArrayList GetDocumentData(string filePath, string sessionID)
     
         // Convert the document to images
         ImageSaveOptions options = new ImageSaveOptions(SaveFormat.Jpeg);
-        options.PageCount = 1;
     
         // Save each page of the document as image.
         for (int i = 0; i < doc.PageCount; i++)
         {
-            options.PageIndex = i;
+            options.PageSet = new PageSet(i);
             doc.Save(string.Format(@"{0}\{1}.png", documentFolder, i), options);
         }
         result.Add(Common.Success); // 0. Result

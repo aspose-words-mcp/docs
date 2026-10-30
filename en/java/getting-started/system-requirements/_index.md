@@ -65,10 +65,10 @@ However, sometimes there are situations where you might need to add third-party 
 
 Follow these steps to install native JAI and ImageIO on Windows:
 
-1. Download**JAI 1.1.3**.
+1. Download **JAI 1.1.3**.
    At the time of writing, only the 32-bit version of the installer is available, so if you use a JDK you need to download [Jai-1_1_3-lib-windows-i586-jdk.exe](https://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-windows-i586-jdk.exe) and if you use a JRE you need to download [Jai-1_1_3-lib-windows-i586-jre.exe](https://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-windows-i586-jre.exe).
 1. Run the installer and point it to the directory where JDK/JRE is installed.
-1. Download**JAI Image I/O 1.1**.
+1. Download **JAI Image I/O 1.1**.
    At the time of writing, only the 32-bit version of the installer is available, so if you use a JDK you need to download [jai_imageio-1_1-lib-windows-i586-jdk.exe](https://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-windows-i586-jdk.exe) and if you use a JRE you need to download [jai_imageio-1_1-lib-windows-i586-jre.exe](https://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-windows-i586-jre.exe)
 1. Run the installer and point it to the directory where JDK/JRE is installed.
 
@@ -76,12 +76,12 @@ Follow these steps to install native JAI and ImageIO on Windows:
 
 Follow these steps to install native JAI and ImageIO on Linux:
 
-1. Download**JAI 1.1.3** choosing the appropriate architecture:
-   1. [i586](https://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-i586.tar.gz)for 32-bit systems
-   1. [amd64](https://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64.tar.gz)for 64-bit ones (even if using Intel processors)
+1. Download **JAI 1.1.3** choosing the appropriate architecture:
+   1. [i586](https://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-i586.tar.gz) for 32-bit systems
+   1. [amd64](https://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64.tar.gz) for 64-bit ones (even if using Intel processors)
 1. Extract the file into a temporary directory.
-1. Move JAR files to the JDK/JRE**lib/ext**folder.
-1. Move SO files to the JDK/JRE**lib/amd64**folder.<br>
+1. Move JAR files to the JDK/JRE **lib/ext** folder.
+1. Move SO files to the JDK/JRE **lib/amd64** folder.<br>
 
    For example, on a 64-bit Ubuntu system, steps 1-4 will look like this:<br>
    {{< highlight csharp >}}
@@ -93,12 +93,12 @@ Follow these steps to install native JAI and ImageIO on Linux:
    rm /tmp/jai-1_1_3-lib-linux-amd64.tar.gz && \
    rm -r /tmp/jai-1_1_3
    {{< /highlight >}}
-1. Download**JAI Image I/O 1.1**, choosing the appropriate architecture:
-   1. [i586](https://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-i586.tar.gz)for the 32-bit systems
-   1. [amd64](https://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-amd64.tar.gz)for the 64-bit ones (even if using Intel processors)
+1. Download **JAI Image I/O 1.1**, choosing the appropriate architecture:
+   1. [i586](https://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-i586.tar.gz) for the 32-bit systems
+   1. [amd64](https://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-linux-amd64.tar.gz) for the 64-bit ones (even if using Intel processors)
 1. Extract the file into a temporary directory.
-1. Move JAR files to the JDK/JRE**lib/ext**folder.
-1. Move SO files to the JDK/JRE**lib/amd64**folder.<br>
+1. Move JAR files to the JDK/JRE **lib/ext** folder.
+1. Move SO files to the JDK/JRE **lib/amd64** folder.<br>
 
    For example, on a 64-bit Ubuntu system, steps 5-8 will look like this:<br>
    {{< highlight csharp >}}

@@ -21,7 +21,7 @@ Federal Information Processing Standards (FIPS) are a set of openly published st
 
 Aspose.Words for Java and Aspose.Words for Android use the Bouncy Castle FIPS JAR for encryption, decryption and signing documents. The JAR has been designed and implemented to meet the FIPS 140-2, Level 1 requirements.
 
-FIPS 140-2 is a U.S. government computer security standard used to approve cryptographic modules.This standardspecifies the security requirementsthat will be satisfied by a cryptographic module and provides high levels of security intended to cover a wide range of potential applications and environments. For more details on FIPS 140-2, see the [NIST publication](https://www.nist.gov/publications/security-requirements-cryptographic-modules-includes-change-notices-1232002?pub_id=902003).
+FIPS 140-2 is a U.S. government computer security standard used to approve cryptographic modules. This standard specifies the security requirements that will be satisfied by a cryptographic module and provides high levels of security intended to cover a wide range of potential applications and environments. For more details on FIPS 140-2, see the [NIST publication](https://www.nist.gov/publications/security-requirements-cryptographic-modules-includes-change-notices-1232002?pub_id=902003).
 
 Aspose.Words for .NET uses the general Bouncy Castle version without support for FIPS.
 
@@ -83,7 +83,7 @@ For more details on the approved algorithms list, see [BouncyCastle User Guide](
    **A:** No. Once `startFipsMode()` is called, the mode cannot be changed back to General at runtime; you must restart the application without calling the method.
 
 4. **Q:** What happens if I try to use a non‑FIPS‑approved algorithm, such as Blowfish, while FIPS mode is on?  
-   **A:** Aspose.Words throws an `UnapprovedSecurityOperationException` indicating that the algorithm is not on the approved list. You must use a FIPS‑approved algorithm instead.
+   **A:** Aspose.Words throws a `FipsUnapprovedOperationException` indicating that the algorithm is not on the approved list. You must use a FIPS‑approved algorithm instead.
 
 5. **Q:** Does the .NET version of Aspose.Words support FIPS mode?  
    **A:** No. Aspose.Words for .NET uses the standard Bouncy Castle library, which does not include the FIPS‑validated module, so FIPS mode is not available on that platform.

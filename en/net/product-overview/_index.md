@@ -114,7 +114,7 @@ For more information on Aspose.Words technical support, take a look at the [Supp
 ## FAQ
 
 1. **Q:** What file formats can Aspose.Words for .NET load and save?  
-   **A:** Aspose.Words supports more than 35 formats. It can load DOC, DOCX, RTF, HTML, MHTML, ODT, PDF, EPUB, and many others, and can save to formats such as PDF, XPS, HTML, JPEG, PNG, TIFF, Markdown, DOCX, etc. See the [Supported Document Formats](/words/net/supported-document-formats/) page for the full list.
+   **A:** Aspose.Words supports more than 40 formats. It can load DOC, DOCX, RTF, HTML, MHTML, ODT, PDF, EPUB, and many others, and can save to formats such as PDF, XPS, HTML, JPEG, PNG, TIFF, Markdown, DOCX, etc. See the [Supported Document Formats](/words/net/supported-document-formats/) page for the full list.
 
 2. **Q:** Do I need Microsoft Word or Office installed to use Aspose.Words?  
    **A:** No. Aspose.Words is completely independent of Microsoft Word or any other third‑party application. All processing is performed by the library itself, which makes it suitable for server environments where Office cannot be installed.

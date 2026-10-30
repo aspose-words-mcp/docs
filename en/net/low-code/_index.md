@@ -72,7 +72,7 @@ string firstDoc = "Document1.docx";
 string secondDoc = "Document2.docx";
 string outputDoc = "Compared.docx";
 
-LowCodeComparer.Compare(firstDoc, secondDoc, outputDoc);
+Comparer.Compare(firstDoc, secondDoc, outputDoc, "Author", DateTime.Now);
 {{< /highlight >}}
 
 **fluent api example:**
@@ -103,7 +103,7 @@ CompareOptions options = new CompareOptions
     IgnoreCaseChanges = true
 };
 
-LowCodeComparer.Compare(firstDoc, secondDoc, outputDoc, options);
+Comparer.Compare(firstDoc, secondDoc, outputDoc, "Author", DateTime.Now, options);
 {{< /highlight >}}
 
 **fluent api example:**
@@ -191,7 +191,7 @@ To explore more advanced options, you can always combine LowCode APIs with the f
    **A:** Use the `Converter` class. In the non‑fluent style call `Converter.Convert("input.docx", "output.pdf");`. In the fluent style create a context with `Converter.Create().From("input.docx").To("output.pdf").Execute();`. The API automatically detects the source and target formats from the file extensions.
 
 2. **Q:** What is the simplest way to compare two Word documents with the LowCode API?  
-   **A:** Call `LowCodeComparer.Compare("doc1.docx", "doc2.docx", "result.docx");` for a quick comparison. If you need custom options, create a `CompareOptions` object and pass it as the fourth argument, or use the fluent `Comparer.Create().From(...).From(...).To(...).Execute();` with a configured `ComparerContext`.
+   **A:** Call `Comparer.Compare("doc1.docx", "doc2.docx", "result.docx", "Author", DateTime.Now);` for a quick comparison (the author and date are recorded in the revisions). If you need custom options, create a `CompareOptions` object and pass it as the last argument, or use the fluent `Comparer.Create().From(...).From(...).To(...).Execute();` with a configured `ComparerContext`.
 
 3. **Q:** Can I split a large document into separate parts using LowCode?  
    **A:** Yes. The `Splitter` class provides a `Split` method that accepts the source file, output file, and split options. The splitter can divide the document by page count, sections, or custom criteria.

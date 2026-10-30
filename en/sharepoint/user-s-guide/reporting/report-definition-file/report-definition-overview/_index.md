@@ -33,15 +33,15 @@ When designing a report for Aspose.Words for SharePoint, you need to create a re
 
 Look at the report definition diagram. The main section is [DataSets](/words/sharepoint/datasets-element/) that describes data source connection details and queries for retrieving data. A report can combine data from several queries and have several data source connections. For example, it is possible to get a query result from an SQL database and combine it with list of items from a SharePoint list. If data returned by different queries is related, describe the relationships in the [Relations](/words/sharepoint/relations-element/) section of the report definition file.
 
-The [Parameters](/words/sharepoint/parameters-element/) section is used for report parameters description.All elements used in the report definition are defined in the &lt;/words/sharepoint/reporting/&gt; XML namespace.Elements have either child elements or a value stored as text element content. Elements with children do not use text content in the report definition.When the element has text content as a value, leading and trailing whitespace is trimmed from the text before usage. Consider this element:
+The [Parameters](/words/sharepoint/parameters-element/) section is used for report parameters description. All elements used in the report definition are defined in the `https://www.aspose.com/Words/SharePoint/Reporting` XML namespace. Elements have either child elements or a value stored as text element content. Elements with children do not use text content in the report definition. When the element has text content as a value, leading and trailing whitespace is trimmed from the text before usage. Consider this element:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <TableName>MyTable</TableName>
 {{< /highlight >}}
 
 It has the same value (“MyTable”) as the element below.
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <TableName>
 	MyTable
 </TableName>

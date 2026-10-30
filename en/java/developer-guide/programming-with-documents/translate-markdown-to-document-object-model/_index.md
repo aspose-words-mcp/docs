@@ -47,18 +47,18 @@ We use [Font](https://reference.aspose.com/words/java/com.aspose.words/font/) fo
 
 | Markdown feature              | Aspose.Words       |
 | ----------------------------- | ------------------ |
-| **Bold**<br />`**bold text**` | `Font.Bold = true` |
+| **Bold**<br />`**bold text**` | `Font.setBold(true)` |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "bold-text.java" >}} |  |
-| **Italic**<br />`*italic text*` | `Font.Italic = true` |
+| **Italic**<br />`*italic text*` | `Font.setItalic(true)` |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "italic-text.java" >}} |  |
-| **Strikethrough**<br />`~Strikethrough text~` | `Font.StrikeThrough = true` |
+| **Strikethrough**<br />`~Strikethrough text~` | `Font.setStrikeThrough(true)` |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "strikethrough.java" >}} |  |
 
 We use a character style with a name that starts from the word `InlineCode`, followed by an optional dot `(.)` and a number of backticks ```(`)``` for the `InlineCode` feature. If a number of backticks is missed, then one backtick will be used by default.
 
 | Markdown feature              | Aspose.Words       |
 | ----------------------------- | ------------------ |
-| **InlineCode**<br />`**inline code**` | `Font.StyleName = “InlineCode[.][N]”` |
+| **InlineCode**<br />`**inline code**` | `Font.setStyleName(“InlineCode[.][N]”)` |
 | {{< gist "aspose-words-gists" "642767bbe8d8bec8eab080120b707990" "inline-code.java" >}} |  |
 | **Autolink**<br />`<scheme://domain.com>`<br />`<email@domain.com>` | The [FieldHyperlink](https://reference.aspose.com/words/java/com.aspose.words/fieldhyperlink/) class. |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "autolink.java" >}} |  |
@@ -102,9 +102,9 @@ The table below shows examples of using Markdown Complex Containers in Aspose.Wo
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Quote**<br />`> quote,`<br />`>> nested quote`             | `paragraph.getParagraphFormat().setStyleName(“Quote[some suffix]”);`<br />The suffix in style name is optional, but Aspose.Words importer uses the ordered numbers 1, 2, 3, …. in case of nested quotes.<br />The nesting is defined via the inherited styles. |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "quote.java" >}} |
-| **BulletedList**<br />`- Item 1`<br />`- Item 2`<br />	`   - Item 2a`<br />	`   - Item 2b` | Bulleted lists are represented using paragraph numbering:<br />`ListFormat.ApplyBulletDefault()`<br />There can be 3 types of bulleted lists. They are only diff in a numbering format of the very first level. These are: `‘-'`, `‘+'` or `‘*'` respectively. |
+| **BulletedList**<br />`- Item 1`<br />`- Item 2`<br />	`   - Item 2a`<br />	`   - Item 2b` | Bulleted lists are represented using paragraph numbering:<br />`ListFormat.applyBulletDefault()`<br />There can be 3 types of bulleted lists. They are only diff in a numbering format of the very first level. These are: `‘-'`, `‘+'` or `‘*'` respectively. |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "bulleted-list.java" >}} |                                                              |
-| **OrderedList**<br />`1. Item 1`<br />`2. Item 2`<br />	`1) Item 2a`<br />	`2) Item 2b` | Ordered lists are represented using paragraph numbering:<br />`ListFormat.ApplyNumberDefault()`<br />There can be 2 number format markers: ‘.' and ‘)'. The default marker is ‘.'. |
+| **OrderedList**<br />`1. Item 1`<br />`2. Item 2`<br />	`1) Item 2a`<br />	`2) Item 2b` | Ordered lists are represented using paragraph numbering:<br />`ListFormat.applyNumberDefault()`<br />There can be 2 number format markers: ‘.' and ‘)'. The default marker is ‘.'. |
 {{< gist "aspose-words-gists" "4d42109bdf7df29c28ebfe1550c8e259" "ordered-list.java" >}} |                                                              |
 
 ### Tables
@@ -136,4 +136,4 @@ Aspose.Words also allows to translate tables into DOM, as shown below:
    **A:** Bulleted lists use `ListFormat.applyBulletDefault();` while ordered lists use `ListFormat.applyNumberDefault();`. The first‑level marker can be `-`, `+`, `*` for bullets and `.` or `)` for numbers.
 
 5. **Q:** What classes are used for images and hyperlinks during conversion?  
-   **A:** Images become `Shape` objects (`Shape shape = new Shape(doc, ShapeType.IMAGE);`). Hyperlinks and autolinks are represented by `FieldHyperlink` fields, which can be accessed via `FieldHyperlink field = (FieldHyperlink) node;`.
+   **A:** Images become `Shape` objects (`Shape shape = new Shape(doc, ShapeType.IMAGE);`). Hyperlinks and autolinks are represented by `FieldHyperlink` fields, which you can get from `doc.getRange().getFields()` by casting each `Field` whose `getType()` is `FieldType.FIELD_HYPERLINK` to `FieldHyperlink`.

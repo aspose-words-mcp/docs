@@ -41,7 +41,7 @@ For more information and a description of the features available for the differe
 ## FAQ
 
 1. **Q:** How can I specify a temporary folder for saving large documents when memory is low?  
-   **A:** Use the `SaveOptions` object for the target format and set its `TempFolder` property to a folder path with sufficient disk space. Aspose.Words will write intermediate data there and delete the files after the save operation completes.
+   **A:** Use the `SaveOptions` object for the target format and set its `temp_folder` property to a folder path with sufficient disk space. Aspose.Words will write intermediate data there and delete the files after the save operation completes.
 
 2. **Q:** Which document formats preserve most of the original features during a save operation?  
    **A:** Formats such as DOCX, DOC, RTF, HTML, and PDF retain the majority of layout, styling, and content features. The exact preservation level varies per format; for example, PDF keeps visual fidelity, while HTML preserves structural elements.

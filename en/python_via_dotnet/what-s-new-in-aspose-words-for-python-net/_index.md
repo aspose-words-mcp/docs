@@ -118,10 +118,6 @@ The ability to control the compression level of XPS output has been introduced b
 
 Improved handling of AAT-enabled fonts when rendering to fixed-page formats has been implemented.
 
-#### Printing in .NET Core Apps Running on Windows <sup>26.6</sup>
-
-The ability to use **Document.Print** and related printing APIs in .NET Core applications running on Windows has been introduced by adding Windows-specific target framework monikers (net6.0-windows and net8.0-windows) to the NuGet package.
-
 #### Alternative Text for Inner Shapes <sup>26.7</sup>
 
 The rendering of alternative text for inner shapes contained in textboxes has been implemented.
@@ -232,7 +228,7 @@ Aspose.Words 25.12 improves rendering accuracy across PDF, HTML-Fixed, and SVG f
 
 ### AI-powered Features
 
-#### Сonfigure AI Model Service Endpoints <sup>25.11</sup>
+#### Configure AI Model Service Endpoints <sup>25.11</sup>
 
 The ability to configure [AI model](https://reference.aspose.com/words/python-net/aspose.words.ai/aimodel/) service endpoints has been introduced by adding support for specifying [custom URLs](https://reference.aspose.com/words/python-net/aspose.words.ai/aimodel/url/) and [request timeouts](https://reference.aspose.com/words/python-net/aspose.words.ai/aimodel/timeout/), allowing greater flexibility in AI-powered integrations.
 
@@ -281,7 +277,7 @@ The ability to render Funnel charts in documents has been added.
 
 #### Render VerticalFarEast and HorizontalRotatedFarEast Text Orientations in EQ-field <sup>25.12</sup>
 
-The ability to render **VerticalFarEast** and **HorizontalRotatedFarEast** text orientations in EQ-field elements has been introduced.
+The ability to render **VERTICAL_FAR_EAST** and **HORIZONTAL_ROTATED_FAR_EAST** text orientations in EQ-field elements has been introduced.
 
 {{% alert color="primary" %}}
 

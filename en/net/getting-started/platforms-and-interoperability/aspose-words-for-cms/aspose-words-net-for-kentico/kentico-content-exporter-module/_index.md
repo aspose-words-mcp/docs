@@ -64,7 +64,6 @@ You can log any issues or suggestions related to Aspose.Words .NET for Kentico M
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Kentico/issues)
 - [Sourceforge](https://sourceforge.net/projects/asposekentico/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-kentico/issues?status=new&status=open)
 
 #### Extend and Contribute
 
@@ -76,7 +75,6 @@ You can get the latest source code from one of the following locations
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Kentico)
 - [Sourceforge](https://sourceforge.net/p/asposekentico/code/ci/master/tree/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-kentico/src)
 
 #### How to configure the source code
 
@@ -98,7 +96,6 @@ You can download Aspose .NET Content Exporter for Kentico module from one of the
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Kentico/releases)
 - [Sourceforge](https://sourceforge.net/projects/asposekentico/files/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-kentico/downloads/)
 
 ### Installing
 

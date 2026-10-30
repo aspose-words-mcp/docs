@@ -53,7 +53,7 @@ The good news is that LINQ Reporting Engine can be further extended to fulfill a
 
 ## See Also
 
-- [List of fields supported by Microsoft Word](https://support.microsoft.com/en-us/office/list-of-field-codes-in-word-1ad6d91a-55a7-4a8d-b535-cf7888659a51)
+- [List of fields supported by Microsoft Word](https://support.microsoft.com/en-us/word/list-of-field-codes-in-word)
 
 ------ 
 
@@ -63,13 +63,10 @@ The good news is that LINQ Reporting Engine can be further extended to fulfill a
    **A:** Mail Merge replicates Microsoft Word's native mail‑merge functionality and works with merge fields defined in the document. LINQ Reporting Engine uses its own plain‑text tag syntax, is not bound to Word's legacy behavior, and provides richer features such as multiple data sources, LINQ expressions, and dynamic chart generation.
 
 2. **Q:** Can I combine Mail Merge and LINQ Reporting Engine in the same document?  
-   **A:** Yes. You can use Mail Merge for simple field replacements and LINQ Reporting Engine tags for more complex scenarios (e.g., charts or HTML). Process the LINQ tags first with `ReportingEngine`, then execute `Document.mailMerge().execute(...)` for any remaining merge fields.
+   **A:** Yes. You can use Mail Merge for simple field replacements and LINQ Reporting Engine tags for more complex scenarios (e.g., charts or HTML). Process the LINQ tags first with `ReportingEngine`, then execute `doc.getMailMerge().execute(...)` for any remaining merge fields.
 
 3. **Q:** Which solution is better for inserting images dynamically?  
-   **A:** Both solutions support image insertion, but LINQ Reporting Engine offers a more concise syntax. Example with LINQ tags: `<<image [Product.ImageUrl]>>`. With Mail Merge you would need to implement `IMailMergeDataSource` and handle the `FieldMergingCallback` to replace the image field.
+   **A:** Both solutions support image insertion, but LINQ Reporting Engine offers a more concise syntax. Example with LINQ tags: `<<image [Product.ImageUrl]>>`. With Mail Merge you use an image merge field (`Image:FieldName`) and can supply or adjust the image in `IFieldMergingCallback.imageFieldMerging`.
 
 4. **Q:** How does LINQ Reporting Engine handle multiple data sources compared to Mail Merge?  
    **A:** LINQ Reporting Engine can bind JSON, XML, CSV, custom Java objects, and ADO.NET‑like data sources simultaneously within a single template. Mail Merge is limited to a single data source per `execute` call; to use multiple sources you must run separate `execute` calls or write custom code.
-
-5. **Q:** Is there a performance difference between the two approaches?  
-   **A:** For simple, single‑source scenarios Mail Merge is slightly faster because it performs straightforward field replacement. When complex data manipulation, multiple sources, or large templates are involved, LINQ Reporting Engine often outperforms Mail Merge because it avoids repeated document passes and leverages optimized LINQ operations.

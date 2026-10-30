@@ -81,25 +81,25 @@ Below are examples of conversions between some popular formats. You can evaluate
 
 ---
 
-*DOC to ODT –high-fidelity conversion:*
+*DOC to ODT – high-fidelity conversion:*
 
 <img src="high-quality-conversions-1.png" alt="doc-to-odt-aspose-words-java-1" style="width:500px; vertical-align: top"/> <img src="high-quality-conversions-4.png" alt="doc-to-odt-aspose-words-java-2" style="width:500px; vertical-align: top"/>
 
 ---
 
-*DOC to XPS –high-fidelity conversion:*
+*DOC to XPS – high-fidelity conversion:*
 
 <img src="xml-paper-specification-xps-2.png" alt="doc-to-xps-aspose-words-java-1" style="width:500px; vertical-align: top"/> <img src="xml-paper-specification-xps-3.png" alt="doc-to-xps-aspose-words-java-2" style="width:500px; vertical-align: top"/>
 
 ---
 
-*DOC to JPEG –high-fidelity conversion:*
+*DOC to JPEG – high-fidelity conversion:*
 
 <img src="image-formats-tiff-png-bmp-emf-jpeg-gif-9.png" alt="doc-to-jpg-aspose-words-java-1" style="width:1000px; vertical-align: top"/>
 
 ---
 
-*RTF to TXT –high-fidelity conversion:*
+*RTF to TXT – high-fidelity conversion:*
 
 <img src="plain-text-txt-2.png" alt="rtf-to-txt-aspose-words-java-1" style="width:500px; vertical-align: top"/> <img src="plain-text-txt-3.png" alt="rtf-to-txt-aspose-words-java-2" style="width:500px; vertical-align: top"/>
 
@@ -119,7 +119,7 @@ Below is an example of conversions from DOC to HTML.
 
 ---
 
-DOC to HTML –high-fidelity conversion:
+DOC to HTML – high-fidelity conversion:
 
 <img src="high-quality-conversions-1.png" alt="doc-to-html-aspose-words-java-1" style="width:500px; vertical-align: top"/> <img src="high-quality-conversions-5.png" alt="doc-to-html-aspose-words-java-2" style="width:500px; vertical-align: top"/>
 

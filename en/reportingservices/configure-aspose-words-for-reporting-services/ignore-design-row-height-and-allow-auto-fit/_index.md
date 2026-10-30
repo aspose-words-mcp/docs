@@ -20,13 +20,13 @@ These two settings are applied to row heights inside tables. By default these se
 
 You may use only one configuration setting (either IgnoreDesignRowHeight or AllowAutoFit) or both of them. To change the settings, add the following lines to the <Extension> element corresponding to a particular renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">
 <Configuration>
-    <IgnoreDesignRowHeight>True</ IgnoreDesignRowHeight >
-    <AllowAutoFit>True</ AllowAutoFit >
+    <IgnoreDesignRowHeight>True</IgnoreDesignRowHeight>
+    <AllowAutoFit>True</AllowAutoFit>
 </Configuration>
 </Extension>
 </Render>

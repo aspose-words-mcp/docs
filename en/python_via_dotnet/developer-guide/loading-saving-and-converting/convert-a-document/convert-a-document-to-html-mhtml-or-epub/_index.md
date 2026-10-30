@@ -78,7 +78,7 @@ However, there is no individual property for CSS. The behavior of the **fonts_fo
 
 ### Export Base64 Encoding Fonts Resources
 
-Aspose.Words provides an ability to specify whether font resources should be embedded into HTML in Base64 encodings. To perform this, use the [export_fonts_as_base64](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/export_fonts_as_base64/) property – this is an extension of the [export_font_resources](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/export_font_resources/) property. By default, its value is **false**, and fonts are written into separate files. But if this option is set to **true**, fonts will be embedded into the document's CSS in Base64 encoding. The **ExportFontsAsBase64** property only affects HTML format and does not affect EPUB and MHTML.
+Aspose.Words provides an ability to specify whether font resources should be embedded into HTML in Base64 encodings. To perform this, use the [export_fonts_as_base64](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/export_fonts_as_base64/) property – this is an extension of the [export_font_resources](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/export_font_resources/) property. By default, its value is **false**, and fonts are written into separate files. But if this option is set to **true**, fonts will be embedded into the document's CSS in Base64 encoding. The **export_fonts_as_base64** property only affects HTML format and does not affect EPUB and MHTML.
 
 The following code example shows how to export Base64‑encoded fonts to HTML:
 
@@ -97,10 +97,6 @@ The following code example shows how to converts a Word document to EPUB with sp
 You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Python-via-.NET/blob/master/Examples/Data/Rendering.docx).
 
 {{% /alert %}}
-
-## See Also
-
-- [How to export round‑trip information when saving to HTML](/words/python-net/custom-styles-used-for-proper-aspose-words-html-aspose-words-roundtrip/) 
 
 ## FAQ
 

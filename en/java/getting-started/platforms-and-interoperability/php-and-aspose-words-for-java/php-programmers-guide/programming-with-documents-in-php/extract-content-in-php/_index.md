@@ -85,7 +85,7 @@ public static function extractContentBetweenParagraphStyles(){
 //ExSummary:Shows how to extract content between paragraphs with specific styles using the `ExtractContent` method.
 
 // Load in the document
-$doc = new Java("com.aspose.words.Document" , ExtractContent::$gDataDir . "TestFile.doc");
+$doc = new Java("com.aspose.words.Document", ExtractContent::$gDataDir . "TestFile.doc");
 
 // Gather a list of the paragraphs using the respective heading styles.
 $parasStyleHeading1 = ExtractContent::paragraphsByStyleName($doc, "Heading 1");
@@ -109,7 +109,7 @@ public static function extractContentBetweenRuns(){
 //ExSummary:Shows how to extract content between specific runs of the same paragraph using the `ExtractContent` method.
 
 // Load in the document
-$doc = new Java("com.aspose.words.Document" , ExtractContent::$gDataDir . "TestFile.doc");
+$doc = new Java("com.aspose.words.Document", ExtractContent::$gDataDir . "TestFile.doc");
 
 // Retrieve a paragraph from the first section.
 $nodeType = Java("com.aspose.words.NodeType");
@@ -166,7 +166,7 @@ public static function extractContentBetweenBookmark(){
 //ExSummary:Shows how to extract the content referenced a bookmark using the `ExtractContent` method.
 
 // Load in the document
-$doc = new Java("com.aspose.words.Document" , ExtractContent::$gDataDir . "TestFile.doc");
+$doc = new Java("com.aspose.words.Document", ExtractContent::$gDataDir . "TestFile.doc");
 
 // Retrieve the bookmark from the document.
 $bookmark = $doc->getRange()->getBookmarks()->get("Bookmark1");
@@ -192,7 +192,7 @@ public static function extractContentBetweenCommentRange(){
 //ExSummary:Shows how to extract content referenced by a comment using the `ExtractContent` method.
 
 // Load in the document
-$doc = new Java("com.aspose.words.Document" , ExtractContent::$gDataDir . "TestFile.doc");
+$doc = new Java("com.aspose.words.Document", ExtractContent::$gDataDir . "TestFile.doc");
 
 // This is a quick way of getting both comment nodes.
 
@@ -434,7 +434,7 @@ $currentNode->remove();
 }
 
 // After processing the composite node may become empty. If it has don't include it.
-if (!($isStartMarker && $isEndMarker))
+if(!($isStartMarker && $isEndMarker))
 {
 if ($cloneNode->hasChildNodes())
 $nodes->add($cloneNode);

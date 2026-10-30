@@ -26,7 +26,7 @@ When loading a document, you can set some advanced properties. Aspose.Words prov
 
 Different versions of Microsoft Word application can display documents in differently. For example, there is a well‑known problem with OOXML documents such as DOCX or DOTX produced using WPS Office. In such case essential document markup elements may be missing or may be interpreted differently causing Microsoft Word 2019 to show such a document differently compared to Microsoft Word 2010.
 
-By default Aspose.Words opens documents using Microsoft Word 2019 rules. If you need to to make document loading appear as it would happen in one of the previous Microsoft Word application versions, you should explicitly specify the desired version using the [msw_version](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/msw_version/) property of the **LoadOptions** class.
+By default Aspose.Words opens documents using Microsoft Word 2019 rules. If you need to make document loading appear as it would happen in one of the previous Microsoft Word application versions, you should explicitly specify the desired version using the [msw_version](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/msw_version/) property of the **LoadOptions** class.
 
 The following code example shows how to set the Microsoft Word version with load options:
 
@@ -34,7 +34,7 @@ The following code example shows how to set the Microsoft Word version with load
 
 ## Set Language Preferences to Change the Appearance
 
-The details of displaying a document in Microsoft Word depend not only on the application version and the **msw_version** property value but also on the language settings. Microsoft Word may show documents differently depending on the "Office Language Preferences" dialog settings, that can be found in "File → Options → Languаge". Using this dialog a user can select, for example, primary language, proofing languages, display languages, and so on. Aspose.Words provides the [language_preferences](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/language_preferences/) property as the equivalent of this dialog. If Aspose.Words output differs from the Microsoft Word output, set the appropriate value for **default_editing_language** – this can improve the output document.
+The details of displaying a document in Microsoft Word depend not only on the application version and the **msw_version** property value but also on the language settings. Microsoft Word may show documents differently depending on the "Office Language Preferences" dialog settings, that can be found in "File → Options → Language". Using this dialog a user can select, for example, primary language, proofing languages, display languages, and so on. Aspose.Words provides the [language_preferences](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/language_preferences/) property as the equivalent of this dialog. If Aspose.Words output differs from the Microsoft Word output, set the appropriate value for **default_editing_language** – this can improve the output document.
 
 The following code example shows how to set Japanese as **default_editing_language**:
 
@@ -48,7 +48,7 @@ The following code example shows the implementation of the **IWarningCallback** 
 
 {{< gist "aspose-words-gists" "41c71acaf4924abe47f4bc2ff2c87d6a" "i-warning-callback.py" >}}
 
-To get information about all problems throughout the load time, use the [WarningCallback](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/warning_callback/) property.
+To get information about all problems throughout the load time, use the [warning_callback](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/warning_callback/) property.
 
 The following code example shows how to use this property:
 
@@ -56,7 +56,7 @@ The following code example shows how to use this property:
 
 ## Use ResourceLoadingCallback to Control the External Resources Loading
 
-A document may contain external links to images located somewhere on a local disk, network, or Internet. Aspose.Words automatically loads such images into a document, but there are situations when this process needs to be controlled. For example, to decide whether we really need to load a certain image or perhaps skip it. The [ResourceLoadingCallback](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/resource_loading_callback/) load option allows you to control this.
+A document may contain external links to images located somewhere on a local disk, network, or Internet. Aspose.Words automatically loads such images into a document, but there are situations when this process needs to be controlled. For example, to decide whether we really need to load a certain image or perhaps skip it. The [resource_loading_callback](https://reference.aspose.com/words/python-net/aspose.words.loading/loadoptions/resource_loading_callback/) load option allows you to control this.
 
 The following code example shows the implementation of the [IResourceLoadingCallback](https://reference.aspose.com/words/python-net/aspose.words.loading/iresourceloadingcallback/) interface:
 
@@ -103,43 +103,44 @@ The following code example shows how to verify OpenDocument either it is encrypt
 1. **Q:** How can I load a password‑protected Word document with Aspose.Words for Python?  
    **A:** Create a `LoadOptions` object, set its `password` property to the document’s password, and pass this object to the `Document` constructor. Example:  
    ```python
-   from aspose.words import Document, LoadOptions
-   load_options = LoadOptions()
+   import aspose.words as aw
+   load_options = aw.loading.LoadOptions()
    load_options.password = "MySecret"
-   doc = Document("encrypted.docx", load_options)
+   doc = aw.Document("encrypted.docx", load_options)
    ```
 
 2. **Q:** Which property should I use to make Aspose.Words render a document as it would appear in an older version of Microsoft Word?  
-   **A:** Use the `msw_version` property of `LoadOptions`. Set it to the desired `MsWordVersion` enum value (e.g., `MsWordVersion.WORD_2010`). Example:  
+   **A:** Use the `msw_version` property of `LoadOptions`. Set it to the desired `MsWordVersion` enum value (e.g., `MsWordVersion.WORD2010`). Example:  
    ```python
-   from aspose.words import Document, LoadOptions, MsWordVersion
-   load_options = LoadOptions()
-   load_options.msw_version = MsWordVersion.WORD2010
-   doc = Document("sample.docx", load_options)
+   import aspose.words as aw
+   load_options = aw.loading.LoadOptions()
+   load_options.msw_version = aw.settings.MsWordVersion.WORD2010
+   doc = aw.Document("sample.docx", load_options)
    ```
 
 3. **Q:** How do I change the language preferences (e.g., editing language) when loading a document?  
-   **A:** Set the `language_preferences` property of `LoadOptions` and assign the desired `EditingLanguage`. Example:  
+   **A:** Add the desired `EditingLanguage` to the `language_preferences` of `LoadOptions`. Example:  
    ```python
-   from aspose.words import Document, LoadOptions, EditingLanguage
-   load_options = LoadOptions()
-   load_options.language_preferences.add_editing_language (EditingLanguage.JAPANESE)
-   doc = Document("sample.docx", load_options)
+   import aspose.words as aw
+   load_options = aw.loading.LoadOptions()
+   load_options.language_preferences.add_editing_language(aw.loading.EditingLanguage.JAPANESE)
+   doc = aw.Document("sample.docx", load_options)
    ```
 
 4. **Q:** My application runs out of memory when loading a very large document. Is there a way to reduce memory usage?  
    **A:** Yes. Specify a folder for temporary files using the `temp_folder` property of `LoadOptions`. Aspose.Words will write intermediate data to disk instead of keeping everything in RAM. Example:  
    ```python
-   from aspose.words import Document, LoadOptions
-   load_options = LoadOptions()
+   import aspose.words as aw
+   load_options = aw.loading.LoadOptions()
    load_options.temp_folder = "C:/temp/aw_temp"
-   doc = Document("large.docx", load_options)
+   doc = aw.Document("large.docx", load_options)
    ```
 
 5. **Q:** The text in a legacy document appears garbled after loading. How can I force a specific encoding?  
    **A:** Set the `encoding` property of `LoadOptions` to the name of the required codec, for example `"utf-8"` or `"windows-1251"`.
 
    ```python
+   import aspose.words as aw
    load_options = aw.loading.LoadOptions()
    load_options.encoding = "windows-1251"
    doc = aw.Document("legacy.txt", load_options)

@@ -109,13 +109,13 @@ The following code example shows how to add a mapped field using the [Add](https
 ## FAQ
 
 1. **Q:** How can I retrieve all merge field names from a template?  
-   **A:** Use the `MailMerge.GetFieldNames()` method. It returns a `StringCollection` containing the names of every merge field present in the document, which you can iterate or display as needed.
+   **A:** Use the `MailMerge.GetFieldNames()` method. It returns a `string[]` containing the names of every merge field present in the document (duplicates are not removed), which you can iterate or display as needed.
 
 2. **Q:** What API lets me obtain the hierarchy of mail‑merge regions?  
-   **A:** Call `MailMerge.GetRegionsHierarchy()`. The method returns a collection of `MailMergeRegionInfo` objects that represent each region and its nested sub‑regions, allowing you to inspect the template structure programmatically.
+   **A:** Call `MailMerge.GetRegionsHierarchy()`. The method returns a single `MailMergeRegionInfo` object for the whole document; its `Regions` property lists the top-level regions, and each region lists its nested regions in the same way, allowing you to inspect the template structure programmatically.
 
 3. **Q:** My data source uses different column names than the merge fields in the template. How can I map them automatically?  
-   **A:** Use the `MailMerge.MappedDataFields` collection. Add a mapping with `mailMerge.MappedDataFields.Add("DataSourceColumn", "MergeFieldName")`; Aspose.Words will then match the source column to the appropriate merge field during the merge.
+   **A:** Use the `MailMerge.MappedDataFields` collection. Add a mapping with `mailMerge.MappedDataFields.Add("MergeFieldName", "DataSourceColumn")` (the merge field name in the document first, the data source column second); Aspose.Words will then match the source column to the appropriate merge field during the merge.
 
 4. **Q:** What is the difference between the **NextIf** and **SkipIf** fields?  
    **A:** `NextIf` merges the next record into the current document only when the specified condition evaluates to true; otherwise it starts a new document. `SkipIf` cancels the current document and moves to the next record when the condition is true, effectively skipping the current record.

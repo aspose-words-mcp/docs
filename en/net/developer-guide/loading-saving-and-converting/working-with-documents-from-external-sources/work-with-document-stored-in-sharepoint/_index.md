@@ -45,7 +45,7 @@ To evaluate how Aspose.Words for .NET works with SharePoint documents, you need 
 
 To execute the instructions, you need to find and fix the values of the following parameters, which will be available after completing the steps in the "Preset" part:
 
-- Tenant identifier –see [how to find your tenant id](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id)
+- Tenant identifier – see [how to find your tenant id](https://docs.microsoft.com/en-us/onedrive/find-your-office-365-tenant-id)
 - Tenant name
 - Client identifier
 - Client secret

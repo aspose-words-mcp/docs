@@ -219,7 +219,7 @@ private byte[] getImage() throws IOException {
 
 ## Download Sample Code
 
-- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/addwatermark)
+- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose_Words_Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/addwatermark)
 
 {{% alert color="primary" %}}
 

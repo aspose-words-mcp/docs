@@ -70,7 +70,7 @@ The following code example shows how to generate multiple merged documents durin
 
 {{% alert color="primary" %}}
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Examples/src/main/resources/MailMerge).
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Mail%20merge%20destination%20-%20Suppliers.docx).
 
 {{% /alert %}}
 
@@ -90,13 +90,13 @@ Information about a Mail Merge region can be obtained using the [MailMergeRegion
 
 A Mail Merge region is a specific part inside a document that has a start point and an end point. Both points are represented as Mail Merge fields that have specific names *"TableStart:XXX"* and *"TableEnd:XXX"*. All content that is included in a Mail Merge region will automatically be repeated for every record in the data source.
 
-Aspose.Words allows you to execute Mail Merge with regions using different [Execute methods](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/executewithregions/#executewithregions/) that accept various data objects as the data source.
+Aspose.Words allows you to execute Mail Merge with regions using different [executeWithRegions methods](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/) that accept various data objects as the data source.
 
-As a first step, we need to create the `DataSet` to pass it later as an input parameter to the `ExecuteWithRegions` method:
+As a first step, we need to create the `DataSet` to pass it later as an input parameter to the `executeWithRegions()` method:
 
 {{< gist "aspose-words-gists" "c1173266e34062134a6f4178cd531c15" "create-data-set.java" >}}
 
-The following code example shows how to execute Mail Merge with regions using the [ExecuteWithRegions(DataSet)](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#executeWithRegions-com.aspose.words.net.System.Data.DataSet) method:
+The following code example shows how to execute Mail Merge with regions using the [executeWithRegions(DataSet)](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#executeWithRegions-com.aspose.words.net.System.Data.DataSet) method:
 
 {{< gist "aspose-words-gists" "c1173266e34062134a6f4178cd531c15" "mail-merge-with-regions.java" >}}
 

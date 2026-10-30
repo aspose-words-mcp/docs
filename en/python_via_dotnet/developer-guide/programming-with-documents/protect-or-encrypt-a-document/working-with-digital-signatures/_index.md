@@ -51,9 +51,9 @@ The table below describes a few limitations that you may face while working with
 
 ## Detect, Count, and Verify Digital Signatures
 
-Aspose.Words allows you to detect digital signature in a document using the the [DetectFileFormat](https://reference.aspose.com/words/python-net/aspose.words/fileformatutil/detect_file_format/) method and the [HasDigitalSignature](https://reference.aspose.com/words/python-net/aspose.words/fileformatinfo/has_digital_signature/) property. It is worth noting that such a check will only detect the fact of the signature, but not its validity.
+Aspose.Words allows you to detect digital signature in a document using the [detect_file_format](https://reference.aspose.com/words/python-net/aspose.words/fileformatutil/detect_file_format/) method and the [has_digital_signature](https://reference.aspose.com/words/python-net/aspose.words/fileformatinfo/has_digital_signature/) property. It is worth noting that such a check will only detect the fact of the signature, but not its validity.
 
-A document can be signed more than once, and this can be done by different users. To check the validity of digital signatures, you need to load them from the document using the [LoadSignatures](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignatureutil/load_signatures/) method and use the [IsValid](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignaturecollection/is_valid/) property. Also Aspose.Words allows you to count a set of all digital signatures within a document using the [Count](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignaturecollection/count/) property.
+A document can be signed more than once, and this can be done by different users. To check the validity of digital signatures, you need to load them from the document using the [load_signatures](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignatureutil/load_signatures/) method and use the [is_valid](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignaturecollection/is_valid/) property. Also Aspose.Words allows you to count a set of all digital signatures within a document using the [count](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignaturecollection/count/) property.
 
 All of this provides an efficient and safe way to check a document for signatures before processing it.
 
@@ -65,13 +65,13 @@ The following code example shows how to detect the presence of digital signature
 
 To create a digital signature, you will require to load a signing certificate that confirms identity. When you send a digitally signed document, you also send your certificate and public key.
 
-Aspose.Words allows you to create X.509 certificate, a digital certificate that uses the internationally accepted X.509 PKI standard to verify that a public key belongs to the signer included inside the certificate. To do this, use the [Create](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/certificateholder/create/) method within the [CertificateHolder](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/certificateholder/) class.
+Aspose.Words allows you to create X.509 certificate, a digital certificate that uses the internationally accepted X.509 PKI standard to verify that a public key belongs to the signer included inside the certificate. To do this, use the [create](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/certificateholder/create/) method within the [CertificateHolder](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/certificateholder/) class.
 
 The next sections explain how to add a digital signature, signature line, and how to sign a generated PDF document.
 
 ### Sign a Document
 
-Aspose.Words allows you to sign a DOC, DOCX, XPS, or ODT document digitally using the [Sign](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignatureutil/sign/) method and [SignOptions](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/signoptions/) properties.
+Aspose.Words allows you to sign a DOC, DOCX, XPS, or ODT document digitally using the [sign](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignatureutil/sign/) method and [SignOptions](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/signoptions/) properties.
 
 The following code example shows how to sign documents using a certificate holder and sign options:
 
@@ -79,7 +79,7 @@ The following code example shows how to sign documents using a certificate holde
 
 ### Add a Signature Line
 
-A signature line is a visual representation of a digital signature in a document. Aspose.Words allows you to insert a signature line using the [DocumentBuilder.InsertSignatureLine](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_signature_line/) method.  You can also set the parameters for this representation using the [SignatureLineOptions](https://reference.aspose.com/words/python-net/aspose.words/signaturelineoptions/) class.
+A signature line is a visual representation of a digital signature in a document. Aspose.Words allows you to insert a signature line using the [DocumentBuilder.insert_signature_line](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_signature_line/) method.  You can also set the parameters for this representation using the [SignatureLineOptions](https://reference.aspose.com/words/python-net/aspose.words/signaturelineoptions/) class.
 
 For example, the picture below shows how valid and invalid signatures can be displayed.
 
@@ -103,7 +103,7 @@ The following code example shows how to sign a generated PDF:
 
 ## Retrieve the Digital Signature Value
 
-Aspose.Words also provides the ability to retrieve the digital signature value from a digitally signed document as a byte array using the [SignatureValue](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignature/signature_value/) property.
+Aspose.Words also provides the ability to retrieve the digital signature value from a digitally signed document as a byte array using the [signature_value](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignature/signature_value/) property.
 
 The following code example shows how to obtain the digital signature value as a byte array from a document:
 
@@ -111,7 +111,7 @@ The following code example shows how to obtain the digital signature value as a 
 
 ## Remove Digital Signatures
 
-Aspose.Words allows you to remove all digital signatures from a signed document using the [RemoveAllSignatures](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignatureutil/remove_all_signatures/) method.
+Aspose.Words allows you to remove all digital signatures from a signed document using the [remove_all_signatures](https://reference.aspose.com/words/python-net/aspose.words.digitalsignatures/digitalsignatureutil/remove_all_signatures/) method.
 
 The following code example shows how to load and remove digital signatures from a document:
 

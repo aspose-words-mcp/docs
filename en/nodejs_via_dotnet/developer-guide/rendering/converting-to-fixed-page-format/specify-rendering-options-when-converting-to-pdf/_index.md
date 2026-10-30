@@ -15,11 +15,11 @@ timestamp: 2025-07-09-10-05-05
 
 The PDF format is a fixed-page format that is very popular among users and widely supported by various applications, because a PDF document looks the same on any device. For that reason, converting to PDF is an important feature of Aspose.Words.
 
-PDF is a complex format. Several stages of calculations are required in the process of converting a document to PDF, including the layout calculation. Since these stages include complex computations, they are time-consuming.Also, the PDF format is rather complex by itself. It has a specific file structure, graphics model and font embedding. Moreover, it features some complex output functionality, such as document structure tags, encryption, digital signatures, and editable forms.
+PDF is a complex format. Several stages of calculations are required in the process of converting a document to PDF, including the layout calculation. Since these stages include complex computations, they are time-consuming. Also, the PDF format is rather complex by itself. It has a specific file structure, graphics model and font embedding. Moreover, it features some complex output functionality, such as document structure tags, encryption, digital signatures, and editable forms.
 
-Aspose.Words layout engine imitates the way the Microsoft Word's page layout engine works. Therefore, Aspose.Words makes PDF output documents look as close as possible to what you can see inMicrosoftWord.Sometimes it is necessary to specify additional options, which can affect the result of saving a document into the PDF format. These options can be specified by use of the [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) class, containing the properties that determine how the PDF output will be displayed.
+Aspose.Words layout engine imitates the way the Microsoft Word's page layout engine works. Therefore, Aspose.Words makes PDF output documents look as close as possible to what you can see in Microsoft Word. Sometimes it is necessary to specify additional options, which can affect the result of saving a document into the PDF format. These options can be specified by use of the [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) class, containing the properties that determine how the PDF output will be displayed.
 
-Some examples ofusing [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) are provided below.
+Some examples of using [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) are provided below.
 
 {{% alert color="primary" %}}
 
@@ -31,7 +31,7 @@ For more information on PDF/A, see the next article, "Learn Features of Conversi
 
 ## Creating a PDF Document with Fillable Forms
 
-It is also possible to export fillable forms from a Microsoft Word document into output PDF, which has fillable formsinstead of a plain text. Use the [preserveFormFields](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/preserveformfields/) property to save a document as PDF with fillable forms.
+It is also possible to export fillable forms from a Microsoft Word document into output PDF, which has fillable forms instead of a plain text. Use the [preserveFormFields](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/preserveformfields/) property to save a document as PDF with fillable forms.
 
 Note that in contrast to Microsoft Word, the PDF format has a limited number of options for editable forms, such as textbox, combobox, and checkbox. Microsoft Word has more types of forms, for example, calendar date picker. Generally, it is not possible to fully imitate Microsoft Word behavior in PDF. Therefore, in some complex cases, PDF output may differ from what you see in Microsoft Word.
 
@@ -55,7 +55,7 @@ Aspose.Words also allows you to export document custom properties to PDF, which 
 
 ## Exporting Outlines from Bookmarks and Headings in Output PDF
 
-If you want to export bookmarks as outlines in output PDF, you can use the [defaultBookmarksOutlineLevel](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/outlineoptions/defaultbookmarksoutlinelevel/) property. This property specifies the default level in the document outline, at which Microsoft Word bookmarks aredisplayed. If the document contains bookmarks in the header/footer of the document, you can set the [headerFooterBookmarksExportMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/headerfooterbookmarksexportmode/) property to [HeaderFooterBookmarksExportMode.First](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/) or [HeaderFooterBookmarksExportMode.All](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/) in order to specify how they are exported in output PDF. The bookmarks in headers/footers are not exported when the value of [headerFooterBookmarksExportMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/headerfooterbookmarksexportmode/) is [HeaderFooterBookmarksExportMode.None](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/).
+If you want to export bookmarks as outlines in output PDF, you can use the [defaultBookmarksOutlineLevel](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/outlineoptions/defaultbookmarksoutlinelevel/) property. This property specifies the default level in the document outline, at which Microsoft Word bookmarks are displayed. If the document contains bookmarks in the header/footer of the document, you can set the [headerFooterBookmarksExportMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/headerfooterbookmarksexportmode/) property to [HeaderFooterBookmarksExportMode.First](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/) or [HeaderFooterBookmarksExportMode.All](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/) in order to specify how they are exported in output PDF. The bookmarks in headers/footers are not exported when the value of [headerFooterBookmarksExportMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/headerfooterbookmarksexportmode/) is [HeaderFooterBookmarksExportMode.None](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/).
 
 The code example below shows how to export bookmarks from the first header/footer of a section:
 
@@ -67,9 +67,9 @@ The output PDF of this example is shown below:
 
 When [headerFooterBookmarksExportMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/headerfooterbookmarksexportmode/) is set to [HeaderFooterBookmarksExportMode.First](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/headerfooterbookmarksexportmode/) and the document has even and odd headers/footers or a different first-page header/footer, bookmarks are exported for the first unique headers/footers in a section.
 
-You can also exportheadings in the output PDF, using the [headingsOutlineLevels](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/outlineoptions/headingsoutlinelevels/) property.This property specifieshow many levels of headings are included in the document outline.
+You can also export headings in the output PDF, using the [headingsOutlineLevels](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/outlineoptions/headingsoutlinelevels/) property. This property specifies how many levels of headings are included in the document outline.
 
-The code example below shows how to exportheadings with three levels:
+The code example below shows how to export headings with three levels:
 
 {{< gist "aspose-words-gists" "d569206cfa68ce09d8f6c6e3de44c13e" "outline-options.js" >}}
 
@@ -85,11 +85,11 @@ A bookmark or heading navigation may have different appearances in various PDF v
 
 ## Downsampling Images to Reduce Document Size
 
-Aspose.Words provides an abilityto downsample images in order to reduce the output PDF size, using the [downsampleOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/downsampleoptions/) property. Downsampling is enabled by default in the [downsampleImages](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/downsampleoptions/downsampleImages/) property.
+Aspose.Words provides an ability to downsample images in order to reduce the output PDF size, using the [downsampleOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/downsampleoptions/) property. Downsampling is enabled by default in the [downsampleImages](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/downsampleoptions/downsampleImages/) property.
 
-Note that it is also possible to set aspecific resolution in the [resolution](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/downsampleoptions/resolution/) property, or a resolution threshold in the [resolutionThreshold](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/downsampleoptions/resolutionThreshold/) property. In the second case, if the image resolution is less than the threshold value, then downsampling will not apply.
+Note that it is also possible to set a specific resolution in the [resolution](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/downsampleoptions/resolution/) property, or a resolution threshold in the [resolutionThreshold](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/downsampleoptions/resolutionThreshold/) property. In the second case, if the image resolution is less than the threshold value, then downsampling will not apply.
 
-The code example below displays how tochange the resolution of images in an output PDF document:
+The code example below displays how to change the resolution of images in an output PDF document:
 
 {{< gist "aspose-words-gists" "d569206cfa68ce09d8f6c6e3de44c13e" "downsampling-images.js" >}}
 
@@ -97,7 +97,7 @@ Resolution is calculated according to the real image size on the page.
 
 ## Embedding Fonts in Adobe PDF Format
 
-Aspose.Words also enables you to control how fonts are embedded into the resulting PDF documents. Fonts need to be embedded into any Adobe PDF document to ensure that the document can be correctly rendered on any machine (see more detailsabout font rendering in the section [Using TrueType Fonts](/words/nodejs-net/using-truetype-fonts/)). By default, Aspose.Words embeds a subset of fonts used in the document into the generated PDF. In this case, only the glyphs (characters) used in the document are saved to PDF.
+Aspose.Words also enables you to control how fonts are embedded into the resulting PDF documents. Fonts need to be embedded into any Adobe PDF document to ensure that the document can be correctly rendered on any machine (see more details about font rendering in the section [Using TrueType Fonts](/words/nodejs-net/using-truetype-fonts/)). By default, Aspose.Words embeds a subset of fonts used in the document into the generated PDF. In this case, only the glyphs (characters) used in the document are saved to PDF.
 
 ### When to Use Full Fonts and When to Subset
 
@@ -119,13 +119,13 @@ The following example demonstrates how to embed full fonts in the output PDF doc
 
 {{< gist "aspose-words-gists" "d569206cfa68ce09d8f6c6e3de44c13e" "embedded-all-fonts.js" >}}
 
-The following exampledemonstrates how to set Aspose.Words to subset fonts in the output PDF:
+The following example demonstrates how to set Aspose.Words to subset fonts in the output PDF:
 
 {{< gist "aspose-words-gists" "d569206cfa68ce09d8f6c6e3de44c13e" "embedded-subset-fonts.js" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file for these examplesfrom [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Python-via-.NET/blob/master/Examples/Data/Rendering.docx).
+You can download the template file for these examples from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Python-via-.NET/blob/master/Examples/Data/Rendering.docx).
 
 {{% /alert %}}
 
@@ -169,7 +169,7 @@ This setting works only for ANSI (Windows-1252) encoding text. Writing a non-ANS
 
 ### Embedding System Fonts
 
-This option can be enabled or disabled by using the [fontEmbeddingMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/fontEmbeddingMode/). When this property is set to [PdfFontEmbeddingMode.EmbedNonstandard](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdffontembeddingmode/), the “Arial” and “Times New Roman”true type fonts are not embedded into a PDF document. In this case,the client viewer relies on the fonts that are installed on the client's operating system. When the [fontEmbeddingMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/fontEmbeddingMode/) property is set to [PdfFontEmbeddingMode.EmbedNone](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdffontembeddingmode/), Aspose.Words do not embed any fonts.
+This option can be enabled or disabled by using the [fontEmbeddingMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/fontEmbeddingMode/). When this property is set to [PdfFontEmbeddingMode.EmbedNonstandard](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdffontembeddingmode/), the “Arial” and “Times New Roman” true type fonts are not embedded into a PDF document. In this case, the client viewer relies on the fonts that are installed on the client's operating system. When the [fontEmbeddingMode](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/fontEmbeddingMode/) property is set to [PdfFontEmbeddingMode.EmbedNone](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdffontembeddingmode/), Aspose.Words do not embed any fonts.
 
 The example below shows how to set Aspose.Words to skip embedding Arial and Times New Roman fonts into a PDF document:
 

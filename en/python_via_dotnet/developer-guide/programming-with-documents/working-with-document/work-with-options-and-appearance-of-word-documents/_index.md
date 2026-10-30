@@ -48,7 +48,7 @@ Microsoft Word 2013 does not write any zoom factor to a document and no longer s
 
 ## Set Page Display Options
 
-If you want to set the number of characters per line, use the [characters_per_line](https://reference.aspose.com/words/python-net/aspose.words.pagesetup/characters_per_line/) property. You can also set the number of lines per page for a Word document – use the [lines_per_page](https://reference.aspose.com/words/python-net/aspose.words.pagesetup/lines_per_page/) property to get or set the number of lines per page in the document grid.
+If you want to set the number of characters per line, use the [characters_per_line](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/characters_per_line/) property. You can also set the number of lines per page for a Word document – use the [lines_per_page](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/lines_per_page/) property to get or set the number of lines per page in the document grid.
 
 {{% alert color="primary" %}}
 
@@ -68,7 +68,7 @@ With Aspose.Words, you can also set up language preferences using the [LanguageP
 
 {{% alert color="primary" %}}
 
-If your Aspose.Words generated document does not look as expected, check the **LanguagePreferences** and **MswVersion** values and adjust them if necessary to match the settings for your Microsoft Word version.
+If your Aspose.Words generated document does not look as expected, check the **language_preferences** and **msw_version** values and adjust them if necessary to match the settings for your Microsoft Word version.
 
 {{% /alert %}}
 
@@ -105,10 +105,10 @@ The following code example shows how to optimize document content for Microsoft 
    **A:** The `PageSetup` class provides `characters_per_line` and `lines_per_page`. Set these properties on the document's `page_setup` object to define the document grid used by Word, especially for Asian language layouts.
 
 3. **Q:** How do I add or change editing languages for a document?  
-   **A:** Create a `LanguagePreferences` object, add the desired language codes (e.g., `"ja-JP"` for Japanese) to its `editing_languages` collection, and assign it to the `load_options.language_preferences` before loading or saving the document.
+   **A:** Call `load_options.language_preferences.add_editing_language(aw.loading.EditingLanguage.JAPANESE)` (or `add_editing_languages` for several languages) and load the document with these `LoadOptions`. Use `default_editing_language` to change the default editing language.
 
 4. **Q:** What is the purpose of the `optimize_for` method, and when should I use it?  
-   **A:** `optimize_for` configures compatibility options so the document opens without Word's “Compatibility mode” ribbon for a specific Word version (e.g., `CompatibilityOptions.OptimizeFor.WORD_2016`). Use it when you need the document to behave like it was created in that version.
+   **A:** `optimize_for` configures compatibility options so the document opens without Word's “Compatibility mode” ribbon for a specific Word version (e.g., `doc.compatibility_options.optimize_for(aw.settings.MsWordVersion.WORD2016)`). Use it when you need the document to behave like it was created in that version.
 
 5. **Q:** How can I ensure the document renders correctly for a specific Microsoft Word version?  
-   **A:** Set the `LoadOptions.msw_version` property to the target Word version (e.g., `MsWordVersion.WORD_2016`). This makes Aspose.Words emulate the rendering and layout behavior of that Word version during loading.
+   **A:** Set the `LoadOptions.msw_version` property to the target Word version (e.g., `MsWordVersion.WORD2016`). This makes Aspose.Words emulate the rendering and layout behavior of that Word version during loading.

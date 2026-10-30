@@ -6,7 +6,7 @@ linktitle: Simple Mail Merge Operation
 type: docs
 aliases:
  - /cpp/how-to-execute-mail-merge/
-description: "A simple Mail Merge is used to fill the Mail Merge fields inside your template with the required data from your data source –it is similar to the classic Mail Merge in Microsoft Word. Add one or more merge fields in your template and then execute the simple Mail Merge operation."
+description: "A simple Mail Merge is used to fill the Mail Merge fields inside your template with the required data from your data source – it is similar to the classic Mail Merge in Microsoft Word. Add one or more merge fields in your template and then execute the simple Mail Merge operation."
 keywords: "how to execute Mail Merge c++"
 weight: 10
 ai_search_scope: words_cpp

@@ -55,21 +55,21 @@ The following code example shows how to specify the compression level when savin
 
 ## See Also
 
-- Documentation section[Protect or Encrypt a Document](/words/java/protect-or-encrypt-a-document/)for more information about protecting and encrypting a document
-- The article[Find and Replace](/words/java/find-and-replace/)for more more information about finding and replacing the content you want
+- Documentation section [Protect or Encrypt a Document](/words/java/protect-or-encrypt-a-document/) for more information about protecting and encrypting a document
+- The article [Find and Replace](/words/java/find-and-replace/) for more information about finding and replacing the content you want
 
 ------ 
 
 ## FAQ
 
 1. **Q:** Which document formats can be converted to Excel using Aspose.Words for Java?  
-   **A:** Aspose.Words can load any format listed in the `LoadFormat` enumeration (e.g., DOC, DOCX, RTF, HTML, ODT, EPUB, etc.). After loading, you can save the document to XLSX by using `XlsxSaveOptions` with the `SaveFormat.Xlsx` option.
+   **A:** Aspose.Words can load any format listed in the `LoadFormat` enumeration (e.g., DOC, DOCX, RTF, HTML, ODT, EPUB, etc.). After loading, you can save the document to XLSX by using `XlsxSaveOptions` with the `SaveFormat.XLSX` option.
 
 2. **Q:** How do I perform a find‑and‑replace operation before saving to XLSX?  
-   **A:** Use the `Document` class to locate and replace text (e.g., `Document.replace("old", "new", new FindReplaceOptions())`). After the replacement, call `document.save("output.xlsx", SaveFormat.Xlsx)` with optional `XlsxSaveOptions`.
+   **A:** Use the document's `Range` to locate and replace text (e.g., `doc.getRange().replace("old", "new", new FindReplaceOptions())`). After the replacement, call `document.save("output.xlsx", SaveFormat.XLSX)` with optional `XlsxSaveOptions`.
 
 3. **Q:** How can I control the compression level of the generated XLSX file?  
-   **A:** Create an instance of `XlsxSaveOptions` and set its `CompressionLevel` property (e.g., `XlsxSaveOptions options = new XlsxSaveOptions(); options.setCompressionLevel(CompressionLevel.Maximum);`). Pass this options object to `document.save`.
+   **A:** Create an instance of `XlsxSaveOptions` and call `setCompressionLevel` (e.g., `XlsxSaveOptions options = new XlsxSaveOptions(); options.setCompressionLevel(CompressionLevel.MAXIMUM);`). Pass this options object to `document.save`.
 
 4. **Q:** Do I need a license to use the conversion features?  
-   **A:** Yes. To remove evaluation watermarks and unlock full functionality, load a valid Aspose.Words for Java license using the `License` class (`License license = new License(); license.setLicense("Aspose.Words.Java.lic");`). Without a license, the output will contain a watermark and may be limited in size.
+   **A:** Not to use the feature. Without a license, Aspose.Words for Java works in evaluation mode with full functionality, but it adds an evaluation watermark and limits the document size to a few hundred paragraphs. To remove these limitations, apply a license: `License license = new License(); license.setLicense("Aspose.Words.Java.lic");`.

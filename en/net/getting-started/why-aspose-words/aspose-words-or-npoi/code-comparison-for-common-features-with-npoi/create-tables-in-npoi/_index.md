@@ -114,6 +114,6 @@ Download **Create Tables** form any of the below mentioned social coding sites:
 
 {{% alert color="primary" %}}
 
-For more details, visit [Inserting a Table using DocumentBuilder](/words/net/introduction-and-creating-tables/#inserting-a-table-using-documentbuilder).
+For more details, visit [Create a Table with DocumentBuilder](/words/net/create-a-table/#create-a-table-with-documentbuilder).
 
 {{% /alert %}}

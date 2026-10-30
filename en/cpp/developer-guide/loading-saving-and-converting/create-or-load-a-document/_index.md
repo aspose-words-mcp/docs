@@ -27,7 +27,7 @@ Almost any task that you want to perform with Aspose.Words involves loading a do
 
 ## Create a New Document {#create-a-new-document}
 
-We will call the [Document](https://reference.aspose.com/words/cpp/class/aspose.words.document) constructor without parameters to create a new blank document. If you want to generate a document programmatically, the simplest way is to use the [DocumentBuilder](https://reference.aspose.com/words/cpp/class/aspose.words.document_builder) class to add document contents.
+We will call the [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) constructor without parameters to create a new blank document. If you want to generate a document programmatically, the simplest way is to use the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class to add document contents.
 
 The following code example shows how to create a document using the document builder:
 
@@ -38,7 +38,7 @@ The following code example shows how to create a document using the document bui
 Note the default values:
 
 - A blank document contains one section with default parameters, one empty paragraph, some document styles. Actually this document is the same as the result of creating the “New document” in Microsoft Word.
-- The document paper size is [PaperSize](https://reference.aspose.com/words/cpp/aspose.words/papersize/).**Letter**.
+- The document paper size is [PaperSize](https://reference.aspose.com/words/cpp/aspose.words/papersize/)::**Letter**.
 
 {{% /alert %}}
 

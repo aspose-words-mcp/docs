@@ -63,11 +63,11 @@ The following code example shows how to simply apply the `Compare` method to two
 
 There are many different properties of the [CompareOptions](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/) class which you can apply when you want to compare documents.
 
-For example, Aspose.Words allows you to ignore changes made during a comparison operation for certain types of objects within the original document. You can select the appropriate property for the object type, such as [IgnoreHeadersAndFooters](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_ignoreheadersandfooters/), [IgnoreFormatting](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_ignoreformatting/), [IgnoreComments](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_ignorecomments/), and others by setting them to "true".
+For example, Aspose.Words allows you to ignore changes made during a comparison operation for certain types of objects within the original document. You can select the appropriate property for the object type, such as [get_IgnoreHeadersAndFooters()](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_ignoreheadersandfooters/), [get_IgnoreFormatting()](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_ignoreformatting/), [get_IgnoreComments()](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_ignorecomments/), and others by setting them to "true".
 
-In addition, Aspose.Words provides the [Granularity](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_granularity/) property with which you can specify whether to track changes by character or by word.
+In addition, Aspose.Words provides the [get_Granularity()](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_granularity/) property with which you can specify whether to track changes by character or by word.
 
-Another common property is a choice in which document to show comparison changes. For example, the “Compare documents dialogue box” in Microsoft Word has the option “Show changes in” – this also affects the comparison results. Aspose.Words provides the [Target](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_target/) property that serves this purpose.
+Another common property is a choice in which document to show comparison changes. For example, the “Compare documents dialogue box” in Microsoft Word has the option “Show changes in” – this also affects the comparison results. Aspose.Words provides the [get_Target()](https://reference.aspose.com/words/cpp/aspose.words.comparing/compareoptions/get_target/) property that serves this purpose.
 
 The following code example shows how to set the advanced comparing properties:
 
@@ -78,16 +78,16 @@ The following code example shows how to set the advanced comparing properties:
 ## FAQ
 
 1. **Q:** How do I compare two Word documents using Aspose.Words for C++?  
-   **A:** Load each document into a `Document` object and call the `Compare` method on the first document, passing the second document and a `CompareOptions` instance. The method creates revisions in the first document that represent the differences.
+   **A:** Load each document into a `Document` object and call the `Compare` method on the first document, passing the second document, the author name, the date, and optionally a `CompareOptions` instance (e.g., `doc1->Compare(doc2, u"Author", System::DateTime::get_Now(), options);`). The method creates revisions in the first document that represent the differences.
 
 2. **Q:** How can I determine if two documents are identical after comparison?  
    **A:** After calling `Compare`, inspect the `Revisions` collection of the first document. If the collection is empty, the documents are considered equal; otherwise, revisions indicate differences.
 
 3. **Q:** Which options let me ignore changes in headers, footers, or formatting?  
-   **A:** Use the `CompareOptions` properties such as `IgnoreHeadersAndFooters`, `IgnoreFootnotes`, `IgnoreFormatting`, and set them to `true` before invoking `Compare`. These options tell the engine to skip those elements when generating revisions.
+   **A:** Use the `CompareOptions` properties such as `get_IgnoreHeadersAndFooters()`, `get_IgnoreFootnotes()`, `get_IgnoreFormatting()`, and set them to `true` before invoking `Compare`. These options tell the engine to skip those elements when generating revisions.
 
 4. **Q:** How do I control the granularity of the comparison (character vs. word level)?  
-   **A:** Set the `Granularity` property of `CompareOptions` to `Granularity::Character` or `Granularity::Word`. Character granularity tracks changes at the character level, while word granularity groups changes by whole words.
+   **A:** Set the `Granularity` property of `CompareOptions` to `Granularity::CharLevel` or `Granularity::WordLevel`. Character granularity tracks changes at the character level, while word granularity groups changes by whole words.
 
 5. **Q:** Can I choose which document shows the revision changes?  
-   **A:** Yes, set the `Target` property of `CompareOptions` to `CompareTarget::New` or `CompareTarget::Old`. This determines whether the revisions appear in the original (old) document or the new document after comparison.
+   **A:** Yes, set the `Target` property of `CompareOptions` to `ComparisonTargetType::New` or `ComparisonTargetType::Current`. This determines whether the revisions appear in the original (old) document or the new document after comparison.

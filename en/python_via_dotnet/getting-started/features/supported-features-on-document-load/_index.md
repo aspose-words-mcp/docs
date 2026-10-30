@@ -46,7 +46,7 @@ For more information and a description of the features available for the differe
    **A:** Yes. Aspose.Words strives to preserve virtually all Word features during loading, including headers, footers, footnotes, endnotes, styles, numbering, and custom XML parts. The fidelity of these features is described in the supported‑features documentation.
 
 4. **Q:** Can I load documents on Linux environments using Aspose.Words for Python via .NET?  
-   **A:** Yes. Aspose.Words for Python via .NET runs on Linux via .NET Core/.NET 5+ runtimes. The same loading capabilities are available on Linux as on Windows, provided the required .NET runtime is installed.
+   **A:** Yes. The same loading capabilities are available on Linux as on Windows. The package includes the required .NET runtime components, so the .NET runtime does not need to be installed; see [System Requirements](/words/python-net/system-requirements/) for the native dependencies.
 
 5. **Q:** How does available memory affect document loading performance?  
    **A:** Loading performance is directly related to the amount of free memory. When memory is limited, loading very large documents may cause slower processing or OutOfMemory exceptions. It is recommended to allocate sufficient RAM or process documents in chunks when dealing with extremely large files.

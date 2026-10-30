@@ -1,20 +1,20 @@
-# Aspose.Words for С++ Full Documentation
-Comprehensive documentation index for Aspose.Words for С++ — developer guide, features, API, and resources
+# Aspose.Words for C++ Full Documentation
+Comprehensive documentation index for Aspose.Words for C++ — developer guide, features, API, and resources
 
 ---
 
-## Aspose.Words for С++ Overview
+## Aspose.Words for C++ Overview
 - [Product Overview](https://docs.aspose.com/words/cpp/product-overview/): High-level features and capabilities
 - [Supported Document Formats](https://docs.aspose.com/words/cpp/supported-document-formats/): Load and save document formats like Word, PDF, HTML, Markdown, EPUB, XPS, and more
 - [Licensing and Subscription](https://docs.aspose.com/words/cpp/licensing-and-subscription/): Licensing options and metered usage
-- [What's New in Aspose.Words for С++](https://docs.aspose.com/words/cpp/whats-new/): Latest changes and updates
+- [What's New in Aspose.Words for C++](https://docs.aspose.com/words/cpp/whats-new/): Latest changes and updates
 
 ---
 
 ## Getting Started
-- [System Requirements](https://docs.aspose.com/words/cpp/system-requirements/): Aspose.Words for С++ system limitations and requirements
-- [Installation](https://docs.aspose.com/words/cpp/installation/): How to install Aspose.Words for С++
-- [Hello World](http://docs.aspose.com/words/cpp/hello-world/): First steps with the Aspose.Words for С++ API
+- [System Requirements](https://docs.aspose.com/words/cpp/system-requirements/): Aspose.Words for C++ system limitations and requirements
+- [Installation](https://docs.aspose.com/words/cpp/installation/): How to install Aspose.Words for C++
+- [Hello World](http://docs.aspose.com/words/cpp/hello-world/): First steps with the Aspose.Words for C++ API
 - [Security Notes](http://docs.aspose.com/words/cpp/security/): Possible security issues and give recommendations on how to avoid them when working with Aspose.Words
 - [How to Run the Examples](http://docs.aspose.com/words/cpp/how-to-run-the-examples/): Example projects and usage
 - [Work with Word Documents in Qt](https://docs.aspose.com/words/cpp/work-with-word-documents-in-qt/): How to integrate Aspose.Words for C++ into Qt to create and manipulate Word documents in Qt applications
@@ -35,7 +35,7 @@ Comprehensive documentation index for Aspose.Words for С++ — developer guide,
 - [Convert a Document](https://docs.aspose.com/words/cpp/convert-a-document/): Convert documents between Word, PDF, OpenOffice, and more formats. For example, convert Word to PDF, Image to PDF, PDF to Word, PDF to JPG, Image to JPG, HTML to PDF, HTML to Markdown, etc.
 
 ### Rendering & Printing
-- [Rendering](https://docs.aspose.com/words/cpp/rendering/): What is Rendering and Page layout?Flow-layout or Fixed-layout document formats
+- [Rendering](https://docs.aspose.com/words/cpp/rendering/): What is Rendering and Page layout? Flow-layout or Fixed-layout document formats
 - [Converting to Fixed-page Format](https://docs.aspose.com/words/cpp/converting-to-fixed-page-format/): Convert documents to fixed-page formats like PDF, XPS, and images. Which PDF Standard Is Better to Choose? Working with PDF/A or PDF/UA
 - [Using TrueType Fonts](https://docs.aspose.com/words/cpp/using-truetype-fonts/): Configure and embed TrueType fonts when rendering documents. Manipulate and Substitute TrueType Fonts
 - [Handling Windows Metafiles](https://docs.aspose.com/words/cpp/handling-windows-metafiles/): Control how Windows Metafiles (WMF/EMF) are processed during rendering
@@ -56,7 +56,7 @@ Comprehensive documentation index for Aspose.Words for С++ — developer guide,
 - [Working with Document](https://docs.aspose.com/words/cpp/working-with-document/): Guide on utilizing the Document class to create, load, and modify documents, including accessing and manipulating various document elements and properties
 
 ### Security, encryption and version control
-- [Protect or Encrypt a Document](https://docs.aspose.com/words/cpp/protect-or-encrypt-a-document/): Learn how to apply various protection methods to Word documents, including setting passwords for opening or modifying, restricting editing, and adding digital signatures using Aspose.Words for С++
+- [Protect or Encrypt a Document](https://docs.aspose.com/words/cpp/protect-or-encrypt-a-document/): Learn how to apply various protection methods to Word documents, including setting passwords for opening or modifying, restricting editing, and adding digital signatures using Aspose.Words for C++
 - [Compare Documents](https://docs.aspose.com/words/cpp/compare-documents/): Discover how to identify differences between two Word documents using the Compare method, highlighting changes such as text additions, deletions, and formatting modifications
 - [Clone a Document](https://docs.aspose.com/words/cpp/clone-a-document/): Understand how to create an exact copy of a Word document using the Clone method, enabling independent modifications and efficient document generation
 - [Track Changes in a Document](https://docs.aspose.com/words/cpp/track-changes-in-a-document/): Learn how to enable, manage, and review tracked changes in a Word document, including insertions, deletions, and formatting edits
@@ -70,7 +70,7 @@ Comprehensive documentation index for Aspose.Words for С++ — developer guide,
 - [Working with Ranges](https://docs.aspose.com/words/cpp/working-with-ranges/): Understand how to define and manipulate ranges within a document, allowing for targeted edits and formatting
 - [Extract Content Between Nodes](https://docs.aspose.com/words/cpp/how-to-extract-selected-content-between-nodes-in-a-document/): Learn how to extract specific content between nodes in a document, enabling focused data retrieval and processing
 - [Working with Markdown Features](https://docs.aspose.com/words/cpp/working-with-markdown-features/): Learn how to import, convert, and manipulate Markdown content
-- [Working with Text Document](https://docs.aspose.com/words/cpp/working-with-text-document/): Discover how to create, load, edit, and save plain text documents using Aspose.Words for С++
+- [Working with Text Document](https://docs.aspose.com/words/cpp/working-with-text-document/): Discover how to create, load, edit, and save plain text documents using Aspose.Words for C++
 
 ### Document areas (Headers, Footers, Notes)
 - [Working with Headers and Footers](https://docs.aspose.com/words/cpp/working-with-headers-and-footers/): Manage headers and footers in documents — add, edit, and remove content
@@ -78,7 +78,7 @@ Comprehensive documentation index for Aspose.Words for С++ — developer guide,
 - [Working with Bookmarks](https://docs.aspose.com/words/cpp/working-with-bookmarks/): Insert, find, and edit bookmarks within document content
 
 ### Working with formatting and lists
-- [Working with Tables](https://docs.aspose.com/words/cpp/working-with-tables/): Learn how to create, modify, and manage tables in Word, HTML, or other documents, including adding rows, columns, and formatting cells using Aspose.Words for С++
+- [Working with Tables](https://docs.aspose.com/words/cpp/working-with-tables/): Learn how to create, modify, and manage tables in Word, HTML, or other documents, including adding rows, columns, and formatting cells using Aspose.Words for C++
 - [Working with Lists](https://docs.aspose.com/words/cpp/working-with-lists/): Understand how to work with numbered and bulleted lists in Word documents, including creating lists, applying formatting, and customizing list styles
 - [Working with Paragraphs](https://docs.aspose.com/words/cpp/working-with-paragraphs/): Explore how to insert, format, and manipulate paragraphs in Word documents, including setting alignment, indentation, and applying styles
 - [Working with TextBoxes](https://docs.aspose.com/words/cpp/working-with-textboxes/): Learn how to create, modify, and format text boxes in Word documents for flexible content layout
@@ -116,7 +116,7 @@ Comprehensive documentation index for Aspose.Words for С++ — developer guide,
 ---
 
 ## Additional Resources
-- [NuGet Package](https://www.nuget.org/packages/Aspose.Words.cpp): Download Aspose.Words for С++ package from NuGet
+- [NuGet Package](https://www.nuget.org/packages/Aspose.Words.cpp): Download Aspose.Words for C++ package from NuGet
 
 ---
 

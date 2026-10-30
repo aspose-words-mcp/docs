@@ -69,7 +69,7 @@ To contribute, you can fork the repository, edit the source code and create a pu
 
 
 1. **Q:** How can I build and run the Aspose.Words for Java examples from the command line?  
-   **A:** Open a terminal in the root folder of the cloned repository and execute `mvn clean compile exec:java -Dexec.mainClass=com.aspose.words.examples.<ExampleClass>`. Maven will download all required dependencies, compile the sources, and launch the specified example class.
+   **A:** Open a terminal in the `Examples/DocsExamples/Java` folder of the cloned repository (the folder with `pom.xml`) and run `mvn test -Dtest=<ClassName>`. The examples are TestNG tests in `src/main/java`; Maven downloads the dependencies, compiles the sources, and runs the tests of the specified class.
 
 2. **Q:** Which Java Development Kit (JDK) version is required for the examples?  
    **A:** The examples target JDK 8 or higher. Using a recent LTS JDK (e.g., 11, 17) is recommended to avoid compatibility warnings and to benefit from the latest language features and performance improvements.
@@ -78,7 +78,7 @@ To contribute, you can fork the repository, edit the source code and create a pu
    **A:** A license is not mandatory for running the examples; they work in evaluation mode with limited functionality (e.g., watermarks). To test full features, place a valid `Aspose.Words.Java.lic` file in the project's root directory or set the license programmatically as shown in the “Licensing” example.
 
 4. **Q:** How do I run a specific example in IntelliJ IDEA, Eclipse, or NetBeans?  
-   **A:** Locate the Java class that contains the `main` method for the desired example (under `src/main/java/com/aspose/words/examples`). Right‑click the class and choose **Run** (IntelliJ/Eclipse) or **Run File** (NetBeans). The IDE will compile the class and display the console output.
+   **A:** Open the class that contains the example (under `src/main/java/DocsExamples`). The examples are TestNG test methods: right‑click the method or the class and run it with the IDE's test runner (TestNG support is needed in Eclipse). The IDE compiles the class and displays the console output.
 
 5. **Q:** Can I run the examples on Linux or macOS without an IDE?  
    **A:** Yes. After installing Maven and a compatible JDK, use the same command‑line approach described above. Ensure that the `JAVA_HOME` environment variable points to your JDK installation, then execute the Maven command to run any example.

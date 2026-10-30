@@ -19,7 +19,7 @@ See more details in the [Track Changes in a Document](/words/java/track-changes-
 
 {{% /alert %}}
 
-The [AcceptAllRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#acceptAllRevisions)method allows you to "accept" all tracked changes in the document. Calling this method is similar to selecting "Accept All Changes" in Microsoft Word. Aspose.Words will actually delete fragments marked as "delete revisions", retain fragments marked as "insert revisions", and apply formatting changes. Note that comments are not affected during this operation.
+The [acceptAllRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#acceptAllRevisions) method allows you to "accept" all tracked changes in the document. Calling this method is similar to selecting "Accept All Changes" in Microsoft Word. Aspose.Words will actually delete fragments marked as "delete revisions", retain fragments marked as "insert revisions", and apply formatting changes. Note that comments are not affected during this operation.
 
 The following code example shows how to accept all revisions in a document:
 
@@ -33,4 +33,4 @@ See also:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/releases/tag/Aspose.Words_Java_for_Docx4j-v1.0.0) for running code
 
-- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j/src/main/java/com/aspose/words/examples/asposefeatures/documents/trackchanges/AsposeTrackChanges.java) for code example
+- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Docx4j/src/main/java/com/aspose/words/examples/asposefeatures/documents/trackchanges/AsposeTrackChanges.java) for code example

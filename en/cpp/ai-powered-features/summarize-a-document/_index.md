@@ -15,7 +15,7 @@ timestamp: 2025-03-17-19-00-00
 
 Summarizing documents is a valuable tool for content review, quick insights, or preparing abstracts. Aspose.Words supports document summarization using AI-powered models, making it easier to process long text. This feature, available in the [Aspose.Words.AI](https://reference.aspose.com/words/cpp/aspose.words.ai/) namespace, integrates advanced generative language models from *OpenAI* and *Google*, as well as *Claude's* anthropic generative language models. The list of supported models is available in the [AiModelType](https://reference.aspose.com/words/cpp/aspose.words.ai/aimodeltype/) enumeration.
 
-You can specify various options for summarizing document content. Use the [Summarize](https://reference.aspose.com/words/cpp/aspose.words.ai/aimodel/summarize/) method to generate a summary of your document. You can also set summary length using the [SummaryLength](https://reference.aspose.com/words/cpp/aspose.words.ai/summarizeoptions/get_summarylength/) property.
+You can specify various options for summarizing document content. Use the [Summarize](https://reference.aspose.com/words/cpp/aspose.words.ai/aimodel/summarize/) method to generate a summary of your document. You can also set summary length using the [get_SummaryLength()](https://reference.aspose.com/words/cpp/aspose.words.ai/summarizeoptions/get_summarylength/) property.
 
 With Aspose.Words, implementing document summarization is straightforward. The following code example shows how to summarize a document using GPT-4o model:
 

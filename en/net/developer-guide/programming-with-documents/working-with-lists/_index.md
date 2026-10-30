@@ -36,7 +36,7 @@ Aspose.Words allows the easy creation of lists by applying list formatting. [Doc
 - To start a bulleted list, call [ApplyBulletDefault](https://reference.aspose.com/words/net/aspose.words.lists/listformat/applybulletdefault/)
 - To start a numbered list, call [ApplyNumberDefault](https://reference.aspose.com/words/net/aspose.words.lists/listformat/applynumberdefault/)
 
-The bullet or number and formatting are added to the current paragraph and all further paragraphs created using**DocumentBuilder**until [RemoveNumbers](https://reference.aspose.com/words/net/aspose.words.lists/listformat/removenumbers/) is called to stop bulleted list formatting.
+The bullet or number and formatting are added to the current paragraph and all further paragraphs created using **DocumentBuilder** until [RemoveNumbers](https://reference.aspose.com/words/net/aspose.words.lists/listformat/removenumbers/) is called to stop bulleted list formatting.
 
 In Word documents, lists may consist of up to nine levels. List formatting for each level specifies what bullet or number is used, left indent, space between the bullet and text etc. The following methods change the list level and apply the new level's formatting properties:
 

@@ -13,7 +13,7 @@ url: /cpp/find-field-properties/
 timestamp: 2024-01-27-14-07-04
 ---
 
-A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/).[InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/) returns a [Field](https://reference.aspose.com/words/cpp/aspose.words.fields/field/) object. This is a faсade class that provides useful methods to quickly find some properties of a field.
+A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/).[InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/) returns a [Field](https://reference.aspose.com/words/cpp/aspose.words.fields/field/) object. This is a facade class that provides useful methods to quickly find some properties of a field.
 
 The following code example shows how to find the field code and field result:
 
@@ -30,13 +30,13 @@ The following code example shows how to get names of all merge fields in a docum
 ## FAQ  
 
 1. **Q:** How can I retrieve the field code of a field using Aspose.Words for C++?  
-   **A:** After inserting or locating a field, call the `GetFieldCode()` method on the `Field` object. The method returns a `String` containing the complete field code (e.g., `MERGEFIELD  CustomerName  \\* MERGEFORMAT`).  
+   **A:** After inserting or locating a field, call the `GetFieldCode()` method on the `Field` object. The method returns a `String` containing the complete field code (e.g., `MERGEFIELD  CustomerName  \* MERGEFORMAT`).  
 
 2. **Q:** How do I obtain the result (display text) of a field?  
-   **A:** Use the `GetResult()` method of the `Field` object. It returns the evaluated result of the field as a `String`. For fields that have not been updated, you may need to call `Update()` first to ensure the result is current.  
+   **A:** Use the `Field::get_Result()` method. It returns the evaluated result of the field as a `String`. For fields that have not been updated, you may need to call `Field::Update()` first to ensure the result is current.  
 
 3. **Q:** How can I list all merge field names in a document?  
-   **A:** Call `Document::MailMerge->GetFieldNames()` which fills a `System::ArrayPtr<System::String>` with the names of all merge fields. This method is faster than iterating over each `Field` object when you only need the names.  
+   **A:** Call `doc->get_MailMerge()->GetFieldNames()`, which returns a `System::ArrayPtr<System::String>` with the names of all merge fields. This method is faster than iterating over each `Field` object when you only need the names.  
 
 4. **Q:** What is the difference between using `GetFieldNames` and accessing `Field` objects directly?  
    **A:** `GetFieldNames` returns only the names of merge fields and is optimized for that purpose, while accessing `Field` objects gives you the full field object, allowing you to read properties such as the field code, result, type, and to modify or remove the field. Use `GetFieldNames` for quick name extraction; use `Field` objects when you need detailed information or manipulation.

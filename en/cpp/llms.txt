@@ -1,15 +1,15 @@
-# Aspose.Words for С++ Documentation
-Official product documentation for Aspose.Words for С++.
+# Aspose.Words for C++ Documentation
+Official product documentation for Aspose.Words for C++.
 
 ## Product Overview
-- [Product Overview](http://docs.aspose.com/words/cpp/product-overview/): Description of the main functionality and useful properties of the Aspose.Words for С++ product
+- [Product Overview](http://docs.aspose.com/words/cpp/product-overview/): Description of the main functionality and useful properties of the Aspose.Words for C++ product
 - [Supported File Formats](https://docs.aspose.com/words/cpp/supported-document-formats/): List of formats supported by Aspose.Words
 - [Licensing](https://docs.aspose.com/words/cpp/licensing/): Licensing and subscription details
 
 ## Getting Started
-- [System Requirements](https://docs.aspose.com/words/cpp/system-requirements/): Aspose.Words for С++ system limitations and requirements
-- [Installation](https://docs.aspose.com/words/cpp/installation/): How to install Aspose.Words for С++
-- [Hello World](http://docs.aspose.com/words/cpp/hello-world/): First steps with the Aspose.Words for С++ API
+- [System Requirements](https://docs.aspose.com/words/cpp/system-requirements/): Aspose.Words for C++ system limitations and requirements
+- [Installation](https://docs.aspose.com/words/cpp/installation/): How to install Aspose.Words for C++
+- [Hello World](http://docs.aspose.com/words/cpp/hello-world/): First steps with the Aspose.Words for C++ API
 - [Security Notes](http://docs.aspose.com/words/cpp/security/): Possible security issues and give recommendations on how to avoid them when working with Aspose.Words
 - [How to Run the Examples](http://docs.aspose.com/words/cpp/how-to-run-the-examples/): Example projects and usage
 
@@ -36,7 +36,7 @@ Official product documentation for Aspose.Words for С++.
 - [Working with Markdown Features](http://docs.aspose.com/words/cpp/working-with-markdown-features/): Import and export documents with Markdown formatting
 
 ## API Reference
-- [Aspose.Words for С++ API](https://reference.aspose.com/words/cpp/): Full API class reference
+- [Aspose.Words for C++ API](https://reference.aspose.com/words/cpp/): Full API class reference
 
 ## Additional Resources
 - [Release Notes](https://releases.aspose.com/words/cpp/release-notes/): Product updates and changes

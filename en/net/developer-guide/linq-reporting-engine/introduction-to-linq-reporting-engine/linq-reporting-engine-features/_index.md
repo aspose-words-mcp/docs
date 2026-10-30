@@ -43,7 +43,7 @@ In addition to traditional data sources, the engine enables you to use custom on
    **A:** The LINQ Reporting Engine is a templating system that populates plain‑text tags in a Word document with data. Unlike Mail Merge, which relies on merge fields, the engine evaluates C#‑style expressions inside custom tags, giving you full LINQ capabilities for grouping, sorting, and calculations.
 
 2. **Q:** How are tags defined in a template document?  
-   **A:** Tags are written as plain text surrounded by delimiters (for example, `{{#TagName}}` or `{{#=Expression}}`). The engine parses these tags, evaluates any embedded expression, and replaces the tag with the resulting content during report generation.
+   **A:** Tags are written as plain text in the form `<<tag_name [expression] -switches>>` (for example, `<<[Name]>>` outputs a value and `<<foreach [item in Items]>>` … `<</foreach>>` repeats content). The engine parses these tags, evaluates any embedded expression, and replaces the tag with the resulting content during report generation.
 
 3. **Q:** Which data source types can be used with the engine?  
    **A:** You can use standard Aspose.Words Mail Merge sources such as `DataSet`, `DataTable`, `IDataReader`, as well as any `IEnumerable<T>` collection. The engine treats each row of a `DataTable` as an object with fields that can be accessed in expressions.

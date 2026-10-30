@@ -30,7 +30,7 @@ Following releases of running examples are available to download on below mentio
 
 ## How to configure the source code
 
-Please follow these simple stepsin order to open and extend the source code while using:
+Please follow these simple steps in order to open and extend the source code while using:
 
 1. Install only Python 3.x.x.x from: <https://www.python.org/downloads/>
 2. Install JPype from: <https://pypi.org/project/JPype1/>

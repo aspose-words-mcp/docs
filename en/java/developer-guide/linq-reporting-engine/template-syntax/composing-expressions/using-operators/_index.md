@@ -57,7 +57,7 @@ Also, the engine enables you to use lifted operators in template expressions. In
    **A:** The engine uses lifted operators: if any operand of an arithmetic expression is `null`, the whole expression evaluates to `null` instead of throwing a `NullPointerException`. This allows safe calculations on nullable wrapper types such as `Integer` or `Double`.
 
 4. **Q:** How can I use the ternary operator to provide a default value?  
-   **A:** The ternary operator `condition ? valueIfTrue : valueIfFalse` works the same as in Java. Example: `<<#= total != null ? total : 0>>` will output `total` when it is not `null`; otherwise it outputs `0`.
+   **A:** The ternary operator `condition ? valueIfTrue : valueIfFalse` works the same as in Java. Example: `<<[total != null ? total : 0]>>` will output `total` when it is not `null`; otherwise it outputs `0`.
 
 5. **Q:** Are there any operator‑precedence differences I should be aware of compared to standard Java?  
    **A:** The engine follows the precedence rules defined in the C# specification, which are largely compatible with Java. Most operators (e.g., `*`, `+`, `&&`, `||`) have the same precedence, but be cautious with the null‑coalescing operator `??`, which does not exist in Java and has its own precedence level in the engine.

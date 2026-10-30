@@ -82,4 +82,4 @@ When a `build` switch is used, the engine treats a document being inserted as a 
    **A:** Yes. Apply the `-inline` switch: `<<doc [docExpression] -inline>>`. The engine removes the trailing paragraph break of the inserted document and places its text inside the same paragraph that contains the tag.
 
 5. **Q:** How can I populate merge fields inside the inserted document with data from my report?  
-   **A:** Add the `-build` switch: `<<doc [docExpression] -build>>`. The inserted document is treated as a template and can use the same data sources, variables, and contextual objects that are available at the location of the `doc` tag.  
+   **A:** The `-build` switch processes LINQ Reporting Engine template syntax in the inserted document, not merge fields. Use template tags in that document and add the switch: `<<doc [docExpression] -build>>`. The inserted document is then treated as a template and can use the same data sources, variables, and contextual objects that are available at the location of the `doc` tag.  

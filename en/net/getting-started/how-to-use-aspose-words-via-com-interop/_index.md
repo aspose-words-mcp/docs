@@ -119,7 +119,7 @@ Reducing the number of classes and methods that you need to invoke via COM Inter
    **A:** The publicly creatable COM classes are `Aspose.Words.ComHelper`, `Aspose.Words.Document`, `Aspose.Words.DocumentBuilder`, and `Aspose.Words.License`. Use these identifiers with `CreateObject` (or the equivalent in your language) to instantiate the corresponding objects.
 
 3. **Q:** Can I open a document from a memory stream using COM Interop?  
-   **A:** Direct stream support is not exposed through COM. The typical approach is to write the stream to a temporary file and then open that file with `Document.Open` (or `ComHelper.Open`). Alternatively, create a .NET wrapper assembly that accepts a byte array and returns a COM-visible document object.
+   **A:** Yes. Use `ComHelper.OpenIStream` to load a `Document` from a COM `IStream` object, or `ComHelper.Open` with a stream. To open a document from a file, call `ComHelper.Open` with the file name.
 
 4. **Q:** How are method overloads represented in COM Interop?  
    **A:** Overloaded methods are exposed with numeric suffixes. The first overload retains the original name (e.g., `Document.Save`), while subsequent overloads become `Document.Save_2`, `Document.Save_3`, etc. Choose the appropriate suffix based on the parameter list you need.

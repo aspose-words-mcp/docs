@@ -66,12 +66,12 @@ The code in this section addresses all of the possible situations described abov
 
 To extract the content from your document you need to call the **ExtractContent** method below and pass the appropriate parameters. The underlying basis of this method involves finding block level nodes (paragraphs and tables) and cloning them to create identical copies. If the marker nodes passed are block level then the method is able to simply copy the content on that level and add it to the array.
 
-However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc.Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
+However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc. Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
 
 1. **StartNode** and **EndNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block level ([Paragraph](https://reference.aspose.com/words/net/aspose.words/paragraph/) , [Table](https://reference.aspose.com/words/net/aspose.words.tables/table/)) or inline level (e.g [Run](https://reference.aspose.com/words/net/aspose.words/run/) , [FieldStart](https://reference.aspose.com/words/net/aspose.words.fields/fieldstart/) , [BookmarkStart](https://reference.aspose.com/words/net/aspose.words/bookmark/bookmarkstart/) etc.):
    1. To pass a field you should pass the corresponding **FieldStart** object
    1. To pass bookmarks, the **BookmarkStart** and [BookmarkEnd](https://reference.aspose.com/words/net/aspose.words/bookmark/bookmarkend/) nodes should be passed
-   1. To pass comments, the [CommentRangeStart](https://reference.aspose.com/words/net/aspose.words.commentrangestart/) and [CommentRangeEnd](https://reference.aspose.com/words/net/aspose.words.commentrangeend/) nodes should be used
+   1. To pass comments, the [CommentRangeStart](https://reference.aspose.com/words/net/aspose.words/commentrangestart/) and [CommentRangeEnd](https://reference.aspose.com/words/net/aspose.words/commentrangeend/) nodes should be used
 1. **IsInclusive**. Defines if the markers are included in the extraction or not. If this option is set to false and the same node or consecutive nodes are passed, then an empty list will be returned:
    1. If a **FieldStart** node is passed then this option defines if the whole field is to be included or excluded.
    1. If a **BookmarkStart** or **BookmarkEnd** node is passed, this option defines if the bookmark is included or just the content between the bookmark range.
@@ -87,7 +87,7 @@ The following code example shows how to take a list of nodes and inserts them in
 
 ## Extract Content Between Paragraphs
 
-This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document.We can tell that this is between the 7th and 11th paragraphs.
+This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document. We can tell that this is between the 7th and 11th paragraphs.
 
 The code below accomplishes this task. The appropriate paragraphs are extracted using the [GetChild](https://reference.aspose.com/words/net/aspose.words/compositenode/) method on the document and passing the specified indices. We then pass these nodes to the **ExtractContent** method and state that these are to be included in the extraction. This method will return the copied content between these nodes which are then inserted into a new document.
 
@@ -149,7 +149,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content using a Field
 
-To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not.Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [MoveToMergeField](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetomergefield/) method of [DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
+To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not. Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [MoveToMergeField](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetomergefield/) method of [DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
 
 In our case let's set the last parameter passed to the **ExtractContent** method to false to exclude the field from the extraction. We will render the extracted content to PDF.
 
@@ -165,7 +165,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content from a Bookmark
 
-In a document the content that is defined within a bookmark is encapsulated by the `BookmarkStart` and BookmarkEnd nodes. Content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document.We will extract this content into a new document using the code below. The **IsInclusive** parameter option shows how to retain or discard the bookmark.
+In a document the content that is defined within a bookmark is encapsulated by the `BookmarkStart` and BookmarkEnd nodes. Content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document. We will extract this content into a new document using the code below. The **IsInclusive** parameter option shows how to retain or discard the bookmark.
 
 The following code example shows how to extract the content referenced a bookmark using the **ExtractContent** method:
 
@@ -260,8 +260,8 @@ The following code example shows how to extract images from a document:
 - [FieldEnd](https://reference.aspose.com/words/net/aspose.words.fields/fieldend/)
 - [BookmarkStart](https://reference.aspose.com/words/net/aspose.words/bookmark/bookmarkstart/)
 - [BookmarkEnd](https://reference.aspose.com/words/net/aspose.words/bookmark/bookmarkend/)
-- [CommentRangeStart](https://reference.aspose.com/words/net/aspose.words.commentrangestart/)
-- [CommentRangeEnd](https://reference.aspose.com/words/net/aspose.words.commentrangeend/)
+- [CommentRangeStart](https://reference.aspose.com/words/net/aspose.words/commentrangestart/)
+- [CommentRangeEnd](https://reference.aspose.com/words/net/aspose.words/commentrangeend/)
 
 ## FAQ
 
@@ -269,7 +269,7 @@ The following code example shows how to extract images from a document:
    **A:** Pass a Boolean value to the `IsInclusive` parameter of the `ExtractContent` method. Set it to `true` to include the marker nodes (e.g., the whole field or bookmark), or `false` to exclude them and extract only the content between the markers.
 
 2. **Q:** Can I extract content between nodes that belong to different sections of the document?  
-   **A:** Yes. Retrieve the desired nodes from their respective sections (e.g., using `Document.GetChild` or `Section.FirstParagraph`) and pass those nodes to `ExtractContent`. The method works across sections as long as both nodes belong to the same `Document` instance.
+   **A:** Yes. Retrieve the desired nodes from their respective sections (e.g., using `Document.GetChild` or `Section.Body.FirstParagraph`) and pass those nodes to `ExtractContent`. The method works across sections as long as both nodes belong to the same `Document` instance.
 
 3. **Q:** After extracting nodes, how can I obtain plain text without any formatting or control characters?  
    **A:** Create a new `Document`, import the extracted nodes, then either call `newDocument.GetText()` for raw text with control characters or `newDocument.Save(stream, SaveFormat.Text)` to get clean plain‑text output. Using `SaveFormat.Text` removes formatting and Word control characters.

@@ -27,7 +27,7 @@ In Aspose.Words, the [TextBox](https://reference.aspose.com/words/java/com.aspos
 
 ## Creating a Link
 
-The **TextBox** class provides [IsValidLinkTarget](https://reference.aspose.com/words/java/com.aspose.words/textbox/#isValidLinkTarget-com.aspose.words.TextBox) method in order to check whether the**TextBox** can be linked to the target **Textbox**.
+The **TextBox** class provides [isValidLinkTarget()](https://reference.aspose.com/words/java/com.aspose.words/textbox/#isValidLinkTarget-com.aspose.words.TextBox) method in order to check whether the **TextBox** can be linked to the target **Textbox**.
 
 The following code example shows how to check if the `TextBox` can be linked to the target Textbox:
 
@@ -35,15 +35,15 @@ The following code example shows how to check if the `TextBox` can be linked to 
 
 ## Check TextBox Sequence
 
-There are several ways to display text in a shape. The [TextBox](https://reference.aspose.com/words/java/com.aspose.words/shape/#getTextBox) can be the Head, Middle, or Tail of a sequence.
+There are several ways to display text in a shape. The [getTextBox()](https://reference.aspose.com/words/java/com.aspose.words/shape/#getTextBox) can be the Head, Middle, or Tail of a sequence.
 
-The following code example shows how to checkif **TextBox** is a Head, Tail, or Middle of the sequence:
+The following code example shows how to check if **TextBox** is a Head, Tail, or Middle of the sequence:
 
 {{< gist "aspose-words-gists" "8efa479dedfc5a2f45b37e8c900d50a2" "check-sequence.java" >}}
 
 ## Breaking a Link
 
-Using the [BreakForwardLink](https://reference.aspose.com/words/java/com.aspose.words.textbox/#breakForwardLink) method you can break the link to the next **TextBox**.
+Using the [breakForwardLink()](https://reference.aspose.com/words/java/com.aspose.words/textbox/#breakForwardLink) method you can break the link to the next **TextBox**.
 
 The following code example shows how to break a link for a **TextBox**:
 
@@ -58,7 +58,7 @@ The following code example shows how to break a link for a **TextBox**:
    **A:** Use the `textBox.getParent()` property. It returns the parent `Shape` object, allowing you to access shape‑level properties or navigate to the linked shape.
 
 3. **Q:** How can I determine whether a `TextBox` is the head, middle, or tail of a linked sequence?  
-   **A:** The `TextBox` class provides `isHead()`, `isMiddle()`, and `isTail()` methods. Checking these methods tells you the position of the text box within the linked chain.
+   **A:** Use `getNext()` and `getPrevious()`: the head has a next text box but no previous one, a middle text box has both, and the tail has a previous text box but no next one. The code example above shows these checks.
 
 4. **Q:** How do I break a forward link from a `TextBox`?  
    **A:** Invoke `textBox.breakForwardLink()`. This removes the link to the next text box in the sequence, leaving the current box isolated.

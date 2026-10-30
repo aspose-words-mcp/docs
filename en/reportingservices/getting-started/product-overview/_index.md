@@ -32,7 +32,7 @@ Aspose.Words for Reporting Services is a unique solution that makes it possible 
 - XPS – XML Paper Specification
 - EPUB – Electronic Publications
 
-Aspose.Words for Reporting Services makes new export formats are available in Microsoft SQL Server Reporting Services.
+Aspose.Words for Reporting Services makes new export formats available in Microsoft SQL Server Reporting Services.
 
 ![todo:image_alt_text](product-overview-2.png)
 
@@ -49,6 +49,8 @@ Aspose.Words for Reporting Services is designed to be used with the following ap
 - Microsoft SQL Server 2016 Reporting Services (64-bit)
 - Microsoft SQL Server 2017 Reporting Services (64-bit)
 - Microsoft SQL Server 2019 Reporting Services (64-bit)
+- Microsoft SQL Server 2022 Reporting Services (64-bit)
+- Power BI Report Server (64-bit)
 - Microsoft Report Viewer 2010/ 2012/ 2015 (local and remote mode)
 - Microsoft.ReportingServices.ReportViewerControl.Winforms, Microsoft.ReportingServices.ReportViewerControl.WebForms controls of 140.X.X and 150.X.X versions
 - Microsoft Visual Studio 2012/2013/2015/2017/2019/2022 Report Designer

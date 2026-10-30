@@ -48,24 +48,24 @@ A table can be inline if it is tightly positioned, or floating if it can be posi
 
 In Aspose.Words, users can create a table in a document using the [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/). The basic algorithm for creating a table is as follows:
 
-1. Start the table with [StartTable](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/start_table/)
-2. Add a cell to the table using [InsertCell](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_cell/) – this automatically starts a new row
-3. Optionally, use the [CellFormat](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/cell_format/) property to specify cell formatting
-4. Insert the cell content using the appropriate **DocumentBuilder** methods such as [Writeln](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/writeln/#str), [InsertImage](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_image/#str), and others
+1. Start the table with [start_table](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/start_table/)
+2. Add a cell to the table using [insert_cell](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_cell/) – this automatically starts a new row
+3. Optionally, use the [cell_format](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/cell_format/) property to specify cell formatting
+4. Insert the cell content using the appropriate **DocumentBuilder** methods such as [writeln](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/writeln/#str), [insert_image](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_image/#str), and others
 5. Repeat steps 2-4 until the row is complete
-6. Call [EndRow](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_row/) to end the current row
-7. Optionally, use the [RowFormat](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/row_format/) property to specify row formatting
+6. Call [end_row](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_row/) to end the current row
+7. Optionally, use the [row_format](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/row_format/) property to specify row formatting
 8. Repeat steps 2-7 until the table is complete
-9. Call [EndTable](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_table/) to finish building the table
+9. Call [end_table](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_table/) to finish building the table
 
 {{% alert color="primary" %}}
 
 Important details:
 
-* [StartTable](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/start_table/) can also be called inside a cell, in which case it starts the creation of a nested table within the cell.
-* After calling [InsertCell](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_cell/), a new cell is created, and any content you add using other methods of the [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/) class will be added to the current cell. To create a new cell on the same row, call **insert_cell** again.
-* If **insert_cell** is called immediately after [EndRow](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_row/) and the end of a row, the table will continue on a new row.
-* The [EndTable](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_table/) method to end the table should only be called once after calling **EndRow**. Calling **EndTable** moves the cursor from the current cell to the position immediately after the table.
+* [start_table](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/start_table/) can also be called inside a cell, in which case it starts the creation of a nested table within the cell.
+* After calling [insert_cell](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_cell/), a new cell is created, and any content you add using other methods of the [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/) class will be added to the current cell. To create a new cell on the same row, call **insert_cell** again.
+* If **insert_cell** is called immediately after [end_row](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_row/) and the end of a row, the table will continue on a new row.
+* The [end_table](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/end_table/) method to end the table should only be called once after calling **end_row**. Calling **end_table** moves the cursor from the current cell to the position immediately after the table.
 
 {{% /alert %}}
 
@@ -103,9 +103,9 @@ The following code example shows how to build a new table from scratch by adding
 
 ## Create a Table from HTML
 
-Aspose.Words supports inserting content into a document from an HTML source using the [InsertHtml](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_html/) method. The input can be a complete HTML page or just a partial snippet.
+Aspose.Words supports inserting content into a document from an HTML source using the [insert_html](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_html/) method. The input can be a complete HTML page or just a partial snippet.
 
-Using the **InsertHtml** method, users can insert tables into the document via table tags like `<table>`, `<tr>`, `<td>`.
+Using the **insert_html** method, users can insert tables into the document via table tags like `<table>`, `<tr>`, `<td>`.
 
 The following code example shows how to insert a table into a document from a string containing HTML tags:
 
@@ -113,7 +113,7 @@ The following code example shows how to insert a table into a document from a st
 
 ## Insert a Copy of an Existing Table
 
-There are often times when you need to create a table based on an already existing table in a document. The easiest way to duplicate a table while retaining all formatting is to clone the Table node using the [Clone](https://reference.aspose.com/words/python-net/aspose.words/node/clone/) method.
+There are often times when you need to create a table based on an already existing table in a document. The easiest way to duplicate a table while retaining all formatting is to clone the Table node using the [clone](https://reference.aspose.com/words/python-net/aspose.words/node/clone/) method.
 
 The same technique can be used to add copies of an existing row or cell to a table.
 
@@ -148,7 +148,7 @@ Let's take a closer look at these ways of creating tables and compare their pros
 | Method | Advantages | Disadvantages |
 | :- | :- | :- |
 | Via DocumentBuilder | The standard method for inserting tables and other document content | Sometimes difficult to create many varieties of tables at the same time with the same builder instance |
-| Via DOM | Fits in better with surrounding code that creates and inserts nodes directly into the DOM without using a **DocumentBuilder** | The table is created "empty": before performing most operations, you must call [EnsureMinimum](https://reference.aspose.com/words/python-net/aspose.words.tables/table/ensure_minimum/) to create any missing child nodes |
+| Via DOM | Fits in better with surrounding code that creates and inserts nodes directly into the DOM without using a **DocumentBuilder** | The table is created "empty": before performing most operations, you must call [ensure_minimum](https://reference.aspose.com/words/python-net/aspose.words.tables/table/ensure_minimum/) to create any missing child nodes |
 | From HTML | Can create a new table from HTML source using tags like `<table>`, `<tr>`, `<td>` | Not all possible Microsoft Word table formats can be applied to HTML |
 | Cloning an existing table | You can create a copy of an existing table while retaining all row and cell formatting | The appropriate child nodes must be removed before the table is ready for use |
 

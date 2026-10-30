@@ -52,26 +52,25 @@ It is important to note that PDF/UA-1 or PDF/UA-2 output will generally comply w
 ## FAQ
 
 1. **Q:** What is the practical difference between PDF 1.7 and PDF 2.0 output in Aspose.Words?  
-   **A:** PDF 2.0 adds support for newer PDF features such as the **PdfEncryptionAlgorithm.Aes256** encryption method. Functionally the documents look the same, but older PDF viewers may not fully support PDF 2.0. Use PDF 2.0 only when you need those new features; otherwise stick with PDF 1.7 for maximum compatibility.
+   **A:** PDF 2.0 adds support for newer PDF features; for example, an encrypted PDF 2.0 document uses AES-256 instead of AES-128. Functionally the documents look the same, but older PDF viewers may not fully support PDF 2.0. Use PDF 2.0 only when you need those new features; otherwise stick with PDF 1.7 for maximum compatibility.
 
 2. **Q:** When should I choose a PDF/A version instead of a regular PDF?  
    **A:** Choose PDF/A when the document must be archived for long‑term preservation or when a regulatory body requires it. PDF/A guarantees that all fonts, colors, and resources are embedded, making the file self‑contained. If no archival requirement exists, a regular PDF (PDF 1.7 or 2.0) is usually smaller and faster to generate.
 
-3. **Q:** How can I set a specific PDF/A conformance level (e.g., PDF/A‑2b) in Node.js?  
-   **A:** Use **PdfSaveOptions** and set its **pdfStandard** and **compliance** properties. Example:
+3. **Q:** How can I set a specific PDF/A conformance level (e.g., PDF/A‑2u) in Node.js?  
+   **A:** Use **PdfSaveOptions** and set its **compliance** property. Example:
 
    ```javascript
-   const aw = require("aspose.words");
+   const aw = require('@aspose/words');
    const doc = new aw.Document("input.docx");
 
-   const saveOptions = new aw.saving.PdfSaveOptions();
-   saveOptions.pdfStandard = aw.saving.PdfStandard.PdfA2;
-   saveOptions.compliance = aw.saving.PdfCompliance.PdfA2b; // or PdfA2a / PdfA2u
+   const saveOptions = new aw.Saving.PdfSaveOptions();
+   saveOptions.compliance = aw.Saving.PdfCompliance.PdfA2u; // or PdfA2a
 
    doc.save("output.pdf", saveOptions);
    ```
 
-   This generates a PDF/A‑2b compliant file.
+   This generates a PDF/A‑2u compliant file.
 
 4. **Q:** What is PDF/UA and when is it required?  
    **A:** PDF/UA (Universal Accessibility) is a PDF standard that ensures the document is accessible to people with disabilities, complying with WCAG 2.0 and Section 508. Use PDF/UA when your audience includes users who rely on assistive technologies or when accessibility is a legal requirement.

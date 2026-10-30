@@ -10,9 +10,9 @@ url: /sharepoint/configuring-active-output-formats/
 timestamp: 2024-01-27-14-07-04
 ---
 
-You can configure which output formats should be active (enabled for conversion). By default, all output formats are active, but you can filter out unwanted ones by modifying **Web.Config** file in the root folder(s) of installed SharePoint web application(s).Find section <**appSettings**> and add following line into it:
+You can configure which output formats should be active (enabled for conversion). By default, all output formats are active, but you can filter out unwanted ones by modifying **Web.Config** file in the root folder(s) of installed SharePoint web application(s). Find section <**appSettings**> and add following line into it:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <appSettings>
     …
     <!-- Start Aspose.Words for SharePoint Settings -->
@@ -23,7 +23,7 @@ You can configure which output formats should be active (enabled for conversion)
 
 If **Web.Config** file does not contain <**appSettings**> section, then navigate to the end of **Web.Config** file (before </**configuration**> line) and add new section with following lines:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
   <!-- Start Aspose.Words for SharePoint Settings -->
   <appSettings>
     <add key="Aspose.Words.SharePoint.UseFormats" value="PDF,DOC" />

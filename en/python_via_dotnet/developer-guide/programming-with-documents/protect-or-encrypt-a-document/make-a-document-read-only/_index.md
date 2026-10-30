@@ -53,7 +53,7 @@ In Microsoft Word, you can create a Read-Only document in a similar way using bo
 
 {{% alert color="primary" %}}
 
-Users can also restrict document editing by selecting [ProtectionType](https://reference.aspose.com/words/python-net/aspose.words/protectiontype/) as **ReadOnly**, but this is another feature that provides more advanced protection capabilities. There is such a function in Microsoft Word, respectively, it is implemented in Aspose.Words.
+Users can also restrict document editing by selecting [ProtectionType](https://reference.aspose.com/words/python-net/aspose.words/protectiontype/) as **READ_ONLY**, but this is another feature that provides more advanced protection capabilities. There is such a function in Microsoft Word, respectively, it is implemented in Aspose.Words.
 
 **ProtectionType** will be described in detail in one of the following articles – “Restrict Document Editing”.
 
@@ -75,7 +75,7 @@ The following code example shows how to make a document read-only:
 
 ## Remove Read-Only Restriction
 
-If you do not want a user to open your document as read-only, you can simply set the **read_only_recommended** property to *false* or select **ProtectionType** as **NoProtection**.
+If you do not want a user to open your document as read-only, you can simply set the **read_only_recommended** property to *false* or select **ProtectionType** as **NO_PROTECTION**.
 
 The following code example shows how to remove read-only access for a document:
 
@@ -84,9 +84,9 @@ The following code example shows how to remove read-only access for a document:
 ## Related APIs
 
 - [WriteProtection](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/)  
-- [WriteProtection.ReadOnlyRecommended](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/read_only_recommended/)  
-- [WriteProtection.SetPassword](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/set_password/)  
-- [WriteProtection.IsWriteProtected](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/is_write_protected/)  
+- [WriteProtection.read_only_recommended](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/read_only_recommended/)  
+- [WriteProtection.set_password](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/set_password/)  
+- [WriteProtection.is_write_protected](https://reference.aspose.com/words/python-net/aspose.words.settings/writeprotection/is_write_protected/)  
 - [ProtectionType](https://reference.aspose.com/words/python-net/aspose.words/protectiontype/) 
 
 ## FAQ

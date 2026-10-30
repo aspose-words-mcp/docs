@@ -42,16 +42,16 @@ Aspose致力於提供最完整且精確的文件格式與標準實作。 Aspose.
 
 | 特點 | 描述 | .NET》 | .NET 標準 2.0 | Xamarin.Android | Xamarin.iOS |  Xamarin .Mac |
 | :- | :- | :- | :- | :- | :- | :- |
-| [`Microsoft Word - DOC`](/words/zh-hant/net/file-formats-and-conversions/) | 您可以找到的最快速、最完整的 DOC 格式實作。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`WordprocessingML - DOCX and XML`](/words/zh-hant/net/file-formats-and-conversions/) | Aspose.Words 提供全面的支援 OOXML、Flat OPC，也支援 Word 2003 XML。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`Rich Text Format - RTF`](/words/zh-hant/net/file-formats-and-conversions/) | 支援多种格式的RTF，以與各種應用程式互動。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`HTML, XHTML and MHTML`](/words/zh-hant/net/file-formats-and-conversions/) | 載入並儲存 HTML/XHTML，以獲得更好的互操作性。 儲存為MHTML也是可用的。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`OpenDocument - ODT`](/words/zh-hant/net/file-formats-and-conversions/) | Aspose.Words 能以 `OpenDocument` Text (.odt) 格式載入與儲存文件。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`Adobe Portable Document Format - PDF`](/words/zh-hant/net/file-formats-and-conversions/) | 將任何文件轉換為具有高忠實度的PDF。 PDF/A受支援。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`XML Paper Specification - XPS`](/words/zh-hant/net/file-formats-and-conversions/) | 將任何文件轉換為 XPS 高忠實度。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`Plain Text - TXT`](/words/zh-hant/net/file-formats-and-conversions/) | 透過以 `plain text` 格式儲存，輕鬆提取文字。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`Digital Publishing EPUB`](/words/zh-hant/net/file-formats-and-conversions/) | EPUB 是電子書的流行格式。 您可以將任何文件從 Aspose.Words 轉換為 IDPF EPUB 格式。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
-| [`Printer Command Language (PCL)`](/words/zh-hant/net/file-formats-and-conversions/) | Aspose.Words for .NET提供將檔案儲存為 PCL 格式的支援。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [Microsoft Word - DOC](/words/zh-hant/net/file-formats-and-conversions/) | 您可以找到的最快速、最完整的 DOC 格式實作。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [WordprocessingML - DOCX and XML](/words/zh-hant/net/file-formats-and-conversions/) | Aspose.Words 提供全面的支援 OOXML、Flat OPC，也支援 Word 2003 XML。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [Rich Text Format - RTF](/words/zh-hant/net/file-formats-and-conversions/) | 支援多种格式的RTF，以與各種應用程式互動。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [HTML, XHTML and MHTML](/words/zh-hant/net/file-formats-and-conversions/) | 載入並儲存 HTML/XHTML，以獲得更好的互操作性。 儲存為MHTML也是可用的。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [OpenDocument - ODT](/words/zh-hant/net/file-formats-and-conversions/) | Aspose.Words 能以 `OpenDocument` Text (.odt) 格式載入與儲存文件。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [Adobe Portable Document Format - PDF](/words/zh-hant/net/file-formats-and-conversions/) | 將任何文件轉換為具有高忠實度的PDF。 PDF/A受支援。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [XML Paper Specification - XPS](/words/zh-hant/net/file-formats-and-conversions/) | 將任何文件轉換為 XPS 高忠實度。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [Plain Text - TXT](/words/zh-hant/net/file-formats-and-conversions/) | 透過以 `plain text` 格式儲存，輕鬆提取文字。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [Digital Publishing EPUB](/words/zh-hant/net/file-formats-and-conversions/) | EPUB 是電子書的流行格式。 您可以將任何文件從 Aspose.Words 轉換為 IDPF EPUB 格式。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
+| [Printer Command Language (PCL)](/words/zh-hant/net/file-formats-and-conversions/) | Aspose.Words for .NET提供將檔案儲存為 PCL 格式的支援。 | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} | {{< emoticons/tick >}} |
 
 ## 渲染與列印
 

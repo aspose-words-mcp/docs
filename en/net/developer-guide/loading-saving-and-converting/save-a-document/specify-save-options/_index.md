@@ -21,7 +21,7 @@ This page explains how to specify save options for different output formats.
 
 {{% /alert %}}
 
-When saving a document, you can set some advanced properties. Aspose.Words provides you with the [SaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/saveoptions/) class, which allows more precise control of the save process. There are overloads of the **Save** method that accept a **SaveOptions** object – it should be an object of a class derived from the **SaveOptions** class. Each save format has a corresponding class that holds save options for this save format, for example, there is [PdfSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/pdfsaveoptions/) for saving to PDF format, [MarkdownSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/markdownsaveoptions/) for saving to Markdown format, or [ImageSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/imagesaveoptions/) for saving to an image.This article provides examples of working with some options classes derived from **SaveOptions**.
+When saving a document, you can set some advanced properties. Aspose.Words provides you with the [SaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/saveoptions/) class, which allows more precise control of the save process. There are overloads of the **Save** method that accept a **SaveOptions** object – it should be an object of a class derived from the **SaveOptions** class. Each save format has a corresponding class that holds save options for this save format, for example, there is [PdfSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/pdfsaveoptions/) for saving to PDF format, [MarkdownSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/markdownsaveoptions/) for saving to Markdown format, or [ImageSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/imagesaveoptions/) for saving to an image. This article provides examples of working with some options classes derived from **SaveOptions**.
 
 The following code example shows how to set the save options before saving the document into HTML:
 
@@ -37,7 +37,7 @@ The article describes a few properties you can control when saving a document.
 
 ## Encrypt a Document With a Password
 
-Use the**Password**property to get or set a password for an encrypted document.Use the **Password**property of the corresponding class to work with the selected document format.
+Use the **Password** property to get or set a password for an encrypted document. Use the **Password** property of the corresponding class to work with the selected document format.
 
 For example, when saving a document to DOC or DOT format, use the [Password](https://reference.aspose.com/words/net/aspose.words.saving/docsaveoptions/password/) property of the [DocSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/docsaveoptions/) class.
 
@@ -69,9 +69,9 @@ The following code example shows how to update the document creation time:
 
 ## Update Last Saved Property
 
-Aspose.Words provides anability to use the [UpdateLastSavedTimeProperty](https://reference.aspose.com/words/net/aspose.words.saving/saveoptions/updatelastsavedtimeproperty/) property to get or set a value determining whether the [LastSavedTime](https://reference.aspose.com/words/net/aspose.words.properties/builtindocumentproperties/lastsavedtime/) property is updated before saving.
+Aspose.Words provides an ability to use the [UpdateLastSavedTimeProperty](https://reference.aspose.com/words/net/aspose.words.saving/saveoptions/updatelastsavedtimeproperty/) property to get or set a value determining whether the [LastSavedTime](https://reference.aspose.com/words/net/aspose.words.properties/builtindocumentproperties/lastsavedtime/) property is updated before saving.
 
-The followingcode example shows how to set this property and save the document:
+The following code example shows how to set this property and save the document:
 
 {{< gist "aspose-words-gists" "83e5c469d0e72b5114fb8a05a1d01977" "update-last-saved-time.cs" >}}
 
@@ -94,34 +94,38 @@ The following code example shows how to save a black and white image with one bi
 - [ImageSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/imagesaveoptions/) — Save options for image output.
 - [DocSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/docsaveoptions/) — Save options for DOC/DOT formats.
 - [OdtSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/odtsaveoptions/) — Save options for ODT/OTT formats.
-- [HtmlSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/htmlsaveoptions/) — Save options for HTML/MHTML output.
+- [HtmlSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/htmlsaveoptions/) — Save options for HTML, MHTML and EPUB output.
 - [MarkdownSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/markdownsaveoptions/) — Save options for Markdown output.
 - [XpsSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/xpssaveoptions/) — Save options for XPS output.
-- [EpubSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/epubsaveoptions/) — Save options for EPUB output.
 
 ## FAQ
 
 1. **Q:** How can I encrypt a document with a password when saving it?  
-   **A:** Use the `Password` property of the specific `SaveOptions` class for the target format (e.g., `PdfSaveOptions.Password`, `DocSaveOptions.Password`). Create the options object, set the password, and pass it to `Document.Save`. Example:  
+   **A:** Use the password option of the specific `SaveOptions` class for the target format (e.g., `PdfSaveOptions.EncryptionDetails` for PDF, `DocSaveOptions.Password` or `OoxmlSaveOptions.Password` for Word formats). Create the options object, set the password, and pass it to `Document.Save`. Example:  
 
    ```csharp
    Document doc = new Document("input.docx");
    PdfSaveOptions options = new PdfSaveOptions();
-   options.Password = "MySecret";
+   options.EncryptionDetails = new PdfEncryptionDetails("MySecret", string.Empty);
    doc.Save("output.pdf", options);
    ```
 
 2. **Q:** How do I receive progress notifications while a large document is being saved?  
-   **A:** Assign a callback to the `ProgressCallback` property of the appropriate `SaveOptions` object. The callback receives the percentage completed and can be used to update UI or logs. Example:  
+   **A:** Implement the `IDocumentSavingCallback` interface and assign it to the `ProgressCallback` property of the save options. Its `Notify` method receives `DocumentSavingArgs`, whose `EstimatedProgress` property gives the percentage completed. Progress is reported when saving to DOCX, FlatOpc, DOCM, DOTM, DOTX, DOC, DOT, HTML, MHTML, EPUB, XamlFlow, and XamlFlowPack; it is not reported for other formats such as PDF. Example:  
 
    ```csharp
    Document doc = new Document("large.docx");
-   PdfSaveOptions options = new PdfSaveOptions();
-   options.ProgressCallback = new SaveProgressCallback((percent) =>
+   OoxmlSaveOptions options = new OoxmlSaveOptions();
+   options.ProgressCallback = new SavingProgressPrinter();
+   doc.Save("large-copy.docx", options);
+
+   class SavingProgressPrinter : IDocumentSavingCallback
    {
-       Console.WriteLine($"Saving progress: {percent}%");
-   });
-   doc.Save("large.pdf", options);
+       public void Notify(DocumentSavingArgs args)
+       {
+           Console.WriteLine($"Saving progress: {args.EstimatedProgress:F0}%");
+       }
+   }
    ```
 
 3. **Q:** How can I set the PDF compliance level (e.g., PDF/A‑1b) when saving to PDF?  
@@ -135,11 +139,11 @@ The following code example shows how to save a black and white image with one bi
    ```
 
 4. **Q:** How do I control the pixel format of images generated when saving a document as an image?  
-   **A:** Set the `PixelFormat` property of `ImageSaveOptions` to the desired `System.Drawing.Imaging.PixelFormat` value (e.g., `PixelFormat.Format1bppIndexed` for black‑and‑white). Example:  
+   **A:** Set the `PixelFormat` property of `ImageSaveOptions` to the desired `ImagePixelFormat` value (e.g., `ImagePixelFormat.Format1bppIndexed` for black‑and‑white). Example:  
 
    ```csharp
    Document doc = new Document("diagram.docx");
-   ImageSaveOptions options = new ImageSaveOptions(SaveFormat.Jpeg);
-   options.PixelFormat = System.Drawing.Imaging.PixelFormat.Format1bppIndexed;
-   doc.Save("diagram.jpg", options);
+   ImageSaveOptions options = new ImageSaveOptions(SaveFormat.Png);
+   options.PixelFormat = ImagePixelFormat.Format1bppIndexed;
+   doc.Save("diagram.png", options);
    ```

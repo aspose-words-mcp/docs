@@ -86,9 +86,7 @@ Please extract the downloaded ZIP file. You will need FTP or direct access to th
    The widget registration form appears.
 1. Fill the form fields as follows: 
    1. Make sure **Enabled** is selected.
-   1. Add~/Addons/Aspose.Sitefinity.ExportUsersToWord/AsposeExportUsersToWord.ascx
-
-   1. ``in the **Control CLR Type or Virtual Path** field.
+   1. Add `~/Addons/Aspose.Sitefinity.ExportUsersToWord/AsposeExportUsersToWord.ascx` in the **Control CLR Type or Virtual Path** field.
    1. Add **Name**, **Title** and **Description** as follows:
       `Aspose.Sitefinity`.ExportUsersToWord
       Aspose Export SiteFinity Users to Word

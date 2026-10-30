@@ -32,10 +32,10 @@ In this case, the engine produces a report as follows.
 ## FAQ
 
 1. **Q:** How does the `next` tag affect the position of data within a data band?  
-   **A:** The `next` tag tells the reporting engine to move the cursor to the next cell (or column) of the current data band without starting a new row. It is typically used inside a `foreach` loop to place consecutive items side‑by‑side in the same row.
+   **A:** The `next` tag moves the engine to the next item of the data band's sequence; the content after the tag is filled with the data of that item. It is typically used inside a `foreach` loop to place consecutive items side‑by‑side in the same row.
 
 2. **Q:** Can the `next` tag be combined with other tags such as `if` or `else`?  
-   **A:** Yes. The `next` tag can be placed after any content block, including conditional blocks. The engine will still advance to the next cell after processing the conditional content.
+   **A:** Yes. The `next` tag works together with other tags. For example, you can place an `if` block after a `next` tag to output data of the next item only when a condition is met.
 
 3. **Q:** What happens if the data source contains fewer items than the number of `next` positions defined in the template?  
    **A:** The engine stops iterating when the data source is exhausted, leaving any remaining cells in the row empty. No error is thrown; the output simply contains blank cells for the missing items.

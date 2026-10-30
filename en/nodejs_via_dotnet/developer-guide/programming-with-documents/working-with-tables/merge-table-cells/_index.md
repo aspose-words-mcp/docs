@@ -36,7 +36,7 @@ Sometimes, when loading existing document cells in a table, they will appear mer
 
 ## Check if Cell is Merged
 
-To check if a cell is part of a sequence of merged cells, we simply check the **HorizontalMerge** and **VerticalMerge** properties.
+To check if a cell is part of a sequence of merged cells, we simply check the **horizontalMerge** and **verticalMerge** properties.
 
 The following code example shows how to print the horizontal and vertical cell merge type:
 
@@ -54,7 +54,7 @@ To merge cells in a table created with the [DocumentBuilder](https://reference.a
 
 Also, you must remember to clear the merge setting for those cells where no merge is required – this can be done by setting the first non-merge cell to **CellMerge.None**. If this is not done, all cells in the table will be merged.
 
-The following code example shows how tocreate a table with two rows where the cells in the first row are merged horizontally:
+The following code example shows how to create a table with two rows where the cells in the first row are merged horizontally:
 
 {{< gist "aspose-words-gists" "a2e5839d12017f76e67d145b434558bc" "horizontal-merge.js" >}}
 
@@ -84,7 +84,7 @@ Depending on the version of the Framework you are using, you may want to refine 
 
 ## Convert to Horizontally Merged Cells
 
-Sometimes it is not possible to detect which cells are merged because some newer versions of Microsoft Word no longer use the merge flags when cells are merged horizontally. But for situations where cells are merged into a cell horizontally by their width using merge flags, Aspose.Words provides the `ConvertToHorizontallyMergedCells` method to convert cells. This method simply transforms the table and adds new cells as needed.
+Sometimes it is not possible to detect which cells are merged because some newer versions of Microsoft Word no longer use the merge flags when cells are merged horizontally. But for situations where cells are merged into a cell horizontally by their width using merge flags, Aspose.Words provides the `convertToHorizontallyMergedCells` method to convert cells. This method simply transforms the table and adds new cells as needed.
 
 The following code example shows the above method in operation:
 
@@ -95,16 +95,16 @@ The following code example shows the above method in operation:
 ## FAQ
 
 1. Q: How can I determine if a table cell is part of a merged range?  
-   A: Check the cell's `CellFormat.HorizontalMerge` and `CellFormat.VerticalMerge` properties. If they return `CellMerge.First`, the cell starts a merged range; `CellMerge.Previous` indicates it continues a previous merge; `CellMerge.None` means the cell is not merged.
+   A: Check the cell's `CellFormat.horizontalMerge` and `CellFormat.verticalMerge` properties. If they return `CellMerge.First`, the cell starts a merged range; `CellMerge.Previous` indicates it continues a previous merge; `CellMerge.None` means the cell is not merged.
 
 2. Q: What steps are required to merge cells horizontally using DocumentBuilder?  
-   A: Create the table with DocumentBuilder, then set `cell.getCellFormat().setHorizontalMerge(CellMerge.First)` for the first cell in the merge and `CellMerge.Previous` for each subsequent cell. Finally, set `CellMerge.None` on the cell that follows the merged block to stop the merge.
+   A: Create the table with DocumentBuilder, then set `cell.cellFormat.horizontalMerge = aw.Tables.CellMerge.First` for the first cell in the merge and `CellMerge.Previous` for each subsequent cell. Finally, set `CellMerge.None` on the cell that follows the merged block to stop the merge.
 
 3. Q: How do I merge cells vertically in a table?  
-   A: Use the `CellFormat.VerticalMerge` property in the same way as horizontal merging: assign `CellMerge.First` to the top cell of the vertical range and `CellMerge.Previous` to the cells below it. Reset to `CellMerge.None` after the merged block.
+   A: Use the `CellFormat.verticalMerge` property in the same way as horizontal merging: assign `CellMerge.First` to the top cell of the vertical range and `CellMerge.Previous` to the cells below it. Reset to `CellMerge.None` after the merged block.
 
 4. Q: Is there a way to merge a rectangular range of cells with a single call?  
-   A: Yes. Implement a helper method that receives the start and end cells and sets the appropriate `HorizontalMerge` and `VerticalMerge` values for all cells in the rectangle. The sample `merge-cell-range.js` demonstrates this approach.
+   A: Yes. Implement a helper method that receives the start and end cells and sets the appropriate `horizontalMerge` and `verticalMerge` values for all cells in the rectangle. The sample `merge-cell-range.js` demonstrates this approach.
 
-5. Q: What does the `ConvertToHorizontallyMergedCells` method do?  
-   A: It analyzes a table where cells appear merged only by width (without merge flags) and converts them into proper merged cells by inserting new cells and setting the correct `HorizontalMerge` flags, making subsequent programmatic manipulation reliable.
+5. Q: What does the `convertToHorizontallyMergedCells` method do?  
+   A: It analyzes a table where cells appear merged only by width (without merge flags) and converts them into proper merged cells by inserting new cells and setting the correct `horizontalMerge` flags, making subsequent programmatic manipulation reliable.

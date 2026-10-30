@@ -25,7 +25,7 @@ A field consists of:
 - The field code defines the behavior of the field and is comprised of the field identifier and often other parameters such as field name and switches.
 - The field result contains the most recent evaluation of the field. This value is stored in the field result and is what is displayed to the user. Some fields may not have any field result thus will not display anything in the document. Likewise, some fields may not be updated yet therefore will also have no field result.
 
-Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”*example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Examples/DocsExamples/DocumentExplorer).
+Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”* example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Examples/DocsExamples/DocumentExplorer).
 
 ![document-explorer-aspose-words](fields-overview-2.png)
 
@@ -36,7 +36,7 @@ Aspose.Words is a class library designed for server-side processing of Microsoft
 
 ## Fields in Microsoft Word
 
-Fields in Microsoft Word documents are complex. There are over 50 field types (each needs its own result calculation procedure), formulas and expressions, bookmarks and references, functions and various switches. Fields can also be nested.Normally when a document is opened, the field result (the value of the field) is shown for all fields in the document. You can toggle the display of field result or field codes in Microsoft Word for all fields by pressing **ALT+F9**.
+Fields in Microsoft Word documents are complex. There are over 50 field types (each needs its own result calculation procedure), formulas and expressions, bookmarks and references, functions and various switches. Fields can also be nested. Normally when a document is opened, the field result (the value of the field) is shown for all fields in the document. You can toggle the display of field result or field codes in Microsoft Word for all fields by pressing **ALT+F9**.
 
 | Field Code | Field Result |
 | :- | :- |
@@ -210,18 +210,18 @@ Some examples of Mail Merge fields that Aspose.Words supports:
 
 A field in a document can have formatting switches that specify how the resulting value should be formatted. Aspose.Words supports the following format switches:
 
-- @ - date and time formatting
+- \\\@ - date and time formatting
 - \\\# - number formatting
-- \\\\\\\\* Caps
-- \\\\\\\\* FirstCap
-- \\\\\\\\* Lower
-- \\\\\\\\* Upper
-- \\\\\\\\* CHARFORMAT – format result according to the first character of the field code.
-- \\\\\\\\* MERGEFORMAT – format result according to how the old result is formatted.
+- \\\* Caps
+- \\\* FirstCap
+- \\\* Lower
+- \\\* Upper
+- \\\* CHARFORMAT – format result according to the first character of the field code.
+- \\\* MERGEFORMAT – format result according to how the old result is formatted.
 
 #### Date and Number Formatting in Fields
 
-When Aspose.Words calculates a field result, it often needs to parse a string into a number or date value and also to format it back to a string.By default Aspose.Words uses the current thread culture to perform parsing and formatting when calculating field values during field update and mail merge. There are also options provided in the form of the [FieldOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldoptions/) class which allows further control over which culture is used during field update.
+When Aspose.Words calculates a field result, it often needs to parse a string into a number or date value and also to format it back to a string. By default Aspose.Words uses the current thread culture to perform parsing and formatting when calculating field values during field update and mail merge. There are also options provided in the form of the [FieldOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldoptions/) class which allows further control over which culture is used during field update.
 
 - By default the [FieldOptions.fieldUpdateCultureSource](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldoptions/fieldupdateculturesource/) property is set to [FieldUpdateCultureSource.CurrentThread](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldupdateculturesource/) which formats fields using the current thread culture.
 - This property can be set to [FieldUpdateCultureSource.FieldCode](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldupdateculturesource/) so the language set from the field code of the field is used for formatting instead.

@@ -38,7 +38,7 @@ The following code example shows how to insert these types of shapes into the do
 
 Using Aspose.Words, you can specify whether the shape’s aspect ratio is locked through the [aspect_ratio_locked](https://reference.aspose.com/words/python-net/aspose.words.drawing/shapebase/aspect_ratio_locked/) property.
 
-The following code example shows how to work with the **AspectRatioLocked** property:
+The following code example shows how to work with the **aspect_ratio_locked** property:
 
 {{< gist "aspose-words-gists" "664d989412b46c6a03619182c5a4b9cd" "aspect-ratio-locked.py" >}}
 
@@ -46,7 +46,7 @@ The following code example shows how to work with the **AspectRatioLocked** prop
 
 You can also specify whether the shape is displayed inside a table or outside of it using the [is_layout_in_cell](https://reference.aspose.com/words/python-net/aspose.words.drawing/shapebase/is_layout_in_cell/) property.
 
-The following code example shows how to work with the **IsLayoutInCell** property:
+The following code example shows how to work with the **is_layout_in_cell** property:
 
 {{< gist "aspose-words-gists" "664d989412b46c6a03619182c5a4b9cd" "layout-in-cell.py" >}}
 
@@ -64,7 +64,7 @@ The following code example shows how to insert these type of shapes into the doc
 
 Using Aspose.Words API, you can get the location and size of the shape containing block in points, relative to the anchor of the topmost shape. To do this, use the [bounds_in_points](https://reference.aspose.com/words/python-net/aspose.words.drawing/shapebase/bounds_in_points/) property.
 
-The following code example shows how to work with the **BoundsInPoints** property:
+The following code example shows how to work with the **bounds_in_points** property:
 
 {{< gist "aspose-words-gists" "664d989412b46c6a03619182c5a4b9cd" "get-actual-shape-bounds-points.py" >}}
 
@@ -80,13 +80,13 @@ The following code example shows how to work with the **vertical_anchor** proper
 
 Aspose.Words also allows to detect if the Shape has a `SmartArt` object. To do this, use the [has_smart_art property](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/has_smart_art/) property.
 
-The following code example shows how to work with the **HasSmartArt** property:
+The following code example shows how to work with the **has_smart_art** property:
 
 {{< gist "aspose-words-gists" "664d989412b46c6a03619182c5a4b9cd" "detect-smart-art-shape.py" >}}
 
 ## Insert Horizontal Rule into Document
 
-You can insert horizontal rule shape into a document using the [insert_horizontal_rule](https://reference.aspose.com/words/python-net/aspose.words.documentbuilder/insert_horizontal_rule/) method.
+You can insert horizontal rule shape into a document using the [insert_horizontal_rule](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_horizontal_rule/) method.
 
 The following code example shows how to do this:
 
@@ -109,7 +109,7 @@ The following code example shows how to convert shapes to Office Math objects:
 ## FAQ
 
 1. **Q:** How do I insert a shape with a specific size and position?  
-   **A:** Use `DocumentBuilder.insert_shape(shape_type, width, height)` for inline shapes or `DocumentBuilder.insert_shape(shape_type, width, height, left, top, wrap_type)` for floating shapes. The method creates a DML shape that retains its properties when saved in a format that supports DML.
+   **A:** Use `DocumentBuilder.insert_shape(shape_type, width, height)` for inline shapes or `DocumentBuilder.insert_shape(shape_type, horz_pos, left, vert_pos, top, width, height, wrap_type)` for floating shapes. The method creates a DML shape that retains its properties when saved in a format that supports DML.
 
 2. **Q:** How can I lock the aspect ratio of a shape?  
    **A:** Set the `aspect_ratio_locked` property of the shape (or `ShapeBase` object) to `True`. This prevents the shape from being distorted when its size is changed.
@@ -121,4 +121,4 @@ The following code example shows how to convert shapes to Office Math objects:
    **A:** Check the `has_smart_art` property of the `Shape` object. It returns `True` when the shape encapsulates a SmartArt object.
 
 5. **Q:** How can I insert an OLE object as an icon with a custom caption?  
-   **A:** Call `Shape.insert_ole_object_as_icon(file_path, icon_file_path, caption)`. Ensure the icon image is 32 × 32 pixels for correct display.
+   **A:** Call `DocumentBuilder.insert_ole_object_as_icon(file_name, is_linked, icon_file, icon_caption)`. Ensure the icon image is 32 × 32 pixels for correct display.

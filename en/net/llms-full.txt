@@ -37,7 +37,7 @@ Comprehensive documentation index for Aspose.Words for .NET — developer guide,
 - [Working with Documents from External Sources](https://docs.aspose.com/words/net/working-with-documents-from-external-sources/): Open and process documents from streams, URLs, and other external sources
 
 ### Rendering & Printing
-- [Rendering](https://docs.aspose.com/words/net/rendering/): What is Rendering and Page layout?Flow-layout or Fixed-layout document formats
+- [Rendering](https://docs.aspose.com/words/net/rendering/): What is Rendering and Page layout? Flow-layout or Fixed-layout document formats
 - [Converting to Fixed-page Format](https://docs.aspose.com/words/net/converting-to-fixed-page-format/): Convert documents to fixed-page formats like PDF, XPS, and images. Which PDF Standard Is Better to Choose? Working with PDF/A or PDF/UA
 - [Using TrueType Fonts](https://docs.aspose.com/words/net/using-truetype-fonts/): Configure and embed TrueType fonts when rendering documents. Manipulate and Substitute TrueType Fonts
 - [Enable OpenType Features](https://docs.aspose.com/words/net/enable-opentype-features/): Render documents with advanced OpenType typography features

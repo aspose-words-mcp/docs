@@ -28,7 +28,7 @@ Aspose.Words provides two ways to apply the find and replace operation by using 
 
 In addition, you can use special metacharacters with simple string replacement and regular expressions to specify breaks within the find and replace operation.
 
-Aspose.Words presents the find and replace functionality with the [Aspose.Words.Replacing](https://reference.aspose.com/words/cpp/namespace/aspose.words.replacing) namespace. You can work with many options during the find and replace process using [FindReplaceOptions](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/) class.
+Aspose.Words presents the find and replace functionality with the [Aspose.Words.Replacing](https://reference.aspose.com/words/cpp/aspose.words.replacing/) namespace. You can work with many options during the find and replace process using [FindReplaceOptions](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/) class.
 
 ### Find and Replace Text Using Simple String Replacement {#find-and-replace-text-using-simple-string-replacement}
 
@@ -96,14 +96,14 @@ And after applying header string replacement:
 
 The code example to replace the text of the footer section in your document is very similar to the previous header code example. All you need to do is replace the following two lines:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 auto header = headersFooters->idx_get(HeaderFooterType::HeaderPrimary);
 header->get_Range()->Replace(u"Aspose.Words", u"Remove", options);
 {{< /highlight >}}
 
 With the following:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 auto footer = headersFooters->idx_get(HeaderFooterType::FooterPrimary);
 footer->get_Range()->Replace(u"(C) 2006 Aspose Pty Ltd.", u"Copyright (C) Aspose Pty Ltd.", options);
 {{< /highlight >}}
@@ -120,7 +120,7 @@ And after applying footer string replacement:
 
 While applying the find and replace operation, you can ignore certain segments of the text. So, certain parts of the text can be excluded from the search, and the find and replace can be applied only to the remaining parts.
 
-Aspose.Words provides many find and replace properties for ignoring text such as [IgnoreDeleted](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions), [IgnoreFieldCodes](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignorefieldcodes/), [IgnoreFields](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignorefields/), [IgnoreFootnotes](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignorefootnotes/), and [IgnoreInserted](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignoreinserted/).
+Aspose.Words provides many find and replace properties for ignoring text such as [get_IgnoreDeleted()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignoredeleted/), [get_IgnoreFieldCodes()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignorefieldcodes/), [get_IgnoreFields()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignorefields/), [get_IgnoreFootnotes()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignorefootnotes/), and [get_IgnoreInserted()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_ignoreinserted/).
 
 The following code example shows how to ignore text inside delete revisions:
 
@@ -128,7 +128,7 @@ The following code example shows how to ignore text inside delete revisions:
 
 ## Customize Find and Replace Operation {#customize-find-and-replace-operation}
 
-Aspose.Words provides many different [properties](https://reference.aspose.com/words/net/aspose.words.replacing/findreplaceoptions/) to find and replace text such as applying specific format with [ApplyFont](https://reference.aspose.com/words/net/aspose.words.replacing/findreplaceoptions/applyfont/) and [ApplyParagraphFormats](https://reference.aspose.com/words/net/aspose.words.replacing/findreplaceoptions/applyparagraphformat/) properties, using substitutions in replacement patterns with [UseSubstitutions](https://reference.aspose.com/words/net/aspose.words.replacing/findreplaceoptions/usesubstitutions/) property, and others.
+Aspose.Words provides many different [properties](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/) to find and replace text such as applying specific format with [get_ApplyFont()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_applyfont/) and [get_ApplyParagraphFormat()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/get_applyparagraphformat/) properties, using substitutions in replacement patterns with [set_UseSubstitutions()](https://reference.aspose.com/words/cpp/aspose.words.replacing/findreplaceoptions/set_usesubstitutions/) property, and others.
 
 The following code example shows how to highlight a specific word in your document:
 
@@ -158,7 +158,7 @@ The following code example shows how to prepend a line number to each line:
    **A:** Use the `Range::Replace` method, passing the text to find, the replacement text, and optionally a `FindReplaceOptions` object to control case‑sensitivity or whole‑word matching. The method returns the number of replacements made.
 
 2. **Q:** Can I use regular expressions for find and replace?  
-   **A:** Yes. Call `Range::Replace` with the `Regex` property of `FindReplaceOptions` set to your pattern and specify the replacement string. This allows complex matches such as duplicate words or date formats.
+   **A:** Yes. Call the `Range::Replace` overload that takes a `System::Text::RegularExpressions::Regex` pattern, the replacement string, and optionally `FindReplaceOptions`. This allows complex matches such as duplicate words or date formats.
 
 3. **Q:** How can I replace text inside headers or footers?  
    **A:** Retrieve the desired `HeaderFooter` via `Document::get_FirstSection()->get_HeadersFooters()->idx_get(HeaderFooterType::HeaderPrimary)` (or `FooterPrimary`) and call `Range::Replace` on its `Range` object just like with the main document body.

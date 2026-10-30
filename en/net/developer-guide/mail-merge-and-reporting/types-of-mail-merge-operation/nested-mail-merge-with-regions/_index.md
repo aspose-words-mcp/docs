@@ -96,7 +96,7 @@ The following example shows how to create data relations using **GetChildDataSou
 ## FAQ
 
 1. **Q:** My nested mail merge inserts empty paragraphs before each region. How can I remove them?  
-   **A:** Ensure that the merge fields in the template are placed directly adjacent to each other without extra paragraph marks. If an empty paragraph still appears, set `MailMerge.RemoveEmptyParagraphs = true` before executing the merge.
+   **A:** Ensure that the merge fields in the template are placed directly adjacent to each other without extra paragraph marks. If an empty paragraph still appears, set `MailMerge.CleanupOptions = MailMergeCleanupOptions.RemoveEmptyParagraphs` before executing the merge.
 
 2. **Q:** Can I use a custom data source instead of a `DataSet` for nested regions?  
    **A:** Yes. Implement the `IMailMergeDataSource` interface and provide a `GetChildDataSource` method that returns another `IMailMergeDataSource` for the child records. Aspose.Words will treat the returned source as the nested region.

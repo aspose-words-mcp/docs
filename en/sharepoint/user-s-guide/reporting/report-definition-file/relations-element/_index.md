@@ -10,7 +10,7 @@ url: /sharepoint/relations-element/
 timestamp: 2024-10-21-11-17-44
 ---
 
-The Relations element contains information about table relations in the report data. Each query returns on or more data tables in a data set. This data set is merged with data sets returned by the other queries. In order to make the nested regions in the report template to work, you have to specify the relations between tables inside the report data set.
+The Relations element contains information about table relations in the report data. Each query returns one or more data tables in a data set. This data set is merged with data sets returned by the other queries. In order to make the nested regions in the report template to work, you have to specify the relations between tables inside the report data set.
 
 | Name | Cardinality | Has Children | Description |
 | :- | :- | :- | :- |

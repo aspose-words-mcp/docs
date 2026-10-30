@@ -59,7 +59,7 @@ You have successfully installed and added Aspose .NET Quote Generator for Umbrac
 
 ![using-and-video-demo-for-umbraco-quote-generator-3](3)
 
-### Few output files will look like this in PDF and MS Word file forma.
+### Few output files will look like this in PDF and MS Word file format.
 
 ![using-and-video-demo-for-umbraco-quote-generator-4](4)
 

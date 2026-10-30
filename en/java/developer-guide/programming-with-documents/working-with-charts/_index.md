@@ -21,7 +21,7 @@ This page explains how to work with charts inside Word documents.
 
 {{% /alert %}}
 
-New [insertChart](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertChart-int-double-double) method was added into the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) class. So, let's see how to insert a simple column chart into the document using the [InsertChart](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getInsertchart) method.
+New [insertChart](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertChart-int-double-double) method was added into the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) class. So, let's see how to insert a simple column chart into the document using the [insertChart()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertChart-int-double-double) method.
 
 ## How to Insert a Chart
 
@@ -136,7 +136,7 @@ Please see the result below:
 
 ## How to Define Default Options for ChartDataLabels of ChartSeries
 
-The [ChartDataLabelCollection](https://reference.aspose.com/words/java/com.aspose.words/chartdatalabelcollection/) class defines properties which can be used to set default options for **ChartDataLabels** for Chart **Series**. These properties includeShowCategoryName, ShowBubbleSize, ShowPercentage, ShowSeriesName, ShowValue etc:
+The [ChartDataLabelCollection](https://reference.aspose.com/words/java/com.aspose.words/chartdatalabelcollection/) class defines properties which can be used to set default options for **ChartDataLabels** for Chart **Series**. These properties include ShowCategoryName, ShowBubbleSize, ShowPercentage, ShowSeriesName, ShowValue etc:
 
 {{< gist "aspose-words-gists" "f87662b501bdf23f24f7c2412bda746f" "default-options-for-data-labels.java" >}}
 
@@ -146,13 +146,13 @@ Please see the result below:
 
 ## How to Format Number of Chart Data Label
 
-Using [NumberFormat](https://reference.aspose.com/words/java/com.aspose.words/chartdatalabel/#getNumberFormat) you are able to specify number formatting of a single data label of the chart.
+Using [getNumberFormat()](https://reference.aspose.com/words/java/com.aspose.words/chartdatalabel/#getNumberFormat) you are able to specify number formatting of a single data label of the chart.
 
 The following code example shows how to format a number of the data label:
 
 {{< gist "aspose-words-gists" "f87662b501bdf23f24f7c2412bda746f" "format-number-of-data-label.java" >}}
 
-## How toSet Chart Axis Properties
+## How to Set Chart Axis Properties
 
 If you want to work with chart axis, scaling, and display units for the value axis, please use [ChartAxis](https://reference.aspose.com/words/java/com.aspose.words/chartaxis/), [AxisDisplayUnit](https://reference.aspose.com/words/java/com.aspose.words/axisdisplayunit/), and [AxisScaling](https://reference.aspose.com/words/java/com.aspose.words/axisscaling/) classes.
 
@@ -168,7 +168,7 @@ The following code example shows how to set date/time values to axis properties:
 
 ### How to Format Number Value of Axis
 
-The following code example shows how tochange the format of numbers on the value axis:
+The following code example shows how to change the format of numbers on the value axis:
 
 {{< gist "aspose-words-gists" "f87662b501bdf23f24f7c2412bda746f" "number-format-for-axis.java" >}}
 
@@ -176,13 +176,13 @@ The following code example shows how tochange the format of numbers on the value
 
 The `AxisBound` class represents a minimum or maximum bound of axis values. Bound can be specified as a numeric, date-time or a special "auto" value.
 
-The following code example shows howto set bounds of an axis:
+The following code example shows how to set bounds of an axis:
 
 {{< gist "aspose-words-gists" "f87662b501bdf23f24f7c2412bda746f" "bounds-of-axis.java" >}}
 
 ### How to Set Interval Unit Between Labels
 
-The following code example shows howto setthe interval unit between labels on an axis:
+The following code example shows how to set the interval unit between labels on an axis:
 
 {{< gist "aspose-words-gists" "f87662b501bdf23f24f7c2412bda746f" "interval-unit-between-labels-on-axis.java" >}}
 
@@ -196,7 +196,7 @@ The following code example shows how to hide the Y-axis of the chart:
 
 ### How to Align Chart Label
 
-If you want to set a text alignment for multi-line labels, you can simply achieve this by setting the value of the [setTickLabelAlignment()](https://reference.aspose.com/words/java/com.aspose.words/chartaxis/#setTickLabelAlignment-int)**.Alignment** property.
+If you want to set a text alignment for multi-line labels, you can simply achieve this by calling [AxisTickLabels.setAlignment()](https://reference.aspose.com/words/java/com.aspose.words/axisticklabels/#setAlignment-int) on the object returned by [ChartAxis.getTickLabels()](https://reference.aspose.com/words/java/com.aspose.words/chartaxis/#getTickLabels).
 
 The following code example shows how to tick label alignment:
 

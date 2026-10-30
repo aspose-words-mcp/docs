@@ -23,7 +23,7 @@ In this article, we will look at each way in more detail and analyze how to inse
 
 ## Inserting Fields into a Document using DocumentBuilder
 
-In Aspose.Words the [InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/)method is used to insert new fields into a document. The first parameter accepts the full field code of the field to be inserted. The second parameter is optional and allows the field result of the field to be set manually. If this is not supplied then the field is updated automatically. You can pass null or empty to this parameter to insert a field with an empty field value. If you are not sure about the particular field code syntax, create the field in Microsoft Word first and switch to see its field code.
+In Aspose.Words the [InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/) method is used to insert new fields into a document. The first parameter accepts the full field code of the field to be inserted. The second parameter is optional and allows the field result of the field to be set manually. If this is not supplied then the field is updated automatically. You can pass null or empty to this parameter to insert a field with an empty field value. If you are not sure about the particular field code syntax, create the field in Microsoft Word first and switch to see its field code.
 
 {{% alert color="primary" %}}
 
@@ -43,7 +43,7 @@ The following code example shows how to insert fields nested within another fiel
 
 ### Specify Locale at Field Level
 
-A language identifier is a standard international numeric abbreviation for the language in a country or geographical region. With Aspose.Words, you can specify the Locale at the field level using the [LocaleId](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_localeid/) property, which gets or sets the field's locale ID.
+A language identifier is a standard international numeric abbreviation for the language in a country or geographical region. With Aspose.Words, you can specify the Locale at the field level using the [get_LocaleId()](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_localeid/) property, which gets or sets the field's locale ID.
 
 The following code example shows how to use this option:
 
@@ -51,7 +51,7 @@ The following code example shows how to use this option:
 
 ### Insert Untyped/Empty Field
 
-If you want to insert untyped/empty fields ({}) just like Microsoft Word allows, you can use the [InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield) method with the [FieldType.FieldNone](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldtype/) parameter. To insert a field into a Word document, you can press “Ctrl + F9” key combination.
+If you want to insert untyped/empty fields ({}) just like Microsoft Word allows, you can use the [InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield) method with the [FieldType::FieldNone](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldtype/) parameter. To insert a field into a Word document, you can press “Ctrl + F9” key combination.
 
 The following code example shows how to insert an empty field into the document:
 
@@ -194,7 +194,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ### Inserting `INCLUDETEXT` field into a Document without using DocumentBuilder
 
-The `INCLUDETEXT` field inserts the text and graphics contained in the document named in the field code. You can insert the entire document or a portion of the document referred to by a bookmark. This fieldin Word document is represented by INCLUDETEXT. You can use the [FieldIncludeText](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldincludetext/) class to perform the following operations:
+The `INCLUDETEXT` field inserts the text and graphics contained in the document named in the field code. You can insert the entire document or a portion of the document referred to by a bookmark. This field in Word document is represented by INCLUDETEXT. You can use the [FieldIncludeText](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldincludetext/) class to perform the following operations:
 
 - specify the bookmark's name of the included document
 - specify the location of the document
@@ -211,7 +211,7 @@ The following code example shows how to add the `INCLUDETEXT` field using DOM to
 
 ### Inserting `TOA` field into a Document without using DocumentBuilder
 
-The `TOA` (*Table of Authorities*) field builds and inserts a table of authorities. The `TOA` field collects entries marked by `TA` (*Table of Authorities Entry*) fields. Microsoft Office Word inserts the `TOA` field when you click*Insert Table of Authorities*in the**Table of Authorities**group on the**References**tab.When you view the `TOA` field in your document, the syntax looks like this:
+The `TOA` (*Table of Authorities*) field builds and inserts a table of authorities. The `TOA` field collects entries marked by `TA` (*Table of Authorities Entry*) fields. Microsoft Office Word inserts the `TOA` field when you click *Insert Table of Authorities* in the **Table of Authorities** group on the **References** tab. When you view the `TOA` field in your document, the syntax looks like this:
 
 { `TOA` [Switches ] }
 

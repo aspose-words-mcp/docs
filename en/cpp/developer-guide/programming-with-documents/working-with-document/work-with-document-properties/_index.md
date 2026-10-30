@@ -38,7 +38,7 @@ To access document properties in Aspose.Words use:
 
 **BuiltInDocumentProperties** additionally provides access to document properties through a set of entered properties that return values of the appropriate type. **CustomDocumentProperties** enable you to add or remove document properties from a document.
 
-The [DocumentProperty](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/) class allows you to get the name, value, and type of a document property. [Value](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/get_value/) returns an object, but there is a set of methods allowing you to get the property value converted to a specific type. After you get to know what type the property is, you can use one of the **DocumentProperty.ToXXX** methods, such as **DocumentProperty.**[ToString](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/tostring/) and **DocumentProperty.**[ToInt](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/toint/), to obtain the value of the appropriate type.
+The [DocumentProperty](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/) class allows you to get the name, value, and type of a document property. [get_Value()](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/get_value/) returns an object, but there is a set of methods allowing you to get the property value converted to a specific type. After you get to know what type the property is, you can use one of the **DocumentProperty::ToXXX** methods, such as **DocumentProperty.**[ToString](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/tostring/) and **DocumentProperty.**[ToInt](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/toint/), to obtain the value of the appropriate type.
 
 The following code example shows how to enumerate all built-in and custom properties in a document:
 
@@ -80,15 +80,15 @@ The following code example shows how to remove a custom document property:
 
 Aspose.Words does not automatically update document properties, as Microsoft Word does with some properties, but provides a method to update some statistical built-in document properties. Call the [UpdateWordCount](https://reference.aspose.com/words/cpp/aspose.words/document/updatewordcount/) method to recalculate and update the following properties:
 
-* [Characters](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_characters/)
-* [CharactersWithSpaces](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_characterswithspaces/)
-* [Words](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_words/)
+* [get_Characters()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_characters/)
+* [get_CharactersWithSpaces()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_characterswithspaces/)
+* [get_Words()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_words/)
 * [Paragraphs](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_paragraphs/)
-* [Lines](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_lines/)
+* [get_Lines()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_lines/)
 
 ## Create a New Custom Property Linked to Content
 
-Aspose.Words provides the [AddLinkToContent](https://reference.aspose.com/words/cpp/aspose.words.properties/customdocumentproperties/addlinktocontent/) method to create a new custom document property linked to content. This property returns the newly created property object or null if the [LinkSource](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/get_linksource/) is invalid.
+Aspose.Words provides the [AddLinkToContent](https://reference.aspose.com/words/cpp/aspose.words.properties/customdocumentproperties/addlinktocontent/) method to create a new custom document property linked to content. This property returns the newly created property object or null if the [get_LinkSource()](https://reference.aspose.com/words/cpp/aspose.words.properties/documentproperty/get_linksource/) is invalid.
 
 The following code example shows how to configure a link to a custom property:
 
@@ -96,7 +96,7 @@ The following code example shows how to configure a link to a custom property:
 
 ## Get Document Variables
 
-You can get a collection of document variables using the [Variables](https://reference.aspose.com/words/cpp/aspose.words/document/get_variables/) property. Variable names and values are strings.
+You can get a collection of document variables using the [get_Variables()](https://reference.aspose.com/words/cpp/aspose.words/document/get_variables/) property. Variable names and values are strings.
 
 The following code example shows how to enumerate document variables:
 
@@ -110,7 +110,7 @@ You can download the template file of this example from [Aspose.Words GitHub](ht
 
 ## Remove Personal Information from Document
 
-If you want to share a Word document with other people, you may want to remove personal information such as author name and company. To do this use the [RemovePersonalInformation](https://reference.aspose.com/words/cpp/aspose.words/document/get_removepersonalinformation/) property to set the flag indicating that Microsoft Word will remove all user information from comments, revisions, and document properties upon saving the document.
+If you want to share a Word document with other people, you may want to remove personal information such as author name and company. To do this use the [get_RemovePersonalInformation()](https://reference.aspose.com/words/cpp/aspose.words/document/get_removepersonalinformation/) property to set the flag indicating that Microsoft Word will remove all user information from comments, revisions, and document properties upon saving the document.
 
 The following code example shows how to remove personal information:
 

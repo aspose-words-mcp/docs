@@ -50,7 +50,7 @@ The following code snippet is a "Hello, World!" example to exhibit working of "A
    license.SetLicense("Aspose.Words.lic");
    ```  
 
-   This must be done once per application start‑up; otherwise you will receive a “License not set” exception.
+   This must be done once per application start‑up. Without a license, Aspose.Words runs in evaluation mode: it adds an evaluation watermark and limits the document size.
 
 2. **Q:** Which file formats can I save the document to directly from the Hello World example?  
    **A:** The `Document.Save` method supports all formats listed on the **Supported Document Formats** page, including PDF, DOCX, DOC, RTF, ODT, EPUB, HTML, and more. Specify the desired format by using the appropriate file extension, e.g., `document.Save("output.pdf");`.

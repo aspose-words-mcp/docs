@@ -30,7 +30,7 @@ Comprehensive documentation index for  Aspose.Words for Python via .NET — deve
 - [Convert a Document](https://docs.aspose.com/words/python-net/convert-a-document/): Convert documents between Word, PDF, OpenOffice, and more formats. For example, convert Word to PDF, Image to PDF, PDF to Word, PDF to JPG, Image to JPG, HTML to PDF, HTML to Markdown, etc.
 
 ### Rendering & Printing
-- [Rendering](https://docs.aspose.com/words/python-net/rendering/): What is Rendering and Page layout?Flow-layout or Fixed-layout document formats
+- [Rendering](https://docs.aspose.com/words/python-net/rendering/): What is Rendering and Page layout? Flow-layout or Fixed-layout document formats
 - [Converting to Fixed-page Format](https://docs.aspose.com/words/python-net/converting-to-fixed-page-format/): Convert documents to fixed-page formats like PDF, XPS, and images. Which PDF Standard Is Better to Choose? Working with PDF/A or PDF/UA
 - [Using TrueType Fonts](https://docs.aspose.com/words/python-net/using-truetype-fonts/): Configure and embed TrueType fonts when rendering documents. Manipulate and Substitute TrueType Fonts
 - [Handling Windows Metafiles](https://docs.aspose.com/words/python-net/handling-windows-metafiles/): Control how Windows Metafiles (WMF/EMF) are processed during rendering

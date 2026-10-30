@@ -13,9 +13,9 @@ url: /java/convert-document-to-html/
 timestamp: 2024-01-27-14-07-04
 ---
 
-## Aspose.Words -Convert Document to HTML
+## Aspose.Words - Convert Document to HTML
 
-To convert a document to other formats using Aspose.Words, simply invoke thesave()}}method of{{Documentclass and specify a file name with the desired and supported extension.
+To convert a document to other formats using Aspose.Words, simply invoke the save()}}method of {{Document class and specify a file name with the desired and supported extension.
 Aspose.Words allows exporting or converting word documents to PDF, XPS, XamlFixed, XamlFlow, XamlFlowPack, EPUB, HTML, HtmlFixed, OpenXPS, PostScript, TXT and popular image/multimedia file formats including TIFF, JPG, PNG, BMP, SVG, SVG and SWF.
 
 **Java**
@@ -30,9 +30,9 @@ doc.save(dataDir + "Aspose_DocToTxt.txt",SaveFormat.TEXT); //Save the document i
 doc.save(dataDir + "Aspose_DocToJPG.jpg",SaveFormat.JPEG); //Save the document in JPEG format.
 {{< /highlight >}}
 
-## docx4j -Convert Document to HTML
+## docx4j - Convert Document to HTML
 
-This sample uses XSLT (and Xalan) toproduce HTML output. (There is alsoHtmlExporterNonXSLT for environments wherethat is not desirable e.g. Android). If the source docx contained a WMF, thatwill get converted to inline SVG. In orderto see the SVG in your browser, you'll need to rename the file to .xml or serve it with MIME type application/xhtml+xml
+This sample uses XSLT (and Xalan) to produce HTML output. (There is also HtmlExporterNonXSLT for environments where that is not desirable e.g. Android). If the source docx contained a WMF, that will get converted to inline SVG. In order to see the SVG in your browser, you'll need to rename the file to .xml or serve it with MIME type application/xhtml+xml
 
 **Java**
 
@@ -96,6 +96,6 @@ System.out.println("Saved: " + inputfilepath + ".html ");
 
 {{% alert color="primary" %}}
 
-For more details, visit [Convert a Document to HTML with roundtrip information](/words/java/serialize-and-work-with-a-document-in-a-database/#convertingadocumentusingadvancefeatures-convertadocumenttohtmlwithroundtripinformation).
+For more details, visit [Convert a Document to HTML with roundtrip information](/words/java/convert-a-document-to-html-mhtml-or-epub/#convert-a-document-with-round-trip-information).
 
 {{% /alert %}}

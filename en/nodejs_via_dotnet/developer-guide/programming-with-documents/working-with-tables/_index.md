@@ -15,7 +15,7 @@ timestamp: 2025-07-09-10-05-05
 
 A **table** in a document is a great way to structure similar data. That is why tables are a common content formatting element and are supported by most formats in one form or another.
 
-Tables allow you to organize and clearly display large amounts of informationin a grid-type structure with rows and columns. They are also often used as a page layout tool and a better alternative for displaying tabbed data (with tab stops) as they allow more control over the design and layout of the content. This way you can even lay out content that needs to be stored in a fixed position using a borderless table.
+Tables allow you to organize and clearly display large amounts of information in a grid-type structure with rows and columns. They are also often used as a page layout tool and a better alternative for displaying tabbed data (with tab stops) as they allow more control over the design and layout of the content. This way you can even lay out content that needs to be stored in a fixed position using a borderless table.
 
 The table consists of such elements as **Cell**, **Row**, and **Column**. This is a concept that is common to all tables in general, regardless of which editor or document format the table was created in. For example, a table created in Microsoft Word or a table created in an HTML document would conform to the concept of cells, rows, and columns.
 

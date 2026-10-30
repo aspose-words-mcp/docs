@@ -21,7 +21,7 @@ See more details in the [Applying Formatting](/words/java/applying-formatting/) 
 
 When creating a table using a visual agent such as Microsoft Word, you will often find yourself using one of the `AutoFit` options to automatically size the table to the desired width. For instance, you can use the `AutoFit` to Window option to fit the table to the width of the page and AutoFit to Contents option to allow each cell to grow or shrink to accommodate its contents.
 
-By default Aspose.Words inserts a new table using “**AutoFit to Window”**. The table will size to the available width on the page. To change the sizing behaviour on such a table or an existing table you can call**Table.AutoFit** method. This method accepts an**AutoFitBehavior**enumeration which defines what type of auto fitting is applied to the table.
+By default Aspose.Words inserts a new table using “**AutoFit to Window”**. The table will size to the available width on the page. To change the sizing behaviour on such a table or an existing table you can call **Table.autoFit** method. This method accepts an **AutoFitBehavior** enumeration which defines what type of auto fitting is applied to the table.
 
 The following code example shows how to autofit the first table to the page width:
 
@@ -43,4 +43,4 @@ See also:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/releases/tag/Aspose.Words_Java_for_Docx4j-v1.0.0) for running code
 
-- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j/src/main/java/com/aspose/words/examples/asposefeatures/tables/autofitsettingstotable/AsposeTableAutoFitSettings.java) for code example
+- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Docx4j/src/main/java/com/aspose/words/examples/asposefeatures/tables/autofitsettingstotable/AsposeTableAutoFitSettings.java) for code example

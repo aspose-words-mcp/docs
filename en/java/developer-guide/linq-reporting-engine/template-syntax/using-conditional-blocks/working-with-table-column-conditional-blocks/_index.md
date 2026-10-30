@@ -301,7 +301,7 @@ When there is no person at all, the engine produces a report as follows.
 ## FAQ
 
 1. **Q:** How do I hide or show a whole table column with a conditional block?  
-   **A:** Use a table‑column conditional block with the `-horz` switch and place the condition inside `<<if … -horz>> … <<else>> … <<endif>>`. When the Boolean variable (e.g., `showRepresentatives`) is `true`, the column content is rendered; otherwise the column is omitted.
+   **A:** Use a table‑column conditional block with the `-horz` switch and start it with `<<if [condition] -horz>>`, start the optional `<<else>>` part in a cell of another column, and end the block with `<</if>>`. When the Boolean variable (e.g., `showRepresentatives`) is `true`, the column content is rendered; otherwise the column is omitted.
 
 2. **Q:** What does the `-horz` switch do in a conditional block?  
    **A:** The `-horz` switch tells the reporting engine to apply the conditional logic to table columns instead of rows. Without it, the block would affect whole rows, which is the default behavior for table‑row conditional blocks.
@@ -310,7 +310,7 @@ When there is no person at all, the engine produces a report as follows.
    **A:** Yes. Table‑column conditional blocks may contain table‑column data bands, allowing you to provide alternate content (e.g., “No data”) when the data band is empty.
 
 4. **Q:** Is it possible to place a table‑column conditional block inside a table‑row conditional block?  
-   **A:** No. Nesting a table‑row conditional block or data band inside a table‑column conditional block is prohibited. The allowed nesting direction is only from column blocks to row blocks, not the reverse.
+   **A:** Yes. Table‑column conditional blocks can be nested into table‑row data bands and conditional blocks. The reverse is forbidden: table‑row data bands and conditional blocks cannot be nested into table‑column conditional blocks.
 
 5. **Q:** How can I provide an alternative view when a column's data source is empty?  
-   **A:** Use an `if` condition that checks the collection with `!collection.any()` inside a table‑column conditional block. For example: `<<if [!persons.any()] -horz>>No data<<else>> <<foreach [p in persons] -horz>> … <<endif>>`. This renders “No data” when the collection is empty and the normal column content otherwise.
+   **A:** Use an `if` condition that checks the collection with `!collection.any()` inside a table‑column conditional block. For example, put `<<if [!persons.any()] -horz>>No data` in one column and `<<else>><<foreach [p in persons] -horz>>…<</foreach>><</if>>` in the next one (each option must start in its own cell). This renders “No data” when the collection is empty and the normal column content otherwise.

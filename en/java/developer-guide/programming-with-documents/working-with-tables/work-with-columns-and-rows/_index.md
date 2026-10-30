@@ -25,7 +25,7 @@ For more control over how tables work, learn how to manipulate columns and rows.
 
 ## Find the Table Element Index {#find-the-index-of-table-elements}
 
-Columns, rows and cells are managed by accessing the selected document node by its index. Finding the index of any node involves gathering all child nodes of the element type from the parent node, and then using the [IndexOf](https://reference.aspose.com/words/java/com.aspose.words/nodecollection/#indexOf-com.aspose.words.Node) method to find the index of the desired node in the collection.
+Columns, rows and cells are managed by accessing the selected document node by its index. Finding the index of any node involves gathering all child nodes of the element type from the parent node, and then using the [indexOf()](https://reference.aspose.com/words/java/com.aspose.words/nodecollection/#indexOf-com.aspose.words.Node) method to find the index of the desired node in the collection.
 
 ### Find the Index of a Table in a Document {#find-the-index-of-table-in-a-document}
 
@@ -39,7 +39,7 @@ The following code example shows how to retrieve the index of a table in a docum
 
 Similarly, you may need to make changes to a specific row in a selected table. To do this, you can also refer to a row by its index.
 
-The following code example showshow to retrieve the index of a row in a table:
+The following code example shows how to retrieve the index of a row in a table:
 
 {{< gist "aspose-words-gists" "14f5cea1b896ffd04f143627939e0878" "retrieve-row-index.java" >}}
 
@@ -77,9 +77,9 @@ The following code example shows how to remove a column from a table in a docume
 
 ## Specify Rows as Header Rows
 
-You can choose to repeat the first row in the table as the Header Row only on the first page or on each page if the table is split into several. In Aspose.Words, you can repeat the Header Row on every page using the [HeadingFormat](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getHeadingFormat) property.
+You can choose to repeat the first row in the table as the Header Row only on the first page or on each page if the table is split into several. In Aspose.Words, you can repeat the Header Row on every page using the [getHeadingFormat()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getHeadingFormat) property.
 
-You can also mark multiple header rows if such rows are located one after the other at the beginning of the table. To do this, you need to apply the **HeadingFormat** properties to these rows.
+You can also mark multiple header rows if such rows are located one after the other at the beginning of the table. To do this, you need to apply the **getHeadingFormat()** properties to these rows.
 
 {{% alert color="primary" %}}
 
@@ -104,7 +104,7 @@ By default, the above properties are disabled.
 
 ### Keep a Row from Breaking Across Pages {#keep-a-row-from-breaking-across-pages}
 
-This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”.In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/java/com.aspose.words/rowformat/) object of a [Row](https://reference.aspose.com/words/java/com.aspose.words/row/) as the property [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getAllowBreakAcrossPages).
+This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”. In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/java/com.aspose.words/rowformat/) object of a [Row](https://reference.aspose.com/words/java/com.aspose.words/row/) as the property [RowFormat.getAllowBreakAcrossPages()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getAllowBreakAcrossPages).
 
 The following code example shows how to disable breaking rows across pages for each row in a table:
 
@@ -120,7 +120,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 To stop the table from splitting across pages, we need to specify that we want the content contained within the table to stay together.
 
-To do this, Aspose.Words uses a method, which allows users to select a table and enable the [KeepWithNext](https://reference.aspose.com/words/java/com.aspose.words.paragraphformat/#getKeepWithNext) parameter to true for each paragraph within the table cells. The exception is the last paragraph in the table, which should be set to false.
+To do this, Aspose.Words uses a method, which allows users to select a table and enable the [getKeepWithNext()](https://reference.aspose.com/words/java/com.aspose.words/paragraphformat/#getKeepWithNext) parameter to true for each paragraph within the table cells. The exception is the last paragraph in the table, which should be set to false.
 
 The following code example shows how to set a table to stay together on the same page:
 
@@ -137,10 +137,10 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 - [Table](https://reference.aspose.com/words/java/com.aspose.words/table/)
 - [Row](https://reference.aspose.com/words/java/com.aspose.words/row/)
 - [Cell](https://reference.aspose.com/words/java/com.aspose.words/cell/)
-- [RowFormat.HeadingFormat](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getHeadingFormat)
-- [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/net/aspose.words.tables/row/format/properties/allowbreakacrosspages/)
-- [ParagraphFormat.KeepWithNext](https://reference.aspose.com/words/java/com.aspose.words/paragraphformat/#getKeepWithNext)
-- [NodeCollection.IndexOf](https://reference.aspose.com/words/java/com.aspose.words/nodecollection/#indexOf-com.aspose.words.Node)
+- [RowFormat.getHeadingFormat()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getHeadingFormat)
+- [RowFormat.getAllowBreakAcrossPages()](https://reference.aspose.com/words/java/com.aspose.words/rowformat/#getAllowBreakAcrossPages)
+- [ParagraphFormat.getKeepWithNext()](https://reference.aspose.com/words/java/com.aspose.words/paragraphformat/#getKeepWithNext)
+- [NodeCollection.indexOf](https://reference.aspose.com/words/java/com.aspose.words/nodecollection/#indexOf-com.aspose.words.Node)
 
 ## FAQ
 

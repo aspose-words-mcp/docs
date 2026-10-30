@@ -39,7 +39,7 @@ The plugin contains two wizards
 
 **Aspose.Words Maven Project (wizard)**
 
-- This New Project wizardlets developers to create**Maven** project for using [Aspose.Words for Java](https://products.aspose.com/words/java/) from **New Project -> Maven-> Aspose.Words Maven Project.**
+- This New Project wizard lets developers to create **Maven** project for using [Aspose.Words for Java](https://products.aspose.com/words/java/) from **New Project -> Maven-> Aspose.Words Maven Project.**
 - The reference of [Aspose.Words for Java API](https://products.aspose.com/words/java/) maven dependency is automatically fetched from [Aspose Cloud Maven Repository](https://releases.aspose.com/words/java/) and gets added in the pom.xml.
 - The created project will always contain most recent available version **Maven** Dependency for [Aspose.Words for Java API](https://products.aspose.com/words/java/).
 - The wizard steps also presents with the option for downloading [Code Examples](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Examples) for using [Aspose.Words for Java API](https://products.aspose.com/words/java/).
@@ -56,9 +56,9 @@ The plugin contains two wizards
 
 ### System Requirements
 
-- **System Memory:**2 GB or more (Recommended)
-- **OS:**Any operating system that support the Java VM (Virtual Machine)
-- **Internet Connection:**2 MB or faster (Recommended)
+- **System Memory:** 2 GB or more (Recommended)
+- **OS:** Any operating system that support the Java VM (Virtual Machine)
+- **Internet Connection:** 2 MB or faster (Recommended)
 
 ### Supported Platforms
 
@@ -69,29 +69,29 @@ The plugin contains two wizards
 
 ### Download NetBeans IDE
 
-You should definitely have NetBeans IDE preinstalled before you download **Aspose.Words Java for NetBeans (Maven)**plugin.
+You should definitely have NetBeans IDE preinstalled before you download **Aspose.Words Java for NetBeans (Maven)** plugin.
 
-**Aspose.Words Java for NetBeans (Maven)** plugin supports **NetBeans IDE8.0 and 8.1**. We recommend to only use the latest version of NetBeans IDE.
+**Aspose.Words Java for NetBeans (Maven)** plugin supports **NetBeans IDE 8.0 and 8.1**. We recommend to only use the latest version of NetBeans IDE.
 
 To download NetBeans IDE,
 
-1. Navigate to: [netbeans.apache.org](https://netbeans.apache.org/download/)
+1. Navigate to: [netbeans.apache.org](https://netbeans.apache.org/front/main/download/)
 1. Click Download to download NetBeans IDE appropriate bundle.
 
 Download only Java EE / SE supported NetBeans download bundle of the current latest release i.e. **NetBeans IDE 8.1**.
 
 ### Download Aspose.Words Java for NetBeans (Maven)
 
-- The plugin can be directly downloaded from the `NetBeans` plugin hosting URL:<https://plugins.netbeans.org/plugin/62090>
+- The plugin can be directly downloaded from the `NetBeans` plugin hosting URL: <https://sourceforge.net/projects/asposenetbeans/files/>
   and later can be installed using the `IDE` option:
-  - Goto**Tools**>**Plugins**>**Downloaded**
-  - Click "**Add Plugins..."**and browse for downloaded .nbm extension plugin file for **Aspose.Words Java for NetBeans (Maven)**.
-  - Click**"Install"**to install the plugin
+  - Go to **Tools** > **Plugins** > **Downloaded**
+  - Click "**Add Plugins..."** and browse for downloaded .nbm extension plugin file for **Aspose.Words Java for NetBeans (Maven)**.
+  - Click **"Install"** to install the plugin
 - Or it can be directly installed (without manual downloading from NetBeans plugin hosting URL) using the `IDE` options:
-  - Goto**Tools**>**Plugins**>**Available Plugins**
+  - Go to **Tools** > **Plugins**> **Available Plugins**
   - In Search Box type: "Aspose"
   - Select "**Aspose.Words Java NetBeans (Maven)**" plugin
-  - Click**"Install"**
+  - Click **"Install"**
 
 ## Installing
 
@@ -118,9 +118,9 @@ Aspose.Words Java for NetBeans (Maven) is open source and its source code is ava
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose-Words-Java-for-NetBeans(Maven))
 #### How to configure source code of Aspose.Words Java for NetBeans (Maven)
 
-Below simple steps will smoothly lead to successful configuration of**"Aspose.Words Java for NetBeans (Maven)"** plugin source code in NetBeans IDE
+Below simple steps will smoothly lead to successful configuration of **"Aspose.Words Java for NetBeans (Maven)"** plugin source code in NetBeans IDE
 
 1. Download / Clone the source code.
-1. Choose**File**>**Open Project**
+1. Choose **File** > **Open Project**
 1. Browse to the latest project source that you have downloaded and open the project.
 1. Aspose.Words Java for NetBeans (Maven) plugin code is now ready to enhance.

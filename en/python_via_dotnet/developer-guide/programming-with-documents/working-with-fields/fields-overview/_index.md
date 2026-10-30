@@ -41,7 +41,7 @@ A field consists of:
 
 The content which makes up the field code is stored as [Run](https://reference.aspose.com/words/python-net/aspose.words/run/) nodes between the [FieldStart](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldstart/) and [FieldSeparator](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldseparator/). The field result is stored between the **FieldSeparator** and [FieldEnd](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldend/) nodes and can be made up of various types of content. Normally the field result contains just text made up of **Run** nodes, however it is possible for the **FieldEnd** node to be located in a completely different paragraph, and thus making the field result comprised of [block level nodes](/words/python-net/logical-levels-of-nodes-in-a-document/) such as **Table** and **Paragraph** nodes as well.
 
-Here is a view of how a field is stored in Aspose.Words by using the �*DocumentExplorer�*�example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Examples/DocsExamples/DocumentExplorer).
+Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”* example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Examples/DocsExamples/DocumentExplorer).
 
 ![document-explorer-aspose-words](fields-overview-2.png)
 
@@ -49,7 +49,7 @@ Here is a view of how a field is stored in Aspose.Words by using the �*Documen
 
 When a document is loaded into Aspose.Words, the fields of the document are loaded into the [Aspose.Words Document Object Model](/words/python-net/aspose-words-document-object-model/) as a set of separate components (nodes). A single field is loaded as a collection of **FieldStart**, **FieldSeparator** and **FieldEnd** nodes along with the content in between these nodes. If a field does not have a field result then there will be no **FieldSeparator** node. All of these nodes are always found inline (as children of [Paragraph](https://reference.aspose.com/words/python-net/aspose.words/paragraph/) or [SmartTag](https://reference.aspose.com/words/python-net/aspose.words.markup/smarttag/).
 
-In Aspose.Words each of the **FieldXXX** nodes derives from [FieldChar](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldchar/). This class provides a property to check the type of field represented by the specified node through the [FieldType](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldtype/) property. For example **FieldType.FieldMergeField** represents a merge field in the document.
+In Aspose.Words each of the **FieldXXX** nodes derives from [FieldChar](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldchar/). This class provides a property to check the type of field represented by the specified node through the [FieldType](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldtype/) property. For example **FieldType.FIELD_MERGE_FIELD** represents a merge field in the document.
 
 {{% alert color="primary" %}}
 
@@ -184,7 +184,7 @@ Aspose.Words supports all date and time formatting switches available in Microso
 
 ### Mail Merge Fields
 
-Aspose.Words imposes no limit on the complexity of Mail Merge fields in your documents and supports nested `IF` and formula fields and can even calculate the merge field�s name using a formula.
+Aspose.Words imposes no limit on the complexity of Mail Merge fields in your documents and supports nested `IF` and formula fields and can even calculate the merge field's name using a formula.
 
 Some examples of Mail Merge fields that Aspose.Words supports:
 
@@ -201,18 +201,18 @@ Some examples of Mail Merge fields that Aspose.Words supports:
 
 A field in a document can have formatting switches that specify how the resulting value should be formatted. Aspose.Words supports the following format switches:
 
-- \\\@ � date and time formatting
-- \\\# � number formatting
+- \\\@ – date and time formatting
+- \\\# – number formatting
 - \\\* Caps
 - \\\* FirstCap
 - \\\* Lower
 - \\\* Upper
-- \\\* CHARFORMAT � format result according to the first character of the field code
-- \\\* MERGEFORMAT � format result according to how the old result is formatted
+- \\\* CHARFORMAT – format result according to the first character of the field code
+- \\\* MERGEFORMAT – format result according to how the old result is formatted
 
 ### Date and Number Formatting in Fields
 
-When Aspose.Words calculates a field result, it often needs to parse a string into a number or date value and also to format it back to a string.By default Aspose.Words uses the current thread culture to perform parsing and formatting when calculating field values during field update and mail merge. There are also options provided in the form of the [FieldOptions](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldoptions/) class which allows further control over which culture is used during field update.
+When Aspose.Words calculates a field result, it often needs to parse a string into a number or date value and also to format it back to a string. By default Aspose.Words uses the current thread culture to perform parsing and formatting when calculating field values during field update and mail merge. There are also options provided in the form of the [FieldOptions](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldoptions/) class which allows further control over which culture is used during field update.
 
 - by default the [FieldOptions.field_update_culture_source](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldoptions/field_update_culture_source/) property is set to [FieldUpdateCultureSource.CURRENT_THREAD](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldupdateculturesource/#current_thread) which formats fields using the current thread culture
 - this property can be set to [FieldUpdateCultureSource.FIELD_CODE](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldupdateculturesource/#field_code) so the language set from the field code of the field is used for formatting instead
@@ -239,8 +239,8 @@ The following code example shows how to specify where the culture used for date 
 
 ## FAQ
 
-1. Q: How can I retrieve the names of all merge fields in a document?  
-   A: Use the `MailMerge.get_field_names()` method of the `Document` object. It returns a list of strings representing each merge field name. Example:
+1. **Q:** How can I retrieve the names of all merge fields in a document?  
+   **A:** Use the `MailMerge.get_field_names()` method of the `Document` object. It returns a list of strings representing each merge field name. Example:
 
    ```python
    import aspose.words as aw
@@ -251,8 +251,8 @@ The following code example shows how to specify where the culture used for date 
        print(name)
    ```
 
-2. Q: How do I rename a merge field in a Word document?  
-   A: Load the document, locate each field of type `MERGEFIELD` in `doc.range.fields`, cast it with `as_field_merge_field()`, change its `field_name` property, and then update the document. Example:
+2. **Q:** How do I rename a merge field in a Word document?  
+   **A:** Load the document, locate each field of type `MERGEFIELD` in `doc.range.fields`, cast it with `as_field_merge_field()`, change its `field_name` property, and then update the document. Example:
 
    ```python
    import aspose.words as aw
@@ -264,8 +264,8 @@ The following code example shows how to specify where the culture used for date 
    doc.save("Renamed.docx")
    ```
 
-3. Q: How can I update all fields in a document programmatically?  
-   A: Call the `update_fields()` method on the `Document` object. This updates every field that Aspose.Words can calculate.
+3. **Q:** How can I update all fields in a document programmatically?  
+   **A:** Call the `update_fields()` method on the `Document` object. This updates every field that Aspose.Words can calculate.
 
    ```python
    import aspose.words as aw
@@ -275,22 +275,23 @@ The following code example shows how to specify where the culture used for date 
    doc.save("Updated.docx")
    ```
 
-4. Q: How do I change the culture used for date and number formatting when updating fields?  
-   A: Set the `field_options.field_update_culture_source` property on the `Document` to either `FieldUpdateCultureSource.CURRENT_THREAD` or `FieldUpdateCultureSource.FIELD_CODE`, and optionally adjust the thread locale.
+4. **Q:** How do I change the culture used for date and number formatting when updating fields?  
+   **A:** Set `doc.field_options.field_update_culture_source` to `FieldUpdateCultureSource.FIELD_CODE` to format date/time fields that use the `\@` switch in the language of the field, or keep `CURRENT_THREAD` (the default). Python's `locale` module does not change the culture that Aspose.Words uses.
 
    ```python
    import aspose.words as aw
-   import locale
 
-   locale.setlocale(locale.LC_ALL, "fr_FR")
-   doc = aw.Document("Input.docx")
-   doc.field_options.field_update_culture_source = aw.fields.FieldUpdateCultureSource.CURRENT_THREAD
+   doc = aw.Document()
+   builder = aw.DocumentBuilder(doc)
+   builder.font.locale_id = 1036   # French
+   builder.insert_field('DATE \\@ "dddd d MMMM yyyy"')
+   doc.field_options.field_update_culture_source = aw.fields.FieldUpdateCultureSource.FIELD_CODE
    doc.update_fields()
    doc.save("CultureUpdated.docx")
    ```
 
-5. Q: How can I access the field code and field result of a specific field?  
-   A: After locating the `Field` in `doc.range.fields`, use its `get_field_code()` method to read the code and the `result` property to read the evaluated result.
+5. **Q:** How can I access the field code and field result of a specific field?  
+   **A:** After locating the `Field` in `doc.range.fields`, use its `get_field_code()` method to read the code and the `result` property to read the evaluated result.
 
    ```python
    import aspose.words as aw

@@ -47,7 +47,7 @@ To access document properties in Aspose.Words use:
 
 **BuiltInDocumentProperties** additionally provides access to document properties through a set of entered properties that return values of the appropriate type. **CustomDocumentProperties** enable you to add or remove document properties from a document.
 
-The [DocumentProperty](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/) class allows you to get the name, value, and type of a document property. [value](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/value/) returns an object, but there is a set of methods allowing you to get the property value converted to a specific type. After you get to know what type the property is, you can use one of the **DocumentProperty.to_xxx** methods, such as **DocumentProperty.**[DocumentProperty.to_int](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/to_int/) and **DocumentProperty.**[ToInt](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/to_int/), to obtain the value of the appropriate type.
+The [DocumentProperty](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/) class allows you to get the name, value, and type of a document property. [value](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/value/) returns an object, but there is a set of methods allowing you to get the property value converted to a specific type. After you get to know what type the property is, you can use one of the **DocumentProperty.to_xxx** methods, such as **DocumentProperty.**[DocumentProperty.to_int](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/to_int/) and **DocumentProperty.**[to_int](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/to_int/), to obtain the value of the appropriate type.
 
 The following code example shows how to enumerate all built-in and custom properties in a document:
 
@@ -89,15 +89,15 @@ The following code example shows how to remove a custom document property:
 
 Aspose.Words does not automatically update document properties, as Microsoft Word does with some properties, but provides a method to update some statistical built-in document properties. Call the [update_word_count](https://reference.aspose.com/words/python-net/aspose.words/document/update_word_count/) method to recalculate and update the following properties:
 
-* [Characters](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/characters/)
-* [CharactersWithSpaces](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/characters_with_spaces/)
-* [Words](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/words/)
-* [Paragraphs](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/paragraphs/)
-* [Lines](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/lines/)
+* [characters](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/characters/)
+* [characters_with_spaces](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/characters_with_spaces/)
+* [words](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/words/)
+* [paragraphs](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/paragraphs/)
+* [lines](https://reference.aspose.com/words/python-net/aspose.words.properties/builtindocumentproperties/lines/)
 
 ## Create a New Custom Property Linked to Content
 
-Aspose.Words provides the [add_link_to_content](https://reference.aspose.com/words/python-net/aspose.words.properties/customdocumentproperties/add_link_to_content/) method to create a new custom document property linked to content. This property returns the newly created property object or None if the [LinkSource](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/link_source/) is invalid.
+Aspose.Words provides the [add_link_to_content](https://reference.aspose.com/words/python-net/aspose.words.properties/customdocumentproperties/add_link_to_content/) method to create a new custom document property linked to content. This property returns the newly created property object or None if the [link_source](https://reference.aspose.com/words/python-net/aspose.words.properties/documentproperty/link_source/) is invalid.
 
 The following code example shows how to configure a link to a custom property:
 
@@ -140,7 +140,7 @@ Setting this option does not actually remove personal information while processi
    **A:** Iterate over the `custom_document_properties` collection. Each item is a `DocumentProperty` object, and you can read its `name`, `value`, and type‑specific getters (e.g., `to_string()`, `to_int()`).
 
 3. **Q:** *Is it possible to prevent Aspose.Words from writing the Application and PDF Producer fields in generated PDFs?*  
-   **A:** No. Aspose.Words always writes its product name and version to those fields, and this information cannot be removed or altered through the API.
+   **A:** Partly. Set `export_generator_name = False` on `PdfSaveOptions` to omit the PDF Producer field (product name and version). The Application field still contains "Aspose.Words".
 
 4. **Q:** *Can I create a custom property that automatically reflects the content of a bookmark or field?*  
    **A:** Yes. Use the `add_link_to_content` method of `custom_document_properties` and provide the bookmark or field name as the link source. The property will update whenever the linked content changes.

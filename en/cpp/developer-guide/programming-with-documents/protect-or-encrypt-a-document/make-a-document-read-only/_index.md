@@ -32,7 +32,7 @@ Aspose.Words has the public class [WriteProtection](https://reference.aspose.com
 
 Write protection shows whether the author has recommended opening a document as read-only and/or requiring a password to modify the document.
 
-Aspose.Words allows you to make a document read-only to restrict editing by using the [ReadOnlyRecommended](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_readonlyrecommended/) property and the [SetPassword](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/setpassword/) method.
+Aspose.Words allows you to make a document read-only to restrict editing by using the [get_ReadOnlyRecommended()](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_readonlyrecommended/) property and the [SetPassword](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/setpassword/) method.
 
 {{% alert color="primary" %}}
 
@@ -59,7 +59,7 @@ Note that the password being set is just a property in a document that can be re
 
 {{% /alert %}}
 
-If you need to check if a document has a write protection password that restricts it from editing, you can use the [IsWriteProtected](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_iswriteprotected/) property.
+If you need to check if a document has a write protection password that restricts it from editing, you can use the [get_IsWriteProtected()](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_iswriteprotected/) property.
 
 The following code example shows how to make a document read-only:
 
@@ -67,7 +67,7 @@ The following code example shows how to make a document read-only:
 
 ## Remove Read-Only Restriction
 
-If you do not want a user to open your document as read-only, you can simply set the **ReadOnlyRecommened** property to *false* or select **ProtectionType** as **NoProtection**.
+If you do not want a user to open your document as read-only, you can simply set the **ReadOnlyRecommended** property to *false*.
 
 The following code example shows how to remove read-only access for a document:
 
@@ -78,13 +78,13 @@ The following code example shows how to remove read-only access for a document:
 ## FAQ
 
 1. **Q:** How do I make a document read‑only with a password?  
-   **A:** Load the document, set `document.WriteProtection.ReadOnlyRecommended = true;` and then call `document.WriteProtection.SetPassword("yourPassword");`. Finally, save the document. The password protects the read‑only recommendation.
+   **A:** Load the document, call `doc->get_WriteProtection()->set_ReadOnlyRecommended(true);` and then `doc->get_WriteProtection()->SetPassword(u"yourPassword");`. Finally, save the document. The password protects the read‑only recommendation.
 
 2. **Q:** Can I check whether a document is currently write‑protected?  
-   **A:** Yes. Use the `document.WriteProtection.IsWriteProtected` property; it returns `true` if a write‑protection password has been set.
+   **A:** Yes. Use `doc->get_WriteProtection()->get_IsWriteProtected()`; it returns `true` if a write‑protection password has been set.
 
 3. **Q:** How can I remove the read‑only recommendation from an existing document?  
-   **A:** Set `document.WriteProtection.ReadOnlyRecommended = false;` or change the protection type to `ProtectionType.NoProtection`, then save the document.
+   **A:** Call `doc->get_WriteProtection()->set_ReadOnlyRecommended(false);`, then save the document.
 
 4. **Q:** Is the read‑only password a security feature?  
    **A:** The password is stored as a document property and can be removed by users who can edit the document's metadata. It deters casual editing but should not be considered strong security.

@@ -43,13 +43,13 @@ Summarizing documents with Aspose.Words saves time and helps you focus on essent
    **A:** Any format that Aspose.Words can load can be summarized, including DOC, DOCX, RTF, HTML, EPUB, and PDF (when loaded as a Word document). The summarization engine works on the internal document model, so the original file type does not matter as long as it is supported by Aspose.Words.
 
 2. **Q:** What AI models are available for summarization?  
-   **A:** The `AiModelType` enumeration lists all supported models, such as `OpenAi_Gpt4o`, `Google_GeminiPro`, and `Anthropic_ClaudeInstant`. You select a model by setting the `Model` property of `SummarizeOptions` before calling `Summarize`.
+   **A:** The `AiModelType` enumeration lists all supported models, such as `Gpt4O`, `GeminiProLatest`, and `Claude35Sonnet`. You select the model when you create it, for example `AiModel model = AiModel.Create(AiModelType.Gpt4OMini).WithApiKey(apiKey);`, and then call `model.Summarize(doc, options)`.
 
 3. **Q:** Do I need a separate license to use the summarization feature?  
    **A:** No additional license is required beyond a regular Aspose.Words license. The AI functionality is included in the Aspose.Words for .NET product, but you must have an active subscription that includes the AI add‑on. Licensing for older versions is retro‑compatible as long as the version supports the AI namespace.
 
 4. **Q:** How can I control the length of the generated summary?  
-   **A:** Use the `SummaryLength` property of `SummarizeOptions`. It accepts values from the `SummaryLength` enumeration (`VeryShort`, `Short`, `Medium`, `Long`, `VeryLong`) or a custom integer representing the desired number of sentences. The chosen length influences how much content the model returns.
+   **A:** Use the `SummaryLength` property of `SummarizeOptions`. It accepts values from the `SummaryLength` enumeration (`VeryShort`, `Short`, `Medium`, `Long`, `VeryLong`); each value stands for an approximate number of sentences (for example, `Short` is 3–4 sentences). The chosen length influences how much content the model returns.
 
 5. **Q:** What happens if the document contains no textual content?  
-   **A:** The summarization call will return an empty string. You can check the document's text length beforehand using `Document.GetText()` and handle the empty‑result case in your code to avoid unnecessary API calls.
+   **A:** `Summarize` returns a `Document`, not a string. To avoid an unnecessary API call, check the document's text length beforehand using `Document.GetText()` and skip empty documents.

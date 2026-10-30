@@ -36,11 +36,11 @@ The following code example shows how to convert DOCX to Markdown:
 
 {{< gist "aspose-words-gists" "642767bbe8d8bec8eab080120b707990" "docx-to-markdown.java" >}}
 
-You can also specify the physical folder in which you want to save images when exporting a document to Markdown format. By default, Aspose.Words saves images in the same folder where the document file is saved, but you can override this behavior using the [ImagesFolder](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getImagesFolder) property.
+You can also specify the physical folder in which you want to save images when exporting a document to Markdown format. By default, Aspose.Words saves images in the same folder where the document file is saved, but you can override this behavior using the [getImagesFolder()](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getImagesFolder) property.
 
-Specifying a folder via **ImagesFolder** is also useful if you save a document to a stream and Aspose.Words does not have a folder for saving images.
+Specifying a folder via **getImagesFolder()** is also useful if you save a document to a stream and Aspose.Words does not have a folder for saving images.
 
-If the specified **ImagesFolder** does not exist, it will be created automatically.
+If the specified **getImagesFolder()** does not exist, it will be created automatically.
 
 The following code example shows how to specify a folder for images when saving a document to a stream:
 
@@ -48,7 +48,7 @@ The following code example shows how to specify a folder for images when saving 
 
 ## Specify Save Options when Converting to Markdown
 
-Aspose.Words provides the ability to use the [MarkdownSaveOptions](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/) class to work with advanced options when saving a document to Markdown format. In addition to other inheriting or overloading properties, a number of properties that are specific for Markdown format have also been added. For example, the [TableContentAlignment](https://reference.aspose.com/words/java/com.aspose.words/tablecontentalignment/) property to control the alignment of content in tables, or [ImageSavingCallback](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getImageSavingCallback) and [ImagesFolder](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getImagesFolder) to control how images are saved upon converting a document to Markdown format.
+Aspose.Words provides the ability to use the [MarkdownSaveOptions](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/) class to work with advanced options when saving a document to Markdown format. In addition to other inheriting or overloading properties, a number of properties that are specific for Markdown format have also been added. For example, the [TableContentAlignment](https://reference.aspose.com/words/java/com.aspose.words/tablecontentalignment/) property to control the alignment of content in tables, or [getImageSavingCallback()](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getImageSavingCallback) and [getImagesFolder()](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getImagesFolder) to control how images are saved upon converting a document to Markdown format.
 
 ## Supported Markdown Features
 

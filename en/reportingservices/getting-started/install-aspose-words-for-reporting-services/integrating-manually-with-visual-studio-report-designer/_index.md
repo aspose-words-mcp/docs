@@ -16,13 +16,13 @@ timestamp: 2024-11-13-12-00-30
 
 {{% /alert %}}
 
-This section describes how to install Aspose.Words for Reporting Services on a computer with Business Intelligence Development Studio. This will enable you to export reports to Microsoft Word documents at design time from the Microsoft Visual Studio 2012, 2015, 2017, 2019 or 2022 Report Designer.
+This section describes how to install Aspose.Words for Reporting Services on a computer with Visual Studio Report Designer (SQL Server Data Tools). This will enable you to export reports to Microsoft Word documents at design time from the Microsoft Visual Studio 2012, 2013, 2015, 2017, 2019 or 2022 Report Designer.
 
 ## Step 1. Copy `Aspose.Words.ReportingServices.dll` to the Visual Studio directory.
 
 - To integrate with Visual Studio 2012 Report Designer, copy `Bin\SSRS2012\Aspose.Words.ReportingServices.dll` to the `C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\PrivateAssemblies` directory.
 - To integrate with Visual Studio 2013 Report Designer, copy `Bin\SSRS2014\Aspose.Words.ReportingServices.dll` to the `C:\Program Files\Microsoft Visual Studio 12.0\Common7\IDE\PrivateAssemblies` directory.
-- To integrate with Visual Studio 2015 Report Designer, copy `Bin\SSRS2016\Aspose.Words.ReportingServices.dll` to the `C:\Program Files\Microsoft Visual Studio 13.0\Common7\IDE\PrivateAssemblies` directory.
+- To integrate with Visual Studio 2015 Report Designer, copy `Bin\SSRS2016\Aspose.Words.ReportingServices.dll` to the `C:\Program Files\Microsoft Visual Studio 14.0\Common7\IDE\PrivateAssemblies` directory.
 - To integrate with Visual Studio 2017 Report Designer, copy `Bin\SSRS2017\Aspose.Words.ReportingServices.dll` to the `C:\Program Files\Microsoft Visual Studio\2017\<VS edition name>\Common7\IDE\CommonExtensions\Microsoft\SSRS` directory,
   where `<VS edition name>`: community, professional, or enterprise.
 - To integrate with Visual Studio 2019 Report Designer, copy `Bin\SSRS2019\Aspose.Words.ReportingServices.dll` to the `C:\Program Files\Microsoft Visual Studio\2019\<VS edition name>\Common7\IDE\CommonExtensions\Microsoft\SSRS` directory,
@@ -36,7 +36,7 @@ Open `C:\Program Files\Microsoft Visual Studio <Version>\Common7\IDE\PrivateAsse
 
 - “11.0” for Visual Studio 2012
 - “12.0” for Visual Studio 2013
-- “13.0” for Visual Studio 2015
+- “14.0” for Visual Studio 2015
 
 For Visual Studio 2017, 2019 or 2022 use the following path: `C:\Program Files\Microsoft Visual Studio\<Version>\<VS edition name>\Common7\IDE\CommonExtensions\Microsoft\SSRS\RSReportDesigner.config`, where:
 
@@ -48,7 +48,7 @@ For Visual Studio 2017, 2019 or 2022 use the following path: `C:\Program Files\M
 
 And add the following lines into the &lt;Render> element:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <!--Start here.-->
@@ -72,7 +72,7 @@ Open `C:\Program Files\Microsoft Visual Studio <Version>\Common7\IDE\PrivateAsse
 
 * “11.0” for Visual Studio 2012
 * “12.0” for Visual Studio 2013
-* “13.0” for Visual Studio 2015
+* “14.0” for Visual Studio 2015
 
 For Visual Studio 2017, 2019 or 2022 use the following path: `C:\Program Files\Microsoft Visual Studio\<Version>\<VS edition name>\Common7\IDE\CommonExtensions\Microsoft\SSRS\RSPreviewPolicy.config`, where:
 
@@ -82,9 +82,9 @@ For Visual Studio 2017, 2019 or 2022 use the following path: `C:\Program Files\M
   * 2022 for Visual Studio 2022
 * `<VS edition name>`: community, professional, or enterprise
 
-And add the following as the last item in the second to outer `<CodeGroup>` element (which should be <CodeGroup class="FirstMatchCodeGroup” version="1” PermissionSetName="Execution” Description="This code group grants MyComputer code Execution permission. “>):
+And add the following as the last item in the second to outer `<CodeGroup>` element (which should be `<CodeGroup class="FirstMatchCodeGroup" version="1" PermissionSetName="Execution" Description="This code group grants MyComputer code Execution permission. ">`):
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <CodeGroup>
 ...
 <CodeGroup>
@@ -108,7 +108,7 @@ PublicKeyBlob="00240000048000009400000006020000002400005253413100040000010001005
 
 ## Step 4. Verify that Aspose.Words for Reporting Services was installed successfully.
 
-Run or restart Microsoft Visual Studio 2012, 2015, 2017, 2019 or 2022 Report Designer. You should notice new formats available in the list of export formats.
+Run or restart Microsoft Visual Studio 2012, 2013, 2015, 2017, 2019 or 2022 Report Designer. You should notice new formats available in the list of export formats.
 
 **New export formats appear in Report Designer.**
 

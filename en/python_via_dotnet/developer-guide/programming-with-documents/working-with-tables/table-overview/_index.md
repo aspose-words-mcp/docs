@@ -89,7 +89,7 @@ In Aspose.Words, all classes and properties related to tables are contained in t
    **A:** Set the first cell's `cell_format.horizontal_merge` property to `HorizontalMerge.FIRST` and the subsequent cells that should be merged to `HorizontalMerge.PREVIOUS`. This merges the cells into a single larger cell while preserving the table layout.
 
 4. **Q:** Why do two consecutive tables sometimes appear as a single table, and how can I prevent this?  
-   **A:** Word treats adjacent tables as one unless there is at least one empty paragraph between them. Insert an empty `Paragraph` node after the first table (`document.append_child(Paragraph())`) to keep the tables separate.
+   **A:** Word treats adjacent tables as one unless there is at least one empty paragraph between them. Insert an empty `Paragraph` node after the first table (`table.parent_node.insert_after(aw.Paragraph(doc), table)`) to keep the tables separate.
 
 5. **Q:** How can I access a specific cell by its row and column indexes?  
    **A:** Use `Table.rows[rowIndex].cells[cellIndex]` where `rowIndex` and `cellIndex` are zero‑based. This returns the `Cell` object, allowing you to read or modify its contents.

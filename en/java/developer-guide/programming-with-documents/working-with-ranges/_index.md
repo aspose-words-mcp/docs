@@ -33,7 +33,7 @@ Aspose.Words also has the [Range](https://reference.aspose.com/words/java/com.as
 
 ## Retrieve Plain Text
 
-Use the [Text](https://reference.aspose.com/words/java/com.aspose.words/range/#getText) property to retrieve plain, unformatted text of the range.
+Use the [getText()](https://reference.aspose.com/words/java/com.aspose.words/range/#getText) property to retrieve plain, unformatted text of the range.
 
 The following code example shows how to get a plain, unformatted text of a range:
 

@@ -14,7 +14,7 @@ timestamp: 2024-01-27-14-07-04
 
 There are 3 parameters for configuring how to process images when exporting to HTML format.
 
-IMAGES_FOLDER sets exact system folder to save images into. Is empty by default, save to same folder when report output is located.
+IMAGES_FOLDER sets exact system folder to save images into. Is empty by default: images are saved to the folder where the report output is located.
 
 IMAGES_FOLDER_ALIAS sets `URL` prefix for images in HTML output. Is empty by default, no prefix.
 
@@ -26,7 +26,7 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
    import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
    exporter.setParameter(AWExporterParameter.IMAGES_FOLDER, "c:/temp/images");
@@ -39,10 +39,10 @@ In JasperServer:
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="imagesFolder" value="c:/temp/images"/>
-    <property name="imagesFolderAlias" value="https://localhost/images "/>
-    <property name="imageNameTemplate" value="c:/temp/images"/>
+    <property name="imagesFolderAlias" value="https://localhost/images"/>
+    <property name="imageNameTemplate" value="image"/>
 </bean>
 {{< /highlight >}}

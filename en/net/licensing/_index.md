@@ -171,7 +171,7 @@ If you use multiple Aspose products in your application, such as Aspose.Words an
    A: Yes. The license file can have any name; just provide the exact file name (or resource name) you used when calling `SetLicense`.
 
 4. Q: Are licenses from older Aspose.Words versions compatible with newer versions?  
-   A: Licenses are generally forward‑compatible; a license purchased for an older version will work with newer releases of Aspose.Words for .NET. However, features introduced after the license purchase may require a newer license tier.
+   A: A license works with all Aspose.Words versions released before its subscription expiry date, which is stored in the license file. The subscription includes updates for one year; to use versions released after that date, renew the subscription and apply the new license file.
 
 5. Q: How does metered licensing work and how can I verify its status?  
    A: Metered licensing uses public and private keys set via `SetMeteredKey`. The library tracks usage and reports it to Aspose servers. Use `IsMeteredLicensed` to check whether the metered license is currently active and reapply the keys if the connection has been lost.

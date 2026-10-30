@@ -51,7 +51,7 @@ item3</td>
 You can use data bands within common conditional blocks as well. For example, given the previous declaration of items, you can check whether the enumeration contains any elements before outputting their list.
 
 {{< highlight csharp >}}
-<<if [!items.Any()]>>No data.
+<<if [!items.any()]>>No data.
 <<else>><<foreach [item in items]>><<[item]>>
 <</foreach>><</if>>
 {{< /highlight >}}

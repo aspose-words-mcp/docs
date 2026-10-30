@@ -21,7 +21,7 @@ In this article, we will talk about inserting an OLE object and setting its prop
 
 ## Insert OLE Object
 
-If you want OLE Object, call the [InsertOleObject](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertoleobject/) method and pass it the **ProgId** explicitly with other parameters.
+If you want OLE Object, call the [InsertOleObject](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertoleobject/) method and pass it the **progId** explicitly with other parameters.
 
 The following code example shows how to insert OLE Object into a document:
 
@@ -33,7 +33,7 @@ OLE package is a legacy and "undocumented" way to store embedded objects if an O
 
 Early Windows versions such as Windows 3.1, 95, and 98 had a Packager.exe application that could be used to embed any type of data into the document. This application is now excluded from Windows, but Microsoft Word and other applications still use it to embed data if the OLE handler is missing or unknown. The `OlePackage` class allows users to access the OLE Package properties.
 
-The following code example shows how toset the file name, extension, and display name for OLE Package:
+The following code example shows how to set the file name, extension, and display name for OLE Package:
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-InsertOleObjectwithOlePackage.h" >}}
 
@@ -41,7 +41,7 @@ The following code example shows how toset the file name, extension, and display
 
 Users can access OLE object data using various properties and methods of the `OleFormat` class. For example, it is possible to get the `OLE` object raw data or the path and name of a source file for the linked OLE object.
 
-The following code example shows how to get OLE Object raw data usingthe [GetRawData](https://reference.aspose.com/words/cpp/aspose.words.drawing/oleformat/getrawdata/) method:
+The following code example shows how to get OLE Object raw data using the [GetRawData](https://reference.aspose.com/words/cpp/aspose.words.drawing/oleformat/getrawdata/) method:
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-GetAccessToOLEObjectRawData.h" >}}
 
@@ -86,8 +86,8 @@ The following code example shows how to insert an online video into a document u
 1. **Q:** How do I insert an OLE object into a Word document using C++?  
    **A:** Use `DocumentBuilder::InsertOleObject` and provide the object's ProgID (e.g., `"Word.Document"`). You can also specify the file name, display name, and other parameters as needed.
 
-2. **Q:** How can I set a custom file name, extension, and display name for an OLE package?  
-   **A:** Create an `OlePackage` instance, set its `FileName`, `Extension`, and `DisplayName` properties, then pass it to `InsertOleObject` to embed the package with the desired metadata.
+2. **Q:** How can I set a custom file name and display name for an OLE package?  
+   **A:** Insert the file as a package with `InsertOleObject(stream, u"Package", true, nullptr)`, then get the `OlePackage` from the returned shape (`shape->get_OleFormat()->get_OlePackage()`) and set its `set_FileName()` and `get_DisplayName()` properties.
 
 3. **Q:** How can I retrieve the raw binary data of an embedded OLE object?  
    **A:** Access the `OleFormat` of the OLE object node and call `OleFormat::GetRawData()`. The method returns a `System::ArrayPtr<uint8_t>` containing the object's binary content.

@@ -62,7 +62,7 @@ The image below shows how Aspose.Words renders comments and the Delete revisions
 
 ## Text Shaper for Advanced Typography Rendering
 
-The [TextShaperFactory](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/) property enables you to set the text shaping functionality, as well as the `OpenType` features support.
+The [enable_text_shaping](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/enable_text_shaping/) property enables support for `OpenType` features using the HarfBuzz text shaping engine.
 
 Use text shaping for document processing in the following main cases:
 
@@ -77,10 +77,10 @@ Text shaping will be enabled only when exporting a document to PDF or XPS.
 
 ## Related APIs
 
-- [`LayoutOptions`](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/)
-- [`RevisionOptions`](https://reference.aspose.com/words/python-net/aspose.words.layout/revisionoptions/)
-- [`CommentDisplayMode`](https://reference.aspose.com/words/python-net/aspose.words.layout/commentdisplaymode/)
-- [`TextShaperFactory`](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/) 
+- [LayoutOptions](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/)
+- [RevisionOptions](https://reference.aspose.com/words/python-net/aspose.words.layout/revisionoptions/)
+- [CommentDisplayMode](https://reference.aspose.com/words/python-net/aspose.words.layout/commentdisplaymode/)
+- [enable_text_shaping](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/enable_text_shaping/) 
 
 ## FAQ
 

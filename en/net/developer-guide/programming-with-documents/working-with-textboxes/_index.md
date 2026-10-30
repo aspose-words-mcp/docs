@@ -25,7 +25,7 @@ In Aspose.Words, the [TextBox](https://reference.aspose.com/words/net/aspose.wor
 
 ## Creating a Link
 
-The **TextBox** class provides [IsValidLinkTarget](https://reference.aspose.com/words/net/aspose.words.drawing/textbox/isvalidlinktarget/) method in order to check whether the**TextBox** can be linked to the target **Textbox**.
+The **TextBox** class provides [IsValidLinkTarget](https://reference.aspose.com/words/net/aspose.words.drawing/textbox/isvalidlinktarget/) method in order to check whether the **TextBox** can be linked to the target **Textbox**.
 
 The following code example shows how to check if the `TextBox` can be linked to the target Textbox:
 
@@ -35,7 +35,7 @@ The following code example shows how to check if the `TextBox` can be linked to 
 
 There are several ways to display text in a shape. The [TextBox](https://reference.aspose.com/words/net/aspose.words.drawing/shape/textbox/) can be the Head, Middle, or Tail of a sequence.
 
-The following code example shows how to checkif **TextBox** is a Head, Tail, or Middle of the sequence:
+The following code example shows how to check if **TextBox** is a Head, Tail, or Middle of the sequence:
 
 {{< gist "aspose-words-gists" "68b6041746b3d6bf5137cff8e6385b5f" "check-sequence.cs" >}}
 
@@ -55,7 +55,7 @@ The following code example shows how to break a link for a **TextBox**:
    **A:** Use the `TextBox.IsValidLinkTarget(TextBox target)` method. It returns `true` if the current TextBox can be linked to the specified target TextBox, otherwise `false`.
 
 2. **Q:** How do I determine the position of a TextBox within a linked sequence?  
-   **A:** Call the `TextBox.IsHead`, `TextBox.IsTail`, or `TextBox.IsMiddle` properties. These boolean properties indicate whether the TextBox is the first, last, or a middle element in the linked chain.
+   **A:** Check the `TextBox.Previous` and `TextBox.Next` properties. The first TextBox in the linked chain has no `Previous`, the last one has no `Next`, and a middle one has both.
 
 3. **Q:** What method should I use to break a forward link from a TextBox?  
    **A:** Invoke `TextBox.BreakForwardLink()`. This removes the link from the current TextBox to the next one in the sequence, leaving the remaining chain intact.

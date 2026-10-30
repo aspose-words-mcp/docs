@@ -15,7 +15,7 @@ timestamp: 2025-03-17-19-00-00
 
 Checking grammar in documents is important to ensure clarity, professionalism, and accuracy. Well-written documents leave a positive impression and avoid misunderstandings. Grammar checks help identify and correct errors quickly, saving time and improving quality.
 
-Aspose.Words allows users to check grammar and detect errors in documents using the OpenAI, Google, and Claude models' families listed in the [AiModelType](https://reference.aspose.com/words/java/com.aspose.words/aimodeltype/) enumeration. Use the [CheckGrammar](https://reference.aspose.com/words/java/com.aspose.words/iaimodeltext/#checkGrammar-com.aspose.words.Document-com.aspose.words.CheckGrammarOptions) method to analyze the text in a document and highlights grammatical problems.
+Aspose.Words allows users to check grammar and detect errors in documents using the OpenAI, Google, and Claude models' families listed in the [AiModelType](https://reference.aspose.com/words/java/com.aspose.words/aimodeltype/) enumeration. Use the [checkGrammar()](https://reference.aspose.com/words/java/com.aspose.words/iaimodeltext/#checkGrammar-com.aspose.words.Document-com.aspose.words.CheckGrammarOptions) method to analyze the text in a document and highlights grammatical problems.
 
 The following code example shows how to use the GPT-4o mini model in Aspose.Words to check grammar:
 
@@ -44,7 +44,7 @@ Checking grammar with Aspose.Words improves the quality of your work and makes i
 ## FAQ
 
 1. **Q:** Which AI models can I use for grammar checking with Aspose.Words for Java?  
-   **A:** The `AiModelType` enumeration lists all supported families, including OpenAI (e.g., `GPT_4_O_MINI`, `GPT_4_TURBO`), Google (e.g., `GEMINI_PRO`), and Anthropic Claude models. Choose the model that fits your accuracy and cost requirements.
+   **A:** The `AiModelType` enumeration lists all supported families, including OpenAI (e.g., `GPT_4_O_MINI`, `GPT_4_TURBO`), Google (e.g., `GEMINI_PRO_LATEST`), and Anthropic Claude models. Choose the model that fits your accuracy and cost requirements.
 
 2. **Q:** How do I provide the API key for the selected AI model?  
    **A:** Create the model instance with `AiModel.create(...).withApiKey(yourKey)`. The key can be read from an environment variable, configuration file, or any secure store. Example:  

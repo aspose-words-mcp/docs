@@ -29,11 +29,11 @@ Aspose.Words provides an ability to obtain information about the file type in or
 
 When you are dealing with multiple documents in various file formats, you may need to separate out those files that can be processed by Aspose.Words from those that cannot. You may also want to know why some of the documents cannot be processed.
 
-If you attempt to load a file into a[Document](https://reference.aspose.com/words/java/com.aspose.words/document/) object and Aspose.Words cannot recognize the file format or the format is not supported, Aspose.Words will throw an exception. You can catch those exceptions and analyze them, but Aspose.Words also provides the [DetectFileFormat](https://reference.aspose.com/words/java/com.aspose.words/fileformatutil/#detectFileFormat-java.lang.String) method that allows us to quickly determine the file format without loading a document with possible exceptions.This method returns a[FileFormatInfo](https://reference.aspose.com/words/java/com.aspose.words/fileformatinfo/) object that contains the detected information about the file type.
+If you attempt to load a file into a [Document](https://reference.aspose.com/words/java/com.aspose.words/document/) object and Aspose.Words cannot recognize the file format or the format is not supported, Aspose.Words will throw an exception. You can catch those exceptions and analyze them, but Aspose.Words also provides the [detectFileFormat()](https://reference.aspose.com/words/java/com.aspose.words/fileformatutil/#detectFileFormat-java.lang.String) method that allows us to quickly determine the file format without loading a document with possible exceptions. This method returns a [FileFormatInfo](https://reference.aspose.com/words/java/com.aspose.words/fileformatinfo/) object that contains the detected information about the file type.
 
 {{% alert color="primary" %}}
 
-DetectFileFormat only checks the file format but does not validate the file format. There is no guarantee that the file will be opened successfully, even if **DetectFileFormat** returns that it is one of the supported formats. This is because of **DetectFileFormat** method reads only partial file format data, sufficient for checking the file format, but not enough for complete validation.
+DetectFileFormat only checks the file format but does not validate the file format. There is no guarantee that the file will be opened successfully, even if **detectFileFormat()** returns that it is one of the supported formats. This is because of **detectFileFormat()** method reads only partial file format data, sufficient for checking the file format, but not enough for complete validation.
 
 {{% /alert %}}
 
@@ -41,19 +41,19 @@ DetectFileFormat only checks the file format but does not validate the file form
 
 We can check the format compatibility of all files in the selected folder and sort them by format into corresponding subfolders.
 
-Since we are dealing with contents in a folder, the first thing we need to do is get a collection of all the files in this folder using the**GetFiles**method of the `Directory` class (from the `System.IO` namespace).
+Since we are dealing with contents in a folder, the first thing we need to do is get a collection of all the files in this folder using the `listFiles` method of the `java.io.File` class.
 
 The following code example shows how to get a list of all the files in the folder:
 
 {{< gist "aspose-words-gists" "13b31394822a30faeb5b68ad2b82fd75" "get-files.java" >}}
 
-When all the files are collected, the rest of the work is done by the**DetectFileFormat**method, which checks the file format.
+When all the files are collected, the rest of the work is done by the **detectFileFormat()** method, which checks the file format.
 
-The following code example shows how to iterate over the collected list of files, check the format of each file, and moves each file to the appropriate folder:
+The following code example shows how to iterate over the collected list of files, check the format of each file, and copy each file to the appropriate folder:
 
 {{< gist "aspose-words-gists" "13b31394822a30faeb5b68ad2b82fd75" "check-format-compatibility.java" >}}
 
-The files are moved into appropriate subfolders using the `Move` method of the `File` class, from the same `System.IO` namespace.
+The files are copied into appropriate subfolders using the `copyFile` method of the `FileUtils` class (Apache Commons IO).
 
 The following files are used in the example above. The file name is on the left and its description is on the right:
 
@@ -65,7 +65,7 @@ The following files are used in the example above. The file name is on the left 
 |  | Test File (Docm).docm | Office Open XML WordprocessingML document with macros. |
 |  | Test File (Dotx).dotx | Office Open XML WordprocessingML template. |
 |  | Test File (Dotm).dotm | Office Open XML WordprocessingML template with macros. |
-|  | Test File (XML).xml | FlatOPCOOXMLDocument. |
+|  | Test File (XML).xml | FlatOPC OOXML Document. |
 |  | Test File (RTF).rtf | Rich Text Format document. |
 |  | Test File (WordML).xml | Microsoft Word 2003 WordprocessingML document. |
 |  | Test File (HTML).html | HTML document. |
@@ -82,16 +82,16 @@ The following files are used in the example above. The file name is on the left 
 ## FAQ
 
 1. **Q:** How can I determine a document's format without loading it into a `Document` object?  
-   **A:** Use the static method `FileFormatUtil.detectFileFormat(String filePath)`. It returns a `FileFormatInfo` object that contains properties such as `getFileFormatType()` and `isEncrypted()`, allowing you to identify the format safely.
+   **A:** Use the static method `FileFormatUtil.detectFileFormat(String filePath)`. It returns a `FileFormatInfo` object that contains properties such as `getLoadFormat()` and `isEncrypted()`, allowing you to identify the format safely.
 
 2. **Q:** What information does `FileFormatInfo` provide?  
-   **A:** It tells you the detected `FileFormatType` (e.g., DOCX, RTF, HTML), whether the file is encrypted, and the version of the format if applicable. You can query these via methods like `getFileFormatType()` and `isEncrypted()`.
+   **A:** It tells you the detected format as a `LoadFormat` value (e.g., DOCX, RTF, HTML) and whether the file is encrypted, contains macros, or has a digital signature. You can query these via `getLoadFormat()`, `isEncrypted()`, `hasMacros()`, and `hasDigitalSignature()`.
 
-3. **Q:** Does a successful `DetectFileFormat` call guarantee that the file can be opened by Aspose.Words?  
-   **A:** No. `DetectFileFormat` only reads enough header data to identify the format. The file may still be corrupted or contain unsupported features, which could cause an exception when you later load it.
+3. **Q:** Does a successful `detectFileFormat()` call guarantee that the file can be opened by Aspose.Words?  
+   **A:** No. `detectFileFormat()` only reads enough header data to identify the format. The file may still be corrupted or contain unsupported features, which could cause an exception when you later load it.
 
 4. **Q:** How should I handle encrypted files when checking format compatibility?  
-   **A:** `FileFormatInfo.isEncrypted()` will be `true` for encrypted documents. You can move them to a separate folder or prompt the user for a password before attempting to load them with `Document.load(String, LoadOptions)`.
+   **A:** `FileFormatInfo.isEncrypted()` will be `true` for encrypted documents. You can move them to a separate folder or prompt the user for a password before attempting to load them with `new Document(String, LoadOptions)`.
 
-5. **Q:** Can I use `DetectFileFormat` to process many files in a folder automatically?  
-   **A:** Yes. Combine `FileFormatUtil.detectFileFormat` with `java.io.File.listFiles()` (or `Directory.getFiles` in the example) to iterate over each file, evaluate its format, and then move or categorize the file based on the returned `FileFormatInfo`.
+5. **Q:** Can I use `detectFileFormat()` to process many files in a folder automatically?  
+   **A:** Yes. Combine `FileFormatUtil.detectFileFormat` with `java.io.File.listFiles()` to iterate over each file, evaluate its format, and then move or categorize the file based on the returned `FileFormatInfo`.

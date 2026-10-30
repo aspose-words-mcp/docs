@@ -25,7 +25,7 @@ While building a report, some paragraphs containing only template syntax tags ca
 
 {{< highlight csharp >}}
 ReportingEngine engine = new ReportingEngine();
-engine.Options | = ReportBuildOptions.RemoveEmptyParagraphs;
+engine.Options |= ReportBuildOptions.RemoveEmptyParagraphs;
 engine.BuildReport(...);
 {{< /highlight >}}
 
@@ -136,7 +136,7 @@ For a tag with its name prepended with an exclamation mark, the engine treats a 
 
 - The option applies globally to all paragraphs in the document when set on `ReportingEngine.Options`. To apply the removal selectively to specific tags, prepend the tag name with an exclamation mark (`!`). For example, use `<<!foreach [in persons]>>` to remove paragraphs containing only that specific tag.
 
-- The option can be combined with other `ReportBuildOptions` using the bitwise OR operator, e.g., `engine.Options |= ReportBuildOptions.RemoveEmptyParagraphs | ReportBuildOptions.PreserveFormFields;`.
+- The option can be combined with other `ReportBuildOptions` using the bitwise OR operator, e.g., `engine.Options |= ReportBuildOptions.RemoveEmptyParagraphs | ReportBuildOptions.AllowMissingMembers;`.
 
 - When applied to table cells containing only a template tag, the option removes the entire paragraph (and thus the cell content), which may collapse the row if it becomes empty. The option does not delete the table structure itself.
 
@@ -160,7 +160,7 @@ For a tag with its name prepended with an exclamation mark, the engine treats a 
 4. **Q:** Can `ReportBuildOptions.RemoveEmptyParagraphs` be combined with other `ReportBuildOptions`?  
    **A:** Absolutely. Use the bitwise OR operator to combine multiple options, e.g.,  
    ```csharp
-   engine.Options |= ReportBuildOptions.RemoveEmptyParagraphs | ReportBuildOptions.PreserveFormFields;
+   engine.Options |= ReportBuildOptions.RemoveEmptyParagraphs | ReportBuildOptions.AllowMissingMembers;
    ```
 
 5. **Q:** Does the empty‑paragraph removal affect tables or other container elements?  

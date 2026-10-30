@@ -19,7 +19,7 @@ To learn more options, see the full list of properties for each field type in th
 
 ## How to evaluate `IF` condition
 
-If you want to evaluate `IF` condition after mail merge, you can use the [EvaluateCondition](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldif/evaluatecondition/) method that immediately returns the result of the expression evaluation.
+If you want to evaluate `IF` condition after mail merge, you can use the [evaluateCondition](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldif/evaluatecondition/) method that immediately returns the result of the expression evaluation.
 
 The following code example shows how to use this method:
 

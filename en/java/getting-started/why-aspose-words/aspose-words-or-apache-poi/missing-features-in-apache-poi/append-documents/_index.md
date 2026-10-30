@@ -27,7 +27,7 @@ See more details in the [Insert and Append Documents](/words/java/insert-and-app
 
 {{% /alert %}}
 
-To append documents using Aspose.Words, simply invoke the [AppendDocument](https://reference.aspose.com/words/cpp/aspose.words/document/)method ofthe [Document](https://reference.aspose.com/words/java/com.aspose.words/document/)class and specify the second document to append it at the end of the first one.
+To append documents using Aspose.Words, simply invoke the [appendDocument()](https://reference.aspose.com/words/java/com.aspose.words/document/#appendDocument-com.aspose.words.Document-int) method of the [Document](https://reference.aspose.com/words/java/com.aspose.words/document/) class and specify the second document to append it at the end of the first one.
 
 The following code example shows how to append a document:
 

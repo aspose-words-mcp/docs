@@ -41,11 +41,11 @@ In Aspose.Words, users can create a table in a document using the [DocumentBuild
 
 1. Start the table with [StartTable](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/starttable/)
 2. Add a cell to the table using [InsertCell](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcell/) – this automatically starts a new row
-3. Optionally, use the [CellFormat](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_cellformat/) property to specify cell formatting
+3. Optionally, use the [get_CellFormat()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_cellformat/) property to specify cell formatting
 4. Insert the cell content using the appropriate **DocumentBuilder** methods such as [Writeln](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/writeln/), [InsertImage](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertimage/), and others
 5. Repeat steps 2-4 until the row is complete
 6. Call [EndRow](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endrow/) to end the current row
-7. Optionally, use the [RowFormat](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_rowformat/) property to specify row formatting
+7. Optionally, use the [get_RowFormat()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_rowformat/) property to specify row formatting
 8. Repeat steps 2-7 until the table is complete
 9. Call [EndTable](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endtable/) to finish building the table
 
@@ -139,7 +139,7 @@ Let's take a closer look at these ways of creating tables and compare their pros
    **A:** Load the source table, call `Aspose::Words::Node::Clone(true)` to create a deep clone, and then insert the cloned node using `InsertAfter` or `AppendChild` on the target node. The cloned table retains all formatting, borders, and cell styles.
 
 2. **Q:** What is the correct way to merge cells horizontally or vertically?  
-   **A:** Use the `Cell::get_CellFormat()->set_HorizontalMerge(Aspose::Words::Tables::CellMerge::First)` for the first cell and `CellMerge::Previous` for the cells that should be merged with it. For vertical merging, set `VerticalMerge` in the same way on the cells in the same column.
+   **A:** Use the `Cell::get_CellFormat()->set_HorizontalMerge(Aspose::Words::Tables::CellMerge::First)` for the first cell and `CellMerge::Previous` for the cells that should be merged with it. For vertical merging, set `set_VerticalMerge()` in the same way on the cells in the same column.
 
 3. **Q:** How do I create a nested table inside a cell?  
    **A:** After inserting a cell with `DocumentBuilder::InsertCell()`, call `DocumentBuilder::StartTable()` while the cursor is still inside that cell. Build the inner table as usual and finish it with `EndTable()`. The outer table remains intact.
@@ -148,4 +148,4 @@ Let's take a closer look at these ways of creating tables and compare their pros
    **A:** Yes. Use `DocumentBuilder::InsertHtml(const System::String& html)` where the HTML contains `<table>`, `<tr>`, and `<td>` tags. The method converts the HTML markup into a Word table, preserving basic cell contents and simple formatting.
 
 5. **Q:** Why does a table created via the DOM appear empty after I add rows and cells?  
-   **A:** When a `Table` node is created directly, it starts with no child rows. Call `Table::EnsureMinimum(1)` (or a higher number) before adding content to guarantee that at least one `Row` and `Cell` exist. After that you can safely append rows, cells, and other nodes.
+   **A:** When a `Table` node is created directly, it starts with no child rows. Call `Table::EnsureMinimum()` before adding content to guarantee that at least one `Row` and `Cell` exist. After that you can safely append rows, cells, and other nodes.

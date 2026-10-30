@@ -98,7 +98,7 @@ internal class CustomAiModel : OpenAiModel
    **A:** Use the static `AiModel.Create` method and pass the corresponding `AiModelType` value. For example:  
 
    ```csharp
-   AiModel gpt4o = AiModel.Create(AiModelType.OpenAi_Gpt4o);
+   AiModel gpt4o = AiModel.Create(AiModelType.Gpt4O);
    ```
 
    The returned `AiModel` object can then be used for summarization, translation, or other AI‑driven operations.

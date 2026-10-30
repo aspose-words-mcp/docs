@@ -36,11 +36,11 @@ Aspose.Words provides two ways to apply the find and replace operation by using 
 
 In addition, you can use special metacharacters with simple string replacement and regular expressions to specify breaks within the find and replace operation.
 
-Aspose.Words presents the find and replace functionality with the [IReplacingCallBack](https://reference.aspose.com/words/java/com.aspose.words/ireplacingcallback/) namespace. You can work with many options during the find and replace process using [FindReplaceOptions](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/) class.
+Aspose.Words presents the find and replace functionality with the [IReplacingCallback](https://reference.aspose.com/words/java/com.aspose.words/ireplacingcallback/) interface. You can work with many options during the find and replace process using [FindReplaceOptions](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/) class.
 
 ### Find and Replace Text Using Simple String Replacement {#find-and-replace-text-using-simple-string-replacement}
 
-You can use one of the [Replace](https://reference.aspose.com/words/java/com.aspose.words/range/#replace-java.lang.String-java.lang.String) methods to find or replace a particular string and return the number of replacements that were made. In this case, you can specify a string to be replaced, a string that will replace all its occurrences, whether the replacement is case-sensitive, and whether only stand-alone words will be affected.
+You can use one of the [replace()](https://reference.aspose.com/words/java/com.aspose.words/range/#replace-java.lang.String-java.lang.String) methods to find or replace a particular string and return the number of replacements that were made. In this case, you can specify a string to be replaced, a string that will replace all its occurrences, whether the replacement is case-sensitive, and whether only stand-alone words will be affected.
 
 The following code example shows how to find the string “_CustomerName_” and replace it with the string *“James Bond”*:
 
@@ -58,7 +58,7 @@ And after applying simple string replacement:
 
 A regular expression (regex) is a pattern that describes a certain sequence of text. Suppose you want to replace all double occurrences of a word with a single word occurrence. Then you can apply the following regular expression to specify the double-word pattern: `([a-zA-Z]+) \1`.
 
-Use the other [Replace](https://reference.aspose.com/words/java/com.aspose.words/range/#replace-java.util.regex.Pattern-java.lang.String) method to search and replace particular character combinations by setting the `Regex` parameter as the regular expression pattern to find matches.
+Use the other [replace()](https://reference.aspose.com/words/java/com.aspose.words/range/#replace-java.util.regex.Pattern-java.lang.String) method to search and replace particular character combinations by setting the `Regex` parameter as the regular expression pattern to find matches.
 
 The following code example shows how to replace strings that match a regular expression pattern with a specified replacement string:
 
@@ -106,7 +106,7 @@ And after applying footer string replacement:
 
 While applying the find and replace operation, you can ignore certain segments of the text. So, certain parts of the text can be excluded from the search, and the find and replace can be applied only to the remaining parts.
 
-Aspose.Words provides many find and replace properties for ignoring text such as [IgnoreDeleted](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreDeleted), [IgnoreFieldCodes](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreFieldCodes), [IgnoreFields](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreFields), [IgnoreFootnotes](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreFootnotes), and [IgnoreInserted](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreInserted).
+Aspose.Words provides many find and replace properties for ignoring text such as [getIgnoreDeleted()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreDeleted), [getIgnoreFieldCodes()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreFieldCodes), [getIgnoreFields()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreFields), [getIgnoreFootnotes()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreFootnotes), and [getIgnoreInserted()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getIgnoreInserted).
 
 The following code example shows how to ignore text inside delete revisions:
 
@@ -114,7 +114,7 @@ The following code example shows how to ignore text inside delete revisions:
 
 ## Customize Find and Replace Operation {#customize-find-and-replace-operation}
 
-Aspose.Words provides many different [properties](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/) to find and replace text such as applying specific format with [ApplyFont](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getApplyFont) and [ApplyParagraphFormats](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getApplyParagraphFormat) properties, using substitutions in replacement patterns with [UseSubstitutions](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getUseSubstitutions) property, and others.
+Aspose.Words provides many different [properties](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/) to find and replace text such as applying specific format with [getApplyFont()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getApplyFont) and [ApplyParagraphFormats](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getApplyParagraphFormat) properties, using substitutions in replacement patterns with [getUseSubstitutions()](https://reference.aspose.com/words/java/com.aspose.words/findreplaceoptions/#getUseSubstitutions) property, and others.
 
 The following code example shows how to highlight a specific word in your document:
 
@@ -138,7 +138,7 @@ The following code example shows how to prepend a line number to each line:
    **A:** Implement the `IReplacingCallback` interface and, in the `replacing` method, insert the HTML using `DocumentBuilder.insertHtml`. Set `FindReplaceOptions.setReplacingCallback` to your callback instance, then call `Range.replace` with a regex that matches the placeholder.
 
 2. **Q:** What is the easiest way to replace a merge field without affecting its surrounding runs?  
-   **A:** Use `Range.replace` with the exact merge‑field name (e.g., `"«CustomerName»"`) and set `FindReplaceOptions.setMatchWholeWord(true)`. This replaces the whole field node, leaving other runs untouched.
+   **A:** `Range.replace` does not find a merge field by its displayed name such as `«CustomerName»`, because that text is the field result. Run a mail merge, or move a `DocumentBuilder` to the field with `builder.moveToMergeField("CustomerName")` and write the value with `builder.write(...)`. `moveToMergeField` removes the field, so the surrounding runs are not affected.
 
 3. **Q:** How do I ignore text inside deleted revisions or footnotes during a replace operation?  
    **A:** Configure `FindReplaceOptions` by enabling `setIgnoreDeleted(true)` and/or `setIgnoreFootnotes(true)`. Pass the options to `Range.replace` and the engine will skip those nodes.

@@ -98,16 +98,16 @@ The following code example shows how to optimize document content for Microsoft 
 ## FAQ
 
 1. **Q:** How can I set the zoom level of a Word document when it opens in Microsoft Word?  
-   **A:** Use the `ViewOptions.ZoomPercent` property. Assign the desired percentage (e.g., `50`) to `document.LayoutOptions.ViewOptions.ZoomPercent` before saving the document. Note that some Word versions, such as Word 2013, ignore the stored zoom value and use the last used zoom instead.
+   **A:** Use the `ViewOptions.ZoomPercent` property. Assign the desired percentage (e.g., `50`) to `document.ViewOptions.ZoomPercent` before saving the document. Note that some Word versions, such as Word 2013, ignore the stored zoom value and use the last used zoom instead.
 
 2. **Q:** How do I change the view mode (Print Layout, Web Layout, etc.) programmatically?  
-   **A:** Set the `ViewOptions.ViewType` property to one of the `ViewType` enumeration values, for example `ViewType.PrintLayout` or `ViewType.Web`. This determines how Word initially displays the document when opened.
+   **A:** Set the `ViewOptions.ViewType` property to one of the `ViewType` enumeration values, for example `ViewType.PageLayout` or `ViewType.Web`. This determines how Word initially displays the document when opened.
 
 3. **Q:** How can I specify language preferences to ensure correct display of Asian characters?  
-   **A:** Create a `LanguagePreferences` object, add the required editing languages (e.g., `languagePreferences.AddEditingLanguage(LanguageId.Japanese)`), and assign it to `LoadOptions.LanguagePreferences` before loading or to `document.LanguagePreferences` after creation. This influences spell‑checking, hyphenation, and character rendering.
+   **A:** Add the required editing languages to `LoadOptions.LanguagePreferences` (e.g., `loadOptions.LanguagePreferences.AddEditingLanguage(EditingLanguage.Japanese)`) and pass the `LoadOptions` to the `Document` constructor when loading. This influences spell‑checking, hyphenation, and character rendering.
 
 4. **Q:** What is the purpose of the `OptimizeFor` method and when should I use it?  
-   **A:** `CompatibilityOptions.OptimizeFor` adjusts the document's internal structures to match a specific Microsoft Word version, preventing the Compatibility Mode ribbon from appearing. Call it with the target `WordVersion` (e.g., `WordVersion.Word2016`) and optionally set `CompatibilityOptions.Compliance` to `Iso29500_2008_Transitional` or higher for better standards compliance.
+   **A:** `CompatibilityOptions.OptimizeFor` adjusts the document's internal structures to match a specific Microsoft Word version, preventing the Compatibility Mode ribbon from appearing. Call it with the target `MsWordVersion` (e.g., `MsWordVersion.Word2016`) and optionally save with `OoxmlSaveOptions.Compliance` set to `OoxmlCompliance.Iso29500_2008_Transitional` or higher for better standards compliance.
 
 5. **Q:** My document still shows the Compatibility Mode ribbon after calling `OptimizeFor`. What else should I check?  
-   **A:** Verify that the `CompatibilityOptions.Compliance` property is set to at least `Iso29500_2008_Transitional`. Also ensure no older compatibility settings remain in the document (e.g., older `CompatibilityOptions` values). Re‑saving the document after applying both settings usually resolves the issue.
+   **A:** Verify that you save with `OoxmlSaveOptions.Compliance` set to at least `OoxmlCompliance.Iso29500_2008_Transitional`. Also ensure no older compatibility settings remain in the document (e.g., older `CompatibilityOptions` values). Re‑saving the document after applying both settings usually resolves the issue.

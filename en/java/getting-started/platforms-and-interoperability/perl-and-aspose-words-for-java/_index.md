@@ -21,8 +21,7 @@ The **Inline::Java** module allows you to put Java source code directly "inline"
 
 Here are the steps to install the Inline::Java module: 
 
-1. Add theoryx5 ppm repo using the following command: C:\Perl\bin> ppm repo add <https://theoryx5.uwinnipeg.ca/ppms/> 
-1. Install the Inline::Java module: **C:\Perl\bin> ppm install inline::Java** 
+1. Install the Inline::Java module from CPAN: **C:\Perl\bin> cpan Inline::Java** 
 1. Set path to your JDK: **C:\Perl\bin> set** **PERL** **_INLINE_JAVA_J2SDK=C:\Program Files\Java\jdk1.6.0_03** 
 
 Download the [latest version of Aspose.Words for Java](https://releases.aspose.com/words/java/) . Extract files and copy the lib folder with jar files to the root folder of your project. 
@@ -63,20 +62,21 @@ my $words = new Words();
 $words->HelloWorld();
 {{< /highlight >}}
 
-This is a simple application that creates an empty document, inserts some content and saves it as a Microsoft Word .DOC document.
+You can also use Aspose.Words classes directly from Perl, without writing Java code. The `study` option of Inline::Java makes the listed Java classes available in Perl:
 
 **Perl**
 
 {{< highlight csharp >}}
-oleobject doc;
-oleobject builder
-doc = CREATE oleobject;
-doc.ConnectToNewObject("Aspose.Words.Document");
-builder = CREATE oleobject;
-builder.ConnectToNewObject("Aspose.Words.DocumentBuilder");
-builder.Document = doc;
-builder.Write("Hello world!");
-doc.Save("C:\Temp\out.doc");
+use Inline (
+    Java => 'study',
+    study => ['com.aspose.words.Document', 'com.aspose.words.DocumentBuilder'],
+    classpath => 'lib/Aspose.Words.jdk16.jar',
+);
+
+my $doc = new com::aspose::words::Document();
+my $builder = new com::aspose::words::DocumentBuilder($doc);
+$builder->write("Hello world!");
+$doc->save("C:\\Temp\\out.doc");
 {{< /highlight >}}
 
 ## Simple Mail Merge
@@ -87,33 +87,30 @@ Aspose.Words provides a reporting generation facility similar to Microsoft Word'
 
 {{< highlight csharp >}}
 
-// Declare local variables
-string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Temp\myDb.mdb";
-string commandString = "SELECT * FROM Clients";
-oleobject connection;
-oleobject RS;
-oleobject doc;
-oleobject helper;
+#!C:\Perl\bin\perl.exe
 
-// Create ComHelper, it is needed to open existing document
-helper = CREATE oleobject;
-helper.ConnectToNewObject("Aspose.Words.ComHelper");
-
-// Open template
-doc = helper.Open("C:\Temp\in.doc");
-
-// Create database connection
-connection = CREATE oleobject;
-connection.ConnectToNewObject("ADODB.Connection");
-connection.Open(connectionString);
-//Perform data selection
-RS = connection.Execute(commandString);
-//Execute mail merge
-doc.MailMerge.ExecuteADO(RS);
-RS.Close();
-connection.Close();
-//Save generated document
-doc.Save("C:\Temp\out.doc");
+use Inline Java => <<'END_OF_JAVA_CODE', CLASSPATH=> 'lib/Aspose.Words.jdk16.jar';
+    import com.aspose.words.*;
+    class Words
+    {
+        public Words()
+        {
+        }
+        public void MailMerge() throws Exception
+        {
+            //Open template document
+            Document doc = new Document("C:\\Temp\\in.doc");
+            //Fill the merge fields with data
+            doc.getMailMerge().execute(
+                new String[] { "FullName", "Company", "City" },
+                new Object[] { "James Bond", "MI5", "London" });
+            //Save generated document
+            doc.save("C:\\Temp\\out.doc");
+        }
+    }
+END_OF_JAVA_CODE
+my $words = new Words();
+$words->MailMerge();
 {{< /highlight >}}
 
 ## Save or Convert a Document
@@ -124,13 +121,28 @@ With Aspose.Words, you can save a document in a variety of formats. For the full
 
 {{< highlight csharp >}}
 
-### a document in a variety of formats.
+#!C:\Perl\bin\perl.exe
 
-#### = 1, therefore 1 is passed as a parameter to indicate save format.
-
-doc.Save_2("C:\Temp\out.doc", 1);
-doc.Save_2("C:\Temp\out.txt", 2);
-doc.Save_2("C:\Temp\out.html", 4);
-doc.Save_2("C:\Temp\out.rtf", 6);
-doc.Save_2("C:\Temp\out.docx", 8);
+use Inline Java => <<'END_OF_JAVA_CODE', CLASSPATH=> 'lib/Aspose.Words.jdk16.jar';
+    import com.aspose.words.*;
+    class Words
+    {
+        public Words()
+        {
+        }
+        public void SaveInFormats() throws Exception
+        {
+            //Open the document
+            Document doc = new Document("C:\\Temp\\in.doc");
+            //The SaveFormat value sets the output format
+            doc.save("C:\\Temp\\out.doc", SaveFormat.DOC);
+            doc.save("C:\\Temp\\out.txt", SaveFormat.TEXT);
+            doc.save("C:\\Temp\\out.html", SaveFormat.HTML);
+            doc.save("C:\\Temp\\out.rtf", SaveFormat.RTF);
+            doc.save("C:\\Temp\\out.docx", SaveFormat.DOCX);
+        }
+    }
+END_OF_JAVA_CODE
+my $words = new Words();
+$words->SaveInFormats();
 {{< /highlight >}}

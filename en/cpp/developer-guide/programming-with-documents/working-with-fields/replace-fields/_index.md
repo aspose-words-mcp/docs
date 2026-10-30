@@ -17,7 +17,7 @@ Replacing fields is often required when you wish to save your document as a stat
 
 The diagram below shows how the `IF` field is stored in a document:
 
-* the text is surrounded by the special field nodes – [FieldStart](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_fieldstart/) and [FieldEnd](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_fieldend/)
+* the text is surrounded by the special field nodes – [get_FieldStart()](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_fieldstart/) and [get_FieldEnd()](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_fieldend/)
 * the [FieldSeparator](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_separator/) node separates the text within the field into the field code and field result
 * the field code defines the general behavior of the field, while the field result retains the most recent result when this field is updated using Microsoft Word or Aspose.Words
 * the field result is what is stored in the field and displayed in the document when viewed
@@ -44,11 +44,11 @@ The following code example shows how to replace the field with its most recent r
 
 Since the **ConvertFieldsToStaticText** method accepts two parameters – the [CompositeNode](https://reference.aspose.com/words/cpp/aspose.words/compositenode/) properties and the [FieldType](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldtype/) enumeration, it is possible to pass any composite node to this method. This allows fields to be converted to static text only in specific parts of the document.
 
-For example, you can pass a [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) object and convert fields of the specified type from the entire document to static text, or you can pass a [Body](https://reference.aspose.com/words/cpp/aspose.words.body/) object of a section and only convert the fields found in that body.
+For example, you can pass a [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) object and convert fields of the specified type from the entire document to static text, or you can pass a [Body](https://reference.aspose.com/words/cpp/aspose.words/body/) object of a section and only convert the fields found in that body.
 
 {{% alert color="primary" %}}
 
-When passing a block‑level node such as a [Paragraph](https://reference.aspose.com/words/cpp/aspose.words.paragraph/), be aware that in some cases, fields can span across multiple paragraphs. If this happens it is recommended to pass the parent of the composite instead to avoid this.
+When passing a block‑level node such as a [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), be aware that in some cases, fields can span across multiple paragraphs. If this happens it is recommended to pass the parent of the composite instead to avoid this.
 
 {{% /alert %}}
 
@@ -75,16 +75,16 @@ The following code  example shows how to convert all `IF` fields in the last par
 ## FAQ
 
 1. **Q:** How can I replace a specific field type (e.g., `DATE`, `IF`) with its current result using C++?  
-   **A:** Use the static method `FieldHelper::ConvertFieldsToStaticText`. Pass the document (or a specific `CompositeNode`) as the first argument and the desired `FieldType` enumeration value (e.g., `FieldType::FieldDate`, `FieldType::FieldIf`) as the second argument. The method replaces each matching field with the text stored in its field result node.
+   **A:** Use the `FieldsHelper::ConvertFieldsToStaticText` helper method from the example above (it is part of the example code, not of the Aspose.Words API). Pass the document (or a specific `CompositeNode`) as the first argument and the desired `FieldType` enumeration value (e.g., `FieldType::FieldDate`, `FieldType::FieldIf`) as the second argument. The method replaces each matching field with the text stored in its field result node.
 
 2. **Q:** Why does converting a `PAGE` field in a header to static text show the same page number on every page?  
    **A:** Header and footer sections are shared across pages. When a `PAGE` field is converted to static text, the field result is evaluated once (using the page number of the last page in the section) and the same text is placed in every header instance. To keep per‑page numbers, leave the `PAGE` field as a field or replace it only in the body where page numbers are not needed.
 
 3. **Q:** Can I replace fields only in a particular part of the document, such as a single section or body?  
-   **A:** Yes. Pass the specific node you want to process (e.g., `Section::GetBody()`, a `Paragraph`, or any `CompositeNode`) to `ConvertFieldsToStaticText`. Only fields that are descendants of that node will be converted, leaving the rest of the document untouched.
+   **A:** Yes. Pass the specific node you want to process (e.g., `Section::get_Body()`, a `Paragraph`, or any `CompositeNode`) to `ConvertFieldsToStaticText`. Only fields that are descendants of that node will be converted, leaving the rest of the document untouched.
 
 4. **Q:** What should I do if a field spans multiple paragraphs when using `ConvertFieldsToStaticText`?  
-   **A:** Fields that cross paragraph boundaries are stored as separate field nodes in each paragraph. To ensure the whole field is replaced correctly, pass the parent node that contains all involved paragraphs (for example, the `Section` or the `Body`) instead of a single `Paragraph`. This way the method can locate the complete field structure.
+   **A:** A field can span several paragraphs: its field start and field end are then in different paragraphs. To ensure the whole field is replaced correctly, pass the parent node that contains all involved paragraphs (for example, the `Section` or the `Body`) instead of a single `Paragraph`. This way the method can locate the complete field structure.
 
 5. **Q:** How do I replace **all** fields in a document with static text in a single call?  
-   **A:** Call `FieldHelper::ConvertFieldsToStaticText(document, FieldType::FieldAny)`. The `FieldAny` enumeration value tells the method to process every field type found in the document, converting each to its current result text.
+   **A:** Call `Document::UnlinkFields()` (or `Range::UnlinkFields()` for a part of the document). It replaces every field with its current result text.

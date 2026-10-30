@@ -28,6 +28,6 @@ To Write anything in the Word Document using Aspose.Words for Java in Php, simpl
 
 ## Download Running Code
 
-Download **Hello World(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Hello World (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_PHP/src/quickstart/helloworld/php/HelloWorld.php)

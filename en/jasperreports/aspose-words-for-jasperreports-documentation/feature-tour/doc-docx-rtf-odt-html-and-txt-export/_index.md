@@ -12,7 +12,7 @@ timestamp: 2024-01-27-14-07-04
 
 {{% alert color="primary" %}}
 
-[JasperReports](https://sourceforge.net/projects/jasperreports/) and [JasperServer](https://sourceforge.net/projects/jasperserver/) do not have built-in abilities to export reports as Microsoft Word documents (apart from the RTF format that uses positioned items), but using Aspose.Words for JasperReports, you will get access to the following additional export formats:
+[JasperReports](https://sourceforge.net/projects/jasperreports/) and JasperServer do not have built-in abilities to export reports as Microsoft Word documents (apart from the RTF format that uses positioned items), but using Aspose.Words for JasperReports, you will get access to the following additional export formats:
 
 - DOC – Word document via Aspose.Words 
 - DOCX – Office Open XML (OOXML) document via Aspose.Words 

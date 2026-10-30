@@ -61,13 +61,13 @@ The good news is that LINQ Reporting Engine can be further extended to fulfill a
 
 ## See Also
 
-- [List of fields supported by Microsoft Word](https://support.microsoft.com/en-us/office/list-of-field-codes-in-word-1ad6d91a-55a7-4a8d-b535-cf7888659a51)
+- [List of fields supported by Microsoft Word](https://support.microsoft.com/en-us/word/list-of-field-codes-in-word)
 
 ## Related APIs
 
 - [Document](https://reference.aspose.com/words/net/aspose.words/document/)
 - [MailMerge](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/)
-- [LinqReportingEngine](https://reference.aspose.com/words/net/aspose.words.reporting/linqreportingengine/)
+- [ReportingEngine](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/)
 - [IMailMergeDataSource](https://reference.aspose.com/words/net/aspose.words.mailmerging/imailmergedatasource/)
 
 ------

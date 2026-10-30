@@ -13,7 +13,7 @@ url: /nodejs-net/working-with-content-control-sdt/
 timestamp: 2025-07-09-10-05-05
 ---
 
-In Microsoft Word, you can create a form by starting with a template and adding content controls, including checkboxes, text boxes, date pickers, and drop-down lists.In Aspose.Words, a Structured Document Tag or content control from any document loaded into Aspose.Words is imported as a [StructuredDocumentTag](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/) node.Structured document tags (SDT or content control) allow embedding customer-defined semantics as well as its behaviour and appearance into a document.[StructuredDocumentTag](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/) can occur in a document in the following places:
+In Microsoft Word, you can create a form by starting with a template and adding content controls, including checkboxes, text boxes, date pickers, and drop-down lists. In Aspose.Words, a Structured Document Tag or content control from any document loaded into Aspose.Words is imported as a [StructuredDocumentTag](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/) node. Structured document tags (SDT or content control) allow embedding customer-defined semantics as well as its behaviour and appearance into a document. [StructuredDocumentTag](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/) can occur in a document in the following places:
 
 - Block-level - Among paragraphs and tables, as a child of a [Body](https://reference.aspose.com/words/nodejs-net/aspose.words/body/), [HeaderFooter](https://reference.aspose.com/words/nodejs-net/aspose.words/headerfooter/), [Comment](https://reference.aspose.com/words/nodejs-net/aspose.words/comment/), [Footnote](https://reference.aspose.com/words/nodejs-net/aspose.words.notes/footnote/) or a [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/) node
 - Row-level - Among rows in a table, as a child of a **Table** node
@@ -39,11 +39,11 @@ The following code example demonstrates how to create content control of type ch
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "sdt-check-box.js" >}}
 
-The following code example demonstrateshow to create content control of type rich text box.
+The following code example demonstrates how to create content control of type rich text box.
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "sdt-rich-text-box.js" >}}
 
-The following code example demonstrateshow to create content control of the type combo box.
+The following code example demonstrates how to create content control of the type combo box.
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "sdt-combo-box.js" >}}
 
@@ -55,7 +55,7 @@ The following code example shows how to set the current state of the checkbox:
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "current-state-of-check-box.js" >}}
 
-The following code example showshow to modify content controls of type plain text box, drop-down list and picture:
+The following code example shows how to modify content controls of type plain text box, drop-down list and picture:
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "modify-sdt.js" >}}
 
@@ -69,13 +69,13 @@ You can download the sample file of these examples from [Aspose.Words GitHub](ht
 
 You can bind content controls with XML data (*custom XML part*) in Word documents.
 
-The following code example shows how tobind content control to custom XML parts:
+The following code example shows how to bind content control to custom XML parts:
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "bind-sdt-to-custom-xml-part.js" >}}
 
 ## XMLMapping of Structured Document Tag Range
 
-You can get the mapping of this structured document tag range to XML data in a custom XML part of the current document using the [StructuredDocumentTagRangeStart.xmlMapping](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttagrangestart/xmlmapping/) property.However, the [setMapping](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/xmlmapping/setMapping/) method can be used to map a structured document tag range to XML data.
+You can get the mapping of this structured document tag range to XML data in a custom XML part of the current document using the [StructuredDocumentTagRangeStart.xmlMapping](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttagrangestart/xmlmapping/) property. However, the [setMapping](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/xmlmapping/setMapping/) method can be used to map a structured document tag range to XML data.
 
 The following code example shows how to set XML mapping:
 
@@ -96,13 +96,13 @@ The [StructuredDocumentTag.color](https://reference.aspose.com/words/nodejs-net/
 1. MS Word highlights the background of the content control when the mouse moves over the content control. This helps to identify the content control. The color of highlighting is a bit "softer" than the *color*. For example, MS Word highlights the background with the pink color, when *color* is red.
 2. When you interact (editing, picking etc) with the content control, the border of content control is colored with the *color*.
 
-The following code example showshow to change the color of content control:
+The following code example shows how to change the color of content control:
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "sdt-color.js" >}}
 
 ## How to Set Style to Format Text Typed into the Content Control
 
-If you want to set the style of content control, you can use [StructuredDocumentTag.style](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/style/)or [StructuredDocumentTag.styleName](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/stylename/) properties. When you type the text into content control in the output document, the typed text will have the style "Quote".
+If you want to set the style of content control, you can use [StructuredDocumentTag.style](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/style/) or [StructuredDocumentTag.styleName](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/structureddocumenttag/stylename/) properties. When you type the text into content control in the output document, the typed text will have the style "Quote".
 
 {{% alert color="primary" %}}
 
@@ -116,8 +116,8 @@ The following code example shows how to set the style of content control:
 
 ## Working with Repeating Section Content Control
 
-The repeating section content control allows repeating the content contained within it. Using Aspose.Words, thestructured document tag nodes of the repeating section and repeating section item types can be created and for this purpose,[SdtType](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/sdttype/) enumeration type provides[RepeatingSectionItem](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/sdttype/) property.
+The repeating section content control allows repeating the content contained within it. Using Aspose.Words, the structured document tag nodes of the repeating section and repeating section item types can be created and for this purpose, [SdtType](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/sdttype/) enumeration type provides [RepeatingSectionItem](https://reference.aspose.com/words/nodejs-net/aspose.words.markup/sdttype/) property.
 
-The following code example showshow to bind a repeating section content control to a table:
+The following code example shows how to bind a repeating section content control to a table:
 
 {{< gist "aspose-words-gists" "625644238d5cac4a2215ccfe46030666" "repeating-section-mapped-to-custom-xml-part.js" >}}

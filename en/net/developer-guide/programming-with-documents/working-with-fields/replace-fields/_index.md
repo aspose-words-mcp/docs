@@ -96,13 +96,13 @@ The following code  example shows how to convert all `IF` fields in the last par
 ## FAQ
 
 1. **Q:** How can I replace all fields in a document with their current results?  
-   **A:** Use the static method `FieldHelper.ConvertFieldsToStaticText(document, FieldType.Any)` where `document` is an instance of `Document`. This walks the entire document tree and replaces every field with the text stored in its field result node.
+   **A:** Call `document.UnlinkFields()`. This walks the entire document and replaces every field with its most recent result. To convert only fields of a certain type, use the `ConvertFieldsToStaticText` method shown above.
 
 2. **Q:** I only want to replace a specific type of field, such as `IF` fields. How do I do that?  
    **A:** Pass the desired `FieldType` enumeration value to `ConvertFieldsToStaticText`. For example:  
    ```csharp
    Document doc = new Document("input.docx");
-   FieldHelper.ConvertFieldsToStaticText(doc, FieldType.FieldIf);
+   ConvertFieldsToStaticText(doc, FieldType.FieldIf);
    ```  
    This converts only `IF` fields, leaving all other fields untouched.
 

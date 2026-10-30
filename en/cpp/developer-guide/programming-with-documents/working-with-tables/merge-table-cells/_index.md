@@ -19,14 +19,14 @@ Sometimes certain rows in a table require a heading or large blocks of text that
 
 In Aspose.Words, merged cells are represented by the following properties of the [CellFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/) class:
 
-- [HorizontalMerge](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/get_horizontalmerge/) which describes if the cell is a part of a horizontal merge of cells
-- [VerticalMerge](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/get_verticalmerge/) which describes if the cell is a part of a vertical merge of cells
+- [get_HorizontalMerge()](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/get_horizontalmerge/) which describes if the cell is a part of a horizontal merge of cells
+- [get_VerticalMerge()](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/get_verticalmerge/) which describes if the cell is a part of a vertical merge of cells
 
 The values of these properties determine the merge behavior of cells:
 
-- The first cell in a sequence of merged cells will have [CellMerge.First](https://reference.aspose.com/words/cpp/aspose.words.tables/cellmerge/)
-- Any subsequently merged cells will have [CellMerge.Previous](https://reference.aspose.com/words/cpp/aspose.words.tables/cellmerge/)
-- A cell that is not merged will have [CellMerge.None](https://reference.aspose.com/words/cpp/aspose.words.tables/cellmerge/)
+- The first cell in a sequence of merged cells will have [CellMerge::First](https://reference.aspose.com/words/cpp/aspose.words.tables/cellmerge/)
+- Any subsequently merged cells will have [CellMerge::Previous](https://reference.aspose.com/words/cpp/aspose.words.tables/cellmerge/)
+- A cell that is not merged will have [CellMerge::None](https://reference.aspose.com/words/cpp/aspose.words.tables/cellmerge/)
 
 {{% alert color="primary" %}}
 
@@ -36,7 +36,7 @@ Sometimes, when loading existing document cells in a table, they will appear mer
 
 ## Check if Cell is Merged
 
-To check if a cell is part of a sequence of merged cells, we simply check the **HorizontalMerge** and **VerticalMerge** properties.
+To check if a cell is part of a sequence of merged cells, we simply check the **get_HorizontalMerge()** and **get_VerticalMerge()** properties.
 
 The following code example shows how to print the horizontal and vertical cell merge type:
 
@@ -44,11 +44,11 @@ The following code example shows how to print the horizontal and vertical cell m
 
 ## Merged Cells in a Table {#merge-cells-in-a-table}
 
-To merge cells in a table created with the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/), you need to set the appropriate merge type for each cell where the merge is expected – first **CellMerge.First** and then **CellMerge.Previous**.
+To merge cells in a table created with the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/), you need to set the appropriate merge type for each cell where the merge is expected – first **CellMerge::First** and then **CellMerge::Previous**.
 
-Also, you must remember to clear the merge setting for those cells where no merge is required – this can be done by setting the first non-merge cell to **CellMerge.None**. If this is not done, all cells in the table will be merged.
+Also, you must remember to clear the merge setting for those cells where no merge is required – this can be done by setting the first non-merge cell to **CellMerge::None**. If this is not done, all cells in the table will be merged.
 
-The following code example shows how tocreate a table with two rows where the cells in the first row are merged horizontally:
+The following code example shows how to create a table with two rows where the cells in the first row are merged horizontally:
 
 {{< gist "aspose-words-gists" "03b0c69804cda6427adc3f12cc6ba2d3" "horizontal-merge.h" >}}
 
@@ -68,13 +68,11 @@ The following code example shows how to merge a range of cells between two speci
 
 {{< gist "aspose-words-gists" "03b0c69804cda6427adc3f12cc6ba2d3" "merge-cell-range.h" >}}
 
-Depending on the version of the Framework you are using, you may want to refine this method by turning it into an extension method. In this case, you can call this method directly on a cell to merge a range of cells, such as `cell1.Merge(cell2)`.
-
 ## Vertical and Horizontal Merged Cells in a Table {#vertical-and-Horizontal-merged-cells-in-the-table}
 
 As we have said in previous articles, a table in Microsoft Word is a set of independent rows. Each row has a set of cells that are independent of the cells of other rows. Thus, in the Microsoft Word table there is no such object as a “column”, and “1st column” is something like “the set of the 1st cells of each row in the table”. This allows users to have a table in which, for example, the 1st row consists of two cells – 2cm and 1cm, and the 2nd row consists of two different cells – 1cm and 2cm wide. And Aspose.Words supports this concept of tables.
 
-A table in HTML has a essentially different structure: each row has the same number of cells and (it is important for the task) each cell has the width of the corresponding column, the same for all cells in one column. So if **HorizontalMerge** and **VerticalMerge** return an incorrect value, use the following code example:
+A table in HTML has a essentially different structure: each row has the same number of cells and (it is important for the task) each cell has the width of the corresponding column, the same for all cells in one column. So if **get_HorizontalMerge()** and **get_VerticalMerge()** return an incorrect value, use the following code example:
 
 {{< gist "aspose-words-gists" "03b0c69804cda6427adc3f12cc6ba2d3" "print-horizontal-and-vertical-merged.h" >}}
 

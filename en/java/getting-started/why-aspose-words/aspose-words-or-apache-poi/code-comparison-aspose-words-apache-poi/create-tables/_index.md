@@ -15,7 +15,7 @@ timestamp: 2024-01-27-14-07-04
 
 ## Aspose.Words - Create Tables
 
-In Aspose.Words a table is normally inserted using**DocumentBuilder**. The following methods are used to build a table. Other methods will also be used to insert content into the table cells.
+In Aspose.Words a table is normally inserted using **DocumentBuilder**. The following methods are used to build a table. Other methods will also be used to insert content into the table cells.
 
 - DocumentBuilder.startTable
 - DocumentBuilder.insertCell
@@ -113,6 +113,6 @@ outStream.close();
 
 {{% alert color="primary" %}}
 
-For more details, visit [Inserting a Table using DocumentBuilder](/words/java/use-documentbuilder-to-insert-document-elements/#usedocumentbuildertoinsertdocumentelements-insertingatable).
+For more details, visit [Inserting a Table using DocumentBuilder](/words/java/create-a-table/#create-a-table-with-documentbuilder).
 
 {{% /alert %}}

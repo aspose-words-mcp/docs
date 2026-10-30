@@ -34,3 +34,4 @@ timestamp: 2024-01-27-14-07-04
 - [Check Version](/words/jasperreports/check-version/)
 - [Break Table Rows](/words/jasperreports/break-table-rows/)
 - [Change Margins](/words/jasperreports/change-margins/)
+- [Converting HTML Lists to Word Lists](/words/jasperreports/converting-html-lists-to-word-lists/)

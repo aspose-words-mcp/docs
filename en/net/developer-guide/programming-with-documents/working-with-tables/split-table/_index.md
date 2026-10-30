@@ -36,7 +36,7 @@ The following code example shows how to split a table into two tables on a speci
 
 ## Limitations and Considerations
 
-- **Merged cells**: If a cell spans rows that are divided between the two tables, Aspose.Words will automatically adjust the cell's `RowSpan` so that each table contains a valid cell structure. Cells that no longer span the required rows are split into separate cells.
+- **Merged cells**: Aspose.Words does not change merge flags when rows are moved. If a vertically merged cell spans the split row, the first moved cell keeps `CellMerge.Previous`; set its `CellFormat.VerticalMerge` to `CellMerge.First` so that the merged block starts correctly in the new table.
 
 - **Formatting preservation**: The formatting applied to rows, cells, and the table itself is retained because the rows are moved, not recreated. Any style or direct formatting on the moved rows remains unchanged in the new table.
 
@@ -45,11 +45,11 @@ The following code example shows how to split a table into two tables on a speci
 ## Related APIs
 
 
-- [`Table`](https://reference.aspose.com/words/net/aspose.words.tables/table/)
-- [`Row`](https://reference.aspose.com/words/net/aspose.words.tables/row/)
-- [`Cell`](https://reference.aspose.com/words/net/aspose.words.tables/cell/)
-- [`DocumentBuilder`](https://reference.aspose.com/words/net/aspose.words/documentbuilder/)
-- [`NodeCollection`](https://reference.aspose.com/words/net/aspose.words/nodecollection/)
+- [Table](https://reference.aspose.com/words/net/aspose.words.tables/table/)
+- [Row](https://reference.aspose.com/words/net/aspose.words.tables/row/)
+- [Cell](https://reference.aspose.com/words/net/aspose.words.tables/cell/)
+- [DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/)
+- [NodeCollection](https://reference.aspose.com/words/net/aspose.words/nodecollection/)
 
 ## FAQ
 
@@ -57,7 +57,7 @@ The following code example shows how to split a table into two tables on a speci
    **A:** Create a clone of the original `Table` without its child nodes, insert the clone after the original table, then move all rows starting from the chosen split row to the cloned table. This separates the original table into two independent tables.
 
 2. **Q:** What happens to merged cells that cross the split row?  
-   **A:** If a cell spans rows that are divided between the two tables, Aspose.Words will automatically adjust the cell's `RowSpan` so that each table contains a valid cell structure. Cells that no longer span the required rows are split into separate cells.
+   **A:** Aspose.Words does not change merge flags when rows are moved. If a vertically merged cell spans the split row, the first moved cell keeps `CellMerge.Previous`; set its `CellFormat.VerticalMerge` to `CellMerge.First` so that the merged block starts correctly in the new table.
 
 3. **Q:** Can I split a table into more than two tables?  
    **A:** Yes. After the first split, repeat the same process on the resulting tables: clone the table you want to split, insert the clone, and move the desired rows. By iterating, you can create any number of separate tables.

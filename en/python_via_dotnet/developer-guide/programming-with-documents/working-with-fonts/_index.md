@@ -24,7 +24,7 @@ A font is a set of characters with a certain size, color, and design. Aspose.Wor
 
 ## Font Formatting
 
-The current font formatting is represented by the **Font** object returned by the [Font](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/font/) property. The **Font** class contains a wide variety of font properties, replicating those available in Microsoft Word.
+The current font formatting is represented by the **Font** object returned by the [font](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/font/) property. The **Font** class contains a wide variety of font properties, replicating those available in Microsoft Word.
 
 The following code example shows how to set font formatting:
 
@@ -40,10 +40,10 @@ The [line_spacing](https://reference.aspose.com/words/python-net/aspose.words/fo
 
 {{< gist "aspose-words-gists" "6f1507edd307e59ceb7d5a73afa61526" "get-font-line-spacing.py" >}}
 
-## FontEmphasisMark
+## Font EmphasisMark
 
 Some East Asian languages use a special emphasis mark to indicate an emphasis. The **Font** class provides the [emphasis_mark](https://reference.aspose.com/words/python-net/aspose.words/font/emphasis_mark/) property to get or set the [EmphasisMark](https://reference.aspose.com/words/python-net/aspose.words/emphasismark/) enumeration values to be applied when formatting.
 
-The following code example shows how to set the **EphasisMark** property:
+The following code example shows how to set the **emphasis_mark** property:
 
 {{< gist "aspose-words-gists" "6f1507edd307e59ceb7d5a73afa61526" "set-font-emphasis-mark.py" >}}

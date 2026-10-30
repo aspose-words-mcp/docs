@@ -32,7 +32,7 @@ The following code example shows how to merge rows from two tables into one:
    **A:** Yes. Moving a `Row` node retains its cell formatting, paragraph styles, and borders. If column widths differ, you may need to adjust them after the join to achieve a uniform appearance.
 
 3. **Q:** What should I do if the two tables have a different number of columns?  
-   **A:** Ensure both tables have the same column count before moving rows. You can add missing cells to a row with `Row row = (Row)node; row.appendChild(new Cell());` until the column numbers match.
+   **A:** Ensure both tables have the same column count before moving rows. You can add missing cells to a row with `row.appendChild(new aw.Tables.Cell(doc));` until the column numbers match.
 
 4. **Q:** Can I join tables that are located inside headers, footers, or different sections?  
    **A:** Absolutely. Retrieve the table node from the appropriate `HeaderFooter` or `Section` object, then apply the same row‑moving logic. The API works uniformly across the main body, headers, and footers.

@@ -56,7 +56,7 @@ Not all formats support encryption and the use of **password** property.
 
 ## Show Document Saving Progress Notifications
 
-Aspose.Words provides the ability to use the [ProgressCallback](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/progress_callback/) property to get notifications about the progress of document saving.
+Aspose.Words provides the ability to use the [progress_callback](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/progress_callback/) property to get notifications about the progress of document saving.
 
 It is now available when saving to DOCX, FlatOpc, DOCM, DOTM, DOTX, HTML, MHTML, EPUB, XamlFlow, XamlFlowPack, or TXT formats.
 
@@ -78,7 +78,7 @@ The following code example shows how to set this property and save the document:
 
 ## Control External Resources When Saving a Document into HTML or SVG
 
-To convert HTML or SVG into PDF, simply invoke the [Save](https://reference.aspose.com/words/python-net/aspose.words/document/save/) method and specify a file name with the “.PDF” extension. If you want to load images, CSS, etc. from external sources, you can use [IResourceSavingCallback](https://reference.aspose.com/words/python-net/aspose.words.saving/iresourcesavingcallback/).
+To convert HTML or SVG into PDF, simply invoke the [save](https://reference.aspose.com/words/python-net/aspose.words/document/save/) method and specify a file name with the “.PDF” extension. If you want to load images, CSS, etc. from external sources, you can use [IResourceSavingCallback](https://reference.aspose.com/words/python-net/aspose.words.saving/iresourcesavingcallback/).
 
 ## Save Black and White Image with One Bit Per Pixel Format
 
@@ -95,10 +95,9 @@ The following code example shows how to save a black and white image with one bi
 - [ImageSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/) — Save options for image output.
 - [DocSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/docsaveoptions/) — Save options for DOC/DOT formats.
 - [OdtSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/odtsaveoptions/) — Save options for ODT/OTT formats.
-- [HtmlSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/) — Save options for HTML/MHTML output.
+- [HtmlSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/) — Save options for HTML, MHTML and EPUB output.
 - [MarkdownSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/markdownsaveoptions/) — Save options for Markdown output.
 - [XpsSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/xpssaveoptions/) — Save options for XPS output.
-- [EpubSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/epubsaveoptions/) — Save options for EPUB output. 
 
 ## FAQ
 
@@ -142,17 +141,17 @@ The following code example shows how to save a black and white image with one bi
    ```
 
 4. **Q:** How do I control the pixel format of images generated during saving?  
-   **A:** Use `ImageSaveOptions.pixel_format` and assign a value from the `ImagePixelFormat` enumeration (e.g., `ImagePixelFormat.FORMAT_32BPP_ARGB` for a black‑and‑white image). The option is applied when saving to an image format.  
+   **A:** Use `ImageSaveOptions.pixel_format` and assign a value from the `ImagePixelFormat` enumeration (e.g., `ImagePixelFormat.FORMAT_32BPP_ARGB` for 32-bit color with transparency, or `ImagePixelFormat.FORMAT_1BPP_INDEXED` for a black‑and‑white image). The option is applied when saving to an image format.  
 
    ```python
    import aspose.words as aw
    from aspose.words.saving import ImagePixelFormat
 
    doc = aw.Document("input.docx")
-   options = aw.saving.ImageSaveOptions()
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.PNG)
    options.pixel_format = ImagePixelFormat.FORMAT_32BPP_ARGB
    doc.save("output.png", options)
    ```
 
 5. **Q:** Which SaveOptions class should I use for a specific output format?  
-   **A:** Each output format has its own derived SaveOptions class: `PdfSaveOptions` for PDF, `HtmlSaveOptions` for HTML, `DocSaveOptions` for DOC/DOT, `OoxmlSaveOptions` for DOCX/DOCM, `ImageSaveOptions` for PNG/JPEG/BMP, `MhtmlSaveOptions` for MHTML, etc. Instantiate the class that matches the desired format and configure its properties before saving.  
+   **A:** Each output format has its own derived SaveOptions class: `PdfSaveOptions` for PDF, `HtmlSaveOptions` for HTML, MHTML and EPUB, `DocSaveOptions` for DOC/DOT, `OoxmlSaveOptions` for DOCX/DOCM, `ImageSaveOptions` for PNG/JPEG/BMP, etc. Instantiate the class that matches the desired format and configure its properties before saving.  

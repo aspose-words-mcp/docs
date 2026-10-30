@@ -61,7 +61,7 @@ Aspose.Words allows you to gather different information in your template through
 
 ### Get Merge Field Names
 
-You can come across a scenario where you will want to merge data with merge fields that are created by others, and in this case, you will not be sure about the exact names of merge fields. So, to achieve the Mail Merge purpose, first, you will need to read and display the names of all merge fields. Aspose.Words allows you to get a collection of merge field names using the [GetFieldNames](https://reference.aspose.com/words/net/aspose.words.mailmerging/mailmerge/getfieldnames/) method.
+You can come across a scenario where you will want to merge data with merge fields that are created by others, and in this case, you will not be sure about the exact names of merge fields. So, to achieve the Mail Merge purpose, first, you will need to read and display the names of all merge fields. Aspose.Words allows you to get a collection of merge field names using the [getFieldNames](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getFieldNames) method.
 
 The following code example shows how to get names of all merge fields in the template:
 
@@ -69,7 +69,7 @@ The following code example shows how to get names of all merge fields in the tem
 
 ### Get Information About Merge Regions
 
-You may have a scenario where you want to understand how your template is structured through the specified merge regions. You can use some methods to gather all necessary information about merge regions or to get the merge regions hierarchy in your template, such as the [GetRegionsHierarchy](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getRegionsHierarchy) method. You can use the properties and methods of the [MailMergeRegionInfo](https://reference.aspose.com/words/java/com.aspose.words/mailmergeregioninfo/) class. The following code example shows how to get merge regions hierarchy:
+You may have a scenario where you want to understand how your template is structured through the specified merge regions. You can use some methods to gather all necessary information about merge regions or to get the merge regions hierarchy in your template, such as the [getRegionsHierarchy()](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getRegionsHierarchy) method. You can use the properties and methods of the [MailMergeRegionInfo](https://reference.aspose.com/words/java/com.aspose.words/mailmergeregioninfo/) class. The following code example shows how to get merge regions hierarchy:
 
 {{< gist "aspose-words-gists" "7d267f5905ac7f3d5144e8d4126a0d6d" "get-regions-hierarchy.java" >}}
 
@@ -79,14 +79,14 @@ The following code example shows how to get specific merge regions inside your t
 
 {{% alert color="primary" %}}
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Examples/src/main/resources/MailMerge).
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Mail%20merge%20regions.docx).
 
 {{% /alert %}}
 
 ### Add Mapped Fields
 
-Aspose.Words allows you to automatically map names of fields in your data source and names of Mail Merge fields in the template using the [MappedDataFields](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getMappedDataFields) property. For example, if you have a field name called "Last Name" in your template, and in your data source you have the field name "Last Name" or another variation such as "Last_Name" or "LastName", then the field in the data source will automatically map to the corresponding mapped field. If a merge template is to be merged with many data sources, mapped fields make it unnecessary to reenter the fields into the template to agree with the field names in the database.
+Aspose.Words allows you to automatically map names of fields in your data source and names of Mail Merge fields in the template using the [getMappedDataFields()](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getMappedDataFields) property. For example, if you have a field name called "Last Name" in your template, and in your data source you have the field name "Last Name" or another variation such as "Last_Name" or "LastName", then the field in the data source will automatically map to the corresponding mapped field. If a merge template is to be merged with many data sources, mapped fields make it unnecessary to reenter the fields into the template to agree with the field names in the database.
 
-The following code example shows how to add a mapped field using the [Add](https://reference.aspose.com/words/java/com.aspose.words/mappeddatafieldcollection/#add-java.lang.String-java.lang.String) method when a merge field in a template and a data field in a data source have different names:
+The following code example shows how to add a mapped field using the [add()](https://reference.aspose.com/words/java/com.aspose.words/mappeddatafieldcollection/#add-java.lang.String-java.lang.String) method when a merge field in a template and a data field in a data source have different names:
 
 {{< gist "aspose-words-gists" "7d267f5905ac7f3d5144e8d4126a0d6d" "mapped-data-fields.java" >}}

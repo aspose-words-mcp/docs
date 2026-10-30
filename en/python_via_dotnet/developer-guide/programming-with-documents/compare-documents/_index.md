@@ -78,10 +78,10 @@ The following code example shows how to set the advanced comparing properties:
 
 ## Related APIs
 
-- [Document.Compare](https://reference.aspose.com/words/python-net/aspose.words/document/compare/) – compares two documents and records differences as revisions
+- [Document.compare](https://reference.aspose.com/words/python-net/aspose.words/document/compare/) – compares two documents and records differences as revisions
 - [CompareOptions](https://reference.aspose.com/words/python-net/aspose.words.comparing/compareoptions/) – specifies comparison behavior (e.g., ignore headers, formatting, comments)
-- [Granularity](https://reference.aspose.com/words/python-net/aspose.words.comparing/compareoptions/granularity/) – controls whether changes are tracked by character or by word
-- [CompareTarget](https://reference.aspose.com/words/python-net/aspose.words.comparing/compareoptions/target/) – determines which document displays the changes
+- [granularity](https://reference.aspose.com/words/python-net/aspose.words.comparing/compareoptions/granularity/) – controls whether changes are tracked by character or by word
+- [CompareOptions.target](https://reference.aspose.com/words/python-net/aspose.words.comparing/compareoptions/target/) – determines which document displays the changes
 - [Revision](https://reference.aspose.com/words/python-net/aspose.words/revision/) – represents a single change detected during comparison
 - [Revisions](https://reference.aspose.com/words/python-net/aspose.words/revisioncollection/) – collection of all changes recorded in the document after comparison  
 

@@ -42,7 +42,7 @@ When posting your issue, question, or feature request with Aspose.Words, follow 
 ## FAQ
 
 1. **Q:** How can I obtain a license for Aspose.Words for C++?  
-   **A:** Licenses are purchased through the Aspose website. After purchase you receive a license file (`.lic`) that you load in your application using `License license = new License(); license.SetLicense("Aspose.Words.Cpp.lic");`. A free 30‑day trial is also available via the Aspose download page.
+   **A:** Licenses are purchased through the Aspose website. After purchase you receive a license file (`.lic`) that you load in your application using `auto license = System::MakeObject<License>(); license->SetLicense(u"Aspose.Words.Cpp.lic");`. A free 30‑day trial is also available via the Aspose download page.
 
 2. **Q:** Where should I post my technical question or issue?  
    **A:** All technical questions should be posted on the **Aspose.Words Free Support Forum**: https://forum.aspose.com/c/words/8. The development team monitors this forum and replies directly.

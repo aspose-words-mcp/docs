@@ -19,10 +19,10 @@ Aspose.Words for Java supports processing word (DOC, DOCX, OOXML, RTF) HTML, Ope
 
 ## Aspose.Words Java for PHP
 
-Project Aspose.Words for PHP shows how different tasks can be performed using Aspose.Words Java APIs in PHP. This project is aimed to provide useful examples for PHP Developers who want to utilise Aspose.Words for Java in their PHP Projects using [PHP/Java Bridge](https://php-java-bridge.sourceforge.net/pjb/).
+Project Aspose.Words for PHP shows how different tasks can be performed using Aspose.Words Java APIs in PHP. This project is aimed to provide useful examples for PHP Developers who want to utilise Aspose.Words for Java in their PHP Projects using [PHP/Java Bridge](https://sourceforge.net/projects/php-java-bridge/).
 
 ## PHP / Java Bridge
 
-The PHP/Java Bridge is an implementation of a streaming, XML-based [network protocol](https://php-java-bridge.sourceforge.net/pjb/PROTOCOL.TXT), which can be used to connect a native script engine, for example PHP, Scheme or Python, with a Java virtual machine. It is up to 50 times faster than local RPC via SOAP, requires less resources on the web-server side. It is [faster](https://php-java-bridge.sourceforge.net/pjb/FAQ.html#performance) and more reliable than direct communication via the Java Native Interface, and it requires no additional components to invoke Java procedures from PHP or PHP procedures from Java.
+The PHP/Java Bridge is an implementation of a streaming, XML-based network protocol, which can be used to connect a native script engine, for example PHP, Scheme or Python, with a Java virtual machine. It is up to 50 times faster than local RPC via SOAP, requires less resources on the web-server side. It is faster and more reliable than direct communication via the Java Native Interface, and it requires no additional components to invoke Java procedures from PHP or PHP procedures from Java.
 
-Read more at [sourceforge.net](https://php-java-bridge.sourceforge.net/pjb/).
+Read more at [sourceforge.net](https://sourceforge.net/projects/php-java-bridge/).

@@ -17,13 +17,13 @@ A document that contains fill-in blanks (fields) is known as a form. For example
 
 You can use form fields in your project to "communicate" with your users. For example, you create a document whose content is protected, but only form fields are editable. The users can enter the data in the form fields and submit the document. Your application that uses Aspose.Words can retrieve data from the form fields and process it.
 
-Placing form fields into the document via code is easy. [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) has special methods for inserting them, one for each form field type.Each of the methods accepts a string parameter representing the name of the form field. The name can be an empty string. If however you specify a name for the form field, then a bookmark is automatically created with the same name.
+Placing form fields into the document via code is easy. [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) has special methods for inserting them, one for each form field type. Each of the methods accepts a string parameter representing the name of the form field. The name can be an empty string. If however you specify a name for the form field, then a bookmark is automatically created with the same name.
 
 ## Inserting Form Fields
 
 Form fields are a particular case of Word fields that allows "interaction" with the user. Form fields in Microsoft Word include textbox, combo box and checkbox.
 
-**DocumentBuilder**provides special methods to insert each type of form field into the document: [InsertTextInput](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/inserttextinput/), [InsertCheckBox](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcheckbox/), and [InsertComboBox](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcombobox/). Note that if you specify a name for the form field, then a bookmark is automatically created with the same name.
+**DocumentBuilder** provides special methods to insert each type of form field into the document: [InsertTextInput](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/inserttextinput/), [InsertCheckBox](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcheckbox/), and [InsertComboBox](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcombobox/). Note that if you specify a name for the form field, then a bookmark is automatically created with the same name.
 
 The following code example shows how to insert a combobox form field into a document:
 
@@ -31,7 +31,7 @@ The following code example shows how to insert a combobox form field into a docu
 
 ## Obtaining Form Fields
 
-A collection of form fields is represented by the [FormFieldCollection](https://reference.aspose.com/words/cpp/aspose.words.fields/formfieldcollection/) class that can be retrieved using the [FormFields](https://reference.aspose.com/words/cpp/aspose.words/range/get_formfields/) property. This means that you can obtain form fields contained in any document node including the document itself.
+A collection of form fields is represented by the [FormFieldCollection](https://reference.aspose.com/words/cpp/aspose.words.fields/formfieldcollection/) class that can be retrieved using the [get_FormFields()](https://reference.aspose.com/words/cpp/aspose.words/range/get_formfields/) property. This means that you can obtain form fields contained in any document node including the document itself.
 
 The following code example shows how to get a collection of form fields:
 

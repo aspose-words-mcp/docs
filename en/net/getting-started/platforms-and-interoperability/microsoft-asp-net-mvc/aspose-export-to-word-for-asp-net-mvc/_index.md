@@ -87,7 +87,6 @@ You can log any issues or suggestions related to Aspose Export to Word for ASP.N
 
 You can download the latest source code at:
 
-- [CodePlex](https://asposewordsnetmvc.codeplex.com/SourceControl/latest)
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/MVC/Aspose.MVC.ExportToWord)
 
 #### How to configure source code

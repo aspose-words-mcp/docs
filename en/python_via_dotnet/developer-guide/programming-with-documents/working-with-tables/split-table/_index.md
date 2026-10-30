@@ -35,7 +35,7 @@ The following code example shows how to split a table into two tables on a speci
 
 ## Limitations and Considerations
 
-- **Merged cells**: If a cell spans rows that are divided between the two tables, Aspose.Words will automatically adjust the cell's `RowSpan` so that each table contains a valid cell structure. Cells that no longer span the required rows are split into separate cells.
+- **Merged cells**: Aspose.Words does not change merge flags when rows are moved. If a vertically merged cell spans the split row, the first moved cell keeps `CellMerge.PREVIOUS`; set its `cell_format.vertical_merge` to `CellMerge.FIRST` so that the merged block starts correctly in the new table.
 
 - **Formatting preservation**: The formatting applied to rows, cells, and the table itself is retained because the rows are moved, not recreated. Any style or direct formatting on the moved rows remains unchanged in the new table.
 
@@ -43,16 +43,16 @@ The following code example shows how to split a table into two tables on a speci
 
 ## Related APIs
 
-- [`Table`](https://reference.aspose.com/words/python-net/aspose.words.tables/table/)
-- [`Row`](https://reference.aspose.com/words/python-net/aspose.words.tables/row/)
-- [`Cell`](https://reference.aspose.com/words/python-net/aspose.words.tables/cell/)
-- [`DocumentBuilder`](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/)
-- [`NodeCollection`](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/) 
+- [Table](https://reference.aspose.com/words/python-net/aspose.words.tables/table/)
+- [Row](https://reference.aspose.com/words/python-net/aspose.words.tables/row/)
+- [Cell](https://reference.aspose.com/words/python-net/aspose.words.tables/cell/)
+- [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/)
+- [NodeCollection](https://reference.aspose.com/words/python-net/aspose.words/nodecollection/) 
 
 ## FAQ
 
 1. **Q:** How can I split a table into two tables at a specific row?  
-   **A:** Create an empty clone of the original table using `Table.clone(False)`, insert the clone after the original table, then move each row starting from the split row to the new table with `originalTable.Rows.Remove(row)` and `newTable.Rows.Add(row)`. This preserves the original table's formatting while separating the rows.
+   **A:** Create an empty clone of the original table using `Table.clone(False)`, insert the clone after the original table, then move each row starting from the split row to the new table with `original_table.rows.remove(row)` and `new_table.rows.add(row)`. This preserves the original table's formatting while separating the rows.
 
 2. **Q:** Does cloning a table copy its formatting?  
    **A:** Yes. When you clone a table with `deep=False`, the table's properties (borders, shading, width, etc.) are copied, but the child rows and cells are not. The new empty table therefore retains the same visual style as the source table.

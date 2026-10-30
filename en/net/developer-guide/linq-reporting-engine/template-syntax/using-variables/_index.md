@@ -63,8 +63,8 @@ Using of variables has the following restrictions:
 ## Related APIs
 
 
-- [`ReportingEngine`](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/)
-- [`ReportingEngine.BuildReport`](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/buildreport/)
+- [ReportingEngine](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/)
+- [ReportingEngine.BuildReport](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/buildreport/)
 - [`<<var>>` Tag Syntax](https://docs.aspose.com/words/net/template-syntax/#using-variables)
 - [`<<[name]>>` Expression Syntax](https://docs.aspose.com/words/net/template-syntax/)
 

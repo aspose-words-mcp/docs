@@ -44,4 +44,4 @@ You can use both explicit and implicit lambda function signatures in template ex
    **A:** Lambda functions are limited to arguments of the supported enumeration extension methods. They cannot be used directly in IF fields, MERGEFIELDs, or other non‑enumeration expressions.
 
 5. **Q:** How do I write an implicit lambda function in a template expression?  
-   **A:** Use the syntax `x => x.Property` without specifying the type of `x`. The engine determines the type of `x` from the collection being processed, e.g., `{{#foreach item in Employees.Where(e => e.IsActive)}}`.
+   **A:** Use the syntax `x => x.Property` without specifying the type of `x`. The engine determines the type of `x` from the collection being processed, e.g., `<<foreach [item in Employees.Where(e => e.IsActive)]>>`.

@@ -29,7 +29,7 @@ The rendering features of Aspose.Words enable you to perform the following:
 - Convert a document or selected pages to PDF, XPS, HTML, XAML, PostScript, and PCL formats.
 - Convert a document into a multi-page TIFF document, or convert any page into a raster image and save it as BMP, PNG or JPEG.
 - Convert a document page into a Scalable Vector Graphics image (SVG), or convert into a vector image and save it as EMF.
-- Render a [Shape](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/)object separately from the document to any image format.
+- Render a [Shape](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/) object separately from the document to any image format.
 
 ## Flow-layout or Fixed-layout Document Formats {#flow-layout-or-fixed-layout-document-formats}
 
@@ -39,6 +39,6 @@ In contrast, the “fixed-layout” (also known as "fixed page") formats such as
 
 ## Page Layout Engine {#page-layout-engine}
 
-Aspose.Words implements its own page layoutengine thatformats a flow-layout document into pages. Aspose.Words implements a number ofrenderersthat either produce a fixed-layout document such as PDF or XPS, or output pages into another medium such as printing or drawing. Note that the export can also be paginated for HTML and XAML. This means that a document can be saved as regular HTML or XAML (flow-layout format), or as "paginated" HTML and XAML that feature absolute positions of elements.
+Aspose.Words implements its own page layout engine that formats a flow-layout document into pages. Aspose.Words implements a number of renderers that either produce a fixed-layout document such as PDF or XPS, or output pages into another medium such as printing or drawing. Note that the export can also be paginated for HTML and XAML. This means that a document can be saved as regular HTML or XAML (flow-layout format), or as "paginated" HTML and XAML that feature absolute positions of elements.
 
 The most important advantage of using the Aspose.Words page layout engine is that it mimics the way Microsoft Word's page layout engine works. Therefore, when you convert a Microsoft Word document into PDF, XPS, or print it using Aspose.Words, the output will appear almost exactly as if it was done by Microsoft Word. Note that Aspose.Words does not utilize Microsoft Word.

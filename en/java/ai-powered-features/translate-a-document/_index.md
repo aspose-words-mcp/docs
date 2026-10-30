@@ -15,15 +15,15 @@ timestamp: 2025-03-17-19-00-00
 
 Document translation is a frequently needed option in the age of high digitalization. Aspose.Words supports document translation using *Google* generative language models, which allows developers to translate texts content into more than 300 languages.
 
-Use the [Translate](https://reference.aspose.com/words/java/com.aspose.words/iaimodeltext/#translate-com.aspose.words.Document-int) method to translate your documents into any language represented in the [Language](https://reference.aspose.com/words/java/com.aspose.words/language/) enumeration. Note that if the source document contains several languages, the Google AI-based model will be able to translate all supported languages. If the model cannot recognize the language in some text fragments, then you will be returned a document with these untranslated fragments and with the rest of the text translated.
+Use the [translate()](https://reference.aspose.com/words/java/com.aspose.words/iaimodeltext/#translate-com.aspose.words.Document-int) method to translate your documents into any language represented in the [Language](https://reference.aspose.com/words/java/com.aspose.words/language/) enumeration. Note that if the source document contains several languages, the Google AI-based model will be able to translate all supported languages. If the model cannot recognize the language in some text fragments, then you will be returned a document with these untranslated fragments and with the rest of the text translated.
 
-The following code example shows how to use the *Gemini 1.5 Flash* model in Aspose.Words to translate a document into Arabic:
+The following code example shows how to use the latest *Gemini Flash* model in Aspose.Words to translate a document into Arabic:
 
 {{< highlight java >}}
 Document doc = new Document("Document.docx");
 
 String apiKey = System.getenv("API_KEY");
- IAiModelText model = (IAiModelText)AiModel.create(AiModelType.GEMINI_15_FLASH).withApiKey(apiKey);
+ IAiModelText model = (IAiModelText)AiModel.create(AiModelType.GEMINI_FLASH_LATEST).withApiKey(apiKey);
 
 Document translatedDoc = model.translate(doc, Language.ARABIC);
 translatedDoc.save("AI.AiTranslate.docx");
@@ -52,4 +52,4 @@ Translating documents with Aspose.Words saves time and makes it easy to integrat
    **A:** The model attempts to detect and translate each language it recognizes. Segments in unsupported or unrecognizable languages remain unchanged in the output document.
 
 5. **Q:** Can I choose a different AI model for translation?  
-   **A:** Yes. When creating the model, use `AiModel.create(AiModelType.<MODEL>)` with any supported model type (e.g., `GEMINI_15_FLASH`, `GEMINI_1_0_PRO`). The chosen model determines translation quality and speed.
+   **A:** Yes. When creating the model, use `AiModel.create(AiModelType.<MODEL>)` with any supported model type (e.g., `GEMINI_FLASH_LATEST`, `GEMINI_PRO_LATEST`). The chosen model determines translation quality and speed.

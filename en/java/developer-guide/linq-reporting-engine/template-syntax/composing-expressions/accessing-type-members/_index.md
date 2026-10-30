@@ -41,13 +41,13 @@ In addition to C# Language features, the engine provides the following extra fea
 ## FAQ
 
 1. **Q:** How can I access a static field or method of a Java class inside a LINQ Reporting Engine template?  
-   **A:** First register the class as a known external type using `engine.getKnownTypes().add(ClassName.class)`. Then you can reference the static member directly in the template, e.g., `<<ClassName.StaticField>>` or `<<ClassName.StaticMethod(arg)>>`.
+   **A:** First register the class as a known external type using `engine.getKnownTypes().add(ClassName.class)`. Then you can reference the static member directly in the template, e.g., `<<[ClassName.StaticField]>>` or `<<[ClassName.StaticMethod(arg)]>>`.
 
 2. **Q:** Are instance methods of objects passed to the template callable from the template expression?  
-   **A:** Yes. If an object is supplied to the engine as a data source, you can invoke its public instance methods directly, such as `<<objectInstance.InstanceMethod()>>`. The method must be public and return a value.
+   **A:** Yes. If an object is supplied to the engine as a data source, you can invoke its public instance methods directly, such as `<<[objectInstance.InstanceMethod()]>>`. The method must be public and return a value.
 
 3. **Q:** Can I create a new object inside a template using a constructor?  
-   **A:** Constructors are supported as long as they are public, have no generic type arguments, and return a value (the new instance). Use the syntax `<<new ClassName(arg1, arg2)>>` after the type has been added to the known types list.
+   **A:** Constructors are supported as long as they are public, have no generic type arguments, and return a value (the new instance). Use the syntax `<<[new ClassName(arg1, arg2)]>>` after the type has been added to the known types list.
 
 4. **Q:** What restrictions apply to methods used as function members in template expressions?  
    **A:** The method must return a value and cannot have generic type parameters. Overload resolution follows the C# Language Specification 5.0 rules, and methods that accept a variable number of arguments (`params`) are also supported.

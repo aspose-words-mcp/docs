@@ -35,7 +35,7 @@ Some of this text is **bold** and other text is *italic*.
 
 To instruct the renderer to parse HTML formatting in textboxes, add the following lines to the *&lt;Extension&gt;* element corresponding to a particular renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">

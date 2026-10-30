@@ -45,6 +45,6 @@ String text = doc.getRange().text();
 
 {{% alert color="primary" %}}
 
-For more details, visit [Deleting Text](/words/java/working-with-ranges/#workingwithranges-deletingtext).
+For more details, visit [Deleting Text](/words/java/working-with-ranges/#delete-text).
 
 {{% /alert %}}

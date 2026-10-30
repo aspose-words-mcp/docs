@@ -51,7 +51,6 @@ You can download Export to Word and Export to PDF modules from one of the follow
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Umbraco/releases)
 - [Sourceforge](https://sourceforge.net/projects/asposeumbraco/files/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-umbraco/downloads/)
 - [Umbraco](https://our.umbraco.com/search?q=Aspose.Words&cat=project)
 
 ## Installing
@@ -122,7 +121,6 @@ You can log any issues or suggestions related to Aspose.Words .NET for Umbraco M
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Umbraco/issues)
 - [Sourceforge](https://sourceforge.net/projects/asposeumbraco/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-umbraco/issues?status=new&status=open)
 
 ### Extend and Contribute
 
@@ -134,7 +132,6 @@ You can get the latest source code from one of the following locations
 
 - [Github](https://github.com/asposemarketplace/Aspose_for_Umbraco)
 - [Sourceforge](https://sourceforge.net/p/asposeumbraco/code/ci/master/tree/)
-- [Bitbucket](https://bitbucket.org/asposemarketplace/aspose-for-umbraco/src)
 
 #### How to configure the source code
 

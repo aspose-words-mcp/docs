@@ -39,7 +39,7 @@ The following code example shows how to insert a combobox form field into a docu
 
 ### Insert a Text Input
 
-Use the **InsertTextInput** method to insert a textbox into the document.
+Use the **insert_text_input** method to insert a textbox into the document.
 
 The following code example shows how to insert a text input form field into a document:
 
@@ -47,7 +47,7 @@ The following code example shows how to insert a text input form field into a do
 
 ### Insert a Check Box
 
-Call **InsertCheckBox** to insert a checkbox into the document.
+Call **insert_check_box** to insert a checkbox into the document.
 
 The following code example shows how to insert a checkbox form field into a document:
 
@@ -55,7 +55,7 @@ The following code example shows how to insert a checkbox form field into a docu
 
 ### Insert a Combo Box
 
-Call **InsertComboBox** to insert a combobox into the document.
+Call **insert_combo_box** to insert a combobox into the document.
 
 The following code example shows how to insert a Combobox form field into a document:
 

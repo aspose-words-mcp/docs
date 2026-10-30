@@ -30,13 +30,13 @@ Here, `bookmark_expression` defines the name of a bookmark to be inserted during
 ## FAQ
 
 1. **Q:** How can I generate the bookmark name at runtime?  
-   **A:** Use any valid expression that returns a string, such as a field from your data source or a concatenation of values. For example: `<<bookmark [\"Section_\" + data[\"Id\"]]>>`.
+   **A:** Use any valid expression that returns a string, such as a field from your data source or a concatenation of values. For example: `<<bookmark ["Section_" + item.getId()]>>`.
 
 2. **Q:** Can a `bookmark` tag be placed inside a table cell?  
    **A:** Yes, the `bookmark` tag works inside tables, paragraphs, and most other document elements. The only restriction is that it cannot be used inside a chart.
 
 3. **Q:** How do I reference a dynamically created bookmark later in the document?  
-   **A:** After the report is generated, you can retrieve the bookmark by its runtime name using `Document.getBookmarks().get(\"BookmarkName\")`. Ensure the name you generated is stored or predictable so you can access it later.
+   **A:** After the report is generated, you can retrieve the bookmark by its runtime name using `doc.getRange().getBookmarks().get("BookmarkName")`. Ensure the name you generated is stored or predictable so you can access it later.
 
 4. **Q:** What happens if the bookmark expression evaluates to an empty string?  
    **A:** The engine will throw an error because a bookmark name is required and cannot be empty. Always validate that the expression returns a non‑empty value before the tag is processed.

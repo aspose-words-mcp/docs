@@ -44,10 +44,11 @@ When posting your issue, question, or feature request with Aspose.Words, follow 
 ## FAQ
 
 1. **Q:** How do I apply a license for Aspose.Words in a Node.js‑via‑.NET project?  
-   **A:** Load the license file using the `Aspose.Words.License` class in your .NET code before creating any `Document` objects. Example:  
-   ```csharp
-   Aspose.Words.License license = new Aspose.Words.License();
-   license.SetLicense("Aspose.Words.lic");
+   **A:** Load the license file using the `aw.License` class before creating any `Document` objects. Example:  
+   ```js
+   const aw = require('@aspose/words');
+   const license = new aw.License();
+   license.setLicense("Aspose.Words.lic");
    ```
    Ensure the license file is deployed with your application and the path is correct.
 
@@ -61,4 +62,4 @@ When posting your issue, question, or feature request with Aspose.Words, follow 
    **A:** No. Aspose provides technical support exclusively through the free support forum and the issue‑tracking system. Phone support is limited to sales and purchase inquiries only.
 
 5. **Q:** How can I verify that my license is correctly applied?  
-   **A:** After setting the license, you can check the `License.IsLicensed` property (or simply attempt an operation that requires a license, such as saving a PDF). If the operation succeeds without a trial watermark or limitation message, the license is active.
+   **A:** `setLicense` throws an exception if the license is invalid. After setting the license, save a test document (for example, a PDF): if it has no evaluation watermark or limitation message, the license is active.

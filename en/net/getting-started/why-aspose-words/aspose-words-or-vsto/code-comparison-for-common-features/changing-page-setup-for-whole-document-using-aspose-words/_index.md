@@ -47,4 +47,4 @@ doc.Save( "Section.ModifyPageSetupInAllSections Out.doc");
 
 ## Download Sample Code
 
-- [Github](https://github.com/asposemarketplace/Aspose_for_VSTO/releases/download/2/Changing.Page.Setup.for.Whole.Document.Aspose.Words.zip)
+- [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/Aspose.Words%20Vs%20VSTO%20Word/Code%20Comparison%20of%20Common%20Features/Changing%20Page%20Setup%20for%20Whole%20Document)

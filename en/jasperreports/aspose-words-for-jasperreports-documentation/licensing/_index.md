@@ -22,9 +22,9 @@ The license is available for download from the order page after the order was pa
 
 There are several ways to activate a license:
 
-- [Call setLicense](/words/jasperreports/licensing/).
-- [Set an exporter parameter in the code](/words/jasperreports/licensing/).
-- [Set an exporter parameter in **applicationContext.xml**](/words/jasperreports/licensing/).
+- [Call setLicense](#call-setlicense).
+- [Set an exporter parameter in the code](#set-the-licensefile-exporter-parameter-in-code).
+- [Set an exporter parameter in **applicationContext.xml**](#set-the-licensefile-exporter-parameter-in-applicationcontextxml).
 
 The first two are used with JasperReports, the last with JasperServer. Each method is described below.
 
@@ -85,7 +85,7 @@ This method is used with JasperServer.
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="licenseFile" value="C:/jasperserver-3.0/apache-tomcat/webapps/jasperserver/WEB-INF/Aspose.Words.JasperReports.lic"/>
 </bean>

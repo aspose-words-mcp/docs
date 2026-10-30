@@ -39,10 +39,10 @@ default_template_option
 <</if>>
 {{< /highlight >}}
 
-**Note** –A conditional expression must return a `Boolean` value.
+**Note** – A conditional expression must return a `Boolean` value.
 
 **This section includes the following topics:** 
 
 - [Working with Common Conditional Blocks](/words/net/working-with-common-conditional-blocks/)
-- [Working with Table-Row Conditional Blocks](/words/net/working-with-table-row-conditional-blocks/)
+- [Working with Table-Row Conditional Blocks](/words/net/working-with-table-row-conditional-blocks-linq/)
 - [Working with Table-Column Conditional Blocks](/words/net/working-with-table-column-conditional-blocks/)

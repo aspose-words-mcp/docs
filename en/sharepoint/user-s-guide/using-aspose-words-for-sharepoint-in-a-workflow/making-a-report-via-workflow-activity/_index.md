@@ -36,7 +36,7 @@ The report template `URL` is specified in the activity parameter.<br>
    The task configuration wizard is started on clicking the “data” parameter of the collection activity.<br>
 ![todo:image_alt_text](making-a-report-via-workflow-activity-6.png)<br>
 For example, if the report is expecting two parameters, configure the data collection activity to get two fields. The field names must match the parameter names in the report definition. Here is a fragment of the report definition with parameter description.<br>
-{{< highlight csharp >}}
+{{< highlight xml >}}
     <Parameters>
     <String>
       <Name>@comment</Name>

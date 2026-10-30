@@ -44,7 +44,7 @@ The following code example shows how to add a header for odd document pages:
 
 ### Specify Whether to Display Different Headers or Footers for the First Page
 
-As said above, you can also set a different header or footer for the first page. To do this, you need to set the [DifferentFirstPageHeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_differentfirstpageheaderfooter/) flag to `true` and then specyfy the **HeaderFirst** or **FooterFirst** value.
+As said above, you can also set a different header or footer for the first page. To do this, you need to set the [get_DifferentFirstPageHeaderFooter()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_differentfirstpageheaderfooter/) flag to `true` and then specyfy the **HeaderFirst** or **FooterFirst** value.
 
 The following code example shows how to set the header for the first page only:
 
@@ -52,7 +52,7 @@ The following code example shows how to set the header for the first page only:
 
 ### Specify Whether to Display Different Headers or Footers for Odd or Even Pages
 
- Next, you will want to set different headers or footers for odd and even pages in a document. To do this, you need to set the [OddAndEvenPagesHeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_oddandevenpagesheaderfooter/) flag to `true` and then specyfy the values **HeaderPrimary** and **HeaderEven**, or **FooterPrimary** and **FooterEven**.
+ Next, you will want to set different headers or footers for odd and even pages in a document. To do this, you need to set the [get_OddAndEvenPagesHeaderFooter()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_oddandevenpagesheaderfooter/) flag to `true` and then specyfy the values **HeaderPrimary** and **HeaderEven**, or **FooterPrimary** and **FooterEven**.
 
 {{< gist "aspose-words-gists" "e26133cadfcbe798f1ae301e2941f5ff" "odd-even-pages.h" >}}
 
@@ -115,36 +115,39 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 ## FAQ
 
 1. **Q:** How can I remove all footers while keeping the headers intact?  
-   **A:** Iterate through each `Section` in the document, access its `Footers` collection, and call `Clear()` or remove each footer node. Example:  
+   **A:** Iterate through each `Section` in the document, and remove every `HeaderFooter` in `Section::get_HeadersFooters()` whose `HeaderFooter::get_IsHeader()` is `false`. Example:  
 
    ```cpp
-   for (auto& section : System::IterateOver(doc->get_Sections()))
+   for (auto section : System::IterateOver<Aspose::Words::Section>(doc->get_Sections()))
    {
-       section->get_Footers()->Clear();
+       for (auto hf : section->get_HeadersFooters()->ToArray())
+       {
+           if (!hf->get_IsHeader())
+           {
+               hf->Remove();
+           }
+       }
    }
    ```
 
 2. **Q:** How do I set a different header/footer for the first page only?  
-   **A:** Set `PageSetup->set_DifferentFirstPageHeaderFooter(true)` on the section, then modify `HeaderFirst`/`FooterFirst`. The first‑page header/footer will be used while other pages use the primary header/footer.
+   **A:** Call `PageSetup::set_DifferentFirstPageHeaderFooter(true)` on the section, then modify the `HeaderFooterType::HeaderFirst`/`HeaderFooterType::FooterFirst` header and footer. The first‑page header/footer will be used while other pages use the primary header/footer.
 
 3. **Q:** What is the easiest way to add right‑aligned page numbers to a footer?  
    **A:** Use `DocumentBuilder` to move to the footer, set `ParagraphFormat->set_Alignment(ParagraphAlignment::Right)`, and insert a PAGE field:  
 
    ```cpp
-   DocumentBuilder builder(doc);
-   builder.MoveToHeaderFooter(HeaderFooterType::FooterPrimary);
-   builder.get_ParagraphFormat()->set_Alignment(ParagraphAlignment::Right);
-   builder.InsertField(u"PAGE", u"");
+   auto builder = System::MakeObject<DocumentBuilder>(doc);
+   builder->MoveToHeaderFooter(HeaderFooterType::FooterPrimary);
+   builder->get_ParagraphFormat()->set_Alignment(ParagraphAlignment::Right);
+   builder->InsertField(u"PAGE", u"");
    ```
 
 4. **Q:** How can I insert an image into a header at an absolute position?  
    **A:** Move the builder to `HeaderPrimary`, then call `InsertImage` with the desired coordinates and size:  
 
    ```cpp
-   DocumentBuilder builder(doc);
-   builder.MoveToHeaderFooter(HeaderFooterType::HeaderPrimary);
-   builder.InsertImage(u"logo.png", 0.0, 0.0, 100.0, 50.0);
+   auto builder = System::MakeObject<DocumentBuilder>(doc);
+   builder->MoveToHeaderFooter(HeaderFooterType::HeaderPrimary);
+   builder->InsertImage(u"logo.png", RelativeHorizontalPosition::Page, 0.0, RelativeVerticalPosition::Page, 0.0, 100.0, 50.0, WrapType::None);
    ```
-
-5. **Q:** Why does a header disappear after I change a section's page orientation?  
-   **A:** Changing orientation can break the link to the previous section's header/footer. Ensure `HeaderFooter->set_LinkToPrevious(false)` before modifying the orientation, or copy the required header/footer after the change.

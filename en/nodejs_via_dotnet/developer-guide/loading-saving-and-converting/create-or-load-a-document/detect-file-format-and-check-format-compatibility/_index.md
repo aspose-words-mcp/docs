@@ -22,7 +22,7 @@ Aspose.Words provides an ability to obtain information about the file type in or
 
 When you are dealing with multiple documents in various file formats, you may need to separate out those files that can be processed by Aspose.Words from those that cannot. You may also want to know why some of the documents cannot be processed.
 
-If you attempt to load a file into a [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) object and Aspose.Words cannot recognize the file format or the format is not supported, Aspose.Words will throw an exception. You can catch those exceptions and analyze them, but Aspose.Words also provides the [detectFileFormat](https://reference.aspose.com/words/nodejs-net/aspose.words/fileformatutil/detectfileformat/) method that allows us to quickly determine the file format without loading a document with possible exceptions.This method returns a [FileFormatInfo](https://reference.aspose.com/words/nodejs-net/aspose.words/fileformatinfo/) object that contains the detected information about the file type.
+If you attempt to load a file into a [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) object and Aspose.Words cannot recognize the file format or the format is not supported, Aspose.Words will throw an exception. You can catch those exceptions and analyze them, but Aspose.Words also provides the [detectFileFormat](https://reference.aspose.com/words/nodejs-net/aspose.words/fileformatutil/detectfileformat/) method that allows us to quickly determine the file format without loading a document with possible exceptions. This method returns a [FileFormatInfo](https://reference.aspose.com/words/nodejs-net/aspose.words/fileformatinfo/) object that contains the detected information about the file type.
 
 {{% alert color="primary" %}}
 
@@ -58,7 +58,7 @@ The following files are used in the example above. The file name is on the left 
 |  | Test File (Docm).docm | Office Open XML WordprocessingML document with macros. |
 |  | Test File (Dotx).dotx | Office Open XML WordprocessingML template. |
 |  | Test File (Dotm).dotm | Office Open XML WordprocessingML template with macros. |
-|  | Test File (XML).xml | FlatOPCOOXMLDocument. |
+|  | Test File (XML).xml | FlatOPC OOXML Document. |
 |  | Test File (RTF).rtf | Rich Text Format document. |
 |  | Test File (WordML).xml | Microsoft Word 2003 WordprocessingML document. |
 |  | Test File (HTML).html | HTML document. |
@@ -78,10 +78,10 @@ The following files are used in the example above. The file name is on the left 
    **A:** Use the static method `FileFormatUtil.detectFileFormat(filePath)`. It reads only the header bytes of the file and returns a `FileFormatInfo` object that contains the detected format, extension, and whether the format is supported by Aspose.Words.
 
 2. **Q:** What does `detectFileFormat` return for a file whose format is not supported?  
-   **A:** The returned `FileFormatInfo` will have the `isRecognized` property set to `false` and the `loadFormat` property will be `LoadFormat.UNKNOWN`. This lets you skip or move the file without throwing an exception.
+   **A:** The returned `FileFormatInfo` will have the `loadFormat` property set to `LoadFormat.Unknown`. This lets you skip or move the file without throwing an exception.
 
 3. **Q:** How can I verify that the detected format is actually supported for loading?  
-   **A:** Check the `loadFormat` property of the `FileFormatInfo`. If it is not `LoadFormat.UNKNOWN`, the format is one of the formats that Aspose.Words can load. You may still need to handle encrypted or corrupted files separately.
+   **A:** Check the `loadFormat` property of the `FileFormatInfo`. If it is not `LoadFormat.Unknown`, the format is one of the formats that Aspose.Words can load. You may still need to handle encrypted or corrupted files separately.
 
 4. **Q:** What should I do if `detectFileFormat` indicates a supported format but loading the document still fails?  
-   **A:** The detection step only reads a small portion of the file. If loading fails, the file may be corrupted, encrypted with an unknown password, or contain features not handled by the current version. Catch the exception, inspect its message, and consider validating the file (e.g., checking for encryption with `Document.isEncrypted`) before retrying.  
+   **A:** The detection step only reads a small portion of the file. If loading fails, the file may be corrupted, encrypted with an unknown password, or contain features not handled by the current version. Catch the exception, inspect its message, and consider validating the file (e.g., checking for encryption with `FileFormatInfo.isEncrypted`) before retrying.  

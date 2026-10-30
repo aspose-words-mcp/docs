@@ -112,7 +112,7 @@ This is because Microsoft Office fallback settings are selected by default, and 
 
 **Q: Why might complex script text, such as Thai or Hebrew, be displayed inaccurately for some reason, such as the wrong position for diacritics or inaccurate ligatures?**
 
-Some complex script fonts require the Advanced Typography features to be processed in order to display them correctly. Advanced Typography is disabled in Aspose.Words by default. Users have to enable Advanced Typography with [TextShaperFactory](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_textshaperfactory/).
+Some complex script fonts require the Advanced Typography features to be processed in order to display them correctly. Advanced Typography is disabled in Aspose.Words by default. Users have to enable Advanced Typography with [get_TextShaperFactory()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_textshaperfactory/).
 
 ------
 
@@ -146,9 +146,9 @@ It is very easy as well, just load a document to the model and save it to any su
 
 The following code example shows the process of converting a DOCX file to PDF:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 // Load the document from disk.
-System::SharedPtr<Document> doc = System::MakeObject<Document>(inputDataDir + u"Rendering.doc");
+System::SharedPtr<Document> doc = System::MakeObject<Document>(inputDataDir + u"Rendering.docx");
 
 System::String outputPath = outputDataDir + u"Doc2Pdf.SaveDoc2Pdf.pdf";
 // Save the document in PDF format.
@@ -169,7 +169,7 @@ Aspose.Words enables you to split a multi-page document page by page.
 
 The following code example shows how to divide a document and save each page as a separate document:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 auto doc = MakeObject<Document>(MyDir + u"Big document.docx");
 
 int pageCount = doc->get_PageCount();
@@ -190,7 +190,7 @@ You can try to open an encrypted document without a password, which should lead 
 
 The following code example shows how to open an encrypted document with a password:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 // Create a document.
 auto doc = System::MakeObject<Document>();
 auto builder = System::MakeObject<DocumentBuilder>(doc);
@@ -204,7 +204,7 @@ options->set_Password(u"MyPassword");
 doc->Save(u"OoxmlSaveOptions.SaveAsDocx.docx", options);
 
 // Open the encrypted document by passing the correct password in a `LoadOptions` object.
-doc = System::MakeObject<Document>(u"OoxmlSaveOptions.Password.docx", System::MakeObject<LoadOptions>(u"MyPassword"));
+doc = System::MakeObject<Document>(u"OoxmlSaveOptions.SaveAsDocx.docx", System::MakeObject<LoadOptions>(u"MyPassword"));
 
-ASSERT_EQ(doc->GetText().Trim(), u"Hello world!");
+std::cout << doc->GetText().Trim() << std::endl; // Hello world!
 {{< /highlight >}}

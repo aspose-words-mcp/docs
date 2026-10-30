@@ -29,7 +29,7 @@ See more details in the [Save a Document](/words/net/save-a-document/) documenta
 
 {{% /alert %}}
 
-The following code example shows how to converteach documentpage from DOC to PNG:
+The following code example shows how to convert each document page from DOC to PNG:
 
 {{< gist "aspose-words-gists" "eacc4fc7407a98d683f3084bb86d58f7" "Examples-CSharp-Loading-and-Saving-ConvertWordDocument-ConvertDocumentToPNG.cs" >}}
 

@@ -50,7 +50,7 @@ When performing a Mail Merge operation, you can insert images from the database 
 
 ### Insert Images from a Database
 
-During a mail merge, when an image Mail Merge field is encountered in a document, the [FieldMergingCallback](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/get_fieldmergingcallback/) event is fired. You can respond to this event to return a filename, stream, or image object to the Mail Merge engine so it can be inserted into the document.
+During a mail merge, when an image Mail Merge field is encountered in a document, the [get_FieldMergingCallback()](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/get_fieldmergingcallback/) event is fired. You can respond to this event to return a filename, stream, or image object to the Mail Merge engine so it can be inserted into the document.
 
 The following code example shows how to insert images stored in a database BLOB field into a report:
 
@@ -60,7 +60,7 @@ The following code example shows how to insert images stored in a database BLOB 
 
 While merging an image merge field, you may sometimes need to control various image properties, such as [WrapType](https://reference.aspose.com/words/cpp/aspose.words.drawing/wraptype/).
 
-Currently, using [ImageFieldMergingArgs](https://reference.aspose.com/words/cpp/class/aspose.words.mail_merging.image_field_merging_args) you can only set image width or height properties, respectively. To overcome this issue, Aspose.Words provides the [Shape](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imagefieldmergingargs/get_shape/) property, which facilitates to get full control over the inserted image or any other shape.
+Currently, using [ImageFieldMergingArgs](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imagefieldmergingargs/) you can only set image width or height properties, respectively. To overcome this issue, Aspose.Words provides the [get_Shape()](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/imagefieldmergingargs/get_shape/) property, which facilitates to get full control over the inserted image or any other shape.
 
 The following code example shows how to set various image properties:
 
@@ -87,4 +87,4 @@ The following code example shows how to set various image properties:
    **A:** Inside the `FieldMerging` method, obtain the `Shape` object from `ImageFieldMergingArgs::get_Shape()`. Set properties such as `Shape::set_Width`, `Shape::set_Height`, and `Shape::set_WrapType` to adjust size and text wrapping.
 
 5. **Q:** How do I apply an Aspose.Words license in a C++ application to avoid evaluation limitations?  
-   **A:** Create an instance of `Aspose::Words::License`, then call `SetLicense` with the path to your `.lic` file, e.g., `Aspose::Words::License license; license.SetLicense(u"Licenses/Aspose.Words.CPP.lic");`. Place this code before any document processing to ensure the license is active.
+   **A:** Create an instance of `Aspose::Words::License`, then call `SetLicense` with the path to your `.lic` file, e.g., `auto license = System::MakeObject<Aspose::Words::License>(); license->SetLicense(u"Licenses/Aspose.Words.CPP.lic");`. Place this code before any document processing to ensure the license is active.

@@ -34,6 +34,6 @@ The complexity of expressions in templates is not restricted in any way. However
 - [Working with Types](/words/net/working-with-types/)
 - [Accessing Type Members](/words/net/programming-with-documents/)
 - [Using Extension Methods](/words/net/outputting-sequential-data/)
-- [Using Operators](/words/net/using-operators/)
+- [Using Operators](/words/net/using-operators-linq/)
 - [Using Lambda Functions](/words/net/using-lambda-functions/)
-- [Working with Traditional Mail Merge Data Sources](/words/net/working-with-traditional-mail-merge-data-sources/)
+- [Working with Traditional Mail Merge Data Sources](/words/net/working-with-mail-merge-data-sources/)

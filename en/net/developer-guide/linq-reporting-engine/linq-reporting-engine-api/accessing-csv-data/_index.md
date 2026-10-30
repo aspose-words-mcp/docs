@@ -32,7 +32,7 @@ Using of `CsvDataSource` enables you to work with typed values rather than just 
 
 **Note** – For recognition of data types to work, string representations of corresponding values must be formed using invariant culture settings.
 
-In template documents, a`CsvDataSource` instance should be treated as a sequence of objects having corresponding fields as shown in the following example.
+In template documents, a `CsvDataSource` instance should be treated as a sequence of objects having corresponding fields as shown in the following example.
 
 CSV
 
@@ -135,7 +135,7 @@ Also, you can use `CsvDataLoadOptions` to customize the following characters pla
    **A:** Yes. Set `CsvDataLoadOptions` constructor argument `hasHeaders` to `true`. The first row will be treated as column names, which you can reference directly in the template (e.g., `<<[Name]>>`).
 
 3. **Q:** How do I change the delimiter or comment character when loading a CSV file?  
-   **A:** Create a `CsvDataLoadOptions` object and set its `Separator`, `CommentChar`, or `QuoteChar` properties, then pass the options to the `CsvDataSource` constructor.
+   **A:** Create a `CsvDataLoadOptions` object and set its `Delimiter`, `CommentChar`, or `QuoteChar` properties, then pass the options to the `CsvDataSource` constructor.
 
 4. **Q:** My numeric values are being read as strings; what might be wrong?  
    **A:** Ensure the numbers are formatted using invariant culture (e.g., a dot as the decimal separator) and that no surrounding quotes or spaces prevent parsing. Also verify that `CsvDataLoadOptions` has not overridden the default parsing behavior.

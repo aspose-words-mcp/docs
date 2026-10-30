@@ -83,14 +83,14 @@ The following example shows, how to use this feature. Given that r is an `IDataR
 ## Related APIs
 
 
-- [DataSet](https://reference.wordize.com/net/system.data.dataset/)
-- [DataTable](https://reference.wordize.com/net/system.data.datatable/)
-- [DataView](https://reference.wordize.com/net/system.data.dataview/)
-- [DataRow](https://reference.wordize.com/net/system.data.datarow/)
-- [DataRowView](https://reference.wordize.com/net/system.data.datarowview/)
-- [IDataReader](https://reference.wordize.com/net/system.data.idatareader/)
-- [IDataRecord](https://reference.wordize.com/net/system.data.idatarecord/)
-- [DataRelation](https://reference.wordize.com/net/system.data.datarelation/)
+- [DataSet](https://learn.microsoft.com/en-us/dotnet/api/system.data.dataset)
+- [DataTable](https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable)
+- [DataView](https://learn.microsoft.com/en-us/dotnet/api/system.data.dataview)
+- [DataRow](https://learn.microsoft.com/en-us/dotnet/api/system.data.datarow)
+- [DataRowView](https://learn.microsoft.com/en-us/dotnet/api/system.data.datarowview)
+- [IDataReader](https://learn.microsoft.com/en-us/dotnet/api/system.data.idatareader)
+- [IDataRecord](https://learn.microsoft.com/en-us/dotnet/api/system.data.idatarecord)
+- [DataRelation](https://learn.microsoft.com/en-us/dotnet/api/system.data.datarelation)
 
 
 ## FAQ

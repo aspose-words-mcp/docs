@@ -96,7 +96,7 @@ public static Hyperlink createHyperlink(MainDocumentPart mdp, String url) {
 
 ## Download Sample Code
 
-- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/inserthyperlinks)
+- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose_Words_Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/inserthyperlinks)
 
 {{% alert color="primary" %}}
 

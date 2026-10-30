@@ -21,18 +21,18 @@ This page explains how to configure layout options that affect pagination and re
 
 {{% /alert %}}
 
-Aspose.Words enables you to create output documents with various layouts, depending on the parameters specified in properties of the [LayoutOptions](https://reference.aspose.com/words/cpp/class/aspose.words.layout.layout_options) class. Some of these properties resemble some of the Microsoft Word user interface menu options – they will be described in this article.
+Aspose.Words enables you to create output documents with various layouts, depending on the parameters specified in properties of the [LayoutOptions](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/) class. Some of these properties resemble some of the Microsoft Word user interface menu options – they will be described in this article.
 
-For a complete list of parameters such as [ContinuousSectionPageNumberingRestart](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_continuoussectionpagenumberingrestart/) to calculate page numbers in a continuous section that restarts page numbering, or [IgnorePrinterMetrics](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_ignoreprintermetrics/) to ignore the "Use printer metrics to lay out document" compatibility option, see the [LayoutOptions](https://reference.aspose.com/words/cpp/class/aspose.words.layout.layout_options) class page.
+For a complete list of parameters such as [get_ContinuousSectionPageNumberingRestart()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_continuoussectionpagenumberingrestart/) to calculate page numbers in a continuous section that restarts page numbering, or [get_IgnorePrinterMetrics()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_ignoreprintermetrics/) to ignore the "Use printer metrics to lay out document" compatibility option, see the [LayoutOptions](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/) class page.
 
 ## Formatting Marks
 
 Aspose.Words allows to manage formatting marks using the following properties:
 
-- [ShowHiddenText](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_showhiddentext/)– a `Boolean` value, which specifies whether the hidden text is rendered.
-- [ShowParagraphMarks](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_showparagraphmarks/)– a `Boolean` value, which specifies whether paragraph mark characters are rendered.
+- [get_ShowHiddenText()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_showhiddentext/) – a `Boolean` value, which specifies whether the hidden text is rendered.
+- [get_ShowParagraphMarks()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_showparagraphmarks/) – a `Boolean` value, which specifies whether paragraph mark characters are rendered.
 
-The page depicted in the example below contains three paragraphs. The second one is hidden. A user can change the **ShowHiddenText** option to display this hidden text on the page. Also, each paragraph has a paragraph mark at the end. The paragraph mark usually is not visible unless the **ShowParagraphMarks** property is set to render it.
+The page depicted in the example below contains three paragraphs. The second one is hidden. A user can change the **get_ShowHiddenText()** option to display this hidden text on the page. Also, each paragraph has a paragraph mark at the end. The paragraph mark usually is not visible unless the **get_ShowParagraphMarks()** property is set to render it.
 
 ![specify-layout-options_1-cpp](specify-layout-options-1.png)
 
@@ -42,15 +42,15 @@ In Microsoft Word, these parameters are set using the "File → Options → Disp
 
 ## Comments and Revisions
 
-With Aspose.Words, you can render document comments that will look the same as in Microsoft Word. To specify whether comments are rendered, use the [CommentDisplayMode](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_commentdisplaymode/) property.
+With Aspose.Words, you can render document comments that will look the same as in Microsoft Word. To specify whether comments are rendered, use the [get_CommentDisplayMode()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_commentdisplaymode/) property.
 
 In Microsoft Word, this parameter is set using the "Track Changes Options" dialog box, as shown below:
 
 ![specify-layout-options_3-cpp](specify-layout-options-3.jpg)
 
-Also, Aspose.Words allows you to display revisions in a document. Use the [RevisionOptions](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_revisionoptions/) property of the **LayoutOptions** class to define whether the document revisions are displayed. To control their appearance (revision highlighting color, revision bar color, etc.), use the [RevisonOptions](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_revisionoptions/) class.
+Also, Aspose.Words allows you to display revisions in a document. Use the [get_RevisionOptions()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_revisionoptions/) property of the **LayoutOptions** class to define whether the document revisions are displayed. To control their appearance (revision highlighting color, revision bar color, etc.), use the [get_RevisionOptions()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_revisionoptions/) class.
 
-You can also have revisions displayed as comments to the content. For this purpose, use the [CommentDisplayMode](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/set_commentdisplaymode/) property and [ShowInBalloons](https://reference.aspose.com/words/cpp/aspose.words.layout/commentdisplaymode/) value.
+You can also have revisions displayed as comments to the content. For this purpose, use the [set_CommentDisplayMode()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/set_commentdisplaymode/) property and [ShowInBalloons](https://reference.aspose.com/words/cpp/aspose.words.layout/commentdisplaymode/) value.
 
 The following code example shows how to customize revisions display:
 
@@ -62,7 +62,7 @@ The image below shows how Aspose.Words renders comments and the Delete revisions
 
 ## Text Shaper for Advanced Typography Rendering
 
-The [TextShaperFactory](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_textshaperfactory/) property enables you to set the text shaping functionality, as well as the `OpenType` features support.
+The [get_TextShaperFactory()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_textshaperfactory/) property enables you to set the text shaping functionality, as well as the `OpenType` features support.
 
 Use text shaping for document processing in the following main cases:
 
@@ -77,7 +77,7 @@ Text shaping will be enabled only when exporting a document to PDF or XPS.
 
 ## Related APIs
 
-- [`LayoutOptions`](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/)
-- [`RevisionOptions`](https://reference.aspose.com/words/cpp/aspose.words.layout/revisionoptions/)
-- [`CommentDisplayMode`](https://reference.aspose.com/words/cpp/aspose.words.layout/commentdisplaymode/)
-- [`TextShaperFactory`](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_textshaperfactory/)
+- [LayoutOptions](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/)
+- [RevisionOptions](https://reference.aspose.com/words/cpp/aspose.words.layout/revisionoptions/)
+- [CommentDisplayMode](https://reference.aspose.com/words/cpp/aspose.words.layout/commentdisplaymode/)
+- [get_TextShaperFactory()](https://reference.aspose.com/words/cpp/aspose.words.layout/layoutoptions/get_textshaperfactory/)
