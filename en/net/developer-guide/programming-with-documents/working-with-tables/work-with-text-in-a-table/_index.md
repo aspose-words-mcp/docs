@@ -76,10 +76,10 @@ The following code example shows how to set the title and description properties
    **A:** For the whole table, use `Table.Range.Text`. For a particular cell, access `Cell.Range.Text`. Both properties return the textual content without any formatting or markup.
 
 3. **Q:** Can I replace text with line breaks or multiple paragraphs inside a cell?  
-   **A:** Yes. Include the special metacharacters `\r` (paragraph break) and `\v` (line break) in the replacement string when calling `Range.Replace`. Aspose.Words will insert the appropriate breaks during the replacement.
+   **A:** Yes. Include the metacharacters `&p` (paragraph break) and `&l` (line break) in the replacement string when calling `Range.Replace`. Aspose.Words inserts the breaks during the replacement. A plain `\r` character in the replacement does not create a new paragraph.
 
 4. **Q:** How can I add a title or description to a table for accessibility purposes?  
    **A:** Set the `Table.Title` and `Table.Description` properties. These are stored in the DOCX file according to the ISO/IEC 29500 standard and are ignored when saving to older Word formats.
 
 5. **Q:** I need to replace text but keep the original formatting; how can I achieve that?  
-   **A:** Use `Range.Replace` together with a `FindReplaceOptions` object where `PreserveFormatting` is set to `true`. This ensures that only the text changes while the original font, style, and other formatting remain intact.
+   **A:** `Range.Replace` already does this: the replacement text keeps the formatting (font, style, and so on) of the text it replaces. No extra option is needed.

@@ -14,7 +14,7 @@ timestamp: 2024-10-24-11-44-28
 
 Once you are happy with the evaluation, [buy a license](https://purchase.aspose.com/pricing/words/family/). Before purchasing make sure you understand and agree to the license subscription terms.
 
-The license emailed to you when the order has been paid. The license is a clear text, digitally signed XML file and contains information such as the client name, the purchased product and the type of the license. Do not modify the content of the license file as it will invalidate the license.
+The license is emailed to you when the order has been paid. The license is a clear text, digitally signed XML file and contains information such as the client name, the purchased product and the type of the license. Do not modify the content of the license file as it will invalidate the license.
 
 {{% /alert %}}
 
@@ -23,15 +23,11 @@ The license emailed to you when the order has been paid. The license is a clear 
 Download the license file and copy it to the `C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Services\ReportServer\bin` folder on the server.
 Where &lt;Instance&gt; is the subdirectory name that corresponds to the Microsoft SQL Server instance you want to license:
 
-- The default instance directory for Microsoft SQL Server 2000 is MSSQL.
-- The default instance directory for Microsoft SQL Server 2005 is MSSQL.x, where “x” is the instance identifier.
-- The default instance directory for Microsoft SQL Server 2008 is MSRS10.MSSQLSERVER.
-- The default instance directory for Microsoft SQL Server 2008 R2 is MSRS10_50.MSSQLSERVER.
 - The default instance directory for Microsoft SQL Server 2012 is MSRS11.MSSQLSERVER.
 - The default instance directory for Microsoft SQL Server 2014 is MSRS12.MSSQLSERVER.
 - The default instance directory for Microsoft SQL Server 2016 is MSRS13.MSSQLSERVER.
-- The default instance directory for Microsoft SQL Server 2017 is MSRS14.MSSQLSERVER
-- The default instance directory for Microsoft SQL Server 2019 is MSRS14.MSSQLSERVER
+
+For Microsoft SQL Server 2017, 2019 and 2022, copy the license file to the `C:\Program Files\Microsoft SQL Server Reporting Services\SSRS\ReportServer\bin` folder. For Power BI Report Server, copy it to the `C:\Program Files\Microsoft Power BI Report Server\PBIRS\ReportServer\bin` folder.
 
 ## Licensing Application Development
 
@@ -56,7 +52,7 @@ license.SetLicense("Aspose.Words.Reporting.Services.lic");
 
 **Visual Basic**
 
-{{< highlight csharp >}}
+{{< highlight vb >}}
 Dim license As Aspose.Words.ReportingServices.License = New Aspose.Words.ReportingServices.License()
 license.SetLicense("Aspose.Words.Reporting.Services.lic")
 {{< /highlight >}}
@@ -72,7 +68,7 @@ license.SetLicense(myStream);
 
 **Visual Basic**
 
-{{< highlight csharp >}}
+{{< highlight vb >}}
 Dim license As Aspose.Words.ReportingServices.License = New Aspose.Words.ReportingServices.License()
 license.SetLicense(myStream)
 {{< /highlight >}}
@@ -83,7 +79,7 @@ Distribute the license file in the same folder as `Aspose.Words.ReportingService
 
 ### Licensing Generation of Reports at Design Time
 
-Download the license file and copy it to C:\Program Files\Microsoft Visual Studio &lt;Version&gt;\Common7\IDE\PrivateAssemblies, where &lt;Version&gt; is “8” for Visual Studio 2005 or “9.0” for Visual Studio 2008.
+Download the license file and copy it to the folder that contains the `Aspose.Words.ReportingServices.dll` used by the Report Designer (for a manual installation, see [Integrating Manually with Visual Studio Report Designer](/words/reportingservices/integrating-manually-with-visual-studio-report-designer/)).
 
 ### Testing a License
 

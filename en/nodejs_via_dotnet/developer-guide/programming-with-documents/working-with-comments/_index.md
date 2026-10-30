@@ -112,7 +112,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 Using Aspose.Words you can also remove comments between the **CommentRangeStart** and **CommentRangeEnd** nodes.
 
-The following code example shows how to remove text between**CommentRangeStart** and **CommentRangeEnd**:
+The following code example shows how to remove text between **CommentRangeStart** and **CommentRangeEnd**:
 
 {{< gist "aspose-words-gists" "f8f4978e43b554cf1c3f88982244c535" "remove-range-text.js" >}}
 

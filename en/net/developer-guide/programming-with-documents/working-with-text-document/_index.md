@@ -24,11 +24,11 @@ This page explains how to work with plain text documents using Aspose.Words.
 
 In this article, we will learn what options can be useful for working with a text document via Aspose.Words. Please note that this is not a complete list of available options, but only an example of working with some of them.
 
-## AddBi-Directional Marks
+## Add Bi-Directional Marks
 
 You can use the [AddBidiMarks](https://reference.aspose.com/words/net/aspose.words.saving/txtsaveoptions/addbidimarks/) property to specify whether to add bi-directional marks before each BiDi run when exporting in plain text format. Aspose.Words inserts Unicode Character 'RIGHT-TO-LEFT MARK' (U+200F) before each bi-directional Run in the text. This option corresponds to "Add bi-directional marks" option in MS Word File Conversion dialogue when you export to a Plain Text format. Note that it appears in dialogue only if any of Arabic or Hebrew editing languages are added in MS Word.
 
-The following code example shows how to use**AddBidiMarks** property. The default value of this property is *false*:
+The following code example shows how to use **AddBidiMarks** property. The default value of this property is *false*:
 
 {{< gist "aspose-words-gists" "ddafc3430967fb4f4f70085fa577d01a" "add-bidi-marks.cs" >}}
 
@@ -70,9 +70,9 @@ The following code example shows how to export headers and footers to plain text
 
 ## Export List Indentation in Output TXT
 
-Aspose.Words introduced the [TxtListIndentation](https://reference.aspose.com/words/net/aspose.words.saving/txtlistindentation/) class that allows specifying how list levels are indented while exporting to a plain text format. While working with [TxtSaveOption](https://reference.aspose.com/words/net/aspose.words.saving/txtsaveoptions/), the [ListIndentation](https://reference.aspose.com/words/net/aspose.words.saving/txtsaveoptions/listindentation/) property is provided to specify the character to beused for indenting list levels andcount specifyinghow many characters to use as indentation per one list level.
+Aspose.Words introduced the [TxtListIndentation](https://reference.aspose.com/words/net/aspose.words.saving/txtlistindentation/) class that allows specifying how list levels are indented while exporting to a plain text format. While working with [TxtSaveOption](https://reference.aspose.com/words/net/aspose.words.saving/txtsaveoptions/), the [ListIndentation](https://reference.aspose.com/words/net/aspose.words.saving/txtsaveoptions/listindentation/) property is provided to specify the character to be used for indenting list levels and count specifying how many characters to use as indentation per one list level.
 
-The default value for character property is'\0' indicating that there is no indentation. For count property, the default value is 0 which means no indentation.
+The default value for character property is '\0' indicating that there is no indentation. For count property, the default value is 0 which means no indentation.
 
 ### Using Tab Character
 
@@ -100,7 +100,7 @@ The following code example shows how to export list levels using space character
    **A:** Configure `TxtLoadOptions` properties `LeadingSpacesOptions` and `TrailingSpacesOptions` before loading the document.
 
 4. **Q:** Can I export headers and footers to a plain‑text file?  
-   **A:** Yes. Set `TxtSaveOptions.ExportHeadersFootersMode` to `ExportHeadersFootersMode.All` (or `PrimaryOnly`) to include header/footer text in the saved TXT output.
+   **A:** Yes. Set `TxtSaveOptions.ExportHeadersFootersMode` to `TxtExportHeadersFootersMode.AllAtEnd` (or `PrimaryOnly`) to include header/footer text in the saved TXT output.
 
 5. **Q:** How can I control indentation of list levels in the exported TXT?  
-   **A:** Create a `TxtListIndentation` instance, set its `Character` (e.g., `'\t'` for tabs or `' '` for spaces) and `Count` (number of characters per level), then assign it to `TxtSaveOptions.ListIndentation`.
+   **A:** Set the properties of the `TxtSaveOptions.ListIndentation` object (the property itself is read-only): `Character` (e.g., `'\t'` for tabs or `' '` for spaces) and `Count` (number of characters per level), for example `options.ListIndentation.Character = '\t'; options.ListIndentation.Count = 1;`.

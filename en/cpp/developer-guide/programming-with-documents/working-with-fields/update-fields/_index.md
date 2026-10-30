@@ -27,7 +27,7 @@ When a document is loaded, Aspose.Words mimics the behavior of Microsoft Word wi
 
 ### Update Fields Programmatically
 
-To explicitly update fields in the whole document, simply call the [UpdateFields](https://reference.aspose.com/words/cpp/aspose.words/document/updatefields/) method. To update fields contained in part of a document, obtain a [Range](https://reference.aspose.com/words/cpp/aspose.words/range/) object and call the [UpdateFields](https://reference.aspose.com/words/cpp/aspose.words/range/updatefields/) method. In Aspose.Words, you can obtain a **Range** for any node in the document tree, such as [Section](https://reference.aspose.com/words/cpp/aspose.words/section/), [HeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/headerfooter/) , [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), etc. using the [Node.Range](https://reference.aspose.com/words/cpp/aspose.words/node/get_range/) property.You can update the result of a single field by calling the [Update](https://reference.aspose.com/words/cpp/aspose.words.fields/field/update/) method.
+To explicitly update fields in the whole document, simply call the [UpdateFields](https://reference.aspose.com/words/cpp/aspose.words/document/updatefields/) method. To update fields contained in part of a document, obtain a [Range](https://reference.aspose.com/words/cpp/aspose.words/range/) object and call the [UpdateFields](https://reference.aspose.com/words/cpp/aspose.words/range/updatefields/) method. In Aspose.Words, you can obtain a **Range** for any node in the document tree, such as [Section](https://reference.aspose.com/words/cpp/aspose.words/section/), [HeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/headerfooter/) , [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), etc. using the [Node::get_Range()](https://reference.aspose.com/words/cpp/aspose.words/node/get_range/) property. You can update the result of a single field by calling the [Update](https://reference.aspose.com/words/cpp/aspose.words.fields/field/update/) method.
 
 ### Automatic Update of Page-Related Fields During Rendering
 
@@ -45,7 +45,7 @@ When you execute a mail merge, all fields in the document will be automatically 
 
 ## Update LastSavedTime Property Before Saving
 
-You can use [UpdateLastSavedTimeProperty](https://reference.aspose.com/words/cpp/aspose.words.saving/saveoptions/get_updatelastsavedtimeproperty/) property whether to update the corresponding built-in document property [LastSavedTime](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_lastsavedtime/) when saving the document.
+You can use [get_UpdateLastSavedTimeProperty()](https://reference.aspose.com/words/cpp/aspose.words.saving/saveoptions/get_updatelastsavedtimeproperty/) property whether to update the corresponding built-in document property [get_LastSavedTime()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_lastsavedtime/) when saving the document.
 
 The following code example shows how to update this property:
 
@@ -59,13 +59,13 @@ The following code example shows how to update this property:
    **A:** Load the document, call `Document::UpdateFields()`, and then save the document. This updates every field, including TOC, page numbers, and formula fields.  
 
 2. **Q:** How do I update fields only in a specific part of a document, such as a header or a section?  
-   **A:** Obtain the `Range` of the target node (e.g., `HeaderFooter* header = ...; Range* range = header->get_Range();`) and call `range->UpdateFields()`. Only fields inside that range are refreshed.  
+   **A:** Obtain the `Range` of the target node (e.g., `auto range = header->get_Range();` for a `HeaderFooter`) and call `range->UpdateFields()`. Only fields inside that range are refreshed.  
 
 3. **Q:** Are page‑related fields like `PAGE` and `PAGEREF` updated automatically when converting to PDF or XPS?  
    **A:** Yes. During rendering to fixed‑page formats, Aspose.Words automatically updates page‑related fields in headers and footers. For other fields you must call `UpdateFields()` before rendering.  
 
 4. **Q:** Does Mail Merge automatically update fields, or must I call `UpdateFields()` after a merge?  
-   **A:** Mail Merge automatically updates all fields that are part of the merge operation. No additional call to `UpdateFields()` is required unless you have other fields that need refreshing.  
+   **A:** Mail Merge automatically updates all fields in the document, so no additional call to `UpdateFields()` is required.  
 
-5. **Q:** How can I ensure the `LastSavedTime` built‑in property reflects the current time when saving?  
-   **A:** Set `SaveOptions::UpdateLastSavedTimeProperty` to `true` before saving the document. This updates the `LastSavedTime` property to the current system time.  
+5. **Q:** How can I ensure the `get_LastSavedTime()` built‑in property reflects the current time when saving?  
+   **A:** Set `SaveOptions::UpdateLastSavedTimeProperty` to `true` before saving the document. This updates the `set_LastSavedTime()` property to the current system time.  

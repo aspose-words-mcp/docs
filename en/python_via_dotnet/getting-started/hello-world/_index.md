@@ -29,7 +29,7 @@ Below code snippet follows these steps:
 1. Initialize a [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/) class
 1. Insert text to the document start using simple [write](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/write/) method
 1. Open an existing [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) from a file. Automatically detects the file format
-1. [Append](https://reference.aspose.com/words/python-net/aspose.words/document/append_document/) document "A" to the and of the document "B"
+1. [Append](https://reference.aspose.com/words/python-net/aspose.words/document/append_document/) document "A" to the end of the document "B"
 1. [Save](https://reference.aspose.com/words/python-net/aspose.words/document/save/) the output as PDF
 
 The following code snippet is a "Hello, World!" example to exhibit working of "Aspose.Words for Python via .NET" API:

@@ -29,7 +29,7 @@ Under SharePoint 2010/2013/2016, the server ribbon button is available instead o
 
 **The server ribbon button converts a single file when a single file is selected.**
 
-## ![todo:image_alt_text](convert-all-files-in-a-folder-3.png)
+![todo:image_alt_text](convert-all-files-in-a-folder-3.png)
 
 When you select a single file or folder in a document library view, the **Convert via Aspose.Words** button displays the conversion settings page for this item. It works the same way as the `ECB` option.
 

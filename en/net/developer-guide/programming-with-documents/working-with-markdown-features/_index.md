@@ -21,7 +21,7 @@ This page explains how to work with Markdown features when loading or saving Mar
 
 {{% /alert %}}
 
-This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supportsthe following Markdown features:
+This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supports the following Markdown features:
 
 - Headings
 - Blockquotes
@@ -29,7 +29,7 @@ This topic discusses how to implement Markdown features using Aspose.Words. Mark
 - Bold emphasis
 - Italic emphasis
 
-The Markdown feature implementationmostly follows the `CommonMark` specification in Aspose.Words API and all the features are represented as corresponding styles or direct formatting. Which means that
+The Markdown feature implementation mostly follows the `CommonMark` specification in Aspose.Words API and all the features are represented as corresponding styles or direct formatting. Which means that
 
 - Bold and Italic are represented as `Font.Bold` and `Font.Italic`.
 - Headings are paragraphs with Heading 1 - Heading 6 styles.

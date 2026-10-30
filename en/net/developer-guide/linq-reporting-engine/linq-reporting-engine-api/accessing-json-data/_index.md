@@ -370,9 +370,9 @@ JsonDataSource dataSource = new JsonDataSource(..., options);
 
 The following APIs are related to working with JSON data in Aspose.Words for .NET:
 
-- [JsonDataSource](https://reference.wordize.com/net/Aspose.Words.Reporting.JsonDataSource.html) - Represents a data source for JSON data that can be used with the reporting engine.
-- [JsonDataLoadOptions](https://reference.wordize.com/net/Aspose.Words.Reporting.JsonDataLoadOptions.html) - Provides options for loading and parsing JSON data.
-- [ReportingEngine](https://reference.wordize.com/net/Aspose.Words.Reporting.ReportingEngine.html) - The main class responsible for building reports using data sources.
+- [JsonDataSource](https://reference.aspose.com/words/net/aspose.words.reporting/jsondatasource/) - Represents a data source for JSON data that can be used with the reporting engine.
+- [JsonDataLoadOptions](https://reference.aspose.com/words/net/aspose.words.reporting/jsondataloadoptions/) - Provides options for loading and parsing JSON data.
+- [ReportingEngine](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/) - The main class responsible for building reports using data sources.
 
 
 ## FAQ
@@ -384,7 +384,7 @@ The following APIs are related to working with JSON data in Aspose.Words for .NE
    **A:** Supply the array name as the third argument to `BuildReport`. For example, `engine.BuildReport(doc, dataSource, "persons")` lets you iterate with `<<foreach [in persons]>>` in the template.
 
 3. **Q:** How can I control how date strings are parsed from JSON?  
-   **A:** Use `JsonDataLoadOptions.ExactDateTimeParseFormats` to provide one or more date formats that the engine should recognize. Setting this list to an empty collection disables date‑time detection entirely.
+   **A:** Use `JsonDataLoadOptions.ExactDateTimeParseFormats` to provide one or more date formats that the engine should recognize. Setting it to an empty collection does not disable recognition: no additional formats are used, but strings in the Microsoft JSON date format (for example `/Date(1224043200000)/`) are still recognized as date-time values.
 
 4. **Q:** What is the difference between loose and strict parsing modes for simple JSON values?  
    **A:** In **loose** mode (default) the engine infers the type from the string content, so `"123"` becomes an integer. In **strict** mode the engine respects the JSON literal types, keeping `"123"` as a string unless the JSON explicitly defines a number.

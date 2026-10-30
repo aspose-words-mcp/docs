@@ -48,7 +48,7 @@ The following code example shows how to save a multi-page DOCX document as JPEG 
 
 {{< gist "aspose-words-gists" "506e77996cb7d2e368a64d4ae66af312" "horizontal-layout.h" >}}
 
-You can also customize the output file page appearance – specify [BackColor](https://reference.aspose.com/words/cpp/aspose.words.saving/multipagelayout/get_backcolor/), [BorderColor](https://reference.aspose.com/words/cpp/aspose.words.saving/multipagelayout/get_bordercolor/), and [BorderWidth](https://reference.aspose.com/words/cpp/aspose.words.saving/multipagelayout/get_borderwidth/).
+You can also customize the output file page appearance – specify [get_BackColor()](https://reference.aspose.com/words/cpp/aspose.words.saving/multipagelayout/get_backcolor/), [get_BorderColor()](https://reference.aspose.com/words/cpp/aspose.words.saving/multipagelayout/get_bordercolor/), and [get_BorderWidth()](https://reference.aspose.com/words/cpp/aspose.words.saving/multipagelayout/get_borderwidth/).
 
 The following code example shows how to save a multi-page DOCX document as PNG image with Grid layout:
 
@@ -59,16 +59,16 @@ The following code example shows how to save a multi-page DOCX document as PNG i
 ## FAQ
 
 1. **Q:** How can I export each page of a document as a separate image file?  
-   **A:** Use the `SinglePage` layout together with the `PageRange` property of `ImageSaveOptions`. Set `PageRange` to the desired page number and call `Save` inside a loop for all pages.
+   **A:** Use the `SinglePage` layout together with the `PageSet` property of `ImageSaveOptions`. Set `PageSet` to the desired page index (zero‑based) and call `Save` inside a loop for all pages.
 
 2. **Q:** Can I create a multi‑frame TIFF where each page becomes a separate frame?  
-   **A:** Yes. Set `options->set_MultiPageLayout(Aspose::Words::Saving::MultiPageLayout::TiffFrames());` and use `SaveFormat::Tiff`. Each document page will be stored as an individual frame in the resulting TIFF file.
+   **A:** Yes. Set `options->set_PageLayout(Aspose::Words::Saving::MultiPageLayout::TiffFrames());` and use `SaveFormat::Tiff`. Each document page will be stored as an individual frame in the resulting TIFF file.
 
 3. **Q:** How do I control the resolution (DPI) of the exported images?  
    **A:** Use `options->set_Resolution(int dpi);`. For example, `options->set_Resolution(300);` will generate 300 DPI images, which is useful for high‑quality prints.
 
 4. **Q:** Is it possible to export only a subset of pages, e.g., pages 2‑5?  
-   **A:** Yes. Set the `PageRange` property: `options->set_PageRange(Aspose::Words::Saving::PageRange(2, 5));`. The export will include only the specified pages using the chosen layout.
+   **A:** Yes. Set the `PageSet` property with a page range (page indexes are zero‑based): `options->set_PageSet(System::MakeObject<Aspose::Words::Saving::PageSet>(System::MakeArray<System::SharedPtr<Aspose::Words::Saving::PageRange>>({System::MakeObject<Aspose::Words::Saving::PageRange>(1, 4)})));`. The export will include only the specified pages using the chosen layout.
 
 5. **Q:** How can I change the background color of the exported image pages?  
    **A:** Access the layout object via `options->get_PageLayout()` and call `set_BackColor`. Example: `options->get_PageLayout()->set_BackColor(System::Drawing::Color::get_White());`. This color fills the area around each page when using grid‑type layouts.

@@ -17,11 +17,11 @@ The following table indicates the input and output file formats supported by Asp
 | Format | Description | Load | Save | Remarks |
 | :- | :- | :- | :- | :- |
 | [DOC](https://docs.fileformat.com/word-processing/doc/) | Microsoft Word 97 - 2007 Document. | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
-| [DOCX](https://docs.fileformat.com/word-processing/docx/) | Office Open XML WordprocessingML Document (macro-free). | {{< emoticons/tick >}}| {{< emoticons/tick >}} |  |
-| [RTF](https://docs.fileformat.com/word-processing/rtf/) | RTF format. | {{< emoticons/tick >}}| {{< emoticons/tick >}} |  |
-| [MHT](https://docs.fileformat.com/web/htm/) | Web Page Archive. | {{< emoticons/tick >}}| {{< emoticons/tick >}} |  |
-| [ODT](https://docs.fileformat.com/word-processing/odt/) | ODF Text Document. | {{< emoticons/tick >}}| {{< emoticons/tick >}} |  |
-| [TXT](https://docs.fileformat.com/word-processing/txt/) | Plain Text | {{< emoticons/tick >}}| {{< emoticons/tick >}} |  |
+| [DOCX](https://docs.fileformat.com/word-processing/docx/) | Office Open XML WordprocessingML Document (macro-free). | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
+| [RTF](https://docs.fileformat.com/word-processing/rtf/) | RTF format. | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
+| [MHT](https://docs.fileformat.com/web/mhtml/) | Web Page Archive. | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
+| [ODT](https://docs.fileformat.com/word-processing/odt/) | ODF Text Document. | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
+| [TXT](https://docs.fileformat.com/word-processing/txt/) | Plain Text | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
 | [MD](https://docs.fileformat.com/word-processing/md/) | Markdown. | {{< emoticons/tick >}} | {{< emoticons/tick >}} |  |
 | [PDF](https://docs.fileformat.com/pdf/) | Saves the document as PDF (Adobe Portable Document) format. |  | {{< emoticons/tick >}} |  |
 | [XPS](https://docs.fileformat.com/page-description-language/xps/) | Saves the document in the XPS (XML Paper Specification) format. |  | {{< emoticons/tick >}} |  |

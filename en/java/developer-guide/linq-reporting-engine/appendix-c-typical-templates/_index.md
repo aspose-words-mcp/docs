@@ -345,7 +345,7 @@ We provide support for the following clients:
     </tr>
     <tr>
       <td><strong>Contract Price</strong></td>
-      <td style="background-color: #ffff00">&lt;&lt;[getContracts.sum( c => c.getPrice())]>></td>
+      <td style="background-color: #ffff00">&lt;&lt;[getContracts().sum( c => c.getPrice())]>></td>
       <td>&lt;&lt;[getContracts().sum( c => c.getPrice())]>>&lt;&lt;/if>>&lt;&lt;/foreach>></td>
       <td>&lt;&lt;[sum( m => m.getContracts().sum( c => c.getPrice()))]>></td>
 		</tr>
@@ -573,6 +573,8 @@ We provide support for the following clients:
 **Report Example**
 
 <img src="scatter-chart-report-example.png" alt="Scatter_Chart_Report_Example-aspose-words-java" style="width:600px"/>
+
+{{< gist "aspose-words-gists" "a52d00e47498ab8a340b7c79ab79b9aa" "scatter-chart.java" >}}
 
 ## Bubble Chart Template
 

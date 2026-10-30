@@ -29,7 +29,6 @@ Please feel free to contact us if you wish to install this plugin on older versi
 
 You can download Export to Word plugin from one of the following locations
 
-- [dotCMS Plugins Repository](https://github.com/dotcms-plugins)
 - [Github](https://github.com/aspose-words/Aspose.Words-for-Java/releases/tag/Aspose-dotCMS-Export-To-Word-v1.0.0)
 
 ## Installing
@@ -40,8 +39,8 @@ Once downloaded, please follow these steps to install the plugin into your dotCM
 1. Go to the dotCMS Dynamic Plugin portlet under the System tab and click on the "Upload Plugin" button and then choose the AsposeDotCMSExportToWord JAR file.<br>
 ![install-plugin-dotcms-aspose-words-java](export-word-plugin-dotcms-aspose-words-java-2.png)<br>
 OR<br>
-Copy the AsposeDotCMSExportToWordJAR file inside the Felix OSGI container (dotCMS/felix/load).
-1. Please add the following 2 exportedpackages either by changing the file: dotCMS/WEB-INF/felix/osgi-extra.conf or using the dotCMS UI (System -> Dynamic Plugins -> Exported Packages).<br>
+Copy the AsposeDotCMSExportToWord JAR file inside the Felix OSGI container (dotCMS/felix/load).
+1. Please add the following 2 exported packages either by changing the file: dotCMS/WEB-INF/felix/osgi-extra.conf or using the dotCMS UI (System -> Dynamic Plugins -> Exported Packages).<br>
    i. javax.xml.stream<br>
    ii. javax.xml.namespace<br>
    To add packages to the list:
@@ -65,7 +64,7 @@ After you have installed the Export to Word OSGI plugin, it is really simple to 
     <input type="submit" value="Export to Word" style="float: right;" />
 </form>
 {{< /highlight >}}<br>
-1. This will add **Export to Word**button on the page and clicking a button will dynamically exports the content of the page into a Word Processing document.
+1. This will add **Export to Word** button on the page and clicking a button will dynamically exports the content of the page into a Word Processing document.
 
 ### How to apply Aspose License?
 
@@ -80,7 +79,7 @@ License license = new License();
 license.setLicense("Aspose.Words.Java.lic");
 {{< /highlight >}}
 
-Please check this [article](/words/java/licensing/#applying-a-license) for further details.
+Please check this [article](/words/java/licensing/#license-applying-options) for further details.
 
 ## Support, Extend and Contribute
 
@@ -90,7 +89,7 @@ From the very first days of Aspose, we knew that just giving our customers good 
 
 This is why we offer free support. Anyone who uses our product, whether they have bought them or are using an evaluation, deserves our full attention and respect.
 
-You can log any issues or suggestions related toExport to Word dotCMS plugin using any of the following platforms
+You can log any issues or suggestions related to Export to Word dotCMS plugin using any of the following platforms
 
 - [Github](https://github.com/aspose-words/Aspose.Words-for-Java/issues)
 

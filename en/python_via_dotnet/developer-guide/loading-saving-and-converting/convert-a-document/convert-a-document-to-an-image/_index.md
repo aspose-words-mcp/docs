@@ -36,7 +36,7 @@ Aspose.Words provides you with the [ImageSaveOptions](https://reference.aspose.c
 
 It is possible to specify the pages to be converted to image format using the [page_set](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/page_set/) property. For example, it can be applied if you only need a preview for the first or for a definite page.
 
-It is also possible to control the output image quality and pixel format using the following properties – [horizontal_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/horizontal_resolution/), [vertical_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/vertical_resolution/), [scale](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/scale/), [pixel_format](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/pixel_format/), [image_brightness](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_brightness/), as well as set up image color settings, using the following properties – [image_color_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_color_mode/), [image_contrast](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_contrast/), [paper_color](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/), [PaperColor](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/).
+It is also possible to control the output image quality and pixel format using the following properties – [horizontal_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/horizontal_resolution/), [vertical_resolution](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/vertical_resolution/), [scale](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/scale/), [pixel_format](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/pixel_format/), [image_brightness](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_brightness/), as well as set up image color settings, using the following properties – [image_color_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_color_mode/), [image_contrast](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/image_contrast/), [paper_color](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/), [paper_color](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/paper_color/).
 
 There are also properties that apply to a certain format, for example, [jpeg_quality](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/jpeg_quality/) or [tiff_compression](https://reference.aspose.com/words/python-net/aspose.words.saving/imagesaveoptions/tiff_compression/).
 
@@ -47,22 +47,22 @@ The following code example shows how to create a preview of the first document p
 ## FAQ
 
 1. **Q:** How can I convert only selected pages of a document to images?  
-   **A:** Use the `ImageSaveOptions.page_set` property to specify a collection of page numbers. For example, to convert pages 1 and 3 only:
+   **A:** Use the `ImageSaveOptions.page_set` property to specify a collection of page indices. For example, to convert pages 1 and 3 only into a multi-page TIFF:
 
    ```python
-   from aspose.words import Document, ImageSaveOptions, SaveFormat, PageSet
+   import aspose.words as aw
 
-   doc = Document("input.docx")
-   options = ImageSaveOptions(SaveFormat.Jpeg)
-   options.page_set = PageSet(page=1)   # pages are zero-based index
-   doc.save("output.jpeg", options)
+   doc = aw.Document("input.docx")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
+   options.page_set = aw.saving.PageSet([0, 2])   # zero-based page indices
+   doc.save("output.tiff", options)
    ```
 
 2. **Q:** How do I change the resolution of the generated image?  
    **A:** Set `horizontal_resolution` and `vertical_resolution` (in DPI) on `ImageSaveOptions`. Higher DPI yields a larger, higher‑quality image.
 
    ```python
-   options = ImageSaveOptions(SaveFormat.Png)
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.PNG)
    options.horizontal_resolution = 300
    options.vertical_resolution = 300
    doc.save("high_res.png", options)
@@ -72,7 +72,7 @@ The following code example shows how to create a preview of the first document p
    **A:** Adjust the `jpeg_quality` property (0‑100). A higher value gives better quality but larger file size.
 
    ```python
-   options = ImageSaveOptions(SaveFormat.Jpeg)
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.JPEG)
    options.jpeg_quality = 85   # typical high‑quality setting
    doc.save("photo.jpeg", options)
    ```
@@ -81,10 +81,8 @@ The following code example shows how to create a preview of the first document p
    **A:** Yes. Use the `pixel_format` property with values from the `ImagePixelFormat` enumeration (e.g., `FORMAT_24BPP_RGB`, `FORMAT_32BPP_RGB`).
 
    ```python
-   from aspose.words.saving import ImagePixelFormat
-
-   options = ImageSaveOptions(SaveFormat.Tiff)
-   options.pixel_format = ImagePixelFormat.FORMAT_24BPP_RGB
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
+   options.pixel_format = aw.saving.ImagePixelFormat.FORMAT_24BPP_RGB
    doc.save("output.tiff", options)
    ```
 
@@ -92,8 +90,8 @@ The following code example shows how to create a preview of the first document p
    **A:** Absolutely. Load the PDF with `Document`, configure `ImageSaveOptions`, and save it in the desired image format.
 
    ```python
-   doc = Document("source.pdf")
-   options = ImageSaveOptions(SaveFormat.Jpeg)
-   options.page_set = PageSet(1)   # second page only
+   doc = aw.Document("source.pdf")
+   options = aw.saving.ImageSaveOptions(aw.SaveFormat.JPEG)
+   options.page_set = aw.saving.PageSet(1)   # second page only
    doc.save("pdf_page2.jpeg", options)
    ```

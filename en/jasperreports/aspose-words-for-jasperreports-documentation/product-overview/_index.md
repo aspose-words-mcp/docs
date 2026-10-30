@@ -22,7 +22,7 @@ Aspose.Words for JasperReports is the only known solution on the market that mak
 
 ## Product Overview
 
-[JasperReports](https://sourceforge.net/projects/jasperreports/) and [JasperServer](https://sourceforge.net/projects/jasperserver/) do not have built-in abilities to export reports as Microsoft Word documents (apart from the RTF format that uses positioned items), but using Aspose.Words for JasperReports, you get access to the following additional export formats:
+[JasperReports](https://sourceforge.net/projects/jasperreports/) and JasperServer do not have built-in abilities to export reports as Microsoft Word documents (apart from the RTF format that uses positioned items), but using Aspose.Words for JasperReports, you get access to the following additional export formats:
 
 - DOC – Word document via Aspose.Words
 - DOCX – Office Open XML (OOXML) document via Aspose.Words
@@ -41,7 +41,7 @@ Aspose.Words for JasperReports provides a set of classes that extend the `JRAbst
 
 ![todo:image_alt_text](product-overview-2.png)
 
-Aspose.Words for JasperReports can be integrated with JasperServer to add DOC, DOCX, HTML, and TXT to the list of available formats. Simply configure JasperServer as [described in Installation](/words/jasperreports/installation/). After that, additional export format buttons are available when viewing reports.
+Aspose.Words for JasperReports can be integrated with JasperServer to add DOC, DOCX, RTF, ODT, HTML and TXT to the list of available formats. Simply configure JasperServer as [described in Installation](/words/jasperreports/installation/). After that, additional export format buttons are available when viewing reports.
 
 **Additional export formats (icons on the right) available after installing Aspose.Words for JasperReports on JasperServer.** 
 

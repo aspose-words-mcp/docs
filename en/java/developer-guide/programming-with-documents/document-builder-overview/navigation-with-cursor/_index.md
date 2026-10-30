@@ -29,25 +29,25 @@ This article explains how to move around in a document and navigate with a virtu
 
 ## Detecting Current Cursor Position
 
-Before starting the process of navigating through your document, you will need to get the node that is currently selected. You can get the exact position of the cursor at a selected node by using the [CurrentNode](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentNode) property. In addition, instead of getting the current node, you can get the currently selected paragraph or the currently selected section by using the [CurrentParagraph](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentParagraph) and [CurrentSection](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentSection) properties.
+Before starting the process of navigating through your document, you will need to get the node that is currently selected. You can get the exact position of the cursor at a selected node by using the [getCurrentNode()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentNode) property. In addition, instead of getting the current node, you can get the currently selected paragraph or the currently selected section by using the [getCurrentParagraph()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentParagraph) and [getCurrentSection()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentSection) properties.
 
-Any insert operations you perform using the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) will be inserted before the [CurrentNode](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#CurrentNode). When the current paragraph is empty or the cursor is positioned just before the end of the paragraph, the **CurrentNode** returns null.
+Any insert operations you perform using the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) will be inserted before the [getCurrentNode()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentNode). When the current paragraph is empty or the cursor is positioned just before the end of the paragraph, the **getCurrentNode()** returns null.
 
 ## Navigating Methods in a Document
 
 When you are editing text, it is important to know how to navigate your document and where exactly to move in it. Aspose.Words allows you to move around in a document and navigate to its different sections and parts – this is similar to the functionality of the Navigation Pane in Microsoft Word to go to a page or heading in a Word document without scrolling.
 
-The main method is to be able to move the cursor position to a specific node in your document, you can achieve this by using the [MoveTo](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveTo-com.aspose.words.Node) method.
+The main method is to be able to move the cursor position to a specific node in your document, you can achieve this by using the [moveTo()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveTo-com.aspose.words.Node) method.
 
 The following code example shows how to move the **DocumentBuilder** to different nodes in a document:
 
 {{< gist "aspose-words-gists" "402a4aea5f494d032783f0e9365d5990" "move-to-node.java" >}}
 
-But besides the basic **MoveTo** method, there are more specific ones.
+But besides the basic **moveTo()** method, there are more specific ones.
 
 ### Navigate to Beginning or End of a Document
 
-You can go to the beginning or the end of your document using the [MoveToDocumentStart](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentStart) and [MoveToDocumentEnd](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentEnd) methods.
+You can go to the beginning or the end of your document using the [moveToDocumentStart()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentStart) and [moveToDocumentEnd()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentEnd) methods.
 
 The following code example shows how to move the cursor position to the beginning or the end of a document:
 
@@ -55,7 +55,7 @@ The following code example shows how to move the cursor position to the beginnin
 
 ### Navigate With Bookmarks
 
-You can mark a place that you want to find and move to it again easily. You can insert as many bookmarks into your document as you want, and then navigate through them by identifying the bookmarks with unique names. You can move to a bookmark by using the [MoveToBookmark](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToBookmark-java.lang.String-boolean-boolean) method.
+You can mark a place that you want to find and move to it again easily. You can insert as many bookmarks into your document as you want, and then navigate through them by identifying the bookmarks with unique names. You can move to a bookmark by using the [moveToBookmark()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToBookmark-java.lang.String-boolean-boolean) method.
 
 The following code examples shows how to move a cursor position to a bookmark:
 
@@ -63,7 +63,7 @@ The following code examples shows how to move a cursor position to a bookmark:
 
 ### Navigate to Table Cells
 
-You can move to a table cell by using the [MoveToCell](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToCell-int-int-int-int) method. This method will enable you to navigate your cursor into any cell in a specific table. In addition, you can specify an index to move the cursor to any position or specified character in a cell within the **MoveToCell** method.
+You can move to a table cell by using the [moveToCell()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToCell-int-int-int-int) method. This method will enable you to navigate your cursor into any cell in a specific table. In addition, you can specify an index to move the cursor to any position or specified character in a cell within the **moveToCell()** method.
 
 The following code example shows how to move a cursor position to a specified table cell:
 
@@ -71,7 +71,7 @@ The following code example shows how to move a cursor position to a specified ta
 
 ### Navigate to a Field
 
-You can move to a specific field in your document by using the [MoveToField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToField-com.aspose.words.Field-boolean) method. In addition, you can move to a specific merge field by using the [MoveToMergeField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToMergeField-java.lang.String) method.
+You can move to a specific field in your document by using the [moveToField()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToField-com.aspose.words.Field-boolean) method. In addition, you can move to a specific merge field by using the [moveToMergeField()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToMergeField-java.lang.String) method.
 
 The following code example shows how to move the document builder cursor to a specific field:
 
@@ -79,7 +79,7 @@ The following code example shows how to move the document builder cursor to a sp
 
 ### Navigate to a Header or Footer
 
-You can move to the beginning of a header or footer by using the [MoveToHeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToHeaderFooter-int) method. 
+You can move to the beginning of a header or footer by using the [moveToHeaderFooter()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToHeaderFooter-int) method. 
 
 The following code example shows how to move document builder cursor to a document header or footer:
 
@@ -87,7 +87,7 @@ The following code example shows how to move document builder cursor to a docume
 
 ### Navigate to a Section or Paragraph
 
-You can move to a specific section or paragraph by using the [MoveToParagraph](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToParagraph-int-int) or [MoveToSection](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToSection-int) methods. In addition, you can specify an index to move the cursor to any position or a specified character in a paragraph within the **MoveToParagraph** method.
+You can move to a specific section or paragraph by using the [moveToParagraph()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToParagraph-int-int) or [moveToSection()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToSection-int) methods. In addition, you can specify an index to move the cursor to any position or a specified character in a paragraph within the **moveToParagraph()** method.
 
 The following code example shows how to move to a specific section and a specific paragraph in a document:
 
@@ -95,16 +95,16 @@ The following code example shows how to move to a specific section and a specifi
 
 ## Related APIs
 
-- [DocumentBuilder.CurrentNode](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentNode)
-- [DocumentBuilder.CurrentParagraph](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentParagraph)
-- [DocumentBuilder.CurrentSection](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentSection)
-- [DocumentBuilder.MoveTo](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveTo-com.aspose.words.Node)
-- [DocumentBuilder.MoveToBookmark](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToBookmark-java.lang.String)
-- [DocumentBuilder.MoveToCell](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToCell-int-int-int-int)
-- [DocumentBuilder.MoveToField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToField-com.aspose.words.Field-boolean)
-- [DocumentBuilder.MoveToMergeField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToMergeField-java.lang.String)
-- [DocumentBuilder.MoveToHeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToHeaderFooter-int)
-- [DocumentBuilder.MoveToParagraph](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToParagraph-int-int)
-- [DocumentBuilder.MoveToSection](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToSection-int)
-- [DocumentBuilder.MoveToDocumentStart](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentStart)
-- [DocumentBuilder.MoveToDocumentEnd](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentEnd)
+- [DocumentBuilder.getCurrentNode()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentNode)
+- [DocumentBuilder.getCurrentParagraph()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentParagraph)
+- [DocumentBuilder.getCurrentSection()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#getCurrentSection)
+- [DocumentBuilder.moveTo](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveTo-com.aspose.words.Node)
+- [DocumentBuilder.moveToBookmark](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToBookmark-java.lang.String)
+- [DocumentBuilder.moveToCell](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToCell-int-int-int-int)
+- [DocumentBuilder.moveToField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToField-com.aspose.words.Field-boolean)
+- [DocumentBuilder.moveToMergeField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToMergeField-java.lang.String)
+- [DocumentBuilder.moveToHeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToHeaderFooter-int)
+- [DocumentBuilder.moveToParagraph](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToParagraph-int-int)
+- [DocumentBuilder.moveToSection](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToSection-int)
+- [DocumentBuilder.moveToDocumentStart](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentStart)
+- [DocumentBuilder.moveToDocumentEnd](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#moveToDocumentEnd)

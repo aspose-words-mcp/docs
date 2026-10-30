@@ -65,7 +65,7 @@ In this section, we consider only some of the possible split criteria.
 
 ### Split a Document by Headings {#split-a-document-by-headings}
 
-To split a document into chapters by headings, use the **HeadingParagraph** value of the **DocumentSplitCriteria** property.
+To split a document into chapters by headings, use the **HEADING_PARAGRAPH** value of the **document_split_criteria** property.
 
 If you need to split a document by a specific level of heading paragraphs, such as headings 1, 2, and 3, use also the [document_split_heading_level](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/document_split_heading_level/) property. The output will be divided by paragraphs formatted with the specified heading level.
 
@@ -79,7 +79,7 @@ When saving to EPUB, the document is not split into several files, and there wil
 
 ### Split a Document by Sections {#split-a-document-by-sections}
 
-Aspose.Words also enables you to use section breaks to split documents and save them to HTML. For this purpose, use **SectionBreak** as the **DocumentSplitCriteria**:
+Aspose.Words also enables you to use section breaks to split documents and save them to HTML. For this purpose, use **SECTION_BREAK** as the **document_split_criteria**:
 
 {{< gist "aspose-words-gists" "fec4c47291463c8d8d8a6684ffb23d64" "split-document-by-sections-html.py" >}}
 
@@ -93,7 +93,7 @@ The following code example shows how to split a document into smaller parts by s
 
 You can also split a document page by page, by page ranges, or starting with the specified page numbers. In such case the [extract_pages](https://reference.aspose.com/words/python-net/aspose.words/document/extract_pages/) method can do the job.
 
-This section describes several use cases of dividing documents by paged using the [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) class and the **ExtractPages** method.
+This section describes several use cases of dividing documents by paged using the [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) class and the **extract_pages** method.
 
 {{% alert color="primary" %}}
 
@@ -125,7 +125,7 @@ The following code example shows how to split a document into smaller parts by p
 
 ## Callback Option to Save a Document {#callback-option-for-saving-a-document}
 
-You can use the [DocumentPartSavingCallback](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/document_part_saving_callback/) property to control how Aspose.Words saves document parts when this document is exported into HTML format. This property allows you to rename output files or even to redirect them into custom streams.
+You can use the [document_part_saving_callback](https://reference.aspose.com/words/python-net/aspose.words.saving/htmlsaveoptions/document_part_saving_callback/) property to control how Aspose.Words saves document parts when this document is exported into HTML format. This property allows you to rename output files or even to redirect them into custom streams.
 
 Please note that this callback is not useful when saving to EPUB because all output parts must be saved into a single container – the .epub file. So, stream redirection is not supported, and the effect of renaming is not visible since files are renamed inside the container.
 
@@ -139,17 +139,17 @@ The following code example shows how to merge a split document with another docu
 
 ## FAQ
 
-1. Q: How can I split a document by a specific heading level (e.g., only Heading 2)?
-   A: Set the `document_split_criteria` to `HEADING_PARAGRAPH` and assign the desired level to the `document_split_heading_level` property of `HtmlSaveOptions`. Only paragraphs formatted with that heading level will be used as split points.
+1. **Q:** How can I split a document by a specific heading level (e.g., only Heading 2)?
+   **A:** Set the `document_split_criteria` to `HEADING_PARAGRAPH` and assign the desired level to the `document_split_heading_level` property of `HtmlSaveOptions`. Only paragraphs formatted with that heading level will be used as split points.
 
-2. Q: Which output formats support splitting by headings?
-   A: Currently, splitting by headings is supported only when saving to HTML. Other formats such as DOCX, PDF, or EPUB will preserve the whole document or split only by sections/page breaks.
+2. **Q:** Which output formats support splitting by headings?
+   **A:** Splitting with `document_split_criteria` is supported when saving to HTML and EPUB (for EPUB, the parts are packed into one file); MHTML cannot be split. For other formats, split the document yourself, for example by sections or with `extract_pages`.
 
-3. Q: Can I split a document into separate files by page ranges in one operation?
-   A: Yes. Use the `Document.extract_pages(start_page, end_page)` method to obtain a sub‑document for each range, then save each sub‑document using any supported format.
+3. **Q:** Can I split a document into separate files by page ranges in one operation?
+   **A:** Yes. Use the `Document.extract_pages(index, count)` method (zero-based index of the first page and the number of pages) to obtain a sub‑document for each range, then save each sub‑document using any supported format.
 
-4. Q: Is it possible to split a document while preserving the original layout and styles?
-   A: Aspose.Words retains the original layout, styles, and formatting for each split part. However, minor differences may appear for complex layouts, especially when converting to formats other than the source.
+4. **Q:** Is it possible to split a document while preserving the original layout and styles?
+   **A:** Aspose.Words retains the original layout, styles, and formatting for each split part. However, minor differences may appear for complex layouts, especially when converting to formats other than the source.
 
-5. Q: How do I split a document that contains section breaks without using `document_split_criteria`?
-   A: Load the document, iterate through its `Sections` collection, clone each section into a new `Document` object, and save each clone. This approach works for any output format supported by Aspose.Words.
+5. **Q:** How do I split a document that contains section breaks without using `document_split_criteria`?
+   **A:** Load the document, iterate through its `sections` collection, clone each section into a new `Document` object, and save each clone. This approach works for any output format supported by Aspose.Words.

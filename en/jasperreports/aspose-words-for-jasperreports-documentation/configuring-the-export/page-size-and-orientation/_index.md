@@ -22,7 +22,7 @@ You can change the default values by specifying what page size/orientation the e
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
 import com.aspose.words.jasperreports.*;
 AWDocExporter exporter = new AWDocExporter();
 exporter.setParameter(AWExporterParameter.PAGE_SIZE, "Letter");
@@ -34,10 +34,10 @@ exporter.exportReport();
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="pageSize" value="Letter"/>
-    <property name="pageSize" value="Landscape"/>
+    <property name="pageOrientation" value="Landscape"/>
 </bean>
 {{< /highlight >}}
 

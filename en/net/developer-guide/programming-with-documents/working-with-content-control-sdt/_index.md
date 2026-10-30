@@ -21,7 +21,7 @@ This page explains how to work with content controls (SDTs) through the Aspose.W
 
 {{% /alert %}}
 
-In Microsoft Word, you can create a form by starting with a template and adding content controls, including checkboxes, text boxes, date pickers, and drop-down lists.In Aspose.Words, a Structured Document Tag or content control from any document loaded into Aspose.Words is imported as a StructuredDocumentTag node.Structured document tags (SDT or content control) allow embedding customer-defined semantics as well as its behaviour and appearance into a document.
+In Microsoft Word, you can create a form by starting with a template and adding content controls, including checkboxes, text boxes, date pickers, and drop-down lists. In Aspose.Words, a Structured Document Tag or content control from any document loaded into Aspose.Words is imported as a StructuredDocumentTag node. Structured document tags (SDT or content control) allow embedding customer-defined semantics as well as its behaviour and appearance into a document.
 
 StructuredDocumentTag can occur in a document in the following places:
 
@@ -49,11 +49,11 @@ The following code example shows how to create content control of type checkbox:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "sdt-check-box.cs" >}}
 
-The following code example showshow to create content control of type rich text box:
+The following code example shows how to create content control of type rich text box:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "sdt-rich-text-box.cs" >}}
 
-The following code example showshow to create content control of the type combo box:
+The following code example shows how to create content control of the type combo box:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "sdt-combo-box.cs" >}}
 
@@ -65,7 +65,7 @@ The following code example shows how to set the current state of the checkbox:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "current-state-of-check-box.cs" >}}
 
-The following code example showshow to modify content controls of type plain text box, drop-down list and picture:
+The following code example shows how to modify content controls of type plain text box, drop-down list and picture:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "modify-sdt.cs" >}}
 
@@ -73,13 +73,13 @@ The following code example showshow to modify content controls of type plain tex
 
 You can bind content controls with XML data (*custom XML part*) in Word documents.
 
-The following code example shows how tobind content control to custom XML parts:
+The following code example shows how to bind content control to custom XML parts:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "bind-sdt-to-custom-xml-part.cs" >}}
 
 ## XMLMapping of Structured Document Tag Range
 
-You can get the mapping of this structured document tag range to XML data in a custom XML part of the current document using the **StructuredDocumentTagRangeStart.XmlMapping property**.However, the [SetMapping](https://reference.aspose.com/words/net/aspose.words.markup/xmlmapping/setmapping/) method can be used to map a structured document tag range to XML data.
+You can get the mapping of this structured document tag range to XML data in a custom XML part of the current document using the **StructuredDocumentTagRangeStart.XmlMapping property**. However, the [SetMapping](https://reference.aspose.com/words/net/aspose.words.markup/xmlmapping/setmapping/) method can be used to map a structured document tag range to XML data.
 
 The following code example shows how to set XML mapping:
 
@@ -100,13 +100,13 @@ The `StructuredDocumentTag.Color` property allows you to get or set the color of
 1. MS Word highlights the background of the content control when the mouse moves over the content control. This helps to identify the content control. The color of highlighting is a bit "softer" than the *Color*. For example, MS Word highlights the background with the pink color, when *Color* is Red.
 2. When you interact (editing, picking etc) with the content control, the border of content control is colored with the *Color*.
 
-The following code example showshow to change the color of content control:
+The following code example shows how to change the color of content control:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "sdt-color.cs" >}}
 
 ## How to Set Style to Format Text Typed into the Content Control
 
-If you want to set the style of content control, you can use `StructuredDocumentTag.Style`or `StructuredDocumentTag.StyleName` properties. When you type the text into content control in the output document, the typed text will have the style "Quote".
+If you want to set the style of content control, you can use `StructuredDocumentTag.Style` or `StructuredDocumentTag.StyleName` properties. When you type the text into content control in the output document, the typed text will have the style "Quote".
 
 {{% alert color="primary" %}}
 
@@ -120,8 +120,8 @@ The following code example shows how to set the style of content control:
 
 ## Working with Repeating Section Content Control
 
-The repeating section content control allows repeating the content contained within it. Using Aspose.Words, thestructured document tag nodes of the repeating section and repeating section item types can be created and for this purpose, [SdtType enumeration type](https://reference.aspose.com/words/net/aspose.words.markup/sdttype/) provides**RepeatingSectionItem** property.
+The repeating section content control allows repeating the content contained within it. Using Aspose.Words, the structured document tag nodes of the repeating section and repeating section item types can be created and for this purpose, [SdtType enumeration type](https://reference.aspose.com/words/net/aspose.words.markup/sdttype/) provides **RepeatingSectionItem** property.
 
-The following code example showshow to bind a repeating section content control to a table:
+The following code example shows how to bind a repeating section content control to a table:
 
 {{< gist "aspose-words-gists" "089defec1b191de967e6099effeabda7" "repeating-section-mapped-to-custom-xml-part.cs" >}}

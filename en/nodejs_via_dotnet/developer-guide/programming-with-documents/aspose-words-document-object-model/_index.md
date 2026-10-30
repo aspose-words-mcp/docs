@@ -130,7 +130,7 @@ The following code example shows how to enumerate immediate child nodes of a [Co
 
 #### Sibling Nodes
 
-You can obtain the node that immediately precedes or follows a particular node using the [previousSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/previousSibling/) and [nextSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/nextSibling/) properties, respectively. If a node is the last child of its parent, then the [nextSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/nextSibling/) property is *None*. Conversely, if the node is the first child of its parent, the [previousSibling](hhttps://reference.aspose.com/words/nodejs-net/aspose.words/node/previousSibling/) property is *None*.
+You can obtain the node that immediately precedes or follows a particular node using the [previousSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/previousSibling/) and [nextSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/nextSibling/) properties, respectively. If a node is the last child of its parent, then the [nextSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/nextSibling/) property is *None*. Conversely, if the node is the first child of its parent, the [previousSibling](https://reference.aspose.com/words/nodejs-net/aspose.words/node/previousSibling/) property is *None*.
 
 The following code example shows how to efficiently visit all direct and indirect child nodes of a composite node:
 
@@ -163,12 +163,12 @@ The following code example shows how to use typed properties to access nodes of 
    **A:** Access the `node.parentNode` property. If the node is the document root or has not been added to the tree, `parentNode` will be `null`.
 
 3. **Q:** How do I iterate over all child nodes of a composite node?  
-   **A:** Use `compositeNode.getChildNodes()` to obtain a live collection, then loop through it with `for (let child of compositeNode.getChildNodes()) { … }`. Alternatively, traverse using `firstChild` and `nextSibling`.
+   **A:** Use `compositeNode.getChildNodes(aw.NodeType.Any, false)` to obtain a live collection of the child nodes, then loop through it with `for (let child of compositeNode.getChildNodes(aw.NodeType.Any, false)) { … }`. Alternatively, traverse using `firstChild` and `nextSibling`.
 
 4. **Q:** Do I need to cast a node to a specific class such as `Paragraph`?  
-   **A:** When the node's `nodeType` indicates a specific type, you can assign it directly to the typed class in Node.js:  
+   **A:** Yes. Methods such as `getChild` and `getChildNodes` return `Node` objects; cast them with `asParagraph()`, `asTable()`, `asRun()`, and so on to use the members of the specific class:  
    ```javascript
-   const paragraph = node; // node is a Paragraph because node.nodeType === NodeType.Paragraph
+   const paragraph = node.asParagraph(); // node.nodeType === aw.NodeType.Paragraph
    ```  
    The typed properties (`firstParagraph`, `lastParagraph`, etc.) also provide direct access without explicit casting.
 

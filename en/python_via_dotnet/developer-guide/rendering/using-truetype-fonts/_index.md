@@ -44,36 +44,36 @@ Sometimes, information about the fonts being used is embedded in the document, e
    ```
 
 2. **Q:** What does Aspose.Words do when a required font is missing on the system?  
-   **A:** The library automatically substitutes the missing font with a similar one based on the font substitution table. You can customize this behavior by providing your own substitution rules through `FontSettings.SubstitutionSettings.Table`.
+   **A:** The library automatically substitutes the missing font with a similar one based on the font substitution table. You can customize this behavior by providing your own substitution rules through `FontSettings.substitution_settings.table_substitution`.
 
    ```python
    # Replace missing "MyFont" with "Arial"
-   font_settings.substitution_settings.table.add_substitutes("MyFont", ["Arial"])
+   font_settings.substitution_settings.table_substitution.add_substitutes("MyFont", ["Arial"])
    ```
 
 3. **Q:** Can I embed the TrueType fonts used in a document into the generated PDF or DOCX?  
-   **A:** Yes. Set the `EmbedTrueTypeFonts` property of `PdfSaveOptions` (or `DocxSaveOptions`) to `True`. This forces the fonts to be embedded in the output file.
+   **A:** Yes. For PDF, set the `embed_full_fonts` property of `PdfSaveOptions` to `True`. For DOCX, set `doc.font_infos.embed_true_type_fonts = True`. This forces the fonts to be embedded in the output file.
 
    ```python
    # Save as PDF with embedded fonts
    pdf_options = aw.saving.PdfSaveOptions()
-   pdf_options.embed_true_type_fonts = True
+   pdf_options.embed_full_fonts = True
    doc.save(r"output.pdf", pdf_options)
    ```
 
 4. **Q:** How do I change the default font that Aspose.Words uses when a document does not specify one?  
-   **A:** Assign a default font name to the `DefaultFontName` property of `FontSettings`.
+   **A:** Assign a default font name to `FontSettings.substitution_settings.default_font_substitution.default_font_name`. Aspose.Words uses it when no other suitable font is found.
 
    ```python
-   font_settings.default_font_name = "Times New Roman"
+   font_settings.substitution_settings.default_font_substitution.default_font_name = "Times New Roman"
    doc.font_settings = font_settings
    ```
 
 5. **Q:** Is there a way to list all fonts that Aspose.Words can access at runtime?  
-   **A:** You can retrieve the collection of available fonts via `FontSettings.get_fonts`. Iterate through the collection to see each font's name and file path.
+   **A:** Get the font sources via `FontSettings.get_fonts_sources()` and call `get_available_fonts()` on each source to see each font's name and file path.
 
    ```python
-   available_fonts = font_settings.get_fonts()
-   for font_info in available_fonts:
-       print(f"Font: {font_info.font_name}, File: {font_info.file_path}")
+   for source in font_settings.get_fonts_sources():
+       for font_info in source.get_available_fonts():
+           print(f"Font: {font_info.full_font_name}, File: {font_info.file_path}")
    ```

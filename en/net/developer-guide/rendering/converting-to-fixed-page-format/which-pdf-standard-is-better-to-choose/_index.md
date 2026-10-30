@@ -66,7 +66,7 @@ It is important to note that PDF/UA-1 output will also be WCAG 2.0 and Section 5
    **A:** Choose PDF/A when the document must be archived for long‑term preservation or when a regulatory body requires it. Select the highest PDF/A version that the consumer accepts, as newer versions provide more reliable output.
 
 3. **Q:** How do I decide which PDF/A conformance level (A, B, or U) to use?  
-   **A:** Level A provides full accessibility and is required when the consumer needs it. Levels B and U are lighter and produce smaller files; they are suitable when only visual fidelity (B) or basic accessibility (U) is required.
+   **A:** Level A (accessible) adds a tagged logical structure for accessibility; choose it when the documents must be accessible. Level B (basic) guarantees only the visual appearance. Level U (Unicode) is level B plus Unicode mapping of all text, so the text can be reliably searched and copied.
 
 4. **Q:** What are the benefits of using PDF/UA, and does it increase file size?  
    **A:** PDF/UA ensures the PDF meets accessibility standards (WCAG 2.0, Section 508). It is ideal when accessibility is a requirement, but the output will be larger than a standard PDF because of the additional tagging and metadata.

@@ -23,14 +23,14 @@ This page describes the general workflow for converting documents between differ
 
 {{% /alert %}}
 
-The ability to easily and reliably convert documents from one format to another is one of the main feature areas of Aspose.Words.Such a conversion is nothing more than a combination of loading and saving operations.
+The ability to easily and reliably convert documents from one format to another is one of the main feature areas of Aspose.Words. Such a conversion is nothing more than a combination of loading and saving operations.
 
 ## What Is Document Conversion {#what-is-document-conversion}
 
-Almost any task that you want to perform with Aspose.Words involves loading or saving a document in some format.As mentioned in previous sections, the [LoadFormat](https://reference.aspose.com/words/net/aspose.words/loadformat/) enumeration specifies all*load*or*import*formats supported by Aspose.Words, and the [SaveFormat](https://reference.aspose.com/words/net/aspose.words/saveformat/) enumeration specifies all*save*or*export*formats supported by Aspose.Words.Thus, Aspose.Words can convert a document from any supported load format into any supported save format.As a rule, such a conversion requires several stages of calculation. However from the user perspective conversion from a document format to another one is itself very simple, and can be accomplished with just two steps:
+Almost any task that you want to perform with Aspose.Words involves loading or saving a document in some format. As mentioned in previous sections, the [LoadFormat](https://reference.aspose.com/words/net/aspose.words/loadformat/) enumeration specifies all *load* or *import* formats supported by Aspose.Words, and the [SaveFormat](https://reference.aspose.com/words/net/aspose.words/saveformat/) enumeration specifies all *save* or *export* formats supported by Aspose.Words. Thus, Aspose.Words can convert a document from any supported load format into any supported save format. As a rule, such a conversion requires several stages of calculation. However from the user perspective conversion from a document format to another one is itself very simple, and can be accomplished with just two steps:
 
-1. Load your document into a[Document](https://reference.aspose.com/words/net/aspose.words/document/) object using one of its constructors.
-1. Invoke one of the [Save](https://reference.aspose.com/words/net/aspose.words/document/save/#save/) methods on the**Document**object and specify the desired output format.
+1. Load your document into a [Document](https://reference.aspose.com/words/net/aspose.words/document/) object using one of its constructors.
+1. Invoke one of the [Save](https://reference.aspose.com/words/net/aspose.words/document/save/#save/) methods on the **Document** object and specify the desired output format.
 
 {{% alert color="primary" %}}
 
@@ -156,7 +156,7 @@ Please note that below are the most popular conversion combinations, and not eve
    **A:** No, you can perform conversions using the free evaluation version, but the output will contain a watermark. To remove the watermark and unlock all features, apply a valid Aspose.Words license using `License license = new License(); license.SetLicense("Aspose.Words.lic");`.
 
 2. **Q:** Which file formats can I load and save with Aspose.Words?  
-   **A:** Aspose.Words supports over 100 formats. Loading is governed by the `LoadFormat` enumeration (e.g., DOC, DOCX, ODT, RTF, HTML, MHTML, TXT, MD). Saving uses the `SaveFormat` enumeration (e.g., PDF, XPS, EPUB, HTML, MHTML, PNG, JPEG, TIFF, DOCX, DOC). See the **Supported Document Formats** page for the full list.
+   **A:** Aspose.Words supports more than 40 formats. Loading is governed by the `LoadFormat` enumeration (e.g., DOC, DOCX, ODT, RTF, HTML, MHTML, TXT, MD). Saving uses the `SaveFormat` enumeration (e.g., PDF, XPS, EPUB, HTML, MHTML, PNG, JPEG, TIFF, DOCX, DOC). See the **Supported Document Formats** page for the full list.
 
 3. **Q:** How can I convert a document that is stored in a `Stream`?  
    **A:** Use the `Document` constructor that accepts a `Stream`, then call `Save` with the desired format. Example:  
@@ -178,6 +178,6 @@ Please note that below are the most popular conversion combinations, and not eve
    ```csharp
    Document doc = new Document("input.docx");
    PdfSaveOptions options = new PdfSaveOptions();
-   options.Compliance = PdfCompliance.PdfA1b;   // or PdfCompliance.PdfUa
+   options.Compliance = PdfCompliance.PdfA1b;   // or PdfCompliance.PdfUa1
    doc.Save("output.pdf", options);
    ```

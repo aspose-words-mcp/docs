@@ -247,16 +247,16 @@ Contracts:
 ## FAQ
 
 1. **Q:** How does `XmlDataSource` determine the data type of an XML element?  
-   **A:** When loading XML, `XmlDataSource` examines the string representation of each element or attribute. If the text matches the invariant‑culture format of a long, double, boolean, or date, the engine converts it to the corresponding .NET type. This enables arithmetic operations and formatting in templates.
+   **A:** When loading XML, `XmlDataSource` examines the string representation of each element or attribute. If the text matches the invariant‑culture format of a long, double, boolean, or date, the engine converts it to the corresponding Java type (`Long`, `Double`, `Boolean`, or `Date`). This enables arithmetic operations and formatting in templates.
 
 2. **Q:** How can I format dates or numbers in a template that uses `XmlDataSource`?  
-   **A:** Use the format specifier after the field name inside the tag. For example, `<<[Birth]:"dd.MM.yyyy">>` formats a date, and `<<[Price]:"#,##0">>` formats a numeric value with thousand separators. The format string follows the standard .NET formatting rules.
+   **A:** Use the format specifier after the field name inside the tag. For example, `<<[Birth]:"dd.MM.yyyy">>` formats a date, and `<<[Price]:"#,##0">>` formats a numeric value with thousand separators. Format strings are the same as for Java's `DecimalFormat` and `SimpleDateFormat`.
 
 3. **Q:** What is the purpose of the `_Text` suffix when referencing repeated simple‑type elements?  
-   **A:** For a repeated simple element such as `<Child>`, the tag `<<[Child]>>` iterates over the collection, while `<<[Child_Text]>>` accesses the text value of the current item. This allows you to output the value without creating an extra loop.
+   **A:** For a repeated simple element such as `<Child>`, use the element name to iterate over the elements, e.g., `<<foreach [in Child]>>`, and the `_Text` suffix to output the text value of the current element: `<<[Child_Text]>>`.
 
 4. **Q:** How do I force the engine to always generate a root object for the XML data?  
-   **A:** Create an `XmlDataLoadOptions` instance, set `AlwaysGenerateRootObject` to `true`, and pass the options when constructing the `XmlDataSource`:
+   **A:** Create an `XmlDataLoadOptions` instance, set `getAlwaysGenerateRootObject()` to `true`, and pass the options when constructing the `XmlDataSource`:
 
    ```java
    XmlDataLoadOptions options = new XmlDataLoadOptions();

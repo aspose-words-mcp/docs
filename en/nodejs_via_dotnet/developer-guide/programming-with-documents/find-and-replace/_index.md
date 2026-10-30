@@ -32,7 +32,7 @@ Aspose.Words presents the find and replace functionality with the [Aspose.Words.
 
 ### Find and Replace Text using Simple String Replacement {#find-and-replace-text-using-simple-string-replacement}
 
-You can use one of the [replace](https://reference.aspose.com/words/nodejs-net/aspose.words/range/replace/) and [replaceRegex](https://reference.aspose.com/words/nodejs-net/aspose.words/range/replaceRegex/) methods to find or replace a particular string and return the number of replacements that were made. In this case, you can specify a string to be replaced, a string that will replace all its occurrences, whether the replacement is case-sensitive, and whether only stand-alone words will be affected.
+You can use one of the [replace](https://reference.aspose.com/words/nodejs-net/aspose.words/range/replace/) and replaceRegex methods to find or replace a particular string and return the number of replacements that were made. In this case, you can specify a string to be replaced, a string that will replace all its occurrences, whether the replacement is case-sensitive, and whether only stand-alone words will be affected.
 
 The following code example shows how to find the string “_CustomerName_” and replace it with the string *“James Bond”*:
 

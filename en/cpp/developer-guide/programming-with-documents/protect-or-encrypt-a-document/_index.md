@@ -51,12 +51,13 @@ Note that the exact names of features and the paths to them in Microsoft Word ma
 ## FAQ
 
 1. **Q:** How can I encrypt a Word document with a password using Aspose.Words for C++?  
-   **A:** Load the document, call `Protect` with the `ReadOnly` protection type and provide the opening password, then save the file. Example:  
+   **A:** Set a password in the save options of the target format and save the document; for DOCX use `OoxmlSaveOptions::set_Password`. `Document::Protect` only restricts editing, it does not encrypt the file. Example:  
 
    ```cpp
    System::SharedPtr<Aspose::Words::Document> doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
-   doc->Protect(Aspose::Words::Protection::ProtectionType::ReadOnly, u"", u"MyOpenPassword");
-   doc->Save(u"encrypted.docx");
+   auto saveOptions = System::MakeObject<Aspose::Words::Saving::OoxmlSaveOptions>(Aspose::Words::SaveFormat::Docx);
+   saveOptions->set_Password(u"MyOpenPassword");
+   doc->Save(u"encrypted.docx", saveOptions);
    ```
 
 2. **Q:** How do I make a document read‑only without requiring a password?  
@@ -64,27 +65,26 @@ Note that the exact names of features and the paths to them in Microsoft Word ma
 
    ```cpp
    System::SharedPtr<Aspose::Words::Document> doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
-   doc->Protect(Aspose::Words::Protection::ProtectionType::ReadOnly, u"", u"");
+   doc->Protect(Aspose::Words::ProtectionType::ReadOnly);
    doc->Save(u"readonly.docx");
    ```
 
 3. **Q:** How can I restrict editing to comments or tracked changes only?  
-   **A:** Choose the appropriate `ProtectionType`—`Comments` or `TrackedChanges`—when calling `Protect`. This limits the user to adding comments or using tracked changes, respectively.  
+   **A:** Choose the appropriate `ProtectionType`—`ProtectionType::AllowOnlyComments` or `ProtectionType::AllowOnlyRevisions`—when calling `Document::Protect`. This limits the user to adding comments or using tracked changes, respectively.  
 
    ```cpp
    // Restrict to comments only
-   doc->Protect(Aspose::Words::Protection::ProtectionType::Comments, u"", u"");
+   doc->Protect(Aspose::Words::ProtectionType::AllowOnlyComments);
    // Restrict to tracked changes only
-   doc->Protect(Aspose::Words::Protection::ProtectionType::TrackedChanges, u"", u"");
+   doc->Protect(Aspose::Words::ProtectionType::AllowOnlyRevisions);
    ```
 
 4. **Q:** How do I add a digital signature to a document with Aspose.Words for C++?  
-   **A:** Use `DigitalSignatureUtil::Sign`, providing the document, the path to a PKCS#12 certificate, and the certificate password.  
+   **A:** Use `DigitalSignatureUtil::Sign`, providing the source file name, the destination file name, and a `CertificateHolder` created from a PKCS#12 certificate and its password. The method signs files, not a loaded `Document`.  
 
    ```cpp
-   System::SharedPtr<Aspose::Words::Document> doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
-   Aspose::Words::DigitalSignatureUtil::Sign(doc, u"mycert.pfx", u"certPassword");
-   doc->Save(u"signed.docx");
+   auto certHolder = Aspose::Words::DigitalSignatures::CertificateHolder::Create(u"mycert.pfx", u"certPassword");
+   Aspose::Words::DigitalSignatures::DigitalSignatureUtil::Sign(u"input.docx", u"signed.docx", certHolder);
    ```
 
 5. **Q:** How can I apply a license to remove evaluation limitations?  

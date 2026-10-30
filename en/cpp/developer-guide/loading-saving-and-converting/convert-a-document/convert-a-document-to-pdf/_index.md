@@ -40,7 +40,7 @@ Note that the number of pages in a document affects the conversion time.
 Converting from the DOC or DOCX document format into the PDF format in Aspose.Words is very easy and can be accomplished with just two lines of code that:
 
 1. Load your document into a [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) object using one of its constructors by specifying the document name with its format extension.
-1. Invoke one of the [Document.Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) methods on the **Document** object and specify the desired output format as PDF by entering a file name with the “.PDF” extension.
+1. Invoke one of the [Document::Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) methods on the **Document** object and specify the desired output format as PDF by entering a file name with the “.PDF” extension.
 
 The following code example shows how to convert a document from DOCX into PDF using the [Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) method:
 
@@ -76,7 +76,7 @@ The following code example shows how to convert JPEG and TIFF images to PDF:
 
 ## Reduce PDF Output Size
 
-When saving to PDF, you can specify whether you want to optimize the output. To do this, you need to set the [OptimizeOutput](https://reference.aspose.com/words/cpp/aspose.words.saving/fixedpagesaveoptions/get_optimizeoutput/) flag to true, and then redundant nested canvases and empty canvases will be removed, neighbor glyphs with the same formatting will be concatenated.
+When saving to PDF, you can specify whether you want to optimize the output. To do this, you need to set the [get_OptimizeOutput()](https://reference.aspose.com/words/cpp/aspose.words.saving/fixedpagesaveoptions/get_optimizeoutput/) flag to true, and then redundant nested canvases and empty canvases will be removed, neighbor glyphs with the same formatting will be concatenated.
 
 The following code example shows how to optimize the output:
 
@@ -84,7 +84,7 @@ The following code example shows how to optimize the output:
 
 {{% alert color="primary" %}}
 
-Using the **OptimizeOutput** property may affect the accuracy of content display.
+Using the **get_OptimizeOutput()** property may affect the accuracy of content display.
 
 {{% /alert %}}
 
@@ -105,15 +105,15 @@ Using the **OptimizeOutput** property may affect the accuracy of content display
 - Converting large or complex documents to PDF may be time- and memory-intensive.
 - Rendering fidelity depends on the availability of fonts — missing fonts are substituted based on system settings.
 - PDF/A and PDF/UA compliance imposes additional requirements: all fonts must be embedded, color spaces must be valid, and content must meet accessibility standards.
-- Using `OptimizeOutput` may slightly affect visual fidelity by merging glyphs or removing empty canvases.
+- Using `get_OptimizeOutput()` may slightly affect visual fidelity by merging glyphs or removing empty canvases.
 - Some advanced Word features (e.g., certain drawing objects, complex table layouts, or field codes) may not render identically to Microsoft Word.
 
 ## Related APIs
 
 - [PdfSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/pdfsaveoptions/) class
 - [PdfCompliance](https://reference.aspose.com/words/cpp/aspose.words.saving/pdfcompliance/) enumeration
-- [Document.Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/)) method
-- [OptimizeOutput](https://reference.aspose.com/words/cpp/aspose.words.saving/fixedpagesaveoptions/get_optimizeoutput/) property
+- [Document::Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) method
+- [get_OptimizeOutput()](https://reference.aspose.com/words/cpp/aspose.words.saving/fixedpagesaveoptions/get_optimizeoutput/) property
 
 ------ 
 
@@ -127,7 +127,7 @@ Using the **OptimizeOutput** property may affect the accuracy of content display
    doc->Save(u"output.pdf");
    ```
 
-2. **Q:** How can I create a PDF that complies with a specific standard such as PDF/A‑1b or PDF/X‑4?  
+2. **Q:** How can I create a PDF that complies with a specific standard such as PDF/A‑1b or PDF/UA‑1?  
    **A:** Use `Aspose::Words::Saving::PdfSaveOptions` and set its `Compliance` property to the desired `PdfCompliance` value, then pass the options to `Document::Save`. Example:  
 
    ```cpp
@@ -137,7 +137,7 @@ Using the **OptimizeOutput** property may affect the accuracy of content display
    ```
 
 3. **Q:** How can I protect the generated PDF with a password?  
-   **A:** Create a `PdfEncryptionDetails` object with a user password (and optionally an owner password), assign it to the `EncryptionDetails` property of `PdfSaveOptions`, and save the document with those options. Example:  
+   **A:** Create a `PdfEncryptionDetails` object with a user password (and optionally an owner password), assign it to the `get_EncryptionDetails()` property of `PdfSaveOptions`, and save the document with those options. Example:  
 
    ```cpp
    auto options = System::MakeObject<Aspose::Words::Saving::PdfSaveOptions>();
@@ -147,7 +147,7 @@ Using the **OptimizeOutput** property may affect the accuracy of content display
    ```
 
 4. **Q:** How can I control image quality or compression when converting images to PDF?  
-   **A:** Set `ImageCompression` (e.g., `PdfImageCompression::Jpeg`) and `JpegQuality` (0‑100) on `PdfSaveOptions`. This reduces file size while preserving visual quality. Example:  
+   **A:** Set `set_ImageCompression()` (e.g., `PdfImageCompression::Jpeg`) and `get_JpegQuality()` (0‑100) on `PdfSaveOptions`. This reduces file size while preserving visual quality. Example:  
 
    ```cpp
    auto options = System::MakeObject<Aspose::Words::Saving::PdfSaveOptions>();

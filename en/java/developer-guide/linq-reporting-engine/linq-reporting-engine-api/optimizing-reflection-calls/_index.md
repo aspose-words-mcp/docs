@@ -32,7 +32,4 @@ You can control the enabling of the strategy through the `ReportingEngine.setUse
    **A:** If your reports are built from very small data collections (e.g., a few dozen records), the cost of generating proxy types may outweigh the benefit of avoiding reflection. In such cases, disabling the optimization can reduce overall processing time.
 
 3. **Q:** How do I know whether reflection optimization is currently enabled?  
-   **A:** The API does not provide a getter for the flag. The typical approach is to set the desired state explicitly at application start or to benchmark the report generation with and without the optimization to infer its effect.
-
-4. **Q:** Does disabling reflection optimization affect thread safety?  
-   **A:** No. The optimization itself is thread‑safe; disabling it simply removes the proxy‑generation step. Your existing multithreaded usage of the reporting engine remains safe.
+   **A:** Call the static `ReportingEngine.getUseReflectionOptimization()` method. It returns `true` when the optimization is enabled.

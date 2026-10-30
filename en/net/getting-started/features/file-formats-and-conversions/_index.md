@@ -54,7 +54,7 @@ The following code example shows how to convert a document:
 
 {{< gist "aspose-words-gists" "a53bdaad548845275c1b9556ee21ae65" "docx-to-pdf.cs" >}}
 
-For more details on loading, converting, and saving documents, see the [Loading, Saving and Converting](/words/cpp/loading-saving-and-converting/) section.
+For more details on loading, converting, and saving documents, see the [Loading, Saving and Converting](/words/net/loading-saving-and-converting/) section.
 
 ## High Fidelity
 
@@ -78,13 +78,13 @@ Below are examples of conversions between some popular formats. You can evaluate
 
 ---
 
-*DOC to RTF –high-fidelity conversion:*
+*DOC to RTF – high-fidelity conversion:*
 
 <img src="high-quality-conversions-1.png" alt="doc-to-rtf-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="high-quality-conversions-2.png" alt="doc-to-rtf-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 
 ---
 
-*DOC to PDF –high-fidelity conversion:*
+*DOC to PDF – high-fidelity conversion:*
 
 <img src="high-quality-conversions-1.png" alt="doc-to-pdf-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="high-quality-conversions-3.png" alt="doc-to-pdf-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 
@@ -92,37 +92,37 @@ Below are examples of conversions between some popular formats. You can evaluate
 
 ---
 
-*DOC to ODT –high-fidelity conversion:*
+*DOC to ODT – high-fidelity conversion:*
 
 <img src="high-quality-conversions-1.png" alt="doc-to-odt-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="high-quality-conversions-4.png" alt="doc-to-odt-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 
 ---
 
-*DOC to XPS –high-fidelity conversion:*
+*DOC to XPS – high-fidelity conversion:*
 
 <img src="xml-paper-specification-xps-2.png" alt="doc-to-xps-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="xml-paper-specification-xps-3.png" alt="doc-to-xps-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 
 ---
 
-*DOC to PostScript –high-fidelity conversion:*
+*DOC to PostScript – high-fidelity conversion:*
 
 <img src="postscript-2.png" alt="doc-to-postscript-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="postscript-3.png" alt="doc-to-postscript-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 
 ---
 
-*DOC to JPEG –high-fidelity conversion:*
+*DOC to JPEG – high-fidelity conversion:*
 
 <img src="image-formats-tiff-png-bmp-emf-jpeg-gif-9.png" alt="doc-to-jpeg-aspose-words-net-1" style="width:1000px; vertical-align: top"/>
 
 ---
 
-*DOC to GIF –high-fidelity conversion:*
+*DOC to GIF – high-fidelity conversion:*
 
 <img src="image-formats-tiff-png-bmp-emf-jpeg-gif-11.png" alt="doc-to-gif-aspose-words-net-1" style="width:1000px; vertical-align: top"/>
 
 ---
 
-*RTF to TXT –high-fidelity conversion:*
+*RTF to TXT – high-fidelity conversion:*
 
 <img src="plain-text-txt-2.png" alt="rtf-to-txt-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="plain-text-txt-3.png" alt="rtf-to-txt-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 
@@ -142,7 +142,7 @@ Below is an example of conversions from DOC to HTML.
 
 ---
 
-DOC to HTML –high-fidelity conversion:
+DOC to HTML – high-fidelity conversion:
 
 <img src="high-quality-conversions-1.png" alt="doc-to-html-aspose-words-net-1" style="width:500px; vertical-align: top"/> <img src="high-quality-conversions-5.png" alt="doc-to-html-aspose-words-net-2" style="width:500px; vertical-align: top"/>
 

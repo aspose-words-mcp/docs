@@ -33,7 +33,7 @@ Aspose.Words supports applying a table style to a table and also reading propert
 
 ## Create a Table Style
 
-The user can create a new style and add it to style collection. The [Add](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/) method is used to create a new table style.
+The user can create a new style and add it to style collection. The [add()](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/) method is used to create a new table style.
 
 The following code example shows how to create a new user defined table style:
 
@@ -41,7 +41,7 @@ The following code example shows how to create a new user defined table style:
 
 ## Copy an Existing Table Style 
 
-If necessary, you can copy a table style that already exists in a certain document into your style collection using the `AddCopy` method.
+If necessary, you can copy a table style that already exists in a certain document into your style collection using the `addCopy()` method.
 
 It is important to know that with this copying, the linked styles are also copied.
 
@@ -51,9 +51,9 @@ The following code example shows how to import a style from one document to anot
 
 ## Apply an Existing Table Style
 
-Aspose.Words provides a [TableStyle](https://reference.aspose.com/words/java/com.aspose.words/tablestyle/) inherited from the [Style](https://reference.aspose.com/words/java/com.aspose.words/style/) class. **TableStyle** facilitates the user to apply different style options like as shading, padding, indentation, [CellSpacing](https://reference.aspose.com/words/java/com.aspose.words/tablestyle/#getCellSpacing) and [Font](https://reference.aspose.com/words/java/com.aspose.words/tablestyle/#getFont), etc.
+Aspose.Words provides a [TableStyle](https://reference.aspose.com/words/java/com.aspose.words/tablestyle/) inherited from the [Style](https://reference.aspose.com/words/java/com.aspose.words/style/) class. **TableStyle** facilitates the user to apply different style options like as shading, padding, indentation, [getCellSpacing()](https://reference.aspose.com/words/java/com.aspose.words/tablestyle/#getCellSpacing) and [getFont()](https://reference.aspose.com/words/java/com.aspose.words/tablestyle/#getFont), etc.
 
-In addition, Aspose.Words provides the [StyleCollection](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/) class and a few properties of the `Table` class to specify which table style we will work with: [Style](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyle), [StyleIdentifier](https://reference.aspose.com/words/java/com.aspose.words/table/#setStyleIdentifier-int), [StyleName](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleName), and [StyleOptions](https://reference.aspose.com/words/java/com.aspose.words/table/#setStyleOptions-int).
+In addition, Aspose.Words provides the [StyleCollection](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/) class and a few properties of the `Table` class to specify which table style we will work with: [getStyle()](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyle), [setStyleIdentifier()](https://reference.aspose.com/words/java/com.aspose.words/table/#setStyleIdentifier-int), [getStyleName()](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleName), and [setStyleOptions()](https://reference.aspose.com/words/java/com.aspose.words/table/#setStyleOptions-int).
 
 Aspose.Words also provides [ConditionalStyle](https://reference.aspose.com/words/java/com.aspose.words/conditionalstyle/) class that represents special formatting applied to some area of a table with an assigned table style, and the [ConditionalStyleCollection](https://reference.aspose.com/words/java/com.aspose.words/conditionalstylecollection/) that represents a collection of **ConditionalStyle** objects. This collection contains a permanent set of items representing one item for each value of the [ConditionalStyleType](https://reference.aspose.com/words/java/com.aspose.words/conditionalstyletype/) enumeration type. The **ConditionalStyleType** enumeration defines all possible table areas to which conditional formatting may be defined in a table style.
 
@@ -63,7 +63,7 @@ The following code example shows how to define conditional formatting for header
 
 {{< gist "aspose-words-gists" "f1d06175603c48e6dabf5a2eea01207c" "define-conditional-formatting.java" >}}
 
-You can also choose which table parts to apply styles to, such as first column, last column, banded rows. They are listed in the [TableStyleOptions](https://reference.aspose.com/words/java/com.aspose.words/tablestyleoptions/) enumeration and are applied through the [StyleOptions](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleOptions) property. The **TableStyleOptions** enumeration allows a bitwise combination of these features.
+You can also choose which table parts to apply styles to, such as first column, last column, banded rows. They are listed in the [TableStyleOptions](https://reference.aspose.com/words/java/com.aspose.words/tablestyleoptions/) enumeration and are applied through the [getStyleOptions()](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleOptions) property. The **TableStyleOptions** enumeration allows a bitwise combination of these features.
 
 The following code example shows how to create a new table with a table style applied:
 
@@ -75,7 +75,7 @@ The pictures below show a representation of the **Table Styles** in Microsoft Wo
 
 ## Take Formatting from Table Style and Apply it as Direct Formatting
 
-Aspose.Words also provides the [ExpandTableStylesToDirectFormatting](https://reference.aspose.com/words/java/com.aspose.words/document/#expandTableStylesToDirectFormatting) method to take formatting found on a table style and expands it onto the rows and cells of the table as direct formatting. Try combining formatting with table style and cell style.
+Aspose.Words also provides the [expandTableStylesToDirectFormatting()](https://reference.aspose.com/words/java/com.aspose.words/document/#expandTableStylesToDirectFormatting) method to take formatting found on a table style and expands it onto the rows and cells of the table as direct formatting. Try combining formatting with table style and cell style.
 
 {{% alert color="primary" %}}
 
@@ -100,11 +100,11 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 - [ConditionalStyle](https://reference.aspose.com/words/java/com.aspose.words/conditionalstyle/)
 - [ConditionalStyleCollection](https://reference.aspose.com/words/java/com.aspose.words/conditionalstylecollection/)
 - [TableStyleOptions](https://reference.aspose.com/words/java/com.aspose.words/tablestyleoptions/)
-- [StyleCollection.Add](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/#add-int-java.lang.String)
-- [Document.ExpandTableStylesToDirectFormatting](https://reference.aspose.com/words/java/com.aspose.words/document/#expandTableStylesToDirectFormatting)
-- [Table.Style](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyle)
-- [Table.StyleIdentifier](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleIdentifier)
-- [Table.StyleOptions](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleOptions)
+- [StyleCollection.add](https://reference.aspose.com/words/java/com.aspose.words/stylecollection/#add-int-java.lang.String)
+- [Document.expandTableStylesToDirectFormatting](https://reference.aspose.com/words/java/com.aspose.words/document/#expandTableStylesToDirectFormatting)
+- [Table.getStyle()](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyle)
+- [Table.getStyleIdentifier()](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleIdentifier)
+- [Table.getStyleOptions()](https://reference.aspose.com/words/java/com.aspose.words/table/#getStyleOptions)
 
 ## FAQ
 
@@ -115,10 +115,10 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
    **A:** Yes. Load the source document, retrieve the desired `Style` from its `StyleCollection`, and call `StyleCollection.addCopy(sourceStyle)` on the target document's style collection. This copies the style together with any linked styles.
 
 3. **Q:** What is the simplest way to apply an existing table style to a table?  
-   **A:** Set the table's `StyleIdentifier`, `StyleName`, or `Style` property. For example, `table.setStyleIdentifier(StyleIdentifier.TABLE_GRID_LIGHT)` or `table.setStyleName("MyCustomStyle")`. The table will immediately reflect the style's formatting.
+   **A:** Set the table's `StyleIdentifier`, `getStyleName()`, or `Style` property. For example, `table.setStyleIdentifier(StyleIdentifier.TABLE_GRID_LIGHT)` or `table.setStyleName("MyCustomStyle")`. The table will immediately reflect the style's formatting.
 
 4. **Q:** How can I add conditional formatting (e.g., header row shading) to a table style?  
-   **A:** Access the style's `ConditionalStyleCollection` via `TableStyle.getConditionalStyles()`. Retrieve the `ConditionalStyle` for `ConditionalStyleType.HEADER_ROW` and modify its `Shading`, `Font`, or other properties. The conditional formatting is applied automatically to the matching table area.
+   **A:** Access the style's `ConditionalStyleCollection` via `TableStyle.getConditionalStyles()`. Retrieve the `ConditionalStyle` for `ConditionalStyleType.FIRST_ROW` and modify it through `getShading()`, `getFont()`, or other properties. The conditional formatting is applied automatically to the matching table area.
 
 5. **Q:** How do I convert a table style into direct formatting on a table's rows and cells?  
    **A:** Call `Document.expandTableStylesToDirectFormatting()` after the table has the style applied. This method expands all style‑based formatting into explicit formatting on each row and cell, preserving the appearance while removing the style reference.

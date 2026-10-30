@@ -34,7 +34,7 @@ Also, the engine enables you to use anonymous types in template expressions. Suc
    **A:** No. The engine does not allow identifiers that include generic type arguments (e.g., `List<T>`) or array types (e.g., `String[]`). Use a non‑generic wrapper or a concrete type instead.
 
 3. **Q:** How can I use an anonymous type inside a template expression?  
-   **A:** Create the anonymous type in your data source (e.g., `var item = new { Id = 1, Name = "John" };`) and pass it to the engine. In the template you can access its members directly, such as `<<[item.Id]>>` and `<<[item.Name]>>`.
+   **A:** Java has no anonymous types, so you cannot pass one in a data source. You can create one inside a template expression with the object initializer syntax, e.g., `<<var [item = new { Id = 1, Name = "John" }]>>`, and then access its members, such as `<<[item.Id]>>` and `<<[item.Name]>>`.
 
 4. **Q:** Why does a template expression fail when I try to use a nested public class?  
    **A:** All outer types of the nested class must be public. If any containing class is non‑public, the nested type is not considered visible and its identifier cannot be used in the template.

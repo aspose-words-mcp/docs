@@ -40,7 +40,7 @@ In addition, you can add a Mail Merge region in your template by inserting two M
 
 You can create a template and add specific merge fields to it, that will be replaced by the values from the data source either manually, for example, using Microsoft Word, or programmatically using Aspose.Words. In this article, we will look at the programmatic way of creating a template.
 
-Use the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) class to create the required merge template using Aspose.Words. You can include a text, a merge field, and a line break in such a template using the [InsertTextInput](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertTextInput(java.lang.String,int,java.lang.String,java.lang.String,int)), [InsertField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertField(int,boolean)), and [InsertParagraph](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertParagraph()) methods.
+Use the [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) class to create the required merge template using Aspose.Words. You can include a text, a merge field, and a line break in such a template using the [insertTextInput()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertTextInput-java.lang.String-int-java.lang.String-java.lang.String-int), [insertField()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertField-int-boolean), and [insertParagraph()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertParagraph) methods.
 
 The following code example shows how to create a Mail Merge template:
 
@@ -64,7 +64,7 @@ The following code example shows how to specify the image file name and image si
 
 ### Customize Text Properties
 
-You can use the [Text]https://reference.aspose.com/words/java/com.aspose.words/Fieldmergingargs#Text) property to insert text into the document for the current merge field. Also, you can change the formatting of texts and paragraphs inside your template using [Font](https://reference.aspose.com/words/java/com.aspose.words/font/) and [ParagraphFormat](https://reference.aspose.com/words/java/com.aspose.words/paragraphformat/) classes. You can handle the text to be inserted before or after the merge field by using the [TextBefore](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/#TextBefore) and [TextAfter](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/#TextAfter) properties that are included in the [FieldMergeField](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/) class.
+You can use the [setText](https://reference.aspose.com/words/java/com.aspose.words/fieldmergingargs/#setText-java.lang.String) method to insert text into the document for the current merge field. Also, you can change the formatting of texts and paragraphs inside your template using [Font](https://reference.aspose.com/words/java/com.aspose.words/font/) and [ParagraphFormat](https://reference.aspose.com/words/java/com.aspose.words/paragraphformat/) classes. You can handle the text to be inserted before or after the merge field by using the [getTextBefore()](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/#getTextBefore) and [getTextAfter()](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/#getTextAfter) properties that are included in the [FieldMergeField](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/) class.
 
 The following code example shows how to insert Check Boxes or HTML during Mail Merge operation:
 
@@ -80,4 +80,4 @@ You can also check the implementation of the `HandleMergeField` class from [Aspo
 
 ## See Also
 
-* For more details about how to create templates in Microsoft Word manually, please check the [Create a Template](https://support.microsoft.com/en-us/office/save-a-word-document-as-a-template-cb17846d-ecec-49d4-82ea-a6f5e3e8b9ae) article in the Microsoft Documentation
+* For more details about how to create templates in Microsoft Word manually, please check the [Create a Template](https://support.microsoft.com/en-us/word/save-a-word-document-as-a-template) article in the Microsoft Documentation

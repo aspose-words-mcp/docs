@@ -19,7 +19,7 @@ From the very first days of Aspose, we knew that just giving our customers good 
 
 This is why we offer free support. Anyone who uses our product, whether they have bought them or are using an evaluation, deserves our full attention and respect.
 
-You can log any issues or suggestions related toAspose.Words Java for Jython using any of the following platforms:
+You can log any issues or suggestions related to Aspose.Words Java for Jython using any of the following platforms:
 
 - [Github](https://github.com/aspose-words/Aspose.Words-for-Java/issues)
 

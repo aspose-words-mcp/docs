@@ -17,7 +17,7 @@ timestamp: 2026-02-03-11-08-55
 
 *Purpose Summary. What is this page about?*
 
-This page demonstrates how to apply custom formatting to fields in Aspose.Words for Python via .NET, including an example of evaluating an IF field condition using the `EvaluateCondition` method.
+This page demonstrates how to apply custom formatting to fields in Aspose.Words for Python via .NET, including an example of evaluating an IF field condition using the `evaluate_condition` method.
 
 {{% /alert %}}
 
@@ -37,7 +37,7 @@ The following code example shows how to apply custom formatting for the field re
 
 ## How to evaluate `IF` condition
 
-If you want to evaluate `IF` condition after mail merge, you can use the [EvaluateCondition](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldif/evaluate_condition/) method that immediately returns the result of the expression evaluation.
+If you want to evaluate `IF` condition after mail merge, you can use the [evaluate_condition](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldif/evaluate_condition/) method that immediately returns the result of the expression evaluation.
 
 The following code example shows how to use this method:
 
@@ -46,6 +46,6 @@ The following code example shows how to use this method:
 ## Related APIs
 
 - [IFieldResultFormatter](https://reference.aspose.com/words/python-net/aspose.words.fields/ifieldresultformatter/)
-- [FieldIf.EvaluateCondition](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldif/evaluate_condition/)
+- [FieldIf.evaluate_condition](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldif/evaluate_condition/)
 - [IFieldUpdateCultureProvider](https://reference.aspose.com/words/python-net/aspose.words.fields/ifieldupdatecultureprovider/)
 - [Fields namespace](https://reference.aspose.com/words/python-net/aspose.words.fields/)

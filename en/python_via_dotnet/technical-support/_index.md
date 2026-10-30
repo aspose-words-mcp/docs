@@ -48,17 +48,17 @@ When posting your issue, question, or feature request with Aspose.Words, follow 
 
 ## FAQ
 
-1. **Q:** How can I use a .NET license file (e.g., *Aspose.Total.NET.lic*) with Aspose.Words for Python via .NET?  
-   **A:** Load the license in Python by creating a `License` object from the `aspose.words` namespace and calling `set_license` with the path to the .NET license file, e.g.:  
+1. **Q:** How do I apply a license to Aspose.Words for Python via .NET?  
+   **A:** Create a `License` object from the `aspose.words` namespace and call `set_license` with the path to an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`). A .NET license file such as `Aspose.Total.NET.lic` is not valid for this product. Example:  
    ```python
    import aspose.words as aw
    license = aw.License()
-   license.set_license(r"C:/path/to/Aspose.Total.NET.lic")
+   license.set_license(r"C:/path/to/Aspose.Words.Python.NET.lic")
    ```  
-   The same license file works for all Aspose products included in the bundle.
+   With an Aspose.Total license, call `set_license` separately for each Aspose product you use.
 
 2. **Q:** Why do I receive the error *“The license is not valid for this product”* when setting the license?  
-   **A:** This error occurs when the license file does not contain a valid entry for Aspose.Words or when the file is corrupted. Verify that the license file includes a `<Product>Words</Product>` entry and that you are using the latest version of Aspose.Words for Python via .NET.
+   **A:** This error occurs when the license file was issued for another product, for example, a .NET license such as `Aspose.Total.NET.lic`. Use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`). Note that a license works only with versions released before its subscription expiry date.
 
 3. **Q:** How should I report a technical issue to get the fastest response?  
    **A:** Post a new thread in the [Aspose.Words Forum](https://forum.aspose.com/c/words/8) with a clear title, a minimal reproducible code snippet, and the original document (or a zip containing all files). Include the exact error message and the version of Aspose.Words you are using.

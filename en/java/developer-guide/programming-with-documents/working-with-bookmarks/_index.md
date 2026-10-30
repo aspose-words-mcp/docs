@@ -41,9 +41,9 @@ The following code example shows how to create a new bookmark:
 
 ## Obtain Bookmarks
 
-Sometimes it is necessary to obtain a bookmark collection to iterate through bookmarks or for other purposes. Use the [Node.Range](https://reference.aspose.com/words/java/com.aspose.words/node/#getRange) property exposed by any document node that returns a [Range](https://reference.aspose.com/words/java/com.aspose.words/range/) object representing the portion of the document contained in this node. Use this object to retrieve a [BookmarkCollection](https://reference.aspose.com/words/java/com.aspose.words/bookmarkcollection/) and then use the collection indexer to get a specific bookmark.
+Sometimes it is necessary to obtain a bookmark collection to iterate through bookmarks or for other purposes. Use the [Node.getRange()](https://reference.aspose.com/words/java/com.aspose.words/node/#getRange) property exposed by any document node that returns a [Range](https://reference.aspose.com/words/java/com.aspose.words/range/) object representing the portion of the document contained in this node. Use this object to retrieve a [BookmarkCollection](https://reference.aspose.com/words/java/com.aspose.words/bookmarkcollection/) and then use the collection indexer to get a specific bookmark.
 
-The following codeexample shows how to obtain bookmarks from a bookmark collection:
+The following code example shows how to obtain bookmarks from a bookmark collection:
 
 {{< gist "aspose-words-gists" "ac2265ee10ddb4f0649f31ab8d219a94" "access-bookmarks.java" >}}
 
@@ -63,7 +63,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 {{% /alert %}}
 
-The following codeexample shows how to bookmark a table:
+The following code example shows how to bookmark a table:
 
 {{< gist "aspose-words-gists" "ac2265ee10ddb4f0649f31ab8d219a94" "bookmark-table.java" >}}
 

@@ -34,7 +34,7 @@ Limitations of .NET Standard 2.0, Xamarin.Android, Xamarin.iOS, And `Xamarin.Mac
 
 ## Public API Differences
 
-In **Aspose.Words for** **.NET Standard 2.0, Xamarin.Android, Xamarin.iOS and Xamarin.Mac**`SkiaSharp.SKBitmap` object is used instead of `System.Drawing.Bitmap` in .NET API. The list of affected API:
+In **Aspose.Words for** **.NET Standard 2.0, Xamarin.Android, Xamarin.iOS and Xamarin.Mac** `SkiaSharp.SKBitmap` object is used instead of `System.Drawing.Bitmap` in .NET API. The list of affected API:
 1. Aspose.Words.DocumentBuilder.InsertImage
 1. Aspose.Words.DocumentBuilder.InsertOleObject
 1. Aspose.Words.Drawing.ImageData.SetImage
@@ -63,7 +63,7 @@ using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(gTestImagePath))
 }
 {{< /highlight >}}
 
-In **Aspose.Words for** **.NET Standard 2.0, Xamarin.Android, Xamarin.iOS and Xamarin.Mac***SkiaSharp.SKCanvas* object is used instead of *System.Drawing.Graphics* object used in .NET API. The list of affected API:
+In **Aspose.Words for** **.NET Standard 2.0, Xamarin.Android, Xamarin.iOS and Xamarin.Mac** *SkiaSharp.SKCanvas* object is used instead of *System.Drawing.Graphics* object used in .NET API. The list of affected API:
 1. Aspose.Words.Document.RenderToSize
 1. Aspose.Words.Document.RenderToScale
 1. Aspose.Words.Rendering.NodeRendererBase.RenderToSize
@@ -101,7 +101,7 @@ using (SkiaSharp.SKBitmap bitmap = new SkiaSharp.SKBitmap(1000, 1000))
     {
         // Apply required transformations to the canvas, rotation for example.
         canvas.RotateDegrees(45);
-        doc.RotateDegrees(0, canvas, 0, 0, bitmap.Width, bitmap.Height);
+        doc.RenderToSize(0, canvas, 0, 0, bitmap.Width, bitmap.Height);
     }
 
     // Save output to file.
@@ -112,7 +112,7 @@ using (SkiaSharp.SKBitmap bitmap = new SkiaSharp.SKBitmap(1000, 1000))
 }
 {{< /highlight >}}
 
-## Xamarin.AndroidAdditional Requirements
+## Xamarin.Android Additional Requirements
 
 1. To work properly Aspose.Words' Xamarin.Android API requires Encodings support. When you run your Xamarin.Android application in 'Release' mode, it is required to add additional supported Encodings. Note that in 'Debug' mode everything will work without these options.<br>
 ![xamarin-android-and-net-standard-2-0](1)
@@ -121,7 +121,7 @@ using (SkiaSharp.SKBitmap bitmap = new SkiaSharp.SKBitmap(1000, 1000))
 
 ## Xamarin.iOS Additional Requirements
 
-To work properly Aspose.Words' Xamarin.iOSAPI requires Encodings support. When you run your Xamarin.iOS application it is required to add additional supported Encodings.
+To work properly Aspose.Words' Xamarin.iOS API requires Encodings support. When you run your Xamarin.iOS application it is required to add additional supported Encodings.
 
 ![xamarin-ios-and-net-standard-2-0](3)
 

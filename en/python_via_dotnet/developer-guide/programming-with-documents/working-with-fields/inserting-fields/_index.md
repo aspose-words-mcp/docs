@@ -217,16 +217,16 @@ The following code example shows how to add the `TOA` field using DOM to a parag
 ## FAQ
 
 1. **Q:** How can I insert a Table of Contents (TOC) field using Aspose.Words for Python?  
-   **A:** Use `DocumentBuilder.insert_field("{ TOC \\o \"1-3\" \\h \\z \\u }")` to add a TOC field with default switches. After inserting, call `document.update_fields()` to populate the TOC. You can also use `FieldToc` via the DOM for more granular control.
+   **A:** Use `DocumentBuilder.insert_field("TOC \\o \"1-3\" \\h \\z \\u")` to add a TOC field with default switches. After inserting, call `document.update_fields()` to populate the TOC. You can also use `FieldToc` via the DOM for more granular control.
 
 2. **Q:** Can I insert fields into headers or footers?  
-   **A:** Yes. Access the header/footer with `section.headers[aw.HeaderFooterType.HEADER_PRIMARY]` (or FOOTER) and then use its `append_child(DocumentBuilder(...))` or `insert_field` methods. The field will be stored in the header/footer section of the document.
+   **A:** Yes. Move a `DocumentBuilder` to the header/footer with `builder.move_to_header_footer(aw.HeaderFooterType.HEADER_PRIMARY)` (or a FOOTER type) and then call `builder.insert_field(...)`. The field will be stored in the header/footer section of the document.
 
 3. **Q:** How do I retrieve all field nodes of a specific type, for example all MERGEFIELD fields?  
    **A:** Iterate `doc.range.fields` to get all fields, then filter by `field.type == aw.fields.FieldType.FIELD_MERGE_FIELD`. This works for any field type supported by Aspose.Words.
 
 4. **Q:** What is the correct way to insert an empty (untyped) field?  
-   **A:** Use `builder.insert_field(aw.fields.FieldType.FIELD_NONE, None)` or pass an empty string as the field code. This creates a pair of braces `{}` that can later be edited manually in Word.
+   **A:** Use `builder.insert_field(aw.fields.FieldType.FIELD_NONE, False)` or pass an empty string as the field code. This creates a pair of braces `{}` that can later be edited manually in Word.
 
 5. **Q:** How can I set a specific locale for a field when inserting it?  
    **A:** After creating the field (e.g., via `FieldMergeField` or `DocumentBuilder.insert_field`), set its `locale_id` property, e.g., `field.locale_id = 1033` for English (US). This ensures the field formats numbers, dates, etc., according to the specified locale.

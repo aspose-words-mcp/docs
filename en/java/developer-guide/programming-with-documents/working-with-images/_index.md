@@ -25,20 +25,20 @@ Aspose.Words allows users to work with images in a very flexible way. In this ar
 
 ## How to Insert an Image {#insert-an-image}
 
-[DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) provides several overloads of the [InsertImage](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertImage-java.lang.String) method that allows you to insert an inline or floating image. If the image is an EMF or WMF metafile, it will be inserted into the document in metafile format. All other images will be stored in PNG format. The**InsertImage**method can use images from different sources:
+[DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) provides several overloads of the [insertImage()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertImage-java.lang.String) method that allows you to insert an inline or floating image. If the image is an EMF or WMF metafile, it will be inserted into the document in metafile format. All other images will be stored in PNG format. The **insertImage()** method can use images from different sources:
 
-- From a file or `URL` by passing a `String` parameter[InsertImage](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertImage-java.lang.String)
-- From a stream by passing a `Stream` parameter**InsertImage**
-- From anImageobject by passing an Image parameter**InsertImage**
-- From a byte array by passing a byte array parameter**InsertImage**
+- From a file or `URL` by passing a `String` parameter [insertImage()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertImage-java.lang.String)
+- From a stream by passing a `Stream` parameter **insertImage()**
+- From an Image object by passing an Image parameter **insertImage()**
+- From a byte array by passing a byte array parameter **insertImage()**
 
-For each of the**InsertImage**methods, there are further overloads which allow you to insert an image with the following options:
-- Inline or floating at a specific position, for example,**InsertImage**
-- Percentage scale or custom size, for example,**InsertImage**; furthermore, the**InsertImage**method returns a[Shape](https://reference.aspose.com/words/java/com.aspose.words/shape/) object that was just created and inserted so you can further modify properties of theShape
+For each of the **insertImage()** methods, there are further overloads which allow you to insert an image with the following options:
+- Inline or floating at a specific position, for example, **insertImage()**
+- Percentage scale or custom size, for example, **insertImage()**; furthermore, the **insertImage()** method returns a [Shape](https://reference.aspose.com/words/java/com.aspose.words/shape/) object that was just created and inserted so you can further modify properties of the Shape
 
 ### How to Insert an Inline Image {#insert-an-inline-image}
 
-Pass a single string representing a file that contains the image to**InsertImage**to insert the image into the document as an inline graphic.
+Pass a single string representing a file that contains the image to **insertImage()** to insert the image into the document as an inline graphic.
 
 The following code example shows how to insert an inline image at the cursor position into a document:
 
@@ -52,12 +52,12 @@ The following code example shows how to insert a floating image from a file or `
 
 ## How to Extract Images from a Document {#how-to-extract-images-from-a-document}
 
-All images are stored inside **Shape** nodes in a [Document](https://reference.aspose.com/words/java/com.aspose.words/document/).To extract all images or images having specific type from the document, follow these steps:
+All images are stored inside **Shape** nodes in a [Document](https://reference.aspose.com/words/java/com.aspose.words/document/). To extract all images or images having specific type from the document, follow these steps:
 
-- Use the [GetChildNodes](https://reference.aspose.com/words/java/com.aspose.words/compositenode/#getChildNodes-int-boolean) method to select all **Shape** nodes.
+- Use the [getChildNodes()](https://reference.aspose.com/words/java/com.aspose.words/compositenode/#getChildNodes-int-boolean) method to select all **Shape** nodes.
 - Iterate through resulting node collections.
-- Check the [HasImage](https://reference.aspose.com/words/java/com.aspose.words/shape/#hasImage) boolean property.
-- Extract image data using the [ImageData](https://reference.aspose.com/words/java/com.aspose.words/shape/#getImageData) property.
+- Check the [hasImage()](https://reference.aspose.com/words/java/com.aspose.words/shape/#hasImage) boolean property.
+- Extract image data using the [getImageData()](https://reference.aspose.com/words/java/com.aspose.words/shape/#getImageData) property.
 - Save image data to a file.
 
 The following code example shows how to extract images from a document and save them as files:
@@ -72,7 +72,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## How to Insert Barcode on each Document Page {#how-to-insert-barcode-on-each-documen-page}
 
-This example demonstrates you to add the same or different barcodes on all or specific pages of a Word document. There is no direct way to add barcodes on all pages of a document but you can use the **MoveToSection**, **MoveToHeaderFooter** and **InsertImage** methods to move to any section or headers/footers and insert the barcode images as you can see in the following code.
+This example demonstrates you to add the same or different barcodes on all or specific pages of a Word document. There is no direct way to add barcodes on all pages of a document but you can use the **moveToSection()**, **moveToHeaderFooter()** and **insertImage()** methods to move to any section or headers/footers and insert the barcode images as you can see in the following code.
 
 The following code example shows how to insert a barcode image on each page of a document:
 
@@ -82,7 +82,7 @@ The following code example shows how to insert a barcode image on each page of a
 
 ## Lock Aspect Ratio of Image {#lock-aspect-ratio-of-image}
 
-The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions. You can lock the aspect ratio of the image using [AspectRatioLocked](https://reference.aspose.com/words/java/com.aspose.words/shapebase/#getAspectRatioLocked). The default value of the shape's aspect ratio depends on the [ShapeType](https://reference.aspose.com/words/java/com.aspose.words/shapetype/).
+The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions. You can lock the aspect ratio of the image using [getAspectRatioLocked()](https://reference.aspose.com/words/java/com.aspose.words/shapebase/#getAspectRatioLocked). The default value of the shape's aspect ratio depends on the [ShapeType](https://reference.aspose.com/words/java/com.aspose.words/shapetype/).
 
 The following code example shows how to work with aspect ratio:
 
@@ -90,7 +90,7 @@ The following code example shows how to work with aspect ratio:
 
 ## How to Get Actual Bounds of Shape in Points {#how-to-get-actual-bounds-of-shape-in-points}
 
-If you want the actual bounding box of the shape as rendered on the page, you can achieve this by using the [BoundsInPoints](https://reference.aspose.com/words/java/com.aspose.words/noderendererbase/#getBoundsInPoints) property.
+If you want the actual bounding box of the shape as rendered on the page, you can achieve this by using the [getBoundsInPoints()](https://reference.aspose.com/words/java/com.aspose.words/noderendererbase/#getBoundsInPoints) property.
 
 The following code example shows how to use this property:
 
@@ -98,7 +98,7 @@ The following code example shows how to use this property:
 
 ## Crop Images {#crop-images}
 
-The cropping of an imageusually refers to the removal of the unwantedouter parts of an image to help improve the framing. It is also used for theremoval of some of theportions of an image to increase the focus on a particular area.
+The cropping of an image usually refers to the removal of the unwanted outer parts of an image to help improve the framing. It is also used for the removal of some of the portions of an image to increase the focus on a particular area.
 
 The following code example shows how to achieve this using Aspose.Words API:
 
@@ -114,11 +114,11 @@ The following code example shows how to save images as WMF with RTF save options
 
 ## Related APIs
 
-- [`DocumentBuilder`](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/)
-- [`Shape`](https://reference.aspose.com/words/java/com.aspose.words/shape/)
-- [`ShapeBase`](https://reference.aspose.com/words/java/com.aspose.words/shapebase/)
-- [`ImageData`](https://reference.aspose.com/words/java/com.aspose.words/shape/#getImageData)
-- [`NodeRendererBase.BoundsInPoints`](https://reference.aspose.com/words/java/com.aspose.words/noderendererbase/#getBoundsInPoints) 
+- [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/)
+- [Shape](https://reference.aspose.com/words/java/com.aspose.words/shape/)
+- [ShapeBase](https://reference.aspose.com/words/java/com.aspose.words/shapebase/)
+- [getImageData()](https://reference.aspose.com/words/java/com.aspose.words/shape/#getImageData)
+- [NodeRendererBase.getBoundsInPoints()](https://reference.aspose.com/words/java/com.aspose.words/noderendererbase/#getBoundsInPoints) 
 
 ## FAQ
 
@@ -135,4 +135,4 @@ The following code example shows how to save images as WMF with RTF save options
    **A:** Yes. Obtain the `Shape` that contains the image and use the cropping properties: `shape.getImageData().setCropTop(value)`, `setCropBottom(value)`, `setCropLeft(value)`, and `setCropRight(value)`. The values are specified as percentages (0.0 to 1.0).
 
 5. **Q:** How can I save all images in a document as WMF when converting to RTF?  
-   **A:** Create an `RtfSaveOptions` instance, set `options.setImageSavingCallback(new ImageSavingCallback() { … })` and inside the callback save each image with `ImageSaveOptions.setImageFormat(ImageFormat.WMF)`. Then call `document.save("output.rtf", options)` to produce an RTF where all images are stored as WMF.
+   **A:** Create an `RtfSaveOptions` instance and call `options.setSaveImagesAsWmf(true)`. Then call `document.save("output.rtf", options)` to produce an RTF where all images are stored as WMF.

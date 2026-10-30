@@ -55,10 +55,9 @@ Also, the engine enables you to use lifted operators in template expressions.
 ## Related APIs
 
 
-- [`ReportingEngine`](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/) — The engine responsible for building reports from templates, evaluating template expressions including operators.
-- [`ReportBuilder`](https://reference.aspose.com/words/net/aspose.words.reporting/reportbuilder/) — A helper class that simplifies report creation by wrapping the reporting engine.
-- [`TemplateExpressionAttribute`](https://reference.aspose.com/words/net/aspose.words.reporting/templateexpressionattribute/) — Marks methods as available for use in template expressions, including custom operators.
-- [`ReportBuildOptions`](https://reference.aspose.com/words/net/aspose.words.reporting/reportbuildoptions/) — Controls behavior of report building, such as handling of operator overloads and expression evaluation.
+- [ReportingEngine](https://reference.aspose.com/words/net/aspose.words.reporting/reportingengine/) — The engine responsible for building reports from templates, evaluating template expressions including operators.
+- [ReportBuilder](https://reference.aspose.com/words/net/aspose.words.lowcode/reportbuilder/) — A helper class that simplifies report creation by wrapping the reporting engine.
+- [ReportBuildOptions](https://reference.aspose.com/words/net/aspose.words.reporting/reportbuildoptions/) — Controls behavior of report building, such as handling of operator overloads and expression evaluation.
 
 ## FAQ
 

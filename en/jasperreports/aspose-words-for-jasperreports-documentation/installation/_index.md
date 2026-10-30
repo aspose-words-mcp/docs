@@ -35,7 +35,7 @@ Please copy **ONLY ONE** jar library according to the version of installed Jaspe
 The following example shows typical code needed to export a report to a DOC file using Aspose.Words for JasperReports. More examples can be found in the demo reports included in the product download.
 
 **Java**
-{{< highlight csharp >}}
+{{< highlight java >}}
    import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
    File sourceFile = new File(fileName);
@@ -61,7 +61,7 @@ Edit the **<InstallDir>\apache-tomcat\webapps\jasperserver\WEB-INF\flows\viewRep
 Add the following bean definitions **before** the `<util:map id="exporterConfigMap">` element:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <!-- Aspose.Words for JasperReports Exporters -->
 <bean id="aw_reportDocExporter" class="com.aspose.words.jasperreports.AWReportDocExporter" parent="baseReportExporter">
    <property name="exportParameters" ref="aw_exportParameters"/>
@@ -124,7 +124,7 @@ Add the following bean definitions **before** the `<util:map id="exporterConfigM
 
 **Note for JasperServer 3.x and 4.x:**
 Add the following properties to each configuration bean (not required for 5.x, 6.x, 7.x, 8.x):
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <property name="iconSrc" value="/images/aw_docx.gif"/>
 <property name="parameterDialogName" value=""/>
 {{< /highlight >}}
@@ -136,7 +136,7 @@ Edit the **<InstallDir>\apache-tomcat\webapps\jasperserver\WEB-INF\flows\viewRep
 Locate the `<util:map id="exporterConfigMap">` element and add the Aspose.Words exporters:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <util:map id="exporterConfigMap">
    <entry key="pdf" value-ref="pdfExporterConfiguration"/>
    <entry key="xls" value-ref="xlsExporterConfiguration"/>
@@ -183,7 +183,7 @@ Edit the **<InstallDir>\apache-tomcat\webapps\jasperserver\WEB-INF\applicationCo
 This bean may contain various configuration settings intended to configure the export. For example, you can use the `JasperReports` font mapping feature or specify the location of the Aspose.Words for JasperReports license file.
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
   <property name="fontMap">
     <util:map id="fontMap">
@@ -207,7 +207,7 @@ Edit the **<InstallDir>\apache-tomcat\webapps\jasperserver\WEB-INF\applicationCo
 Add the following beans inside the `<beans>` section:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
     ...
     <!-- Aspose.Words for JasperReports Web Services START -->
     <bean id="awDocExporter" class="com.aspose.words.jasperreports.ws.AWDocWSExporter" scope="prototype">
@@ -235,7 +235,7 @@ Add the following beans inside the `<beans>` section:
 Add entries to the `exportersMap`:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
     <util:map id="exportersMap">
         ...
         <!-- Aspose.Words for JasperReports START -->
@@ -252,7 +252,7 @@ Add entries to the `exportersMap`:
 Add entries to the `exportParametersMap`:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <util:map id="exportParametersMap">
     ...
     <!-- Aspose.Words for JasperReports START -->
@@ -275,7 +275,7 @@ Edit the **<InstallDir>\apache-tomcat\webapps\jasperserver\WEB-INF\applicationCo
 Add the following beans inside the `<beans>` section:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
     ...
     <!-- Aspose.Words for JasperReports REST API START -->
     <bean id="remoteAwDocExporter" class="com.aspose.words.jasperreports.remote.AWDocRemoteExporter" scope="prototype">
@@ -303,7 +303,7 @@ Add the following beans inside the `<beans>` section:
 Add entries to the `remoteExportersMap`:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <util:map id="remoteExportersMap">
         ...
         <!-- Aspose.Words for JasperReports START -->
@@ -320,7 +320,7 @@ Add entries to the `remoteExportersMap`:
 Add entries to the `exportParametersMap`:
 
 **XML**
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <util:map id="exportParametersMap">
     ...
     <!-- Aspose.Words for JasperReports START -->

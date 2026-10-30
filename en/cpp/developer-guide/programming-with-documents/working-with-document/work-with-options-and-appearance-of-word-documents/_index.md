@@ -18,7 +18,7 @@ Sometimes you may need to change the appearance of a document, for example, set 
 
 ## Set Document Display Options
 
-You can control how a document will be displayed in Microsoft Word using the [ViewOptions](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/) class. For example, you can set a document zoom value using the [ZoomPercent](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/get_zoompercent/) property, or the view mode using the [ViewType](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/get_viewtype/) property.
+You can control how a document will be displayed in Microsoft Word using the [ViewOptions](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/) class. For example, you can set a document zoom value using the [get_ZoomPercent()](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/get_zoompercent/) property, or the view mode using the [get_ViewType()](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/get_viewtype/) property.
 
 The following code example shows how to ensure that a document is displayed at 50% when opened in Microsoft Word:
 
@@ -38,7 +38,7 @@ Microsoft Word 2013 does not write any zoom factor to a document and no longer s
 
 ## Set Page Display Options
 
-If you want to set the number of characters per line, use the [CharactersPerLine](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_charactersperline/) property. You can also set the number of lines per page for a Word document – use the [LinesPerPage](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_linesperpage/) property to get or set the number of lines per page in the document grid.
+If you want to set the number of characters per line, use the [get_CharactersPerLine()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_charactersperline/) property. You can also set the number of lines per page for a Word document – use the [get_LinesPerPage()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_linesperpage/) property to get or set the number of lines per page in the document grid.
 
 {{% alert color="primary" %}}
 
@@ -54,11 +54,11 @@ The following code example shows how to set the number of characters per line an
 
 Displaying a document in Microsoft Word depends on which languages are set as defaults for this document. If no languages are set in defaults, Microsoft Word takes information from the "Set Office Language Preferences" dialog box, which, for example, can be found under "File → Options → Language" in Microsoft Word 2019.
 
-With Aspose.Words, you can also set up language preferences using the [LanguagePreferences](https://reference.aspose.com/words/cpp/aspose.words.loading/languagepreferences/) class. Also note that for the correct display of your document it is necessary to set the Microsoft Word version that the document loading process should match – this can be done using the [MswVersion](https://reference.aspose.com/words/cpp/aspose.words.loading/loadoptions/get_mswversion/) property.
+With Aspose.Words, you can also set up language preferences using the [LanguagePreferences](https://reference.aspose.com/words/cpp/aspose.words.loading/languagepreferences/) class. Also note that for the correct display of your document it is necessary to set the Microsoft Word version that the document loading process should match – this can be done using the [get_MswVersion()](https://reference.aspose.com/words/cpp/aspose.words.loading/loadoptions/get_mswversion/) property.
 
 {{% alert color="primary" %}}
 
-If your Aspose.Words generated document does not look as expected, check the **LanguagePreferences** and **MswVersion** values and adjust them if necessary to match the settings for your Microsoft Word version.
+If your Aspose.Words generated document does not look as expected, check the **LanguagePreferences** and **get_MswVersion()** values and adjust them if necessary to match the settings for your Microsoft Word version.
 
 {{% /alert %}}
 
@@ -86,10 +86,10 @@ The following code example shows how to optimize document content for Microsoft 
    **A:** Use the `ViewOptions` object of the document and call `set_ZoomPercent(50);` (or any desired percentage). The setting is stored in the document and Word will apply it on open.
 
 2. **Q:** Which properties control the number of lines per page or characters per line?  
-   **A:** Access the document's `PageSetup` via `Document::GetPageSetup()` and use `set_LinesPerPage(int)` and `set_CharactersPerLine(int)` to define the grid size.
+   **A:** Access the document's `PageSetup` via `Section::get_PageSetup()` (for example, `doc->get_FirstSection()->get_PageSetup()`) and use `set_LinesPerPage(int)` and `set_CharactersPerLine(int)` to define the grid size.
 
 3. **Q:** How do I add or change editing languages for a document?  
-   **A:** Create a `LanguagePreferences` instance, call `AddEditingLanguage(LanguageCode::Japanese);` (or another language) and assign it to the document's `LoadOptions`. You can also set the default editing language with `SetDefaultEditingLanguage(LanguageCode::Russian);`.
+   **A:** Use the `LanguagePreferences` object of `LoadOptions`: call `loadOptions->get_LanguagePreferences()->AddEditingLanguage(EditingLanguage::Japanese);` (or another language), then load the document with these options. You can also set the default editing language with `loadOptions->get_LanguagePreferences()->set_DefaultEditingLanguage(EditingLanguage::Russian);`.
 
 4. **Q:** How can I prevent Word from opening a document in Compatibility mode?  
-   **A:** Call `CompatibilityOptions::OptimizeFor(MswVersion::Word2016);` on the document and, if needed, set `Compliance` to `Iso29500_2008_Transitional` or higher. This tells Word to treat the file as created for the specified version.
+   **A:** Call `doc->get_CompatibilityOptions()->OptimizeFor(MsWordVersion::Word2016);` and, if needed, set `Compliance` to `Iso29500_2008_Transitional` or higher. This tells Word to treat the file as created for the specified version.

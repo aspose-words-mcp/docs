@@ -23,7 +23,7 @@ You can try to merge documents and view the results online at this link:
 
 ## Aspose.Words - Merge Documents
 
-To append documents using Aspose.Words, simply invoke theappendDocument()method ofDocumentclass and specify the second document to append at end.
+To append documents using Aspose.Words, simply invoke the appendDocument() method of Document class and specify the second document to append at end.
 
 **Java**
 
@@ -35,13 +35,13 @@ doc1.appendDocument(doc2, ImportFormatMode.KEEP_SOURCE_FORMATTING);
 
 ## docx4j - Merge Documents
 
-This sample demonstrates how the `MergeDocx` utility canbe used to merge docx documents.
+This sample demonstrates how the `MergeDocx` utility can be used to merge docx documents.
 
-The `MergeDocx` utility is a paid extension to docx4j.Purchases of this extension support the docx4j project.
+The `MergeDocx` utility is a paid extension to docx4j. Purchases of this extension support the docx4j project.
 
 @see <https://www.docx4java.org/blog/2010/11/merging-word-documents/> for more info, or @see <https://www.plutext.com>.
 
-To run the utility, you simply pass it a list of thedocx you want to merge; it returns a new pkg containingthe merged documents.
+To run the utility, you simply pass it a list of the docx you want to merge; it returns a new pkg containing the merged documents.
 
 **Java**
 
@@ -108,6 +108,6 @@ public static void main(String[] args) throws Docx4JException {
 
 ## Download Sample Code
 
-- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/mergedocs)
+- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose_Words_Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/mergedocs)
 
 For more details, visit [Appending Documents](/words/java/insert-and-append-documents/).

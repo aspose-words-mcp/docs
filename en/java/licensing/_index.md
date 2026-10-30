@@ -80,11 +80,11 @@ Often the easiest way to set a license is to place the license file in the same 
 
 {{% alert color="primary" %}}
 
-Use the [SetLicense](https://reference.aspose.com/words/java/com.aspose.words/license/#setLicense-java.io.InputStream) method to license a component.
+Use the [setLicense()](https://reference.aspose.com/words/java/com.aspose.words/license/#setLicense-java.io.InputStream) method to license a component.
 
 Calling **SetLicense** multiple times is not harmful, it just wastes processor time.
 
-Calling [SetMeteredKey](https://reference.aspose.com/words/java/com.aspose.words/metered/#setMeteredKey-java.lang.String-java.lang.String) multiple times is not harmful either, but just wastes processor time and can accumulate consumption improperly.
+Calling [setMeteredKey()](https://reference.aspose.com/words/java/com.aspose.words/metered/#setMeteredKey-java.lang.String-java.lang.String) multiple times is not harmful either, but just wastes processor time and can accumulate consumption improperly.
 
 {{% /alert %}}
 
@@ -100,7 +100,7 @@ When developing a class library, you can call **SetLicense** from the static con
 
 ##### Load a License from a File
 
-Using the [SetLicense](https://reference.aspose.com/words/java/com.aspose.words/license/#setLicense-java.lang.String) method, you can try to find the license file in the embedded resources or folder that contain the JARs of your application for further use.
+Using the [setLicense()](https://reference.aspose.com/words/java/com.aspose.words/license/#setLicense-java.lang.String) method, you can try to find the license file in the embedded resources or folder that contain the JARs of your application for further use.
 
 The following code example shows how to initialize a license from a folder:
 
@@ -108,7 +108,7 @@ The following code example shows how to initialize a license from a folder:
 
 ##### Load a License from a `Stream` Object
 
-The following code example shows how to initialize a license from a stream using another [SetLicense](https://reference.aspose.com/words/java/com.aspose.words/license/#setLicense-java.io.InputStream) method:
+The following code example shows how to initialize a license from a stream using another [setLicense()](https://reference.aspose.com/words/java/com.aspose.words/license/#setLicense-java.io.InputStream) method:
 
 {{< gist "aspose-words-gists" "aae6b7a56c4792497614b4ee8f6f8eec" "apply-license-from-stream.java" >}}
 
@@ -134,7 +134,7 @@ The following code example shows how to set metered public and private keys:
 
 {{< gist "aspose-words-gists" "aae6b7a56c4792497614b4ee8f6f8eec" "apply-metered-license.java" >}}
 
-Normally it is enough to apply the metered license once on application start. However, if the metered licensing mechanism fails to communicate with the Aspose servers for 24 hours, Aspose.Words will exit licensed mode and switch to evaluation mode. To avoid such case, you can use the [IsMeteredLicensed](https://reference.aspose.com/words/java/com.aspose.words/metered/#isMeteredLicensed) method to check the license status and reapply the metered license if necessary.
+Normally it is enough to apply the metered license once on application start. However, if the metered licensing mechanism fails to communicate with the Aspose servers for 24 hours, Aspose.Words will exit licensed mode and switch to evaluation mode. To avoid such case, you can use the [isMeteredLicensed()](https://reference.aspose.com/words/java/com.aspose.words/metered/#isMeteredLicensed) method to check the license status and reapply the metered license if necessary.
 
 {{% alert color="primary" %}}
 

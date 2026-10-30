@@ -568,7 +568,7 @@ We provide support for the following clients:
 
 <img src="scatter-chart-report-example.png" alt="Scatter_Chart_Report_Example-aspose-words-net" style="width:600px"/>
 
-{{< gist "aspose-words" "9a306a41bb6aea8adfcabf5a575c5718" "Examples-CSharp-LINQ-ScatterChart-ScatterChart.cs" >}}
+{{< gist "aspose-words-gists" "688c5a950ba6b1a9c17114eb1260f4c9" "scatter-chart.cs" >}}
 
 ## Bubble Chart Template
 

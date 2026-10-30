@@ -35,7 +35,7 @@ The following code example shows how to replace all instances of a string of tex
 
 ## Extract Plain Text from Table or Cell
 
-Using the **Range** object, you can also call methods on the entire table range and extract the table as plain text. To do this, use the [Text](https://reference.aspose.com/words/cpp/aspose.words/range/get_text/) property. 
+Using the **Range** object, you can also call methods on the entire table range and extract the table as plain text. To do this, use the [get_Text()](https://reference.aspose.com/words/cpp/aspose.words/range/get_text/) property. 
 
 The following code example shows how to print the text range of a table:
 
@@ -51,7 +51,7 @@ The following code example shows how to print a text range of row and table elem
 
 Microsoft Word tables have a `table title` and `table description` that provide an alternative textual representation of the information contained in the table.
 
-In Aspose.Words, you can also add a table title and description using the [Title](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_title/) and [Description](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_description/) properties. These properties are meaningful for DOCX documents conforming to the ISO/IEC 29500. When saving in formats earlier than ISO/IEC 29500, these properties are ignored.
+In Aspose.Words, you can also add a table title and description using the [get_Title()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_title/) and [get_Description()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_description/) properties. These properties are meaningful for DOCX documents conforming to the ISO/IEC 29500. When saving in formats earlier than ISO/IEC 29500, these properties are ignored.
 
 The following code example shows how to set the title and description properties of a table:
 

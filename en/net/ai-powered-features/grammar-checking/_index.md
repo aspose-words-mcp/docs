@@ -56,7 +56,7 @@ Checking grammar with Aspose.Words improves the quality of your work and makes i
    **A:** Grammar checking works on any format that Aspose.Words can load, such as DOC, DOCX, RTF, HTML, and PDF (when converted to a Word document first). The content is extracted from the loaded `Document` object, so the original format does not affect the grammar analysis.
 
 4. **Q:** How should I handle large documents to avoid performance issues?  
-   **A:** For very large files, consider processing the document in sections or pages. Use `Document.Split` to create smaller `Document` instances, run `CheckGrammar` on each part, and then merge the results. Additionally, enable streaming by loading the document from a `FileStream` with `LoadOptions` that set `LoadFormat` appropriately, which reduces memory consumption.
+   **A:** For very large files, consider processing the document in sections or pages. Use `Document.ExtractPages` to create smaller `Document` instances, run `CheckGrammar` on each part, and then merge the results.
 
 
 

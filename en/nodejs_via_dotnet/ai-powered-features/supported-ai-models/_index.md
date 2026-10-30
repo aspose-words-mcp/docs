@@ -43,7 +43,7 @@ For more information, check the [aspose.words.ai](https://reference.aspose.com/w
    **A:** Aspose.Words supports OpenAI models, Google Gemini models, and Anthropic Claude models. The complete list is defined in the `AiModelType` enumeration.
 
 2. **Q:** How do I create an `AiModel` instance for a specific provider?  
-   **A:** Use the static factory methods on `AiModel`. For example, `aw.AI.AiModel.createGpt4OTurbo()` creates an OpenAI model, while `aw.AI.AiModel.createGemini15Flash()` creates a Google Gemini model. The returned object can then be passed to AI‑enabled APIs such as document summarization.
+   **A:** Use the static factory methods on `AiModel`. For example, `aw.AI.AiModel.createGpt4Turbo()` creates an OpenAI model, while `aw.AI.AiModel.createGemini15Flash()` creates a Google Gemini model. The returned object can then be passed to AI‑enabled APIs such as document summarization.
 
 3. **Q:** Where do I configure the API key or authentication for the selected model?  
    **A:** After creating the model, set the appropriate credentials on the instance, e.g., `model.setApiKey("YOUR_OPENAI_KEY")` for OpenAI or `model.setApiKey("YOUR_GOOGLE_KEY")` for Gemini. The keys are kept only in memory and are not persisted by Aspose.Words.

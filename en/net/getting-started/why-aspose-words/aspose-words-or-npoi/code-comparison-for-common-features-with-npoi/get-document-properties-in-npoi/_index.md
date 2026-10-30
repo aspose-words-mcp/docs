@@ -61,7 +61,7 @@ You can use document properties in your document automation project to store som
 
 Download **Get Document Properties** from any of the below mentioned social coding sites:
 
-- [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/NPOI/Aspose.Words%20Vs%20NPOI%20HWPF%20and%20XWPF%20v1.1/Get%20Document%20Properties)
+- [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/NPOI/Aspose.Words%20Vs%20NPOI%20HWPF%20and%20XWPF/Get%20Document%20Properties)
 
 ## Download Sample Code
 

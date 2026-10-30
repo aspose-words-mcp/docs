@@ -34,10 +34,10 @@ While building a report, `uri_or_bookmark_expression` and `display_text_expressi
 ## FAQ
 
 1. **Q:** How do I create a hyperlink that points to an external URL?  
-   **A:** Use the `link` tag with the URL as the first argument, e.g., `<<link "https://example.com" "Visit Example">>`. The URL expression can be a string literal, a variable, or any object whose `toString()` returns a valid URI.
+   **A:** Use the `link` tag with the URL as the first argument, e.g., `<<link ["https://example.com"] ["Visit Example"]>>`. The URL expression can be a string literal, a variable, or any object whose `toString()` returns a valid URI.
 
 2. **Q:** Can I link to a bookmark inside the same document?  
-   **A:** Yes. Provide the bookmark name as the `uri_or_bookmark_expression`, for example `<<link "MyBookmark" "Go to Section">>`. At runtime the tag creates a hyperlink that navigates to the bookmark named *MyBookmark*.
+   **A:** Yes. Provide the bookmark name as the `uri_or_bookmark_expression`, for example `<<link ["MyBookmark"] ["Go to Section"]>>`. At runtime the tag creates a hyperlink that navigates to the bookmark named *MyBookmark*.
 
 3. **Q:** What happens if I omit the display‑text expression?  
    **A:** When the second argument is omitted or evaluates to an empty value, Aspose.Words uses the string representation of the first argument (the URI or bookmark name) as the visible text of the hyperlink.

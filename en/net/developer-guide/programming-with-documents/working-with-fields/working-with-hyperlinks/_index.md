@@ -25,7 +25,7 @@ A hyperlink in Microsoft Word documents is the `HYPERLINK` field. In Aspose.Word
 
 ## Insert a Hyperlink
 
-Usethe [InsertHyperlink](https://reference.aspose.com/words/net/aspose.words/documentbuilder/inserthyperlink/)method to insert a hyperlink into the document. This method accepts three parameters:
+Use the [InsertHyperlink](https://reference.aspose.com/words/net/aspose.words/documentbuilder/inserthyperlink/) method to insert a hyperlink into the document. This method accepts three parameters:
 
 1. Text of the link to be displayed in the document
 2. Link destination (URL or a name of a bookmark inside the document)
@@ -71,7 +71,7 @@ The following code example shows how to find all hyperlinks in Word document and
    **A:** Locate the `FieldHyperlink` object, access its `Result` node (which holds the displayed text), and replace the text with the new string. After updating, you may need to re‑apply font formatting if the style should differ.
 
 4. **Q:** How can I modify the URL of a hyperlink that is already in the document?  
-   **A:** Find the `FieldHyperlink` instance, then update its `Hyperlink` property (or the field code) with the new URL string. Call `field.Update()` to refresh the field result so the change is reflected in the document.
+   **A:** Find the `FieldHyperlink` instance, then update its `Address` property (or `SubAddress` for a link to a bookmark) with the new value. Call `field.Update()` to refresh the field result so the change is reflected in the document.
 
 5. **Q:** Is there a way to remove a hyperlink while keeping its display text?  
-   **A:** Yes. Remove the `FieldHyperlink` node from the document tree but keep its `Result` node (the text). You can do this by extracting the `Result` node, inserting it back into the parent, and then deleting the entire field node hierarchy. This leaves the plain text in the document without the hyperlink.
+   **A:** Yes. Call `Unlink()` on the hyperlink field (for example `doc.Range.Fields[0].Unlink()`). It replaces the field with its current result, so the display text stays in the document as plain text.

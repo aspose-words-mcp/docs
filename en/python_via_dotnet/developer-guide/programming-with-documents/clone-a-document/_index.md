@@ -66,4 +66,4 @@ The following code example shows how to clone a document and create a duplicate 
    **A:** Yes. After cloning, the original and the clone have separate object graphs. Changes made to one (e.g., adding sections, editing text) do not affect the other.
 
 5. **Q:** How can I use a cloned document for comparison with the original?  
-   **A:** After cloning, you can pass both `Document` instances to the `Document.compare()` method. The original remains unchanged, while the clone can be edited before or after the comparison. Example: `original_doc.compare(clone, "Author", DateTime.now())`.
+   **A:** After cloning, you can pass both `Document` instances to the `Document.compare()` method. The original remains unchanged, while the clone can be edited before or after the comparison. Example: `original_doc.compare(clone, "Author", datetime.now())`.

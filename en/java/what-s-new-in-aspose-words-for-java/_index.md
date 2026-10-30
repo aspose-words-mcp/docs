@@ -35,8 +35,8 @@ PDF layout tagging has been improved by placing footnote and endnote tags accord
 
 ### Other
 
-* The ability to control whether list definition content is included when comparing documents has been introduced by adding the **CompareListDefinitions** property to the AdvancedCompareOptions class. <sup>26.9</sup>
-* The ability to add RFC 3161 timestamps to digital signatures has been introduced by adding the **TimestampSettings** property to the SignOptions class. <sup>26.9</sup>
+* The ability to control whether list definition content is included when comparing documents has been introduced by adding the **getCompareListDefinitions()** property to the AdvancedCompareOptions class. <sup>26.9</sup>
+* The ability to add RFC 3161 timestamps to digital signatures has been introduced by adding the **getTimestampSettings()** property to the SignOptions class. <sup>26.9</sup>
 
 {{% alert color="primary" %}}
 
@@ -98,7 +98,7 @@ The rendering of alternative text for inner shapes contained in textboxes has be
 * The ability to clear custom toolbars and keyboard shortcuts from a document has been introduced by adding a [new method](https://reference.aspose.com/words/java/com.aspose.words/document/#removeCustomizations) for resetting and protecting document settings. <sup>26.6</sup>
 * The handling of repeated table header rows has been improved to provide more consistent rendering and layout in multi-page tables. <sup>26.6</sup>
 * The ability to calculate **Flesch Reading Ease** and **Flesch-Kincaid Grade Level** readability statistics for document text has been introduced by adding the **ReadabilityStatistics** class. <sup>26.7</sup>
-* The ability to clear a custom tab stop from a list level has been introduced by adding a new **RemoveTabStop** method. <sup>26.7</sup>
+* The ability to clear a custom tab stop from a list level has been introduced by adding a new **removeTabStop()** method. <sup>26.7</sup>
 * The wrapping algorithm for mathematical equations has been improved to provide more accurate rendering of complex formulas. <sup>26.7</sup>
 * Improved rendering of inline fractions in MathML objects has been introduced to provide more accurate rendering of mathematical content. <sup>26.8</sup>
 
@@ -120,7 +120,7 @@ Aspose.Words 26.1 introduces Docling JSON export, enhances AI and document mergi
 
 Aspose.Words 26.2 improves chart customization, enhances the visual quality of mathematical equations, and aligns table layout behavior more closely with modern Microsoft Word rendering logic.
 
-Aspose.Words for .NET 26.3 introduces improvements to AI integration, enhances document optimization capabilities, and updates font fallback handling for improved rendering of CJK Unified Ideographs Extension G range.
+Aspose.Words 26.3 introduces improvements to AI integration, enhances document optimization capabilities, and updates font fallback handling for improved rendering of CJK Unified Ideographs Extension G range.
 
 Aspose.Words 26.4 introduces improvements in PDF export, chart rendering capabilities, and reporting engine diagnostics, enhancing document structure fidelity, visualization accuracy, and debugging experience.
 
@@ -154,7 +154,7 @@ The ability to improve PDF logical structure by exporting node custom IDs to cus
 
 #### Extended PDF Conformance Standards <sup>26.1</sup>
 
-The **PdfSaveOptions** functionality has been extended by the [PreserveFormFields](https://reference.aspose.com/words/java/com.aspose.words/pdfsaveoptions/#getPreserveFormFields) property to be compatible with all PDF compliance standards (including PDF/A and PDF/UA).
+The **PdfSaveOptions** functionality has been extended by the [getPreserveFormFields()](https://reference.aspose.com/words/java/com.aspose.words/pdfsaveoptions/#getPreserveFormFields) property to be compatible with all PDF compliance standards (including PDF/A and PDF/UA).
 
 #### Rendering MathML using an East Asian Font <sup>26.1</sup>
 
@@ -179,7 +179,7 @@ The ability to enhance chart rendering has been introduced by adding support for
 ### Other
 
 * The handling of adjacent tables has been updated by implementing the latest Microsoft Word logic for merging or separating tables during layout processing. <sup>26.2</sup>
-* The document optimization capabilities have been improved by extending the [JoinRunsWithSameFormatting](https://reference.aspose.com/words/java/com.aspose.words/document/#joinRunsWithSameFormatting) method, enabling more comprehensive content merging. <sup>26.3</sup>
+* The document optimization capabilities have been improved by extending the [joinRunsWithSameFormatting()](https://reference.aspose.com/words/java/com.aspose.words/document/#joinRunsWithSameFormatting) method, enabling more comprehensive content merging. <sup>26.3</sup>
 * The ability to improve report generation diagnostics in LINQ Reporting Engine has been introduced by providing detailed error information during the report building stage. <sup>26.4</sup>
 
 {{% alert color="primary" %}}
@@ -206,7 +206,7 @@ Aspose.Words 25.12 improves rendering accuracy across PDF, HTML-Fixed, and SVG f
 
 ### AI-powered Features
 
-#### Сonfigure AI Model Service Endpoints <sup>25.11</sup>
+#### Configure AI Model Service Endpoints <sup>25.11</sup>
 
 The ability to configure [AI model](https://reference.aspose.com/words/java/com.aspose.words/aimodel/) service endpoints has been introduced by adding support for specifying [custom URLs](https://reference.aspose.com/words/java/com.aspose.words/aimodel/#getUrl) and [request timeouts](https://reference.aspose.com/words/java/com.aspose.words/aimodel/#getTimeout), allowing greater flexibility in AI-powered integrations.
 
@@ -214,14 +214,14 @@ The ability to configure [AI model](https://reference.aspose.com/words/java/com.
 
 #### Control How Corrupted Documents Are Opened <sup>25.9</sup>
 
-The ability to control how corrupted documents are opened has been introduced by adding a new [RecoveryMode](https://reference.aspose.com/words/java/com.aspose.words/loadoptions/#getRecoveryMode) option.
+The ability to control how corrupted documents are opened has been introduced by adding a new [getRecoveryMode()](https://reference.aspose.com/words/java/com.aspose.words/loadoptions/#getRecoveryMode) option.
 
 #### Export Mathematical Equations to LaTeX Expression
 
 The ability to export mathematical equations (Office Math) to LaTeX expressions has been introduced:
 
-* For export to Markdown format using the [MarkdownSaveOptions.OfficeMathExportMode](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getOfficeMathExportMode) property. <sup>25.9</sup>
-* For export to TXT format using the [TxtSaveOptions.OfficeMathExportMode](https://reference.aspose.com/words/java/com.aspose.words/txtsaveoptions/#getOfficeMathExportMode) property. <sup>25.10</sup>
+* For export to Markdown format using the [MarkdownSaveOptions.getOfficeMathExportMode()](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/#getOfficeMathExportMode) property. <sup>25.9</sup>
+* For export to TXT format using the [TxtSaveOptions.getOfficeMathExportMode()](https://reference.aspose.com/words/java/com.aspose.words/txtsaveoptions/#getOfficeMathExportMode) property. <sup>25.10</sup>
 
 #### Improved Document Conversion Fidelity to Markdown <sup>25.11</sup>
 
@@ -229,7 +229,7 @@ The fidelity of document conversion to Markdown has been improved by enabling th
 
 #### Control Floating Shape Tagging When Exporting to PDF <sup>25.10</sup>
 
-A new save option [ExportFloatingShapesAsInlineTag](https://reference.aspose.com/words/java/com.aspose.words/pdfsaveoptions/#getExportFloatingShapesAsInlineTag) has been added to provide precise control over the tagging of floating shapes as either inline or block-level elements, improving layout accuracy and accessibility.
+A new save option [getExportFloatingShapesAsInlineTag()](https://reference.aspose.com/words/java/com.aspose.words/pdfsaveoptions/#getExportFloatingShapesAsInlineTag) has been added to provide precise control over the tagging of floating shapes as either inline or block-level elements, improving layout accuracy and accessibility.
 
 #### Control How Images and Other External Resources are Exported to Markdown <sup>25.10</sup>
 
@@ -262,7 +262,7 @@ The ability to render Funnel charts in documents has been added.
 
 #### Render VerticalFarEast and HorizontalRotatedFarEast Text Orientations in EQ-field <sup>25.12</sup>
 
-The ability to render **VerticalFarEast** and **HorizontalRotatedFarEast** text orientations in EQ-field elements has been introduced.
+The ability to render **VERTICAL_FAR_EAST** and **HORIZONTAL_ROTATED_FAR_EAST** text orientations in EQ-field elements has been introduced.
 
 ### Other
 

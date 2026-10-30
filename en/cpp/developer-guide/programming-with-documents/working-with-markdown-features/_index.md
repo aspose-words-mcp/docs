@@ -13,7 +13,7 @@ url: /cpp/working-with-markdown-features/
 timestamp: 2024-01-31-14-23-37
 ---
 
-This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supportsthe following Markdown features:
+This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supports the following Markdown features:
 
 - Headings
 - Blockquotes
@@ -21,9 +21,9 @@ This topic discusses how to implement Markdown features using Aspose.Words. Mark
 - Bold emphasis
 - Italic emphasis
 
-The Markdown feature implementationmostly follows the `CommonMark` specification in Aspose.Words API and all the features are represented as corresponding styles or direct formatting. Which means that
+The Markdown feature implementation mostly follows the `CommonMark` specification in Aspose.Words API and all the features are represented as corresponding styles or direct formatting. Which means that
 
-- Bold and Italic are represented as `Font.Bold` and `Font.Italic`.
+- Bold and Italic are represented as `Font::Bold` and `Font::Italic`.
 - Headings are paragraphs with Heading 1 - Heading 6 styles.
 - Quotes are paragraphs with "Quote" in the style name.
 - HorizontalRule is a paragraph with HorizontalRule shape.
@@ -38,7 +38,7 @@ There are nuances of translating Markdown to the Aspose.Words Document Object Mo
 
 This section demonstrates you how to produce a markdown document with emphases as given below:
 
-{{< highlight csharp >}}
+{{< highlight markdown >}}
 Markdown treats asterisks (*) and underscores (_) as indicators of emphasis.
 You can write **bold** or *italic* text. 
 You can also write ***BoldItalic***text.
@@ -53,7 +53,7 @@ The following code snippet can be used to produce the above-given markdown docum
 
 This section demonstrates you how to produce a markdown document with headings as given below:
 
-{{< highlight csharp >}}
+{{< highlight markdown >}}
 The following produces headings:
 # Heading1
 ## Heading2
@@ -72,7 +72,7 @@ The following code snippet can be used to produce the above-given markdown docum
 
 This section demonstrates you how to produce a markdown document with block quotes as given below:
 
-{{< highlight csharp >}}
+{{< highlight markdown >}}
 We support blockquotes in Markdown:
 >*Lorem*
 >*ipsum*
@@ -93,7 +93,7 @@ The following code snippet can be used to produce the above-given markdown docum
 
 This section demonstrates you how to produce a markdown document with Horizontal Rule as given below:
 
-{{< highlight csharp >}}
+{{< highlight markdown >}}
 We support Horizontal rules (Thematic breaks) in Markdown:
 -----
 
@@ -119,6 +119,6 @@ The following code example demonstrated how to specify various Markdown save opt
 
 ## How to Align Content Inside the Table while Exporting into Markdown
 
-Aspose.Words API providesTableContentAlignmentenumeration which defines alignment directions to align contents in tables while exporting into the Markdown document. The following code example demonstrates how to align content inside the table.
+Aspose.Words API provides TableContentAlignment enumeration which defines alignment directions to align contents in tables while exporting into the Markdown document. The following code example demonstrates how to align content inside the table.
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-SpecifyMarkdownSaveOptions-ExportIntoMarkdownWithTableContentAlignment.cpp" >}}

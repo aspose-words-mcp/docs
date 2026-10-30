@@ -36,11 +36,11 @@ The following code example shows how to convert DOCX to Markdown:
 
 {{< gist "aspose-words-gists" "1739a7dc53ee2cce1ac97f4ef9fa7310" "docx-to-markdown.h" >}}
 
-You can also specify the physical folder in which you want to save images when exporting a document to Markdown format. By default, Aspose.Words saves images in the same folder where the document file is saved, but you can override this behavior using the [ImagesFolder](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_imagesfolder/) property.
+You can also specify the physical folder in which you want to save images when exporting a document to Markdown format. By default, Aspose.Words saves images in the same folder where the document file is saved, but you can override this behavior using the [get_ImagesFolder()](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_imagesfolder/) property.
 
-Specifying a folder via **ImagesFolder** is also useful if you save a document to a stream and Aspose.Words does not have a folder for saving images.
+Specifying a folder via **get_ImagesFolder()** is also useful if you save a document to a stream and Aspose.Words does not have a folder for saving images.
 
-If the specified **ImagesFolder** does not exist, it will be created automatically.
+If the specified **get_ImagesFolder()** does not exist, it will be created automatically.
 
 The following code example shows how to specify a folder for images when saving a document to a stream:
 
@@ -48,7 +48,7 @@ The following code example shows how to specify a folder for images when saving 
 
 ## Specify Save Options when Converting to Markdown
 
-Aspose.Words provides the ability to use the [MarkdownSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/) class to work with advanced options when saving a document to Markdown format. Most properties are inheriting or overloading properties that already exist within other [Aspose.Words.Saving](https://reference.aspose.com/words/cpp/aspose.words.saving/) Namespace classes. In addition to them, a number of properties that are specific for Markdown format have also been added. For example, the [TableContentAlignment](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_tablecontentalignment/) property to control the alignment of content in tables, or [ImageSavingCallback](https://reference.aspose.com/words/cpp/aspose.words.saving/iimagesavingcallback/) and [ImagesFolder](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_imagesfolder/) to control how images are saved upon converting a document to Markdown format.
+Aspose.Words provides the ability to use the [MarkdownSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/) class to work with advanced options when saving a document to Markdown format. Most properties are inheriting or overloading properties that already exist within other [Aspose.Words.Saving](https://reference.aspose.com/words/cpp/aspose.words.saving/) Namespace classes. In addition to them, a number of properties that are specific for Markdown format have also been added. For example, the [get_TableContentAlignment()](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_tablecontentalignment/) property to control the alignment of content in tables, or [get_ImageSavingCallback()](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_imagesavingcallback/) and [get_ImagesFolder()](https://reference.aspose.com/words/cpp/aspose.words.saving/markdownsaveoptions/get_imagesfolder/) to control how images are saved upon converting a document to Markdown format.
 
 ## Supported Markdown Features
 

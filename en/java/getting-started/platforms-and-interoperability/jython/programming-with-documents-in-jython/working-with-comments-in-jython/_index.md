@@ -48,7 +48,7 @@ class ProcessComments:
         comments = doc.getChildNodes(NodeType.COMMENT, True)
 
         # Look through all comments and gather information about them.
-        for comment in comments :
+        for comment in comments:
             if 1 < len(args) and args[1] is not None :
                 authorName = args[1]
                 if str(comment.getAuthor()) == authorName:

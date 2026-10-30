@@ -118,7 +118,7 @@ The Aspose.Words license is applied on server startup. The path is resolved with
 The following code example shows how to apply the license:
 
 ```bash
-export ASPOSE_WORDS_LICENSE_PATH='/path/to/aspose.words.lic'
+export ASPOSE_WORDS_LICENSE_PATH='/path/to/Aspose.Words.Python.NET.lic'
 ```
 
 {{% alert color="primary" %}}
@@ -166,7 +166,7 @@ Aspose.Words MCP Server supports the following integration options:
    **A:** Use the `MCP_HOST` and `MCP_PORT` environment variables to specify the desired address and port, e.g., `export MCP_HOST=127.0.0.1` and `export MCP_PORT=9090` before starting the server.
 
 4. **Q:** What should I do if the server fails to start because the license is reported as invalid?  
-   **A:** Verify that the license file is a valid Aspose.Words for Python via .NET license (not an Aspose.Total.NET.lic file), ensure the path is correct, and confirm that the license matches the product version. If the license is correct, restart the server; otherwise, the server will operate in evaluation mode.
+   **A:** Verify that the license file is an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`), not a .NET license such as `Aspose.Total.NET.lic`, and that the path is correct. A license works only with versions released before its subscription expiry date. After fixing the license, restart the server; until then it runs in evaluation mode.
 
 5. **Q:** Can I use an Aspose.Total.NET.lic file with the MCP server for Python?  
-   **A:** No. The MCP server requires a license specifically for Aspose.Words for Python via .NET. An Aspose.Total.NET.lic does not cover this product, so you need to obtain a separate Aspose.Words license.
+   **A:** No. The MCP server requires a license for Python via .NET. An `Aspose.Total.NET.lic` does not cover this product; use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`).

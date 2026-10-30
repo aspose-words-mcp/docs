@@ -51,9 +51,9 @@ persons.Any(){{< /highlight >}} |
 | `Any(Predicate)` | {{< highlight csharp >}}
 persons.Any(p => p.Name == "John Smith"){{< /highlight >}} |
 | `Average(Selector)` | {{< highlight csharp >}}
-persons.Average(p => p.Age){{< /highlight >}}The input selector must return a value of any type that has predefined or user-defined addition and division operators. |
+persons.Average(p => p.Age){{< /highlight >}} The input selector must return a value of any type that has predefined or user-defined addition and division operators. |
 | `Concat(IEnumerable)` | {{< highlight csharp >}}
-persons.Concat(otherPersons){{< /highlight >}}An implicit reference conversion must exist between types of items of concatenated enumerations. |
+persons.Concat(otherPersons){{< /highlight >}} An implicit reference conversion must exist between types of items of concatenated enumerations. |
 | `Contains(Object)` | {{< highlight csharp >}}
 persons.Contains(otherPersons.First()){{< /highlight >}} |
 | `Count()` | {{< highlight csharp >}}
@@ -76,7 +76,7 @@ persons.FirstOrDefault(){{< /highlight >}} |
 persons.FirstOrDefault(p => p.Age > 30){{< /highlight >}} |
 | `GroupBy(Selector)` | {{< highlight csharp >}}
 persons.GroupBy(p => p.Age){{< /highlight >}}Or {{< highlight csharp >}}
-persons.GroupBy(    p => new { Age = p.Age, Count = p.Children.Count() }){{< /highlight >}}This method returns an enumeration of group objects. Each group has a unique key defined by the input selector and contains items of the source enumeration associated with this key. You can access the key of a group instance using the `Key` property. You can treat a group itself as an enumeration of items that the group contains. |
+persons.GroupBy(    p => new { Age = p.Age, Count = p.Children.Count() }){{< /highlight >}} This method returns an enumeration of group objects. Each group has a unique key defined by the input selector and contains items of the source enumeration associated with this key. You can access the key of a group instance using the `Key` property. You can treat a group itself as an enumeration of items that the group contains. |
 | `Last()` | {{< highlight csharp >}}
 persons.Last(){{< /highlight >}} |
 | `Last(Predicate)` | {{< highlight csharp >}}
@@ -91,12 +91,12 @@ persons.Max(p => p.Age){{< /highlight >}} |
 persons.Min(p => p.Age){{< /highlight >}} |
 | `OrderBy(ComparableSelector)` | {{< highlight csharp >}}
 persons.OrderBy(p => p.Age){{< /highlight >}}Or {{< highlight csharp >}}
-persons.OrderBy(p => p.Age). ThenByDescending(p => p.Name){{< /highlight >}}Or {{< highlight csharp >}}
-persons.OrderBy(p => p.Age). ThenByDescending(p => p.Name). ThenBy(p => p.Children.Count()){{< /highlight >}}This method returns an enumeration ordered by a single key. To specify additional ordering keys, you can use the following extension methods of an ordered enumeration:<br>- ThenBy(ComparableSelector)<br>- ThenByDescending(ComparableSelector) |
+persons.OrderBy(p => p.Age).ThenByDescending(p => p.Name){{< /highlight >}} Or {{< highlight csharp >}}
+persons.OrderBy(p => p.Age).ThenByDescending(p => p.Name).ThenBy(p => p.Children.Count()){{< /highlight >}}This method returns an enumeration ordered by a single key. To specify additional ordering keys, you can use the following extension methods of an ordered enumeration:<br>- ThenBy(ComparableSelector)<br>- ThenByDescending(ComparableSelector) |
 | `OrderByDescending(ComparableSelector)` | {{< highlight csharp >}}
 persons.OrderByDescending(p => p.Age){{< /highlight >}}Or {{< highlight csharp >}}
-persons.OrderByDescending(p => p.Age). ThenByDescending(p => p.Name){{< /highlight >}}Or {{< highlight csharp >}}
-persons.OrderByDescending(p => p.Age). ThenByDescending(p => p.Name). ThenBy(p => p.Children.Count()){{< /highlight >}}See the previous note. |
+persons.OrderByDescending(p => p.Age).ThenByDescending(p => p.Name){{< /highlight >}} Or {{< highlight csharp >}}
+persons.OrderByDescending(p => p.Age).ThenByDescending(p => p.Name).ThenBy(p => p.Children.Count()){{< /highlight >}} See the previous note. |
 | `Select(Selector)` | {{< highlight csharp >}}
 persons.Select(p => p.Name){{< /highlight >}} |
 | `SelectMany(EnumerationSelector)` | {{< highlight csharp >}}
@@ -114,13 +114,13 @@ persons.Skip(10){{< /highlight >}} |
 | `SkipWhile(Predicate)` | {{< highlight csharp >}}
 persons.SkipWhile(p => p.Age < 21){{< /highlight >}} |
 | `Sum(Selector)` | {{< highlight csharp >}}
-persons.Sum(p => p.Children.Count()){{< /highlight >}}The input selector must return a value of any type that has a predefined or user-defined addition operator. |
+persons.Sum(p => p.Children.Count()){{< /highlight >}} The input selector must return a value of any type that has a predefined or user-defined addition operator. |
 | `Take(int)` | {{< highlight csharp >}}
 persons.Take(5){{< /highlight >}} |
 | `TakeWhile(Predicate)` | {{< highlight csharp >}}
 persons.TakeWhile(p => p.Age < 50){{< /highlight >}} |
 | `Union(IEnumerable)` | {{< highlight csharp >}}
-persons.Union(otherPersons){{< /highlight >}}An implicit reference conversion must exist between types of items of united enumerations. |
+persons.Union(otherPersons){{< /highlight >}} An implicit reference conversion must exist between types of items of united enumerations. |
 | `Where(Predicate)` | {{< highlight csharp >}}
 persons.Where(p => p.Age > 18){{< /highlight >}} |
 
@@ -132,7 +132,7 @@ persons.Where(p => p.Age > 18){{< /highlight >}} |
    **A:** Write the call directly in the template, e.g., `persons.ElementAt(3)`, to obtain the fourth element (zero‑based indexing). Ensure the source collection contains enough items; otherwise an `ArgumentOutOfRangeException` will be thrown.
 
 2. **Q:** Can I chain multiple ordering methods such as `OrderBy` and `ThenByDescending` in a template?  
-   **A:** Yes. After an `OrderBy` call you can append `ThenBy` or `ThenByDescending` to define secondary sort keys, for example `persons.OrderBy(p => p.Age). ThenByDescending(p => p.Name)`.
+   **A:** Yes. After an `OrderBy` call you can append `ThenBy` or `ThenByDescending` to define secondary sort keys, for example `persons.OrderBy(p => p.Age).ThenByDescending(p => p.Name)`.
 
 3. **Q:** How do I filter a collection using the `Where` extension method in a report?  
    **A:** Use `persons.Where(p => p.Age > 18)` inside the template. The predicate must return a Boolean value, and the resulting filtered collection can be iterated or further processed with other extension methods.

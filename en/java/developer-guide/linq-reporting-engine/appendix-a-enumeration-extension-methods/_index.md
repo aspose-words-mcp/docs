@@ -68,7 +68,7 @@ public class Person
  persons.firstOrDefault(p => p.getAge() > 30){{< /highlight >}} |
 | `groupBy(Selector)` | {{< highlight csharp >}}
  persons.groupBy(p => p.getAge()){{< /highlight >}}Or {{< highlight csharp >}}
- persons.groupBy(p => new { age = p.getAge(), count = p.getChildren().count() }){{< /highlight >}}This method returns an enumeration of group objects. Each group has a unique key defined by the input selector and contains items of the source enumeration associated with this key. You can access the key of a group instance using the `Key` field. You can treat a group itself as an enumeration of items that the group contains. |
+ persons.groupBy(p => new { age = p.getAge(), count = p.getChildren().count() }){{< /highlight >}}This method returns an enumeration of group objects. Each group has a unique key defined by the input selector and contains items of the source enumeration associated with this key. You can access the key of a group instance using the `key` field. You can treat a group itself as an enumeration of items that the group contains. |
 | `last()` | {{< highlight csharp >}}
  persons.last(){{< /highlight >}} |
 | `last(Predicate)` | {{< highlight csharp >}}
@@ -83,12 +83,12 @@ public class Person
  persons.min(p => p.getAge()){{< /highlight >}} |
 | `orderBy(ComparableSelector)` | {{< highlight csharp >}}
  persons.orderBy(p => p.getAge()){{< /highlight >}}Or {{< highlight csharp >}}
- persons.orderBy(p => p.getAge()). ThenByDescending(p => p.getName()){{< /highlight >}}Or {{< highlight csharp >}}
- persons.orderBy(p => p.getAge()). ThenByDescending(p => p.getName()). ThenBy(p => p.getChildren().count()){{< /highlight >}}This method returns an enumeration ordered by a single key. To specify additional ordering keys, you can use the following extension methods of an ordered enumeration:<br>- thenBy(ComparableSelector)<br>- thenByDescending(ComparableSelector) |
+ persons.orderBy(p => p.getAge()).thenByDescending(p => p.getName()){{< /highlight >}}Or {{< highlight csharp >}}
+ persons.orderBy(p => p.getAge()).thenByDescending(p => p.getName()).thenBy(p => p.getChildren().count()){{< /highlight >}}This method returns an enumeration ordered by a single key. To specify additional ordering keys, you can use the following extension methods of an ordered enumeration:<br>- thenBy(ComparableSelector)<br>- thenByDescending(ComparableSelector) |
 | `orderByDescending(ComparableSelector)` | {{< highlight csharp >}}
  persons.orderByDescending(p => p.getAge()){{< /highlight >}}Or {{< highlight csharp >}}
- persons.orderByDescending(p => p.getAge()). ThenByDescending(p => p.getName()){{< /highlight >}}Or {{< highlight csharp >}}
- persons.orderByDescending(p => p.getAge()). ThenByDescending(p => p.getName())    . ThenBy(p => p.getChildren().count()){{< /highlight >}}See the previous note. |
+ persons.orderByDescending(p => p.getAge()).thenByDescending(p => p.getName()){{< /highlight >}}Or {{< highlight csharp >}}
+ persons.orderByDescending(p => p.getAge()).thenByDescending(p => p.getName())    .thenBy(p => p.getChildren().count()){{< /highlight >}}See the previous note. |
 | `select(Selector)` | {{< highlight csharp >}}persons.select(p => p.getName()){{< /highlight >}} |
 | `selectMany(EnumerationSelector)` | {{< highlight csharp >}}persons.selectMany(p => p.getChildren()){{< /highlight >}} |
 | `single()` | {{< highlight csharp >}}
@@ -119,16 +119,16 @@ public class Person
 ## FAQ
 
 1. **Q:** How can I obtain the index of the current item inside a `foreach` loop in a template?  
-   **A:** Use the built‑in `index` variable that the LINQ Reporting Engine provides for each iteration. Inside the `foreach` tag you can write `<<#= index>>` to output the zero‑based position of the current element.
+   **A:** Call the `indexOf()` extension method on the iteration variable. For example, inside `<<foreach [item in items]>>` write `<<[item.indexOf()]>>` to output the zero‑based position of the current element (`numberOf()` gives the one‑based position).
 
 2. **Q:** Is there a way to access the previous element while iterating over a collection?  
    **A:** The engine does not expose a direct `previous()` method. A common workaround is to use `skip(1)` together with `first()` on a sliced collection, e.g., `persons.skip(1).first()` gives the element after the first one, which you can compare with the current index.
 
 3. **Q:** How do I group items by a calculated key, such as age, and then iterate over each group?  
-   **A:** Use the `groupBy` extension method. Example: `persons.groupBy(p => p.getAge())` returns a collection of groups. Inside the template you can iterate: `<<foreach [group in persons.groupBy(p => p.getAge())]>> Age: <<group.Key>> Count: <<group.count()>> <<endforeach>>`.
+   **A:** Use the `groupBy` extension method. Example: `persons.groupBy(p => p.getAge())` returns a collection of groups. Inside the template you can iterate: `<<foreach [group in persons.groupBy(p => p.getAge())]>> Age: <<[group.key]>> Count: <<[group.count()]>> <</foreach>>`.
 
 4. **Q:** What extension methods should I use to sort a collection by multiple fields?  
-   **A:** First apply `orderBy` (or `orderByDescending`) with the primary key, then chain `thenBy` or `thenByDescending` for secondary keys. Example: `persons.orderBy(p => p.getAge()). ThenByDescending(p => p.getName()). ThenBy(p => p.getChildren().count())`.
+   **A:** First apply `orderBy` (or `orderByDescending`) with the primary key, then chain `thenBy` or `thenByDescending` for secondary keys. Example: `persons.orderBy(p => p.getAge()).thenByDescending(p => p.getName()).thenBy(p => p.getChildren().count())`.
 
 5. **Q:** How can I check whether any element in a collection satisfies a condition?  
    **A:** Use the `any(Predicate)` method. Example: `persons.any(p => p.getAge() > 65)` returns `true` if at least one person is older than 65, otherwise `false`.

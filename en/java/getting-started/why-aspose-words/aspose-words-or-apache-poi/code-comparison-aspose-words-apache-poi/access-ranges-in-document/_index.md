@@ -15,7 +15,7 @@ timestamp: 2024-01-27-14-07-04
 
 ## Aspose.Words - Access Ranges in Document
 
-Use the**Range.getText**to retrieve plain, unformatted text of the range.
+Use the **Range.getText** to retrieve plain, unformatted text of the range.
 
 **Java**
 
@@ -26,7 +26,7 @@ String text = range.getText();
 
 ## Apache POI HWPF XWPF - Access Ranges in Document
 
-Use the**Range.text**to retrieve text of the range.
+Use the **Range.getText()** method to retrieve text of the range.
 
 **Java**
 
@@ -45,6 +45,6 @@ String text = range.text();
 
 {{% alert color="primary" %}}
 
-For more details, visit [Retrieving Plain Text](/words/java/working-with-ranges/#workingwithranges-retrievingplaintext).
+For more details, visit [Retrieving Plain Text](/words/java/working-with-ranges/#retrieve-plain-text).
 
 {{% /alert %}}

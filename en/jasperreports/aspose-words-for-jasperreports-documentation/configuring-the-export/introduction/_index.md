@@ -18,7 +18,7 @@ Aspose.Words for JasperReports provides a number of parameters that affect the r
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
   import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
    exporter.setParameter(AWExporterParameter.SPACING_FACTOR, 0.75);
@@ -29,10 +29,10 @@ Aspose.Words for JasperReports provides a number of parameters that affect the r
 
 **XML**
 
-{{< highlight csharp >}}
-bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">;
-<property name="spacingFactor" value="0.75"/>;
-</bean>;
+{{< highlight xml >}}
+<bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
+    <property name="spacingFactor" value="0.75"/>
+</bean>
 {{< /highlight >}}
 
 {{% /alert %}}

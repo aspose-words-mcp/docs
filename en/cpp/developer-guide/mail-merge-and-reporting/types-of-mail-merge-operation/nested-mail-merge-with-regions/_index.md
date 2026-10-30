@@ -57,16 +57,16 @@ The following code example demonstrates how to generate an invoice using nested 
 ## FAQ
 
 1. **Q:** How do I implement `IMailMergeDataSource` for a parent table in C++?  
-   **A:** Create a class that inherits from `Aspose::Words::MailMerging::IMailMergeDataSource`. Implement `GetValue`, `MoveNext`, `GetChildDataSource`, and `GetRecordCount`. In `GetChildDataSource`, return a new instance of a child‑data‑source class that represents the related table rows.
+   **A:** Create a class that inherits from `Aspose::Words::MailMerging::IMailMergeDataSource`. Implement `get_TableName`, `GetValue`, `MoveNext`, and `GetChildDataSource`. In `GetChildDataSource`, return a new instance of a child‑data‑source class that represents the related table rows.
 
 2. **Q:** How does `GetChildDataSource` link parent and child records?  
    **A:** When the mail‑merge engine finishes processing a parent record, it calls `GetChildDataSource` on the current `IMailMergeDataSource`. Your implementation should return a data source that enumerates only the child rows that belong to the current parent record, typically by filtering on a foreign‑key value.
 
 3. **Q:** Can I use a `DataTable` or SQLite query directly without a custom data source?  
-   **A:** Yes. Aspose.Words provides `DataTableMailMergeDataSource` for .NET, but in C++ you need to wrap the result set in a custom `IMailMergeDataSource`. Using SQLiteCpp, execute a query for the parent table, then for each parent row create a child data source that runs a second query filtered by the parent's key.
+   **A:** No. C++ has no `DataTable`, so wrap the result set in a custom `IMailMergeDataSource`. Using SQLiteCpp, execute a query for the parent table, then for each parent row create a child data source that runs a second query filtered by the parent's key.
 
 4. **Q:** What are common errors when performing nested mail merge with regions in C++?  
    **A:** Typical problems include returning `nullptr` from `GetChildDataSource`, mismatched region names between the template and code, or not resetting the child data source for each parent record. Ensure region names are identical (case‑sensitive) and that `GetChildDataSource` always returns a fresh iterator for the current parent.
 
 5. **Q:** How can I include images or other fields inside a nested region?  
-   **A:** Treat the image field like any other merge field. In the child data source, provide the image data (e.g., as a `System::SharedPtr<Aspose::Words::Drawing::Image>`). In the template, use an image merge field (`«ImageField»`). During mail merge, Aspose.Words will replace the field with the supplied image for each child record.
+   **A:** In the template, put an image merge field (`MERGEFIELD Image:ImageField`) inside the nested region. Implement `IFieldMergingCallback::ImageFieldMerging` and pass the image of the current child record with `ImageFieldMergingArgs::set_ImageStream` or `ImageFieldMergingArgs::set_ImageFileName`. During mail merge, Aspose.Words replaces the field with that image for each child record.

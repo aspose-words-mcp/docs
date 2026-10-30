@@ -60,7 +60,7 @@ You can fork the repository, edit the source code, and create a pull request to 
 ## FAQ  
 
 1. **Q:** Do I need a license file to run the example tests?  
-   **A:** The examples are shipped with a temporary trial license, so they run out‑of‑the‑box. If you want to test your own license, replace the `License` file in the project root with your license file and ensure the code loads it before any Aspose.Words API calls.
+   **A:** No. The repository does not include a license, so the examples run in evaluation mode, and some tests may fail because of the evaluation limitations. To use your own license, apply it in the base classes of the examples (`ApiExampleBase.js`, `DocExampleBase.js`) before any Aspose.Words API calls.
 
 2. **Q:** Which version of Node.js is required for the examples?  
    **A:** The examples require Node.js 14.17.0 or later. Using an older version may cause syntax errors or missing module support. You can verify your version with `node -v`.

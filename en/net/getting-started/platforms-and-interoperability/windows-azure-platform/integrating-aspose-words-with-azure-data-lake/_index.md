@@ -270,4 +270,3 @@ The following screenshot shows how the output document looks after executing the
 ## See Also
 
 * Create a [free account](https://azure.microsoft.com/en-us/free/) in Microsoft Azure
-* [U-SQL Identifiers](https://docs.microsoft.com/en-us/u-sql/concepts/identifiers/identifiers)

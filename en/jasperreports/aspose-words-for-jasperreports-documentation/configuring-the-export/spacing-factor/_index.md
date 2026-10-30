@@ -12,7 +12,7 @@ timestamp: 2024-01-27-14-07-04
 
 {{% alert color="primary" %}}
 
-Sometimes you may notice that page contents in the exported documents do not fit a particular page and therefore are pushed to the next page, causing an etra page. This is a trade-off of the flow layout mode which allows to compose documents from “normal” inline paragraphs and tables and which is the default in Aspose.Words for JasperReports. 
+Sometimes you may notice that page contents in the exported documents do not fit a particular page and therefore are pushed to the next page, causing an extra page. This is a trade-off of the flow layout mode which allows to compose documents from “normal” inline paragraphs and tables and which is the default in Aspose.Words for JasperReports. 
 
 {{% /alert %}}
 
@@ -22,7 +22,7 @@ To overcome this issue, try to reduce spacing between page elements proportional
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
    import com.aspose.words.jasperreports.*;
    AWDocExporter exporter = new AWDocExporter();
    exporter.setParameter(AWExporterParameter.SPACING_FACTOR, 0.75);
@@ -33,7 +33,7 @@ To overcome this issue, try to reduce spacing between page elements proportional
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="spacingFactor" value="0.75"/>
 </bean>

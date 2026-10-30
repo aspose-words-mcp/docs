@@ -24,8 +24,8 @@ This page demonstrates how to use Aspose.Words for Python via .NET to create, re
 
 Visual Basic for Applications (VBA) for Microsoft Word is a simple but powerful programming language that can be used to extend the functionality. Aspose.Words API provides three classes to get access to the VBA project source code:
 
-- The [VBAProject](https://reference.aspose.com/words/python-net/aspose.words.vba/vbaproject/) class provides access to VBA project information
-- The [VBAModuleCollection](https://reference.aspose.com/words/python-net/aspose.words.vba/vbamodulecollection/) class returns the collection of VBA project modules
+- The [VbaProject](https://reference.aspose.com/words/python-net/aspose.words.vba/vbaproject/) class provides access to VBA project information
+- The [VbaModuleCollection](https://reference.aspose.com/words/python-net/aspose.words.vba/vbamodulecollection/) class returns the collection of VBA project modules
 - The [VbaModule](https://reference.aspose.com/words/python-net/aspose.words.vba/vbamodule/) class provides access to the VBA project module
 - The [VbaModuleType](https://reference.aspose.com/words/python-net/aspose.words.vba/vbamoduletype/) enumeration defines the types of a model in a VBA project. The module can be a procedural module, document module, class module, or designer module
 

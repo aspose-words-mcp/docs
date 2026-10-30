@@ -117,7 +117,7 @@ Once installed, it is very easy to start using this control in your ASP.NET appl
 
 | For .NET framework 4.0 and above | For .NET framework 3.5 |  |
 | :- | :- | :- |
-| For applications running in .NET framework 4.0 and above in Visual Studio 2010 and above, you should see **ExportListViewToWord** control in **Aspose** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. | In order you use this control in applications running in .NET 3.5 in any visual studio version make sure that you have added ExportListViewToWord to your toolbox as per instructions on﻿8.3.2.1 Downloading and Installingunder heading **For Visual Studio 2008 and Express editions** <br>You should see **ExportListViewToWord** control in **General** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. |  |
+| For applications running in .NET framework 4.0 and above in Visual Studio 2010 and above, you should see **ExportListViewToWord** control in **Aspose** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. | In order you use this control in applications running in .NET 3.5 in any visual studio version make sure that you have added ExportListViewToWord to your toolbox as per instructions on ﻿8.3.2.1 Downloading and Installing under heading **For Visual Studio 2008 and Express editions** <br>You should see **ExportListViewToWord** control in **General** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. |  |
 | <p>![todo:image_alt_text](visual-studio-export-listview-to-word-control_3)</p><p></p> | <p>![todo:image_alt_text](visual-studio-export-listview-to-word-control_2)</p><p></p> |  |
 
 ### Manually adding ExportListViewToWord control
@@ -132,8 +132,8 @@ If you have any issues using the above methods which uses Visual Studio Toolbox,
 <%@ Register assembly="Aspose.Words.ListViewExport" namespace="Aspose.Words.ListViewExport" tagprefix="aspose" %>
 {{< /highlight >}}
 
-1. Add page property to falseEnableEventValidation="false"
-1. Override method in aspx.cs file "public override void VerifyRenderingInServerForm(Control control){ }"
+1. Add page property to false EnableEventValidation="false"
+1. Override method in aspx.cs file "public override void VerifyRenderingInServerForm(Control control) { }"
 1. Add the following to a place on your ASP.NET page, control or masterpage where you want the control to be added 
 
 {{< highlight csharp >}}
@@ -158,7 +158,7 @@ The following properties are exposed to configure and use cool features provided
 | `ExportButtonText` | string | Export to Word | You can use this property to override existing default text |
 | `ExportButtonCssClass` | string | btn btn-primary | Css Class that is applied to the outer div of the export button. To apply css on button you can use .yourClass input |
 | `ExportInLandscape` | bool | true or false | If true it changes the orientation of the output document to landscape. Default is Portrait |
-|  ||  ||
+|  | |  | |
 | `ExportFileHeading` | string | &lt;h4&gt;ListView Export Example Report&lt;/h4&gt; | You can use html tags to add style to your heading |
 | `ExportOutputFormat` | enum | Doc, Dot, Docx, Docm, Dotx, Dotm, Rtf, Odt, Ott, Txt | Output format of the exported document. Supported formats are Doc, Dot, Docx, Docm, Dotx, Dotm, Rtf, Odt, Ott, Txt |
 | `ExportOutputPathOnServer` | string | c: <br>temp | Local output Disk path on server where a copy of the export is automatically saved. Application must have write access to this path. |

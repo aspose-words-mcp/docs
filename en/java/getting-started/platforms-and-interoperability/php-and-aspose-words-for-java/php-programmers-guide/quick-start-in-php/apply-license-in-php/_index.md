@@ -26,6 +26,6 @@ $license->setLicense("Aspose.Words.lic");
 
 ## Download Running Code
 
-Download**Apply License(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Apply License (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_PHP/src/quickstart/applylicense/php/ApplyLicense.php)

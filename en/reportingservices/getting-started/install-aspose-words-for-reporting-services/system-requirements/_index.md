@@ -16,8 +16,8 @@ If you want to use Aspose.Words for Reporting Services to generate reports on a 
 
 - Microsoft SQL Server 2012 Reporting Services (32-bit or 64-bit, Standard, Developer or Enterprise edition)
 - Microsoft SQL Server 2014 Reporting Services (32-bit or 64-bit, Standard, Developer or Enterprise edition)
-- Microsoft SQL Server 2016 Reporting Services (32-bit or 64-bit, Standard, Developer or Enterprise edition)
-- Microsoft SQL Server 2017 Reporting Services (32-bit or 64-bit, Standard, Developer or Enterprise edition)
+- Microsoft SQL Server 2016 Reporting Services (64-bit, Standard, Developer or Enterprise edition)
+- Microsoft SQL Server 2017 Reporting Services (64-bit, Standard, Developer or Enterprise edition)
 - Microsoft SQL Server 2019 Reporting Services (64-bit, Standard, Developer or Enterprise edition)
 - Microsoft SQL Server 2022 Reporting Services (64-bit, Standard, Developer or Enterprise edition)
 - Power BI Report Server on-premises since June 2017 (64-bit)
@@ -40,4 +40,4 @@ Started from the Visual Studio 2017 Microsoft.ReportingServices.ReportViewerCont
 
 ## Requirements for Generating Reports at Design Time
 
-If you want to generate reports at design time in the report designer, then you need to install the Business Intelligence Development Studio component from the Microsoft SQL Server 2012, 2014, 2016, 2017, 2019 or 2022 installation.
+If you want to generate reports at design time in the report designer, then you need to install the Reporting Services project templates (SQL Server Data Tools, formerly Business Intelligence Development Studio) for Microsoft Visual Studio 2012, 2013, 2015, 2017, 2019 or 2022.

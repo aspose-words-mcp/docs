@@ -35,7 +35,7 @@ You can also update Aspose.Words for C++ to the desired version using *Manage Nu
 You can also install or update Aspose.Words for C++ APIs using the *Package Manager Console*. To do this, follow these steps:
 
 1. Open *Microsoft Visual Studio* and *Package Manager Console* from the menu to open package manager console
-2. Type the command `Install-Package Aspose.Words.Cpp -Version 21.3.0` and press Enter to install the latest full release into your application
+2. Type the command `Install-Package Aspose.Words.Cpp` and press Enter to install the latest full release into your application
 3. Once downloaded, you will see confirmation messages<br>
    {{% alert color="primary" %}}If you are unfamiliar with the [Aspose EULA](https://about.aspose.com/legal/eula/), it is recommended to read the license referenced in the URL.{{% /alert %}}
 4. Now you may find that Aspose.Words has been successfully added and referenced in your application for you
@@ -68,12 +68,12 @@ To use Aspose.Words for C++ in your applications, follow these steps:
    **A:** Download the ZIP package from the NuGet Gallery's **Manual download** link. Extract the archive, then add the `include` folder to your compiler's include path and the `lib` folder to the linker's library path. Finally, link against the appropriate Aspose.Words library files.
 
 4. **Q:** After a manual installation, how do I reference the Aspose.Words libraries in my C++ project?  
-   **A:** In your project settings, add the extracted `include` directory to **Additional Include Directories** and the `lib` directory to **Additional Library Directories**. Then, add the required `.lib` files (e.g., `Aspose.Words.Cpp.lib`) to **Additional Dependencies** and ensure the corresponding DLLs are available at runtime.
+   **A:** In your project settings, add the extracted `include` directory to **Additional Include Directories** and the `lib` directory to **Additional Library Directories**. Then, add the required `.lib` files (e.g., `Aspose.Words.Cpp_vc14x64.lib` and `codeporting.translator.cs2cpp.framework_vc14x64.lib` for a 64-bit Release build) to **Additional Dependencies** and ensure the corresponding DLLs are available at runtime.
 
 5. **Q:** Do I need a license to use Aspose.Words for C++, and how do I apply it?  
    **A:** A license is required for production use to remove evaluation limitations. After obtaining the license file (`Aspose.Words.Cpp.lic`), load it at the start of your application with:  
    ```cpp
-   Aspose::Words::License* license = new Aspose::Words::License();
+   auto license = System::MakeObject<Aspose::Words::License>();
    license->SetLicense(u"Path/To/Aspose.Words.Cpp.lic");
    ```  
    This activates the full functionality of the library.

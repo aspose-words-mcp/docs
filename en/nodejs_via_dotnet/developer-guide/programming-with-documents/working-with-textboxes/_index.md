@@ -27,7 +27,7 @@ The following code example shows how to check if the `TextBox` can be linked to 
 
 There are several ways to display text in a shape. The [textBox](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/textBox/) can be the Head, Middle, or Tail of a sequence.
 
-The following code example shows how to checkif **TextBox** is a Head, Tail, or Middle of the sequence:
+The following code example shows how to check if **TextBox** is a Head, Tail, or Middle of the sequence:
 
 {{< gist "aspose-words-gists" "e78f2e5545401312af45ab0be0f09bb2" "check-sequence.js" >}}
 
@@ -47,9 +47,7 @@ The following code example shows how to break a link for a **TextBox**:
    **A:** Use the `parent` property of the `TextBox` object. It returns the `Shape` that contains the textbox, allowing you to access shape‑level properties or other linked shapes.  
 
 2. **Q:** How do I determine whether a `TextBox` is the head, middle, or tail of a linked sequence?  
-   **A:** The `Shape.textBox` object exposes the boolean properties `isHead`, `isMiddle`, and `isTail`. Check these properties to know the position of the textbox within the linked chain.  
+   **A:** Check the `previous` and `next` properties of the `Shape.textBox` object: the head has no `previous` textbox, the tail has no `next` one, and a middle textbox has both.  
 
 3. **Q:** What method should I call to break an existing link between two `TextBox` objects?  
-   **A:** Call the `breakLink()` method on the `Shape.textBox` instance. This removes the link to the next textbox in the sequence, leaving the current textbox isolated.  
-
----
+   **A:** Call the `breakForwardLink()` method on the `Shape.textBox` instance. This removes the link to the next textbox in the sequence, leaving the current textbox isolated.  

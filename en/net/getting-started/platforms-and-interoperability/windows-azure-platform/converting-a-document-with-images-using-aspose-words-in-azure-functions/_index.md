@@ -34,16 +34,16 @@ In order to resolve the problem, you can add the following section in the .cspro
 </Target>
 {{< /highlight >}}
 
-The following example shows how to use Aspose.Words in Azure Functionwith the details on how to add the code above.
+The following example shows how to use Aspose.Words in Azure Function with the details on how to add the code above.
 
 ## Prerequisites
 
 - Active Azure subscription. If you don't have one, create a free account before you begin.
-- Visual Studio 2019or Visual Studio 2017 with the latestinstalledAzure Functions toolsto create the project.
+- Visual Studio 2019 or Visual Studio 2017 with the latest installed Azure Functions tools to create the project.
 
 ## Creating an Azure Functions Application
 
-You need touse Visual Studio to create an Azure Functions Application. The created application already has a simple “Hello World” function code.
+You need to use Visual Studio to create an Azure Functions Application. The created application already has a simple “Hello World” function code.
 
 In this example, you create a simple “Hello World” document and return it to the user's browser as a PDF file. To accomplish this:
 
@@ -93,11 +93,11 @@ namespace AsposeWordsAzureTestApp
     }
 }
 {{< /highlight >}}<br>
-1. Run the code in Visual Studio to test it. The resultwill bedisplayedin the console output.<br>
+1. Run the code in Visual Studio to test it. The result will be displayed in the console output.<br>
 <img src="1.png" alt="converting-a-document-with-images-using-aspose-words-in-azure-functions_1" style="width:800px"/>
-1. Copy `URL` from the console outputto your favorite browser to get the output document, which should look as follows:<br>
+1. Copy `URL` from the console output to your favorite browser to get the output document, which should look as follows:<br>
 <img src="2.png" alt="converting-a-document-with-images-using-aspose-words-in-azure-functions_2" style="width:800px"/>
-1. Now, if you [deploy the createdfunction to Azure](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio#publish-the-project-to-azure), the image will not be rendered because of the problem stated at the beginning of this article. The output is shown below:<br>
+1. Now, if you [deploy the created function to Azure](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio#publish-the-project-to-azure), the image will not be rendered because of the problem stated at the beginning of this article. The output is shown below:<br>
 <img src="3.png" alt="converting-a-document-with-images-using-aspose-words-in-azure-functions_3" style="width:800px"/>
 1. Open the .csproj file in Notepad and add the following section to it:<br>
 {{< highlight csharp >}}<Target Name="CopyRequiredNativeAssets" AfterTargets="_FunctionsPostPublish"> <br> <ItemGroup> <br> <NativeAssetToCopy<br> Include="$(PublishDir)runtimes\win-x86\native\libSkiaSharp.dll" /> <br> </ItemGroup> <br> <Copy SourceFiles="@(NativeAssetToCopy)" <br> DestinationFolder="$(PublishDir)bin" /> <br> </Target> {{< /highlight >}}<br>
@@ -106,6 +106,6 @@ namespace AsposeWordsAzureTestApp
 ## See Also
 
 - Active [Microsoft Azure subscription](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)
-- Create a [free account](https://azure.microsoft.com/en-us/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)in Microsoft Azure
+- Create a [free account](https://azure.microsoft.com/en-us/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) in Microsoft Azure
 - Install [the latest Azure Functions tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs#check-your-tools-version) to create the project in Visual Studio 2017
 - Use Visual Studio to [create an Azure Functions Application](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio)

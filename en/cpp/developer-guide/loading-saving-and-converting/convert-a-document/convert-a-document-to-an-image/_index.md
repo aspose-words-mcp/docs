@@ -35,11 +35,11 @@ The following code example shows how to convert DOCX to JPEG:
 
 Aspose.Words provides you with the [ImageSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/) class, which gives more control over how documents are saved in various image formats. Some properties of this class inherit or overload properties of base classes such as [FixedPageSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/fixedpagesaveoptions/) or [SaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/saveoptions/), but there are also options specific to saving images.
 
-It is possible to specify the pages to be converted to image format using the [PageSet](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_pageset/) property. For example, it can be applied if you only need a preview for the first or for a definite page.
+It is possible to specify the pages to be converted to image format using the [get_PageSet()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_pageset/) property. For example, it can be applied if you only need a preview for the first or for a definite page.
 
-It is also possible to control the output image quality and pixel format using the following properties – [HorizontalResolution](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/set_horizontalresolution/), [VerticalResolution](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_verticalresolution/), [Resolution](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/set_resolution/), [Scale](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/set_scale/), [PixelFormat](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_pixelformat/), as well as set up image color settings, using the following properties – [ImageBrightness](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_imagebrightness/), [ImageColorMode](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_imagecolormode/), [ImageContrast](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_imagecontrast/), [PaperColor](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_papercolor/).
+It is also possible to control the output image quality and pixel format using the following properties – [set_HorizontalResolution()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/set_horizontalresolution/), [get_VerticalResolution()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_verticalresolution/), [set_Resolution()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/set_resolution/), [set_Scale()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/set_scale/), [get_PixelFormat()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_pixelformat/), as well as set up image color settings, using the following properties – [get_ImageBrightness()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_imagebrightness/), [get_ImageColorMode()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_imagecolormode/), [get_ImageContrast()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_imagecontrast/), [get_PaperColor()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_papercolor/).
 
-There are also properties that apply to a certain format, for example, [JpegQuality](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_jpegquality/) or [TiffCompression](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_tiffcompression/).
+There are also properties that apply to a certain format, for example, [get_JpegQuality()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_jpegquality/) or [get_TiffCompression()](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/get_tiffcompression/).
 
 The following code example shows how to create a preview of the first document page with applying some additional settings:
 
@@ -53,10 +53,10 @@ The following code example shows how to create a preview of the first document p
    **A:** Load the document with `System::SharedPtr<Aspose::Words::Document> doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");`, create an `ImageSaveOptions` object, set `SaveFormat` to `SaveFormat::Jpeg`, and call `doc->Save(u"output.jpg", saveOptions);`.
 
 2. **Q:** Can I convert only selected pages of a document to images?  
-   **A:** Yes. Use the `PageSet` property of `ImageSaveOptions`. For example, `saveOptions->set_PageSet(System::MakeObject<Aspose::Words::Saving::PageSet>(1, 1));` converts only page 1.
+   **A:** Yes. Use the `PageSet` property of `ImageSaveOptions`. For example, `saveOptions->set_PageSet(System::MakeObject<Aspose::Words::Saving::PageSet>(0));` converts only the first page (page indexes are zero‑based).
 
 3. **Q:** Which options let me control the resolution and quality of the saved image?  
-   **A:** `HorizontalResolution`, `VerticalResolution`, and `Resolution` control DPI. `JpegQuality` (0‑100) adjusts JPEG compression, while `TiffCompression` sets TIFF compression type. Adjust these on the `ImageSaveOptions` instance before saving.
+   **A:** `get_HorizontalResolution()`, `get_VerticalResolution()`, and `Resolution` control DPI. `get_JpegQuality()` (0‑100) adjusts JPEG compression, while `TiffCompression` sets TIFF compression type. Adjust these on the `ImageSaveOptions` instance before saving.
 
 4. **Q:** How can I change the pixel format or color mode of the output image?  
    **A:** Call `set_PixelFormat` (e.g., `ImagePixelFormat::Format24BppRgb`) and `set_ImageColorMode` (e.g., `ImageColorMode::Grayscale`) on the `ImageSaveOptions` object to modify the image's color representation.
@@ -69,7 +69,7 @@ The following code example shows how to create a preview of the first document p
    System::SharedPtr<Aspose::Words::Saving::ImageSaveOptions> options = System::MakeObject<Aspose::Words::Saving::ImageSaveOptions>(SaveFormat::Png);
    for (int i = 0; i < doc->get_PageCount(); ++i)
    {
-       options->set_PageSet(System::MakeObject<Aspose::Words::Saving::PageSet>(i + 1, 1));
+       options->set_PageSet(System::MakeObject<Aspose::Words::Saving::PageSet>(i));
        System::String fileName = System::String::Format(u"page_{0}.png", i + 1);
        doc->Save(fileName, options);
    }

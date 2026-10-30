@@ -22,7 +22,7 @@ To eliminate this side effect, there is an option to stretch table cells by scal
 
 To change the stretching factor value, add the following lines to the <Extension> element corresponding to a TXT renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWTXT" Type="Aspose.Words.ReportingServices.TxtRenderer,Aspose.Words.ReportingServices">

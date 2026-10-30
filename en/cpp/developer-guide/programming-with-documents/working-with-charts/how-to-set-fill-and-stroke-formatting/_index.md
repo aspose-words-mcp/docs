@@ -69,5 +69,5 @@ series1->get_Format()->get_Stroke()->set_Weight(5);
 series2->get_Format()->get_Stroke()->set_ForeColor(Color::get_LightGreen());
 series2->get_Format()->get_Stroke()->set_Weight(5);
 
-doc->Save("LineColorAndWeight.docx");
+doc->Save(u"LineColorAndWeight.docx");
 {{< /highlight >}}

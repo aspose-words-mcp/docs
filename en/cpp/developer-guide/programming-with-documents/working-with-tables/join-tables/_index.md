@@ -33,7 +33,7 @@ The following code example shows how to merge rows from two tables into one:
    **A:** Yes. When rows are cloned with `Clone(true)`, all formatting, cell widths, and styles are copied to the destination table, so the visual appearance remains unchanged.
 
 3. **Q:** What should I do if the two tables have a different number of columns?  
-   **A:** Ensure both tables have the same column count before moving rows. You can add missing cells to rows of the second table using `Row->AppendChild(new Cell())` so that the merged table stays well‑structured.
+   **A:** Ensure both tables have the same column count before moving rows. You can add missing cells to rows of the second table using `row->AppendChild(System::MakeObject<Cell>(doc))` so that the merged table stays well‑structured.
 
 4. **Q:** Can I join tables that are located in headers, footers, or different sections?  
    **A:** Yes. Access the tables through their containing `HeaderFooter` or `Section` objects, perform the same row‑moving logic, and then remove the now‑empty container if needed.

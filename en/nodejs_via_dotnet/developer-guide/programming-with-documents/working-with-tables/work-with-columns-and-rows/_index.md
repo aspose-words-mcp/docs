@@ -17,7 +17,7 @@ For more control over how tables work, learn how to manipulate columns and rows.
 
 ## Finding the Table Element Index
 
-Columns, rows and cells are managed by accessing the selected document node by its index. Finding the index of any node involves gathering all child nodes of the element type from the parent node, and then using the [IndexOf](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/indexof/) method to find the index of the desired node in the collection.
+Columns, rows and cells are managed by accessing the selected document node by its index. Finding the index of any node involves gathering all child nodes of the element type from the parent node, and then using the [indexOf](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/indexof/) method to find the index of the desired node in the collection.
 
 ### Finding the Index of a Table in a Document
 
@@ -31,7 +31,7 @@ The following code example shows how to retrieve the index of a table in a docum
 
 Similarly, you may need to make changes to a specific row in a selected table. To do this, you can also refer to a row by its index.
 
-The following code example showshow to retrieve the index of a row in a table:
+The following code example shows how to retrieve the index of a row in a table:
 
 {{< gist "aspose-words-gists" "0b4aa2dc6bae9b78989a4a7283d7c8da" "retrieve-row-index.js" >}}
 
@@ -69,9 +69,9 @@ The following code example shows how to remove a column from a table in a docume
 
 ## Specify Rows as Header Rows
 
-You can choose to repeat the first row in the table as the Header Row only on the first page or on each page if the table is split into several. In Aspose.Words, you can repeat the Header Row on every page using the [HeadingFormat](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/rowformat/headingformat/) property.
+You can choose to repeat the first row in the table as the Header Row only on the first page or on each page if the table is split into several. In Aspose.Words, you can repeat the Header Row on every page using the [headingFormat](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/rowformat/headingformat/) property.
 
-You can also mark multiple header rows if such rows are located one after the other at the beginning of the table. To do this, you need to apply the **HeadingFormat** properties to these rows.
+You can also mark multiple header rows if such rows are located one after the other at the beginning of the table. To do this, you need to apply the **headingFormat** properties to these rows.
 
 {{% alert color="primary" %}}
 
@@ -96,7 +96,7 @@ By default, the above properties are disabled.
 
 ### Keep a Row from Breaking across Pages
 
-This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”.In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/row/) as the property [RowFormat.allowBreakAcrossPages](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/rowformat/allowbreakacrosspages/).
+This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”. In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/row/) as the property [RowFormat.allowBreakAcrossPages](https://reference.aspose.com/words/nodejs-net/aspose.words.tables/rowformat/allowbreakacrosspages/).
 
 The following code example shows how to disable breaking rows across pages for each row in a table:
 
@@ -129,13 +129,13 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 ## FAQ
 
 1. **Q:** How can I insert a new blank column into an existing table?  
-   **A:** Use the helper `Column` class to collect cells at the same index across all rows, then call `insertColumn` on the table. The sample `insert-blank-column.js` demonstrates creating a new `Cell` and inserting it at the desired column index for each row.
+   **A:** Use the helper `Column` class to collect cells at the same index across all rows, then call its `insertColumnBefore` method. The sample `insert-blank-column.js` demonstrates creating a new `Cell` and inserting it at the desired column index for each row.
 
 2. **Q:** What is the recommended way to delete a column from a table?  
    **A:** Iterate through each row, retrieve the cell at the column index you want to remove, and call `remove()` on that cell. The `remove-column.js` example shows this approach, ensuring the table structure stays consistent.
 
 3. **Q:** How do I make the first row of a table repeat as a header on every page?  
-   **A:** Set the `HeadingFormat` property of the row's `RowFormat` to `true`. For multiple header rows, set this property on each consecutive row at the top of the table. See `repeat-rows-on-subsequent-pages.js` for a complete example.
+   **A:** Set the `headingFormat` property of the row's `RowFormat` to `true`. For multiple header rows, set this property on each consecutive row at the top of the table. See `repeat-rows-on-subsequent-pages.js` for a complete example.
 
 4. **Q:** How can I prevent a row from breaking across pages?  
    **A:** Set `RowFormat.allowBreakAcrossPages` to `false` for the row. This disables the “Allow row to break across pages” option. The `row-format-disable-break-across-pages.js` snippet illustrates the setting.

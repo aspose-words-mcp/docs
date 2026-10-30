@@ -65,7 +65,7 @@ The most common use case of a table-row data band is the building of a document 
 		</tr>
     <tr>
 			<td colspan="2">Total:</td>
-			<td>&lt;&lt;[ds.Contracts.Sum(c => c.Price)]>></td>
+			<td>&lt;&lt;[ds.Contracts.sum(c => c.Price)]>></td>
 		</tr>
 	</tbody>
 </table>
@@ -175,7 +175,7 @@ For more examples of templates for typical scenarios involving table‑row data 
    **A:** Yes. You can place any common data band (e.g., a `foreach` that outputs a list of values) inside the body of a table‑row data band. The outer table‑row band controls the rows, while the inner common band repeats its content within a single cell.
 
 3. **Q:** How do I calculate a sum of a numeric column inside a table‑row data band?  
-   **A:** Use a LINQ expression inside a tag, for example `<<[ds.Contracts.Sum(c => c.Price)]>>`. The expression is evaluated once for the whole data set and the result is inserted into the cell.
+   **A:** Use a LINQ expression inside a tag, for example `<<[ds.Contracts.sum(c => c.Price)]>>`. The expression is evaluated once for the whole data set and the result is inserted into the cell.
 
 4. **Q:** What is the correct way to create a master‑detail report using nested table‑row data bands?  
    **A:** Place an outer `foreach` that iterates over the master collection (e.g., managers) and inside its row add another `foreach` that iterates over the related detail collection (e.g., contracts). Example:  
@@ -189,4 +189,4 @@ For more examples of templates for typical scenarios involving table‑row data 
    This produces a row for each manager and rows for each of their contracts.
 
 5. **Q:** Can I nest a table‑row data band inside a table‑column data band?  
-   **A:** No. Nesting a table‑row data band into a table‑column data band is not supported and will cause an error. Only common data bands or other table‑column bands may be nested inside a table‑row band.
+   **A:** No. Nesting a table‑row data band into a table‑column data band is forbidden. A table‑row data band can contain common data bands, other table‑row data bands (for master‑detail data), and table‑column data bands.

@@ -28,7 +28,7 @@ Note that If this is your first time working with Windows Azure, please refer to
 ## Prerequisites
 
 - Active Microsoft Azure subscription. If you don't have one, create a free account before you begin.
-- Visual Studio 2019 or Visual Studio 2017 with installed Azure development andAzure Functions toolsif you are going to develop Azure Functions in Visual Studio 2017.
+- Visual Studio 2019 or Visual Studio 2017 with installed Azure development and Azure Functions tools if you are going to develop Azure Functions in Visual Studio 2017.
 
 ## Requirements and Restrictions for Using Aspose.Words in Azure Applications
 
@@ -40,7 +40,7 @@ Alternatively, if you cannot run the application with full trust, you can specif
 
 ## Setting the License in Azure Functions
 
-It is recommended to use the license file as an embedded resource in your application, which will enable you to avoid potential problems with the license file upon deployment. For more information about the license file, see the [Licensing](/words/net/licensing/#licensing-includingthelicensefileasanembeddedresource) article.
+It is recommended to use the license file as an embedded resource in your application, which will enable you to avoid potential problems with the license file upon deployment. For more information about the license file, see the [Licensing](/words/net/licensing/#include-the-license-file-as-an-embedded-resource) article.
 
 ## See Also
 

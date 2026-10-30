@@ -56,17 +56,17 @@ To learn more about the different PDF standards, check the following ISOs:
 
 * [Convert a Document to PDF](/words/net/convert-a-document-to-pdf/)
 * [How to edit document structure tags in Adobe Acrobat](https://helpx.adobe.com/acrobat/using/editing-document-structure-content-tags.html)
-* [How to check or edit text language in Microsoft Word](https://support.microsoft.com/en-us/office/check-spelling-and-grammar-in-a-different-language-667ba67a-a202-42fd-8596-edc1fa320e00)
+* [How to check or edit text language in Microsoft Word](https://support.microsoft.com/en-us/word/check-spelling-and-grammar-in-a-different-language)
 * [How to change text language in Adobe Acrobat](https://helpx.adobe.com/acrobat/using/editing-document-structure-content-tags.html#add_alternate_text_and_supplementary_information_to_tags)
-* [How to add alternative text to a shape, picture, chart, SmartArt graphic, or other object in Microsoft Word](https://support.microsoft.com/en-us/office/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669)
+* [How to add alternative text to a shape, picture, chart, SmartArt graphic, or other object in Microsoft Word](https://support.microsoft.com/en-us/accessibility/office-accessibility/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object)
 * [How to add alternate text and supplementary information to tags](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html) (or read the same information in the [Adobe Acrobat User Guide](https://helpx.adobe.com/acrobat/using/editing-document-structure-content-tags.html#add_alternate_text_and_supplementary_information_to_tags))
 * [How to set up ActualText entry for text](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html), the “Add Actual Text for an Abbreviated Term, Formula, or Non-Unicode Symbol” section
 * [Unicode mapping for common Windows symbolic fonts](http://www.alanwood.net/demos/webdings.html)
 
 ## Related APIs
 
-- [`PdfSaveOptions`](https://reference.aspose.com/words/net/aspose.words.saving/pdfsaveoptions/)
-- [`PdfCompliance`](https://reference.aspose.com/words/net/aspose.words.saving/pdfcompliance/)
+- [PdfSaveOptions](https://reference.aspose.com/words/net/aspose.words.saving/pdfsaveoptions/)
+- [PdfCompliance](https://reference.aspose.com/words/net/aspose.words.saving/pdfcompliance/)
 
 ------  
 
@@ -74,23 +74,23 @@ To learn more about the different PDF standards, check the following ISOs:
 ## FAQ
 
 1. **Q:** How do I convert a document to PDF/A‑2 using Aspose.Words for .NET?  
-   **A:** Create a `PdfSaveOptions` object, set its `Compliance` property to `PdfCompliance.PdfA2b` (or `PdfA2a`/`PdfA2u` depending on the required level), and pass the options to the `Document.Save` method. Example:  
+   **A:** Create a `PdfSaveOptions` object, set its `Compliance` property to `PdfCompliance.PdfA2u` (or `PdfA2a` depending on the required level), and pass the options to the `Document.Save` method. Example:  
 
    ```csharp
    Document doc = new Document("input.docx");
    PdfSaveOptions options = new PdfSaveOptions();
-   options.Compliance = PdfCompliance.PdfA2b;
+   options.Compliance = PdfCompliance.PdfA2u;
    doc.Save("output.pdf", options);
    ```
 
 2. **Q:** What are the main differences between PDF/A‑1, PDF/A‑2 and PDF/A‑4 compliance levels?  
-   **A:** PDF/A‑1 forbids transparency, certain compression methods, and requires all fonts to be embedded. PDF/A‑2 relaxes these restrictions, allowing transparency, layer effects, and OpenType font embedding. PDF/A‑4 introduces revised conformance levels: “U” (unrestricted) aligns with earlier versions, while the “A” level has been removed, simplifying the standard.
+   **A:** PDF/A‑1 forbids transparency, certain compression methods, and requires all fonts to be embedded. PDF/A‑2 relaxes these restrictions, allowing transparency, layer effects, and OpenType font embedding. PDF/A‑4 is based on PDF 2.0 and no longer has the A, B, and U conformance levels; Aspose.Words supports `PdfA4`, `PdfA4f` (allows embedded files), and `PdfA4Ua2` (PDF/A‑4 combined with PDF/UA‑2).
 
 3. **Q:** How can I ensure the generated PDF/A file complies with font‑embedding and encryption requirements?  
    **A:** Set `options.Compliance` to the desired PDF/A level; Aspose.Words automatically embeds all used fonts. To avoid encryption, do **not** set any password or encryption options on the `PdfSaveOptions`. If you previously set a password, clear it before saving.
 
 4. **Q:** Is there anything extra I need to do to create a PDF/UA‑1 compliant document?  
-   **A:** Use `PdfSaveOptions.Compliance = PdfCompliance.PdfUAX` (or the appropriate enum value for PDF/UA‑1). Ensure the source document contains proper heading styles, alt text for images, and language attributes, because PDF/UA requires a fully tagged PDF. Aspose.Words will generate the required tags when the compliance is set.
+   **A:** Use `PdfSaveOptions.Compliance = PdfCompliance.PdfUa1`. Ensure the source document contains proper heading styles, alt text for images, and language attributes, because PDF/UA requires a fully tagged PDF. Aspose.Words will generate the required tags when the compliance is set.
 
 5. **Q:** Does the Aspose.Words license affect PDF/A or PDF/UA conversion?  
    **A:** No. The license controls feature availability (e.g., removing evaluation watermarks) but does not change how compliance levels are applied. As long as the library is licensed, you can use any supported PDF/A or PDF/UA compliance option without restrictions.

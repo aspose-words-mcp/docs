@@ -39,7 +39,7 @@ The following code example shows how to retrieve the index of a table in a docum
 
 Similarly, you may need to make changes to a specific row in a selected table. To do this, you can also refer to a row by its index.
 
-The following code example showshow to retrieve the index of a row in a table:
+The following code example shows how to retrieve the index of a row in a table:
 
 {{< gist "aspose-words-gists" "7e7e54ead8b97457543ea46fc6bae045" "retrieve-row-index.cs" >}}
 
@@ -67,7 +67,7 @@ The following code example simplifies such operations by proving a facade class 
 
 {{< gist "aspose-words-gists" "7e7e54ead8b97457543ea46fc6bae045" "column-class.cs" >}}
 
-The following code example showshow to insert a blank column into a table:
+The following code example shows how to insert a blank column into a table:
 
 {{< gist "aspose-words-gists" "7e7e54ead8b97457543ea46fc6bae045" "insert-blank-column.cs" >}}
 
@@ -104,7 +104,7 @@ By default, the above properties are disabled.
 
 ### Keep a Row from Breaking Across Pages {#keep-a-row-from-breaking-across-pages}
 
-This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”.In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/net/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/net/aspose.words.tables/row/) as the property [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/net/aspose.words.tables/row/format/properties/allowbreakacrosspages).
+This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”. In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/net/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/net/aspose.words.tables/row/) as the property [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/net/aspose.words.tables/rowformat/allowbreakacrosspages/).
 
 The following code example shows how to disable breaking rows across pages for each row in a table:
 
@@ -138,7 +138,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 - [Row](https://reference.aspose.com/words/net/aspose.words.tables/row/)
 - [Cell](https://reference.aspose.com/words/net/aspose.words.tables/cell/)
 - [RowFormat.HeadingFormat](https://reference.aspose.com/words/net/aspose.words.tables/rowformat/headingformat/)
-- [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/net/aspose.words.tables/row/format/properties/allowbreakacrosspages/)
+- [RowFormat.AllowBreakAcrossPages](https://reference.aspose.com/words/net/aspose.words.tables/rowformat/allowbreakacrosspages/)
 - [ParagraphFormat.KeepWithNext](https://reference.aspose.com/words/net/aspose.words/paragraphformat/keepwithnext/)
 - [NodeCollection.IndexOf](https://reference.aspose.com/words/net/aspose.words/nodecollection/indexof/)
 
@@ -154,7 +154,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
    **A:** Iterate through every `Row` in the table and call `Row.Cells.RemoveAt(columnIndex)`. After removal, you may need to call `table.AutoFit(AutoFitBehavior.AutoFitToContents)` to adjust column widths.
 
 4. **Q:** How can I make the first row (or multiple rows) repeat as a header on every page?  
-   **A:** Set the `Row.RowFormat.HeadingFormat` property. Use `HeadingFormat.FirstRow` for a single header row or `HeadingFormat.AllRows` for consecutive rows that should act as headers. Example: `row.RowFormat.HeadingFormat = HeadingFormat.FirstRow;`.
+   **A:** Set `Row.RowFormat.HeadingFormat` to `true` on the first row and on each following row that should also repeat (header rows must be consecutive, starting with the first row). Example: `table.FirstRow.RowFormat.HeadingFormat = true;`.
 
 5. **Q:** What steps are required to prevent a row or an entire table from breaking across pages?  
    **A:** For rows, set `Row.RowFormat.AllowBreakAcrossPages = false`. For tables, set `ParagraphFormat.KeepWithNext = true` on every paragraph inside the table cells except the last paragraph of the table. This keeps the whole table together on a single page.

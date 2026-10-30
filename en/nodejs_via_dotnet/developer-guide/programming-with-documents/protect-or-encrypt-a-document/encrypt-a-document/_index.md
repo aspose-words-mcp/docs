@@ -37,10 +37,10 @@ The table below lists the formats and encryption algorithms supported by Aspose.
 
 | Format | Supported Encryption while Loading                          | Supported Encryption while Saving            |
 | ------------------------------------------------------------ | ----------------------------------------------------------- | -------------------------------------------- |
-| DOC, DOT                                                     | XOR encryption40-bit RC4 EncryptionCryptoAPI RC4 Encryption | RC4 Encryption (40-bit)                      |
-| DOCX, DOTX, DOCM, DOTM, FlatOPC, FlatOpcTemplate, FlatOpcMacroEnabled, FlatOpcTemplateMacroEnabled | ECMA-376 Standard EncryptionECMA-376 Agile Encryption       | ECMA-376 Standard Encryption (AES128 + SHA1) |
+| DOC, DOT                                                     | XOR encryption<br>40-bit RC4 Encryption<br>CryptoAPI RC4 Encryption | RC4 Encryption (40-bit)                      |
+| DOCX, DOTX, DOCM, DOTM, FlatOPC, FlatOpcTemplate, FlatOpcMacroEnabled, FlatOpcTemplateMacroEnabled | ECMA-376 Standard Encryption<br>ECMA-376 Agile Encryption       | ECMA-376 Standard Encryption (AES128 + SHA1) |
 | ODT, OTT                                                     | ODF Encryption (Blowfish/AES)                               | ODF Encryption (AES256 + SHA256)             |
-| PDF |                                                        | RC4 Encryption (40/128 bit)                  |
+| PDF |                                                        | AES-128 / AES-256                            |
 
 The following code example shows how to encrypt a document with a password:
 

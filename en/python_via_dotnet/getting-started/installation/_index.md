@@ -28,16 +28,4 @@ This article explains how to install Aspose.Words for Python via .NET on your co
 
 `pip install aspose-words`
 
-Once the module is installed, you can use it fom your Python code:
-
-{{< highlight python >}}
-# Import Aspose.Words for Python via .NET module
-import aspose.words as aw
-
-# Create and save a simple document
-doc = aw.Document()
-builder = aw.DocumentBuilder(doc)
-builder.writeln("Hello Aspose.Words for Python via .NET")
-
-doc.save("C:\\Temp\\out.docx")
-{{< /highlight >}}
+Once the module is installed, you can use it fom your Python code.

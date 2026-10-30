@@ -15,7 +15,7 @@ timestamp: 2025-07-09-10-05-05
 
 In this article, we will learn what options can be useful for working with a text document via Aspose.Words. Please note that this is not a complete list of available options, but only an example of working with some of them.
 
-## AddBi-Directional Marks
+## Add Bi-Directional Marks
 
 You can use [addBidiMarks](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtsaveoptions/addBidiMarks/) property to specify whether to add bi-directional marks before each BiDi run when exporting in plain text format. Aspose.Words inserts Unicode Character 'RIGHT-TO-LEFT MARK' (U+200F) before each bi-directional [Run](https://reference.aspose.com/words/nodejs-net/aspose.words/run/) in the text. This option corresponds to "Add bi-directional marks" option in MS Word File Conversion dialogue when you export to a Plain Text format. Note that it appears in dialogue only if any of Arabic or Hebrew editing languages are added in MS Word.
 
@@ -60,7 +60,7 @@ The following code example shows how to export headers and footers to plain text
 
 ## Export List Indentation in Output TXT
 
-Aspose.Words introduced [TxtListIndentation](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtlistindentation/) class that allows specifying how list levels are indented while exporting to a plain text format. While working with [TxtSaveOption](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtsaveoptions/), the [listIndentation](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtsaveoptions/listindentation/) property is provided to specify the character to beused for indenting list levels andcount specifyinghow many characters to use as indentation per one list level. The default value for character property is'\0' indicating that there is no indentation. For count property, the default value is 0 which means no indentation.
+Aspose.Words introduced [TxtListIndentation](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtlistindentation/) class that allows specifying how list levels are indented while exporting to a plain text format. While working with [TxtSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtsaveoptions/), the [listIndentation](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/txtsaveoptions/listindentation/) property is provided to specify the character to be used for indenting list levels and count specifying how many characters to use as indentation per one list level. The default value for character property is '\0' indicating that there is no indentation. For count property, the default value is 0 which means no indentation.
 
 ### Using Tab Character
 
@@ -85,10 +85,10 @@ The following code example shows how to export list levels using space character
    **A:** Enable `detectNumberingWithWhitespaces` on `TxtLoadOptions`. When set to `true`, the loader treats whitespaces as valid delimiters for list numbers, allowing both “1.” and “1 ” styles to be detected correctly.
 
 3. **Q:** How do I control leading and trailing spaces while importing a TXT document?  
-   **A:** Use the `leadingSpaces` and `trailingSpaces` options of `TxtLoadOptions`. You can choose to trim, preserve, or convert leading spaces to indents, and similarly decide how trailing spaces are handled.
+   **A:** Use the `leadingSpacesOptions` and `trailingSpacesOptions` properties of `TxtLoadOptions`. You can choose to trim, preserve, or convert leading spaces to indents, and similarly decide how trailing spaces are handled.
 
 4. **Q:** Can I export headers and footers to a plain‑text file?  
-   **A:** Yes. Set the `exportHeadersFootersMode` property of `TxtSaveOptions` to the desired mode (e.g., `ExportHeadersFootersMode.All`). This determines whether headers, footers, or both are included in the TXT output.
+   **A:** Yes. Set the `exportHeadersFootersMode` property of `TxtSaveOptions` to the desired mode (e.g., `TxtExportHeadersFootersMode.AllAtEnd`). This determines whether headers, footers, or both are included in the TXT output.
 
 5. **Q:** How can I customize list indentation in the exported TXT file?  
-   **A:** Configure the `listIndentation` property of `TxtSaveOptions` with a `TxtListIndentation` object. Specify the character (tab `'\t'` or space `' '` ) and the count of characters per list level to achieve the required indentation style.
+   **A:** Set the `character` and `count` properties of the read-only `listIndentation` object of `TxtSaveOptions`, for example, `saveOptions.listIndentation.character = '\t'; saveOptions.listIndentation.count = 1;`.

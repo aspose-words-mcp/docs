@@ -121,8 +121,8 @@ As you might noticed [Field](https://reference.aspose.com/words/nodejs-net/aspos
 * [asFieldFormCheckBox()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldformcheckbox/)
 * [asFieldFormDropDown()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldformdropdown/)
 * [asFieldIndex()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldindex/)
-* [asFieldRd()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldrd/)
-* [asFieldTa()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldta/)
+* [asFieldRD()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldrd/)
+* [asFieldTA()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldta/)
 * [asFieldToa()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldtoa/)
 * [asFieldAsk()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldask/)
 * [asFieldAutoText()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldautotext/)
@@ -151,7 +151,7 @@ As you might noticed [Field](https://reference.aspose.com/words/nodejs-net/aspos
 * [asFieldAddIn()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldaddin/)
 * [asFieldBarcode()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldbarcode/)
 * [asFieldBidiOutline()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldbidioutline/)
-* [asFieldEq()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldeq/)
+* [asFieldEQ()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldeq/)
 * [asFieldFootnoteRef()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldfootnoteref/)
 * [asFieldInfo()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldinfo/)
 * [asFieldUserAddress()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfielduseraddress/)
@@ -201,17 +201,17 @@ As you might noticed [Field](https://reference.aspose.com/words/nodejs-net/aspos
 * [asFieldRef()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldref/)
 * [asFieldSeq()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldseq/)
 * [asFieldStyleRef()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldstyleref/)
-* [asFieldTc()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldtc/)
+* [asFieldTC()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldtc/)
 * [asFieldTime()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldtime/)
 * [asFieldToc()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldtoc/)
-* [asFieldXe()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldxe/)
+* [asFieldXE()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldxe/)
 * [asFieldFormText()](https://reference.aspose.com/words/nodejs-net/aspose.words/field/asfieldformtext/)
 
 ### Casting Styles
 Casting is also required to work with table styles:
 {{< highlight js >}}
-let doc = aw.Document();
-let builder = aw.DocumentBuilder(doc);
+let doc = new aw.Document();
+let builder = new aw.DocumentBuilder(doc);
 
 let table = builder.startTable();
 builder.insertCell();
@@ -243,7 +243,7 @@ The following code example demonstrates how to read ActiveX control properties:
 let doc = new aw.Document("ActiveX controls.docx");
 let shape = doc.getShape(0, true);
 let oleControl = shape.oleFormat.oleControl;
-expect(oleControl.name).toEqual("CheckBox1");
+console.log(oleControl.name); // "CheckBox1"
 if (oleControl.isForms2OleControl) {
   console.log(oleControl);
   let checkBox = oleControl.asForms2OleControl();

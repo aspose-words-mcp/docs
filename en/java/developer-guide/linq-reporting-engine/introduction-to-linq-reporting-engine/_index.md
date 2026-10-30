@@ -20,16 +20,16 @@ LINQ Reporting Engine is a part of the [Aspose.Words](https://products.aspose.co
 ## FAQ
 
 1. **Q:** Is the LINQ Reporting Engine supported in Aspose.Words for Java?  
-   **A:** Yes. Starting with Aspose.Words for Java 22.9, the LINQ Reporting Engine is included and can be used to generate reports from Java objects using the same template syntax as the .NET version.
+   **A:** Yes. The LINQ Reporting Engine is part of Aspose.Words for Java and can be used to generate reports from Java objects using the same template tags as the .NET version.
 
 2. **Q:** Which version of Aspose.Words for Java do I need to use the LINQ Reporting Engine?  
-   **A:** The engine is available from version 22.9 onward. Ensure you reference the latest Aspose.Words for Java package to get all bug‑fixes and new tag features.
+   **A:** The engine is part of the Aspose.Words for Java library, so no separate package is needed. Use the latest version to get all bug‑fixes and new tag features.
 
 3. **Q:** How do I reference a Java object property inside a template tag?  
-   **A:** Use the double‑angle‑bracket syntax with the object name followed by the property, e.g., `<<[order.Total]>>`. The engine evaluates the expression against the supplied data source at runtime.
+   **A:** Use the double‑angle‑bracket syntax with the object name followed by the member, calling getters as in Java, e.g., `<<[order.getTotal()]>>`. The engine evaluates the expression against the supplied data source at runtime.
 
 4. **Q:** How can I format a date value in a LINQ template?  
-   **A:** Append a format string after the property using the `:format` modifier, for example `<<[order.OrderDate:yyyy-MM-dd]>>`. The engine applies standard .NET date‑format patterns to the Java `java.util.Date` value.
+   **A:** Put the format string in double quotes after the closing bracket, preceded by `:`, for example `<<[order.getOrderDate()]:"yyyy-MM-dd">>`. Format strings are the same as for Java's `SimpleDateFormat` (dates) and `DecimalFormat` (numbers).
 
 5. **Q:** I get the error “Tag end is unexpected.” What causes it and how can I fix it?  
    **A:** This error usually means a tag is not closed correctly or contains illegal characters. Verify that every opening tag (`<<`) has a matching closing tag (`>>`) and that the expression inside does not contain stray brackets or unsupported symbols. Removing extra spaces or correcting the tag syntax resolves the issue.

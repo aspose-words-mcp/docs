@@ -83,7 +83,7 @@ When creating a layout, it is also possible to set up [LayoutOptions](https://re
 After the page layout is built and the geometry of objects and their position on the page are calculated, the document can be saved in a fixed-page format supported by Aspose.Words. When saving documents to fixed-page formats, the rendering options common to all of these formats can be used. They allow to control:
 
 - The number and range of pages contained in the output document ([page_set](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/page_set/)).
-- Progress of page-by-page document saving ([PageSavingCallback](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/page_saving_callback/)).
+- Progress of page-by-page document saving ([page_saving_callback](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/page_saving_callback/)).
 - A set of characters that are used to numbers rendering ([numeral_format](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/numeral_format/)).
 - A metafile player ([metafile_rendering_options](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/metafile_rendering_options/)). For more details, see the [Handling Windows Metafiles](/words/python-net/handling-windows-metafiles/) article.
 - A quality rate for recompressing JPEG images, the value of which may differ slightly, depending on the selected save format ([jpeg_quality](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/jpeg_quality/)).
@@ -93,14 +93,14 @@ After the page layout is built and the geometry of objects and their position on
 - Switching between rendering of DrawingML shapes and fallback shapes ([dml_rendering_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/dml_rendering_mode/)).
 - Switching between DML effects rendering modes ([dml_effects_rendering_mode](https://reference.aspose.com/words/python-net/aspose.words.saving/saveoptions/dml_effects_rendering_mode/)).
 
-The example below demonstrates how to save a document to JPEG format using the `Save` method and rendering options:
+The example below demonstrates how to save a document to JPEG format using the `save` method and rendering options:
 
 {{< gist "aspose-words-gists" "f9e5cde75221f622f636297c5fcc7297" "get-jpeg-page-range.py" >}}
 
 ## Related APIs
 
 - [Document](https://reference.aspose.com/words/python-net/aspose.words/document/)
-- [UpdatePageLayout](https://reference.aspose.com/words/python-net/aspose.words/document/update_page_layout/)
+- [update_page_layout](https://reference.aspose.com/words/python-net/aspose.words/document/update_page_layout/)
 - [LayoutOptions](https://reference.aspose.com/words/python-net/aspose.words.layout/layoutoptions/)
 - [FixedPageSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/)
 - [PdfSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/)
@@ -109,11 +109,11 @@ The example below demonstrates how to save a document to JPEG format using the `
 ## FAQ
 
 1. **Q:** How can I save only specific pages of a document to a fixed‑page format?  
-   **A:** Use the `page_set` property of `FixedPageSaveOptions`. Create a `PageSet` with the desired page numbers and assign it to the options before calling `save`. Example:  
+   **A:** Use the `page_set` property of `FixedPageSaveOptions`. Create a `PageSet` with the zero-based indexes of the desired pages and assign it to the options before calling `save`. Example:  
 
    ```python
    options = aw.saving.PdfSaveOptions()
-   options.page_set = aw.saving.PageSet(1, 3)
+   options.page_set = aw.saving.PageSet([0, 2])   # 1st and 3rd pages
    doc.save("SelectedPages.pdf", options)
    ```
 

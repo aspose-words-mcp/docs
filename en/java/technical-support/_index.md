@@ -46,13 +46,13 @@ When posting your issue, question, or feature request with Aspose.Words, follow 
    **A:** Purchase a license from the Aspose website, download the `.lic` file, and load it in your application using `License license = new License(); license.setLicense("Aspose.Words.Java.lic");`. The license removes evaluation limitations such as watermarks and page limits.
 
 2. **Q:** What are the main differences between the trial and the licensed version?  
-   **A:** The trial version adds a watermark to generated documents and limits certain features (e.g., maximum number of pages). A licensed version provides full functionality without watermarks, higher performance, and priority support.
+   **A:** The trial version has full functionality, but it adds an evaluation watermark to documents and limits the document size to a few hundred paragraphs. A licensed version removes these limitations.
 
 3. **Q:** What information should I include when posting a problem on the Aspose Forums?  
    **A:** Provide the Aspose.Words version you are using, a minimal reproducible code snippet, the input document (or a zipped archive if multiple files), and a clear description of the expected vs. actual behavior. Posting one issue per thread helps the team respond faster.
 
 4. **Q:** Is phone support available for technical questions about Aspose.Words?  
-   **A:** No. Phone support is limited to sales and purchase inquiries. All technical questions should be posted on the Aspose.Free Support Forum where the development team monitors and replies.
+   **A:** No. Phone support is limited to sales and purchase inquiries. All technical questions should be posted on the free Aspose support forum, where the development team monitors and replies.
 
 5. **Q:** Where can I find the latest documentation and API reference for Aspose.Words for Java?  
    **A:** The latest documentation, API reference, and code examples are available on the Aspose website under the **Docs** section for Words Java. You can also download the most recent library from the [Aspose.Words for Java Downloads](https://releases.aspose.com/words/java/) page.  

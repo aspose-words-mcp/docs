@@ -20,14 +20,14 @@ Aspose.Words for JasperReports is the only known solution on the market that mak
 
 {{% /alert %}}
 
-## Aspose.Words for JasperReportsResources
+## Aspose.Words for JasperReports Resources
 
 The following are the links to some useful resources you may need to accomplish your tasks.
 
 - [Aspose.Words for JasperReports Online Documentation](/words/jasperreports/)
-- [Aspose.Words for JasperReportsFeatures](/words/jasperreports/feature-tour/)
+- [Aspose.Words for JasperReports Features](/words/jasperreports/feature-tour/)
 - [Aspose.Words for JasperReports Release Notes](https://releases.aspose.com/words/jasperreports/release-notes/)
-- [Aspose.Words for JasperReportsProduct Page](https://products.aspose.com/words/jasperreports/)
+- [Aspose.Words for JasperReports Product Page](https://products.aspose.com/words/jasperreports/)
 - [Download Aspose.Words for JasperReports](https://releases.aspose.com/words/jasperreports/)
 - [Aspose.Words for JasperReports Free Support Forum](https://forum.aspose.com/c/words/8)
 - [Aspose.Words for JasperReports Paid Support Helpdesk](https://helpdesk.aspose.com/)

@@ -21,11 +21,11 @@ This page explains how to customize field properties such as result formatting, 
 
 {{% /alert %}}
 
-Aspose.Words provides the ability to programmatically interact with various field properties. In this article, we will look at a couple of examples so that you understand the basic principle of working with field properties. You can see the full list of properties for each field type in the corresponding class in the [Fields namespace](https://reference.aspose.com/words/net/aspose.words.fields/).
+Aspose.Words provides the ability to programmatically interact with various field properties. In this article, we will look at a couple of examples so that you understand the basic principle of working with field properties. You can see the full list of properties for each field type in the corresponding class in the [com.aspose.words](https://reference.aspose.com/words/java/com.aspose.words/) package.
 
 ## Field Property Update
 
-Sometimes users need to change the value of a field property. For example, update the [AuthorName](https://reference.aspose.com/words/java/com.aspose.words/fieldauthor/#getAuthorName) property of the `AUTHOR` field or change the [FieldName](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/#getFieldName) property of the `MERGEFIELD` field.
+Sometimes users need to change the value of a field property. For example, update the [getAuthorName()](https://reference.aspose.com/words/java/com.aspose.words/fieldauthor/#getAuthorName) property of the `AUTHOR` field or change the [getFieldName()](https://reference.aspose.com/words/java/com.aspose.words/fieldmergefield/#getFieldName) property of the `MERGEFIELD` field.
 
 The following code example shows how to rename merge fields in a Word document:
 
@@ -35,7 +35,7 @@ The following code example shows how to rename merge fields in a Word document:
 
 Aspose.Words provides a property to obtain the field's result for fields that do not have a field separator node. We call this "fake result" or display result; MS Word displays it in the document by calculating the field's value on the fly, but there is no such value in the document model.
 
-The following code example shows the usage of [DisplayResult](https://reference.aspose.com/words/java/com.aspose.words/field/#getDisplayResult) property:
+The following code example shows the usage of [getDisplayResult()](https://reference.aspose.com/words/java/com.aspose.words/field/#getDisplayResult) property:
 
 {{< gist "aspose-words-gists" "022e103c106b865dff94e9c742357573" "field-display-results.java" >}} 
 
@@ -51,4 +51,4 @@ The following code example shows the usage of [DisplayResult](https://reference.
    **A:** Cast the field to `FieldAuthor` and call `setAuthorName("New Author")`. The change is reflected when the document is saved or when the field is updated.
 
 4. **Q:** Is it possible to modify other field‑specific properties such as date or numeric formats?  
-   **A:** Yes. Each field type exposes its own set of properties (e.g., `FieldDate.setDateTimeFormat`, `FieldFormula.setFormula`). Adjust these properties as needed and then update the field to apply the new formatting.
+   **A:** Yes. Each field type exposes its own set of properties (e.g., `field.getFormat().setDateTimeFormat(...)` for dates or `field.getFormat().setNumericFormat(...)` for numbers). Adjust these properties as needed and then update the field to apply the new formatting.

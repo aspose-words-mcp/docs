@@ -55,10 +55,10 @@ Using of variables has the following restrictions:
 ## FAQ
 
 1. **Q:** How do I declare a variable with an explicit type in a template?  
-   **A:** Include the type before the variable name inside the `var` tag, e.g. `<<var [java.time.LocalDate startDate = DateTime.Now]>`. The engine must know the type; you can register custom types via “Setting up Known External Types”.
+   **A:** Include the type before the variable name inside the `var` tag, e.g. `<<var [LocalDate startDate = LocalDate.now()]>>`. The engine must know the type: add it with `engine.getKnownTypes().add(LocalDate.class)` (see “Setting up Known External Types”).
 
 2. **Q:** How can I reference a variable after it has been declared?  
-   **A:** Use the variable name inside double‑angle brackets. For example, after `<<var [total = 0]>`, you can output its value with `<<[total]>>` anywhere later in the document.
+   **A:** Use the variable name inside double‑angle brackets. For example, after `<<var [total = 0]>>`, you can output its value with `<<[total]>>` anywhere later in the document.
 
 3. **Q:** Can I change the type of a variable once it has been created?  
    **A:** No. The variable's type is fixed at the first declaration and cannot be redefined. Attempting to declare the same name with a different type will cause a runtime error.

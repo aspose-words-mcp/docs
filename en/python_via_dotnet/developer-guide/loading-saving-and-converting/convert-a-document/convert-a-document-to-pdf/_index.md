@@ -96,7 +96,7 @@ Using the **optimize_output** property may affect the accuracy of content displa
 - The article [Rendering](/words/python-net/rendering/) for more information on the fixed-page and flow-layout formats
 - The article [Converting to Fixed-page Format](/words/python-net/converting-to-fixed-page-format/#what-is-a-page-layout) for more information on the page layout
 - The article [Specify Rendering Options When Converting to PDF](/words/python-net/specify-rendering-options-when-converting-to-pdf/) for more information on using the `PdfSaveOptions` class
-- The article [Learn Features of Conversion to PDF/A and PDF/UA](/words/python-net/learn-features-of-conversion-to-pdf-a-pdf-ua/) describing which PDF standard and the relevant ISO for PDF standards support Aspose.Words
+- The article [Learn Features of Conversion to PDF/A and PDF/UA](/words/python-net/learn-features-of-conversion-to-pdf-a/) describing which PDF standard and the relevant ISO for PDF standards support Aspose.Words
 - The article [Which PDF Standard Is Better to Choose](/words/python-net/which-pdf-standard-is-better-to-choose/) to determine which PDF standards make sense for which cases
 
 - The article [Working with PDF/A or PDF/UA](/words/python-net/working-with-pdfa-or-pdfua/) describes the requirements for the document content in PDF/A and PDF/UA formats – mainly the requirements for the structure and fonts
@@ -108,15 +108,15 @@ Using the **optimize_output** property may affect the accuracy of content displa
 - Converting large or complex documents to PDF may be time- and memory-intensive.
 - Rendering fidelity depends on the availability of fonts — missing fonts are substituted based on system settings.
 - PDF/A and PDF/UA compliance imposes additional requirements: all fonts must be embedded, color spaces must be valid, and content must meet accessibility standards.
-- Using `OptimizeOutput` may slightly affect visual fidelity by merging glyphs or removing empty canvases.
+- Using `optimize_output` may slightly affect visual fidelity by merging glyphs or removing empty canvases.
 - Some advanced Word features (e.g., certain drawing objects, complex table layouts, or field codes) may not render identically to Microsoft Word.
 
 ## Related APIs
 
 - [PdfSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfsaveoptions/) class
 - [PdfCompliance](https://reference.aspose.com/words/python-net/aspose.words.saving/pdfcompliance/) enumeration
-- [Document.Save](https://reference.aspose.com/words/python-net/aspose.words/document/save/)) method
-- [OptimizeOutput](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/optimize_output/) property  
+- [Document.save](https://reference.aspose.com/words/python-net/aspose.words/document/save/) method
+- [optimize_output](https://reference.aspose.com/words/python-net/aspose.words.saving/fixedpagesaveoptions/optimize_output/) property  
 
 ## FAQ
 
@@ -133,7 +133,7 @@ Using the **optimize_output** property may affect the accuracy of content displa
    ```python
    doc = aw.Document("input.docx")
    options = aw.saving.PdfSaveOptions()
-   options.compliance = PdfCompliance.PDF17
+   options.compliance = aw.saving.PdfCompliance.PDF17
    doc.save("output.pdf", options)
    ```
 
@@ -147,7 +147,7 @@ Using the **optimize_output** property may affect the accuracy of content displa
    ```
 
 4. **Q:** Can I convert image files such as JPEG, PNG, or multi‑page TIFF to PDF?  
-   **A:** Yes. Load the image using `Document` (or `Image` for multi‑page formats) and save it as PDF. Example for a JPEG:  
+   **A:** Yes. Load the image using `Document` and save it as PDF. Example for a JPEG:  
    ```python
    doc = aw.Document("photo.jpg")
    doc.save("photo.pdf")
@@ -160,6 +160,6 @@ Using the **optimize_output** property may affect the accuracy of content displa
    builder = aw.DocumentBuilder(pdf_doc)
    for image_path in ["page1.png", "page2.png"]:
        builder.insert_image(image_path)
-       builder.insert_break()
+       builder.insert_break(aw.BreakType.PAGE_BREAK)
    pdf_doc.save("combined.pdf")
    ```

@@ -66,20 +66,20 @@ The following code example shows how to save a multi-page DOCX document as PNG i
    **A:** Set the `vertical_resolution` or `horizontal_resolution` property on `ImageSaveOptions`. Higher DPI yields larger, higher‑quality images:  
    ```python
    options = aw.saving.ImageSaveOptions(aw.SaveFormat.PNG)
-   options.horizontal_resolution = 72   # 72 DPI
+   options.horizontal_resolution = 300   # 300 DPI
    doc.save('HighRes.png', options)
    ```
 
 3. **Q:** Can I create a multi‑frame TIFF where each page is a separate frame?  
-   **A:** Yes. Choose the `TiffFrames` layout and save using the TIFF format:  
+   **A:** Yes. Choose the `tiff_frames` layout and save using the TIFF format:  
    ```python
    options = aw.saving.ImageSaveOptions(aw.SaveFormat.TIFF)
    options.page_layout = aw.saving.MultiPageLayout.tiff_frames()
    doc.save('MultiFrame.tiff', options)
    ```
 
-4. **Q:** What is the difference between `SinglePage` and `Grid` layouts?  
-   **A:** `SinglePage` saves only the first page (or the page specified by `PageSet`). `Grid` arranges multiple pages in a matrix, letting you define the number of columns and spacing between pages.
+4. **Q:** What is the difference between `single_page` and `grid` layouts?  
+   **A:** `single_page` saves only the first page (or the page specified by `PageSet`). `grid` arranges multiple pages in a matrix, letting you define the number of columns and spacing between pages.
 
 5. **Q:** How can I customize the background and border of the layout?  
    **A:** Use the `back_color`, `border_color`, and `border_width` properties of the `page_layout` object:  

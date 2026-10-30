@@ -15,7 +15,7 @@ timestamp: 2024-01-27-14-07-04
 
 ## Aspose.Words - Save Document
 
-Simply use the `Document.Save` method with a file name as a string. Aspose.Words will infer the save format from the file extension that you specify.
+Simply use the `Document.save` method with a file name as a string. Aspose.Words will infer the save format from the file extension that you specify.
 
 **Java**
 

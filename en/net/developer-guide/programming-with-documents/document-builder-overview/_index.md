@@ -33,7 +33,7 @@ Operations that are possible with **DocumentBuilder** are also possible when usi
 
 ## Document Navigation
 
-Document navigation is based on the concept of a virtual cursor, with which you can move to another location in the document using various **DocumentBuilder.MoveToXXX** methods such as [MoveToDocumentStart](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetodocumentstart/) and [MoveToField](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetofield/). This virtual cursor indicates where the text will be inserted when calling the methods [Write](https://reference.aspose.com/words/net/aspose.words/documentbuilder/write/), [Writeln](https://reference.aspose.com/words/net/aspose.words/documentbuilder/write/ln/index), [InsertBreak](https://reference.aspose.com/words/net/aspose.words/documentbuilder/insertbreak/), and others. See the following article "Navigation with Cursor" to learn more about the virtual cursor.
+Document navigation is based on the concept of a virtual cursor, with which you can move to another location in the document using various **DocumentBuilder.MoveToXXX** methods such as [MoveToDocumentStart](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetodocumentstart/) and [MoveToField](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetofield/). This virtual cursor indicates where the text will be inserted when calling the methods [Write](https://reference.aspose.com/words/net/aspose.words/documentbuilder/write/), [Writeln](https://reference.aspose.com/words/net/aspose.words/documentbuilder/writeln/), [InsertBreak](https://reference.aspose.com/words/net/aspose.words/documentbuilder/insertbreak/), and others. See the following article "Navigation with Cursor" to learn more about the virtual cursor.
 
 The following code example shows how to navigate to a bookmark:
 
@@ -93,7 +93,7 @@ Note that the **Font**, **ParagraphFormat**, and **PageSetup** properties are up
 - [RowFormat](https://reference.aspose.com/words/net/aspose.words/documentbuilder/rowformat/)
 - [DocumentBuilder.MoveToBookmark](https://reference.aspose.com/words/net/aspose.words/documentbuilder/movetobookmark/)
 - [DocumentBuilder.Write](https://reference.aspose.com/words/net/aspose.words/documentbuilder/write/)
-- [DocumentBuilder.Writeln](https://reference.aspose.com/words/net/aspose.words/documentbuilder/write/ln/index/)
+- [DocumentBuilder.Writeln](https://reference.aspose.com/words/net/aspose.words/documentbuilder/writeln/)
 - [DocumentBuilder.InsertField](https://reference.aspose.com/words/net/aspose.words/documentbuilder/insertfield/)
 - [DocumentBuilder.InsertHtml](https://reference.aspose.com/words/net/aspose.words/documentbuilder/inserthtml/)
 
@@ -119,17 +119,18 @@ Note that the **Font**, **ParagraphFormat**, and **PageSetup** properties are up
    builder.Font.Size = 12;
    builder.Font.Bold = true;
    builder.Font.Italic = true;
-   builder.Font.Underline = UnderlineType.Single;
+   builder.Font.Underline = Underline.Single;
    builder.Writeln("Bold, italic and underlined text");
    ```
 
 3. **Q:** How can I create a bookmark and later move the cursor back to it?  
-   **A:** Use `InsertBookmark` to create the bookmark, then `MoveToBookmark` to reposition the cursor.  
+   **A:** Use `StartBookmark` and `EndBookmark` to create the bookmark, then `MoveToBookmark` to reposition the cursor.  
 
    ```csharp
    DocumentBuilder builder = new DocumentBuilder(document);
-   builder.InsertBookmark("MyBookmark");
+   builder.StartBookmark("MyBookmark");
    builder.Writeln("Text inside the bookmark.");
+   builder.EndBookmark("MyBookmark");
    // Later...
    builder.MoveToBookmark("MyBookmark");
    builder.Writeln("More text after moving back to the bookmark.");

@@ -20,7 +20,7 @@ If you select a folder or multiple files for conversion, you can select the **Co
 
 ### Convert files in SubFolders
 
-This option is available under SharePoint 2007 when a folder is selected for conversion. You can recursively convert all of the selected folder's subfolders with this option. During conversion, the same subfolder structure is created below the destination folder.Under SharePoint 2010/2013/2016, the folders are always processed recursively.To process files without subfolders, just select files in a document library view before converting. Do not select any subfolders.
+This option is available under SharePoint 2007 when a folder is selected for conversion. You can recursively convert all of the selected folder's subfolders with this option. During conversion, the same subfolder structure is created below the destination folder. Under SharePoint 2010/2013/2016, the folders are always processed recursively. To process files without subfolders, just select files in a document library view before converting. Do not select any subfolders.
 
 ### Save destination folder option
 

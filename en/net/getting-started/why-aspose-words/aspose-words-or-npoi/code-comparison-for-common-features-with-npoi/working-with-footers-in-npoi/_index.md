@@ -57,7 +57,7 @@ Below is the code to demonstrate how to insert footer in word document using NPO
 
 Download **Working with Footers** from any of the below mentioned social coding sites:
 
-- [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/NPOI/Aspose.Words%20Vs%20NPOI%20HWPF%20and%20XWPF%20v1.1/Working%20with%20Footers)
+- [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/NPOI/Aspose.Words%20Vs%20NPOI%20HWPF%20and%20XWPF/Working%20with%20Footers)
 
 ## Download Sample Code
 

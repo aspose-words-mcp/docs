@@ -96,9 +96,9 @@ You can download the template file of this example from [Aspose.Words GitHub](ht
    ```
 
 4. **Q:** Can I use a .NET license file (e.g., `Aspose.Total.NET.lic`) with Aspose.Words for Python via .NET?  
-   **A:** Absolutely. The Python API runs on top of the .NET library, so you can load a .NET license file in the same way as in a C# project. Example:  
+   **A:** No. Licenses are product-specific: a .NET license is not valid for Aspose.Words for Python via .NET. Use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`). Example:  
    ```python
    license = aw.License()
-   license.set_license("C:/Licenses/Aspose.Total.NET.lic")
+   license.set_license("C:/Licenses/Aspose.Words.Python.NET.lic")
    ``` 
    After setting the license, all subsequent operations will be licensed for the Python environment.

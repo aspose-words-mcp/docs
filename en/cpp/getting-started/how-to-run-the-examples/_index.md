@@ -51,7 +51,7 @@ To run the examples, open the solution file in Visual Studio and build the proje
 Please make sure you meet the following requirements before downloading and running the examples:
 
 1. Visual Studio Code, Visual Studio 2022.
-2. [Cmake](https://cmake.org/download/) >= 3.16.0
+2. [Cmake](https://cmake.org/download/) >= 3.21.0
 3. Download lastest CMake Package from https://downloads.aspose.com/words/cpp
 
 ### Download and Run the Examples
@@ -83,7 +83,7 @@ Please make sure you meet the following requirements before downloading and runn
 
 1. CLang >= 3.9.1 
 2. [Ninja](https://ninja-build.org/)
-3. [Cmake](https://cmake.org/download/) >= 3.16.0
+3. [Cmake](https://cmake.org/download/) >= 3.21.0
 4. Download lastest CMake Package from https://downloads.aspose.com/words/cpp
 
 ### Download and Run the Examples
@@ -130,13 +130,13 @@ You can fork the repository, edit the source code, and create a pull request to 
    **A:** Download the CMake package from the Aspose download site and place the `Aspose.Words.Cpp` and `CodePorting.Native.Cs2Cpp_*` folders in the repository root before building. All required binaries are then available locally, so NuGet restore is not needed.
 
 2. **Q:** Do I need to apply a license to run the example projects?  
-   **A:** The examples work without a license but will add a watermark to generated documents. To remove the watermark, place a valid `Aspose.Words.Cpp` license file (e.g., `License.txt`) in the executable's working directory and call `Aspose::Words::License license; license.SetLicense("License.txt");` at the start of your program.
+   **A:** The examples work without a license but will add a watermark to generated documents. To remove the watermark, place a valid `Aspose.Words.Cpp` license file (e.g., `License.txt`) in the executable's working directory and call `auto license = System::MakeObject<Aspose::Words::License>(); license->SetLicense(u"License.txt");` at the start of your program.
 
 3. **Q:** Which version of Visual Studio is required for the NuGet‑based examples?  
-   **A:** Visual Studio 2022 (or later) is required because the examples target the C++20 standard and rely on the latest MSVC toolset that ships with VS 2022.
+   **A:** Visual Studio 2022 (or later) is required because the example projects use the MSVC toolset v143 that ships with VS 2022; the code itself is C++14.
 
 4. **Q:** How do I build and run the Linux examples using CMake?  
-   **A:** After installing Clang, Ninja, and CMake (≥ 3.16), execute the commands shown in the Linux section: configure with `cmake -S Examples/DocsExamples -B Examples/DocsExamples/build -D CMAKE_BUILD_TYPE=Release`, build with `cmake --build Examples/DocsExamples/build`, and run the tests with `cmake -E chdir Examples/DocsExamples/build ctest --verbose`.
+   **A:** After installing Clang, Ninja, and CMake (≥ 3.21), execute the commands shown in the Linux section: configure with `cmake -S Examples/DocsExamples -B Examples/DocsExamples/build -D CMAKE_BUILD_TYPE=Release`, build with `cmake --build Examples/DocsExamples/build`, and run the tests with `cmake -E chdir Examples/DocsExamples/build ctest --verbose`.
 
 5. **Q:** Can I run the example projects as unit tests from the command line?  
    **A:** Yes. After building the solution, navigate to the `build` directory and execute `ctest --verbose` (Linux/macOS) or run the generated test runner executable (Windows). This will execute all example unit tests and display their results.

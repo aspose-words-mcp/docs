@@ -31,7 +31,7 @@ The full list of supported model types is listed in the [AiModelType](https://re
 
 {{% /alert %}}
 
-You can create a model instance using the [Create](https://reference.aspose.com/words/java/com.aspose.words/aimodel/#create-int) method of the [AiModel](https://reference.aspose.com/words/java/com.aspose.words/aimodel/) class.
+You can create a model instance using the [create()](https://reference.aspose.com/words/java/com.aspose.words/aimodel/#create-int) method of the [AiModel](https://reference.aspose.com/words/java/com.aspose.words/aimodel/) class.
 
 The following code example shows how to create a new instance of **AiModel** class:
 
@@ -87,7 +87,7 @@ static class CustomAiModel extends OpenAiModel
    **A:** Aspose.Words for Java supports models from OpenAI, Google (Gemini), and Anthropic's Claude families. The supported models are listed in the `AiModelType` enumeration.
 
 2. **Q:** How do I create an `AiModel` instance for a specific model type?  
-   **A:** Use the static `AiModel.create(int modelType)` method, passing the integer value from the `AiModelType` enum that corresponds to the desired model (e.g., `AiModelType.GPT_4O`). The method returns an `AiModel` object ready for translation, summarization, etc.
+   **A:** Use the static `AiModel.create(int modelType)` method, passing the integer value from the `AiModelType` enum that corresponds to the desired model (e.g., `AiModelType.GPT_4_O`). The method returns an `AiModel` object ready for translation, summarization, etc.
 
 3. **Q:** Can I use a self‑hosted LLM with Aspose.Words?  
    **A:** Yes. Derive a class from the appropriate base model (e.g., `OpenAiModel`) and override `getUrl()` and `getName()` to point to your self‑hosted endpoint. Instantiate your custom class and use it like any other `AiModel`.
@@ -96,4 +96,4 @@ static class CustomAiModel extends OpenAiModel
    **A:** No additional license is required. AI capabilities are included with a regular Aspose.Words for Java license. Ensure your license file is loaded correctly using `License license = new License(); license.setLicense("Aspose.Words.Java.lic");`.
 
 5. **Q:** How can I find the integer value for a specific `AiModelType` enumeration member?  
-   **A:** In Java, you can call `AiModelType.GPT_4O.getValue()` (or simply refer to the constant's name) to obtain its underlying integer value, which you then pass to `AiModel.create`. This value is also documented in the API reference.
+   **A:** In Java, `AiModelType` constants such as `AiModelType.GPT_4_O` are `int` values, so you pass the constant directly to `AiModel.create`. This value is also documented in the API reference.

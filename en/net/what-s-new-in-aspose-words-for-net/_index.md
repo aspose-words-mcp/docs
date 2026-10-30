@@ -258,7 +258,7 @@ Aspose.Words 25.12 improves rendering accuracy across PDF, HTML-Fixed, and SVG f
 
 ### AI-powered Features
 
-#### Сonfigure AI Model Service Endpoints <sup>25.11</sup>
+#### Configure AI Model Service Endpoints <sup>25.11</sup>
 
 The ability to configure [AI model](https://reference.aspose.com/words/net/aspose.words.ai/aimodel/) service endpoints has been introduced by adding support for specifying [custom URLs](https://reference.aspose.com/words/net/aspose.words.ai/aimodel/url/) and [request timeouts](https://reference.aspose.com/words/net/aspose.words.ai/aimodel/timeout/), allowing greater flexibility in AI-powered integrations.
 

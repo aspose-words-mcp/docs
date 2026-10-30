@@ -19,7 +19,7 @@ timestamp: 2026-02-03-11-08-55
 {{% alert color="grey" %}}
 *Purpose Summary. What is this page about?*
 
-This page explains how to update fields in documents using Aspose.Words for Python via .NET, covering programmatic updates, automatic updates during rendering and mail merge, handling dirty fields, and updating the LastSavedTime property, with code examples.
+This page explains how to update fields in documents using Aspose.Words for Python via .NET, covering programmatic updates, automatic updates during rendering and mail merge, handling dirty fields, and updating the `last_saved_time` property, with code examples.
 {{% /alert %}}
 
 Typically, a field inserted into Microsoft Word already contains an up to date value. For example, if the field is a formula or a page number, it will contain the correct calculated value for the given version of the document. But if you have an application that generates or modifies a document with fields like merging two documents or populating it with data, then ideally all fields must be updated for the document to be useful.

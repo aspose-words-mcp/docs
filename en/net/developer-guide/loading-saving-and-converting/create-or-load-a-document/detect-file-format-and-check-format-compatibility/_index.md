@@ -29,7 +29,7 @@ Aspose.Words provides an ability to obtain information about the file type in or
 
 When you are dealing with multiple documents in various file formats, you may need to separate out those files that can be processed by Aspose.Words from those that cannot. You may also want to know why some of the documents cannot be processed.
 
-If you attempt to load a file into a [Document](https://reference.aspose.com/words/net/aspose.words/document/) object and Aspose.Words cannot recognize the file format or the format is not supported, Aspose.Words will throw an exception. You can catch those exceptions and analyze them, but Aspose.Words also provides the [DetectFileFormat](https://reference.aspose.com/words/net/aspose.words/fileformatutil/detectfileformat/) method that allows us to quickly determine the file format without loading a document with possible exceptions.This method returns a [FileFormatInfo](https://reference.aspose.com/words/net/aspose.words/fileformatinfo/) object that contains the detected information about the file type.
+If you attempt to load a file into a [Document](https://reference.aspose.com/words/net/aspose.words/document/) object and Aspose.Words cannot recognize the file format or the format is not supported, Aspose.Words will throw an exception. You can catch those exceptions and analyze them, but Aspose.Words also provides the [DetectFileFormat](https://reference.aspose.com/words/net/aspose.words/fileformatutil/detectfileformat/) method that allows us to quickly determine the file format without loading a document with possible exceptions. This method returns a [FileFormatInfo](https://reference.aspose.com/words/net/aspose.words/fileformatinfo/) object that contains the detected information about the file type.
 
 {{% alert color="primary" %}}
 
@@ -65,7 +65,7 @@ The following files are used in the example above. The file name is on the left 
 |  | Test File (Docm).docm | Office Open XML WordprocessingML document with macros. |
 |  | Test File (Dotx).dotx | Office Open XML WordprocessingML template. |
 |  | Test File (Dotm).dotm | Office Open XML WordprocessingML template with macros. |
-|  | Test File (XML).xml | FlatOPCOOXMLDocument. |
+|  | Test File (XML).xml | FlatOPC OOXML Document. |
 |  | Test File (RTF).rtf | Rich Text Format document. |
 |  | Test File (WordML).xml | Microsoft Word 2003 WordprocessingML document. |
 |  | Test File (HTML).html | HTML document. |
@@ -85,7 +85,7 @@ The following files are used in the example above. The file name is on the left 
    **A:** Use the static method `FileFormatUtil.DetectFileFormat(string filePath)`. It returns a `FileFormatInfo` object that contains the detected format, version, and whether the format is supported, all without creating a `Document` instance.
 
 2. **Q:** Which Aspose.Words API method checks whether a detected format is compatible with the library?  
-   **A:** The `FileFormatInfo.IsLoadable` property indicates if the format can be loaded by Aspose.Words. After calling `DetectFileFormat`, inspect this property to decide whether to attempt loading the file.
+   **A:** After calling `DetectFileFormat`, check the `FileFormatInfo.LoadFormat` property. If it is `LoadFormat.Unknown`, Aspose.Words cannot load the file; otherwise you can attempt loading it.
 
 3. **Q:** Does a successful `DetectFileFormat` call guarantee that the document will open without errors?  
    **A:** No. `DetectFileFormat` reads only the header information needed to identify the format. The file may still be corrupted, encrypted with an unknown password, or contain unsupported features that cause loading to fail.

@@ -41,10 +41,10 @@ The [LineSpacing](https://reference.aspose.com/words/net/aspose.words/font/lines
 
 {{< gist "aspose-words-gists" "7cb86f131b74afcbebc153f0039e3947" "get-font-line-spacing.cs" >}}
 
-## FontEmphasisMark
+## Font EmphasisMark
 
 Some East Asian languages use a special emphasis mark to indicate an emphasis. The **Font** class provides the [EmphasisMark](https://reference.aspose.com/words/net/aspose.words/font/emphasismark/) property to get or set the [EmphasisMark](https://reference.aspose.com/words/net/aspose.words/emphasismark/) enumeration values to be applied when formatting.
 
-The following code example shows how to set the **EphasisMark** property:
+The following code example shows how to set the **EmphasisMark** property:
 
 {{< gist "aspose-words-gists" "7cb86f131b74afcbebc153f0039e3947" "set-font-emphasis-mark.cs" >}}

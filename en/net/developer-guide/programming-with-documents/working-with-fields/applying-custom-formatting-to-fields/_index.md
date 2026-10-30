@@ -27,7 +27,7 @@ To learn more options, see the full list of properties for each field type in th
 
 ## How to Apply Custom Formatting to Field Result
 
-Aspose.Words provides API for custom formatting of field's result. You can implement [IFieldResultFormatter](https://reference.aspose.com/words/net/aspose.words.fields/ifieldresultformatter/) interface to control how the field result is formatted. You can apply numeric format switch, i.e. \# "#.##", date/time format switch, i.e. \@ "dd.MM.yyyy", andnumber format switch, i.e. \* Ordinal.
+Aspose.Words provides API for custom formatting of field's result. You can implement [IFieldResultFormatter](https://reference.aspose.com/words/net/aspose.words.fields/ifieldresultformatter/) interface to control how the field result is formatted. You can apply numeric format switch, i.e. \# "#.##", date/time format switch, i.e. \@ "dd.MM.yyyy", and number format switch, i.e. \* Ordinal.
 
 The following code example shows how to apply custom formatting for the field result:
 
@@ -65,16 +65,16 @@ The following code examples shows how to apply custom formatting to the `TIME` f
 
 ## FAQ
 1. **Q:** How can I apply a numeric format (e.g., two decimal places) to a merge field result?  
-   **A:** Implement the `IFieldResultFormatter` interface and, in the `FormatResult` method, apply a numeric format string such as `"#.00"` to the field value. Register the formatter with `Document.FieldOptions.ResultFormatter` before updating the fields.
+   **A:** Implement the `IFieldResultFormatter` interface and, in its `FormatNumeric(double value, string format)` method, return the value formatted with a numeric format string such as `"#.00"` (return `null` to keep the default result). Register the formatter with `Document.FieldOptions.ResultFormatter` before updating the fields.
 
 2. **Q:** What is the easiest way to format a date field with a custom pattern like `dd.MM.yyyy`?  
-   **A:** Use a field result formatter and apply the date format switch (`\@ "dd.MM.yyyy"`). Inside `FormatResult`, check if the field type is `FieldDate` and return `DateTime.Parse(value).ToString("dd.MM.yyyy")`.
+   **A:** Use a field result formatter and apply the date format switch (`\@ "dd.MM.yyyy"`). Inside `FormatDateTime(DateTime value, string format, CalendarType calendarType)`, return `value.ToString("dd.MM.yyyy")`. The formatter receives the value and the format string, not the field.
 
 3. **Q:** How do I evaluate an `IF` field condition programmatically after a mail‑merge operation?  
-   **A:** Call `FieldIf.EvaluateCondition(string condition)` which returns a `bool` indicating the result. This method does not require the field to be inserted into the document; you can pass the condition string directly.
+   **A:** Get the `FieldIf` from the document (for example from `doc.Range.Fields`) and call `fieldIf.EvaluateCondition()`. The method takes no arguments and returns a `FieldIfComparisonResult` value (`True`, `False`, or `Error`).
 
 4. **Q:** The `TIME` field shows a different format than I expect on my server. How can I control its output?  
-   **A:** Implement `IFieldUpdateCultureProvider` and return a `CultureInfo` that matches the desired time format. Assign your provider to `Document.FieldOptions.UpdateCultureProvider` before calling `Field.Update()`.
+   **A:** Implement `IFieldUpdateCultureProvider` and return a `CultureInfo` that matches the desired time format. Assign your provider to `Document.FieldOptions.FieldUpdateCultureProvider` before calling `Field.Update()`.
 
 5. **Q:** Can I combine multiple format switches (numeric, ordinal, date) for a single field?  
-   **A:** Yes. In your `IFieldResultFormatter` implementation you can inspect the field code for switches such as `\#`, `\@`, and `\*`. Apply each switch sequentially to the raw field value to produce the final formatted result.  
+   **A:** Yes. A field code can contain several format switches; for example, `= 3 \# 0 \* Ordinal` displays "3rd". Aspose.Words applies the switches when it updates the field. An `IFieldResultFormatter` receives one value and one format at a time (`FormatNumeric`, `FormatDateTime`, `Format`), not the field code.  

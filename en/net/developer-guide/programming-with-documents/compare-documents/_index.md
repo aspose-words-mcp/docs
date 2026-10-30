@@ -83,7 +83,7 @@ The following code example shows how to set the advanced comparing properties:
 - [Document.Compare](https://reference.aspose.com/words/net/aspose.words/document/compare/#compare/) – compares two documents and records differences as revisions
 - [CompareOptions](https://reference.aspose.com/words/net/aspose.words.comparing/compareoptions/) – specifies comparison behavior (e.g., ignore headers, formatting, comments)
 - [Granularity](https://reference.aspose.com/words/net/aspose.words.comparing/compareoptions/granularity/) – controls whether changes are tracked by character or by word
-- [CompareTarget](https://reference.aspose.com/words/net/aspose.words.comparing/compareoptions/target/) – determines which document displays the changes
+- [CompareOptions.Target](https://reference.aspose.com/words/net/aspose.words.comparing/compareoptions/target/) – determines which document displays the changes
 - [Revision](https://reference.aspose.com/words/net/aspose.words/revision/) – represents a single change detected during comparison
 - [Revisions](https://reference.aspose.com/words/net/aspose.words/revisioncollection/) – collection of all changes recorded in the document after comparison
 
@@ -102,4 +102,4 @@ The following code example shows how to set the advanced comparing properties:
    **A:** After calling `Compare`, inspect the `Revisions` collection of the first document. If `document.Revisions.Count == 0`, the documents are considered equal (no detectable changes).
 
 5. **Q:** What is the difference between the `Granularity` and `Target` options?  
-   **A:** `Granularity` controls the level of change tracking—`Character` tracks changes per character, while `Word` tracks per word. `Target` specifies which document will display the revisions (e.g., `CompareOptions.Target = CompareTarget.New;` shows changes in the second document). Adjust both to match the desired comparison behavior.
+   **A:** `Granularity` controls the level of change tracking—`Granularity.CharLevel` tracks changes per character, while `Granularity.WordLevel` tracks per word. `Target` specifies which document will display the revisions (e.g., `CompareOptions.Target = ComparisonTargetType.New;` shows changes in the second document). Adjust both to match the desired comparison behavior.

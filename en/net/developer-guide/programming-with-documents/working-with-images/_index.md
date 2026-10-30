@@ -27,20 +27,20 @@ Aspose.Words allows users to work with images in a very flexible way. In this ar
 
 ## How to Insert an Image {#insert-an-image}
 
-[DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/) provides several overloads of the [InsertImage](https://reference.aspose.com/words/net/aspose.words/documentbuilder/insertimage/) method that allows you to insert an inline or floating image. If the image is an EMF or WMF metafile, it will be inserted into the document in metafile format. All other images will be stored in PNG format. The**InsertImage**method can use images from different sources:
+[DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/) provides several overloads of the [InsertImage](https://reference.aspose.com/words/net/aspose.words/documentbuilder/insertimage/) method that allows you to insert an inline or floating image. If the image is an EMF or WMF metafile, it will be inserted into the document in metafile format. All other images will be stored in PNG format. The **InsertImage** method can use images from different sources:
 
 - From a file or `URL` by passing a `String` parameter [InsertImage](https://reference.aspose.com/words/net/aspose.words/documentbuilder/insertimage/)
-- From a stream by passing a `Stream` parameter**InsertImage**
-- From anImageobject by passing an Image parameter**InsertImage**
-- From a byte array by passing a byte array parameter**InsertImage**
+- From a stream by passing a `Stream` parameter **InsertImage**
+- From an Image object by passing an Image parameter **InsertImage**
+- From a byte array by passing a byte array parameter **InsertImage**
 
-For each of the**InsertImage**methods, there are further overloads which allow you to insert an image with the following options:
-- Inline or floating at a specific position, for example,**InsertImage**
-- Percentage scale or custom size, for example,**InsertImage**; furthermore, the**InsertImage**method returns a [Shape](https://reference.aspose.com/words/net/aspose.words.drawing/shape/) object that was just created and inserted so you can further modify properties of theShape
+For each of the **InsertImage** methods, there are further overloads which allow you to insert an image with the following options:
+- Inline or floating at a specific position, for example, **InsertImage**
+- Percentage scale or custom size, for example, **InsertImage**; furthermore, the **InsertImage** method returns a [Shape](https://reference.aspose.com/words/net/aspose.words.drawing/shape/) object that was just created and inserted so you can further modify properties of the Shape
 
 ### How to Insert an Inline Image {#insert-an-inline-image}
 
-Pass a single string representing a file that contains the image to**InsertImage**to insert the image into the document as an inline graphic.
+Pass a single string representing a file that contains the image to **InsertImage** to insert the image into the document as an inline graphic.
 
 The following code example shows how to insert an inline image at the cursor position into a document:
 
@@ -54,7 +54,7 @@ The following code example shows how to insert a floating image from a file or `
 
 ## How to Extract Images from a Document {#how-to-extract-images-from-a-document}
 
-All images are stored inside **Shape** nodes in a [Document](https://reference.aspose.com/words/net/aspose.words/document/).To extract all images or images having specific type from the document, follow these steps:
+All images are stored inside **Shape** nodes in a [Document](https://reference.aspose.com/words/net/aspose.words/document/). To extract all images or images having specific type from the document, follow these steps:
 
 - Use the [GetChildNodes](https://reference.aspose.com/words/net/aspose.words/compositenode/getchildnodes/) method to select all **Shape** nodes.
 - Iterate through resulting node collections.
@@ -100,7 +100,7 @@ The following code example shows how to use this property:
 
 ## Crop Images {#crop-images}
 
-The cropping of an imageusually refers to the removal of the unwantedouter parts of an image to help improve the framing. It is also used for theremoval of some of theportions of an image to increase the focus on a particular area.
+The cropping of an image usually refers to the removal of the unwanted outer parts of an image to help improve the framing. It is also used for the removal of some of the portions of an image to increase the focus on a particular area.
 
 The following code example shows how to achieve this using Aspose.Words API:
 
@@ -117,11 +117,11 @@ The following code example shows how to save images as WMF with RTF save options
 ## Related APIs
 
 
-- [`DocumentBuilder`](https://reference.aspose.com/words/net/aspose.words/documentbuilder/)
-- [`Shape`](https://reference.aspose.com/words/net/aspose.words.drawing/shape/)
-- [`ShapeBase`](https://reference.aspose.com/words/net/aspose.words.drawing/shapebase/)
-- [`ImageData`](https://reference.aspose.com/words/net/aspose.words.drawing/shape/imagedata/)
-- [`NodeRendererBase.BoundsInPoints`](https://reference.aspose.com/words/net/aspose.words.rendering/noderendererbase/boundsinpoints/)
+- [DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/)
+- [Shape](https://reference.aspose.com/words/net/aspose.words.drawing/shape/)
+- [ShapeBase](https://reference.aspose.com/words/net/aspose.words.drawing/shapebase/)
+- [ImageData](https://reference.aspose.com/words/net/aspose.words.drawing/shape/imagedata/)
+- [NodeRendererBase.BoundsInPoints](https://reference.aspose.com/words/net/aspose.words.rendering/noderendererbase/boundsinpoints/)
 
 ## FAQ
 
@@ -138,4 +138,4 @@ The following code example shows how to save images as WMF with RTF save options
    **A:** Iterate through all `Shape` nodes using `Document.GetChildNodes(NodeType.Shape, true)`. For each shape where `HasImage` is `true`, access `shape.ImageData` and call `Save(filePath)`. The image is saved in its original format.
 
 5. **Q:** How can I crop an image that is already placed in a Word document?  
-   **A:** Use the `Shape.ImageData.CropTop`, `CropBottom`, `CropLeft`, and `CropRight` properties (values are in points) to define the crop area. Adjust these properties as needed before saving or rendering the document.
+   **A:** Use the `Shape.ImageData.CropTop`, `CropBottom`, `CropLeft`, and `CropRight` properties (fractions of the image size from -1.0 to 1.0; for example, `CropTop = 0.1` removes 10% from the top) to define the crop area. Adjust these properties as needed before saving or rendering the document.

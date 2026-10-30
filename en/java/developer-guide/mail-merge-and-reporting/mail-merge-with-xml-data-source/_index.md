@@ -85,16 +85,16 @@ And after executing the Mail Merge operation:
 ## FAQ
 
 1. **Q:** How do I use an XML file as a data source for Mail Merge in Aspose.Words for Java?  
-   **A:** Load the XML into a `java.sql.DataSet` (or `java.sql.DataSet`‑compatible object) using `DataSet.readXml()`. Then pass the `DataSet` to `Document.getMailMerge().execute()` specifying the table name that matches the XML element. The fields in the template must have the same names as the XML attributes or child elements.
+   **A:** Load the XML into a `DataSet` (`com.aspose.words.net.System.Data.DataSet`, as in the example above) with `dataSet.readXml(...)`. Then pass the table that matches the XML element to `Document.getMailMerge().execute()`, e.g., `doc.getMailMerge().execute(dataSet.getTables().get("Customer"))`. The fields in the template must have the same names as the XML attributes or child elements.
 
 2. **Q:** Can I use `IMailMergeDataSource` instead of a `DataSet` for XML data?  
    **A:** Yes. Implement `com.aspose.words.IMailMergeDataSource` and `IMailMergeDataSourceRoot` to read the XML manually (e.g., with `javax.xml.parsers`). Return field names via `getFieldValue()` and record navigation via `moveNext()`. This gives you full control over hierarchical XML structures.
 
 3. **Q:** What should I do if the Mail Merge fields are not populated after the merge?  
-   **A:** Verify that the field names in the Word template exactly match the XML attribute or element names (case‑sensitive). Also ensure the `DataSet` contains a table with the same name as the root element you pass to `execute()`. Use `Document.getMailMerge().getFieldNames()` to debug which fields are expected.
+   **A:** Verify that the field names in the Word template match the XML attribute or element names (the match is not case‑sensitive). Also ensure you pass the `DataSet` table of the repeated element (e.g., `Customer`) to `execute()`. Use `Document.getMailMerge().getFieldNames()` to debug which fields are expected.
 
 4. **Q:** How can I handle special characters (e.g., &, <, >) in XML values during Mail Merge?  
-   **A:** The XML parser automatically decodes entity references. If you encounter issues, make sure the XML is well‑formed and encoded in UTF‑8. You can also set `Document.getMailMerge().setUseNonMergeFields(true)` to treat unknown fields as plain text.
+   **A:** The XML parser automatically decodes entity references. If you encounter issues, make sure the XML is well‑formed and encoded in UTF‑8.
 
 5. **Q:** Is there a limit to the size of the XML file that can be used for Mail Merge?  
    **A:** Aspose.Words does not impose a strict size limit, but very large XML files may increase memory consumption because the entire `DataSet` is loaded into memory. For huge data sets, consider streaming the XML and implementing a custom `IMailMergeDataSource` that reads records on demand.

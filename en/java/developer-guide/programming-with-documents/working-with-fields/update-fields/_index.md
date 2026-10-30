@@ -35,13 +35,13 @@ When a document is loaded, Aspose.Words mimics the behavior of Microsoft Word wi
 
 ### Update Fields Programmatically
 
-To explicitly update fields in the whole document, simply call the [UpdateFields](https://reference.aspose.com/words/java/com.aspose.words/document/#updateFields) method. To update fields contained in part of a document, obtain a [Range](https://reference.aspose.com/words/java/com.aspose.words/range/) object and call the [UpdateFields](https://reference.aspose.com/words/java/com.aspose.words/range/#updateFields) method. In Aspose.Words, you can obtain a **Range** for any node in the document tree, such as [Section](https://reference.aspose.com/words/java/com.aspose.words/section/), [HeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/headerfooter/) , [Paragraph](https://reference.aspose.com/words/java/com.aspose.words/paragraph/), etc. using the [GetRange](https://reference.aspose.com/words/java/com.aspose.words/node/#getRange) property. You can update the result of a single field by calling the [Update](https://reference.aspose.com/words/java/com.aspose.words/field/#update) method.
+To explicitly update fields in the whole document, simply call the [updateFields()](https://reference.aspose.com/words/java/com.aspose.words/document/#updateFields) method. To update fields contained in part of a document, obtain a [Range](https://reference.aspose.com/words/java/com.aspose.words/range/) object and call the [updateFields()](https://reference.aspose.com/words/java/com.aspose.words/range/#updateFields) method. In Aspose.Words, you can obtain a **Range** for any node in the document tree, such as [Section](https://reference.aspose.com/words/java/com.aspose.words/section/), [HeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/headerfooter/) , [Paragraph](https://reference.aspose.com/words/java/com.aspose.words/paragraph/), etc. using the [getRange()](https://reference.aspose.com/words/java/com.aspose.words/node/#getRange) property. You can update the result of a single field by calling the [update()](https://reference.aspose.com/words/java/com.aspose.words/field/#update) method.
 
 ### Automatic Update of Page-Related Fields During Rendering
 
 When you execute conversion of a document to a fixed-page format e.g. to PDF or XPS, then Aspose.Words will automatically update page layout-related fields `PAGE`, `PAGEREF` found in headers/footers of the document. This behavior mimics the behavior of Microsoft Word when printing a document.
 
-If you want to update all other fields in the document, then you need to call [UpdateFields](https://reference.aspose.com/words/java/com.aspose.words/document/#updateFields) before rendering the document.
+If you want to update all other fields in the document, then you need to call [updateFields()](https://reference.aspose.com/words/java/com.aspose.words/document/#updateFields) before rendering the document.
 
 The following code example shows how to update all fields before rendering a document:
 
@@ -59,7 +59,7 @@ When you execute a mail merge, all fields in the document will be automatically 
 
 ## Update Fields Having Dirty Attribute
 
-The w:dirty is a field-level attribute that will refresh only the field you specify when the document is opened. It tells MS Word to only refresh this field the next time the document is opened. You can use the [UpdateDirtyFields](https://reference.aspose.com/words/java/com.aspose.words/loadoptions/#getUpdateDirtyFields) property to specify whether to update the fields with the dirty attribute. When the value of **UpdateDirtyFields** is set to *true*, all fields having *true* value for [Field.IsDirty](https://reference.aspose.com/words/java/com.aspose.words/field/#getIsdirty) or [FieldChar.IsDirty](https://reference.aspose.com/words/java/com.aspose.words/fieldchar/#getIsdirty) property are updated on document load.
+The w:dirty is a field-level attribute that will refresh only the field you specify when the document is opened. It tells MS Word to only refresh this field the next time the document is opened. You can use the [getUpdateDirtyFields()](https://reference.aspose.com/words/java/com.aspose.words/loadoptions/#getUpdateDirtyFields) property to specify whether to update the fields with the dirty attribute. When the value of **getUpdateDirtyFields()** is set to *true*, all fields having *true* value for [Field.isDirty](https://reference.aspose.com/words/java/com.aspose.words/field/#isDirty) or [FieldChar.isDirty](https://reference.aspose.com/words/java/com.aspose.words/fieldchar/#isDirty) property are updated on document load.
 
 The following code example shows how to update fields having the dirty attribute:
 
@@ -67,7 +67,7 @@ The following code example shows how to update fields having the dirty attribute
 
 ## Update LastSavedTime Property Before Saving
 
-You can use the [UpdateLastSavedTimeProperty](https://reference.aspose.com/words/java/com.aspose.words/saveoptions/#getUpdateLastSavedTimeProperty) property whether to update the corresponding built-in document property [LastSavedTime](https://reference.aspose.com/words/java/com.aspose.words/builtindocumentproperties/#getLastSavedTime) when saving the document.
+You can use the [getUpdateLastSavedTimeProperty()](https://reference.aspose.com/words/java/com.aspose.words/saveoptions/#getUpdateLastSavedTimeProperty) property whether to update the corresponding built-in document property [getLastSavedTime()](https://reference.aspose.com/words/java/com.aspose.words/builtindocumentproperties/#getLastSavedTime) when saving the document.
 
 The following code example shows how to update this property:
 
@@ -78,8 +78,8 @@ The following code example shows how to update this property:
 - Document.updateFields() - Updates all fields in the document.
 - Range.updateFields() - Updates fields within a specific range (e.g., section, header, paragraph).
 - Field.update() - Updates a single field.
-- LoadOptions.setUpdateDirtyFields(boolean) / LoadOptions.isUpdateDirtyFields() - Gets or sets whether to update fields marked as dirty when loading a document.
-- Field.isDirty() / Field.setDirty(boolean) - Gets or sets a value indicating whether the field result is out of date.
-- FieldChar.isDirty() / FieldChar.setDirty(boolean) - Gets or sets a value indicating whether the field result is out of date.
-- SaveOptions.setUpdateLastSavedTimeProperty(boolean) / SaveOptions.isUpdateLastSavedTimeProperty() - Gets or sets whether to update the LastSavedTime built-in document property when saving.
+- LoadOptions.setUpdateDirtyFields(boolean) / LoadOptions.getUpdateDirtyFields() - Gets or sets whether to update fields marked as dirty when loading a document.
+- Field.isDirty() / Field.isDirty(boolean) - Gets or sets a value indicating whether the field result is out of date.
+- FieldChar.isDirty() / FieldChar.isDirty(boolean) - Gets or sets a value indicating whether the field result is out of date.
+- SaveOptions.setUpdateLastSavedTimeProperty(boolean) / SaveOptions.getUpdateLastSavedTimeProperty() - Gets or sets whether to update the LastSavedTime built-in document property when saving.
 - BuiltInDocumentProperties.getLastSavedTime() / BuiltInDocumentProperties.setLastSavedTime(java.util.Date) - Gets or sets the date and time the document was last saved.

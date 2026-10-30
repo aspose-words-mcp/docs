@@ -22,17 +22,17 @@ A "Hello, World" example is traditionally used to introduce features of a progra
 Assume, that you have the `Sender` class defined in your application as follows:
 
 
-{{< gist "aspose-words-gists" "827e71ccc0b8516a3cfe247b86ce6d4e" "Examples-src-main-java-com-aspose-words-examples-linq-Sender-Sender.java" >}}
+{{< gist "aspose-words-gists" "4732fa15eef8fceb1219ff2c1309d5e4" "sender.java" >}}
 
 To produce a report containing a message of a concrete sender on its behalf, you can use a template document with the following content.
 
 {{< highlight csharp >}}
-<<[s.getName()]>> says: "<<[s.getMessage()]>>."
+<<[sender.getName()]>> says: "<<[sender.getMessage()]>>."
 {{< /highlight >}}
 
 To build a report from the template, you can use the following source code.
 
-{{< gist "aspose-words-gists" "827e71ccc0b8516a3cfe247b86ce6d4e" "Examples-src-main-java-com-aspose-words-examples-linq-HelloWorld-HelloWorld.java" >}}
+{{< gist "aspose-words-gists" "4732fa15eef8fceb1219ff2c1309d5e4" "linq-hello-world.java" >}}
 
 After the source code is ran, the template document is populated with the data about the sender, and the document becomes a ready report with the following content.
 
@@ -50,10 +50,10 @@ After the report document is built, you can save it or perform any other tasks o
    **A:** Include the Aspose.Words for Java Maven/Gradle dependency (e.g., `com.aspose:aspose-words:23.12`) and ensure the `aspose-words.jar` is on the classpath. The LINQ Reporting Engine is part of this library, so no additional packages are required.
 
 2. **Q:** What is the correct syntax for template tags when using Java objects?  
-   **A:** Use double‑angle brackets with the object variable name and its Java getter method, e.g., `<<[s.getName()]>>` and `<<[s.getMessage()]>>`. The engine evaluates the expression at runtime and inserts the returned string.
+   **A:** Use double‑angle brackets with the object variable name and its Java getter method, e.g., `<<[sender.getName()]>>` and `<<[sender.getMessage()]>>`. The engine evaluates the expression at runtime and inserts the returned string.
 
 3. **Q:** How can I pass my custom `Sender` object to the report?  
-   **A:** Create an instance of `Sender`, then add it to a `HashMap<String, Object>` (or any `Map`) with a key that matches the tag name, and call `ReportingEngine.buildReport(templatePath, dataMap, outputPath)`. The key `"s"` in the map corresponds to the `s` used in the template tags.
+   **A:** Create an instance of `Sender` and pass it to `engine.buildReport(doc, sender, "sender")`. The third argument is the data source name used in the template tags (`sender` in `<<[sender.getName()]>>`). After the report is built, save the document with `doc.save(...)`.
 
 4. **Q:** In which formats can I save the generated report?  
    **A:** After building the report, use `Document.save(String filePath, SaveFormat format)` where `SaveFormat` can be `DOCX`, `PDF`, `HTML`, etc. Example: `document.save("Report.pdf", SaveFormat.PDF);`.

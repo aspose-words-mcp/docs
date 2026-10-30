@@ -77,7 +77,7 @@ Aspose.Words for C++ can be used to develop applications in any development envi
 
 ### Linux
 
-Aspose.Words for C++ can be used to develop application in the development environment which support [C++14 language standard](https://en.cppreference.com/w/cpp/14#Compiler_support), but the following compilers are explicitly supported:
+Aspose.Words for C++ can be used to develop application in the development environment which support [C++14 language standard](https://en.cppreference.com/cpp/14), but the following compilers are explicitly supported:
 
 <table>  
 	<tr>
@@ -137,7 +137,7 @@ Installing fontconfig on macOS with [homebrew](https://brew.sh)</br>
    **A:** Create an instance of `Aspose::Words::License`, then call its `SetLicense` method with the path to your `.lic` file, e.g.:  
 
    ```cpp
-   Aspose::Words::License* license = new Aspose::Words::License();
+   auto license = System::MakeObject<Aspose::Words::License>();
    license->SetLicense(u"myLicenseFile.lic");
    ```  
 

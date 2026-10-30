@@ -95,7 +95,7 @@ The following code  example shows how to convert all `IF` fields in the last par
 ## FAQ
 
 1. **Q:** How can I replace a field with its current result as static text?  
-   **A:** Use the `FieldHelper.convertFieldsToStaticText` method, passing the node that contains the field (e.g., `Document`, `Body`, or `Paragraph`) and the specific `FieldType`. The method replaces the field code with the field's last evaluated result, leaving plain text in the document.
+   **A:** Call `doc.unlinkFields()` to replace every field with its last result. To convert only fields of a certain type, use the `convertFieldsToStaticText` method shown above, passing the node that contains the fields (e.g., `Document`, `Body`, or `Paragraph`) and the `FieldType`. It replaces each matching field with its last evaluated result, leaving plain text in the document.
 
 2. **Q:** Which field types should not be replaced with static text in headers or footers?  
    **A:** Fields that depend on page context, such as `PAGE`, `NUMPAGES`, and other pagination‑related fields, should be avoided in headers/footers because converting them to static text will cause the same value to appear on every page.

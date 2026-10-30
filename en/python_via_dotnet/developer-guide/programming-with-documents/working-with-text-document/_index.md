@@ -28,7 +28,7 @@ In this article, we will learn what options can be useful for working with a tex
 
 You can use the [add_bidi_marks](https://reference.aspose.com/words/python-net/aspose.words.saving/txtsaveoptions/add_bidi_marks/) property to specify whether to add bi-directional marks before each BiDi run when exporting in plain text format. Aspose.Words inserts Unicode Character 'RIGHT-TO-LEFT MARK' (U+200F) before each bi-directional Run in the text. This option corresponds to "Add bi-directional marks" option in MS Word File Conversion dialogue when you export to a Plain Text format. Note that it appears in dialogue only if any of Arabic or Hebrew editing languages are added in MS Word.
 
-The following code example shows how to use **AddBidiMarks** property. The default value of this property is *false*:
+The following code example shows how to use **add_bidi_marks** property. The default value of this property is *false*:
 
 {{< gist "aspose-words-gists" "5e05b790a4d2258054abbf842ce6e427" "add-bidi-marks.py" >}}
 
@@ -70,7 +70,7 @@ The following code example shows how to export headers and footers to plain text
 
 ## Export List Indentation in Output TXT
 
-Aspose.Words introduced the [TxtListIndentation](https://reference.aspose.com/words/python-net/aspose.words.saving/txtlistindentation/) class that allows specifying how list levels are indented while exporting to a plain text format. While working with [TxtSaveOption](https://reference.aspose.com/words/python-net/aspose.words.saving/txtsaveoptions/), the [list_indentation](https://reference.aspose.com/words/python-net/aspose.words.saving/txtsaveoptions/list_indentation/) property is provided to specify the character to be used for indenting list levels and count specifying how many characters to use as indentation per one list level.
+Aspose.Words introduced the [TxtListIndentation](https://reference.aspose.com/words/python-net/aspose.words.saving/txtlistindentation/) class that allows specifying how list levels are indented while exporting to a plain text format. While working with [TxtSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/txtsaveoptions/), the [list_indentation](https://reference.aspose.com/words/python-net/aspose.words.saving/txtsaveoptions/list_indentation/) property is provided to specify the character to be used for indenting list levels and count specifying how many characters to use as indentation per one list level.
 
 The default value for character property is '\0' indicating that there is no indentation. For count property, the default value is 0 which means no indentation.
 
@@ -88,17 +88,17 @@ The following code example shows how to export list levels using space character
 
 ## FAQ
 
-1. Q: How can I include headers and footers when saving a document as plain text?  
-   A: Set the `export_headers_footers_mode` property of `TxtSaveOptions` to one of the enum values: `ALL_AT_END` to place them at the end of the file, `PRIMARY_ONLY` to export only primary headers/footers at the start and end of each section, or `NONE` to omit them completely.
+1. **Q:** How can I include headers and footers when saving a document as plain text?  
+   **A:** Set the `export_headers_footers_mode` property of `TxtSaveOptions` to one of the enum values: `ALL_AT_END` to place them at the end of the file, `PRIMARY_ONLY` to export only primary headers/footers at the start and end of each section, or `NONE` to omit them completely.
 
-2. Q: How do I control the indentation of list levels in a TXT export?  
-   A: Use the `list_indentation` property of `TxtSaveOptions`. Create a `TxtListIndentation` object, specify the `character` (e.g., tab `"\t"` or space `" "` ) and the `count` (number of characters per level), then assign it to `options.list_indentation`.
+2. **Q:** How do I control the indentation of list levels in a TXT export?  
+   **A:** Use the `list_indentation` property of `TxtSaveOptions`. The property is read-only: set its `character` (e.g., tab `"\t"` or space `" "` ) and `count` (number of characters per level) directly, e.g., `options.list_indentation.count = 3`.
 
-3. Q: Can I preserve leading and trailing spaces when loading a TXT file?  
-   A: Yes. Configure `TxtLoadOptions` with the appropriate `leading_spaces` and `trailing_spaces` settings (e.g., `Trim`, `Preserve`, or `ConvertToIndent`) before calling `Document.load`.
+3. **Q:** Can I preserve leading and trailing spaces when loading a TXT file?  
+   **A:** Yes. Configure `TxtLoadOptions` with the appropriate `leading_spaces_options` and `trailing_spaces_options` settings (e.g., `TxtLeadingSpacesOptions.TRIM`, `PRESERVE`, or `CONVERT_TO_INDENT`) and pass them to the `Document` constructor.
 
-4. Q: How do I make Aspose.Words detect the text direction (RTL or LTR) of a TXT document during import?  
-   A: Set the `document_direction` property of `TxtLoadOptions` to `DocumentDirection.AUTO` (default) to let the library detect direction, or explicitly set it to `DocumentDirection.LEFT_TO_RIGHT` or `DocumentDirection.RIGHT_TO_LEFT` as needed.
+4. **Q:** How do I make Aspose.Words detect the text direction (RTL or LTR) of a TXT document during import?  
+   **A:** Set the `document_direction` property of `TxtLoadOptions` to `DocumentDirection.AUTO` to let the library detect direction, or explicitly set it to `DocumentDirection.LEFT_TO_RIGHT` (default) or `DocumentDirection.RIGHT_TO_LEFT` as needed.
 
-5. Q: What does the `add_bidi_marks` option do when saving to TXT?  
-   A: When `add_bidi_marks` is `True`, Aspose.Words inserts a Unicode RIGHT-TO-LEFT MARK (U+200F) before each bi‑directional run, ensuring correct display of mixed‑direction text in the plain‑text output.
+5. **Q:** What does the `add_bidi_marks` option do when saving to TXT?  
+   **A:** When `add_bidi_marks` is `True`, Aspose.Words inserts a Unicode RIGHT-TO-LEFT MARK (U+200F) before each bi‑directional run, ensuring correct display of mixed‑direction text in the plain‑text output.

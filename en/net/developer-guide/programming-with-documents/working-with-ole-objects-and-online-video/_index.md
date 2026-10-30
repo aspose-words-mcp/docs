@@ -40,7 +40,7 @@ OLE package is a legacy and "undocumented" way to store embedded objects if an O
 
 Early Windows versions such as Windows 3.1, 95, and 98 had a Packager.exe application that could be used to embed any type of data into the document. This application is now excluded from Windows, but Microsoft Word and other applications still use it to embed data if the OLE handler is missing or unknown. The `OlePackage` class allows users to access the OLE Package properties.
 
-The following code example shows how toset the file name, extension, and display name for OLE Package:
+The following code example shows how to set the file name, extension, and display name for OLE Package:
 
 {{< gist "aspose-words-gists" "4996b573cf231d9f66ab0d1f3f981222" "insert-ole-objectwith-ole-package.cs" >}}
 
@@ -48,7 +48,7 @@ The following code example shows how toset the file name, extension, and display
 
 Users can access OLE object data using various properties and methods of the `OleFormat` class. For example, it is possible to get the `OLE` object raw data or the path and name of a source file for the linked OLE object.
 
-The following code example shows how to get OLE Object raw data usingthe [GetRawData](https://reference.aspose.com/words/net/aspose.words.drawing/oleformat/getrawdata/) method:
+The following code example shows how to get OLE Object raw data using the [GetRawData](https://reference.aspose.com/words/net/aspose.words.drawing/oleformat/getrawdata/) method:
 
 {{< gist "aspose-words-gists" "4996b573cf231d9f66ab0d1f3f981222" "get-access-to-ole-object-raw-data.cs" >}}
 

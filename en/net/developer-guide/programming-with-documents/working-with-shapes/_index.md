@@ -23,7 +23,7 @@ This page explains how to work with shapes such as images, text boxes, and drawi
 
 This topic discusses how to work programmatically with shapes using Aspose.Words.
 
-The shapes in Aspose.Words representan object in the drawing layer, such as an AutoShape, textbox, freeform, OLE object, ActiveX control, or picture.A Word document can contain one or more different shapes. Shapes in Aspose.Words are represented by the [Shape](https://reference.aspose.com/words/net/aspose.words.drawing/shape/) class.
+The shapes in Aspose.Words represent an object in the drawing layer, such as an AutoShape, textbox, freeform, OLE object, ActiveX control, or picture. A Word document can contain one or more different shapes. Shapes in Aspose.Words are represented by the [Shape](https://reference.aspose.com/words/net/aspose.words.drawing/shape/) class.
 
 ## Inserting Shapes Using Document Builder
 
@@ -51,9 +51,9 @@ The following code example shows how to work with the **IsLayoutInCell** propert
 
 ## Create Snip Corner Rectangle
 
-You can create a snip corner rectangle using Aspose.Words. The shape types are *SingleCornerSnipped, TopCornersSnipped, DiagonalCornersSnipped, TopCornersOneRoundedOneSnipped, SingleCornerRounded, TopCornersRounded,*and *DiagonalCornersRounded.*
+You can create a snip corner rectangle using Aspose.Words. The shape types are *SingleCornerSnipped, TopCornersSnipped, DiagonalCornersSnipped, TopCornersOneRoundedOneSnipped, SingleCornerRounded, TopCornersRounded,* and *DiagonalCornersRounded.*
 
-The DML shape is created using **InsertShape** method with these shape types. These typescannot be used to create VML shapes. Attempt to create shape by using the public constructor of the "Shape" class raises the "NotSupportedException" exception.
+The DML shape is created using **InsertShape** method with these shape types. These types cannot be used to create VML shapes. Attempt to create shape by using the public constructor of the "Shape" class raises the "NotSupportedException" exception.
 
 The following code example shows how to insert these type of shapes into the document:
 
@@ -93,7 +93,7 @@ The following code example shows how to do this:
 
 Aspose.Words API provides the [HorizontalRuleFormat](https://reference.aspose.com/words/net/aspose.words.drawing/shape/horizontalruleformat/) property to access the properties of the horizontal rule shape. The [HorizontalRuleFormat](https://reference.aspose.com/words/net/aspose.words.drawing/horizontalruleformat/) class exposes basic properties like Height, Color, NoShade etc. for the formatting of a horizontal rule.
 
-The following code example shows how to set**HorizontalRuleFormat**:
+The following code example shows how to set **HorizontalRuleFormat**:
 
 {{< gist "aspose-words-gists" "ad463bf5f128fe6e6c1485df3c046a4c" "horizontal-rule-format.cs" >}}
 

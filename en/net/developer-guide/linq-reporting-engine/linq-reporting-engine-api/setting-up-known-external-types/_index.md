@@ -50,4 +50,4 @@ engine.BuildReport(...);
    **A:** Yes. Call `engine.KnownTypes.Add` for each type, or iterate over a collection of `Type` objects and add them in a loop before building the report.
 
 5. **Q:** What happens if a required external type is not added to `KnownTypes`?  
-   **A:** The Reporting Engine throws a `TemplateProcessingException` indicating that the type is unknown, which stops the report generation. Adding the missing type to `KnownTypes` resolves the error.
+   **A:** The Reporting Engine throws an `InvalidOperationException` because it cannot resolve the type name used in the template, which stops the report generation. Adding the missing type to `KnownTypes` resolves the error.

@@ -14,8 +14,8 @@ The following table indicates the input and output file formats supported by Asp
 
 | Format | Description | Load | Save | Remarks |
 | :- | :- | :- | :- | :- |
-| `RDL` | Report Definition Language | {{< emoticons/tick >}} |  ||
-| `RDLC` | Report Definition Language Client | {{< emoticons/tick >}} |  ||
+| `RDL` | Report Definition Language | {{< emoticons/tick >}} |  | |
+| `RDLC` | Report Definition Language Client | {{< emoticons/tick >}} |  | |
 | [DOC](https://docs.fileformat.com/word-processing/doc/) | Microsoft Word 97 - 2007 Document. |  | {{< emoticons/tick >}} |  |
 | OOXML/ [DOCX](https://docs.fileformat.com/word-processing/docx/) | Office Open XML WordprocessingML Document (macro-free). |  | {{< emoticons/tick >}} |  |
 | [RTF](https://docs.fileformat.com/word-processing/rtf/) | RTF format. |  | {{< emoticons/tick >}} |  |

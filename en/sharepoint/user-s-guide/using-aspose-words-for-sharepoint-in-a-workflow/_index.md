@@ -15,3 +15,4 @@ timestamp: 2024-01-27-14-07-04
 - [Workflow Summary](/words/sharepoint/workflow-summary/)
 - [Converting a Document via Workflow Activity](/words/sharepoint/converting-a-document-via-workflow-activity/)
 - [Making a Report via Workflow Activity](/words/sharepoint/making-a-report-via-workflow-activity/)
+- [Inserting a Watermark via Workflow Activity](/words/sharepoint/inserting-a-watermark-via-workflow-activity/)

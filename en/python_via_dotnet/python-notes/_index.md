@@ -38,27 +38,11 @@ Though type casting is not natural for Python developers some tasks cannot be ac
 
 Base class for all document nodes in Aspose.Words DOM is [Node](https://reference.aspose.com/words/python-net/aspose.words/node/) class. For example [get_child](https://reference.aspose.com/words/python-net/aspose.words/compositenode/get_child/) method returns and instance of [Node](https://reference.aspose.com/words/python-net/aspose.words/node/) class, but if you need to modify the returned node, in most cases you should to cast it to concrete type. The following code demonstrates how to change font color of the first [Run](https://reference.aspose.com/words/python-net/aspose.words/run/) in the document:
 
-{{< highlight python >}}
-doc = aw.Document(docs_base.my_dir + "Document.docx")
-
-# Get the first Run node and cast it to Run object.
-run = doc.get_child(aw.NodeType.RUN, 0, True).as_run()
-
-# Make changes to the run 
-run.font.color = drawing.Color.red
-
-# Save the result
-doc.save(docs_base.artifacts_dir + "WorkingWithNode.change_run_color.docx")
-{{< /highlight >}}
+{{< gist "aspose-words-gists" "23c3961db2b25ac17ded1ba60412c71b" "change-run-color.py" >}}
 
 Casting might be also required when [clone](https://reference.aspose.com/words/python-net/aspose.words/document/clone/) method is used:
 
-{{< highlight python >}}
-doc = aw.Document(docs_base.my_dir + "Document.docx")
-
-clone = doc.clone().as_document()
-clone.save(docs_base.artifacts_dir + "CloneAndCombineDocuments.cloning_document.docx")
-{{< /highlight >}}
+{{< gist "aspose-words-gists" "23c3961db2b25ac17ded1ba60412c71b" "clone-node.py" >}}
 
 As you might noticed where in C# code you would use `(Paragraph)node` for casting, in Python you have to use `node.as_paragraph()` method. In the Python version of Aspose.Words [Node](https://reference.aspose.com/words/python-net/aspose.words/node/) class introduces the following link of `as_xxx` methods:
 
@@ -103,24 +87,7 @@ The `as_xxx` method raise a `RuntimeError` with the message like the following i
 ### Casting Fields
 The same situation applied to fields. The following code example demonstrates how to replace hyper link links:
 
-{{< highlight python >}}
-doc = aw.Document(docs_base.my_dir + "Hyperlinks.docx")
-
-for field in doc.range.fields :
-            
-    if field.type == aw.fields.FieldType.FIELD_HYPERLINK:
-                
-        hyperlink = field.as_field_hyperlink()
-    
-        # Some hyperlinks can be local (links to bookmarks inside the document), ignore these.
-        if hyperlink.sub_address != None :
-            continue
-    
-        hyperlink.address = "https:#www.aspose.com"
-        hyperlink.result = "Aspose - The .net & Java Component Publisher"
-
-doc.save(docs_base.artifacts_dir + "WorkingWithFields.replace_hyperlinks.docx")
-{{< /highlight >}}
+{{< gist "aspose-words-gists" "0a77287e9106956f00f83347b104d40b" "replace-hyperlinks.py" >}}
 
 As you might noticed [Field](https://reference.aspose.com/words/python-net/aspose.words.fields/field/) object also provides set of `as_xxx` methods, which are listed below:
 
@@ -224,66 +191,14 @@ As you might noticed [Field](https://reference.aspose.com/words/python-net/aspos
 
 ### Casting Styles
 Casting is also required to work with table styles:
-{{< highlight python >}}
-doc = aw.Document()
-builder = aw.DocumentBuilder(doc)
 
-table = builder.start_table()
-builder.insert_cell()
-builder.write("Name")
-builder.insert_cell()
-builder.write("Value")
-builder.end_row()
-builder.insert_cell()
-builder.insert_cell()
-builder.end_table()
-
-# Add a table style and modify it's properties.
-tableStyle = doc.styles.add(aw.StyleType.TABLE, "MyTableStyle1").as_table_style()
-tableStyle.borders.line_style = aw.LineStyle.DOUBLE
-tableStyle.borders.line_width = 1
-tableStyle.left_padding = 18
-tableStyle.right_padding = 18
-tableStyle.top_padding = 12
-tableStyle.bottom_padding = 12
-
-table.style = tableStyle
-
-doc.save(docs_base.artifacts_dir + "WorkingWithTableStylesAndFormatting.create_table_style.docx")
-{{< /highlight >}}
+{{< gist "aspose-words-gists" "1825da859a3400b9777f6c745a0889aa" "create-table-style.py" >}}
 
 ### Casting Ole Controls
 
 The following code example demonstrates how to read ActiveX control properties:
 
-{{< highlight python >}}
-doc = aw.Document(docs_base.my_dir + "ActiveX controls.docx")
-
-properties = ""
-for shape in doc.get_child_nodes(aw.NodeType.SHAPE, True) :
-            
-    shape = shape.as_shape()
-            
-    if shape.ole_format == None :
-        break
-    
-    oleControl = shape.ole_format.ole_control
-    if oleControl.is_forms2_ole_control :
-                
-        checkBox =  oleControl.as_forms2_ole_control()
-        properties = properties + "\nCaption: " + checkBox.caption
-        properties = properties + "\nValue: " + checkBox.value
-        properties = properties + "\nEnabled: " + str(checkBox.enabled)
-        properties = properties + "\nType: " + str(checkBox.type)
-    
-        if checkBox.child_nodes != None :
-            properties = properties + "\nChildNodes: " + checkBox.child_nodes
-    
-        properties += "\n"
-
-properties = properties + "\nTotal ActiveX Controls found: " + str(doc.get_child_nodes(aw.NodeType.SHAPE, True).count)
-print("\n" + properties)
-{{< /highlight >}}
+{{< gist "aspose-words-gists" "23c3961db2b25ac17ded1ba60412c71b" "read-active-x-control-properties.py" >}}
 
 ### Casting Font Sources
 

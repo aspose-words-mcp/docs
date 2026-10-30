@@ -3,7 +3,7 @@ title: Licensing and Subscription
 second_title: Aspose.Words for C++
 articleTitle: Licensing and Subscription
 linktitle: Licensing and Subscription
-description: "Aspose.Words for С++ provides different plans for purchase or offers a Free Trial and a 30-day Temporary License for evaluation using Licensing and Subscription policies."
+description: "Aspose.Words for C++ provides different plans for purchase or offers a Free Trial and a 30-day Temporary License for evaluation using Licensing and Subscription policies."
 type: docs
 weight: 7
 ai_search_scope: words_cpp
@@ -63,12 +63,10 @@ After purchasing a license, you need to carefully read the information on page [
 Licenses can be applied from various locations:
 
 * Explicit path
-* The folder containing the `Aspose.Words_\*.dll`  file
-* The folder containing the assembly that called `Aspose.Words_\*.dll`
-* The folder containing the entry assembly (your `.exe`)
-* An embedded resource in the assembly is called `Aspose.Words_\*.dll`
+* The folder that contains the Aspose.Words library
+* The folder that contains the client's application
 
-Often the easiest way to set a license is to place the license file in the same folder as `Aspose.Words_\*.dll` and specify just the filename without the path.
+Often the easiest way to set a license is to place the license file in the same folder as the Aspose.Words library and specify just the filename without the path.
 
 {{% alert color="primary" %}}
 
@@ -134,7 +132,7 @@ For more information, see [Embedding resources in executable using GCC](https://
 
 {{% /alert %}}
 
-The following code code example shows how to initialize a license from an embedded resource using [SetLicense](https://reference.aspose.com/words/cpp/aspose.words/license/setlicense/) method:
+The following code example shows how to initialize a license from an embedded resource using [SetLicense](https://reference.aspose.com/words/cpp/aspose.words/license/setlicense/) method:
 
 {{< gist "aspose-words-gists" "22914ce1f4ad49bfda8f88f5d192fe8e" "apply-license-from-embedded-resource-linux.h" >}}
 
@@ -155,7 +153,7 @@ To solve the problem, rename the file to remove the invisible .xml extension. We
 If you use multiple Aspose products in your application, such as Aspose.Words and `Aspose.Cells`, here are a few useful tips:
 
 * Set the License for each Aspose product separately. Even if you have a single license file for all components, for example, "Aspose.Total.lic", you still need to call **SetLicense** separately for each Aspose product that you use in your application.  
-* Use the Fully Qualified License Class Name. Each Aspose product has a **License** class in its own namespace. For example, Aspose.Words has [Aspose.Words.License](https://reference.aspose.com/words/cpp/aspose.words/license/) and `Aspose.Cells` has `Aspose.Cells`.License class. Using the fully qualified class name allows you to avoid confusion as to which license applies to which product.
+* Use the Fully Qualified License Class Name. Each Aspose product has a **License** class in its own namespace. For example, Aspose.Words has [Aspose::Words::License](https://reference.aspose.com/words/cpp/aspose.words/license/) and Aspose.Cells has the `Aspose::Cells::License` class. Using the fully qualified class name allows you to avoid confusion as to which license applies to which product.
 
 ------  
 
@@ -165,7 +163,7 @@ If you use multiple Aspose products in your application, such as Aspose.Words an
    **A:** Create an instance of `Aspose::Words::License` and call its `SetLicense` method, passing either the file name, a full path, or a stream. The call must be made before any other Aspose.Words classes are used.
 
 2. **Q:** Where should I place the license file so that Aspose.Words can find it automatically?  
-   **A:** The library searches several locations in order: the folder containing `Aspose.Words_*.dll`, the folder of the calling assembly, the entry assembly folder, and finally embedded resources. Placing the file in the same directory as `Aspose.Words_*.dll` and using just the file name is the simplest approach.
+   **A:** The library looks for the file in this order: the explicit path, the folder that contains the Aspose.Words library, and the folder that contains the client's application. Placing the file in the same folder as the Aspose.Words library and using just the file name is the simplest approach.
 
 3. **Q:** I get a “Cannot find license filename” exception – what is causing it?  
    **A:** Some browsers add a hidden `.xml` extension to the downloaded license file, and Windows may hide extensions, making the file appear as `Aspose.Words.LIC`. Rename the file to remove the extra `.xml` extension and ensure the exact name is passed to `SetLicense`.

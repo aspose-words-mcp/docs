@@ -23,7 +23,7 @@ This page demonstrates how to programmatically remove fields from a Word documen
 
 Sometimes it is necessary to remove a field from a document. This may occur when it needs to be replaced with a different field type or when the field is no longer needed in the document. For example the `TOC` field when saving to HTML.
 
-To remove a field inserted into a document using [DocumentBuilder.insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/).[InsertField](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/), use the returned [Field](https://reference.aspose.com/words/python-net/aspose.words.fields/field/) object, which provides a convenient [remove](https://reference.aspose.com/words/python-net/aspose.words.fields/field/remove/#default) method for easily removing the field from the document.
+To remove a field inserted into a document using [DocumentBuilder.insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/).[insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/), use the returned [Field](https://reference.aspose.com/words/python-net/aspose.words.fields/field/) object, which provides a convenient [remove](https://reference.aspose.com/words/python-net/aspose.words.fields/field/remove/#default) method for easily removing the field from the document.
 
 The following code example shows how to remove a field from the document:
 

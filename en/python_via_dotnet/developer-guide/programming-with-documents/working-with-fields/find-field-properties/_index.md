@@ -21,7 +21,7 @@ This page demonstrates how to retrieve a field's code, result, and merge‑field
 
 {{% /alert %}}
 
-A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/).[insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/) returns a [Field](https://reference.aspose.com/words/python-net/aspose.words.fields/field/) object. This is a faсade class that provides useful methods to quickly find some properties of a field.
+A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/).[insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/) returns a [Field](https://reference.aspose.com/words/python-net/aspose.words.fields/field/) object. This is a facade class that provides useful methods to quickly find some properties of a field.
 
 The following code example shows how to find the field code and field result:
 
@@ -42,10 +42,10 @@ The following code example shows how to get names of all merge fields in a docum
    **A:** Use the `field.result` property. It returns the evaluated result of the field as a string. For example, `field_result = field.result`.
 
 3. **Q:** What is the easiest way to list all merge field names in a document?  
-   **A:** Use the static method `MailMerge.get_field_names(document)`. It returns a list of strings containing the names of every merge field found in the supplied `Document` object.
+   **A:** Call `doc.mail_merge.get_field_names()`. It returns a list of strings containing the names of every merge field found in the document.
 
 4. **Q:** Can I differentiate between different field types (e.g., MERGEFIELD, REF, PAGE) programmatically?  
    **A:** Yes. The `field.type` property returns a `FieldType` enumeration value. Compare it with members such as `aw.fields.FieldType.FIELD_MERGE_FIELD`, `aw.fields.FieldType.FIELD_REF`, etc., to identify the field type.
 
 5. **Q:** How can I modify a field's code after it has been created?  
-   **A:** Retrieve the field code with `field.get_field_code()`, edit the string as needed, and then assign the modified code back using `field.set_field_code(modified_code)`. After updating, call `field.update()` to re‑evaluate the field.
+   **A:** There is no method that replaces the whole field code. Change the field through the properties of its typed class (for example, `field.as_field_merge_field().field_name`) and call `field.update()` to re‑evaluate it, or remove the field with `field.remove()` and insert a new one with `builder.insert_field(modified_code)`.

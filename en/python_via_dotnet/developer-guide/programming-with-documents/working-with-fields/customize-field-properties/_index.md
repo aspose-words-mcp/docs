@@ -79,22 +79,21 @@ The following code example shows the usage of [display_result](https://reference
    ```
 
 4. **Q:** How can I determine whether a field contains a separator node?  
-   **A:** The `has_separator` property of a `Field` indicates the presence of a separator. It returns `True` if the field has a separator node, otherwise `False`.
+   **A:** Check the `separator` property of a `Field`. It returns the `FieldSeparator` node, or `None` if the field has no separator.
 
    ```python
    import aspose.words as aw
 
    doc = aw.Document("input.docx")
    for field in doc.range.fields:
-       print(f"Field type: {field.type}, Has separator: {field.has_separator}")
+       print(f"Field type: {field.type}, Has separator: {field.separator is not None}")
    ```
 
 5. **Q:** Is it possible to list all available properties for a specific field type?  
-   **A:** Yes. Each field type has a dedicated class in the `aspose.words.fields` namespace. You can refer to the documentation for that class (e.g., `FieldMergeField`, `FieldAuthor`) to see all its properties and methods. In code, you can use `dir()` on an instance to inspect available members.
+   **A:** Yes. Each field type has a dedicated class in the `aspose.words.fields` namespace. You can refer to the documentation for that class (e.g., `FieldMergeField`, `FieldAuthor`) to see all its properties and methods. In code, you can use `dir()` on the class to inspect available members.
 
    ```python
    import aspose.words as aw
 
-   merge_field = aw.fields.FieldMergeField()
-   print(dir(merge_field))   # Shows all properties and methods of FieldMergeField
+   print(dir(aw.fields.FieldMergeField))   # Shows all properties and methods of FieldMergeField
    ```

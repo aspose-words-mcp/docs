@@ -46,10 +46,10 @@ The table below lists the formats and encryption algorithms supported by Aspose.
 
 | Format | Supported Encryption while Loading                          | Supported Encryption while Saving            |
 | ------------------------------------------------------------ | ----------------------------------------------------------- | -------------------------------------------- |
-| DOC, DOT                                                     | XOR encryption40-bit RC4 EncryptionCryptoAPI RC4 Encryption | RC4 Encryption (40-bit)                      |
-| DOCX, DOTX, DOCM, DOTM, FlatOPC, FlatOpcTemplate, FlatOpcMacroEnabled, FlatOpcTemplateMacroEnabled | ECMA-376 Standard EncryptionECMA-376 Agile Encryption       | ECMA-376 Standard Encryption (AES128 + SHA1) |
+| DOC, DOT                                                     | XOR encryption<br>40-bit RC4 Encryption<br>CryptoAPI RC4 Encryption | RC4 Encryption (40-bit)                      |
+| DOCX, DOTX, DOCM, DOTM, FlatOPC, FlatOpcTemplate, FlatOpcMacroEnabled, FlatOpcTemplateMacroEnabled | ECMA-376 Standard Encryption<br>ECMA-376 Agile Encryption       | ECMA-376 Standard Encryption (AES128 + SHA1) |
 | ODT, OTT                                                     | ODF Encryption (Blowfish/AES)                               | ODF Encryption (AES256 + SHA256)             |
-| PDF | -                                                           | RC4 Encryption (40/128 bit)                  |
+| PDF | -                                                           | AES-128 / AES-256                            |
 
 The following code example shows how to encrypt a document with a password:
 
@@ -83,13 +83,11 @@ The following code example shows how to try opening an encrypted document with a
 
 This section covers specific constraints and important considerations for document encryption using Aspose.Words:
 
-- **Encryption is write-only**: Once a document is loaded and then saved with encryption, the original unencrypted content is no longer retained in memory. There is no way to extract or retrieve the original plaintext from an encrypted document in Aspose.Words.
-
 - **Encryption algorithm selection**: Aspose.Words does not expose a direct property to choose the encryption algorithm. The algorithm used depends on the output format and save options:
   - For DOC: RC4 40-bit.
   - For DOCX/DOTX/DOCM/DOTM/FlatOPC: ECMA-376 Standard Encryption using AES128 + SHA1.
   - For ODT/OTT: ODF Encryption using AES256 + SHA256.
-  - For PDF: RC4 40-bit or 128-bit, depending on save options.
+  - For PDF: AES-128 (PDF 1.7 based compliance) or AES-256 (PDF 2.0 based compliance), set with `PdfSaveOptions.encryption_details`.
 
 - **Password policies are not enforced**: Aspose.Words does not validate or enforce password strength or complexity. It is the application developer’s responsibility to enforce appropriate password policies if required.
 
@@ -97,7 +95,7 @@ This section covers specific constraints and important considerations for docume
 
 - **No encryption support for all formats**: Not all document formats support encryption. Examples of unsupported formats include RTF, HTML, MHTML, and image formats.
 
-- **Password protection applies only to saving**: Setting a password in save options does not protect an already-loaded document from being modified or saved again without encryption. Each `Save` call must explicitly include encrypted save options to ensure protection.
+- **Password protection applies only to saving**: Setting a password in save options does not protect an already-loaded document from being modified or saved again without encryption. Each `save` call must explicitly include encrypted save options to ensure protection.
 
 - **No support for multiple encryption layers**: Aspose.Words does not support applying multiple encryption layers to the same document. Over-encryption (e.g., encrypting an already encrypted document) requires re-saving with a new password and will use the algorithm defined for the output format.
 
@@ -107,9 +105,9 @@ This section covers specific constraints and important considerations for docume
 
 ## Related APIs
 
-- [DocSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/docsaveoptions/) — Save options for DOC/DOT formats, includes [Password](https://reference.aspose.com/words/python-net/aspose.words.saving/docsaveoptions/password/) property.
-- [OoxmlSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/ooxmlsaveoptions/) — Save options for DOCX, DOTX, DOCM, DOTM, and FlatOpc formats, includes [Password](https://reference.aspose.com/words/python-net/aspose.words.saving/ooxmlsaveoptions/password/) property.
-- [FileFormatInfo](https://reference.aspose.com/words/python-net/aspose.words/fileformatinfo/) — Contains [IsEncrypted](https://reference.aspose.com/words/python-net/aspose.words/fileformatinfo/is_encrypted/) property to detect encryption.
+- [DocSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/docsaveoptions/) — Save options for DOC/DOT formats, includes [password](https://reference.aspose.com/words/python-net/aspose.words.saving/docsaveoptions/password/) property.
+- [OoxmlSaveOptions](https://reference.aspose.com/words/python-net/aspose.words.saving/ooxmlsaveoptions/) — Save options for DOCX, DOTX, DOCM, DOTM, and FlatOpc formats, includes [password](https://reference.aspose.com/words/python-net/aspose.words.saving/ooxmlsaveoptions/password/) property.
+- [FileFormatInfo](https://reference.aspose.com/words/python-net/aspose.words/fileformatinfo/) — Contains [is_encrypted](https://reference.aspose.com/words/python-net/aspose.words/fileformatinfo/is_encrypted/) property to detect encryption.
 - [IncorrectPasswordException](https://reference.aspose.com/words/python-net/aspose.words/incorrectpasswordexception/) — Exception thrown when an incorrect password is provided for an encrypted document. 
 
 ## FAQ
@@ -127,4 +125,4 @@ This section covers specific constraints and important considerations for docume
    **A:** Create a `LoadOptions` object with the password (`aw.loading.LoadOptions("MyPassword")`) and pass it to the `Document` constructor: `doc = aw.Document(path, load_options)`.
 
 5. **Q:** What happens if I try to open an encrypted document without providing a password?  
-   **A:** Aspose.Words throws a `PasswordRequiredException`. Catch this exception to inform the user that a password is required, or supply the correct password via `LoadOptions`.
+   **A:** Aspose.Words throws an `IncorrectPasswordException` (in Python, a `RuntimeError` whose message starts with `Proxy error(IncorrectPasswordException)`). Catch this exception to inform the user that a password is required, or supply the correct password via `LoadOptions`.

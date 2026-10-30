@@ -59,7 +59,7 @@ When performing a Mail Merge operation, you can insert images from the database 
 
 ### Insert Images from a Database
 
-During a mail merge, when an image Mail Merge field is encountered in a document, the [FieldMergingCallback](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getFieldMergingCallback) event is fired. You can respond to this event to return a filename, stream, or image object to the Mail Merge engine so it can be inserted into the document.
+During a mail merge, when an image Mail Merge field is encountered in a document, the [getFieldMergingCallback()](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getFieldMergingCallback) event is fired. You can respond to this event to return a filename, stream, or image object to the Mail Merge engine so it can be inserted into the document.
 
 The following code example shows how to insert images stored in a database BLOB field into a report:
 
@@ -71,7 +71,7 @@ The following code example shows how to insert images stored in a database BLOB 
 
 While merging an image merge field, you may sometimes need to control various image properties, such as [WrapType](https://reference.aspose.com/words/java/com.aspose.words/wraptype/).
 
-Currently, using [ImageFieldMergingArgs](https://reference.aspose.com/words/java/com.aspose.words/imagefieldmergingargs/) you can only set image width or height properties, respectively. To overcome this issue, Aspose.Words provides the [Shape](https://reference.aspose.com/words/java/com.aspose.words/imagefieldmergingargs/#getShape) property, which facilitates to get full control over the inserted image or any other shape.
+Currently, using [ImageFieldMergingArgs](https://reference.aspose.com/words/java/com.aspose.words/imagefieldmergingargs/) you can only set image width or height properties, respectively. To overcome this issue, Aspose.Words provides the [getShape()](https://reference.aspose.com/words/java/com.aspose.words/imagefieldmergingargs/#getShape) property, which facilitates to get full control over the inserted image or any other shape.
 
 The following code example shows how to set various image properties:
 
@@ -86,16 +86,16 @@ The following code example shows how to set various image properties:
 ## FAQ
 
 1. **Q:** How can I insert a checkbox form field during a mail merge?  
-   **A:** Implement a custom `IFieldMergingCallback` (or `FieldMergingCallback` in Java) and, in the `fieldMerging` method, detect the target merge field name. Replace the field with a `CheckBoxFormField` created via `DocumentBuilder.insertCheckBox`. Return the new field in the callback so the merge engine inserts it instead of plain text.
+   **A:** Implement `IFieldMergingCallback` and, in the `fieldMerging` method, detect the target merge field name. Move a `DocumentBuilder` to the field with `builder.moveToMergeField(args.getFieldName())` and insert the check box with `builder.insertCheckBox(...)`. The check box replaces the merge field.
 
 2. **Q:** How do I add a text input form field using mail merge?  
-   **A:** In the same `fieldMerging` callback, create a `TextFormField` with `DocumentBuilder.insertTextInput`. Set its name, default text, and size as needed, then assign it to the merge field. The callback replaces the merge field with the interactive text box.
+   **A:** In the same `fieldMerging` callback, move the `DocumentBuilder` to the merge field with `builder.moveToMergeField(args.getFieldName())` and call `builder.insertTextInput(...)` with the form field name, a `TextFormFieldType` value, the default text, and the maximum length. The text input form field replaces the merge field.
 
 3. **Q:** How can I insert images that are stored in a database BLOB during mail merge?  
-   **A:** Use an image merge field (`Image:MyField`) in the template. In the `fieldMerging` callback, retrieve the BLOB as a `byte[]` or `InputStream`, then set `ImageFieldMergingArgs.setImageStream` (or `setImageBytes`) to supply the image data to the engine.
+   **A:** Use an image merge field (`Image:MyField`) in the template. In the `imageFieldMerging` callback, retrieve the BLOB as a `byte[]` or `InputStream` and pass it to `ImageFieldMergingArgs.setImageStream` (wrap a `byte[]` in a `ByteArrayInputStream`) to supply the image data to the engine.
 
 4. **Q:** How can I control the size, rotation, or wrap type of an inserted image?  
-   **A:** Inside the `fieldMerging` callback, obtain the `Shape` object from `ImageFieldMergingArgs.getShape()`. You can then set properties such as `setWidth`, `setHeight`, `setWrapType`, and `setRotationAngle` to fully customize the image appearance.
+   **A:** Inside the `imageFieldMerging` callback, create a `Shape` with the image, set properties such as `setWidth`, `setHeight`, `setWrapType`, and `setRotation`, and pass it to `ImageFieldMergingArgs.setShape`. The engine then inserts this shape instead of the image data. To set only the size, use `setImageWidth` and `setImageHeight`.
 
 5. **Q:** Do I need a licensed version of Aspose.Words to use form fields or image insertion in mail merge?  
-   **A:** Yes. While the evaluation version allows basic mail merge, inserting form fields, customizing image properties, and using callbacks are fully supported only with a valid Aspose.Words license. Apply the license at the start of your application with `License license = new License(); license.setLicense("Aspose.Words.Java.lic");`.
+   **A:** Not to use the feature. Without a license, Aspose.Words for Java works in evaluation mode with full functionality, but it adds an evaluation watermark and limits the document size to a few hundred paragraphs. To remove these limitations, apply a license: `License license = new License(); license.setLicense("Aspose.Words.Java.lic");`.

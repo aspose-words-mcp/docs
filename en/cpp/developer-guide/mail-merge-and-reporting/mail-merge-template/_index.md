@@ -5,7 +5,7 @@ articleTitle: Mail Merge Template
 linktitle: Mail Merge Template
 type: docs
 description: "Create a Mail Merge template to define fixed content in output documents, and then generate merge documents using the merge fields."
-keywords: "create Mail Merge template с++"
+keywords: "create Mail Merge template c++"
 weight: 10
 ai_search_scope: words_cpp
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
@@ -56,7 +56,7 @@ The following code example shows how to specify the image file name and image si
 
 ### Customize Text Properties
 
-You can use the [Text](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/fieldmergingargs/get_text/) property to insert text into the document for the current merge field. Also, you can change the formatting of texts and paragraphs inside your template using [Font](https://reference.aspose.com/words/cpp/aspose.words/font/) and [ParagraphFormat](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/) classes. You can handle the text to be inserted before or after the merge field by using the [TextBefore](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/get_textbefore/) and [TextAfter](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/get_textafter/) properties that are included in the [FieldMergeField](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/) class.
+You can use the [get_Text()](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/fieldmergingargs/get_text/) property to insert text into the document for the current merge field. Also, you can change the formatting of texts and paragraphs inside your template using [Font](https://reference.aspose.com/words/cpp/aspose.words/font/) and [ParagraphFormat](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/) classes. You can handle the text to be inserted before or after the merge field by using the [get_TextBefore()](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/get_textbefore/) and [get_TextAfter()](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/get_textafter/) properties that are included in the [FieldMergeField](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/) class.
 
 The following code example shows how to insert Check Boxes or HTML during Mail Merge operation:
 
@@ -72,23 +72,23 @@ You can also check the implementation of the `HandleMergeField` class from [Aspo
 
 ## See Also
 
-* For more details about how to create templates in Microsoft Word manually, please check the [Create a Template](https://support.microsoft.com/en-us/office/save-a-word-document-as-a-template-cb17846d-ecec-49d4-82ea-a6f5e3e8b9ae) article in the Microsoft Documentation
+* For more details about how to create templates in Microsoft Word manually, please check the [Create a Template](https://support.microsoft.com/en-us/word/save-a-word-document-as-a-template) article in the Microsoft Documentation
 
 ------ 
 
 ## FAQ
 
 1. **Q:** How do I create a Mail Merge template programmatically in C++?  
-   **A:** Use the `DocumentBuilder` class to build a new `Document`. Insert static text with `InsertTextInput`, add merge fields with `InsertField`, and create line breaks with `InsertParagraph`. After building the template, save it (e.g., `DocumentBuilder::Document->Save(u"Template.docx");`). The saved file can then be used as the source for `Document::MailMerge`.
+   **A:** Use the `DocumentBuilder` class to build a new `Document`. Insert static text with `Write` or `Writeln`, add merge fields with `InsertField`, and create line breaks with `InsertParagraph`. After building the template, save it (e.g., `builder->get_Document()->Save(u"Template.docx");`). The saved file can then be used as the template for `MailMerge::Execute`.
 
 2. **Q:** How can I insert an image during a Mail Merge operation?  
-   **A:** Implement a custom `IFieldMergingCallback` and handle the `ImageFieldMergingArgs` in its `ImageFieldMerging` method. Set the image file name (`ImageFieldMergingArgs::ImageFileName`) and optionally adjust `ImageWidth` and `ImageHeight`. Register the callback with `Document::MailMerge::FieldMergingCallback`.
+   **A:** Implement a custom `IFieldMergingCallback` and handle the `ImageFieldMergingArgs` in its `ImageFieldMerging` method. Set the image file name (`ImageFieldMergingArgs::set_ImageFileName`) and optionally adjust `get_ImageWidth()` and `get_ImageHeight()`. Register the callback with `MailMerge::set_FieldMergingCallback`.
 
 3. **Q:** What is the easiest way to add check boxes or HTML content with Mail Merge?  
-   **A:** Use the `Text` property of `FieldMergingArgs` to supply the desired markup. For check boxes, insert the Unicode character (e.g., `u"\u2610"` for an empty box) or a Word content control. For HTML, set `FieldMergingArgs::Text` to the HTML string and enable `Document::MailMerge::UseNonMergeFields` if needed.
+   **A:** Implement `IFieldMergingCallback`. `FieldMergingArgs::set_Text` inserts plain text, which is enough for a check box character (e.g., `u"\u2610"` for an empty box). For HTML, move a `DocumentBuilder` to the field in `FieldMerging` with `MoveToMergeField(args->get_DocumentFieldName())`, call `InsertHtml`, and set `args->set_Text(u"")`.
 
 4. **Q:** How can I customize the font and paragraph formatting of merged text?  
-   **A:** Inside the `FieldMergingCallback`, modify `FieldMergingArgs::Field->Font` (e.g., `FieldMergingArgs::Field->Font->Size = 12;`) and `FieldMergingArgs::Field->ParagraphFormat` (e.g., `FieldMergingArgs::Field->ParagraphFormat->Alignment = Aspose::Words::ParagraphAlignment::Center;`). These changes affect the inserted text for that specific merge field.
+   **A:** A `Field` has no font or paragraph formatting of its own. Inside `IFieldMergingCallback::FieldMerging`, move a `DocumentBuilder` to the field and insert the text with the formatting you need, e.g., `builder->MoveToMergeField(args->get_DocumentFieldName()); builder->get_Font()->set_Size(12); builder->get_ParagraphFormat()->set_Alignment(ParagraphAlignment::Center); builder->Write(System::ObjectExt::ToString(args->get_FieldValue()));`. These changes affect the inserted text for that specific merge field.
 
 5. **Q:** Do I need to set a license before using Mail Merge in C++?  
    **A:** Yes. Create an `Aspose::Words::License` object, call `SetLicense` with the path to your `.lic` file, and ensure this code runs before any `Document` or `DocumentBuilder` operations. Without a valid license, the library works in evaluation mode and may add watermarks or limit functionality.

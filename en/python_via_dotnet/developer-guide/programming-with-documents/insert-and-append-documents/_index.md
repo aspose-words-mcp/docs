@@ -92,7 +92,7 @@ You may have a use case where you need to include additional pages from a docume
 
 {{% alert color="primary" %}}
 
-Note that [append_child](https://reference.aspose.com/words/python-net/aspose.words/compositenode/append_child/) is a node level method within a document. For example, you can create a paragraph, set formatting properties, and then append it as a child to the body using the **AppendChild** method.
+Note that [append_child](https://reference.aspose.com/words/python-net/aspose.words/compositenode/append_child/) is a node level method within a document. For example, you can create a paragraph, set formatting properties, and then append it as a child to the body using the **append_child** method.
 
 {{% /alert %}}
 
@@ -108,7 +108,7 @@ When you need to insert or append one section or paragraph to another, you essen
 
 You can also use the [append_child](https://reference.aspose.com/words/python-net/aspose.words/compositenode/append_child/) method to add a new specified node to the end of the list of child nodes, for example, if you want to append content at the paragraph level instead of at the section level.
 
-The following code example shows how to manually import nodes and insert them after a specific node using the **InsertAfter** method:
+The following code example shows how to manually import nodes and insert them after a specific node using the **insert_after** method:
 
 {{< gist "aspose-words-gists" "ffc2b4de06eabf9183a3ed2aa34e939d" "insert-document-as-nodes.py" >}}
 
@@ -142,7 +142,7 @@ The following code example shows how to append one document to another while kee
    **A:** After inserting the document, locate the inserted nodes (e.g., paragraphs) and modify their `font.size` property. You can retrieve the inserted range by storing the builder's current position before the call and then iterating over the nodes that follow.
 
 2. **Q:** Does `insert_document_inline` preserve headers and footers from the source document?  
-   **A:** Yes. When you use `insert_document_inline`, the source document's sections—including their headers and footers—are imported. The imported sections keep their original page setup, so headers/footers appear exactly as in the source unless you explicitly modify them after insertion.
+   **A:** No. `insert_document_inline` inserts the content of the source document inline at the cursor position, as if you copied all content and pasted it in Word. Sections, headers, and footers of the source document are not imported; use `Document.append_document` to add the source sections with their headers and footers.
 
 3. **Q:** How can I insert a document at a specific bookmark without the bookmark's surrounding text being affected?  
    **A:** Place the bookmark in an empty paragraph, move the builder to the bookmark, and then call `insert_document`. The inserted content will be placed after the bookmark's position. Ensure the bookmark does not enclose other paragraphs, otherwise those paragraphs will be moved together with the inserted content.

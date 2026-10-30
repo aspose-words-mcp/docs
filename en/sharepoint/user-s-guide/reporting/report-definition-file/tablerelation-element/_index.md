@@ -10,7 +10,7 @@ url: /sharepoint/tablerelation-element/
 timestamp: 2024-10-21-11-17-44
 ---
 
-The TableRelation element contains information a parent-child relation between two tables in the report data set.
+The TableRelation element contains information about a parent-child relation between two tables in the report data set.
 
 | Name | Cardinality | Has Children | Description |
 | :- | :- | :- | :- |

@@ -28,10 +28,10 @@ The concept of LINQ Reporting Engine resolves this issue by using various single
    **A:** Classic Mail Merge relies on Word merge fields, which are primarily designed for simple data insertion and are not easily extensible. The LINQ Reporting Engine uses its own tag syntax (e.g., `<<foreach>>`, `<<if>>`, `<<var>>`) that supports loops, conditionals, and custom logic without polluting the document with merge fields.
 
 3. **Q:** Is the LINQ Reporting Engine compatible with all versions of Aspose.Words for Java?  
-   **A:** The engine is available starting from Aspose.Words for Java 22.1 and later. Projects using earlier versions need to upgrade to a supported release to take advantage of the LINQ Reporting Engine features.
+   **A:** The engine is included in Aspose.Words for Java, but tags and options added later are not available in older versions. Use a current release, or check the release notes for the version you use.
 
 4. **Q:** Can I extend the LINQ Reporting Engine with custom tags?  
-   **A:** Yes. The engine's architecture allows developers to create custom tag handlers by implementing the `ITagHandler` interface, enabling new functionality while keeping the original template syntax concise.
+   **A:** No. The engine supports only the tags described in the template syntax articles; you cannot add your own tags. To use your own code in templates, register your classes with `ReportingEngine.getKnownTypes()` and call their members in template expressions.
 
 5. **Q:** Does the LINQ Reporting Engine support conditional logic inside templates?  
    **A:** Absolutely. The engine provides `<<if>>`, `<<elseif>>`, and `<<else>>` tags that let you evaluate expressions, check for null values, or compare data directly within the template, making dynamic report generation straightforward.

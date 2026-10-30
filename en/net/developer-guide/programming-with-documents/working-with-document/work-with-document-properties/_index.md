@@ -68,7 +68,7 @@ You cannot add or remove built-in document properties using Aspose.Words. You ca
 
 To add custom document properties with Aspose.Words, use the [Add](https://reference.aspose.com/words/net/aspose.words.properties/customdocumentproperties/add/#add/) method, passing the new property name and the value of the appropriate type. The method returns the newly created **DocumentProperty** object.
 
-To remove custom properties, use the [Remove](https://reference.aspose.com/words/net/aspose.words.properties/documentpropertycollection/remove/) method, passing it the property name to remove, or the [RemoveAt](https://reference.aspose.com/words/net/aspose.words.properties/documentpropertycollection/remove/at) method to remove the property by index. You can also remove all properties using the [Clear](https://reference.aspose.com/words/net/aspose.words.properties/documentpropertycollection/clear/) method.
+To remove custom properties, use the [Remove](https://reference.aspose.com/words/net/aspose.words.properties/documentpropertycollection/remove/) method, passing it the property name to remove, or the [RemoveAt](https://reference.aspose.com/words/net/aspose.words.properties/documentpropertycollection/removeat/) method to remove the property by index. You can also remove all properties using the [Clear](https://reference.aspose.com/words/net/aspose.words.properties/documentpropertycollection/clear/) method.
 
 The following code example checks whether a custom property with a given name exists in a document and adds a few more custom document properties:
 

@@ -26,14 +26,14 @@ Sometimes certain rows in a table require a heading or large blocks of text that
 
 In Aspose.Words, merged cells are represented by the following properties of the [CellFormat](https://reference.aspose.com/words/python-net/aspose.words.tables/cellformat/) class:
 
-- [HorizontalMerge](https://reference.aspose.com/words/python-net/aspose.words.tables/cellformat/horizontal_merge/) which describes if the cell is a part of a horizontal merge of cells
-- [VerticalMerge](https://reference.aspose.com/words/python-net/aspose.words.tables/cellformat/vertical_merge/) which describes if the cell is a part of a vertical merge of cells
+- [horizontal_merge](https://reference.aspose.com/words/python-net/aspose.words.tables/cellformat/horizontal_merge/) which describes if the cell is a part of a horizontal merge of cells
+- [vertical_merge](https://reference.aspose.com/words/python-net/aspose.words.tables/cellformat/vertical_merge/) which describes if the cell is a part of a vertical merge of cells
 
 The values of these properties determine the merge behavior of cells:
 
-- The first cell in a sequence of merged cells will have [CellMerge.First](https://reference.aspose.com/words/python-net/aspose.words.tables/cellmerge/#first)
-- Any subsequently merged cells will have [CellMerge.Previous](https://reference.aspose.com/words/python-net/aspose.words.tables/cellmerge/#previous)
-- A cell that is not merged will have [CellMerge.None](https://reference.aspose.com/words/python-net/aspose.words.tables/cellmerge/#none)
+- The first cell in a sequence of merged cells will have [CellMerge.FIRST](https://reference.aspose.com/words/python-net/aspose.words.tables/cellmerge/#first)
+- Any subsequently merged cells will have [CellMerge.PREVIOUS](https://reference.aspose.com/words/python-net/aspose.words.tables/cellmerge/#previous)
+- A cell that is not merged will have [CellMerge.NONE](https://reference.aspose.com/words/python-net/aspose.words.tables/cellmerge/#none)
 
 {{% alert color="primary" %}}
 
@@ -43,7 +43,7 @@ Sometimes, when loading existing document cells in a table, they will appear mer
 
 ## Check if Cell is Merged
 
-To check if a cell is part of a sequence of merged cells, we simply check the **HorizontalMerge** and **vertical_merge** properties.
+To check if a cell is part of a sequence of merged cells, we simply check the **horizontal_merge** and **vertical_merge** properties.
 
 The following code example shows how to print the horizontal and vertical cell merge type:
 
@@ -61,7 +61,7 @@ To merge cells in a table created with the [DocumentBuilder](https://reference.a
 
 Also, you must remember to clear the merge setting for those cells where no merge is required – this can be done by setting the first non-merge cell to **CellMerge.NONE**. If this is not done, all cells in the table will be merged.
 
-The following code example shows how tocreate a table with two rows where the cells in the first row are merged horizontally:
+The following code example shows how to create a table with two rows where the cells in the first row are merged horizontally:
 
 {{< gist "aspose-words-gists" "b89ea9092bd2486dc056818cf4f73e24" "horizontal-merge.py" >}}
 

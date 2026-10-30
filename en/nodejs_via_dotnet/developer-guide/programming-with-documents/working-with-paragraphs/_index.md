@@ -53,7 +53,7 @@ The following code example shows how to insert a style separator to accommodate 
 
 ## Identify Paragraph Style Separator
 
-Aspose.Words provides a public property [breakIsStyleSeparator](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/breakisstyleseparator/) into a [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/) classallows identifying Style Separator Paragraph as shown in the example given below:
+Aspose.Words provides a public property [breakIsStyleSeparator](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/breakisstyleseparator/) into a [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/) class allows identifying Style Separator Paragraph as shown in the example given below:
 
 {{< gist "aspose-words-gists" "fc7e411a082bdf9bd715a4cf28552213" "get-paragraph-style-separator.js" >}}
 

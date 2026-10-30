@@ -77,7 +77,7 @@ Alternatively, you can use the following template involving the contextual objec
 
 ## FAQ
 1. **Q:** How can I use contextual object member access inside an IF field?  
-   **A:** Place the IF field around the expression that uses contextual access, e.g., `<<if [Age] > 30>>Adult<<endif>>`. The member `Age` is resolved to the current iteration variable, so the condition works without specifying the variable name.
+   **A:** Place an `if` tag around the content and use contextual access in its condition, e.g., `<<if [Age > 30]>>Adult<</if>>`. The member `Age` is resolved to the current iteration variable, so the condition works without specifying the variable name.
 
 2. **Q:** What happens if I try to access a member of an outer iteration variable using contextual access?  
    **A:** Contextual access only resolves to the innermost iteration variable. Attempting to reference an outer variable will result in an error or an empty value. Use the full object identifier (e.g., `outerVar.Property`) for outer scopes.

@@ -28,7 +28,7 @@ After creating a clone of your document, you will be able to edit it and perform
 
 Aspose.Words allows you to clone a document using the [Clone](https://reference.aspose.com/words/cpp/aspose.words/document/clone/) method that performs a deep copy of the document and returns it. In other words, it will get a full copy of the DOM. The `Clone` method speeds up the documents generation, and you only need one line of code to get a copy of your document.
 
-Cloning produces a new document with the same contents as the original, but with a unique copy of each of the original document's [nodes](https://reference.aspose.com/words/cpp/class/aspose.words.node). You can also apply the clone operation to a document node by using the node [Clone](https://reference.aspose.com/words/cpp/aspose.words/node/clone/) method, which allows you to duplicate composite document nodes with and without their child nodes.
+Cloning produces a new document with the same contents as the original, but with a unique copy of each of the original document's [nodes](https://reference.aspose.com/words/cpp/aspose.words/node/). You can also apply the clone operation to a document node by using the node [Clone](https://reference.aspose.com/words/cpp/aspose.words/node/clone/) method, which allows you to duplicate composite document nodes with and without their child nodes.
 
 {{% alert color="primary" %}}
 
@@ -48,7 +48,7 @@ The following code example shows how to clone a document and create a duplicate 
    **A:** Yes. `Clone()` performs a deep copy of the entire document object model, which includes page setup, styles, custom document properties, headers/footers, and any other settings present in the original document.
 
 2. **Q:** Can I clone only a part of a document, for example a single section or a paragraph?  
-   **A:** Yes. You can clone individual nodes using the `Node::Clone()` method. Retrieve the node you want (e.g., a `Section*` or `Paragraph*`) and call `Clone()` on it to obtain an independent copy that can be inserted elsewhere.
+   **A:** Yes. You can clone individual nodes using the `Node::Clone(bool)` method. Retrieve the node you want (e.g., a `Section` or `Paragraph`) and call `Clone(true)` on it to obtain an independent copy that can be inserted elsewhere.
 
 3. **Q:** Is the cloned document independent of the original, so changes to one do not affect the other?  
    **A:** Yes. The clone is a separate `Document` instance with its own copy of all nodes. Modifying the clone will not impact the original document and vice versa.

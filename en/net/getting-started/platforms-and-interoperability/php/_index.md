@@ -49,7 +49,7 @@ Project Aspose.Words .NET for PHP shows how different tasks can be performed usi
 
 Download required libraries mentioned below. These are the required for executing Aspose.Words .NET for PHP examples.
 
-- [Download Aspose.Words for .NET (DLL or MSI) files from download section](https://www.aspose.com/community/files/51/.net-components/aspose.words-for-.net/category1188.aspx)
+- [Download Aspose.Words for .NET (DLL or MSI) files from download section](https://releases.aspose.com/words/net/)
 
 If you download msi version, you will find `Aspose.Words.dll` in installed location which is C:\Program Files (x86)\Aspose\Aspose.Words for .NET\Bin\net2.0 folder by default.
 However in case you have downloaded DLL version you can extract it and then copy `Aspose.Words.dll` from .NET 2.0 folder to your c:\temp folder for ease of use.
@@ -61,7 +61,7 @@ Following releases of running examples are available to download on below mentio
 - [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Plugins/Aspose_Words_NET_for_PHP)
 ### How to configure the source code on Windows Platform
 
-Please follow these simple stepsin order to open and extend the source code while using:
+Please follow these simple steps in order to open and extend the source code while using:
 
 1. Register dll files e.g. `Aspose.Words.dll`.
 
@@ -114,7 +114,7 @@ From the very first days of Aspose, we knew that just giving our customers good 
 
 This is why we offer free support. Anyone who uses our product, whether they have bought them or are using an evaluation, deserves our full attention and respect.
 
-You can log any issues or suggestions related toAspose.Words .NET for PHP using any of the following platforms:
+You can log any issues or suggestions related to Aspose.Words .NET for PHP using any of the following platforms:
 
 - [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/issues)
 ## Extend and Contribute

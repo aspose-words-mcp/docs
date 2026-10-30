@@ -54,7 +54,7 @@ The following code example shows how to open a document from a file:
 
 {{< gist "aspose-words-gists" "ae20848f6cefd3f85ab9bcbbdda340c7" "open-document.java" >}}
 
-You can download the template file of this example from[Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.docx).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.docx).
 
 ### Load from a Stream {#load-from-a-stream}
 
@@ -66,6 +66,6 @@ The following code example shows how to open a document from a stream:
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from[Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.docx).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.docx).
 
 {{% /alert %}}

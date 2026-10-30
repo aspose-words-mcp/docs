@@ -27,7 +27,7 @@ The first method is used by default as it allows the preservation of the origina
 
 To specify that the `Push` method is used to resolve overlapping items, add the following lines to the *<Extension>* element corresponding to a particular renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">

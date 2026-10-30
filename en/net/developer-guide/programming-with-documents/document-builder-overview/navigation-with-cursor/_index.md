@@ -119,10 +119,10 @@ The following code example shows how to move to a specific section and a specifi
    **A:** Call `DocumentBuilder.MoveToBookmark("BookmarkName")`. Ensure the bookmark exists; you can create one with `DocumentBuilder.StartBookmark("BookmarkName")` and `DocumentBuilder.EndBookmark("BookmarkName")`.
 
 3. **Q:** How can I navigate to the header or footer of a particular section?  
-   **A:** Use `DocumentBuilder.MoveToHeaderFooter(HeaderFooterType.HeaderPrimary)` or `HeaderFooterType.FooterPrimary`. If you need to target a specific section, set `DocumentBuilder.CurrentSection` first or pass the section index to the method overload.
+   **A:** Use `DocumentBuilder.MoveToHeaderFooter(HeaderFooterType.HeaderPrimary)` or `HeaderFooterType.FooterPrimary`. To target a specific section, call `DocumentBuilder.MoveToSection(sectionIndex)` first; `MoveToHeaderFooter` then moves to the header or footer of that section.
 
 4. **Q:** How do I move the cursor to a cell inside a table?  
-   **A:** Use `DocumentBuilder.MoveToCell(table, rowIndex, columnIndex)`. Optionally, provide a character offset within the cell to place the cursor at a precise position.
+   **A:** Use `DocumentBuilder.MoveToCell(tableIndex, rowIndex, columnIndex, characterIndex)`. All four arguments are indexes: the table in the current story, the row, the cell, and the character position in the cell (`0` for the start, `-1` for the end).
 
 5. **Q:** How can I move the cursor to the beginning or the end of the document?  
    **A:** Call `DocumentBuilder.MoveToDocumentStart()` to place the cursor at the very start, or `DocumentBuilder.MoveToDocumentEnd()` to place it at the end of the document.

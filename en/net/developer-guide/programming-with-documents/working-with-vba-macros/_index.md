@@ -21,12 +21,12 @@ This page explains how to work with VBA macros, including enabling and modifying
 
 {{% /alert %}}
 
-Visual Basic for Applications (VBA) for Microsoft Word is a simple but powerful programming language that can be used to extend the functionality. Aspose.Words API provides three classesto get access to the VBA project source code:
+Visual Basic for Applications (VBA) for Microsoft Word is a simple but powerful programming language that can be used to extend the functionality. Aspose.Words API provides three classes to get access to the VBA project source code:
 
 - The [VBAProject](https://reference.aspose.com/words/net/aspose.words.vba/vbaproject/) class provides access to VBA project information
 - The [VBAModuleCollection](https://reference.aspose.com/words/net/aspose.words.vba/vbamodulecollection/) class returns the collection of VBA project modules
 - The [VbaModule](https://reference.aspose.com/words/net/aspose.words.vba/vbamodule/) class provides access to the VBA project module
-- The [VbaModuleType](https://reference.aspose.com/words/net/aspose.words.vba/vbamoduletype/) enumeration defines thetypes of a model in a VBA project. The module can be a procedural module, document module, class module, or designer module
+- The [VbaModuleType](https://reference.aspose.com/words/net/aspose.words.vba/vbamoduletype/) enumeration defines the types of a model in a VBA project. The module can be a procedural module, document module, class module, or designer module
 
 ## Create a VBA Project
 
@@ -83,7 +83,7 @@ The following code example shows how to remove some references from the collecti
 ## FAQ
 
 1. **Q:** How can I create a new VBA project in a Word document using Aspose.Words for .NET?  
-   **A:** Use the `Document.VbaProject` property to obtain a `VbaProject` instance, then add a new `VbaModule` to its `Modules` collection. Set the module's `Name` and `Type` (e.g., `VbaModuleType.Procedural`) before saving the document.
+   **A:** Use the `Document.VbaProject` property to obtain a `VbaProject` instance, then add a new `VbaModule` to its `Modules` collection. Set the module's `Name` and `Type` (e.g., `VbaModuleType.ProceduralModule`) before saving the document.
 
 2. **Q:** How do I read the source code of an existing VBA macro?  
    **A:** Retrieve the desired `VbaModule` from `Document.VbaProject.Modules` and access its `SourceCode` property. The property returns the macro's source as a string, which you can inspect or display.

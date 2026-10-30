@@ -21,7 +21,7 @@ This page describes how to convert a document to MHTML and send it via email, de
 
 {{% /alert %}}
 
-Aspose.Words can convert any document to the MHTML (Web Archive) format. This makes it convenient to use Aspose.Words and `Aspose.Email`together.You can load a predefineddocument in any supported format,such as DOC, OOXML, or RTF,into Aspose.Words, fill it with data, savethe resulting documentas MHTML, and then send itbye-mail using `Aspose.Email`.
+Aspose.Words can convert any document to the MHTML (Web Archive) format. This makes it convenient to use Aspose.Words and `Aspose.Email` together. You can load a predefined document in any supported format, such as DOC, OOXML, or RTF, into Aspose.Words, fill it with data, save the resulting document as MHTML, and then send it by e-mail using `Aspose.Email`.
 
 The following code example shows how to convert any document to MHTML and send it by email:
 

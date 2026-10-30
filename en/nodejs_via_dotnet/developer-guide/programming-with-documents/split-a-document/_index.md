@@ -13,14 +13,14 @@ url: /nodejs-net/split-a-document/
 timestamp: 2025-07-09-10-05-05
 ---
 
-*Splitting*or*split a document*is the process of breaking a large document into a greater number of smaller files. There are various reasons to split a file. For example, you only need some pages from a specific document and not the entire one. Or for privacy reasons, you want to share only some parts of a document with others.With the splitting feature, you can get only the required parts of the document and do the necessary actions with them, for example, to mark up, save, or send.
+*Splitting* or *split a document* is the process of breaking a large document into a greater number of smaller files. There are various reasons to split a file. For example, you only need some pages from a specific document and not the entire one. Or for privacy reasons, you want to share only some parts of a document with others. With the splitting feature, you can get only the required parts of the document and do the necessary actions with them, for example, to mark up, save, or send.
 
 Aspose.Words provides you with an efficient way to split one document into multiple documents by headings or sections. You can also split a document by pages or by page ranges. Both splitting options will be described in this article.
 
-To split a documentinto smaller files using Aspose.Words, you need to follow these steps:
+To split a document into smaller files using Aspose.Words, you need to follow these steps:
 
 1. Load the document in any supported format.
-1. Split thedocument.
+1. Split the document.
 1. Save the output documents.
 
 After you split a document, you will be able to open all the output documents that will start with the required pages, text, etc.
@@ -35,16 +35,16 @@ You can try this functionality with our [Free online document splitter](https://
 
 ## Split a Document Using Different Criteria {#split-a-document-using-different-criteria}
 
-Aspose.Words allows you to split EPUB or HTML documents into chapters according to various criteria.In the process, the style and layout of the source document is preserved for the output documents.
+Aspose.Words allows you to split EPUB or HTML documents into chapters according to various criteria. In the process, the style and layout of the source document is preserved for the output documents.
 
-You can specify criteria using the [DocumentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/documentsplitcriteria/)enumeration. So you can divide a document into chapters using one of the following criteria or combine more than one criteria together:
+You can specify criteria using the [DocumentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/documentsplitcriteria/) enumeration. So you can divide a document into chapters using one of the following criteria or combine more than one criteria together:
 
 - heading paragraph,
 - section break,
 - column break,
 - page break.
 
-When saving the output to HTML, Aspose.Words save each individual chapter as a separate HTML file. As a result, the document will be split into multiple HTML files. When saving the output to EPUB, Aspose.Words save the result in a single EPUB file regardless of the [DocumentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/documentsplitcriteria/) value you used.So, using [DocumentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/documentsplitcriteria/) for EPUB documents only affects the appearance of their content in reader applications: content will be divided into chapters and the document will no longer appear continuous.
+When saving the output to HTML, Aspose.Words save each individual chapter as a separate HTML file. As a result, the document will be split into multiple HTML files. When saving the output to EPUB, Aspose.Words save the result in a single EPUB file regardless of the [DocumentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/documentsplitcriteria/) value you used. So, using [DocumentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/documentsplitcriteria/) for EPUB documents only affects the appearance of their content in reader applications: content will be divided into chapters and the document will no longer appear continuous.
 
 {{% alert color="primary" %}}
 
@@ -76,7 +76,7 @@ Aspose.Words also enables you to use section breaks to split documents and save 
 
 There is another way to split the source document into multiple output documents, and you can choose any output format supported by Aspose.Words.
 
-The following code example shows how to splita document into smaller parts by section breaks (without using the [documentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/htmlsaveoptions/documentSplitCriteria/) property):
+The following code example shows how to split a document into smaller parts by section breaks (without using the [documentSplitCriteria](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/htmlsaveoptions/documentSplitCriteria/) property):
 
 {{< gist "aspose-words-gists" "76d266d6b68098eb4e95e484fe85538e" "split-document-by-sections.js" >}}
 
@@ -116,7 +116,7 @@ The following code example shows how to split a document into smaller parts by p
 
 ## Merge the Split Document with Another File {#merge-the-split-document-with-another-file}
 
-Aspose.Words enables you to merge theoutput splitdocument with anotherdocumentto form a newdocument.This can be called document merging.
+Aspose.Words enables you to merge the output split document with another document to form a new document. This can be called document merging.
 
 The following code example shows how to merge a split document with another document:
 
@@ -126,10 +126,10 @@ The following code example shows how to merge a split document with another docu
 ## FAQ
 
 1. **Q:** How can I split a document by specific heading levels in Node.js?  
-   **A:** Use the `documentSplitCriteria` set to `HeadingParagraph` and specify the desired level with `documentSplitHeadingLevel`. Load the document with `new asposewords.Document(...)`, set the criteria on `HtmlSaveOptions`, and call `save`. This splits the document at headings of the chosen level.
+   **A:** Use the `documentSplitCriteria` set to `HeadingParagraph` and specify the desired level with `documentSplitHeadingLevel`. Load the document with `new aw.Document(...)`, set the criteria on `HtmlSaveOptions`, and call `save`. This splits the document at headings of the chosen level.
 
 2. **Q:** What is the easiest way to split a document by page ranges?  
-   **A:** Call the `extractPages(startPage, endPage)` method on the `Document` object. The method returns a new `Document` containing only the pages in the specified range, which you can then save in any supported format.
+   **A:** Call the `extractPages(index, count)` method on the `Document` object, where `index` is the zero-based index of the first page and `count` is the number of pages. The method returns a new `Document` containing only these pages, which you can then save in any supported format.
 
 3. **Q:** Can the split parts be saved directly as PDF files?  
    **A:** Yes. After splitting (by headings, sections, pages, or ranges), simply use `PdfSaveOptions` or call `document.save("output.pdf")` on each resulting `Document` instance to produce PDF files.
@@ -138,4 +138,4 @@ The following code example shows how to merge a split document with another docu
    **A:** Load each split part as a `Document` and use the `appendDocument` method to concatenate them. After appending all parts, save the combined document in the desired format.
 
 5. **Q:** Do I need a license to use the splitting and merging features?  
-   **A:** The splitting and merging APIs are fully functional in the evaluation version, but the output will contain a watermark. To remove watermarks and unlock full capabilities, apply a valid Aspose.Words license using `License license = new License(); license.setLicense("Aspose.Words.lic");`.
+   **A:** The splitting and merging APIs are fully functional in the evaluation version, but the output will contain a watermark. To remove watermarks and unlock full capabilities, apply a valid Aspose.Words license using `const license = new aw.License(); license.setLicense("Aspose.Words.lic");`.

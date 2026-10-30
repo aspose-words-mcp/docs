@@ -165,9 +165,9 @@ The following code example shows how to use typed properties to access nodes of 
    **A:** Access the body of a section and use its typed collection:  
 
    ```python
-   Document doc = aw.Document("input.docx")
-   Body body = doc.first_section.body
-   ParagraphCollection body_paragraphs = body.paragraphs
+   doc = aw.Document("input.docx")
+   body = doc.first_section.body
+   body_paragraphs = body.paragraphs
    ```  
 
    This returns the paragraphs that are directly inside the document body, excluding those in headers, footers, footnotes, etc.

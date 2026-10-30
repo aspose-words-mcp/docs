@@ -71,7 +71,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## How to Insert Barcode on each Document Page {#how-to-insert-barcode-on-each-documen-page}
 
-This example demonstrates you to add the same or different barcodes on all or specific pages of a Word document. There is no direct way to add barcodes on all pages of a document but you can use the **MoveToSection**, **MoveToHeaderFooter** and **insert_image** methods to move to any section or headers/footers and insert the barcode images as you can see in the following code.
+This example demonstrates you to add the same or different barcodes on all or specific pages of a Word document. There is no direct way to add barcodes on all pages of a document but you can use the **move_to_section**, **move_to_header_footer** and **insert_image** methods to move to any section or headers/footers and insert the barcode images as you can see in the following code.
 
 The following code example shows how to insert a barcode image on each page of a document:
 
@@ -113,11 +113,11 @@ The following code example shows how to save images as WMF with RTF save options
 
 ## Related APIs
 
-- [`DocumentBuilder`](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/)
-- [`Shape`](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/)
-- [`ShapeBase`](https://reference.aspose.com/words/python-net/aspose.words.drawing/shapebase/)
-- [`ImageData`](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/image_data/)
-- [`NodeRendererBase.bounds_in_points`](https://reference.aspose.com/words/python-net/aspose.words.rendering/noderendererbase/bounds_in_points/) 
+- [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/)
+- [Shape](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/)
+- [ShapeBase](https://reference.aspose.com/words/python-net/aspose.words.drawing/shapebase/)
+- [image_data](https://reference.aspose.com/words/python-net/aspose.words.drawing/shape/image_data/)
+- [NodeRendererBase.bounds_in_points](https://reference.aspose.com/words/python-net/aspose.words.rendering/noderendererbase/bounds_in_points/) 
 
 ## FAQ
 

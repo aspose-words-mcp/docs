@@ -40,7 +40,7 @@ To start the project, you need to download and install the latest version of Asp
 You can download the latest Aspose.Words at:
 
 - [Aspose](https://products.aspose.com/words/java/)
-- [Maven repository](https://repository.aspose.com/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-words)
+- [Maven repository](https://releases.aspose.com/java/repo/com/aspose/aspose-words/)
 
 ### Installing
 

@@ -41,11 +41,11 @@ You can download the latest Aspose.Words at:
 
 * [Aspose](https://products.aspose.com/words/java/)
 
-* [Maven repository](https://repository.aspose.com/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-words)
+* [Maven repository](https://releases.aspose.com/java/repo/com/aspose/aspose-words/)
 
 ### Installing
 
-You can find the information on how to install Aspose.Words for Java on the [ "Installation"](/words/java/installation/) page.
+You can find the information on how to install Aspose.Words for Java on the ["Installation"](/words/java/installation/) page.
 
 ## Get Started with Aspose.Words
 

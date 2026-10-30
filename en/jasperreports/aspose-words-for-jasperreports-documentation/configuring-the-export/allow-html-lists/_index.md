@@ -13,7 +13,7 @@ timestamp: 2025-10-27-17-45-04
 
 Aspose.Words for JasperReports allows to convert HTML lists with bullets and numbers into Words lists using the **ALLOW_HTML_LISTS** option.
 
-By default, value ofthe **ALLOW_HTML_LISTS**parameter is**false**. This means that Aspose.Words for JasperReports will replace HTML bulleted and numbered lists with plain text. However, you can enable this option by setting it to**true**if you want to convert an HTML list to a Word list.
+By default, value of the **ALLOW_HTML_LISTS** parameter is **false**. This means that Aspose.Words for JasperReports will replace HTML bulleted and numbered lists with plain text. However, you can enable this option by setting it to **true** if you want to convert an HTML list to a Word list.
 
 {{% alert color="primary" %}}
 
@@ -32,7 +32,7 @@ exporter.exportReport();
 
 **In JasperServer:**
 
-{{< highlight html >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="allowHtmlLists" value="true"/>
 </bean>

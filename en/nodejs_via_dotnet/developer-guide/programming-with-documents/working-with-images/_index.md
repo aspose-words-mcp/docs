@@ -17,19 +17,19 @@ Aspose.Words allows users to work with images in a very flexible way. In this ar
 
 ## Inserting an Image
 
-[DocumentBuilder](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/) provides several overloads of thethe [insertImage](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertimage/)method that allows you to insert an inline or floating image. If the image is an EMF or WMF metafile, it will be inserted into the document in metafile format. All other images will be stored in PNG format. The**insertImage**method can use images from different sources:
+[DocumentBuilder](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/) provides several overloads of the [insertImage](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertimage/) method that allows you to insert an inline or floating image. If the image is an EMF or WMF metafile, it will be inserted into the document in metafile format. All other images will be stored in PNG format. The **insertImage** method can use images from different sources:
 
 - From a file or `URL` by passing a string parameter
 - From a stream by passing a `Stream` parameter
 - From a byte array by passing a byte array parameter
 
-For each of the**insertImage**methods, there are further overloads which allow you to insert an image with the following options:
+For each of the **insertImage** methods, there are further overloads which allow you to insert an image with the following options:
 - Inline or floating at a specific position, for example, **insertImage**
-- Percentage scale or custom size, furthermore, the [DocumentBuilder.insertImage](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertImage/)method returns a [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/)object that was just created and inserted so you can further modify properties of the [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/)
+- Percentage scale or custom size, furthermore, the [DocumentBuilder.insertImage](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertImage/) method returns a [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/) object that was just created and inserted so you can further modify properties of the [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/)
 
 ### Inserting an Inline Image
 
-Pass a single string representing a file that contains the image to [insertImage](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertimage/)to insert the image into the document as an inline graphic.
+Pass a single string representing a file that contains the image to [insertImage](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertimage/) to insert the image into the document as an inline graphic.
 
 The following code example shows how to insert an inline image at the cursor position into a document:
 
@@ -43,7 +43,7 @@ The following code example shows how to insert a floating image from a file or `
 
 ## How to Extract Images from a Document
 
-All images are stored inside [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/) nodes in a [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/).To extract all images or images having specific type from the document, follow these steps:
+All images are stored inside [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/) nodes in a [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/). To extract all images or images having specific type from the document, follow these steps:
 
 - Use the [Document.getChildNodes](https://reference.aspose.com/words/nodejs-net/aspose.words/compositenode/getChildNodes/) method to select all [Shape](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shape/) nodes.
 - Iterate through resulting node collections.
@@ -73,7 +73,7 @@ The following code example shows how to insert a barcode image on each page of a
 
 ## Lock Aspect Ratio of Image
 
-The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions. You can lock the aspect ratio of the image using [aspectRatioLocked](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shapebase/aspectratiolocked/). The default value of the shape's aspect ratio depends on the [ShapeType](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shadowtype/). It is `True` for [ShapeType.Image](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shadowtype/) and `False` for other shape types.
+The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions. You can lock the aspect ratio of the image using [aspectRatioLocked](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shapebase/aspectratiolocked/). The default value of the shape's aspect ratio depends on the [ShapeType](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shapetype/). It is `True` for [ShapeType.Image](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing/shapetype/) and `False` for other shape types.
 
 The following code example shows how to work with aspect ratio:
 
@@ -89,7 +89,7 @@ The following code example shows how to use this property:
 
 ## Crop Images
 
-The cropping of an imageusually refers to the removal of the unwantedouter parts of an image to help improve the framing. It is also used for theremoval of some of theportions of an image to increase the focus on a particular area.
+The cropping of an image usually refers to the removal of the unwanted outer parts of an image to help improve the framing. It is also used for the removal of some of the portions of an image to increase the focus on a particular area.
 
 The following code example shows how to achieve this using Aspose.Words API:
 

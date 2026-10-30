@@ -117,7 +117,7 @@ Once installed, it is very easy to start using this control in your ASP.NET appl
 
 | For .NET framework 4.0 and above | For .NET framework 2.0 and above |  |
 | :- | :- | :- |
-| For applications running in .NET framework 4.0 and above in Visual Studio 2010 and above, you should see **ExportGridViewToWord** control in **Aspose** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. | In order you use this control in applications running in .NET 2.0 in any visual studio version make sure that you have added ExportGridViewToWord to your toolbox as per instructions on﻿[8.1.2.1 Downloading and Installing]() under heading **For Visual Studio 2005, 2008 and Express editions** <br>You should see **ExportGridViewToWord** control in **General** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. |  |
+| For applications running in .NET framework 4.0 and above in Visual Studio 2010 and above, you should see **ExportGridViewToWord** control in **Aspose** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. | In order you use this control in applications running in .NET 2.0 in any visual studio version make sure that you have added ExportGridViewToWord to your toolbox as per instructions on [Installing](#installing) under heading **For Visual Studio 2005, 2008 and Express editions** <br>You should see **ExportGridViewToWord** control in **General** Tab in Toolbar as shown below. You can simply drag drop this control onto your ASP.NET page, control or master page just like any other .NET control and get started. |  |
 
 ### Manually adding ExportGridViewToWord control
 
@@ -155,7 +155,7 @@ The following properties are exposed to configure and use cool features provided
 | `ExportButtonText` | string | Export to Word | You can use this property to override existing default text |
 | `ExportButtonCssClass` | string | btn btn-primary | Css Class that is applied to the outer div of the export button. To apply css on button you can use .yourClass input |
 | `ExportInLandscape` | bool | true or false | If true it changes the orientation of the output document to landscape. Default is Portrait |
-|  ||  ||
+|  | |  | |
 | `ExportFileHeading` | string | &lt;h4&gt;GridView Export Example Report&lt;/h4&gt; | You can use html tags to add style to your heading |
 | `ExportOutputFormat` | enum | Doc, Dot, Docx, Docm, Dotx, Dotm, Rtf, Odt, Ott, Txt | Output format of the exported document. Supported formats are Doc, Dot, Docx, Docm, Dotx, Dotm, Rtf, Odt, Ott, Txt |
 | `ExportOutputPathOnServer` | string | c: <br>temp | Local output Disk path on server where a copy of the export is automatically saved. Application must have write access to this path. |

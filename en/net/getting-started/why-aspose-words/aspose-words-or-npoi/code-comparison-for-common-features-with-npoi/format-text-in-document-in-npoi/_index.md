@@ -23,7 +23,7 @@ This page describes how to format document text using NPOI.
 
 ## Aspose.Words - Format Text in Document
 
-Current font formatting is represented by a**Font**object returned by the**DocumentBuilder.Font**property. The**Font**class contains a wide variety of the font properties possible in Microsoft Word.
+Current font formatting is represented by a **Font** object returned by the **DocumentBuilder.Font** property. The **Font** class contains a wide variety of the font properties possible in Microsoft Word.
 
 **C#**
 

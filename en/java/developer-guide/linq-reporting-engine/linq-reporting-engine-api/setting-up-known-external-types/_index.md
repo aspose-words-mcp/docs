@@ -32,13 +32,13 @@ engine.buildReport(...);
    **A:** Create an instance of `ReportingEngine`, then add the class object to the engine's known‑types set via `engine.getKnownTypes().add(YourClass.class);`. After that, call `engine.buildReport(...)` to process the template.
 
 2. **Q:** Which types are already known by the engine without any configuration?  
-   **A:** The engine automatically knows `Object`, `String`, and all Java primitive types (e.g., `int`, `double`, `boolean`) and their wrapper classes. No additional registration is required for these.
+   **A:** The engine automatically knows `Object`, `String`, and all Java primitive types (e.g., `int`, `double`, `boolean`). No additional registration is required for these.
 
 3. **Q:** Can I add several custom types at once?  
-   **A:** Yes. Call `engine.getKnownTypes().addAll(Arrays.asList(TypeA.class, TypeB.class, TypeC.class));` or add them individually in a loop before building the report.
+   **A:** Yes, by calling `add` once per type, e.g., `engine.getKnownTypes().add(TypeA.class); engine.getKnownTypes().add(TypeB.class);`, or in a loop before building the report. `KnownTypeSet` has no method that adds several types at once.
 
 4. **Q:** How can I remove a previously added type from the known‑types set?  
    **A:** Use the `remove` method on the set: `engine.getKnownTypes().remove(UnwantedClass.class);`. This is useful if the class should no longer be accessible in templates.
 
 5. **Q:** Do I need to register primitive wrapper classes (e.g., `Integer`, `Double`) manually?  
-   **A:** No. Primitive types and their corresponding wrapper classes are included by default, so you only need to register user‑defined classes or third‑party types.
+   **A:** Yes, to use their static members. Primitive types are known by default, but wrapper classes are not: add them like any other type, e.g., `engine.getKnownTypes().add(Integer.class)`, before calling `Integer.parseInt(...)` in a template.

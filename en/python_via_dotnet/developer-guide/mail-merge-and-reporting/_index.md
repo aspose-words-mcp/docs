@@ -80,16 +80,16 @@ The following image shows an example of the output merged document as a result o
 ## FAQ
 
 1. **Q:** What data source types can I use with Mail Merge in Aspose.Words for Python?  
-   **A:** In the current Python via .NET version only an array of objects (e.g., a list of dictionaries or a list of custom objects) is supported as the data source. Other data source types such as `DataTable` or `IDataReader` are not yet available but are planned for future releases.
+   **A:** Pass field names and values to `mail_merge.execute(field_names, values)` for a single record, or implement `aw.mailmerging.IMailMergeDataSource` and pass it to `execute` or `execute_with_regions` for many records. .NET data types such as `DataTable` or `IDataReader` are not used in Python.
 
 2. **Q:** Can I use mail‑merge regions (repeating rows) in the Python version?  
-   **A:** No. Mail‑merge regions, which allow a table row to repeat for each record, are not supported in the Python via .NET API at this time. You would need to perform the repetition manually using a loop and `DocumentBuilder` or wait for a future update.
+   **A:** Yes. Mark the region with `TableStart:Name` and `TableEnd:Name` merge fields and call `mail_merge.execute_with_regions` with an `IMailMergeDataSource` whose `table_name` is `Name`. Nested regions are supported through `get_child_data_source`.
 
 3. **Q:** After performing a mail merge, how can I generate a Table of Contents automatically?  
-   **A:** Insert a TOC field (`{ TOC \\o "1-3" \\h \\z \\u }`) in the template before the merge. After the merge completes, call `doc.update_fields()` to refresh the TOC. Example:  
+   **A:** Insert a TOC field (`{ TOC \o "1-3" \h \z \u }`) in the template before the merge. After the merge completes, call `doc.update_fields()` to refresh the TOC. Example:  
 
    ```python
-   doc = Document("TemplateWithToc.docx")
+   doc = aw.Document("TemplateWithToc.docx")
    doc.mail_merge.execute(data)
    doc.update_fields()
    doc.save("ResultWithToc.docx")

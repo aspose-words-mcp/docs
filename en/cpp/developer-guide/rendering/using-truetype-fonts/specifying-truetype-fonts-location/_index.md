@@ -39,7 +39,7 @@ There is a special [SystemFontSource](https://reference.aspose.com/words/cpp/asp
 
 {{< gist "aspose-words-gists" "59118a65c6a0dd4d6856d9ceb07e852e" "fonts-folders.h" >}}
 
-A single instance of the **SystemFontSource** class is defined by default in [FontSettings](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/). On different operating systems, fonts may be located in different places. However, using a **FontSettings** instance for each document is not an optimal solution. In the majority of cases, using [DefaultInstance](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/get_defaultinstance/) should be enough.
+A single instance of the **SystemFontSource** class is defined by default in [FontSettings](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/). On different operating systems, fonts may be located in different places. However, using a **FontSettings** instance for each document is not an optimal solution. In the majority of cases, using [get_DefaultInstance()](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/get_defaultinstance/) should be enough.
 
 Per-document instances are needed only if it is required to use different font sources for different documents, which is a rare case. Using several **FontSettings** instances decreases performance because they do not share cache.
 
@@ -47,18 +47,12 @@ Per-document instances are needed only if it is required to use different font s
 
 In most cases, Windows users do not face significant problems with missed fonts or incorrect layouts. Typically, Aspose.Words goes through a document, and when it encounters a font's link, successfully fetches the font data from the system folder.
 
-On Windows, Aspose.Words first takes all available fonts from the _%windir%\Fonts folder. This setting will work for you most of the time. You only specify your own fonts folders if you need to. Aspose.Words also looks for additional fonts registered in theHKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fontsregistry key. In addition, Windows 10 enables installation of fonts for the current user. Fonts are placed into the %userprofile%\AppData\Local\Microsoft\Windows\Fonts folder and also specified in the HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Fontsregistry, where Aspose.Words will look for these fonts.
+On Windows, Aspose.Words first takes all available fonts from the _%windir%\Fonts folder. This setting will work for you most of the time. You only specify your own fonts folders if you need to. Aspose.Words also looks for additional fonts registered in the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts registry key. In addition, Windows 10 enables installation of fonts for the current user. Fonts are placed into the %userprofile%\AppData\Local\Microsoft\Windows\Fonts folder and also specified in the HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Fonts registry, where Aspose.Words will look for these fonts.
 
 If a document contains embedded fonts, Aspose.Words can read relevant font data from the document and use it to create the document's layout. Documents may also contain links to fonts that are not in the system folders, in which case the following scenarios come to work:
 
 - Users can set up new font sources through the **FontSettings** class
 - Aspose.Words can try to replace the missed font with a similar one
-
-{{% alert color="primary" %}}
-
-Aspose.Words rendering on a server will typically not work with an ASP.NET application configured to run under the Medium Trust level, because it prohibits access to registry and limits access to the file system.
-
-{{% /alert %}}
 
 ### Fonts on Non-Windows Systems
 
@@ -72,15 +66,15 @@ Different Linux distributions may store fonts in different folders. Aspose.Words
 
 #### Where Aspose.Words Looks for TrueType Fonts on Mac OS X
 
-Aspose.Words looks for fonts in the `/Library/Fonts` folder, which is the standard location for TrueType fonts on Mac OS X.While this setting will work for you most of the time, you may need to specify your own fonts folders in the case when you need to.
+Aspose.Words looks for fonts in the `/Library/Fonts` folder, which is the standard location for TrueType fonts on Mac OS X. While this setting will work for you most of the time, you may need to specify your own fonts folders in the case when you need to.
 
 ## Load Fonts from Folder {#loading-fonts-from-folder}
 
-If the document being processed contains links to fonts that are not on the system, or you don't want to add them to the system folder, or you lack permissions, then the best solution would be to add a folder with your own fonts using the [SetFontsSources](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/setfontssources/) method. This will allow to replace the system source with a user source. Aspose.Words will no longer look for fonts in the registry or Windows\Font folder and instead only scan for fonts within the specified folder(s). The [GetFontSources](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/getfontssources/) method will return the corresponding values.
+If the document being processed contains links to fonts that are not on the system, or you don't want to add them to the system folder, or you lack permissions, then the best solution would be to add a folder with your own fonts using the [SetFontsSources](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/setfontssources/) method. This will allow to replace the system source with a user source. Aspose.Words will no longer look for fonts in the registry or Windows\Font folder and instead only scan for fonts within the specified folder(s). The [GetFontsSources](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/getfontssources/) method will return the corresponding values.
 
 ### Specify One or Multiple Font Folders
 
-The [SetFontsFolder](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/setfontsfolder/) and [SetFontsFolders](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/setfontsfolders/) methods are shortcuts to the **SetFontSources** method with one or several [FolderFontSource](https://reference.aspose.com/words/cpp/aspose.words.fonts/folderfontsource/) instances. These methods are used to indicate where Aspose.Words should look for fonts. If a folder does not exist or is not accessible, Aspose.Words just ignores this folder. If all folders, including sources for the font substitution, were ignored, Aspose.Words will use Fanwood font as a default.
+The [SetFontsFolder](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/setfontsfolder/) and [SetFontsFolders](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/setfontsfolders/) methods are shortcuts to the **SetFontsSources** method with one or several [FolderFontSource](https://reference.aspose.com/words/cpp/aspose.words.fonts/folderfontsource/) instances. These methods are used to indicate where Aspose.Words should look for fonts. If a folder does not exist or is not accessible, Aspose.Words just ignores this folder. If all folders, including sources for the font substitution, were ignored, Aspose.Words will use Fanwood font as a default.
 
 The following example demonstrates how to set the folder or source, which Aspose.Words will subsequently use to look for TrueType fonts during rendering or embedding of fonts:
 
@@ -108,9 +102,9 @@ If you don't want to use system fonts at all, Aspose.Words allows you to ignore 
 
 {{< gist "aspose-words-gists" "59118a65c6a0dd4d6856d9ceb07e852e" "default-instance.h" >}}
 
-### PriorityProperty
+### Priority Property
 
-The [Priority](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsourcebase/get_priority/) property is used when there are fonts with the same family name and style in different font sources. In this case Aspose.Words selects the font from the source with the higher priority value. For example, there is an old version of the fontonthe system folder and customer added a new version of the same font in a custom folder.
+The [get_Priority()](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsourcebase/get_priority/) property is used when there are fonts with the same family name and style in different font sources. In this case Aspose.Words selects the font from the source with the higher priority value. For example, there is an old version of the font on the system folder and customer added a new version of the same font in a custom folder.
 
 {{< gist "aspose-words-gists" "59118a65c6a0dd4d6856d9ceb07e852e" "fonts-folders-with-priority.h" >}}
 
@@ -189,7 +183,7 @@ The cache is also suitable for other scenarios when fonts are loaded over the ne
 
 ## Get a List of Available Fonts {#get-a-list-of-available-fonts}
 
-If you want to get the list ofavailablefonts, which, for example, can be used to render a PDF document, you can use the [GetAvailableFonts](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsourcebase/getavailablefonts/) method, as shown in the following code example. The [PhysicalFontInfo](https://reference.aspose.com/words/cpp/aspose.words.fonts/physicalfontinfo/) class specifies information about the physical font available to Aspose.Words font engine:
+If you want to get the list of available fonts, which, for example, can be used to render a PDF document, you can use the [GetAvailableFonts](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsourcebase/getavailablefonts/) method, as shown in the following code example. The [PhysicalFontInfo](https://reference.aspose.com/words/cpp/aspose.words.fonts/physicalfontinfo/) class specifies information about the physical font available to Aspose.Words font engine:
 
 {{< gist "aspose-words-gists" "59118a65c6a0dd4d6856d9ceb07e852e" "available-fonts.h" >}}
 
@@ -203,5 +197,5 @@ If you want to get the list ofavailablefonts, which, for example, can be used to
 - [StreamFontSource](https://reference.aspose.com/words/cpp/aspose.words.fonts/streamfontsource/)
 - [MemoryFontSource](https://reference.aspose.com/words/cpp/aspose.words.fonts/memoryfontsource/)
 - [PhysicalFontInfo](https://reference.aspose.com/words/cpp/aspose.words.fonts/physicalfontinfo/)
-- [FontSettings.DefaultInstance](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/get_defaultinstance/)
+- [FontSettings::get_DefaultInstance()](https://reference.aspose.com/words/cpp/aspose.words.fonts/fontsettings/get_defaultinstance/)
 - [GetSystemFontFolders](https://reference.aspose.com/words/cpp/aspose.words.fonts/systemfontsource/getsystemfontfolders/)

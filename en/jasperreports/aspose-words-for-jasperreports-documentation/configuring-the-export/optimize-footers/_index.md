@@ -12,7 +12,7 @@ timestamp: 2024-01-27-14-07-04
 
 {{% alert color="primary" %}}
 
-By default, `Aspose.Word` for JasperReports tries to optimize footer contents for better fitting footer on the page. This optimization takes place when a bottom-most page element is too low on page by a) decreasing font size of last paragraph break of the footer and b) decreasing footer distance. If you do not like the view of footers, you can disable this footers optimization by setting **OPTIMIZE_FOOTERS** parameter to **false**.
+By default, Aspose.Words for JasperReports tries to optimize footer contents for better fitting footer on the page. This optimization takes place when a bottom-most page element is too low on page by a) decreasing font size of last paragraph break of the footer and b) decreasing footer distance. If you do not like the view of footers, you can disable this footers optimization by setting **OPTIMIZE_FOOTERS** parameter to **false**.
 
 {{% /alert %}}
 
@@ -20,7 +20,7 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
   import com.aspose.words.jasperreports.*;
   AWDocExporter exporter = new AWDocExporter();
   exporter.setParameter(AWExporterParameter.OPTIMIZE_FOOTERS, false);
@@ -31,7 +31,7 @@ In JasperServer:
 
 **XML**
 
-{{< highlight html >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="optimizeFooters" value="false"/>
 </bean>
@@ -43,7 +43,7 @@ In JasperReports:
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
   import com.aspose.words.jasperreports.*;
   AWDocExporter exporter = new AWDocExporter();
   exporter.setParameter(AWExporterParameter.OPTIMIZE_FOOTER_DISTANCE, 16);
@@ -54,7 +54,7 @@ In JasperServer:
 
 **XML**
 
-{{< highlight html >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="optimizeFooterDistance" value="16"/>
 </bean>

@@ -33,7 +33,7 @@ Note that the number of pages in a document affects the conversion time.
 Converting from the DOC or DOCX document format into the PDF format in Aspose.Words is very easy and can be accomplished with just two lines of code that:
 
 1. Load your document into a [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) object using one of its constructors by specifying the document name with its format extension.
-1. Invoke one of the [Document.save](https://reference.aspose.com/words/nodejs-net/aspose.words/document/save/) methodson the [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) object and specify the desired output format as PDF by entering afile name with the “.PDF” extension.
+1. Invoke one of the [Document.save](https://reference.aspose.com/words/nodejs-net/aspose.words/document/save/) methods on the [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) object and specify the desired output format as PDF by entering a file name with the “.PDF” extension.
 
 The following code example shows how to convert a document from DOCX into PDF using the [save](https://reference.aspose.com/words/nodejs-net/aspose.words/document/save/#string) method:
 
@@ -53,24 +53,24 @@ Note that with the same technique, you can convert any flow-layout format docume
 
 ### Convert to Various PDF Standards {#convert-to-various-pdf-standards}
 
-Aspose.Words provides the [PdfCompliance](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfcompliance/) enumeration to support the conversion of DOC orDOCX into various PDF format standards (such as PDF 1.7, PDF 1.5, etc.).
+Aspose.Words provides the [PdfCompliance](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfcompliance/) enumeration to support the conversion of DOC or DOCX into various PDF format standards (such as PDF 1.7, PDF 1.5, etc.).
 
-The following code example demonstrates how to convert a document to PDF 1.7 using [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) with compliance to [PDF17](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfcompliance/#pdf17):
+The following code example demonstrates how to convert a document to PDF 1.7 using [PdfSaveOptions](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfsaveoptions/) with compliance to [Pdf17](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/pdfcompliance/#pdf17):
 
 
 {{< highlight js >}}
 const aw = require('@aspose/words');
 
 let doc = new aw.Document("Rendering.docx");
-let saveOptions = aw.saving.PdfSaveOptions();
-saveOptions.compliance = aw.saving.PdfCompliance.Pdf17;
+let saveOptions = new aw.Saving.PdfSaveOptions();
+saveOptions.compliance = aw.Saving.PdfCompliance.Pdf17;
 
-doc.save("WorkingWithPdfSaveOptions.conversion_to_pdf_17.pdf", save_options);
+doc.save("WorkingWithPdfSaveOptions.conversion_to_pdf_17.pdf", saveOptions);
 {{< /highlight >}}
 
 ## Convert Images to PDF
 
-Converting to PDF is not restricted byMicrosoft Word document formats. Any format supported by Aspose.Words, including programmatically created, can also be converted to PDF. For example, we can convert single-page images, such as JPEG, PNG, BMP, EMF, or WMF, as well as multi-page images, such as TIFF and GIF, to PDF.
+Converting to PDF is not restricted by Microsoft Word document formats. Any format supported by Aspose.Words, including programmatically created, can also be converted to PDF. For example, we can convert single-page images, such as JPEG, PNG, BMP, EMF, or WMF, as well as multi-page images, such as TIFF and GIF, to PDF.
 
 The following code example shows how to convert JPEG and TIFF images to PDF:
 
@@ -84,7 +84,7 @@ When saving to PDF, you can specify whether you want to optimize the output. To 
 
 {{% alert color="primary" %}}
 
-Using the **OptimizeOutput** property may affect the accuracy of content display.
+Using the **optimizeOutput** property may affect the accuracy of content display.
 
 {{% /alert %}}
 
@@ -96,7 +96,7 @@ When saving to PDF, you can specify whether you want to optimize the output. To 
 
 {{% alert color="primary" %}}
 
-Using the **OptimizeOutput** property may affect the accuracy of content display.
+Using the **optimizeOutput** property may affect the accuracy of content display.
 
 {{% /alert %}}
 
@@ -120,13 +120,13 @@ Using the **OptimizeOutput** property may affect the accuracy of content display
    ```
 
 2. **Q:** How can I create a PDF that complies with a specific PDF standard (e.g., PDF/A‑1b or PDF 1.7)?  
-   **A:** Use `aw.saving.PdfSaveOptions`, set its `compliance` property to the desired `PdfCompliance` value, and pass the options to `Document.save`.  
+   **A:** Use `aw.Saving.PdfSaveOptions`, set its `compliance` property to the desired `PdfCompliance` value, and pass the options to `Document.save`.  
 
    ```js
    const aw = require('@aspose/words');
    let doc = new aw.Document("Report.docx");
-   let options = new aw.saving.PdfSaveOptions();
-   options.compliance = aw.saving.PdfCompliance.PdfA1b; // or Pdf17, PdfA2b, etc.
+   let options = new aw.Saving.PdfSaveOptions();
+   options.compliance = aw.Saving.PdfCompliance.PdfA1b; // or Pdf17, PdfA2u, etc.
    doc.save("Report_PDF_A1b.pdf", options);
    ```
 
@@ -136,7 +136,7 @@ Using the **OptimizeOutput** property may affect the accuracy of content display
    ```js
    const aw = require('@aspose/words');
    let doc = new aw.Document("LargeDoc.docx");
-   let options = new aw.saving.PdfSaveOptions();
+   let options = new aw.Saving.PdfSaveOptions();
    options.optimizeOutput = true;
    doc.save("LargeDoc_optimized.pdf", options);
    ```

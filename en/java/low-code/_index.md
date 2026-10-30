@@ -27,15 +27,15 @@ It is important to note that the LowCode API does not allow you to change the do
 
 The `Aspose.Words LowCode API` currently supports:
 
-* **Converting** documents from one format to another –the [Converter](https://reference.aspose.com/words/java/com.aspose.words/converter/) class
-* **Comparing** documents –the [Comparer](https://reference.aspose.com/words/java/com.aspose.words/comparer/) class
-* **Mail merging** –the [MailMerger](https://reference.aspose.com/words/java/com.aspose.words/mailmerger/) class
-* **Reporting** based on LINQ syntax –the [ReportBuilder](https://reference.aspose.com/words/java/com.aspose.words/reportbuilder/) class
-* **Merging** documents –the [Merger](https://reference.aspose.com/words/java/com.aspose.words/merger/) class
-* **Search and replace** –the [Replacer](https://reference.aspose.com/words/java/com.aspose.words/replacer/)class
-* **Digital signing** of documents –the [DigitalSignature](https://reference.aspose.com/words/java/com.aspose.words/digitalsignature/) class
-* **Splitting** a document into parts using different criteria –the [Splitter](https://reference.aspose.com/words/java/com.aspose.words/splitter/) class
-* Adding a **watermark** –the [Watermarker](https://reference.aspose.com/words/java/com.aspose.words/watermarker/) class
+* **Converting** documents from one format to another – the [Converter](https://reference.aspose.com/words/java/com.aspose.words/converter/) class
+* **Comparing** documents – the [Comparer](https://reference.aspose.com/words/java/com.aspose.words/comparer/) class
+* **Mail merging** – the [MailMerger](https://reference.aspose.com/words/java/com.aspose.words/mailmerger/) class
+* **Reporting** based on LINQ syntax – the [ReportBuilder](https://reference.aspose.com/words/java/com.aspose.words/reportbuilder/) class
+* **Merging** documents – the [Merger](https://reference.aspose.com/words/java/com.aspose.words/merger/) class
+* **Search and replace** – the [Replacer](https://reference.aspose.com/words/java/com.aspose.words/replacer/) class
+* **Digital signing** of documents – the [DigitalSignature](https://reference.aspose.com/words/java/com.aspose.words/digitalsignature/) class
+* **Splitting** a document into parts using different criteria – the [Splitter](https://reference.aspose.com/words/java/com.aspose.words/splitter/) class
+* Adding a **watermark** – the [Watermarker](https://reference.aspose.com/words/java/com.aspose.words/watermarker/) class
 
 {{% alert color="primary" %}}
 

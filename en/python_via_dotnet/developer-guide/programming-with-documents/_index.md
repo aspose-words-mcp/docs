@@ -63,7 +63,7 @@ To learn more about Aspose.Words features when programming with documents, selec
 - [Working with SmartArt Cold Rendering](/words/python-net/working-with-smartart-cold-rendering/)
 - [Working with Watermark](/words/python-net/working-with-watermark/)
 - [Generate a Custom BarCode Image](/words/python-net/how-to-generate-a-custom-barcode-image-for-displaybarcode-field/)
-- [Working with Ole Objects and Online Video](/words/python-net/working-with-ole-objects-and-online-video/)
+- [Working with Ole Objects and Online Video](/words/python-net/working-with-ole-objects/)
 - [Working with Fields](/words/python-net/working-with-fields/)
 - [Working with Form Fields](/words/python-net/working-with-form-fields/)
 - [Working with Content Control SDT](/words/python-net/working-with-content-control-sdt/)

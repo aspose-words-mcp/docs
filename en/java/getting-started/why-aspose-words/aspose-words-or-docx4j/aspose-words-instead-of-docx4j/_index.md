@@ -40,7 +40,7 @@ To start the project, you need to download and install the latest version of Asp
 You can download the latest Aspose.Words at:
 
 - [Aspose](https://products.aspose.com/words/java/)
-- [Maven repository](https://repository.aspose.com/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-words)
+- [Maven repository](https://releases.aspose.com/java/repo/com/aspose/aspose-words/)
 
 ### Installing
 
@@ -69,4 +69,4 @@ For more information on Aspose.Words technical support, take a look at the [supp
 
 ## Extend and Contribute
 
-Aspose.Words Java for Docx4j is open source and its source code is available on [our GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j). Developers are encouraged to download the source code and extend the functionality as per their own requirements.
+Aspose.Words Java for Docx4j is open source and its source code is available on [our GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose_Words_Java_for_Docx4j). Developers are encouraged to download the source code and extend the functionality as per their own requirements.

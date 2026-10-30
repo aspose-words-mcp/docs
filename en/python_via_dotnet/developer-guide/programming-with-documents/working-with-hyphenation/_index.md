@@ -77,7 +77,7 @@ You can download the template file of this example from [Aspose.Words GitHub](ht
 
 {{% /alert %}}
 
-As an alternative to pre-registering hyphenation dictionaries, it is possible to register only required hyphenation dictionaries “by request”. To achieve that, implement the [IHyphenationCallback](https://reference.aspose.com/words/python-net/aspose.words/ihyphenationcallback/) interface and use the static callback [Callback](https://reference.aspose.com/words/python-net/aspose.words/hyphenation/callback/).
+As an alternative to pre-registering hyphenation dictionaries, it is possible to register only required hyphenation dictionaries “by request”. To achieve that, implement the [IHyphenationCallback](https://reference.aspose.com/words/python-net/aspose.words/ihyphenationcallback/) interface and use the static callback [callback](https://reference.aspose.com/words/python-net/aspose.words/hyphenation/callback/).
 
 The following code example shows how to implement the **IHyphenationCallback** interface:
 
@@ -91,7 +91,7 @@ However, the hyphenation feature can be used in Aspose.Words to insert hyphens i
 
 ## Hyphenation and Justification (H&J)
 
-Microsoft Word has complex logic for choosing a breakpoint if text is justified and hyphenation is enabled. In short, Microsoft Word may prefer to shrink or stretch spaces to avoid line hyphenation. Most probably this logic is based on [Knuth's article](https://www.eprg.org/G53DOC/pdfs/knuth-plass-breaking.pdf).
+Microsoft Word has complex logic for choosing a breakpoint if text is justified and hyphenation is enabled. In short, Microsoft Word may prefer to shrink or stretch spaces to avoid line hyphenation. Most probably this logic is based on [Knuth's article](https://doi.org/10.1002/spe.4380111102).
 
 Aspose.Words implements its own H&J algorithm that gives the same result as Microsoft Word and provides identical line breaking in the output document.
 

@@ -69,7 +69,7 @@ Consider the following example. Assume that you have the `Manager` and `Contract
 {{< highlight csharp >}}
 public class Manager
 {
-   public String getName getName() { ... }
+   public String getName() { ... }
    public Iterable<Contract> getContracts() { ... }
    ...
 }
@@ -200,3 +200,7 @@ In this case, the engine produces a report as follows.
 ![charts-series-title-name-text-dynamically-aspose-words-java-2](graph-9.png)
 
 **Note –** You can normally apply this approach to a chart dynamically populated with data.
+
+The following code example demonstrates how to set chart series names dynamically.
+
+{{< gist "aspose-words-gists" "03002c5226758f1b335cdbb07c0efb4b" "chart-series-name-dynamically.java" >}}

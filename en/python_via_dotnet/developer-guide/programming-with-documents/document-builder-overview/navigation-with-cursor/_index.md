@@ -42,7 +42,7 @@ The following code example shows how to move the **DocumentBuilder** to differen
 
 {{< gist "aspose-words-gists" "28dae30609edfc01f5106ff23c7a81f1" "move-to-node.py" >}}
 
-But besides the basic **MoveTo** method, there are more specific ones.
+But besides the basic **move_to** method, there are more specific ones.
 
 ### Navigate to Beginning or End of a Document
 
@@ -86,7 +86,7 @@ The following code example shows how to move document builder cursor to a docume
 
 ### Navigate to a Section or Paragraph
 
-You can move to a specific section or paragraph by using the [move_to_paragraph](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_paragraph/) or [move_to_section](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_section/) methods. In addition, you can specify an index to move the cursor to any position or a specified character in a paragraph within the **MoveToParagraph** method.
+You can move to a specific section or paragraph by using the [move_to_paragraph](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_paragraph/) or [move_to_section](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_section/) methods. In addition, you can specify an index to move the cursor to any position or a specified character in a paragraph within the **move_to_paragraph** method.
 
 The following code example shows how to move to a specific section and a specific paragraph in a document:
 
@@ -94,19 +94,19 @@ The following code example shows how to move to a specific section and a specifi
 
 ## Related APIs
 
-- [DocumentBuilder.CurrentNode](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/current_node/)
-- [DocumentBuilder.CurrentParagraph](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/current_paragraph/)
-- [DocumentBuilder.CurrentSection](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/current_section/)
-- [DocumentBuilder.MoveTo](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to/)
-- [DocumentBuilder.MoveToBookmark](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_bookmark/)
-- [DocumentBuilder.MoveToCell](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_cell/)
-- [DocumentBuilder.MoveToField](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_field/)
-- [DocumentBuilder.MoveToMergeField](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_merge_field/)
-- [DocumentBuilder.MoveToHeaderFooter](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_header_footer/)
-- [DocumentBuilder.MoveToParagraph](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_paragraph/)
-- [DocumentBuilder.MoveToSection](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_section/)
-- [DocumentBuilder.MoveToDocumentStart](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_document_start/)
-- [DocumentBuilder.MoveToDocumentEnd](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_document_end/) 
+- [DocumentBuilder.current_node](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/current_node/)
+- [DocumentBuilder.current_paragraph](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/current_paragraph/)
+- [DocumentBuilder.current_section](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/current_section/)
+- [DocumentBuilder.move_to](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to/)
+- [DocumentBuilder.move_to_bookmark](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_bookmark/)
+- [DocumentBuilder.move_to_cell](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_cell/)
+- [DocumentBuilder.move_to_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_field/)
+- [DocumentBuilder.move_to_merge_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_merge_field/)
+- [DocumentBuilder.move_to_header_footer](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_header_footer/)
+- [DocumentBuilder.move_to_paragraph](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_paragraph/)
+- [DocumentBuilder.move_to_section](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_section/)
+- [DocumentBuilder.move_to_document_start](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_document_start/)
+- [DocumentBuilder.move_to_document_end](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_document_end/) 
 
 ## FAQ
 
@@ -117,10 +117,10 @@ The following code example shows how to move to a specific section and a specifi
    **A:** Call `DocumentBuilder.move_to_bookmark("BookmarkName")`. Replace `"BookmarkName"` with the name you assigned to the bookmark when creating it. The cursor will be placed at the start of that bookmark.
 
 3. **Q:** What is the correct way to navigate to a particular cell in a table?  
-   **A:** Use `DocumentBuilder.move_to_cell(table, row_index, column_index)`. Provide the `Table` object and zero‑based indices for the row and column. Optionally, you can pass a character offset to position the cursor inside the cell.
+   **A:** Use `DocumentBuilder.move_to_cell(table_index, row_index, column_index, character_index)`. Pass the zero‑based indices of the table, row and column, and the character offset inside the cell (`0` for the start of the cell).
 
 4. **Q:** How can I move the cursor to the header or footer of a document?  
-   **A:** Invoke `DocumentBuilder.move_to_header_footer(HeaderFooterType.HEADER, header_index)` or `DocumentBuilder.move_to_header_footer(HeaderFooterType.FOOTER, footer_index)`. The `header_index`/`footer_index` selects which header/footer (primary, first, even) you want to target.
+   **A:** Invoke `DocumentBuilder.move_to_header_footer(HeaderFooterType.HEADER_PRIMARY)` or `DocumentBuilder.move_to_header_footer(HeaderFooterType.FOOTER_PRIMARY)`. Use `HEADER_FIRST`/`HEADER_EVEN` (or `FOOTER_FIRST`/`FOOTER_EVEN`) to target the first-page or even-page header/footer.
 
 5. **Q:** How do I quickly move the cursor to the very start or end of the document?  
    **A:** Use `DocumentBuilder.move_to_document_start()` to place the cursor at the beginning, and `DocumentBuilder.move_to_document_end()` to place it at the end of the document. These methods are useful for inserting content at the document boundaries.

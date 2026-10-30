@@ -69,10 +69,10 @@ To extract the content from your document you need to call the **extract_content
 
 However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc. Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
 
-1. **start_node** and **EndNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block level ([Paragraph](https://reference.aspose.com/words/python-net/aspose.words/paragraph/) , [Table](https://reference.aspose.com/words/python-net/aspose.words.tables/table/) ) or inline level (e.g [Run](https://reference.aspose.com/words/python-net/aspose.words/run/) , [FieldStart](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldstart/) , [BookmarkStart](https://reference.aspose.com/words/python-net/aspose.words.bookmarkstart/) etc.):
+1. **start_node** and **EndNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block level ([Paragraph](https://reference.aspose.com/words/python-net/aspose.words/paragraph/) , [Table](https://reference.aspose.com/words/python-net/aspose.words.tables/table/) ) or inline level (e.g [Run](https://reference.aspose.com/words/python-net/aspose.words/run/) , [FieldStart](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldstart/) , [BookmarkStart](https://reference.aspose.com/words/python-net/aspose.words/bookmarkstart/) etc.):
    1. To pass a field you should pass the corresponding **FieldStart** object
-   1. To pass bookmarks, the **BookmarkStart** and [BookmarkEnd](https://reference.aspose.com/words/python-net/aspose.words.bookmarkend/) nodes should be passed
-   1. To pass comments, the [CommentRangeStart](https://reference.aspose.com/words/python-net/aspose.words.commentrangestart/) and [CommentRangeEnd](https://reference.aspose.com/words/python-net/aspose.words.commentrangeend/) nodes should be used
+   1. To pass bookmarks, the **BookmarkStart** and [BookmarkEnd](https://reference.aspose.com/words/python-net/aspose.words/bookmarkend/) nodes should be passed
+   1. To pass comments, the [CommentRangeStart](https://reference.aspose.com/words/python-net/aspose.words/commentrangestart/) and [CommentRangeEnd](https://reference.aspose.com/words/python-net/aspose.words/commentrangeend/) nodes should be used
 1. **is_inclusive**. Defines if the markers are included in the extraction or not. If this option is set to false and the same node or consecutive nodes are passed, then an empty list will be returned:
    1. If a **FieldStart** node is passed then this option defines if the whole field is to be included or excluded.
    1. If a **BookmarkStart** or **BookmarkEnd** node is passed, this option defines if the bookmark is included or just the content between the bookmark range.
@@ -150,7 +150,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content using a Field
 
-To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not. Let’s extract the content between the “FullName” merge field and a paragraph in the document. We use the [FieldStart](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldstart/) method of [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words.documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
+To use a field as marker, the `FieldStart` node should be passed. The last parameter to the `ExtractContent` method will define if the entire field is to be included or not. Let’s extract the content between the “FullName” merge field and a paragraph in the document. We use the [FieldStart](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldstart/) method of [DocumentBuilder](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/) class. This will return the **FieldStart** node from the name of merge field passed to it.
 
 In our case let’s set the last parameter passed to the **extract_content** method to `False` to exclude the field from the extraction. We will render the extracted content to PDF.
 
@@ -201,7 +201,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 The ways to retrieve text from the document are:
 
 - Use [Document.save](https://reference.aspose.com/words/python-net/aspose.words/document/save/) with [SaveFormat.TEXT](https://reference.aspose.com/words/python-net/aspose.words/saveformat/#text) to save as plain text into a file or stream
-- Use [Node.to_string](https://reference.aspose.com/words/python-net/aspose.words/node/to_string/) and pass the **SaveFormat.Text** parameter. Internally, this invokes save as text into a memory stream and returns the resulting string
+- Use [Node.to_string](https://reference.aspose.com/words/python-net/aspose.words/node/to_string/) and pass the **SaveFormat.TEXT** parameter. Internally, this invokes save as text into a memory stream and returns the resulting string
 - Use [Node.get_text](https://reference.aspose.com/words/python-net/aspose.words/node/get_text/) to retrieve text with all Microsoft Word control characters including field codes
 - Implement a custom [DocumentVisitor](https://reference.aspose.com/words/python-net/aspose.words/documentvisitor/) to perform customized extraction
 
@@ -209,7 +209,7 @@ The ways to retrieve text from the document are:
 
 A Word document can contains control characters that designate special elements such as field, end of cell, end of section etc. The full list of possible Word control characters is defined in the **ControlChar** class. The **Node.get_text** method returns text with all of the control character characters present in the node.
 
-Calling **to_string** returns the plain text representation of the document only without control characters. For further information on exporting as plain text see following section **"Using SaveFormat.Text"**.
+Calling **to_string** returns the plain text representation of the document only without control characters. For further information on exporting as plain text see following section **"Using SaveFormat.TEXT"**.
 
 The following code example shows the difference between calling the **get_text** and **to_string** methods on a node:
 
@@ -230,7 +230,7 @@ The following code example shows how to extract images from a document:
 - [Run](https://reference.aspose.com/words/python-net/aspose.words/run/)
 - [FieldStart](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldstart/)
 - [FieldEnd](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldend/)
-- [BookmarkStart](https://reference.aspose.com/words/python-net/aspose.words/bookmark/bookmark_start/)
-- [BookmarkEnd](https://reference.aspose.com/words/python-net/aspose.words/bookmark/bookmark_end/)
+- [BookmarkStart](https://reference.aspose.com/words/python-net/aspose.words/bookmarkstart/)
+- [BookmarkEnd](https://reference.aspose.com/words/python-net/aspose.words/bookmarkend/)
 - [CommentRangeStart](https://reference.aspose.com/words/python-net/aspose.words/commentrangestart/)
 - [CommentRangeEnd](https://reference.aspose.com/words/python-net/aspose.words/commentrangeend/)

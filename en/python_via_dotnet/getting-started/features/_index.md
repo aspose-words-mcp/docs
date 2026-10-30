@@ -68,7 +68,7 @@ Aspose.Words now provides high fidelity rendering of document pages.
 | Layout document into pages with high fidelity (exactly like Microsoft Word® would do that) to all the formats below. | {{< emoticons/tick >}} |
 | Render individual pages or complete documents to PDF or XPS. | {{< emoticons/tick >}} |
 | Render document pages to BMP images | {{< emoticons/tick >}} |
-| Render document pages to images (PNG, EMF, JPEG,GIF). | {{< emoticons/tick >}} |
+| Render document pages to images (PNG, EMF, JPEG, GIF). | {{< emoticons/tick >}} |
 | Render individual shapes from the document into raster or vector images. | {{< emoticons/tick >}} |
 | Specify image resolution, quality, compression and other options. | {{< emoticons/tick >}} |
 | Render pages or shapes to a .NET Graphics object with transforms, to a specific size. | {{< emoticons/tick >}} |
@@ -154,10 +154,10 @@ LINQ Reporting Engine is an advanced reporting tool enabling you to generate doc
 ## FAQ
 
 1. **Q:** What new features have been added to Aspose.Words for Python via .NET in the last four months?  
-   **A:** The product release notes list all recent enhancements. In the past four months the library received updates such as improved PDF/A‑2b compliance, new image rendering options (including GIF support), enhanced mail‑merge region handling, and additional conversion options for EPUB and XPS. See the “Release Notes” section of the documentation for the complete list.
+   **A:** The release notes list the new features and improvements of every version; see the “Release Notes” section of the documentation.
 
 2. **Q:** Can an Aspose.Total.NET license be used with Aspose.Words for Python via .NET?  
-   **A:** Yes. The Aspose.Total.NET license file contains a bundled license for all Aspose .NET components, including Aspose.Words. Load the license in Python with `license = aw.License(); license.set_license("Aspose.Total.NET.lic")`. The same license works across supported platforms.
+   **A:** No. A .NET license is not valid for Aspose.Words for Python via .NET. Use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`), and load it with `license = aw.License(); license.set_license("Aspose.Words.Python.NET.lic")`.
 
 3. **Q:** Does Aspose.Words for Python via .NET run on Linux and macOS, and what are the system requirements?  
    **A:** The library is cross‑platform and runs on Windows, macOS (x86_64 or arm64) and many Linux distributions. Required components are GCC 6 or newer, the .NET Core runtime libraries (the runtime itself is not required), and the shared `libpython` library for the Python version you use. Detailed Linux/macOS prerequisites are described in the “Supported Platforms” section of this page.
@@ -166,4 +166,4 @@ LINQ Reporting Engine is an advanced reporting tool enabling you to generate doc
    **A:** No. Creating, updating, or rebuilding a TOC is fully functional in the evaluation version. However, the evaluation version adds a watermark to the output document. A valid license removes the watermark but is not required for the TOC functionality itself.
 
 5. **Q:** How can I extract insertion and deletion blocks from a document comparison using Aspose.Words for Python via .NET?  
-   **A:** Perform a comparison with `doc.compare(otherDoc, "author", DateTime.now())`. The resulting document contains `Revision` objects. Iterate the `RevisionCollection` and check `revision.type` for `RevisionType.INSERTION` or `RevisionType.DELETION`. The text of each revision can be accessed via `revision.get_text()`. This allows you to collect all inserted or deleted blocks programmatically.
+   **A:** Perform a comparison with `doc.compare(other_doc, "author", datetime.now())`. The resulting document contains `Revision` objects. Iterate the `RevisionCollection` and check `revision.revision_type` for `RevisionType.INSERTION` or `RevisionType.DELETION`. The text of each revision can be accessed via `revision.parent_node.get_text()`. This allows you to collect all inserted or deleted blocks programmatically.

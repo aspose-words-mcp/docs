@@ -21,13 +21,13 @@ This page describes how to locate field properties in a document programmaticall
 
 {{% /alert %}}
 
-A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words.documentbuilder/).[InsertField](https://reference.aspose.com/words/java/com.aspose.words.documentbuilder/#insertField-int-boolean) returns a [Field](https://reference.aspose.com/words/java/com.aspose.words.field/) object. This is a faсade class that provides useful methods to quickly find some properties of a field.
+A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/).[insertField()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertField-int-boolean) returns a [Field](https://reference.aspose.com/words/java/com.aspose.words/field/) object. This is a facade class that provides useful methods to quickly find some properties of a field.
 
 The following code example shows how to find the field code and field result:
 
 {{< gist "aspose-words-gists" "75e4246a1d11ac29064f36124af0accc" "field-code.java" >}}
 
-Note if you are only looking for the names of merge fields in a document, then you can instead use the built-in [GetFieldNames](https://reference.aspose.com/words/java/com.aspose.words.mailmerge/#getFieldNames) method.
+Note if you are only looking for the names of merge fields in a document, then you can instead use the built-in [getFieldNames()](https://reference.aspose.com/words/java/com.aspose.words/mailmerge/#getFieldNames) method.
 
 The following code example shows how to get names of all merge fields in a document:
 

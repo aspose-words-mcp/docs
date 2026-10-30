@@ -1,4 +1,4 @@
-﻿---
+---
 title: Introducing the product
 second_title: Aspose.Words for SharePoint
 articleTitle: Introducing Aspose.Words for SharePoint
@@ -38,7 +38,6 @@ Use Aspose.Words for SharePoint with the following products:
 - Microsoft SharePoint Server 2013
 - Microsoft SharePoint Server 2016
 - Microsoft SharePoint Server 2019
-- x32 and x64 servers supported.
 
 There are no additional system requirements.
 
@@ -67,7 +66,7 @@ Start a report from a report template.
 ![todo:image_alt_text](introducing-aspose-words-for-sharepoint-4.png)
 
 
-Aspose.Words for SharePoint lets you enter report parameters and chose destination format and location.
+Aspose.Words for SharePoint lets you enter report parameters and choose destination format and location.
 
 **Report settings**
 

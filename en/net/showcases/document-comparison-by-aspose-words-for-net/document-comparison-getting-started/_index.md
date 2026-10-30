@@ -54,7 +54,6 @@ Document Comparison by Aspose.Words for .NET is provided as a Visual Studio proj
 
 1. Download the ZIP file from any of the following publicly sources:
    - [GitHub](https://github.com/aspose-words/Aspose.Words-for-.NET)
-   - [CodePlex](https://worddocumentcomparison.codeplex.com/)
 
 2. Unzip to any folder.
 3. Open the solution file in Microsoft Visual Studio.
@@ -63,4 +62,4 @@ Also, you can watch [a demo video on Youtube]( https://www.youtube.com/watch?v=B
 
 ## Contribution
 
-All our Showcase projects are open source and [MIT licensed](https://worddocumentcomparison.codeplex.com/license). You can freely use the whole project or part of it in your own applications. We would be happy if you would like to contribute by suggesting or adding a new feature or improving it so that others could also benefit from it.
+All our Showcase projects are open source and [MIT licensed](https://github.com/aspose-words/Aspose.Words-for-.NET/blob/master/LICENSE). You can freely use the whole project or part of it in your own applications. We would be happy if you would like to contribute by suggesting or adding a new feature or improving it so that others could also benefit from it.

@@ -20,14 +20,14 @@ Aspose.Words for SharePoint makes it possible to convert and combine word docume
 
 {{% /alert %}}
 
-## Aspose.Words for SharePointResources
+## Aspose.Words for SharePoint Resources
 
 The following are the links to some useful resources you may need to accomplish your tasks.
 
 - [Aspose.Words for SharePoint Online Documentation](/words/sharepoint/)
-- [Aspose.Words for SharePointFeatures](/words/sharepoint/features/)
+- [Aspose.Words for SharePoint Features](/words/sharepoint/features/)
 - [Aspose.Words for SharePoint Release Notes](https://releases.aspose.com/words/sharepoint/release-notes/)
-- [Aspose.Words for SharePointProduct Page](https://products.aspose.com/words/sharepoint/)
+- [Aspose.Words for SharePoint Product Page](https://products.aspose.com/words/sharepoint/)
 - [Download Aspose.Words for SharePoint](https://releases.aspose.com/words/sharepoint/)
 - [Aspose.Words for SharePoint Free Support Forum](https://forum.aspose.com/c/words/8)
 - [Aspose.Words for SharePoint Paid Support Helpdesk](https://helpdesk.aspose.com/)

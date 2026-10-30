@@ -26,7 +26,7 @@ Below is the description of the modes.
 
 To enable this mode, add the following lines to the *<Extension>* element corresponding to a particular renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">
@@ -41,7 +41,7 @@ To enable this mode, add the following lines to the *<Extension>* element corres
 
 To enable this mode, add the following lines to the *<Extension>* element corresponding to a particular renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">
@@ -56,7 +56,7 @@ To enable this mode, add the following lines to the *<Extension>* element corres
 
 To enable this mode, add the following lines to the *<Extension>* element corresponding to a particular renderer:
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <Render>
 ...
 <Extension Name="AWDOC" Type="Aspose.Words.ReportingServices.DocRenderer,Aspose.Words.ReportingServices">

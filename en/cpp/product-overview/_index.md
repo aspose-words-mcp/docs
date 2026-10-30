@@ -33,7 +33,7 @@ Using Aspose.Words for C++ in your project gives you the following benefits:
 * Performance and scalability
 * Minimal learning curve
 
-The following diagram shows the main features of Aspose.Words for С++ and how they relate to each other.
+The following diagram shows the main features of Aspose.Words for C++ and how they relate to each other.
 
 <img src="aspose-words-product-features-overview.png" alt="aspose_words-product-features-overview" style="width:800px"/>
 
@@ -85,7 +85,7 @@ Although there are over 150 public classes and enumerations in Aspose.Words, the
 
 Developers who have previously used Microsoft Word Automation in their projects will find the names and behavior of many classes, methods, and properties familiar.
 
-[Document](https://reference.aspose.com/words/cpp/aspose.words/document/), [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), [Bookmark](https://reference.aspose.com/words/cpp/aspose.words/bookmark/), [Range](https://reference.aspose.com/words/cpp/aspose.words/range/), [Section.PageSetup](https://reference.aspose.com/words/cpp/aspose.words/section/get_pagesetup/) and [Paragraph.ParagraphFormat](https://reference.aspose.com/words/cpp/aspose.words/paragraph/get_paragraphformat/) are some of the Aspose.Words classes. At the same time, Aspose.Words is quite different from the Microsoft Word Object Model in that it represents a document as a tree of objects, more like an XML DOM tree. If you have worked with any XML DOM library, you will find it is easy to understand and work with Aspose.Words.
+[Document](https://reference.aspose.com/words/cpp/aspose.words/document/), [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), [Bookmark](https://reference.aspose.com/words/cpp/aspose.words/bookmark/), [Range](https://reference.aspose.com/words/cpp/aspose.words/range/), [Section::get_PageSetup()](https://reference.aspose.com/words/cpp/aspose.words/section/get_pagesetup/) and [Paragraph::get_ParagraphFormat()](https://reference.aspose.com/words/cpp/aspose.words/paragraph/get_paragraphformat/) are some of the Aspose.Words classes. At the same time, Aspose.Words is quite different from the Microsoft Word Object Model in that it represents a document as a tree of objects, more like an XML DOM tree. If you have worked with any XML DOM library, you will find it is easy to understand and work with Aspose.Words.
 
 ## Pricing and Policies
 

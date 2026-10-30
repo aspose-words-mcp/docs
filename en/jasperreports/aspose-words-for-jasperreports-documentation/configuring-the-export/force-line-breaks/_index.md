@@ -18,7 +18,7 @@ By default, value of FORCE_LINE_BREAKS parameter is **false**. However, if you n
 
 **In JasperReports:**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
 import com.aspose.words.jasperreports.*;
 AWDocExporter exporter = new AWDocExporter();
 exporter.setParameter(AWExporterParameter.FORCE_LINE_BREAKS, true);
@@ -28,7 +28,7 @@ exporter.exportReport();
 
 **In JasperServer:**
 
-{{< highlight html >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
     <property name="forceLineBreaks" value="true"/>
     <property name="lineBreakChars" value=".,"/>

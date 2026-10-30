@@ -75,6 +75,6 @@ System.out.println(summaryInfo.getTemplate());
 
 {{% alert color="primary" %}}
 
-For more details, visit [Working with Document Properties](/words/java/working-with-document/#workingwithdocument-workingwithdocumentproperties).
+For more details, visit [Working with Document Properties](/words/java/work-with-document-properties/).
 
 {{% /alert %}}

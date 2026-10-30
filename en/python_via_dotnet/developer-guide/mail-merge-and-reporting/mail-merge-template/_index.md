@@ -64,7 +64,7 @@ The following code example shows how to specify the image file name and image si
 
 ### Customize Text Properties
 
-You can use the [Text](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/fieldmergingargs/text/) property to insert text into the document for the current merge field. Also, you can change the formatting of texts and paragraphs inside your template using [Font](https://reference.aspose.com/words/python-net/aspose.words/font/) and [ParagraphFormat](https://reference.aspose.com/words/python-net/aspose.words/paragraphformat/) classes. You can handle the text to be inserted before or after the merge field by using the [text_before](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldmergefield/text_before/) and [text_after](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldmergefield/text_after/) properties that are included in the [FieldMergeField](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldmergefield/) class.
+You can use the [text](https://reference.aspose.com/words/python-net/aspose.words.mailmerging/fieldmergingargs/text/) property to insert text into the document for the current merge field. Also, you can change the formatting of texts and paragraphs inside your template using [Font](https://reference.aspose.com/words/python-net/aspose.words/font/) and [ParagraphFormat](https://reference.aspose.com/words/python-net/aspose.words/paragraphformat/) classes. You can handle the text to be inserted before or after the merge field by using the [text_before](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldmergefield/text_before/) and [text_after](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldmergefield/text_after/) properties that are included in the [FieldMergeField](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldmergefield/) class.
 
 The following code example shows how to insert Check Boxes or HTML during Mail Merge operation:
 
@@ -72,7 +72,7 @@ The following code example shows how to insert Check Boxes or HTML during Mail M
 
 ## See Also
 
-* For more details about how to create templates in Microsoft Word manually, please check the [Create a Template](https://support.microsoft.com/en-us/office/save-a-word-document-as-a-template-cb17846d-ecec-49d4-82ea-a6f5e3e8b9ae) article in the Microsoft Documentation
+* For more details about how to create templates in Microsoft Word manually, please check the [Create a Template](https://support.microsoft.com/en-us/word/save-a-word-document-as-a-template) article in the Microsoft Documentation
 
 ------ 
 
@@ -82,10 +82,10 @@ The following code example shows how to insert Check Boxes or HTML during Mail M
    **A:** Use `DocumentBuilder` to build a new `Document`, insert text input fields and merge fields with `insert_text_input` and `insert_field`. After constructing the template, return `builder.document` and save it or use it directly for a mail merge operation.
 
 2. **Q:** How do I define a Mail Merge region (start and end) in the template?  
-   **A:** Insert two merge fields that mark the region boundaries, e.g., `builder.insert_field("MERGEFIELD TableStart \\* MERGEFORMAT")` at the beginning and `builder.insert_field("MERGEFIELD TableEnd \\* MERGEFORMAT")` at the end. The region will be processed by `MailMerge.execute_with_regions` using the same field names.
+   **A:** Insert two merge fields that mark the region boundaries, e.g., `builder.insert_field("MERGEFIELD TableStart:Orders \\* MERGEFORMAT")` at the beginning and `builder.insert_field("MERGEFIELD TableEnd:Orders \\* MERGEFORMAT")` at the end. The region will be processed by `MailMerge.execute_with_regions` with a data source whose `table_name` is `Orders`.
 
 3. **Q:** Can I use a Mustache template together with Aspose.Words Mail Merge?  
-   **A:** Yes. Create the template as a Mustache file (e.g., `.mustache`), then load it with `aw.Document("template.mustache")`. After rendering the Mustache placeholders, perform the standard Mail Merge on the resulting document.
+   **A:** Yes. Type Mustache tags such as `{{FullName}}` as plain text in a Word document, load it with `aw.Document("Template.docx")`, set `doc.mail_merge.use_non_merge_fields = True`, and execute the mail merge: the tags are filled like merge fields. See [Mail Merge Template from Mustache Syntax](/words/python-net/mail-merge-template-from-mustache-syntax/).
 
 4. **Q:** How can I change the font size of text that is inserted via `insert_text_input`?  
    **A:** Set the font properties on the `DocumentBuilder` before inserting the field:  
@@ -95,4 +95,4 @@ The following code example shows how to insert Check Boxes or HTML during Mail M
    ```
 
 5. **Q:** How do I load an existing template and execute a Mail Merge in Python?  
-   **A:** Load the template with `aw.Document("Template.docx")`, then call `document.mail_merge.execute(data_table)` or `execute_with_regions` for regions. The merge fields in the template will be replaced with data from the provided `DataTable` or list of dictionaries.
+   **A:** Load the template with `aw.Document("Template.docx")`, then call `document.mail_merge.execute(field_names, values)` (or `execute(data_source)` with your `IMailMergeDataSource` implementation), or `execute_with_regions(data_source)` for regions. The merge fields in the template will be replaced with the supplied values.

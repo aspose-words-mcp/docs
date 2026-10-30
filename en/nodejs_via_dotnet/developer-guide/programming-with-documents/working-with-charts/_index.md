@@ -144,7 +144,7 @@ The following code example shows how to format a number of the data label:
 
 {{< gist "aspose-words-gists" "7ce46b3fa44be2f120f85d4e070329db" "format-number-of-data-label.js" >}}
 
-## How toSet Chart Axis Properties
+## How to Set Chart Axis Properties
 
 If you want to work with chart axis, scaling, and display units for the value axis, please use [ChartAxis](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing.charts/chartaxis/), [AxisDisplayUnit](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing.charts/axisdisplayunit/), and [AxisScaling](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing.charts/axisscaling/) classes.
 
@@ -160,7 +160,7 @@ The following code example shows how to set date/time values to axis properties:
 
 ### How to Format Number Value of Axis
 
-The following code example shows how tochange the format of numbers on the value axis:
+The following code example shows how to change the format of numbers on the value axis:
 
 {{< gist "aspose-words-gists" "7ce46b3fa44be2f120f85d4e070329db" "number-format-for-axis.js" >}}
 
@@ -168,13 +168,13 @@ The following code example shows how tochange the format of numbers on the value
 
 The [AxisBound](https://reference.aspose.com/words/nodejs-net/aspose.words.drawing.charts/axisbound/) class represents a minimum or maximum bound of axis values. Bound can be specified as a numeric, date-time or a special "auto" value.
 
-The following code example shows howto set bounds of an axis:
+The following code example shows how to set bounds of an axis:
 
 {{< gist "aspose-words-gists" "7ce46b3fa44be2f120f85d4e070329db" "bounds-of-axis.js" >}}
 
 ### How to Set Interval Unit Between Labels
 
-The following code example shows howto setthe interval unit between labels on an axis:
+The following code example shows how to set the interval unit between labels on an axis:
 
 {{< gist "aspose-words-gists" "7ce46b3fa44be2f120f85d4e070329db" "interval-unit-between-labels-on-axis.js" >}}
 
@@ -188,7 +188,7 @@ The following code example shows how to hide the Y-axis of the chart:
 
 ### How to Align Chart Label
 
-If you want to set a text alignment for multi-line labels, you can simply achieve this by setting the value of **ChartAxis.tickLabelAlignment** property.
+If you want to set a text alignment for multi-line labels, you can simply achieve this by setting the value of **ChartAxis.tickLabels.alignment** property.
 
 The following code example shows how to tick label alignment:
 

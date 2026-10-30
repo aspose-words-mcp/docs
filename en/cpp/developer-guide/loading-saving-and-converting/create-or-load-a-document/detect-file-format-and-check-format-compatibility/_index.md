@@ -65,7 +65,7 @@ The following files are used in the example above. The file name is on the left 
 |  | Test File (DOCM).docm | Office Open XML WordprocessingML document with macros. |
 |  | Test File (DOTX).dotx | Office Open XML WordprocessingML template. |
 |  | Test File (DOTM).dotm | Office Open XML WordprocessingML template with macros. |
-|  | Test File (XML).xml | FlatOPCOOXMLDocument. |
+|  | Test File (XML).xml | FlatOPC OOXML Document. |
 |  | Test File (RTF).rtf | Rich Text Format document. |
 |  | Test File (WordML).xml | Microsoft Word 2003 WordprocessingML document. |
 |  | Test File (HTML).html | HTML document. |
@@ -80,10 +80,10 @@ The following files are used in the example above. The file name is on the left 
 ## FAQ
 
 1. **Q:** How can I determine the file format of a document without loading it into a `Document` object?  
-   **A:** Use the static method `FileFormatUtil::DetectFileFormat` and pass the file path. It returns a `FileFormatInfo` object that contains properties such as `GetFileFormatType()` and `IsEncrypted`. This call reads only the header bytes, so no `Document` is created and no exception is thrown for unsupported formats.
+   **A:** Use the static method `FileFormatUtil::DetectFileFormat` and pass the file path. It returns a `FileFormatInfo` object that contains properties such as `FileFormatInfo::get_LoadFormat()` and `FileFormatInfo::get_IsEncrypted()`. This call reads only the header bytes, so no `Document` is created and no exception is thrown for unsupported formats.
 
 2. **Q:** What information does `FileFormatInfo` provide for encrypted files?  
-   **A:** The `IsEncrypted` property of `FileFormatInfo` is set to `true` when the detected format is encrypted. You can still obtain the file format type, but you must provide the correct password when later loading the file with `Document`.
+   **A:** The `get_IsEncrypted()` property of `FileFormatInfo` is set to `true` when the detected format is encrypted. You can still obtain the file format type, but you must provide the correct password when later loading the file with `Document`.
 
 3. **Q:** How can I check whether a detected format is supported by the current Aspose.Words version before attempting to load it?  
    **A:** Check the `LoadFormat` returned by `FileFormatInfo::get_LoadFormat()`. All values listed in the `LoadFormat` enumeration are supported. If the value is `LoadFormat::Unknown`, skip loading or handle the file separately.

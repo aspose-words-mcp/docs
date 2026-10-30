@@ -46,7 +46,7 @@ All warnings are of [WarningType](https://reference.aspose.com/words/net/aspose.
    **A:** Aspose.Words emits warnings of type **WarningType.MinorFormattingLoss** with source **WarningSource.Pdf** for accessibility issues that cannot be automatically fixed. Examples include missing document title (PDF/UA), shapes or tables without alternative text (both PDF/A and PDF/UA), non‑consecutive heading levels (PDF/UA), and presence of Unicode PUA characters (PDF/A).
 
 2. **Q:** *How can I retrieve the list of warnings after saving a document?*  
-   **A:** Use the `PdfSaveOptions` object and subscribe to its `WarningCallback`. The callback receives a `WarningInfo` object for each warning, where you can inspect `WarningInfo.Description`, `WarningInfo.Type`, and `WarningInfo.Source`. Example:
+   **A:** Implement `IWarningCallback` and assign it to `Document.WarningCallback` before saving. The callback receives a `WarningInfo` object for each warning, where you can inspect `WarningInfo.Description`, `WarningInfo.WarningType`, and `WarningInfo.Source`. Example:
 
    ```csharp
    using Aspose.Words;
@@ -55,12 +55,16 @@ All warnings are of [WarningType](https://reference.aspose.com/words/net/aspose.
    Document doc = new Document("input.docx");
    PdfSaveOptions saveOptions = new PdfSaveOptions();
 
-   saveOptions.WarningCallback = (WarningInfo info) =>
-   {
-       Console.WriteLine($"Warning: {info.Description}");
-   };
-
+   doc.WarningCallback = new WarningPrinter();
    doc.Save("output.pdf", saveOptions);
+
+   class WarningPrinter : IWarningCallback
+   {
+       public void Warning(WarningInfo info)
+       {
+           Console.WriteLine($"Warning: {info.Description}");
+       }
+   }
    ```
 
 3. **Q:** *What should I do to fix a “Document title is missing” warning for PDF/UA?*  

@@ -41,7 +41,7 @@ Aspose.Words provides users with a wide range of features. Users can perform a h
 
 ## Limitations
 
-- Supports limited set of file formats(*see [Supported Document Formats](/words/cpp/supported-document-formats/)for details*)
+- Supports limited set of file formats (*see [Supported Document Formats](/words/cpp/supported-document-formats/) for details*)
 - No support for encrypted documents
 - No support for downloading remote resources from the Internet
 - Limited and unstable support for Rendering features

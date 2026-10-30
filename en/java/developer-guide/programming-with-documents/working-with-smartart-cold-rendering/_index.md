@@ -31,7 +31,7 @@ Aspose.Words allows you to use a pre-rendered drawing or perform cold rendering:
 
 * If a pre-rendered drawing is available, Aspose.Words uses it to render the `SmartArt` object.
 * If pre-rendered drawing is missing, Aspose.Words implicitly performs cold rendering to render the `SmartArt` object.
-* If a pre-rendered drawing is present but is incorrect, it is required to perform SmartArt cold rendering explicitly by calling [UpdateSmartArtDrawing](https://reference.aspose.com/words/java/com.aspose.words/shape/#updateSmartArtDrawing) method.
+* If a pre-rendered drawing is present but is incorrect, it is required to perform SmartArt cold rendering explicitly by calling [updateSmartArtDrawing()](https://reference.aspose.com/words/java/com.aspose.words/shape/#updateSmartArtDrawing) method.
 
 The following code example shows how to update drawings for all diagrams in the document:
 
@@ -76,7 +76,7 @@ The table below shows example pictures of Aspose.Words Cold Rendering of some st
    **A:** The fully supported groups are **List**, **Process**, **Relationship**, and **Matrix**. The documentation table lists the exact layouts within each group.
 
 4. **Q:** How do I update the drawings for all SmartArt objects in a document with a single call?  
-   **A:** Iterate through all `Shape` nodes, check `shape.isSmartArt()`, and invoke `shape.updateSmartArtDrawing()`. The sample code in the article demonstrates this pattern.
+   **A:** Iterate through all `Shape` nodes, check `shape.hasSmartArt()`, and invoke `shape.updateSmartArtDrawing()`. The sample code in the article demonstrates this pattern.
 
 5. **Q:** Can I determine programmatically whether a SmartArt object already has a pre‑rendered drawing?  
-   **A:** Yes. Use `shape.getSmartArt().hasSmartArtDrawing()` (or the equivalent property in the Java API) to check if the drawing exists before deciding whether to call `updateSmartArtDrawing()`.
+   **A:** No. The API has no property that shows whether a pre‑rendered drawing exists. If you are not sure the drawing is correct, call `shape.updateSmartArtDrawing()` to rebuild it with cold rendering.

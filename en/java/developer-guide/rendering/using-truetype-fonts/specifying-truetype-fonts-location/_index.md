@@ -23,7 +23,7 @@ This page explains how to configure TrueType font locations for rendering.
 
 This topic describes the default behavior of Aspose.Words when it looks for TrueType fonts, including operating system specific differences, and demonstrates how to specify user font sources.
 
-The [FontSourceBase](https://reference.aspose.com/words/java/com.aspose.words/fontsourcebase/) class is used to specify various font sources. There are several implementations of the**FontSourceBase**class:
+The [FontSourceBase](https://reference.aspose.com/words/java/com.aspose.words/fontsourcebase/) class is used to specify various font sources. There are several implementations of the **FontSourceBase** class:
 
 - [SystemFontSource](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/)
 - [FolderFontSource](https://reference.aspose.com/words/java/com.aspose.words/folderfontsource/)
@@ -35,46 +35,46 @@ Implementation details for some classes are explained below.
 
 ## Load Fonts from System {#loading-fonts-from-system}
 
-There is a special [SystemFontSource](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/) class that is always used by default.It represents all TrueType fonts installed on the system. Therefore, it is possible to create a source list with**SystemFontSource**and any other required sources:
+There is a special [SystemFontSource](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/) class that is always used by default. It represents all TrueType fonts installed on the system. Therefore, it is possible to create a source list with **SystemFontSource** and any other required sources:
 
 {{< gist "aspose-words-gists" "35680f8755e7a5462dff1d441d05fd5e" "fonts-folders.java" >}}
 
-A single instance of the**SystemFontSource**class is defined by default in [FontSettings](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/). On different operating systems, fontsmay be located in different places. However, usinga**FontSettings**instance for each document is not an optimal solution. In the majority of cases, using [DefaultInstance](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#getDefaultInstance) should be enough.
+A single instance of the **SystemFontSource** class is defined by default in [FontSettings](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/). On different operating systems, fonts may be located in different places. However, using a **FontSettings** instance for each document is not an optimal solution. In the majority of cases, using [getDefaultInstance()](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#getDefaultInstance) should be enough.
 
-Per-document instances are needed only if it is required to use different font sources for different documents, which is a rare case. Using several**FontSettings**instances decreases performance because they do not share cache.
+Per-document instances are needed only if it is required to use different font sources for different documents, which is a rare case. Using several **FontSettings** instances decreases performance because they do not share cache.
 
 ### Where Aspose.Words Looks for TrueType Fonts on Windows
 
-In most cases, Windows users do not face significant problems with missed fonts or incorrect layouts.Typically,Aspose.Words goes through a document, and when it encounters a font's link, successfully fetches the font data from the system folder.
+In most cases, Windows users do not face significant problems with missed fonts or incorrect layouts. Typically, Aspose.Words goes through a document, and when it encounters a font's link, successfully fetches the font data from the system folder.
 
-On Windows, Aspose.Words first takes all available fonts from the_%windir%\Fontsfolder. This setting will work for you most of the time.You only specify your own fonts folders if you need to. Aspose.Words also looks for additional fonts registered in theHKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fontsregistry key.In addition, Windows 10 enables installation of fonts for the current user.Fonts are placed into the %userprofile%\AppData\Local\Microsoft\Windows\Fonts folder and also specified in the HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Fontsregistry, where Aspose.Words will look for these fonts.
+On Windows, Aspose.Words first takes all available fonts from the _%windir%\Fonts folder. This setting will work for you most of the time. You only specify your own fonts folders if you need to. Aspose.Words also looks for additional fonts registered in the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts registry key. In addition, Windows 10 enables installation of fonts for the current user. Fonts are placed into the %userprofile%\AppData\Local\Microsoft\Windows\Fonts folder and also specified in the HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Fonts registry, where Aspose.Words will look for these fonts.
 
 If a document contains embedded fonts, Aspose.Words can read relevant font data from the document and use it to create the document's layout. Documents may also contain links to fonts that are not in the system folders, in which case the following scenarios come to work:
 
-- Users can set up new font sourcesthrough the**FontSettings**class
+- Users can set up new font sources through the **FontSettings** class
 - Aspose.Words can try to replace the missed font with a similar one
 
 ### Fonts on Non-Windows Systems
 
-Aspose.Words will look for the fonts in the system font folders. A list of these folders may be seen by the [GetSystemFontFolders](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/#getSystemFontFolders) method. If no supported fonts are found, Aspose.Words will use the built-in default font Fanwood.ttf.
+Aspose.Words will look for the fonts in the system font folders. A list of these folders may be seen by the [getSystemFontFolders()](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/#getSystemFontFolders) method. If no supported fonts are found, Aspose.Words will use the built-in default font Fanwood.ttf.
 
-Since the font metrics of Windows and non-Windows OS are different, Aspose.Words does everything possible to find a similar font and build a layout similar to the original. However, this is not always possible. In these cases, the**FontSettings**class should be used to add custom fonts or substitution rules.
+Since the font metrics of Windows and non-Windows OS are different, Aspose.Words does everything possible to find a similar font and build a layout similar to the original. However, this is not always possible. In these cases, the **FontSettings** class should be used to add custom fonts or substitution rules.
 
 #### Where Aspose.Words Looks for TrueType Fonts on Linux
 
-Different Linux distributions may store fonts in different folders. Aspose.Words looks for fonts in several locations. By default, Aspose.Words looks for the fonts in all of the following locations: `/usr/share/fonts`, `/usr/local/share/fonts`, `/usr/X11R6/lib/X11/fonts`. This default behavior will work for most Linux distributions, but it is not guaranteed to work all of the time, in which case you might need to specify the location of true type fonts explicitly.To do this, you need to know where TrueType fonts are installed on your Linux distribution.
+Different Linux distributions may store fonts in different folders. Aspose.Words looks for fonts in several locations. By default, Aspose.Words looks for the fonts in all of the following locations: `/usr/share/fonts`, `/usr/local/share/fonts`, `/usr/X11R6/lib/X11/fonts`. This default behavior will work for most Linux distributions, but it is not guaranteed to work all of the time, in which case you might need to specify the location of true type fonts explicitly. To do this, you need to know where TrueType fonts are installed on your Linux distribution.
 
 #### Where Aspose.Words Looks for TrueType Fonts on Mac OS X
 
-Aspose.Words looks for fonts in the `/Library/Fonts` folder, which is the standard location for TrueType fonts on Mac OS X.While this setting will work for you most of the time, you may need to specify your own fonts folders in the case when you need to.
+Aspose.Words looks for fonts in the `/Library/Fonts` folder, which is the standard location for TrueType fonts on Mac OS X. While this setting will work for you most of the time, you may need to specify your own fonts folders in the case when you need to.
 
 ## Load Fonts from Folder {#loading-fonts-from-folder}
 
-If the document being processed contains links to fonts that are not on the system, or you don't want to add them to the system folder, or you lack permissions, then the best solution would be to add a folder with your own fonts using the [setFontsSources](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#setFontsSources-com.aspose.words.FontSourceBase) method. his will allow to replace thesystem source with a user source. Aspose.Wordswill no longer look for fonts in the registry or Windows\Font folder and instead only scan for fonts within the specified folder(s). The [getFontSources](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#getFontsSources) method will return the corresponding values.
+If the document being processed contains links to fonts that are not on the system, or you don't want to add them to the system folder, or you lack permissions, then the best solution would be to add a folder with your own fonts using the [setFontsSources](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#setFontsSources-com.aspose.words.FontSourceBase) method. This will allow to replace the system source with a user source. Aspose.Words will no longer look for fonts in the registry or Windows\Font folder and instead only scan for fonts within the specified folder(s). The [getFontSources](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#getFontsSources) method will return the corresponding values.
 
 ### Specify One or Multiple Font Folders
 
-The [SetFontsFolder](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#setFontsFolder-java.lang.String-boolean) andSetFontsFoldersmethods are shortcuts to the**SetFontSources**method with one or several [FolderFontSource](https://reference.aspose.com/words/java/com.aspose.words/folderfontsource/) instances. These methods are used to indicate where Aspose.Words should look for fonts. If a folder does not exist or is not accessible, Aspose.Words just ignores this folder. If all folders, including sources for the font substitution, were ignored, Aspose.Words will use Fanwood font as a default.
+The [setFontsFolder()](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/#setFontsFolder-java.lang.String-boolean) and SetFontsFolders methods are shortcuts to the **SetFontSources** method with one or several [FolderFontSource](https://reference.aspose.com/words/java/com.aspose.words/folderfontsource/) instances. These methods are used to indicate where Aspose.Words should look for fonts. If a folder does not exist or is not accessible, Aspose.Words just ignores this folder. If all folders, including sources for the font substitution, were ignored, Aspose.Words will use Fanwood font as a default.
 
 The following example demonstrates how to set the folder or source, which Aspose.Words will subsequently use to look for TrueType fonts during rendering or embedding of fonts:
 
@@ -102,19 +102,19 @@ If you don't want to use system fonts at all, Aspose.Words allows you to ignore 
 
 {{< gist "aspose-words-gists" "35680f8755e7a5462dff1d441d05fd5e" "default-instance.java" >}}
 
-### PriorityProperty
+### Priority Property
 
-The [Priority](https://reference.aspose.com/words/net/aspose.words.fonts/fontsourcebase/priority/) property is used when there are fonts with the same family name and style in different font sources.In this case Aspose.Words selects the font from the source with the higher priority value. For example, there is an old version of the fontonthe system folder and customer added a new version of the same font in a custom folder.
+The [getPriority()](https://reference.aspose.com/words/java/com.aspose.words/fontsourcebase/#getPriority) property is used when there are fonts with the same family name and style in different font sources. In this case Aspose.Words selects the font from the source with the higher priority value. For example, there is an old version of the font on the system folder and customer added a new version of the same font in a custom folder.
 
 {{< gist "aspose-words-gists" "35680f8755e7a5462dff1d441d05fd5e" "fonts-folders-with-priority.java" >}}
 
 ## Load Fonts from Stream {#loading-fonts-from-stream}
 
-Aspose.Words provides the [StreamFontSource](https://reference.aspose.com/words/java/com.aspose.words/streamfontsource/) class, which allows loading fonts from the stream. To use the stream font source, a user needs to create a derived class from**StreamFontSource**and provide an implementation of the [OpenFontDataStream](https://reference.aspose.com/words/java/com.aspose.words/streamfontsource/#openFontDataStream) method. The**OpenFontDataStream**method could be called several times. For the first time, it will be called when Aspose.Words scans the provided font sources to get a list of available fonts. Later it may be called if the font is used in the document to parse the font data and to embed the font data to some output formats.**StreamFontSource**may be useful because it allows loading the font data only when it is required, and not to store it in the memory for the [FontSettings](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/) lifetime.
+Aspose.Words provides the [StreamFontSource](https://reference.aspose.com/words/java/com.aspose.words/streamfontsource/) class, which allows loading fonts from the stream. To use the stream font source, a user needs to create a derived class from **StreamFontSource** and provide an implementation of the [openFontDataStream()](https://reference.aspose.com/words/java/com.aspose.words/streamfontsource/#openFontDataStream) method. The **openFontDataStream()** method could be called several times. For the first time, it will be called when Aspose.Words scans the provided font sources to get a list of available fonts. Later it may be called if the font is used in the document to parse the font data and to embed the font data to some output formats. **StreamFontSource** may be useful because it allows loading the font data only when it is required, and not to store it in the memory for the [FontSettings](https://reference.aspose.com/words/java/com.aspose.words/fontsettings/) lifetime.
 
 {{< gist "aspose-words-gists" "35680f8755e7a5462dff1d441d05fd5e" "resource-steam.java" >}}
 
-**StreamFontSource**is an alternative to [MemoryFontSource](https://reference.aspose.com/words/java/com.aspose.words/memoryfontsource/) since it isalways possible to load a stream to memory and pass it to**MemoryFontSource**. The difference is that the**MemoryFontSource**is stored in the memory all the time, and the**StreamFontSource**is loaded on demand and disposed right away. But it may be loaded several times, as described above. In some cases**MemoryFontSource**is preferable, and in others,**StreamFontSource**.
+**StreamFontSource** is an alternative to [MemoryFontSource](https://reference.aspose.com/words/java/com.aspose.words/memoryfontsource/) since it is always possible to load a stream to memory and pass it to **MemoryFontSource**. The difference is that the **MemoryFontSource** is stored in the memory all the time, and the **StreamFontSource** is loaded on demand and disposed right away. But it may be loaded several times, as described above. In some cases **MemoryFontSource** is preferable, and in others, **StreamFontSource**.
 
 ## Save and Load a Font Search Cache
 
@@ -124,7 +124,7 @@ The procedure for parsing all available font files to initialize the cache is qu
 
 {{% alert color="primary" %}}
 
-Use the same **SaveSearchCache** method to update the cache.
+Use the same **saveSearchCache()** method to update the cache.
 
 {{% /alert %}}
 
@@ -148,7 +148,7 @@ StreamFontSource streamSource = new MyStreamFontSource(streamSourcePriority, str
 
 FontSettings settings = new FontSettings();
 
-settings.setFontsSources(new FontSourceBase [] { fileSource, memorySource, streamSource });
+settings.setFontsSources(new FontSourceBase[] { fileSource, memorySource, streamSource });
 settings.saveSearchCache(cacheOutputStream);
 {{< /highlight >}}
 
@@ -172,7 +172,7 @@ StreamFontSource streamSource = new MyStreamFontSource(streamSourcePriority, str
 
 FontSettings settings = new FontSettings();
 
-settings.setFontsSources(new FontSourceBase [] { fileSource, memorySource, streamSource }, cacheInputStream);
+settings.setFontsSources(new FontSourceBase[] { fileSource, memorySource, streamSource }, cacheInputStream);
 {{< /highlight >}}
 
 {{% alert color="primary" %}}
@@ -185,7 +185,7 @@ The cache is also suitable for other scenarios when fonts are loaded over the ne
 
 ## Get a List of Available Fonts {#get-a-list-of-available-fonts}
 
-If you want to get the list ofavailablefonts, which, for example, can be used to render a PDF document, you can use the [GetAvailableFonts](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/#getAvailableFonts) method, as shown in the following code example. The [PhysicalFontInfo](https://reference.aspose.com/words/java/com.aspose.words/physicalfontinfo/) class specifies information about the physical font available to Aspose.Words font engine:
+If you want to get the list of available fonts, which, for example, can be used to render a PDF document, you can use the [getAvailableFonts()](https://reference.aspose.com/words/java/com.aspose.words/systemfontsource/#getAvailableFonts) method, as shown in the following code example. The [PhysicalFontInfo](https://reference.aspose.com/words/java/com.aspose.words/physicalfontinfo/) class specifies information about the physical font available to Aspose.Words font engine:
 
 {{< gist "aspose-words-gists" "35680f8755e7a5462dff1d441d05fd5e" "available-fonts.java" >}}
 
@@ -200,7 +200,7 @@ There are five types of typefaces, each typeface represents a group of similar f
 - SANS_SERIF
 - SERIF
 
-For instance, according to Android's [fonts.xml](https://androidxref.com/9.0.0_r3/xref/frameworks/base/data/fonts/fonts.xml) config file, “times” belongs to “serif” family so NotoSerif-Regular.ttf will be used when “times” is requested:
+For instance, according to Android's [fonts.xml](https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-9.0.0_r56/data/fonts/fonts.xml) config file, “times” belongs to “serif” family so NotoSerif-Regular.ttf will be used when “times” is requested:
 
 **Fonts.xml**
 
@@ -219,7 +219,7 @@ To search for similar fonts, the strategies described earlier are used.
 
 In addition to them, Aspose.Words has its own list of replacements for the Android platform.
 
-Let's say the document contains thePMingLiU-ExtBfont, first of all, Aspose.Words is looking for the required font within the system sources.
+Let's say the document contains the PMingLiU-ExtB font, first of all, Aspose.Words is looking for the required font within the system sources.
 
 The default list of Android font's folders is:
 
@@ -243,7 +243,7 @@ In case an explicit replacement has been specified, Aspose.Words replaces the mi
 fontSettings.getSubstitutionSettings().getTableSubstitution().setSubstitutes("PMingLiU-ExtB", "Liberation Serif");
 {{< /highlight >}}
 
-If none of the rules worked, Aspose.Words check the internal replacement table. If the table contains information about a good fit then the font gets replaced. In our case Aspose.Words will select `Typeface.SERIF`.But if the table doesn't know anything about the requested font then Aspose.Words picks up a font based on special MS Word rules or the closest distance in Panose space.
+If none of the rules worked, Aspose.Words check the internal replacement table. If the table contains information about a good fit then the font gets replaced. In our case Aspose.Words will select `Typeface.SERIF`. But if the table doesn't know anything about the requested font then Aspose.Words picks up a font based on special MS Word rules or the closest distance in Panose space.
 
 #### TrueType Fonts on .NET Core and Xamarin
 

@@ -21,7 +21,7 @@ Aspose.Words supports Asian Typography using the [ParagraphFormat](https://refer
 
 If you are designing a template with both East Asian and Latin text and  want to enhance the appearance of your form template by controlling the spaces between both types of text, you can configure your form template to automatically adjust the spaces between these two types of text. To achieve this, you can use [addSpaceBetweenFarEastAndAlpha](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraphformat/addspacebetweenfareastandalpha/) and [addSpaceBetweenFarEastAndDigit](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraphformat/addspacebetweenfareastanddigit/) properties of the `ParagraphFormat` class.
 
-The following code example shows how to use **AddSpaceBetweenFarEastAndAlpha** and **AddSpaceBetweenFarEastAndDigit** properties:
+The following code example shows how to use **addSpaceBetweenFarEastAndAlpha** and **addSpaceBetweenFarEastAndDigit** properties:
 
 {{< gist "aspose-words-gists" "a7a098b26ccfd16de13a8e6efba00217" "space-between-asian-and-latin-text.js" >}}
 

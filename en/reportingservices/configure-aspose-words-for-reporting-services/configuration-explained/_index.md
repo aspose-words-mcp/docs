@@ -24,16 +24,20 @@ To configure Aspose.Words for Reporting Services at the instance level, you need
 
 | Host Application | Configuration File |
 | :- | :- |
-| Microsoft SQL Server 2005, 2008, 2012, 2014, 2016, 2017 or 2019 Reporting Services | *C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Services\ReportServer\rsreportserver.config* |
-| Microsoft Visual Studio 2005, 2008, 2010, 2012, 2013 or 2015 Report Designer | *C:\Program Files\Microsoft Visual Studio &lt;Version&gt;\Common7\IDE\PrivateAssemblies\ RSReportDesigner.config* |
-| Microsoft Report Viewer 2005, 2008, 2010, 2012 or 2015 | *Not configurable in this version.* |
+| Microsoft SQL Server 2012, 2014 or 2016 Reporting Services | *C:\Program Files\Microsoft SQL Server&#92;&lt;Instance&gt;\Reporting Services\ReportServer\rsreportserver.config* |
+| Microsoft SQL Server 2017, 2019 or 2022 Reporting Services | *C:\Program Files\Microsoft SQL Server Reporting Services\SSRS\ReportServer\rsreportserver.config* |
+| Power BI Report Server | *C:\Program Files\Microsoft Power BI Report Server\PBIRS\ReportServer\rsreportserver.config* |
+| Microsoft Visual Studio 2012, 2013 or 2015 Report Designer | *C:\Program Files\Microsoft Visual Studio &lt;Version&gt;\Common7\IDE\PrivateAssemblies\RSReportDesigner.config* |
+| Microsoft Visual Studio 2017, 2019 or 2022 Report Designer | *C:\Program Files\Microsoft Visual Studio&#92;&lt;Version&gt;&#92;&lt;VS edition name&gt;\Common7\IDE\CommonExtensions\Microsoft\SSRS\RSReportDesigner.config* |
+| Microsoft Report Viewer 2010, 2012 or 2015 | *Not configurable in this version.* |
+
 You can edit the configuration file in any text or XML editor. It is recommended that you make a backup copy of the configuration file before editing.
 
 The renderer configuration is stored inside the *&lt;Extension&gt;* element corresponding to a particular renderer.
 
 Every export format has its own configuration XML element. Therefore, if you want changes to apply to several export formats, you need to duplicate your changes accordingly. Most examples used in this section configure only the DOC format renderer.
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <!--This is an example of an empty configuration file.-->
 <Render>
 ...
@@ -80,15 +84,15 @@ Every export format has its own configuration XML element. Therefore, if you wan
 
    1.2. Set textbox visibility to **Hidden**.
 
-   1.3. Set textbox name to a **configuration**.
+   1.3. Set textbox name to **configuration**.
 
-   1.4. Set textbox text to the XML similar to that you would specify in the *&lt;Configuration&gt;* element of the configuration file. For example, to make this particular report be exported in positioned layout mode, set the text to **&lt;DocumentLayout&gt;Positioned&lt;/DocumentLayout&gt;** . You can specify any number of any number of configuration settings in a sequence, for example **&lt;DocumentLayout&gt;Positioned&lt;/DocumentLayout&gt;** **&lt;PageBreaks&gt;OnEachPage&lt;/PageBreaks&gt;&lt;SpacingFactor&gt;0.75&lt;/SpacingFactor&gt;** .
+   1.4. Set textbox text to the XML similar to that you would specify in the *&lt;Configuration&gt;* element of the configuration file. For example, to make this particular report be exported in positioned layout mode, set the text to **&lt;DocumentLayout&gt;Positioned&lt;/DocumentLayout&gt;** . You can specify any number of configuration settings in a sequence, for example **&lt;DocumentLayout&gt;Positioned&lt;/DocumentLayout&gt;** **&lt;PageBreaks&gt;OnEachPage&lt;/PageBreaks&gt;&lt;SpacingFactor&gt;0.75&lt;/SpacingFactor&gt;** .
 
 2. Another way to specify settings in "CustomProperty" element.
 
    For example, add in a report the following section to change page orientation:
 
-   {{< highlight csharp >}}
+   {{< highlight xml >}}
    <CustomProperties>
      <CustomProperty>
        <Name>AWConfiguration</Name>

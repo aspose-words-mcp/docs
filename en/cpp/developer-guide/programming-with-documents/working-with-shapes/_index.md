@@ -17,7 +17,7 @@ timestamp: 2024-01-27-14-07-04
 
 This topic discusses how to work programmatically with shapes using Aspose.Words.
 
-The shapes in Aspose.Words representan object in the drawing layer, such as an AutoShape, textbox, freeform, OLE object, ActiveX control, or picture.A Word document can contain one or more different shapes.Shapes of the document are represented by the [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/) class.
+The shapes in Aspose.Words represent an object in the drawing layer, such as an AutoShape, textbox, freeform, OLE object, ActiveX control, or picture. A Word document can contain one or more different shapes. Shapes of the document are represented by the [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/) class.
 
 ## Insert Shape Using Document Builder
 
@@ -29,25 +29,25 @@ The following code example shows how to insert these types of shapes into the do
 
 ## Set Aspect Ratio Locked
 
-Using Aspose.Words, you can specify whether the shape's aspect ratio is locked through the [AspectRatioLocked](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_aspectratiolocked/) property.
+Using Aspose.Words, you can specify whether the shape's aspect ratio is locked through the [get_AspectRatioLocked()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_aspectratiolocked/) property.
 
-The following code example shows how to work with the **AspectRatioLocked** property:
+The following code example shows how to work with the **get_AspectRatioLocked()** property:
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Shapes-WorkingWithShapes-SetAspectRatioLocked.cpp" >}}
 
 ## Set Shape Layout In Cell
 
-You can also specify whether the shape is displayed inside a table or outside of it using the [IsLayoutInCell](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_islayoutincell/) property.
+You can also specify whether the shape is displayed inside a table or outside of it using the [get_IsLayoutInCell()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_islayoutincell/) property.
 
-The following code example shows how to work with the **IsLayoutInCell** property:
+The following code example shows how to work with the **get_IsLayoutInCell()** property:
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Shapes-WorkingWithShapes-SetShapeLayoutInCell.cpp" >}}
 
 ## Create Snip Corner Rectangle
 
-You can create a snip corner rectangle using Aspose.Words. The shape types are *SingleCornerSnipped, TopCornersSnipped, DiagonalCornersSnipped, TopCornersOneRoundedOneSnipped, SingleCornerRounded, TopCornersRounded,*and *DiagonalCornersRounded.*
+You can create a snip corner rectangle using Aspose.Words. The shape types are *SingleCornerSnipped, TopCornersSnipped, DiagonalCornersSnipped, TopCornersOneRoundedOneSnipped, SingleCornerRounded, TopCornersRounded,* and *DiagonalCornersRounded.*
 
-The DML shape is created using **InsertShape** method with these shape types. These typescannot be used to create VML shapes. Attempt to create shape by using the public constructor of the "Shape" class raises the "NotSupportedException" exception.
+The DML shape is created using **InsertShape** method with these shape types. These types cannot be used to create VML shapes. Attempt to create shape by using the public constructor of the "Shape" class raises the "NotSupportedException" exception.
 
 The following code example shows how to insert these type of shapes into the document:
 
@@ -55,23 +55,23 @@ The following code example shows how to insert these type of shapes into the doc
 
 ## Get Actual Shape Bounds Points
 
-Using Aspose.Words API, you can get the location and size of the shape containing block in points, relative to the anchor of the topmost shape. To do this, use the [BoundsInPoints](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_boundsinpoints/) property.
+Using Aspose.Words API, you can get the location and size of the shape containing block in points, relative to the anchor of the topmost shape. To do this, use the [get_BoundsInPoints()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapebase/get_boundsinpoints/) property.
 
-The following code example shows how to work with the **BoundsInPoints** property:
+The following code example shows how to work with the **get_BoundsInPoints()** property:
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Shapes-WorkingWithShapes-GetActualShapeBoundsPoints.cpp" >}}
 
 ## Horizontal Rule Format
 
-Aspose.Words API provides the [HorizontalRuleFormat](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_horizontalruleformat/) property to access the properties of the horizontal rule shape. The**HorizontalRuleFormat** class exposes basic properties like Height, Color, Shade, etc. for the formatting of a horizontal rule.
+Aspose.Words API provides the [get_HorizontalRuleFormat()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_horizontalruleformat/) property to access the properties of the horizontal rule shape. The **HorizontalRuleFormat** class exposes basic properties like Height, Color, Shade, etc. for the formatting of a horizontal rule.
 
-The following code example demonstrates how to set**HorizontalRuleFormat**:
+The following code example demonstrates how to set **HorizontalRuleFormat**:
 
 {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Document-Add content using DocumentBuilder-InsertHorizontalRule.h" >}}
 
 ## Insert OLE Object as an Icon
 
-Aspose.Words API provides**Shape** → **InsertOleObjectAsIcon** function to insert an embedded or linked OLE object as an icon into the document. This function allows specifying theicon file and the caption. The `OLE` object type shall be detected using the file extension.
+Aspose.Words API provides **Shape** → **InsertOleObjectAsIcon** function to insert an embedded or linked OLE object as an icon into the document. This function allows specifying the icon file and the caption. The `OLE` object type shall be detected using the file extension.
 
 The following code example shows how to set insert OLE object as an Icon into the document:
 

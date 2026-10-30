@@ -95,7 +95,7 @@ The following code  example shows how to convert all `IF` fields in the last par
 
 
 1. **Q:** How can I replace all fields in a document with their current results?  
-   **A:** Call the static method `FieldsHelper.convert_fields_to_static_text()` and pass the `Document` object as the composite node and `FieldType.ANY` as the field type. This recursively walks the document and replaces every field with its most recently calculated result.
+   **A:** Call `doc.unlink_fields()`. This walks the entire document and replaces every field with its most recently calculated result. To convert only fields of a certain type, use the `convert_fields_to_static_text` method shown above.
 
 2. **Q:** How can I convert only specific field types, such as `IF` fields?  
    **A:** Pass the target `CompositeNode` (e.g., `Document`, `Body`, or `Section`) and the desired `FieldType` enumeration value (e.g., `FieldType.FIELD_IF`) to `FieldsHelper.convert_fields_to_static_text()`. Only fields matching the specified type will be converted; all others remain unchanged.

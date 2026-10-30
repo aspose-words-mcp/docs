@@ -120,7 +120,7 @@ From the very first days of Aspose, we knew that just giving our customers good 
 
 This is why we offer free support. Anyone who uses our product, whether they have bought them or are using an evaluation, deserves our full attention and respect.
 
-You can log any issues or suggestions related toAspose.Words .NET for DNN Modules using [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/issues).
+You can log any issues or suggestions related to Aspose.Words .NET for DNN Modules using [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/issues).
 
 
 ### Extend and Contribute

@@ -62,7 +62,7 @@ doc.save("BaseConversions.FindReplaceXlsx.xlsx");
 
 ## Specify Compression Level When Saving to XLSX
 
-You can also specify the compression level when saving using the [CompressionLevel](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/xlsxsaveoptions/compressionlevel/) property.
+You can also specify the compression level when saving using the [compressionLevel](https://reference.aspose.com/words/nodejs-net/aspose.words.saving/xlsxsaveoptions/compressionlevel/) property.
 
 The following code example shows how to specify the compression level when saving to XLSX format:
 
@@ -72,15 +72,15 @@ const aw = require('@aspose/words');
 var doc = new aw.Document("Document.docx");
 
 var saveOptions = new aw.Saving.XlsxSaveOptions();
-saveOptions.compressionLevel = CompressionLevel.Maximum;
+saveOptions.compressionLevel = aw.Saving.CompressionLevel.Maximum;
 
 doc.save("BaseConversions.CompressXlsx.xlsx", saveOptions);
 {{< /highlight >}}
 
 ## See Also
 
-- Documentation section [Protect or Encrypt a Document](/words/nodejs-net/protect-or-encrypt-a-document/)for more information about protecting and encrypting a document
-- The article [Find and Replace](/words/nodejs-net/find-and-replace/)for more more information about finding and replacing the content you want
+- Documentation section [Protect or Encrypt a Document](/words/nodejs-net/protect-or-encrypt-a-document/) for more information about protecting and encrypting a document
+- The article [Find and Replace](/words/nodejs-net/find-and-replace/) for more information about finding and replacing the content you want
 
 ------ 
 

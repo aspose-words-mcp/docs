@@ -21,15 +21,15 @@ This page describes how to export Aspose.Words documents to images in an ASP.NET
 
 {{% /alert %}}
 
-Are you facing problems in converting a lengthy web page into single/multiple images(PNG, JPEG,TIFF, or BMP). Here is how [Aspose.Words for .NET](https://products.aspose.com/words/net/) will help you achieve this. Aspose.Words for .NET exports the entire content of the web page into a single image or multiple images, as per user choice , in any image format (options available are PNG, JPEG,TIFF,BMP). Users can easily download the exported image(s) and use it as desired. Developers can add this feature of Aspose.Words for .NET to their MVC website projects by performing few simple steps.
+Are you facing problems in converting a lengthy web page into single/multiple images (PNG, JPEG,TIFF, or BMP). Here is how [Aspose.Words for .NET](https://products.aspose.com/words/net/) will help you achieve this. Aspose.Words for .NET exports the entire content of the web page into a single image or multiple images, as per user choice , in any image format (options available are PNG, JPEG,TIFF,BMP). Users can easily download the exported image(s) and use it as desired. Developers can add this feature of Aspose.Words for .NET to their MVC website projects by performing few simple steps.
 
-This initial version of the modulecontains following features:
+This initial version of the module contains following features:
 
 - Simple to integrate.
 - Exports the entire content of a web page with no limitation on page length or content type, into one or more images.
 - Stores the exported images in zipped archive (in case of multiple images).
 - Allows users to export content into four different Image formats (PNG, JPEG,TIFF, or BMP).
-- It has the capability of auto-sequencingmultiple images.
+- It has the capability of auto-sequencing multiple images.
 - Allows users to have an offline copy of their favorite online content into image formats for sharing and printing etc.
 - The exported image(s) is highly optimized without loss of any critical information.
 - Exported document is automatically sent to the browser for downloading.
@@ -61,14 +61,14 @@ You can download Export web page contents to an image for ASP.NET MVC from one o
 
 #### Test a running demonstration
 
-- Step 1 – Download ExportContentToImagesProject.
-- Step 2 – Open ExportContentToImagesProject.
+- Step 1 – Download ExportContentToImages Project.
+- Step 2 – Open ExportContentToImages Project.
 - Step 3 – Run the project.
 
 #### Add “Export web page content to an image” feature to an existing MVC project
 
-- Step 1 – Download ExportContentToImagesProject and open your existing ASP.NET MVC Solution / Project.
-- Step 2 – Copy “Controllers/ExportToImageController.cs” and paste it in your project“Controllers” folder.
+- Step 1 – Download ExportContentToImages Project and open your existing ASP.NET MVC Solution / Project.
+- Step 2 – Copy “Controllers/ExportToImageController.cs” and paste it in your project “Controllers” folder.
 - Step 3 – Modify namespace in ExportToImageController.cs file with your current project namespace.
 - Step 4 – Copy “Views/Shared/AsposeContentToImage.cshtml” file and paste in your project “Views/Shared” folder.
 - Step 5 – Add partial view “AsposeContentToImage.cshtml” in your desired view.

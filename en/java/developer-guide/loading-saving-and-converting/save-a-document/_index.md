@@ -22,11 +22,11 @@ This page explains how to save a document in different formats using Aspose.Word
 
 {{% /alert %}}
 
-Most of the tasks you need to perform with Aspose.Words involve saving a document. To save a document Aspose.Words provides the [Save](https://reference.aspose.com/words/java/com.aspose.words/document/#save(java.lang.String)) method of the [Document](https://reference.aspose.com/words/java/com.aspose.words/document/) class. The document can be saved in any save format supported by Aspose.Words. For the list of all supported save formats, see the [SaveFormat](https://reference.aspose.com/words/java/com.aspose.words/saveformat/) enumeration.
+Most of the tasks you need to perform with Aspose.Words involve saving a document. To save a document Aspose.Words provides the [save()](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String) method of the [Document](https://reference.aspose.com/words/java/com.aspose.words/document/) class. The document can be saved in any save format supported by Aspose.Words. For the list of all supported save formats, see the [SaveFormat](https://reference.aspose.com/words/java/com.aspose.words/saveformat/) enumeration.
 
 ## Save to a File {#save-a-document-to-a-file}
 
-Simply use the [Save](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String) method with a file name. Aspose.Words will determine the save format from the file extension that you specify.
+Simply use the [save()](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.lang.String) method with a file name. Aspose.Words will determine the save format from the file extension that you specify.
 
 The following code example shows how to load and save a document to a file:
 
@@ -34,19 +34,19 @@ The following code example shows how to load and save a document to a file:
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from[Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.doc).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.doc).
 
 {{% /alert %}}
 
 ## Save to a Stream {#save-a-document-to-a-stream}
 
-Pass a stream object to the [Save](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.io.OutputStream-com.aspose.words.SaveOptions) method. It's necessary to specify the save format explicitly when saving to a stream.
+Pass a stream object to the [save()](https://reference.aspose.com/words/java/com.aspose.words/document/#save-java.io.OutputStream-com.aspose.words.SaveOptions) method. It's necessary to specify the save format explicitly when saving to a stream.
 
 The following code example shows how to load and save a document to a stream:
 
 {{< gist "aspose-words-gists" "9d2a393f6dff9d785e7747a48e590d9d" "load-and-save-to-stream.java" >}}
 
-You can download the template file of this example from[Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.doc).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Examples/Data/Document.doc).
 
 ## Save to PCL {#save-a-document-to-pcl}
 

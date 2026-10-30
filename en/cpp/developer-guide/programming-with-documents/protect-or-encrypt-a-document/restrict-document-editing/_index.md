@@ -95,17 +95,16 @@ The following code example shows how to add a restriction for the entire documen
 
    ```cpp
    System::SharedPtr<Aspose::Words::Document> doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
-   doc->Protect(Aspose::Words::ProtectionType::ReadOnly, true, u"MySecretPassword");
+   doc->Protect(Aspose::Words::ProtectionType::ReadOnly, u"MySecretPassword");
    doc->Save(u"protected.docx");
    ```
 
 2. **Q:** Can I remove protection from a document if I don't know the password?  
-   **A:** Yes. Aspose.Words provides an overload of `Unprotect` that removes protection without a password, but it only works when the document was protected with an empty password. If a password was set, you must supply the correct password; otherwise the document remains protected.
+   **A:** Yes. `Unprotect()` removes the protection even if the document is protected with a password. `Unprotect(password)` removes it only when the password is correct and returns `false` otherwise.
 
    ```cpp
-   doc->Unprotect(u"MySecretPassword");   // correct password
-   // or, if no password was set:
-   doc->Unprotect(u"");
+   doc->Unprotect();                                  // removes protection without the password
+   bool removed = doc->Unprotect(u"MySecretPassword"); // removes it only if the password is correct
    ```
 
 3. **Q:** What is the difference between `ReadOnly` and `NoProtection` protection types?  
@@ -115,7 +114,7 @@ The following code example shows how to add a restriction for the entire documen
    **A:** Use the `Protect` method with `ProtectionType::AllowOnlyFormFields` and provide a password. Users will be able to fill in form fields but cannot modify any other content.
 
    ```cpp
-   doc->Protect(Aspose::Words::ProtectionType::AllowOnlyFormFields, true, u"FormPassword");
+   doc->Protect(Aspose::Words::ProtectionType::AllowOnlyFormFields, u"FormPassword");
    ```
 
 5. **Q:** How do I define unrestricted editable regions inside a protected document?  
@@ -123,7 +122,7 @@ The following code example shows how to add a restriction for the entire documen
 
    ```cpp
    System::SharedPtr<Aspose::Words::DocumentBuilder> builder = System::MakeObject<Aspose::Words::DocumentBuilder>(doc);
-   builder->StartEditableRange(u"Range1");
+   auto rangeStart = builder->StartEditableRange();
    builder->Writeln(u"This part can be edited.");
-   builder->EndEditableRange(u"Range1");
+   builder->EndEditableRange(rangeStart);
    ```

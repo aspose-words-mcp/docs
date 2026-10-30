@@ -35,20 +35,20 @@ The following code example shows how to merge rows from two tables into one:
 
 - `Aspose.Words.Tables.Table` — Represents a table in the document.
 - `Aspose.Words.Tables.Row` — Represents a table row.
-- `Document.ImportNode(Node, bool)` — Imports a node from another document, preserving formatting when the second parameter is `true`.
+- `Document.ImportNode(Node, bool)` — Imports a node from another document; `true` imports its child nodes as well.
 - `RowCollection.Add(Node)` — Adds a row to the table's row collection.
 - `Node.Remove()` — Removes the node from the document.
 
 ## FAQ
 
 1. **Q:** How do I join two tables in a Word document using Aspose.Words for .NET?  
-   **A:** Load the document, locate the two `Table` nodes, move each `Row` from the second table into the first using `ImportNode`, add the rows to `firstTable.Rows`, and finally call `secondTable.Remove()` to delete the empty container.
+   **A:** Load the document, locate the two `Table` nodes, move each `Row` from the second table into the first with `firstTable.Rows.Add(secondTable.FirstRow)` until the second table is empty, and finally call `secondTable.Remove()` to delete the empty container.
 
 2. **Q:** Will the original formatting of rows (borders, shading, cell width) be preserved after moving them?  
-   **A:** Yes. When you import a row with `firstTable.Document.ImportNode(row, true)`, the `true` flag copies all formatting and style information, so the visual appearance remains unchanged.
+   **A:** Yes. A moved row keeps its cells and their formatting. `ImportNode` is needed only when the tables are in different documents; there, `ImportNode(row, true)` imports the row together with its cells.
 
 3. **Q:** Can I join tables that have a different number of columns?  
-   **A:** Aspose.Words will copy the cells as they exist. If the column counts differ, the resulting table will have the column structure of the first table; extra cells from rows with more columns will be truncated, and missing cells will be added as empty cells to match the first table's layout.
+   **A:** Yes. Each row keeps its own cells, so the joined table contains rows with different numbers of cells; nothing is truncated or added.
 
 4. **Q:** After moving rows, the second table is still visible as an empty placeholder. How do I remove it?  
    **A:** Call `secondTable.Remove();` after all rows have been transferred. This deletes the table node from the document tree, eliminating the empty placeholder.

@@ -46,7 +46,7 @@ The following code example shows how to perform find and replace operation and s
 
 ## Specify Compression Level When Saving to XLSX
 
-You can also specify the compression level when saving using the [CompressionLevel](https://reference.aspose.com/words/python-net/aspose.words.saving/xlsxsaveoptions/compression_level/) property.
+You can also specify the compression level when saving using the [compression_level](https://reference.aspose.com/words/python-net/aspose.words.saving/xlsxsaveoptions/compression_level/) property.
 
 The following code example shows how to specify the compression level when saving to XLSX format:
 
@@ -55,7 +55,7 @@ The following code example shows how to specify the compression level when savin
 ## See Also
 
 - Documentation section [Protect or Encrypt a Document](/words/python-net/protect-or-encrypt-a-document/) for more information about protecting and encrypting a document
-- The article [Find and Replace](/words/python-net/find-and-replace/) for more more information about finding and replacing the content you want 
+- The article [Find and Replace](/words/python-net/find-and-replace/) for more information about finding and replacing the content you want 
 
 ## FAQ
 

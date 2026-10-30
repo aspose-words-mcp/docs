@@ -49,7 +49,7 @@ From the above table you can see that for some programming languages it is possi
    **A:** If your language runs on the Java Virtual Machine (e.g., via Java Bridge, JPype, Inline::Java), use **Aspose.Words for Java**. If you are on Windows and can use COM, you may use **Aspose.Words for .NET** through COM Interop. The table above lists the recommended interoperability technology for each language.
 
 2. **Q:** Can I use Aspose.Words for .NET on Linux or macOS?  
-   **A:** No. The .NET version accessed via COM Interop is limited to Microsoft Windows, as COM is a Windows-only technology. For cross-platform scenarios, use the Java version with a Java-based interoperability layer.
+   **A:** Yes. Aspose.Words for .NET runs on Linux and macOS with .NET Core, .NET, or Mono. Only COM Interop, which this page describes, is limited to Microsoft Windows. For cross-platform scenarios with the languages listed here, use the Java version with a Java-based interoperability layer.
 
 3. **Q:** Why can't I call static methods or overloaded methods when using COM Interop?  
    **A:** COM Interop exposes only instance members and does not support method overloading or static members directly. To work around this, create wrapper classes in .NET that expose the required functionality as instance methods, then call those wrappers via COM.

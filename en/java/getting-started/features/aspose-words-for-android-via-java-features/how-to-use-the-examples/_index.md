@@ -17,7 +17,7 @@ Firstly make sure that you have the ADT bundle installed and that you have downl
 
 - Install Aspose.Words for Android via Java by following the instructions at [here](/words/java/installation/)
 - Open the project in your workspace using Eclipse with ADT.
-- Click**Run**to start and choose the appropriate emulator to run the package on.
+- Click **Run** to start and choose the appropriate emulator to run the package on.
 
 ------ 
 
@@ -35,7 +35,7 @@ Firstly make sure that you have the ADT bundle installed and that you have downl
 4. **Q:** Where do I add my Aspose.Words license file in the example projects?  
    **A:** Place the license file (e.g., `Aspose.Words.lic`) in the **assets** folder of the example project. Then add the following code early in your activity (typically in `onCreate`):  
 
-   ```csharp
+   ```java
    License license = new License();
    license.setLicense("Aspose.Words.lic");
    ```
@@ -43,7 +43,7 @@ Firstly make sure that you have the ADT bundle installed and that you have downl
 5. **Q:** How do I modify an example to generate a PDF from my own code?  
    **A:** Use the `Document` class to load or create a document and then save it as PDF:  
 
-   ```csharp
+   ```java
    Document doc = new Document("input.docx");
    doc.save("output.pdf", SaveFormat.PDF);
    ```  

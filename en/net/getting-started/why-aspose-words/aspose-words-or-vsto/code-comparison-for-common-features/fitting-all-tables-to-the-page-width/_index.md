@@ -46,5 +46,5 @@ foreach (Table table in doc.GetChildNodes(NodeType.Table, true))
 
 ## Download Sample Code
 
-- [Github](https://github.com/asposemarketplace/Aspose_for_VSTO/releases/download/Aspose.Words1.0/Fitting.all.Tables.to. The.Page.Width.Aspose.Words.zip)
+- [Github](https://github.com/asposemarketplace/Aspose_for_VSTO/releases/download/Aspose.Words1.0/Fitting.all.Tables.to.the.Page.Width.Aspose.Words.zip)
 - [Sourceforge](https://sourceforge.net/projects/asposevsto/files/)

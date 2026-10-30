@@ -52,7 +52,7 @@ Aspose.Words for Python via .NET features can be divided into four main areas.
 
 The ability to easily and reliably convert documents is one of the main features of Aspose.Words.
 
-Comprehensive [document import and export](/words/python-net/loading-saving-and-converting/) with [over 35 supported file formats](/words/python-net/supported-document-formats/) allows users to convert documents from [one popular format](https://reference.aspose.com/words/net/aspose.words/loadformat/) to [another](https://reference.aspose.com/words/net/aspose.words/saveformat/), for example, from DOCX to PDF, JPEG, or Markdown, or from PDF to various Word formats.
+Comprehensive [document import and export](/words/python-net/loading-saving-and-converting/) with [over 35 supported file formats](/words/python-net/supported-document-formats/) allows users to convert documents from [one popular format](https://reference.aspose.com/words/python-net/aspose.words/loadformat/) to [another](https://reference.aspose.com/words/python-net/aspose.words/saveformat/), for example, from DOCX to PDF, JPEG, or Markdown, or from PDF to various Word formats.
 
 #### Document Object Model (DOM)
 
@@ -103,23 +103,23 @@ Please visit the [Licensing](/words/python-net/licensing/) page for information 
 
 ## Technical Support
 
-For more information on Aspose.Words technical support, take a look at the [support page](/words/net/technical-support/).
+For more information on Aspose.Words technical support, take a look at the [support page](/words/python-net/technical-support/).
 
 ------ 
 
 ## FAQ
 
 1. **Q:** Can Aspose.Words for Python via .NET run on Linux and macOS?  
-   **A:** Yes. The library is fully cross‑platform and supports Windows, Linux, and macOS. You can install the NuGet package and use it from any Python runtime that runs on these operating systems.
+   **A:** Yes. The library is fully cross‑platform and supports Windows, Linux, and macOS. You can install the package from PyPI (`pip install aspose-words`) and use it from any Python runtime that runs on these operating systems.
 
 2. **Q:** Is a .NET license file usable with the Python via .NET API?  
-   **A:** Absolutely. The same **Aspose.Total.NET.lic** (or Aspose.Words.NET.lic) file can be applied in Python by calling `license = aw.License(); license.set_license("Aspose.Total.NET.lic")`. The license is product‑agnostic within the .NET family.
+   **A:** No. Licenses are product-specific: a .NET license such as `Aspose.Total.NET.lic` or `Aspose.Words.NET.lic` is not valid. Use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`), e.g., `license = aw.License(); license.set_license("Aspose.Words.Python.NET.lic")`.
 
 3. **Q:** Do I need Microsoft Word or Office installed to use Aspose.Words?  
    **A:** No. Aspose.Words is a self‑contained library and does not depend on Microsoft Word, Office, or any other third‑party software. All processing is performed internally.
 
 4. **Q:** Which file formats are supported for conversion?  
-   **A:** Over 35 formats are supported for both loading and saving, including DOC, DOCX, ODT, RTF, PDF, XPS, HTML, EPUB, JPEG, PNG, and Markdown. See the **Supported Document Formats** page for the complete list.
+   **A:** More than 40 formats are supported for loading and saving, including DOC, DOCX, ODT, RTF, PDF, XPS, HTML, EPUB, JPEG, PNG, and Markdown. See the **Supported Document Formats** page for the complete list.
 
 5. **Q:** Is Aspose.Words thread‑safe?  
    **A:** The library is thread-safe as long as each thread works with its own `Document` instance. Concurrent access to the same `Document` object from multiple threads is not supported. This design allows you to process many documents in parallel safely.

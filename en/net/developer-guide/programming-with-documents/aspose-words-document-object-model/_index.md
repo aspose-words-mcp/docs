@@ -176,6 +176,4 @@ The following code example shows how to use typed properties to access nodes of 
    **A:** Iterate through all `Run` nodes using `document.GetChildNodes(NodeType.Run, true)` and check `Run.Text.Trim().Length`. If no run contains non‑whitespace text, the document is effectively empty.  
 
 5. **Q:** How do I use `FindReplaceOptions` to replace text only inside tables?  
-   **A:** Create a `FindReplaceOptions` instance, set `FindReplaceOptions.MatchCase = true` (or other options), and assign a `NodeChangingCallback` that checks `node.ParentNode is Cell`. Then call `document.Range.Replace("old", "new", options)`.  
-
-```
+   **A:** Call `Replace` on the range of each table instead of the whole document: `foreach (Table table in document.GetChildNodes(NodeType.Table, true)) table.Range.Replace("old", "new", options);`. Set `FindReplaceOptions` properties such as `MatchCase` as usual.  

@@ -25,7 +25,7 @@ This page describes how to create an empty document using NPOI and compares its 
 
 Call the Document constructor without parameters to create a new blank document.
 
-If you want to generate a document programmatically, the most reasonable step after creation is to use**DocumentBuilder**to add document contents.
+If you want to generate a document programmatically, the most reasonable step after creation is to use **DocumentBuilder** to add document contents.
 
 **C#**
 

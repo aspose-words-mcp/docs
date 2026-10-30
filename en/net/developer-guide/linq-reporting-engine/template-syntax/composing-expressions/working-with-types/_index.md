@@ -44,7 +44,7 @@ Also, the engine enables you to use anonymous types in template expressions. Suc
    **A:** No. Generic types are prohibited in template expressions. If you need to work with collections, pass a non‑generic wrapper or use an anonymous type that contains the required data.
 
 3. **Q:** How do I use a nullable type in a template expression?  
-   **A:** Use the shorthand `T?` syntax. For example, if you have a nullable `int` property `Age?`, you can reference it directly as `Age?` in the expression.
+   **A:** Use the shorthand `T?` form as a type name, for example `<<var [int? count = null]>>` or a cast `(int?)value`. Generic type identifiers such as `Nullable<int>` are not allowed. A nullable property is referenced by its name as usual, e.g., `Age`.
 
 4. **Q:** Are anonymous types supported in template expressions?  
    **A:** Yes. Anonymous types can be used, which is handy for grouping or projecting multiple keys without defining a dedicated class. They must still satisfy the visibility rules (public members).

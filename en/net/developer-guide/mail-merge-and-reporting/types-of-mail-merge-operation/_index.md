@@ -140,4 +140,4 @@ If you do not use Mail Merge regions, then it will be similar to Microsoft Word 
    **A:** Yes, you can nest regions by placing a child region's start and end fields inside the parent region's boundaries. The inner region will be repeated for each parent record, enabling hierarchical data structures such as orders with line items.
 
 5. **Q:** Why does an empty paragraph appear after a merge field, and how can I remove it?  
-   **A:** Aspose.Words treats a paragraph that contains only a merge field as a separate paragraph. If the field is removed during merging, the empty paragraph remains. Use `DocumentBuilder.MoveToMergeField("FieldName")` followed by `DocumentBuilder.RemoveParagraph()` to delete the unwanted paragraph after the merge.
+   **A:** Aspose.Words treats a paragraph that contains only a merge field as a separate paragraph. If the field is removed during merging, the empty paragraph remains. Set `MailMerge.CleanupOptions` to `MailMergeCleanupOptions.RemoveEmptyParagraphs` to delete such paragraphs automatically during the merge.

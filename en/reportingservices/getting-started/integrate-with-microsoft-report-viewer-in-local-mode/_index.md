@@ -97,8 +97,8 @@ private void Form1_Load(object sender, EventArgs eventArgs)
 	asposeHelper.AddExtension("AWMHTML", "MHTML - Web Archive via Aspose.Words", typeof(Aspose.Words.ReportingServices.MhtmlRenderer));
 	asposeHelper.AddExtension("AWODT", "ODT - OpenDocument via Aspose.Words", typeof(Aspose.Words.ReportingServices.OdtRenderer));
 	asposeHelper.AddExtension("AWTXT", "TXT - Plain Text via Aspose.Words", typeof(Aspose.Words.ReportingServices.TxtRenderer));
-	asposeHelper.AddExtension("AWXPS", "XPS � XML Paper Specification via Aspose.Words", typeof(Aspose.Words.ReportingServices.XpsRenderer));
-	asposeHelper.AddExtension("AWEPUB", "EPUB � Electronic Publications via Aspose.Words", typeof(Aspose.Words.ReportingServices.EpubRenderer));
+	asposeHelper.AddExtension("AWXPS", "XPS - XML Paper Specification via Aspose.Words", typeof(Aspose.Words.ReportingServices.XpsRenderer));
+	asposeHelper.AddExtension("AWEPUB", "EPUB - Electronic Publications via Aspose.Words", typeof(Aspose.Words.ReportingServices.EpubRenderer));
 	asposeHelper.UpdateHandlers();
 
 	// Other form load code

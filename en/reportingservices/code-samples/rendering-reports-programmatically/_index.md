@@ -38,7 +38,7 @@ If you have a Report Server running with Aspose.Words for Reporting Services ins
 
 **Adding a reference to the ReportExecutionService Web service in Visual Studio:**
 
-<img src="rendering-reports-programmatically-2.png" alt="ReportingService2005 Web service in Visual Studio" style="width:800px"/>
+<img src="rendering-reports-programmatically-2.png" alt="ReportExecutionService Web service in Visual Studio" style="width:800px"/>
 
 ### Step 3. Add required packages
 
@@ -101,13 +101,13 @@ using RenderingUsingWebService;
 
 // Settings
 
-const string relativeReportPath = "Secify relative path to a report."; // For example: "/Report1"
+const string relativeReportPath = "Specify relative path to a report."; // For example: "/Report1"
 
 const string userName = "Windows user login."; // For example: "Administrator".
 const string password = "Windows user password."; // For example: "123".
 
 const string renderingExtensionName = "AWDOCX"; // One of extension name as specified here: /words/reportingservices/installing-on-the-server-manually/#step-3-register-asposewords-for-reporting-services-as-a-rendering-extension
-const string ouputFilePath = "Path to ouput report file path."; // For example: "C:\Temp\out.docx"
+const string outputFilePath = "Path to output report file."; // For example: "C:\Temp\out.docx"
 
 const string execution2005EndPointUrl = "Execution end point."; // For example: http://localhost/ReportServer/ReportExecution2005.asmx
 
@@ -118,26 +118,26 @@ var client = execution2005EndPointUrl.CreateClient(userName, password);
 
 // 2. Load report.
 var trustedHeader = new TrustedUserHeader();
-var loadReponse = await client.LoadReportAsync(trustedHeader, relativeReportPath, null);
+var loadResponse = await client.LoadReportAsync(trustedHeader, relativeReportPath, null);
 
 // 3. Render report using specified extension.
-var renderRequest = new RenderRequest(loadReponse.ExecutionHeader, trustedHeader, renderingExtensionName, null);
+var renderRequest = new RenderRequest(loadResponse.ExecutionHeader, trustedHeader, renderingExtensionName, null);
 var renderResponse = await client.RenderAsync(renderRequest);
 
 // 4. Save received report document to the file.
-using var fileStream = File.OpenWrite(ouputFilePath);
+using var fileStream = File.OpenWrite(outputFilePath);
 await fileStream.WriteAsync(renderResponse.Result, 0, renderResponse.Result.Length);
 
-Console.WriteLine($"Report saved to the file: \"{ouputFilePath}\".");
+Console.WriteLine($"Report saved to the file: \"{outputFilePath}\".");
 {{< /highlight >}}
 
 ## Rendering via Report Viewer Working in Local Mode
 
-If you use the Microsoft Report Viewer control in your application, you can use its capabilities to render local reports (RDL and RDLC) to Microsoft Word documents programmatically. Follow these steps (assuming you use Report Viewer 2005):
+If you use the Microsoft Report Viewer control in your application, you can use its capabilities to render local reports (RDL and RDLC) to Microsoft Word documents programmatically. Follow these steps (assuming you use Report Viewer 2010 or later):
 
 ### Step 1. Integrate Aspose.Words for Reporting Services with Report Viewer
 
-Follow the instructions described in the section [Integrate with Microsoft Report Viewer in Local Mode](/words/reportingservices/configure-aspose-words-for-reporting-services/)
+Follow the instructions described in the section [Integrate with Microsoft Report Viewer in Local Mode](/words/reportingservices/integrate-with-microsoft-report-viewer-in-local-mode/)
 
 ### Step 2. Implement the rendering method
 
@@ -222,7 +222,7 @@ private static void RenderReportToFile(
         report.DataSources.Add(new ReportDataSource(table.TableName, table));
     
     // Render to appropriate format using Aspose extensions
-    ReportViewerHelper asposeHelper = new ReportViewerHelper(reportViewer);
+    ReportViewerHelper asposeHelper = new ReportViewerHelper(viewer);
     asposeHelper.AddExtensions();
     byte[] reportBytes = asposeHelper.Render(format);
     

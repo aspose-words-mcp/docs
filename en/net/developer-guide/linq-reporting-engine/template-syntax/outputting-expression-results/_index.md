@@ -42,7 +42,7 @@ If `html` switch is present, the expression result is considered to be a HTML bl
 <<["<b>Bold</b> and <i>italic</i> text"] -html>>
 {{< /highlight >}}
 
-To format a numeric or date-time expression result, you can specify a format string as an element of the corresponding expression tag. Such format strings are the same as the ones that you pass to [IFormattable.ToString](https://docs.microsoft.com/en-us/dotnet/api/system. Iformattable.tostring?view=net-6.0) method implementors. That is, for example, given that d is a `DateTime` value, you can use the following template to format the value using the "yyyy.MM.dd" pattern.
+To format a numeric or date-time expression result, you can specify a format string as an element of the corresponding expression tag. Such format strings are the same as the ones that you pass to [IFormattable.ToString](https://docs.microsoft.com/en-us/dotnet/api/system.iformattable.tostring?view=net-6.0) method implementors. That is, for example, given that d is a `DateTime` value, you can use the following template to format the value using the "yyyy.MM.dd" pattern.
 
 {{< highlight xml >}}
 <<[d]:"yyyy.MM.dd">>
@@ -95,14 +95,6 @@ Given that `i` is an integer number, you can convert the number to a lower‑cas
 {{< /highlight >}}
 
 **Note** – In contrast to format strings, additional number and string formats must not be enclosed with double quotes.
-
-## Related APIs
-
-- [Expression tag syntax](/net/template-syntax/#outputting-expression-results): Full documentation on expression tag structure and components
-- [Custom number formats](/net/template-syntax/#number-formats): Additional number formatting options (alphabetic, roman, ordinal, etc.)
-- [Custom string formats](/net/template-syntax/#string-formats): Additional string transformation options (lower, upper, caps, firstCap)
-- [HTML rendering](/net/template-syntax/#html-switch): Using the `-html` switch for HTML content rendering
-- [Format strings](/net/template-syntax/#format-strings): Standard .NET format specifiers for numbers and dates
 
 ------
 

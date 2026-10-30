@@ -34,7 +34,7 @@ You can implement the [Next](https://reference.aspose.com/words/cpp/aspose.words
 
 ### Implement NextIf and SkipIf Fields to Compare Two Expressions
 
-You can use either [NextIf](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldnextif) field or [SkipIf](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldskipif/) field if you want to compare two expressions ([right]https://reference.aspose.com/words/cpp/aspose.words.fields/fieldif/) and [left](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldif/get_leftexpression/) expressions) by some [operator](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldskipif/get_comparisonoperator/).
+You can use either [NextIf](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldnextif) field or [SkipIf](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldskipif/) field if you want to compare two expressions ([right](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldif/) and [left](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldif/get_leftexpression/) expressions) by some [operator](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldskipif/get_comparisonoperator/).
 
 **NextIf** field has the same functionality as **Next** field, but it skips to the next row only if the condition is met. You can add **SkipIf** field to your template to exclude records that meet a certain criterion from a mail merge. The following table shows the main difference between NextIf and SkipIf:
 
@@ -59,7 +59,7 @@ The following code example shows how to get names of all merge fields in the tem
 
 You may have a scenario where you want to understand how your template is structured through the specified merge regions. You can use some methods to gather all necessary information about merge regions or to get the merge regions hierarchy in your template, such as the [GetRegionsHierarchy](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/getregionshierarchy/) method. You can use the properties and methods of the [MailMergeRegionInfo](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmergeregioninfo/) class. The following code example shows how to get merge regions hierarchy:
 
-{{< highlight csharp >}}
+{{< highlight cpp >}}
 
 System::SharedPtr<MailMergeRegionInfo> regionInfo = doc->get_MailMerge()->GetRegionsHierarchy();
 
@@ -73,7 +73,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ### Add Mapped Fields
 
-Aspose.Words allows you to automatically map names of fields in your data source and names of Mail Merge fields in the template using the [MappedDataFields](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/get_mappeddatafields/) property. For example, if you have a field name called "Last Name" in your template, and in your data source you have the field name "Last Name" or another variation such as "Last_Name" or "LastName", then the field in the data source will automatically map to the corresponding mapped field. If a merge template is to be merged with many data sources, mapped fields make it unnecessary to reenter the fields into the template to agree with the field names in the database.
+Aspose.Words allows you to automatically map names of fields in your data source and names of Mail Merge fields in the template using the [get_MappedDataFields()](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/get_mappeddatafields/) property. For example, if you have a field name called "Last Name" in your template, and in your data source you have the field name "Last Name" or another variation such as "Last_Name" or "LastName", then the field in the data source will automatically map to the corresponding mapped field. If a merge template is to be merged with many data sources, mapped fields make it unnecessary to reenter the fields into the template to agree with the field names in the database.
 
 The following code example shows how to add a mapped field using the [Add](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mappeddatafieldcollection/add/) method when a merge field in a template and a data field in a data source have different names:
 
@@ -90,7 +90,7 @@ The following code example shows how to add a mapped field using the [Add](https
    **A:** Call `MailMerge::GetRegionsHierarchy()`. The method returns a `System::SharedPtr<MailMergeRegionInfo>` object that provides the region name, parent region, and child regions, allowing you to understand nested region structures.
 
 3. **Q:** My data source field names differ from the merge field names in the document. How can I map them automatically?  
-   **A:** Use the `MailMerge::get_MappedDataFields()` collection. Add a mapping with `MappedDataFields->Add("DataSourceField", "MergeField")`. After mapping, `Execute` will match the fields correctly without renaming the template.
+   **A:** Use the `MailMerge::get_MappedDataFields()` collection. Add a mapping with `doc->get_MailMerge()->get_MappedDataFields()->Add(u"MergeField", u"DataSourceField")` (the document field name first, then the data source field name). After mapping, `Execute` will match the fields correctly without renaming the template.
 
 4. **Q:** What is the difference between the **NextIf** and **SkipIf** fields, and when should I use each?  
    **A:** `NextIf` merges the next data record into the current document only when its condition is true; otherwise it starts a new document. `SkipIf` cancels the current document and moves to the next record when the condition is true, effectively skipping records that meet the condition. Use `NextIf` to include optional records and `SkipIf` to exclude unwanted records.

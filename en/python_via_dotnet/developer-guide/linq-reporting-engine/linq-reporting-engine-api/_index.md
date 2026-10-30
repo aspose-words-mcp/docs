@@ -710,7 +710,7 @@ While building a report, some paragraphs containing only template syntax tags ca
 
 {{< highlight python >}}
 engine = aw.reporting.ReportingEngine()
-engine.options | = aw.reporting.ReportBuildOptions.REMOVE_EMPTY_PARAGRAPHS
+engine.options |= aw.reporting.ReportBuildOptions.REMOVE_EMPTY_PARAGRAPHS
 engine.build_report(...)
 {{< /highlight >}}
 
@@ -814,7 +814,7 @@ To support such scenarios, the engine provides an option to treat missing member
 
 {{< highlight python >}}
 engine = aw.reporting.ReportingEngine()
-engine.options | = aw.reporting.ReportBuildOptions.ALLOW_MISSING_MEMBERS
+engine.options |= aw.reporting.ReportBuildOptions.ALLOW_MISSING_MEMBERS
 engine.build_report(...)
 {{< /highlight >}}
 
@@ -852,7 +852,7 @@ When [ReportBuildOptions.INLINE_ERROR_MESSAGES](https://reference.aspose.com/wor
 
 {{< highlight python >}}
 engine = aw.reporting.ReportingEngine()
-engine.options | = aw.reporting.ReportBuildOptions.INLINE_ERROR_MESSAGES
+engine.options |= aw.reporting.ReportBuildOptions.INLINE_ERROR_MESSAGES
 if (engine.build_report(...)) :
 	# Do something with a successfully built report.
 else :
@@ -884,7 +884,7 @@ Although this strategy can significantly minimize the reflection usage in a long
    ```
 
 2. **Q:** What should I do when a template tries to access a member that does not exist on the data object?  
-   **A:** Enable `ReportBuildOptions.ALLOW_MISSING_MEMBERS`. With this option the engine treats missing members as `null` instead of throwing an exception, allowing the report to continue rendering.  
+   **A:** Enable `ReportBuildOptions.ALLOW_MISSING_MEMBERS`. With this option the engine treats missing members as `None` instead of throwing an exception, allowing the report to continue rendering.  
 
    ```python
    engine = aw.reporting.ReportingEngine()
@@ -905,16 +905,16 @@ Although this strategy can significantly minimize the reflection usage in a long
    ```
 
 4. **Q:** My reports are small and I notice a performance hit from reflection. How can I disable the reflection‑optimization strategy?  
-   **A:** Set the static property `ReportingEngine.use_reflection_optimization` to `False` before creating the engine instance. This forces the engine to use direct calls, which is faster for small data sets.  
+   **A:** Call the static method `ReportingEngine.set_use_reflection_optimization(False)` before creating the engine instance (a static property cannot be assigned in Python). This forces the engine to use direct calls, which is faster for small data sets.  
 
    ```python
-   aw.reporting.ReportingEngine.use_reflection_optimization = False
+   aw.reporting.ReportingEngine.set_use_reflection_optimization(False)
    engine = aw.reporting.ReportingEngine()
    engine.build_report(doc, data_source)
    ```
 
 5. **Q:** How do I specify a custom root object name when loading XML, JSON, or CSV data?  
-   **A:** Pass the desired root name as the third argument to `ReportingEngine.build_report`. This tells the engine which collection in the data source should be treated as the root for iteration.  
+   **A:** Pass the name as the third argument (`data_source_name`) of `ReportingEngine.build_report`. The template then refers to the data source object by this name, for example `<<foreach [in persons]>>`.  
 
    ```python
    engine = aw.reporting.ReportingEngine()

@@ -21,7 +21,7 @@ This page explains how to render shapes separately from the rest of the document
 
 {{% /alert %}}
 
-When processing documents, a common task is to extract all images found in the document and export them to an external location. This task becomes simple with the Aspose.Words API, which already provides the functionality for extracting and saving image data. However, sometimes you may want to similarly extract other types of graphic content that is represented by a different type of drawing object, for example, a text box containing paragraphs, arrow shapes, and a small image. There is no straightforward way of rendering this object since itis a combination of individual content elements. You may also encounter a case when the contents have been grouped together into the object that looks like a single image.
+When processing documents, a common task is to extract all images found in the document and export them to an external location. This task becomes simple with the Aspose.Words API, which already provides the functionality for extracting and saving image data. However, sometimes you may want to similarly extract other types of graphic content that is represented by a different type of drawing object, for example, a text box containing paragraphs, arrow shapes, and a small image. There is no straightforward way of rendering this object since it is a combination of individual content elements. You may also encounter a case when the contents have been grouped together into the object that looks like a single image.
 
 Aspose.Words provides functionality for extracting this type of content in the same way you can extract a simple image from a shape as rendered content. This article describes how to utilize this functionality to render shapes independently of the document.
 
@@ -29,7 +29,7 @@ Aspose.Words provides functionality for extracting this type of content in the s
 
 All the content in a document drawing layer is represented by the [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/) or [GroupShape](https://reference.aspose.com/words/cpp/aspose.words.drawing/groupshape/) node in the Aspose.Words Document Object Module (DOM). Such contents can be text boxes, images, AutoShapes, OLE objects, etc. Some fields are also imported as shapes, for example, the `INCLUDEPICTURE` field.
 
-A simple image is represented by a **Shape** node of [ShapeType.Image](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapetype/).This shape node has no child nodes but the image data contained within this shape node can be accessed by the [Shape.ImageData](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_imagedata/) property. On the other hand, a shape can also be made up of many child nodes. For instance, a text box shape, which is represented by the [ShapeType.TextBox](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapetype/) property, can be made up of many nodes, such as [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/) and [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/).Most shapes can include the **Paragraph** and **Table** block-level nodes. These are the same nodes as those appearing in the main body. Shapes are always parts of some paragraph, either included directly inline or anchored to the **Paragraph,** but “floating” anywhere in the document page.
+A simple image is represented by a **Shape** node of [ShapeType::Image](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapetype/). This shape node has no child nodes but the image data contained within this shape node can be accessed by the [Shape::get_ImageData()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_imagedata/) property. On the other hand, a shape can also be made up of many child nodes. For instance, a text box shape, which is represented by the [ShapeType::TextBox](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapetype/) property, can be made up of many nodes, such as [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/) and [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/). Most shapes can include the **Paragraph** and **Table** block-level nodes. These are the same nodes as those appearing in the main body. Shapes are always parts of some paragraph, either included directly inline or anchored to the **Paragraph,** but “floating” anywhere in the document page.
 
 ![rendering-shapes-separately-from-a-document_1-cpp](rendering-shapes-separately-from-a-document-1.png)
 
@@ -41,7 +41,7 @@ In Aspose.Words, these groups of shapes are represented by the [GroupShape](http
 
 ![rendering-shapes-separately-from-a-document_3-cpp](rendering-shapes-separately-from-a-document-3.png)
 
-The DOCX format can contain special types of images, such as diagrams or charts. These shapes are also represented through the **Shape** node in Aspose.Words, which also provides a similar method for rendering them as images. By design, a shape cannot contain another shape as a child, unless that shape is an image (**ShapeType.Image**). For example, Microsoft Word does not allow you to insert a text box inside another text box.
+The DOCX format can contain special types of images, such as diagrams or charts. These shapes are also represented through the **Shape** node in Aspose.Words, which also provides a similar method for rendering them as images. By design, a shape cannot contain another shape as a child, unless that shape is an image (**ShapeType::Image**). For example, Microsoft Word does not allow you to insert a text box inside another text box.
 
 The shape types described above provide a special method to render the shapes through the [ShapeRenderer](https://reference.aspose.com/words/cpp/aspose.words.rendering/shaperenderer/) class. An instance of the **ShapeRenderer** class is retrieved for a **Shape** or **GroupShape** through the **GetShapeRenderer** method or by passing the **Shape** to the constructor of the **ShapeRenderer** class. This class provides access to members, which allow rendering a shape to the following:
 
@@ -57,15 +57,15 @@ When rendering a **Shape**, it must be a part of the document hierarchy. If the 
 
 ## Rendering to File or Stream
 
-The [Save](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/save/) method provides overloads that render a shape directly to a file or stream. Both overloads accept an instance of the [ImageSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/) class, which allows to define options for rendering the shape. This works in the same way as the [Document.Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) method. Even though this parameter is required, you can pass a null value, specifying that there are no custom options.
+The [Save](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/save/) method provides overloads that render a shape directly to a file or stream. Both overloads accept an instance of the [ImageSaveOptions](https://reference.aspose.com/words/cpp/aspose.words.saving/imagesaveoptions/) class, which allows to define options for rendering the shape. This works in the same way as the [Document::Save](https://reference.aspose.com/words/cpp/aspose.words/document/save/) method. Even though this parameter is required, you can pass a null value, specifying that there are no custom options.
 
-The shape can be exported in any image format specified in the [SaveFormat](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) enumeration. For example, the image can be rendered as a raster image, such as JPEG by specifying the [SaveFormat.Jpeg](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) enumeration, or as a vector image, such as EMF by specifying the [SaveFormat.Emf](https://reference.aspose.com/words/cpp/aspose.words/saveformat/).
+The shape can be exported in any image format specified in the [SaveFormat](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) enumeration. For example, the image can be rendered as a raster image, such as JPEG by specifying the [SaveFormat::Jpeg](https://reference.aspose.com/words/cpp/aspose.words/saveformat/) enumeration, or as a vector image, such as EMF by specifying the [SaveFormat::Emf](https://reference.aspose.com/words/cpp/aspose.words/saveformat/).
 
 The code example below illustrates rendering a shape to an EMF image separately from document, and saving to disk:
 
 {{< gist "aspose-words-gists" "010c69d7d7a0108c7852e317259376f9" "render-shape-as-emf.h" >}}
 
-The code example below illustratesrendering a shape to a JPEG image separately from document, and saving to a stream:
+The code example below illustrates rendering a shape to a JPEG image separately from document, and saving to a stream:
 
 {{< gist "aspose-words-gists" "010c69d7d7a0108c7852e317259376f9" "render-shape-as-jpeg.h" >}}
 
@@ -81,7 +81,7 @@ The example below shows how to render a shape to a **Graphics** object separatel
 
 Similarly, to the [RenderToSize](https://reference.aspose.com/words/cpp/aspose.words/document/rendertosize/) method, the [RenderToSize](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/rendertosize/) method inherited from the [NodeRendererBase](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/) is useful for creating thumbnails of a document content. The shape size is specified through the constructor. The **RenderToSize** method accepts the **Graphics** object, the X and Y coordinates of the image position, and the size of the image (width and height) that will be drawn onto the **Graphics** object.
 
-The **Shape** can be rendered to a certain scale using the [ShapeRenderer.RenderToScale](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/rendertoscale/) method inherited from the [NodeRendererBase](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/) class. This is similar to the [Document.RenderToScale](https://reference.aspose.com/words/cpp/aspose.words/document/rendertoscale/) method that accepts the same major parameters. The difference between these two methods is that with the **ShapeRenderer.RenderToScale** method, instead of a literal size, you choose a float value that scales the shape during its rendering. If the float value equals 1.0causes the shape to be rendered at100% of its original size. A float value of 0.5 will reduce the image size by half.
+The **Shape** can be rendered to a certain scale using the [ShapeRenderer::RenderToScale](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/rendertoscale/) method inherited from the [NodeRendererBase](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/) class. This is similar to the [Document::RenderToScale](https://reference.aspose.com/words/cpp/aspose.words/document/rendertoscale/) method that accepts the same major parameters. The difference between these two methods is that with the **ShapeRenderer::RenderToScale** method, instead of a literal size, you choose a float value that scales the shape during its rendering. If the float value equals 1.0 causes the shape to be rendered at 100% of its original size. A float value of 0.5 will reduce the image size by half.
 
 ## Rendering a Shape Image
 
@@ -101,7 +101,7 @@ The below example shows how to create a new Bitmap and Graphics object with the 
 
 When using the **RenderToSize** or **RenderToScale** methods, the rendered image size is also returned in the [SizeF](https://reference.aspose.com/words/cpp/aspose.words.rendering/noderendererbase/rendertoscale/) object. This can be assigned to a variable and used if necessary.
 
-The **SizeInPoints** property returns the Shape size measured in points (see [ShapeRenderer](https://reference.aspose.com/words/cpp/aspose.words.rendering/shaperenderer/). The result is a `SizeF` object containing the width and height.
+The **get_SizeInPoints()** property returns the Shape size measured in points (see [ShapeRenderer](https://reference.aspose.com/words/cpp/aspose.words.rendering/shaperenderer/). The result is a `SizeF` object containing the width and height.
 
 ## Related APIs
 

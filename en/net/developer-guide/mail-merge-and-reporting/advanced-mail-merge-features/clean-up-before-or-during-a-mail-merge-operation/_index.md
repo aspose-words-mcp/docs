@@ -127,7 +127,7 @@ The following code example shows how to remove empty table rows that contain Mai
    **Solution:** Enable the `RemoveEmptyParagraphs` flag in `CleanupOptions` before executing the merge. This removes paragraphs that become empty after fields are cleared. If the paragraph still persists, call `DocumentBuilder.MoveToMergeField("FieldName")` and delete the paragraph manually, or use `DeleteFields` to remove the field before the merge.
 
 2. **Problem:** Unused mail‑merge regions are still present in the generated document even though `RemoveUnusedRegions` was set.  
-   **Solution:** Ensure that `CleanupOptions.RemoveUnusedRegions` is applied on the **last** call to `MailMerge.ExecuteWithRegions`. When merging data from multiple sources, set the flag only on the final merge; earlier calls will otherwise delete regions prematurely.
+   **Solution:** Ensure that `MailMergeCleanupOptions.RemoveUnusedRegions` is applied on the **last** call to `MailMerge.ExecuteWithRegions`. When merging data from multiple sources, set the flag only on the final merge; earlier calls will otherwise delete regions prematurely.
 
 3. **Problem:** Cleanup options (e.g., `RemoveUnusedFields`, `RemoveEmptyTableRows`) have no effect when performing several `ExecuteWithRegions` calls.  
    **Solution:** `CleanupOptions` are evaluated only after the merge operation finishes. Apply the desired flags once, after the final `ExecuteWithRegions` call, or re‑assign `CleanupOptions` before the last execution. Do not change the options between intermediate merges, as they will be ignored.

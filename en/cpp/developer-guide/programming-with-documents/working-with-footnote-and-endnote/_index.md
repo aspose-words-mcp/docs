@@ -27,7 +27,7 @@ The following code example shows how to insert endnote into the document and set
 
 ## Set Number of Footnote Layout Columns
 
-You can set the number of footnote layout columns using the [Columns](https://reference.aspose.com/words/cpp/aspose.words.notes/footnoteoptions/get_columns/) property. If this property has a value of 0, the footnotes area is formatted with a number of columns based on the number of columns on the displayed page.
+You can set the number of footnote layout columns using the [get_Columns()](https://reference.aspose.com/words/cpp/aspose.words.notes/footnoteoptions/get_columns/) property. If this property has a value of 0, the footnotes area is formatted with a number of columns based on the number of columns on the displayed page.
 
 The following code example shows how to set the number of columns for footnote layout:
 
@@ -50,37 +50,41 @@ The following code example shows how to set the position of footnote and endnote
 
    ```cpp
    System::SharedPtr<Aspose::Words::Notes::FootnoteOptions> footnoteOpts = doc->get_FootnoteOptions();
-   footnoteOpts->set_NumberStyle(Aspose::Words::Notes::NumberStyle::UpperRoman);
+   footnoteOpts->set_NumberStyle(Aspose::Words::NumberStyle::UppercaseRoman);
    ```
 
 2. **Q:** How can I retrieve all footnotes or endnotes from a document?  
-   **A:** The document provides `get_Footnotes()` and `get_Endnotes()` collections. Iterate over them to access each note's properties, such as its text:  
+   **A:** Get all notes with `doc->GetChildNodes(NodeType::Footnote, true)` (endnotes are `Footnote` nodes too) and check `Footnote::get_FootnoteType()` to tell footnotes from endnotes:  
 
    ```cpp
-   for (auto footnote : System::IterateOver(doc->get_Footnotes()))
+   for (auto footnote : System::IterateOver<Aspose::Words::Notes::Footnote>(doc->GetChildNodes(Aspose::Words::NodeType::Footnote, true)))
    {
+       bool isEndnote = footnote->get_FootnoteType() == Aspose::Words::Notes::FootnoteType::Endnote;
        System::String text = footnote->GetText();
        // Process text...
    }
    ```
 
 3. **Q:** How can I detect whether a document contains any footnotes or endnotes?  
-   **A:** Check the `Count` property of the respective collections. If the count is greater than zero, the document contains those notes:  
+   **A:** Count the `Footnote` nodes of each type. If the count is greater than zero, the document contains those notes:  
 
    ```cpp
-   bool hasFootnotes = doc->get_Footnotes()->get_Count() > 0;
-   bool hasEndnotes  = doc->get_Endnotes()->get_Count() > 0;
+   int32_t footnotes = 0, endnotes = 0;
+   for (auto note : System::IterateOver<Aspose::Words::Notes::Footnote>(doc->GetChildNodes(Aspose::Words::NodeType::Footnote, true)))
+   {
+       (note->get_FootnoteType() == Aspose::Words::Notes::FootnoteType::Footnote ? footnotes : endnotes)++;
+   }
+   bool hasFootnotes = footnotes > 0;
+   bool hasEndnotes  = endnotes > 0;
    ```
 
 4. **Q:** Can I convert an existing endnote to a footnote (or vice‑versa) after it has been inserted?  
-   **A:** Aspose.Words does not provide a direct conversion method. Remove the original note using `Remove()` and re‑insert a new note of the desired type with `DocumentBuilder::InsertFootnote`, specifying `NoteType::Footnote` or `NoteType::Endnote`.  
+   **A:** Aspose.Words does not provide a direct conversion method. Remove the original note using `Remove()` and re‑insert a new note of the desired type with `DocumentBuilder::InsertFootnote`, specifying `FootnoteType::Footnote` or `FootnoteType::Endnote`.  
 
    ```cpp
-   // Remove existing endnote
-   endnote->Remove();
-
-   // Insert a footnote at the same location
+   // Insert a footnote at the same location, then remove the endnote
    System::SharedPtr<Aspose::Words::DocumentBuilder> builder = System::MakeObject<Aspose::Words::DocumentBuilder>(doc);
-   builder->MoveTo(endnote->get_Paragraph());
-   builder->InsertFootnote(Aspose::Words::Notes::NoteType::Footnote, Aspose::Words::Notes::FootnoteType::Normal, System::String(u"New footnote text"));
+   builder->MoveTo(endnote->get_ParentParagraph());
+   builder->InsertFootnote(Aspose::Words::Notes::FootnoteType::Footnote, u"New footnote text");
+   endnote->Remove();
    ```

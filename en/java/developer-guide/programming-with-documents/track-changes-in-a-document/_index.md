@@ -55,21 +55,21 @@ Note that revisions have a result similar to Microsoft Word but Aspose.Words doe
 
 ## Start and Stop Tracking Changes
 
-Editing a document usually does not count as a revision until you begin tracking it. Aspose.Words allows you to automatically track all changes in your document with simple steps. You can easily start the process of tracking changes by using the [StartTrackRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#startTrackRevisions-java.lang.String) method. If you need to stop the process of tracking changes so that any future edits are not considered revisions, you will need to use the [StopTrackRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#stopTrackRevisions) method.
+Editing a document usually does not count as a revision until you begin tracking it. Aspose.Words allows you to automatically track all changes in your document with simple steps. You can easily start the process of tracking changes by using the [startTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#startTrackRevisions-java.lang.String) method. If you need to stop the process of tracking changes so that any future edits are not considered revisions, you will need to use the [stopTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#stopTrackRevisions) method.
 
 {{% alert color="primary" %}}
 
-Note that the `StartTrackingRevisions` method does not change the status of the [TrackRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#getTrackRevisions) property and does not use its value for the aim of revision tracking. In addition, if a node was moved from one location to another inside the tracked document, then move revisions will be created, including move-from and move-to range.
+Note that the `startTrackRevisions()` method does not change the status of the [getTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#getTrackRevisions) property and does not use its value for the aim of revision tracking. In addition, if a node was moved from one location to another inside the tracked document, then move revisions will be created, including move-from and move-to range.
 
 {{% /alert %}}
 
-At the end of the tracking changes process in your document, you will have the ability to even accept all revisions or reject them to revert the document to its original form. This can be achieved by either using the [AcceptAllRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#acceptAllRevisions) or [RejectAll](https://reference.aspose.com/words/java/com.aspose.words/revisioncollection/#rejectAll) method. In addition, you can accept or reject each revision separately by using the [Accept](https://reference.aspose.com/words/java/com.aspose.words/revision/#accept) or [Reject](https://reference.aspose.com/words/java/com.aspose.words/revision/#reject) method.
+At the end of the tracking changes process in your document, you will have the ability to even accept all revisions or reject them to revert the document to its original form. This can be achieved by either using the [acceptAllRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#acceptAllRevisions) or [rejectAll()](https://reference.aspose.com/words/java/com.aspose.words/revisioncollection/#rejectAll) method. In addition, you can accept or reject each revision separately by using the [accept()](https://reference.aspose.com/words/java/com.aspose.words/revision/#accept) or [reject()](https://reference.aspose.com/words/java/com.aspose.words/revision/#reject) method.
 
 All changes will be tracked for one iteration from the moment you start the process to the moment you stop it. The connection between different iterations is represented as the following scenario: you complete the tracking process, then make some changes, and start tracking changes again. With this scenario, all changes that you did not accept or reject will be displayed again.
 
 {{% alert color="primary" %}}
 
-Note that the `AcceptAllRevisions` method is similar to the “Accept All Changes” in Microsoft Word.
+Note that the `acceptAllRevisions()` method is similar to the “Accept All Changes” in Microsoft Word.
 
 {{% /alert %}}
 
@@ -83,17 +83,17 @@ The following code example shows how revisions are generated when a node is move
 
 ## Manage and Store Changes as Revisions
 
-With the previous tracking changes feature, you can understand which changes were made in your document and who made those changes. While with the [TrackRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#getTrackRevisions) feature, you force any changes within your document to be stored as revisions.
+With the previous tracking changes feature, you can understand which changes were made in your document and who made those changes. While with the [getTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#getTrackRevisions) feature, you force any changes within your document to be stored as revisions.
 
-Aspose.Words allows you to check if a document has a revision or not by using the [HasRevision](https://reference.aspose.com/words/java/com.aspose.words/document/#hasRevisions) property. If you do not need to automatically track the changes in your document through the StartTrackRevisions and StopTrackRevisions methods, then you can use the `TrackRevisions` property to check if the changes are tracked while editing a document in Microsoft Word and stored as revisions.
+Aspose.Words allows you to check if a document has a revision or not by using the [hasRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#hasRevisions) property. If you do not need to automatically track the changes in your document through the `startTrackRevisions()` and `stopTrackRevisions()` methods, then you can use the `getTrackRevisions()` property to check if the changes are tracked while editing a document in Microsoft Word and stored as revisions.
 
-The `TrackRevisions` feature makes revisions instead of real DOM changes. But the revisions themselves are separate. For example, If you delete any paragraph, Aspose.Words make it as a revision, marking it as deletion, instead of deleting it.
+The `getTrackRevisions()` feature makes revisions instead of real DOM changes. But the revisions themselves are separate. For example, If you delete any paragraph, Aspose.Words make it as a revision, marking it as deletion, instead of deleting it.
 
-In addition, Aspose.Words allows you to check if an object was inserted, deleted, or changed formatting using the [IsDeleteRevision](https://reference.aspose.com/words/java/com.aspose.words/inline/#isDeleteRevision), [IsFormatRevision](https://reference.aspose.com/words/java/com.aspose.words/inline/#isFormatRevision), [IsInsertRevision](https://reference.aspose.com/words/java/com.aspose.words/inline/#isInsertRevision), [IsMoveFromRevision](https://reference.aspose.com/words/java/com.aspose.words/inline/#isMoveFromRevision), and [IsMoveToRevision](https://reference.aspose.com/words/java/com.aspose.words/inline/#isMoveToRevision) properties.
+In addition, Aspose.Words allows you to check if an object was inserted, deleted, or changed formatting using the [isDeleteRevision()](https://reference.aspose.com/words/java/com.aspose.words/inline/#isDeleteRevision), [isFormatRevision()](https://reference.aspose.com/words/java/com.aspose.words/inline/#isFormatRevision), [isInsertRevision()](https://reference.aspose.com/words/java/com.aspose.words/inline/#isInsertRevision), [isMoveFromRevision()](https://reference.aspose.com/words/java/com.aspose.words/inline/#isMoveFromRevision), and [isMoveToRevision()](https://reference.aspose.com/words/java/com.aspose.words/inline/#isMoveToRevision) properties.
 
 {{% alert color="primary" %}}
 
-Note that there is no connection between the revisions themselves and the `TrackRevisions` property. In addition, you can accept/reject revisions regardless of the tracking changes feature.
+Note that there is no connection between the revisions themselves and the `getTrackRevisions()` property. In addition, you can accept/reject revisions regardless of the tracking changes feature.
 
 {{% /alert %}}
 
@@ -106,10 +106,10 @@ The following code example shows how to apply different properties with revision
 - [Revision](https://reference.aspose.com/words/java/com.aspose.words/revision/)
 - [RevisionGroup](https://reference.aspose.com/words/java/com.aspose.words/revision/#getGroup)
 - [RevisionType](https://reference.aspose.com/words/java/com.aspose.words/revisiontype/)
-- [Document.TrackRevisions](https://reference.aspose.com/words/java/com.aspose.words/document/#getTrackRevisions)
-- [Document.StartTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#startTrackRevisions-java.lang.String)
-- [Document.StopTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#stopTrackRevisions)
-- [Document.AcceptAllRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#acceptAllRevisions)
-- [RevisionCollection.RejectAll()](https://reference.aspose.com/words/java/com.aspose.words/revisioncollection/#rejectAll)
-- [Revision.Accept()](https://reference.aspose.com/words/java/com.aspose.words/revision/#accept)
-- [Revision.Reject()](https://reference.aspose.com/words/java/com.aspose.words/revision/#reject)
+- [Document.getTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#getTrackRevisions)
+- [Document.startTrackRevisions(String)](https://reference.aspose.com/words/java/com.aspose.words/document/#startTrackRevisions-java.lang.String)
+- [Document.stopTrackRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#stopTrackRevisions)
+- [Document.acceptAllRevisions()](https://reference.aspose.com/words/java/com.aspose.words/document/#acceptAllRevisions)
+- [RevisionCollection.rejectAll()](https://reference.aspose.com/words/java/com.aspose.words/revisioncollection/#rejectAll)
+- [Revision.accept()](https://reference.aspose.com/words/java/com.aspose.words/revision/#accept)
+- [Revision.reject()](https://reference.aspose.com/words/java/com.aspose.words/revision/#reject)

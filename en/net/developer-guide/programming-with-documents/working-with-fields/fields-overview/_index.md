@@ -42,7 +42,7 @@ A field consists of:
 
 The content which makes up the field code is stored as [Run](https://reference.aspose.com/words/net/aspose.words/run/) nodes between the [FieldStart](https://reference.aspose.com/words/net/aspose.words.fields/fieldstart/) and [FieldSeparator](https://reference.aspose.com/words/net/aspose.words.fields/fieldseparator/). The field result is stored between the **FieldSeparator** and [FieldEnd](https://reference.aspose.com/words/net/aspose.words.fields/fieldend/) nodes and can be made up of various types of content. Normally the field result contains just text made up of **Run** nodes, however it is possible for the **FieldEnd** node to be located in a completely different paragraph, and thus making the field result comprised of [block level nodes](/words/net/logical-levels-of-nodes-in-a-document/) such as **Table** and **Paragraph** nodes as well.
 
-Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”*example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Examples/DocsExamples/DocumentExplorer).
+Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”* example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-.NET/tree/master/Examples/DocsExamples/DocumentExplorer).
 
 ![document-explorer-aspose-words](fields-overview-2.png)
 
@@ -192,11 +192,11 @@ Some examples of Mail Merge fields that Aspose.Words supports:
 - Mail merge field switches:
   `MERGEFIELD FirstName \\\\\\\\* FirstCap \b "Mr. "`
 - nested merge fields in a formula:
-  `IF { `MERGEFIELD` Value1 } >= { `MERGEFIELD` Value2 } True False`
+  `IF { MERGEFIELD Value1 } >= { MERGEFIELD Value2 } True False`
 - calculate the name of the merge field at runtime:
-  `MERGEFIELD { `IF` { `MERGEFIELD` Value1 } >= { `MERGEFIELD` Value2 } FirstName"LastName" }`
+  `MERGEFIELD { IF { MERGEFIELD Value1 } >= { MERGEFIELD Value2 } FirstName"LastName" }`
 - conditional move to next record in the data source:
-  `NEXTIF { `MERGEFIELD` Value1 } <= { =IF(-2.45 >= 6*{ `MERGEFIELD` Value2 }, 2, -.45) }`
+  `NEXTIF { MERGEFIELD Value1 } <= { =IF(-2.45 >= 6*{ MERGEFIELD Value2 }, 2, -.45) }`
 
 ### Format Switches
 
@@ -213,7 +213,7 @@ A field in a document can have formatting switches that specify how the resultin
 
 ### Date and Number Formatting in Fields
 
-When Aspose.Words calculates a field result, it often needs to parse a string into a number or date value and also to format it back to a string.By default Aspose.Words uses the current thread culture to perform parsing and formatting when calculating field values during field update and mail merge. There are also options provided in the form of the [FieldOptions](https://reference.aspose.com/words/net/aspose.words.fields/fieldoptions/) class which allows further control over which culture is used during field update.
+When Aspose.Words calculates a field result, it often needs to parse a string into a number or date value and also to format it back to a string. By default Aspose.Words uses the current thread culture to perform parsing and formatting when calculating field values during field update and mail merge. There are also options provided in the form of the [FieldOptions](https://reference.aspose.com/words/net/aspose.words.fields/fieldoptions/) class which allows further control over which culture is used during field update.
 
 - by default the [FieldUpdateCultureSource](https://reference.aspose.com/words/net/aspose.words.fields/fieldoptions/fieldupdateculturesource/) property is set to [CurrentThread](https://reference.aspose.com/words/net/aspose.words.fields/fieldupdateculturesource/) which formats fields using the current thread culture
 - this property can be set to [FieldCode](https://reference.aspose.com/words/net/aspose.words.fields/fieldupdateculturesource/) so the language set from the field code of the field is used for formatting instead

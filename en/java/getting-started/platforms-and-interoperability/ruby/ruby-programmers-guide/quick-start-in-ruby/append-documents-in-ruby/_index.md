@@ -33,6 +33,6 @@ dst_doc.save(data_dir + "TestFile Out.docx")
 
 ## Download Running Code
 
-Download**Append Documents (Aspose.Words)**from any of the below mentioned social coding sites:
+Download **Append Documents (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Ruby/lib/asposewordsjavaforruby/appenddoc.rb)

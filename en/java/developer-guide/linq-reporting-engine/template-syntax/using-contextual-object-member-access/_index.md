@@ -76,7 +76,7 @@ Alternatively, you can use the following template involving the contextual objec
    **A:** No. Inside a data band, contextual access always resolves to the innermost iteration variable. To reach an outer variable you must use the regular object member syntax with the appropriate identifier.
 
 3. **Q:** How can I count the number of items in a data source using contextual syntax?  
-   **A:** Use the `count()` method on the collection name without a prefix, e.g., `<<[Persons.count()]>>` when the template is outside a data band, or `<<[count()]>>` inside a `foreach` that iterates over `Persons`.
+   **A:** Outside a data band, call `count()` on the collection name without a prefix, e.g., `<<[Persons.count()]>>`; the name is resolved against the passed data source. Inside a `foreach` over `Persons`, contextual access resolves to the current item, so use the full name there instead, e.g., `<<[ds.Persons.count()]>>`.
 
 4. **Q:** What happens if I try to use contextual member access outside a data band body?  
    **A:** The engine resolves the member to the passed data source object. If no data source is supplied, the expression will fail with a “member not found” error. In such cases, specify the full data source identifier.

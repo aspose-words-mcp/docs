@@ -62,7 +62,7 @@ In this case, the engine produces a report as follows.
    **A:** Call `numberOf()` on the iteration variable, e.g., `<<[item.numberOf()]>>`. This returns `1` for the first element, `2` for the second, etc., which is useful for creating numbered lists without Word list formatting.
 
 3. **Q:** Can I use these extension methods inside conditional expressions to treat the first or last element differently?  
-   **A:** Yes. For example, `<<[item.indexOf() == 0 ? "First:" : ""]>>` adds a prefix only to the first item, and `<<[item.numberOf() == items.Count ? " (last)" : ""]>>` can identify the last element.
+   **A:** Yes. For example, `<<[item.indexOf() == 0 ? "First:" : ""]>>` adds a prefix only to the first item, and `<<[item.numberOf() == items.count() ? " (last)" : ""]>>` can identify the last element.
 
 4. **Q:** How do I add a separator (such as a comma) before every item except the first one?  
    **A:** Combine `indexOf()` with a conditional expression: `<<[item.indexOf() != 0 ? ", " : ""]>>`. This inserts the separator only when the current index is not zero.

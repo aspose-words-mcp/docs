@@ -25,13 +25,13 @@ A document that contains fill-in blanks (fields) is known as a form. For example
 
 You can use form fields in your project to "communicate" with your users. For example, you create a document whose content is protected, but only form fields are editable. The users can enter the data in the form fields and submit the document. Your application that uses Aspose.Words can retrieve data from the form fields and process it.
 
-Placing form fields into the document via code is easy. [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) has special methods for inserting them, one for each form field type.Each of the methods accepts a string parameter representing the name of the form field. The name can be an empty string. If however you specify a name for the form field, then a bookmark is automatically created with the same name.
+Placing form fields into the document via code is easy. [DocumentBuilder](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/) has special methods for inserting them, one for each form field type. Each of the methods accepts a string parameter representing the name of the form field. The name can be an empty string. If however you specify a name for the form field, then a bookmark is automatically created with the same name.
 
 ## Insert Form Fields
 
 Form fields are a particular case of Word fields that allows "interaction" with the user. Form fields in Microsoft Word include textbox, combo box and checkbox.
 
-**DocumentBuilder**provides special methods to insert each type of form field into the document:[insertTextInput](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-boolean-int),[insertCheckBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-boolean-int), and [insertComboBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-int). Note that if you specify a name for the form field, then a bookmark is automatically created with the same name.
+**DocumentBuilder** provides special methods to insert each type of form field into the document: [insertTextInput](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-boolean-int), [insertCheckBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-boolean-int), and [insertComboBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-int). Note that if you specify a name for the form field, then a bookmark is automatically created with the same name.
 
 The following code example shows how to insert a combobox form field into a document:
 
@@ -39,7 +39,7 @@ The following code example shows how to insert a combobox form field into a docu
 
 ### Insert a Text Input
 
-Use the **InsertTextInput**method to insert a textbox into the document.
+Use the **insertTextInput()** method to insert a textbox into the document.
 
 The following code example shows how to insert a text input form field into a document:
 
@@ -47,7 +47,7 @@ The following code example shows how to insert a text input form field into a do
 
 ### Insert a Check Box
 
-Call**InsertCheckBox**to insert a checkbox into the document.
+Call **insertCheckBox()** to insert a checkbox into the document.
 
 The following code example shows how to insert a checkbox form field into a document:
 
@@ -55,7 +55,7 @@ The following code example shows how to insert a checkbox form field into a docu
 
 ### Insert a Combo Box
 
-Call**InsertComboBox**to insert a combobox into the document.
+Call **InsertComboBox** to insert a combobox into the document.
 
 The following code example shows how to insert a Combobox form field into a document:
 
@@ -89,7 +89,7 @@ The following code example shows how to work with form field name, type, and res
 
 ## Format Form Fields
 
-The [Font](https://reference.aspose.com/words/java/com.aspose.words/inline/#getFont) property of [FormField](https://reference.aspose.com/words/java/com.aspose.words/formfield/) allows applying font formatting to the **FormField** as a whole including the field value.
+The [getFont()](https://reference.aspose.com/words/java/com.aspose.words/inline/#getFont) property of [FormField](https://reference.aspose.com/words/java/com.aspose.words/formfield/) allows applying font formatting to the **FormField** as a whole including the field value.
 
 The following code example shows how to apply font formatting to the **FormField**:
 
@@ -99,7 +99,7 @@ The following code example shows how to apply font formatting to the **FormField
 
 - [FormFieldCollection](https://reference.aspose.com/words/java/com.aspose.words/formfieldcollection/)
 - [FormField](https://reference.aspose.com/words/java/com.aspose.words/formfield/)
-- [DocumentBuilder.InsertTextInput](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertTextInput-java.lang.String-int-java.lang.String-java.lang.String-int)
-- [DocumentBuilder.InsertCheckBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-boolean-int)
-- [DocumentBuilder.InsertComboBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertComboBox-java.lang.String-java.lang.String---int)
-- [Range.FormFields](https://reference.aspose.com/words/java/com.aspose.words/range/#getFormFields)
+- [DocumentBuilder.insertTextInput](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertTextInput-java.lang.String-int-java.lang.String-java.lang.String-int)
+- [DocumentBuilder.insertCheckBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertCheckBox-java.lang.String-boolean-boolean-int)
+- [DocumentBuilder.insertComboBox](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertComboBox-java.lang.String-java.lang.String---int)
+- [Range.getFormFields()](https://reference.aspose.com/words/java/com.aspose.words/range/#getFormFields)

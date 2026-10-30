@@ -53,7 +53,7 @@ In addition to C# Language features, the engine provides the following extra fea
 ## FAQ
 
 1. **Q:** How can I call a static method of a type in a template expression?  
-   **A:** First register the type as a known external type with the reporting engine, e.g., `engine.KnownTypes.Add(typeof(Math));`. Then you can reference the static member directly in the template, such as `Math::Sqrt(9)`. The `::` syntax tells the engine to treat the left‑hand side as a type name.
+   **A:** First register the type as a known external type with the reporting engine, e.g., `engine.KnownTypes.Add(typeof(Math));`. Then you can reference the static member directly in the template, such as `<<[Math.Sqrt(9)]>>`. Static members are accessed with the usual `TypeName.Member` syntax.
 
 2. **Q:** Do I need to specify the object name when accessing its instance properties?  
    **A:** No. The engine supports contextual object member access, allowing you to write just the property name (e.g., `Name`) when the current data object is the context. This simplifies templates and makes them more readable.

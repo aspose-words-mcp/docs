@@ -55,7 +55,7 @@ You can download the latest Aspose.Words at:
 
 ### Installing
 
-You can find the information on how to install Aspose.Words for .NET on the [ "Installation"](/words/net/installation/) page.
+You can find the information on how to install Aspose.Words for .NET on the ["Installation"](/words/net/installation/) page.
 
 ## Get Started with Aspose.Words
 

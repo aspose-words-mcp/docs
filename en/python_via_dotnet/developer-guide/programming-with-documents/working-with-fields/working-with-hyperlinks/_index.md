@@ -34,7 +34,7 @@ Use the [insert_hyperlink](https://reference.aspose.com/words/python-net/aspose.
 2. Link destination (URL or a name of a bookmark inside the document)
 3. Boolean parameter that should be true if the `URL` is a name of a bookmark inside a document
 
-The **InsertHyperlink** method always adds apostrophes at the beginning and end of the URL.
+The **insert_hyperlink** method always adds apostrophes at the beginning and end of the URL.
 
 {{% alert color="primary" %}}
 
@@ -59,7 +59,7 @@ The following code example shows how to find all hyperlinks in Word document and
 ## Related APIs
 
 - [FieldHyperlink](https://reference.aspose.com/words/python-net/aspose.words.fields/fieldhyperlink/)
-- [DocumentBuilder.InsertHyperlink](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_hyperlink/)  
+- [DocumentBuilder.insert_hyperlink](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_hyperlink/)  
 
 ## FAQ
 
@@ -82,13 +82,14 @@ The following code example shows how to find all hyperlinks in Word document and
 3. **Q:** Is it possible to remove a hyperlink while keeping the link text?  
    **A:** Yes. Replace the `FieldHyperlink` with a plain `Run` node that contains the same text. Remove the field start, separator, and end nodes, then insert a `Run` with the original result text.
 
-4. **Q:** How can I apply custom font formatting (e.g., color, underline) to a hyperlink after insertion?  
-   **A:** After calling `insert_hyperlink`, the builder’s `font` property refers to the hyperlink text. Set the desired properties before moving the cursor away.  
+4. **Q:** How can I apply custom font formatting (e.g., color, underline) to a hyperlink?  
+   **A:** Set the builder’s `font` properties before calling `insert_hyperlink`; formatting set afterwards applies only to text inserted later. Call `builder.font.clear_formatting()` after the hyperlink.  
 
    ```python
-   builder.insert_hyperlink("Aspose", "https://www.aspose.com", False)
    builder.font.color = aspose.pydrawing.Color.blue
    builder.font.underline = aw.Underline.SINGLE
+   builder.insert_hyperlink("Aspose", "https://www.aspose.com", False)
+   builder.font.clear_formatting()
    ```
 
 5. **Q:** Can I retrieve a list of all hyperlink URLs in a document?  

@@ -28,10 +28,10 @@ The second method allows the preservation of the original position of report ite
 
 **Java**
 
-{{< highlight csharp >}}
+{{< highlight java >}}
  import com.aspose.words.jasperreports.*;
  AWDocExporter exporter = new AWDocExporter();
- exporter.setParameter(AWExporterParameter.OVERLAP_RESOLUTION_METHOD, AWExporterParameter. OVERLAP_RESOLUTION_METHOD_PUSH_ITEMS);
+ exporter.setParameter(AWExporterParameter.OVERLAP_RESOLUTION_METHOD, AWExporterParameter.OVERLAP_RESOLUTION_METHOD_PUSH_ITEMS);
  exporter.exportReport();
 {{< /highlight >}}
 
@@ -39,7 +39,7 @@ The second method allows the preservation of the original position of report ite
 
 **XML**
 
-{{< highlight csharp >}}
+{{< highlight xml >}}
 <bean id="aw_exportParameters" class="com.aspose.words.jasperreports.AWExportParametersBean">
  <property name="overlapResolutionMethod" value="2"/>
 </bean>

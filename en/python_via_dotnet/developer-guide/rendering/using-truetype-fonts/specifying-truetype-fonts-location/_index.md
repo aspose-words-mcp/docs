@@ -74,7 +74,7 @@ Aspose.Words looks for fonts in the `/Library/Fonts` folder, which is the standa
 
 ## Load Fonts from Folder {#loading-fonts-from-folder}
 
-If the document being processed contains links to fonts that are not on the system, or you don't want to add them to the system folder, or you lack permissions, then the best solution would be to add a folder with your own fonts using the [FontSettings.set_fonts_sources](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/set_fonts_sources/) method. This will allow to replace the system source with a user source. Aspose.Words will no longer look for fonts in the registry or Windows\Font folder and instead only scan for fonts within the specified folder(s). The [FontSettings.get_font_sources](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/get_fonts_sources/) method will return the corresponding values.
+If the document being processed contains links to fonts that are not on the system, or you don't want to add them to the system folder, or you lack permissions, then the best solution would be to add a folder with your own fonts using the [FontSettings.set_fonts_sources](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/set_fonts_sources/) method. This will allow to replace the system source with a user source. Aspose.Words will no longer look for fonts in the registry or Windows\Font folder and instead only scan for fonts within the specified folder(s). The [FontSettings.get_fonts_sources](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/get_fonts_sources/) method will return the corresponding values.
 
 ### Specify One or Multiple Font Folders
 
@@ -104,7 +104,7 @@ If you don’t want to use system fonts at all, Aspose.Words allows you to ignor
 
 ### Priority Property
 
-The [Priority](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsourcebase/priority/) property is used when there are fonts with the same family name and style in different font sources. In this case Aspose.Words selects the font from the source with the higher priority value. For example, there is an old version of the font on the system folder and customer added a new version of the same font in a custom folder.
+The [priority](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsourcebase/priority/) property is used when there are fonts with the same family name and style in different font sources. In this case Aspose.Words selects the font from the source with the higher priority value. For example, there is an old version of the font on the system folder and customer added a new version of the same font in a custom folder.
 
 {{< gist "aspose-words-gists" "7d9e2918f4856eeb6a482b126eec02ea" "fonts-folders-with-priority.py" >}}
 
@@ -112,7 +112,7 @@ The [Priority](https://reference.aspose.com/words/python-net/aspose.words.fonts/
 
 When searching for a font for the first time, Aspose.Words iterates over the font sources specified by the user and forms a font search cache based on data from these sources. Thus, the cache will collect information about the available fonts: font family, style, full font name, and others. On subsequent calls, Aspose.Words searches for information about the desired font by its name in the font search cache, after which it parses the specified files to use the font.
 
-The procedure for parsing all available font files to initialize the cache is quite time consuming. Aspose.Words allows you to save and load the cache using the [SaveSearchCache](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/save_search_cache/) method to solve the performance issue. That is, the user can load a previously saved cache from a file and skip the step of parsing all available font files.
+The procedure for parsing all available font files to initialize the cache is quite time consuming. Aspose.Words allows you to save and load the cache using the [save_search_cache](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/save_search_cache/) method to solve the performance issue. That is, the user can load a previously saved cache from a file and skip the step of parsing all available font files.
 
 {{% alert color="primary" %}}
 
@@ -168,5 +168,5 @@ If you want to get the list of available fonts, which, for example, can be used 
 - [FileFontSource](https://reference.aspose.com/words/python-net/aspose.words.fonts/filefontsource/)
 - [MemoryFontSource](https://reference.aspose.com/words/python-net/aspose.words.fonts/memoryfontsource/)
 - [PhysicalFontInfo](https://reference.aspose.com/words/python-net/aspose.words.fonts/physicalfontinfo/)
-- [FontSettings.DefaultInstance](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/default_instance/)
-- [GetSystemFontFolders](https://reference.aspose.com/words/python-net/aspose.words.fonts/systemfontsource/get_system_font_folders/)
+- [FontSettings.default_instance](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontsettings/default_instance/)
+- [get_system_font_folders](https://reference.aspose.com/words/python-net/aspose.words.fonts/systemfontsource/get_system_font_folders/)

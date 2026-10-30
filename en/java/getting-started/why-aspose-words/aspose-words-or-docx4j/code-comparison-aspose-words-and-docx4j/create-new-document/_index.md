@@ -17,7 +17,7 @@ timestamp: 2024-01-27-14-07-04
 
 Call the Document constructor without parameters to create a new blank document.
 
-If you want to generate a document programmatically, the most reasonable step after creation is to use**DocumentBuilder**to add document contents.
+If you want to generate a document programmatically, the most reasonable step after creation is to use **DocumentBuilder** to add document contents.
 
 **Java**
 
@@ -131,7 +131,7 @@ if (save) {
 
 ## Download Sample Code
 
-- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose.Words-for-Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/createnewdoc)
+- [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/tree/master/Plugins/Aspose_Words_Java_for_Docx4j/src/main/java/com/aspose/words/examples/featurescomparison/documents/createnewdoc)
 
 {{% alert color="primary" %}}
 

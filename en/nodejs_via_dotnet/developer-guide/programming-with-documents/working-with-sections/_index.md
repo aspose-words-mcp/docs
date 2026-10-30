@@ -23,7 +23,7 @@ This article explains how to work with sections and section breaks.
 
 ## What Section and Section Break Is
 
-Document sections are represented by the [Section](https://reference.aspose.com/words/nodejs-net/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/nodejs-net/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) node and can be accessed via the [Sections](https://reference.aspose.com/words/nodejs-net/aspose.words/document/sections/) property. You can manage those nodes by using some methods such as [Remove](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/remove/#node), [Add](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/add/), [IndexOf](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/indexof/), and others.
+Document sections are represented by the [Section](https://reference.aspose.com/words/nodejs-net/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/nodejs-net/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/nodejs-net/aspose.words/document/) node and can be accessed via the [sections](https://reference.aspose.com/words/nodejs-net/aspose.words/document/sections/) property. You can manage those nodes by using some methods such as [remove](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/remove/#node), [add](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/add/), [indexOf](https://reference.aspose.com/words/nodejs-net/aspose.words/nodecollection/indexof/), and others.
 
 Section break is an option that divides document pages into sections with customizable layouts.
 
@@ -47,13 +47,13 @@ On the other hand, you can also use the `DocumentBuilder` API to work with secti
 
 ## Insert or Remove a Section Break
 
-Aspose.Words allows you to insert a section break into text using the [InsertBreak](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertbreak/) method.
+Aspose.Words allows you to insert a section break into text using the [insertBreak](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertbreak/) method.
 
 The following code example shows how to insert a section break into a document:
 
 {{< gist "aspose-words-gists" "5331edc61a2137fd92565f1e0c953887" "insert-section-breaks.js" >}}
 
-Use the [Remove](https://reference.aspose.com/words/nodejs-net/aspose.words/node/remove/) method to delete a section break. If you do not need to remove a specific section break and instead delete the content of that section, you can use the [ClearContent](https://reference.aspose.com/words/nodejs-net/aspose.words/section/clearcontent/) method.
+Use the [remove](https://reference.aspose.com/words/nodejs-net/aspose.words/node/remove/) method to delete a section break. If you do not need to remove a specific section break and instead delete the content of that section, you can use the [clearContent](https://reference.aspose.com/words/nodejs-net/aspose.words/section/clearcontent/) method.
 
 The following code example shows how to remove sections breaks: 
 
@@ -67,7 +67,7 @@ Note that a section break has information about the section that goes before it,
 
 ## Move a Section
 
-If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/nodejs-net/aspose.words/sectioncollection/). You can use the [Sections](https://reference.aspose.com/words/nodejs-net/aspose.words/document/sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [firstSection](https://reference.aspose.com/words/nodejs-net/aspose.words/document/firstsection/) property.
+If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/nodejs-net/aspose.words/sectioncollection/). You can use the [sections](https://reference.aspose.com/words/nodejs-net/aspose.words/document/sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [firstSection](https://reference.aspose.com/words/nodejs-net/aspose.words/document/firstsection/) property.
 
 The following code example shows how to access the first section and iterate through the children of a composite node:
 
@@ -90,7 +90,7 @@ The following code example shows how to limit the number of lines that each page
 
 When you add a new section to your document, there will be no body or paragraph that you can edit. Aspose.Words allows you to guarantee that a section contains a body with at least one paragraph using the [ensureMinimum](https://reference.aspose.com/words/nodejs-net/aspose.words/section/ensureminimum/) method – it will automatically add a Body (or HeaderFooter) node to the document and then add a Paragraph to it.
 
-The following code example shows how to prepare a new section node using **EnsureMinimum**:
+The following code example shows how to prepare a new section node using **ensureMinimum**:
 
 {{< gist "aspose-words-gists" "5331edc61a2137fd92565f1e0c953887" "ensure-minimum.js" >}}
 
@@ -104,7 +104,7 @@ The following code example shows how to append content of an existing section:
 
 ### Clone a Section
 
-Aspose.Words allows you to duplicate a section by creating a full copy of it using the [Clone](https://reference.aspose.com/words/nodejs-net/aspose.words/section/clone/) method.
+Aspose.Words allows you to duplicate a section by creating a full copy of it using the [clone](https://reference.aspose.com/words/nodejs-net/aspose.words/section/clone/) method.
 
 The following code example shows how to clone the first section in your document:
 
@@ -114,7 +114,7 @@ The following code example shows how to clone the first section in your document
 
 In some cases, you may have large documents with many sections and you want to copy the content of a section from one document to another.
 
-Aspose.Words allows you to copy sections between documents using the [ImportNode](https://reference.aspose.com/words/nodejs-net/aspose.words/nodeimporter/importnode/) method.
+Aspose.Words allows you to copy sections between documents using the [importNode](https://reference.aspose.com/words/nodejs-net/aspose.words/nodeimporter/importnode/) method.
 
 The following code example shows how to copy sections between documents:
 

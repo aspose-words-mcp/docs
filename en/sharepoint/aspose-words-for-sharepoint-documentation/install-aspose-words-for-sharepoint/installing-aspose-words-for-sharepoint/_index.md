@@ -69,7 +69,7 @@ Aspose.Words for SharePoint performs the following actions during deployment:
 
 ## Activation
 
-Aspose.Words for SharePoint is packaged as a web application level feature and can be activated and deactivated on the web application level.During activation, the feature makes some changes to the virtual directory of web application:
+Aspose.Words for SharePoint is packaged as a web application level feature and can be activated and deactivated on the web application level. During activation, the feature makes some changes to the virtual directory of web application:
 
 - Add authorized type entry for the workflow activities provided by Aspose.Words for SharePoint
 - Add conversion settings page to the sitemap file

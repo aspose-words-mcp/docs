@@ -94,13 +94,13 @@ The following code example shows how to add a restriction for the entire documen
    **A:** Use the `Document.protect` method, passing the desired `ProtectionType` and a password string. The password is stored in the document properties and will be required to modify the protected content.  
 
 2. **Q:** Can I remove protection from a document without knowing the password?  
-   **A:** No. The `Document.unprotect` method requires the correct password if one was set. If the document was protected without a password, calling `unprotect()` without arguments will remove the protection.  
+   **A:** Yes. `Document.unprotect()` without arguments removes the protection regardless of the password. `unprotect(password)` removes it only when the password is correct (otherwise it returns `false`). The password only prevents users from removing the protection in Microsoft Word; it does not encrypt the document.  
 
 3. **Q:** How can I determine whether a document is protected and which protection type is applied?  
    **A:** Check the `Document.protectionType` property. It returns a value from the `ProtectionType` enumeration, such as `ReadOnly`, `AllowOnlyFormFields`, or `NoProtection`.  
 
 4. **Q:** How do I create unrestricted editable regions inside a read‑only document?  
-   **A:** Use a `DocumentBuilder` to call `StartEditableRange` before the region and `EndEditableRange` after it. Content inside this range can be edited even when the rest of the document is read‑only.  
+   **A:** Use a `DocumentBuilder` to call `startEditableRange` before the region and `endEditableRange` after it. Content inside this range can be edited even when the rest of the document is read‑only.  
 
 5. **Q:** Is it possible to change the protection type of an already protected document?  
-   **A:** Yes, but you must first call `Document.unprotect` with the current password, then apply a new protection using `Document.protect` with the desired `ProtectionType`.  
+   **A:** Yes. Call `Document.protect` with the new `ProtectionType` (and password). It replaces the current protection, so you do not need to call `Document.unprotect` first.  

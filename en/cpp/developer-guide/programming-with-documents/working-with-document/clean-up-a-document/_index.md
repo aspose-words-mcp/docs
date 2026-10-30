@@ -17,13 +17,13 @@ Sometimes you may need to remove unused or duplicate information to reduce the s
 
 While you can find and remove unused data, such as styles or lists, or duplicate information manually, it will be much more convenient to do this using features and capabilities provided by Aspose.Words.
 
-The [CleanupOptions](https://reference.aspose.com/words/cpp/class/aspose.words.cleanup_options) class allows you to specify options for document cleaning. To remove duplicate styles or just unused styles or lists from the document, you can use the [Cleanup](https://reference.aspose.com/words/cpp/aspose.words/document/cleanup/) method.
+The [CleanupOptions](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/) class allows you to specify options for document cleaning. To remove duplicate styles or just unused styles or lists from the document, you can use the [Cleanup](https://reference.aspose.com/words/cpp/aspose.words/document/cleanup/) method.
 
 ## Remove Unused Information from a Document
 
-You can use the [UnusedStyles](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_unusedstyles/) and [UnusedBuiltinStyles](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_unusedbuiltinstyles/) properties to detect and remove styles that are marked as "unused".
+You can use the [get_UnusedStyles()](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_unusedstyles/) and [get_UnusedBuiltinStyles()](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_unusedbuiltinstyles/) properties to detect and remove styles that are marked as "unused".
 
-You can use the [UnusedLists](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_unusedlists/) property to detect and remove lists and list definitions that are marked as "unused".
+You can use the [get_UnusedLists()](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_unusedlists/) property to detect and remove lists and list definitions that are marked as "unused".
 
 The following code example shows how to remove only unused styles from a document:
 
@@ -31,7 +31,7 @@ The following code example shows how to remove only unused styles from a documen
 
 ## Remove Duplicate Information from a Document
 
-You can also use the [DuplicateStyle](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_duplicatestyle/) property to substitute all duplicate styles with the original one and remove duplicates from a document.
+You can also use the [get_DuplicateStyle()](https://reference.aspose.com/words/cpp/aspose.words/cleanupoptions/get_duplicatestyle/) property to substitute all duplicate styles with the original one and remove duplicates from a document.
 
 The following code example shows how to remove duplicate styles from a document:
 
@@ -45,23 +45,23 @@ The following code example shows how to remove duplicate styles from a document:
    **A:** `Document::Cleanup` analyses the document according to the options set in a `CleanupOptions` object and removes or consolidates unused or duplicate elements such as styles, built‑in styles, lists, and duplicate style definitions. It does not alter the visible content of the document.
 
 2. **Q:** How can I remove only unused custom styles from a document?  
-   **A:** Create a `CleanupOptions` instance, set `UnusedStyles` to `true`, and pass it to `Document::Cleanup`. Example:  
+   **A:** Create a `CleanupOptions` instance, set `set_UnusedStyles()` to `true`, and pass it to `Document::Cleanup`. Example:  
    ```cpp
-   Aspose::Words::CleanupOptions options;
-   options.set_UnusedStyles(true);
-   document.Cleanup(options);
+   auto options = System::MakeObject<Aspose::Words::CleanupOptions>();
+   options->set_UnusedStyles(true);
+   doc->Cleanup(options);
    ```
 
 3. **Q:** How do I eliminate duplicate styles while keeping the original style intact?  
-   **A:** Enable the `DuplicateStyle` option in `CleanupOptions`. The method will replace all occurrences of duplicate styles with the first (original) style and then delete the duplicates.  
+   **A:** Enable the `get_DuplicateStyle()` option in `CleanupOptions`. The method will replace all occurrences of duplicate styles with the first (original) style and then delete the duplicates.  
    ```cpp
-   Aspose::Words::CleanupOptions options;
-   options.set_DuplicateStyle(true);
-   document.Cleanup(options);
+   auto options = System::MakeObject<Aspose::Words::CleanupOptions>();
+   options->set_DuplicateStyle(true);
+   doc->Cleanup(options);
    ```
 
 4. **Q:** Can the cleanup process also remove unused built‑in styles and lists?  
-   **A:** Yes. Set `UnusedBuiltinStyles` and/or `UnusedLists` to `true` in the `CleanupOptions` object before calling `Cleanup`. This will purge any built‑in styles or list definitions that are not referenced in the document.
+   **A:** Yes. Set `set_UnusedBuiltinStyles()` and/or `get_UnusedLists()` to `true` in the `CleanupOptions` object before calling `Cleanup`. This will purge any built‑in styles or list definitions that are not referenced in the document.
 
 5. **Q:** Will using `Cleanup` affect the formatting or layout of the document?  
    **A:** No. Cleanup only removes or merges internal definitions that are not used. The visible text, formatting, and layout remain unchanged, but the file size may be reduced and processing can become faster.

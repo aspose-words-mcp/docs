@@ -21,7 +21,7 @@ This page explains how to work with Markdown features when loading or saving Mar
 
 {{% /alert %}}
 
-This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supportsthe following Markdown features:
+This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supports the following Markdown features:
 
 - Headings
 - Blockquotes
@@ -29,7 +29,7 @@ This topic discusses how to implement Markdown features using Aspose.Words. Mark
 - Bold emphasis
 - Italic emphasis
 
-The Markdown feature implementationmostly follows the `CommonMark` specification in Aspose.Words API and all the features are represented as corresponding styles or direct formatting. Which means that
+The Markdown feature implementation mostly follows the `CommonMark` specification in Aspose.Words API and all the features are represented as corresponding styles or direct formatting. Which means that
 
 - Bold and Italic are accessed via `font.getBold()` / `font.setBold(true)` and `font.getItalic()` / `font.setItalic(true)`.
 - Headings are paragraphs with Heading 1 – Heading 6 styles.
@@ -110,7 +110,7 @@ The following code snippet shows you how to read a markdown document.
 
 ## Specify Markdown Save Options
 
-Aspose.Words API provides[MarkdownSaveOptions](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/) class to specify additional options while saving a document into the Markdown format.
+Aspose.Words API provides [MarkdownSaveOptions](https://reference.aspose.com/words/java/com.aspose.words/markdownsaveoptions/) class to specify additional options while saving a document into the Markdown format.
 
 The following code example demonstrated how to specify various Markdown save options.
 
@@ -118,7 +118,7 @@ The following code example demonstrated how to specify various Markdown save opt
 
 ## How to Align Content Inside the Table while Exporting into Markdown
 
-Aspose.Words API provides[TableContentAlignment](https://reference.aspose.com/words/java/com.aspose.words.tablecontentalignment/) enumeration which defines alignment directions to align contents in tables while exporting into the Markdown document. The following code example demonstrates how to align content inside the table.
+Aspose.Words API provides [TableContentAlignment](https://reference.aspose.com/words/java/com.aspose.words/tablecontentalignment/) enumeration which defines alignment directions to align contents in tables while exporting into the Markdown document. The following code example demonstrates how to align content inside the table.
 
 {{< gist "aspose-words-gists" "50b2b6a8785c07713e7c09d772e9a396" "markdown-table-content-alignment.java" >}}
 
@@ -136,10 +136,10 @@ Aspose.Words API provides[TableContentAlignment](https://reference.aspose.com/wo
    The load options let you control how unknown tags are handled.
 
 3. **Q:** Can I preserve custom styles or additional formatting when converting Markdown to Word?  
-   **A:** Yes. By customizing `MarkdownLoadOptions` you can map specific Markdown constructs to custom Word styles. Use the `setStyleIdentifier` or `setStyleName` methods to associate a Markdown element with a style defined in the target document.
+   **A:** Partly. `MarkdownLoadOptions` has no style-mapping methods. When Markdown is loaded, each feature becomes a corresponding style or direct formatting, for example `Heading 1`…`Heading 6` for headings and a `Quote` style for block quotes (see [Translate Markdown to Document Object Model](/words/java/translate-markdown-to-document-object-model/)). After loading, you can change these styles in `doc.getStyles()` or apply your own styles to the paragraphs.
 
 4. **Q:** How do I export a Word document to Markdown while controlling the alignment of table contents?  
-   **A:** Use `MarkdownSaveOptions` together with the `TableContentAlignment` enumeration. Set the desired alignment (e.g., `TableContentAlignment.Center`) on the save options before calling `save`. This ensures table cells are rendered with the chosen alignment in the resulting Markdown file.
+   **A:** Use `MarkdownSaveOptions` together with the `TableContentAlignment` enumeration. Set the desired alignment with `MarkdownSaveOptions.setTableContentAlignment` (e.g., `TableContentAlignment.CENTER`) before calling `save`. This ensures table cells are rendered with the chosen alignment in the resulting Markdown file.
 
 5. **Q:** Is it possible to enable additional CommonMark extensions, such as task lists or footnotes, during conversion?  
    **A:** Aspose.Words for Java follows the core CommonMark specification. Extensions like task lists or footnotes are not natively supported, but you can preprocess the Markdown (e.g., replace extension syntax with standard Markdown) before loading it with `MarkdownLoadOptions`.

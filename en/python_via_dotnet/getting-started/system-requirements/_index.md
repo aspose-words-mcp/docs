@@ -90,7 +90,7 @@ Supported Linux configurations are presented in [Aspose.Words-for-Python-via-.NE
    **A:** No. Aspose.Words is a self‑contained engine and works independently of Microsoft Word or any other third‑party Office suite.
 
 3. **Q:** Can a .NET license (e.g., Aspose.Total.NET.lic) be used with the Python‑via‑.NET API?  
-   **A:** No. Each Aspose product requires its own license – one for Aspose.Total and one for Aspose.Words. Learn more about licensing on page [Licensing and Subscription](/words/python-net/licensing/).
+   **A:** No. Licenses are product-specific: use an Aspose.Words for Python via .NET license (`Aspose.Words.Python.NET.lic`) or an Aspose.Total for Python via .NET license (`Aspose.Total.Python.NET.lic`). Learn more about licensing on page [Licensing and Subscription](/words/python-net/licensing/).
 
 4. **Q:** What additional libraries are required on Linux for Python 3.5‑3.7?  
    **A:** You must have the `pymalloc` build of Python and the `libpython` shared library (e.g., `libpython3.7m.so.1.0`). Install it via the package manager (`sudo apt-get install libpython3.7`) or create a symbolic link to the library if it resides in a non‑standard location.

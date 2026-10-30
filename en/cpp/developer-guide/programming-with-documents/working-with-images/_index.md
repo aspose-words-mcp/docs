@@ -17,12 +17,12 @@ Aspose.Words allows users to work with images in a very flexible way. In this ar
 
 ## How to Extract Images from a Document
 
-All images are stored inside **Shape** nodes in a [Document](https://reference.aspose.com/words/cpp/aspose.words/document/).To extract all images or images having a specific type from the document, follow these steps:
+All images are stored inside **Shape** nodes in a [Document](https://reference.aspose.com/words/cpp/aspose.words/document/). To extract all images or images having a specific type from the document, follow these steps:
 
-- Use the [GetChildNodes](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchildnodes/) method to select all**Shape**nodes.
+- Use the [GetChildNodes](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchildnodes/) method to select all **Shape** nodes.
 - Iterate through resulting node collections.
-- Check the [HasImage](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_hasimage/) boolean property.
-- Extract image data using the [ImageData](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_imagedata/) property.
+- Check the [get_HasImage()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_hasimage/) boolean property.
+- Extract image data using the [get_ImageData()](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/get_imagedata/) property.
 - Save image data to a file.
 
 The following code example shows how to extract images from a document and save them as files:

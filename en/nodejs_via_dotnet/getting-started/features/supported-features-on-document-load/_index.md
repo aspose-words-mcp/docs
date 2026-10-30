@@ -38,14 +38,15 @@ For more information and a description of the features available for the differe
    **A:** The only practical limitation is the amount of RAM available on the host machine. Aspose.Words processes documents in memory, so very large files require sufficient memory; otherwise an `OutOfMemoryException` may be thrown.
 
 4. **Q:** How do I apply a license when using Aspose.Words for Node.js?  
-   **A:** Load the license file on the .NET side before creating any `Document` objects:  
+   **A:** Apply the license before creating any `Document` objects:  
 
-   ```csharp
-   Aspose.Words.License license = new Aspose.Words.License();
-   license.SetLicense("Aspose.Words.lic");
+   ```js
+   const aw = require('@aspose/words');
+   const license = new aw.License();
+   license.setLicense("Aspose.Words.lic");
    ```  
 
-   The licensed .NET assembly is then used by the Node.js wrapper, and all features become fully enabled.
+   After that, all features work without evaluation limitations.
 
 5. **Q:** Is Aspose.Words for Node.js compatible with .NET 8 and the latest Node.js versions?  
-   **A:** Yes. The library follows the .NET Standard 2.0/2.1 specifications, making it compatible with .NET 8, .NET 6, and .NET Core. The Node.js wrapper works with current LTS releases of Node.js. Always use the latest NuGet package to benefit from the newest compatibility updates.
+   **A:** The library does not depend on an installed .NET version: the npm package `@aspose/words` includes everything it needs. It works with Node.js 14.17.0 or later (see [System Requirements](/words/nodejs-net/system-requirements/)). Always use the latest version of the `@aspose/words` package.

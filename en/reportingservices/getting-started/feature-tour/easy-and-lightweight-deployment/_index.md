@@ -16,7 +16,7 @@ Aspose.Words for Reporting Services is available for download as an MSI installe
 
 Run the MSI installer for a server or a developer installation. The installer integrates Aspose.Words for Reporting Services with Microsoft Visual Studio Report Designer and registers to run with all Microsoft SQL Server Reporting Services installations found on the computer.
 
-It is also easy to deploy Aspose.Wordsfor Reporting Services manually or as a part of your application, because it is comprised of only one .NET assembly, written completely in C#, is CLS compliant and contains only safe managed code.
+It is also easy to deploy Aspose.Words for Reporting Services manually or as a part of your application, because it is comprised of only one .NET assembly, written completely in C#, is CLS compliant and contains only safe managed code.
 
 The MSI installer and the ZIP download include several versions of Aspose.Words for Reporting Services:
 

@@ -124,9 +124,9 @@ If **FontInfo** is available, the *FontInfo substitution rule* will always resol
 
 ## How to Recognize That the Font Was Replaced
 
-Sometimes, it may be unclear why the document layout has changed, or why some font does not look as expected. In such cases, font substitution warnings messages implemented by the [IWarningCallback](https://reference.aspose.com/words/python-net/aspose.words/iwarningcallback/) interface come to rescue. They have the [FontSubstitution](https://reference.aspose.com/words/python-net/aspose.words/warningtype/) warning type and the standard description text format, "Font '<OriginalFont>' has not been found. Using '<SubstitutionFont>' font instead. Reason: <Reason>", with the following reasons:
+Sometimes, it may be unclear why the document layout has changed, or why some font does not look as expected. In such cases, font substitution warnings messages implemented by the [IWarningCallback](https://reference.aspose.com/words/python-net/aspose.words/iwarningcallback/) interface come to rescue. They have the [FONT_SUBSTITUTION](https://reference.aspose.com/words/python-net/aspose.words/warningtype/) warning type and the standard description text format, "Font '<OriginalFont>' has not been found. Using '<SubstitutionFont>' font instead. Reason: <Reason>", with the following reasons:
 
-- "alternative name from document" – for substitution by [AltName](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontinfo/alt_name/)
+- "alternative name from document" – for substitution by [alt_name](https://reference.aspose.com/words/python-net/aspose.words.fonts/fontinfo/alt_name/)
 - "fontconfig substitution" – for substitution by font config rule
 - "table substitution" – for substitution by table rule
 - "font info substitution" – for substitution by font info rule

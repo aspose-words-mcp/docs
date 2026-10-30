@@ -24,7 +24,7 @@ This article explains how to work with sections and section breaks.
 
 ## What Section and Section Break Is
 
-Document sections are represented by the [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) node and can be accessed via the [Sections](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/) property. You can manage those nodes by using some methods such as [Remove](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/remove/), [Add](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/add/), [IndexOf](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/indexof/), and others.
+Document sections are represented by the [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) node and can be accessed via the [get_Sections()](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/) property. You can manage those nodes by using some methods such as [Remove](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/remove/), [Add](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/add/), [IndexOf](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/indexof/), and others.
 
 Section break is an option that divides document pages into sections with customizable layouts.
 
@@ -68,7 +68,7 @@ Note that a section break has information about the section that goes before it,
 
 ## Move a Section
 
-If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/). You can use the [Sections](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [FirstSection](https://reference.aspose.com/words/cpp/aspose.words/document/get_firstsection/) property.
+If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/). You can use the [get_Sections()](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [get_FirstSection()](https://reference.aspose.com/words/cpp/aspose.words/document/get_firstsection/) property.
 
 The following code example shows how to access the first section and iterate through the children of a composite node:
 
@@ -169,24 +169,24 @@ The following code example shows how to modify the page properties in all sectio
    **A:** Use `DocumentBuilder::InsertBreak` with the appropriate `BreakType` value (e.g., `BreakType::SectionBreakNewPage`). Position the builder where you want the break, then call the method.  
 
    ```cpp
-   Aspose::Words::Document doc(u"input.docx");
-   Aspose::Words::DocumentBuilder builder(&doc);
+   auto doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
+   auto builder = System::MakeObject<Aspose::Words::DocumentBuilder>(doc);
    // Move to the desired location
-   builder.MoveToParagraph(5);
+   builder->MoveToParagraph(5, 0);
    // Insert a new page section break
-   builder.InsertBreak(Aspose::Words::BreakType::SectionBreakNewPage);
-   doc.Save(u"output.docx");
+   builder->InsertBreak(Aspose::Words::BreakType::SectionBreakNewPage);
+   doc->Save(u"output.docx");
    ```
 
 2. **Q:** What is the recommended way to remove an entire section or just its content?  
    **A:** To delete a whole section, remove it from the `Sections` collection: `doc->get_Sections()->RemoveAt(index)`. To keep the section but clear its body, call `section->ClearContent()`.  
 
    ```cpp
-   Aspose::Words::Document doc(u"input.docx");
+   auto doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
    // Remove the third section completely
    doc->get_Sections()->RemoveAt(2);
    // Or clear content of the first section
-   Aspose::Words::SectionPtr firstSection = doc->get_FirstSection();
+   System::SharedPtr<Aspose::Words::Section> firstSection = doc->get_FirstSection();
    firstSection->ClearContent();
    doc->Save(u"output.docx");
    ```
@@ -195,11 +195,11 @@ The following code example shows how to modify the page properties in all sectio
    **A:** Import the source section node into the target document with `DocumentBase::ImportNode`, then add it to the target's `Sections` collection.  
 
    ```cpp
-   Aspose::Words::Document sourceDoc(u"source.docx");
-   Aspose::Words::Document targetDoc(u"target.docx");
-   Aspose::Words::SectionPtr sourceSection = sourceDoc->get_Sections()->idx_get(0);
-   Aspose::Words::Node* imported = targetDoc->ImportNode(sourceSection, true);
-   targetDoc->get_Sections()->Add(Aspose::Words::System::ExplicitCast<Aspose::Words::Section>(imported));
+   auto sourceDoc = System::MakeObject<Aspose::Words::Document>(u"source.docx");
+   auto targetDoc = System::MakeObject<Aspose::Words::Document>(u"target.docx");
+   System::SharedPtr<Aspose::Words::Section> sourceSection = sourceDoc->get_Sections()->idx_get(0);
+   System::SharedPtr<Aspose::Words::Node> imported = targetDoc->ImportNode(sourceSection, true);
+   targetDoc->get_Sections()->Add(System::ExplicitCast<Aspose::Words::Section>(imported));
    targetDoc->Save(u"merged.docx");
    ```
 
@@ -207,9 +207,9 @@ The following code example shows how to modify the page properties in all sectio
    **A:** Call `Section::Clone(true)` to create a deep copy, then insert the cloned section at the desired position in the `Sections` collection.  
 
    ```cpp
-   Aspose::Words::Document doc(u"input.docx");
-   Aspose::Words::SectionPtr original = doc->get_Sections()->idx_get(0);
-   Aspose::Words::SectionPtr clone = System::ExplicitCast<Aspose::Words::Section>(original->Clone(true));
+   auto doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
+   System::SharedPtr<Aspose::Words::Section> original = doc->get_Sections()->idx_get(0);
+   System::SharedPtr<Aspose::Words::Section> clone = System::ExplicitCast<Aspose::Words::Section>(original->Clone(true));
    doc->get_Sections()->Insert(1, clone); // Insert after the first section
    doc->Save(u"output.docx");
    ```
@@ -218,8 +218,8 @@ The following code example shows how to modify the page properties in all sectio
    **A:** Use `Section::ClearHeadersFooters()` to remove header/footer text, then `Section::DeleteHeaderFooterShapes()` to delete any shapes inside them.  
 
    ```cpp
-   Aspose::Words::Document doc(u"input.docx");
-   Aspose::Words::SectionPtr sec = doc->get_Sections()->idx_get(0);
+   auto doc = System::MakeObject<Aspose::Words::Document>(u"input.docx");
+   System::SharedPtr<Aspose::Words::Section> sec = doc->get_Sections()->idx_get(0);
    sec->ClearHeadersFooters();
    sec->DeleteHeaderFooterShapes();
    doc->Save(u"output.docx");

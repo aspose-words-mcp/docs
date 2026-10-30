@@ -80,7 +80,7 @@ The following code example shows how to bind content control to custom XML parts
 
 ## XMLMapping of Structured Document Tag Range
 
-You can get the mapping of this structured document tag range to XML data in a custom XML part of the current document using the **StructuredDocumentTagRangeStart.XmlMapping property**. However, the [set_mapping](https://reference.aspose.com/words/python-net/aspose.words.markup/xmlmapping/set_mapping/) method can be used to map a structured document tag range to XML data.
+You can get the mapping of this structured document tag range to XML data in a custom XML part of the current document using the **StructuredDocumentTagRangeStart.xml_mapping property**. However, the [set_mapping](https://reference.aspose.com/words/python-net/aspose.words.markup/xmlmapping/set_mapping/) method can be used to map a structured document tag range to XML data.
 
 The following code example shows how to set XML mapping:
 
@@ -121,7 +121,7 @@ The following code example shows how to set the style of content control:
 
 ## Working with Repeating Section Content Control
 
-The repeating section content control allows repeating the content contained within it. Using Aspose.Words, the structured document tag nodes of the repeating section and repeating section item types can be created and for this purpose, [SdtType](https://reference.aspose.com/words/python-net/aspose.words.markup/sdttype/) provides **RepeatingSectionItem** property.
+The repeating section content control allows repeating the content contained within it. Using Aspose.Words, the structured document tag nodes of the repeating section and repeating section item types can be created and for this purpose, [SdtType](https://reference.aspose.com/words/python-net/aspose.words.markup/sdttype/) provides **REPEATING_SECTION_ITEM** property.
 
 The following code example shows how to bind a repeating section content control to a table:
 
@@ -136,7 +136,7 @@ The following code example shows how to bind a repeating section content control
    **A:** Yes. When the `include_child_nodes` argument is set to `True`, the method traverses the entire document tree, including `HeaderFooter` sections, and returns all descendant paragraph nodes.
 
 3. **Q:** How do I bind a content control to a custom XML part?  
-   **A:** Retrieve the `StructuredDocumentTag.xml_mapping` property of the control and call its `set_mapping(custom_xml_part, xpath)` method to associate the control with the desired XML node.
+   **A:** Retrieve the `StructuredDocumentTag.xml_mapping` property of the control and call its `set_mapping(custom_xml_part, x_path, prefix_mapping)` method (pass `""` as `prefix_mapping` if the XPath uses no namespace prefixes) to associate the control with the desired XML node.
 
 4. **Q:** Why can't I clear a content control that contains revisions?  
    **A:** The `StructuredDocumentTag.clear()` method does not work on controls that have pending revisions. Accept or reject the revisions first, then call `clear()` to remove the content.

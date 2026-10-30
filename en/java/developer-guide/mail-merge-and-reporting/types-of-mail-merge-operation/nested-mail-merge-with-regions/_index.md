@@ -71,7 +71,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 You need to set up all data relationships in the parent‑child structure to execute the nested Mail Merge with regions correctly. Skipping this important step can lead to a failure in executing the nested Mail Merge with regions.
 
-When retrieving data for a nested Mail Merge from an XML file using the **ReadXml** method, relationships are automatically created according to the structure of the XML document. However, you need to make sure that correct relations have been created.
+When retrieving data for a nested Mail Merge from an XML file using the **readXml()** method, relationships are automatically created according to the structure of the XML document. However, you need to make sure that correct relations have been created.
 
 If Mail Merge is not working as expected, then you may need to restructure your XML file or explicitly create relations between DataTable objects in the DataSet.
 
@@ -83,7 +83,7 @@ The following code example shows how to establish a `DataRelation` between a cus
 
 ## How to Create Data Relations from a Custom Data Source
 
-Implement the [IMailMergeDataSource](https://reference.aspose.com/words/java/com.aspose.words/imailmergedatasource/) interface to create relationships in the parent child structure of your custom data source. Use the [GetChildDataSource](https://reference.aspose.com/words/java/com.aspose.words/imailmergedatasource/#getChildDataSource-java.lang.String) method to return the relevant child data of a current parent record.
+Implement the [IMailMergeDataSource](https://reference.aspose.com/words/java/com.aspose.words/imailmergedatasource/) interface to create relationships in the parent child structure of your custom data source. Use the [getChildDataSource()](https://reference.aspose.com/words/java/com.aspose.words/imailmergedatasource/#getChildDataSource-java.lang.String) method to return the relevant child data of a current parent record.
 
 The following example shows how to create data relations using **GetChildDataSource**:
 

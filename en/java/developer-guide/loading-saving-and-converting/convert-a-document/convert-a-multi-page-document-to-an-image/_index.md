@@ -38,17 +38,17 @@ Aspose.Words supports multi-page export to the following raster image formats:
 
 The feature of exporting a multi-page document to an image is implemented using the [MultiPageLayout](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/) class – you can specify how the pages should be organized when saving to an image:
 
-* [SinglePage](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#singlePage) – save only the first of the specified pages
-* [Grid](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#grid-int-float-float) – arrange the pages in a grid, left-to-right and top-to-bottom, while specifying the number of columns
-* [Horizontal](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#horizontal-float) – arrange the pages horizontally side-by-side, left-to-right, in a single output
-* [Vertical](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#vertical-float) – arrange the pages vertically one below the other in a single output
-* [TiffFrames](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#tiffFrames) – arrange each page as a separate frame in a multi-frame TIFF image, applies only to TIFF image formats
+* [singlePage()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#singlePage) – save only the first of the specified pages
+* [grid()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#grid-int-float-float) – arrange the pages in a grid, left-to-right and top-to-bottom, while specifying the number of columns
+* [horizontal()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#horizontal-float) – arrange the pages horizontally side-by-side, left-to-right, in a single output
+* [vertical()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#vertical-float) – arrange the pages vertically one below the other in a single output
+* [tiffFrames()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#tiffFrames) – arrange each page as a separate frame in a multi-frame TIFF image, applies only to TIFF image formats
 
 The following code example shows how to save a multi-page DOCX document as JPEG image with Horizontal layout:
 
 {{< gist "aspose-words-gists" "90715b6eecef1740f54f3eddb072b5d2" "horizontal-layout.java" >}}
 
-You can also customize the output file page appearance – specify [BackColor](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#getBackColor), [BorderColor](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#getBorderColor), and [BorderWidth](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#getBorderWidth).
+You can also customize the output file page appearance – specify [getBackColor()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#getBackColor), [getBorderColor()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#getBorderColor), and [getBorderWidth()](https://reference.aspose.com/words/java/com.aspose.words/multipagelayout/#getBorderWidth).
 
 The following code example shows how to save a multi-page DOCX document as PNG image with Grid layout:
 

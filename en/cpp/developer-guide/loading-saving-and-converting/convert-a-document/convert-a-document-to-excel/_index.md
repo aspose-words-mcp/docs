@@ -47,7 +47,7 @@ The following code example shows how to perform find and replace operation and s
 
 ## Specify Compression Level When Saving to XLSX
 
-You can also specify the compression level when saving using the [CompressionLevel](https://reference.aspose.com/words/cpp/aspose.words.saving/xlsxsaveoptions/get_compressionlevel/) property.
+You can also specify the compression level when saving using the [get_CompressionLevel()](https://reference.aspose.com/words/cpp/aspose.words.saving/xlsxsaveoptions/get_compressionlevel/) property.
 
 The following code example shows how to specify the compression level when saving to XLSX format:
 
@@ -56,7 +56,7 @@ The following code example shows how to specify the compression level when savin
 ## See Also
 
 - Documentation section [Protect or Encrypt a Document](/words/cpp/protect-or-encrypt-a-document/) for more information about protecting and encrypting a document
-- The article [Find and Replace](/words/cpp/find-and-replace/) for more more information about finding and replacing the content you want
+- The article [Find and Replace](/words/cpp/find-and-replace/) for more information about finding and replacing the content you want
 
 ------ 
 

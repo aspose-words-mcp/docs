@@ -58,9 +58,9 @@ The code in this section addresses all of the possible situations described abov
 
 To extract the content from your document you need to call the **extractContent** method below and pass the appropriate parameters. The underlying basis of this method involves finding block level nodes (paragraphs and tables) and cloning them to create identical copies. If the marker nodes passed are block level then the method is able to simply copy the content on that level and add it to the array.
 
-However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc.Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
+However if the marker nodes are inline (a child of a paragraph) then the situation becomes more complex, as it is necessary to split the paragraph at the inline node, be it a run, bookmark fields etc. Content in the cloned parent nodes not present between the markers is removed. This process is used to ensure that the inline nodes will still retain the formatting of the parent paragraph. The method will also run checks on the nodes passed as parameters and throws an exception if either node is invalid. The parameters to be passed to this method are:
 
-1. **startNode** and **endNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block level ( [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/), **Table** or inline level (e.g [Run](https://reference.aspose.com/words/nodejs-net/aspose.words/run/), [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/), [BookmarkStart](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkstart/) etc.):
+1. **startNode** and **endNode**. The first two parameters are the nodes which define where the extraction of the content is to begin and to end at respectively. These nodes can be both block level ([Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/), **Table** or inline level (e.g [Run](https://reference.aspose.com/words/nodejs-net/aspose.words/run/), [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/), [BookmarkStart](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkstart/) etc.):
    1. To pass a field you should pass the corresponding [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/) object.
    1. To pass bookmarks, the [BookmarkStart](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkstart/) and [BookmarkEnd](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkend/) nodes should be passed.
    1. To pass comments, the [CommentRangeStart](https://reference.aspose.com/words/nodejs-net/aspose.words/commentrangestart/) and [CommentRangeEnd](https://reference.aspose.com/words/nodejs-net/aspose.words/commentrangeend/) nodes should be used.
@@ -69,7 +69,7 @@ However if the marker nodes are inline (a child of a paragraph) then the situati
    1. If a [BookmarkStart](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkstart/) or [BookmarkEnd](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkend/) node is passed, this option defines if the bookmark is included or just the content between the bookmark range.
    1. If a [CommentRangeStart](https://reference.aspose.com/words/nodejs-net/aspose.words/commentrangestart/) or [CommentRangeEnd](https://reference.aspose.com/words/nodejs-net/aspose.words/commentrangeend/) node is passed, this option defines if the comment itself is to be included or just the content in the comment range.
 
-The implementation of the **extractContent** method you can find [here](https://github.com/aspose-words/Aspose.Words-for-Node.js-via-.NET/tree/main/Examples/DocsExamples/DocsExamples/Programming%20with%20Documents/Contents%20Management/Extract%20content%20helper.js). This method will be referred to in the scenarios in this article.
+The implementation of the **extractContent** method you can find [here](https://github.com/aspose-words/Aspose.Words-for-Node.js-via-.NET/blob/main/DocExamples/Programming%20with%20Documents/Contents%20Management/Extract%20content%20helper.js). This method will be referred to in the scenarios in this article.
 
 We will also define a custom method to easily generate a document from extracted nodes. This method is used in many of the scenarios below and simply creates a new document and imports the extracted content into it.
 
@@ -79,9 +79,9 @@ The following code example shows how to take a list of nodes and inserts them in
 
 ## Extract Content Between Paragraphs
 
-This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document.We can tell that this is between the 7 th and 11 th paragraph.
+This demonstrates how to use the method above to extract content between specific paragraphs. In this case, we want to extract the body of the letter found in the first half of the document. We can tell that this is between the 7 th and 11 th paragraph.
 
-The code below accomplishes this task. The appropriate paragraphs are extracted using the [CompositeNode.getСhild](https://reference.aspose.com/words/nodejs-net/aspose.words/compositenode/getChild/) method on the document and passing the specified indices. We then pass these nodes to the **extractСontent** method and state that these are to be included in the extraction. This method will return the copied content between these nodes which are then inserted into a new document.
+The code below accomplishes this task. The appropriate paragraphs are extracted using the [CompositeNode.getChild](https://reference.aspose.com/words/nodejs-net/aspose.words/compositenode/getChild/) method on the document and passing the specified indices. We then pass these nodes to the **extractContent** method and state that these are to be included in the extraction. This method will return the copied content between these nodes which are then inserted into a new document.
 
 The following code example shows how to extract the content between specific paragraphs using the **extractContent** method above:
 
@@ -95,7 +95,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content Between Different Types of Nodes
 
-We can extract content between any combinations of block level or inline nodes. In this scenario below we will extract the content between first paragraph and the table in the second section inclusively. We get the markers nodes by calling [Body.firstParagraph](https://reference.aspose.com/words/nodejs-net/aspose.words/story/firstParagraph/) and [CompositeNode.getСhild](https://reference.aspose.com/words/nodejs-net/aspose.words/compositenode/getChild/) method on the second section of the document to retrieve the appropriate [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/) and **Table** nodes. For a slight variation let's instead duplicate the content and insert it below the original.
+We can extract content between any combinations of block level or inline nodes. In this scenario below we will extract the content between first paragraph and the table in the second section inclusively. We get the markers nodes by calling [Body.firstParagraph](https://reference.aspose.com/words/nodejs-net/aspose.words/story/firstParagraph/) and [CompositeNode.getChild](https://reference.aspose.com/words/nodejs-net/aspose.words/compositenode/getChild/) method on the second section of the document to retrieve the appropriate [Paragraph](https://reference.aspose.com/words/nodejs-net/aspose.words/paragraph/) and **Table** nodes. For a slight variation let's instead duplicate the content and insert it below the original.
 
 The following code example shows how to extract the content between a paragraph and table using the **extractContent** method:
 
@@ -143,7 +143,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content using a Field
 
-To use a field as marker, the [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/) node should be passed. The last parameter to the **extractContent** method will define if the entire field is to be included or not.Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [DocumentBuilder.moveToMergeField](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/moveToMergeField/) method of [DocumentBuilder](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/) class. This will return the [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/) node from the name of merge field passed to it.
+To use a field as marker, the [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/) node should be passed. The last parameter to the **extractContent** method will define if the entire field is to be included or not. Let's extract the content between the “FullName” merge field and a paragraph in the document. We use the [DocumentBuilder.moveToMergeField](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/moveToMergeField/) method of [DocumentBuilder](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/) class. This will return the [FieldStart](https://reference.aspose.com/words/nodejs-net/aspose.words.fields/fieldstart/) node from the name of merge field passed to it.
 
 In our case let's set the last parameter passed to the **extractContent** method to `False` to exclude the field from the extraction. We will render the extracted content to PDF.
 
@@ -159,7 +159,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Extract Content from a Bookmark
 
-In a document the content that is defined within a bookmark is encapsulated by the [BookmarkStart](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkstart/) and [BookmarkEnd](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkend/) nodes. Content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document.We will extract this content into a new document using the code below. The **isInclusive** parameter option shows how to retain or discard the bookmark.
+In a document the content that is defined within a bookmark is encapsulated by the [BookmarkStart](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkstart/) and [BookmarkEnd](https://reference.aspose.com/words/nodejs-net/aspose.words/bookmarkend/) nodes. Content found between these two nodes make up the bookmark. You can pass either of these nodes as any marker, even ones from different bookmarks, as long as the starting marker appears before the ending marker in the document. We will extract this content into a new document using the code below. The **isInclusive** parameter option shows how to retain or discard the bookmark.
 
 The following code example shows how to extract the content referenced a bookmark using the **extractContent** method:
 
@@ -210,7 +210,7 @@ The following code example shows the difference between calling the [getText](ht
 This example saves the document as follows:
 
 - Filters out field characters and field codes, shape, footnote, endnote and comment references
-- Replaces end of paragraph **ControlChar.Cr** characters with **ControlChar.CrLf** combinations
+- Replaces end of paragraph **ControlChar.cr** characters with **ControlChar.crLf** combinations
 - Uses UTF8 encoding
 
 The following code example shows how to save a document in TXT format:

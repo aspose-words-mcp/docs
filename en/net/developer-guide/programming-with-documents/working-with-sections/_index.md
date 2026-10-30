@@ -31,7 +31,7 @@ This article explains how to work with sections and section breaks.
 
 ## What Section and Section Break Is
 
-Document sections are represented by the [Section](https://reference.aspose.com/words/net/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/net/aspose.words/section/collection) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/net/aspose.words/document/) node and can be accessed via the [Sections](https://reference.aspose.com/words/net/aspose.words/document//properties/sections) property. You can manage those nodes by using some methods such as [Remove](https://reference.aspose.com/words/net/aspose.words/nodecollection/remove/), [Add](https://reference.aspose.com/words/net/aspose.words/nodecollection/add/), [IndexOf](https://reference.aspose.com/words/net/aspose.words/nodecollection/indexof/), and others.
+Document sections are represented by the [Section](https://reference.aspose.com/words/net/aspose.words/section/) and [SectionCollection](https://reference.aspose.com/words/net/aspose.words/sectioncollection/) classes. Section objects are immediate children of the [Document](https://reference.aspose.com/words/net/aspose.words/document/) node and can be accessed via the [Sections](https://reference.aspose.com/words/net/aspose.words/document/sections/) property. You can manage those nodes by using some methods such as [Remove](https://reference.aspose.com/words/net/aspose.words/nodecollection/remove/), [Add](https://reference.aspose.com/words/net/aspose.words/nodecollection/add/), [IndexOf](https://reference.aspose.com/words/net/aspose.words/nodecollection/indexof/), and others.
 
 Section break is an option that divides document pages into sections with customizable layouts.
 
@@ -75,7 +75,7 @@ Note that a section break has information about the section that goes before it,
 
 ## Move a Section
 
-If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/net/aspose.words/sectioncollection/) by using the [Item](https://reference.aspose.com/words/net/aspose.words/sectioncollection//properties/item) property. You can use the [Sections](https://reference.aspose.com/words/net/aspose.words/document/sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [FirstSection](https://reference.aspose.com/words/net/aspose.words/document/firstsection/) property.
+If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/net/aspose.words/sectioncollection/) by using the [Item](https://reference.aspose.com/words/net/aspose.words/sectioncollection/item/) property. You can use the [Sections](https://reference.aspose.com/words/net/aspose.words/document/sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [FirstSection](https://reference.aspose.com/words/net/aspose.words/document/firstsection/) property.
 
 The following code example shows how to access the first section and iterate through the children of a composite node:
 
@@ -172,19 +172,15 @@ The following code example shows how to modify the page properties in all sectio
 
 - When removing a section break, the section *before* the break adopts the formatting (including page setup, headers, and footers) of the section *after* the break. This is the opposite of what many developers expect. To avoid unintended layout changes, ensure you understand the section order before removal.
 
-- The `EnsureMinimum()` method only ensures the presence of a `Body` and at least one `Paragraph`. It does *not* create `HeaderFooter` nodes. To ensure headers/footers exist, call `Section.HeadersFooters.EnsureMinimum()` (available since Aspose.Words 22.12+).
+- The `EnsureMinimum()` method only ensures the presence of a `Body` and at least one `Paragraph`. It does *not* create `HeaderFooter` nodes.
 
-- When cloning a `Section` using `Section.Clone()`, the resulting section includes all `HeaderFooter` nodes, but they remain linked to the source document's formatting. If inserting the clone into another document, consider calling `HeaderFooter.RemoveHeaderFooterLinkToPrevious()` (or equivalent) to break inherited formatting.
+- `Section.Clone()` copies the section together with its `HeaderFooter` nodes. To insert the copy into another document, import it with `ImportNode` or `NodeImporter`. To stop a section from using the headers and footers of the previous section, call `section.HeadersFooters.LinkToPrevious(false)`.
 
 - When copying sections between documents using `NodeImporter.ImportNode()`, specify `ImportFormatMode.KeepSourceFormatting` to preserve source formatting. Without it, the section may adopt formatting from the target document, potentially causing layout shifts.
 
-- Headers and footers are inherited from the previous section *unless* the current section has its own `HeaderFooter` nodes. To break the inheritance and enable independent editing, create or import a `HeaderFooter` for the desired type (e.g., `HeaderFooterType.HeaderPrimary`) and ensure the section's `PageSetup.DifferentFirstPage` and `PageSetup.DifferentOddEven` settings match your intent.
+- Headers and footers are inherited from the previous section *unless* the current section has its own `HeaderFooter` nodes. To break the inheritance and enable independent editing, create or import a `HeaderFooter` for the desired type (e.g., `HeaderFooterType.HeaderPrimary`) and ensure the section's `PageSetup.DifferentFirstPageHeaderFooter` and `PageSetup.OddAndEvenPagesHeaderFooter` settings match your intent.
 
-- Section layout modes (via `Section.LayoutMode`) affect only line grid alignment for East Asian content and have no effect on Western text unless explicitly enabled in `Options`.
-
-- When applying `SectionStart.NewPage`, `EvenPage`, or `OddPage`, ensure the preceding section has a closing section break — otherwise, new content may appear on the wrong page.
-
-- A document must contain at least one section. Removing all sections results in an invalid document state and will throw an `InvalidOperationException`.
+- `PageSetup.LayoutMode` (see `SectionLayoutMode`) defines the document grid behavior of a section.
 
 {{% alert color="primary" %}}
 
@@ -219,7 +215,7 @@ For additional details, see the official documentation:
    Document target = new Document();
 
    Section sourceSection = source.Sections[0];
-   Section importedSection = (Section)target.ImportNode(sourceSection, true);
+   Section importedSection = (Section)target.ImportNode(sourceSection, true, ImportFormatMode.KeepSourceFormatting);
    target.Sections.Add(importedSection);
 
    target.Save("Target.docx");

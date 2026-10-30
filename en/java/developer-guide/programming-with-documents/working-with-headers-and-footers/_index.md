@@ -48,7 +48,7 @@ The following code example shows how to add a header for odd document pages:
 
 ### Specify Whether to Display Different Headers or Footers for the First Page
 
-As said above, you can also set a different header or footer for the first page. To do this, you need to set the [DifferentFirstPageHeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/pagesetup/#getDifferentFirstPageHeaderFooter) flag to `true` and then specyfy the **HeaderFirst** or **FooterFirst** value.
+As said above, you can also set a different header or footer for the first page. To do this, you need to set the [getDifferentFirstPageHeaderFooter()](https://reference.aspose.com/words/java/com.aspose.words/pagesetup/#getDifferentFirstPageHeaderFooter) flag to `true` and then specify the **HEADER_FIRST** or **FOOTER_FIRST** value.
 
 The following code example shows how to set the header for the first page only:
 
@@ -56,13 +56,13 @@ The following code example shows how to set the header for the first page only:
 
 ### Specify Whether to Display Different Headers or Footers for Odd or Even Pages
 
- Next, you will want to set different headers or footers for odd and even pages in a document. To do this, you need to set the [OddAndEvenPagesHeaderFooter](https://reference.aspose.com/words/java/com.aspose.words/pagesetup/#getOddAndEvenPagesHeaderFooter) flag to `true` and then specyfy the values **HeaderPrimary** and **HeaderEven**, or **FooterPrimary** and **FooterEven**.
+ Next, you will want to set different headers or footers for odd and even pages in a document. To do this, you need to set the [getOddAndEvenPagesHeaderFooter()](https://reference.aspose.com/words/java/com.aspose.words/pagesetup/#getOddAndEvenPagesHeaderFooter) flag to `true` and then specify the values **HEADER_PRIMARY** and **HEADER_EVEN**, or **FOOTER_PRIMARY** and **FOOTER_EVEN**.
 
 {{< gist "aspose-words-gists" "58431f54e34e5597f8cbaf97481d5321" "odd-even-pages.java" >}}
 
 ### Insert an Absolutely Positioned Image into the Header
 
-To place an image in a header or footer, use the **HeaderPrimary** header type or the **FooterPrimary** footer type and the [InsertImage](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertImage-byte) method.
+To place an image in a header or footer, use the **HEADER_PRIMARY** header type or the **FOOTER_PRIMARY** footer type and the [InsertImage](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertImage-byte) method.
 
 The following code example shows how to add an image to a header:
 
@@ -70,7 +70,7 @@ The following code example shows how to add an image to a header:
 
 ### Set Font and Paragraph Properties for Header or Footer Text
 
-With Aspose.Words you can set the font and paragraph properties, use the **HeaderPrimary** header type or the **FooterPrimary** footer type, as well as methods and properties for working with the fonts and paragraphs you use for the document body.
+With Aspose.Words you can set the font and paragraph properties, use the **HEADER_PRIMARY** header type or the **FOOTER_PRIMARY** footer type, as well as methods and properties for working with the fonts and paragraphs you use for the document body.
 
 The following code example shows how to set the text in the header to Arial, bold, size 14, and center alignment:
 
@@ -78,7 +78,7 @@ The following code example shows how to set the text in the header to Arial, bol
 
 ### Insert Page Numbers into the Header or Footer
 
-If necessary, you can add page numbers to the header or footer. To do this, use the **HeaderPrimary** header type or the **FooterPrimary** footer type and the [InsertField](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertField-int-boolean) method to add the required field.
+If necessary, you can add page numbers to the header or footer. To do this, use the **HEADER_PRIMARY** header type or the **FOOTER_PRIMARY** footer type and the [insertField()](https://reference.aspose.com/words/java/com.aspose.words/documentbuilder/#insertField-int-boolean) method to add the required field.
 
 The following code example shows how to add page numbers to the footer on the right:
 
@@ -117,16 +117,16 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 ## FAQ
 
 1. **Q:** How can I set a different header or footer only for the first page of a document?  
-   **A:** Set `PageSetup.setDifferentFirstPageHeaderFooter(true)` on the section. Then use `HeaderFooterType.HEADER_FIRST` or `FooterFirst` to access and edit the first‑page header/footer.
+   **A:** Set `PageSetup.setDifferentFirstPageHeaderFooter(true)` on the section. Then use `HeaderFooterType.HEADER_FIRST` or `FOOTER_FIRST` to access and edit the first‑page header/footer.
 
 2. **Q:** What steps are required to have separate headers/footers for odd and even pages?  
-   **A:** Enable `PageSetup.setOddAndEvenPagesHeaderFooter(true)`. After that, create or modify `HeaderPrimary`/`FooterPrimary` for odd pages and `HeaderEven`/`FooterEven` for even pages.
+   **A:** Enable `PageSetup.setOddAndEvenPagesHeaderFooter(true)`. After that, create or modify `HEADER_PRIMARY`/`FOOTER_PRIMARY` for odd pages and `HEADER_EVEN`/`FOOTER_EVEN` for even pages.
 
 3. **Q:** How do I copy the header/footer from the previous section without recreating it manually?  
    **A:** Set `section.getHeadersFooters().linkToPrevious(true)`. The section will automatically use the header/footer objects from the preceding section.
 
 4. **Q:** Can I use `DocumentBuilder` to move directly to a header or footer of a specific section?  
-   **A:** Yes. Call `builder.moveToHeaderFooter(section.getHeadersFooters().getByHeaderFooterType(HeaderFooterType.HEADER_PRIMARY))`. After moving, you can insert text, images, or fields.
+   **A:** Yes. Call `builder.moveToSection(sectionIndex)` and then `builder.moveToHeaderFooter(HeaderFooterType.HEADER_PRIMARY)`. After moving, you can insert text, images, or fields.
 
 5. **Q:** How can I remove only the footers (or only the headers) from every section in a document?  
-   **A:** Iterate through `document.getSections()`, then for each section call `section.getHeadersFooters().removeAll(HeaderFooterType.FOOTER_PRIMARY)`, `FOOTER_FIRST`, and `FOOTER_EVEN` (or the corresponding header types) to delete only the unwanted parts.
+   **A:** Iterate through `document.getSections()`. For each section, get each footer with `section.getHeadersFooters().getByHeaderFooterType(HeaderFooterType.FOOTER_PRIMARY)` (and `FOOTER_FIRST`, `FOOTER_EVEN`, or the corresponding header types) and call `remove()` on it if it is not `null`. This deletes only the unwanted parts.

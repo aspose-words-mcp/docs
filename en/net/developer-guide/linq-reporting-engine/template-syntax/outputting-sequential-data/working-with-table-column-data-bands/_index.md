@@ -186,7 +186,7 @@ For more examples of templates for typical scenarios involving table‑column da
 ## FAQ
 
 1. **Q:** How do I declare a table‑column data band in a template?  
-   **A:** Use the `<<foreach … -horz>>` tag inside the cells that belong to the band. The `-horz` switch tells the engine to repeat the content horizontally across columns. Example: `<<foreach [s in ds.Sales] -horz>> <<[s.Goods.Name]>> <<[/foreach]>>`.
+   **A:** Use the `<<foreach … -horz>>` tag inside the cells that belong to the band. The `-horz` switch tells the engine to repeat the content horizontally across columns. Example: `<<foreach [s in ds.Sales] -horz>> <<[s.Goods.Name]>> <</foreach>>`.
 
 2. **Q:** Can I nest table‑column data bands inside each other?  
    **A:** Yes. You can place a `<<foreach … -horz>>` block inside another `<<foreach … -horz>>` block to create multi‑level horizontal repetition, such as iterating goods and then packs for each good.

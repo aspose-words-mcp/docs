@@ -53,9 +53,9 @@ In Aspose.Words, users can create a table in a document using the [DocumentBuild
 Important details:
 
 - [startTable](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/startTable/) can also be called inside a cell, in which case it starts the creation of a nested table within the cell.
-- After calling [insertCell](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertCell/#default), a new cell is created, and any content you add using other methods of the [DocumentBuilder](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/) class will be added to the current cell. To create a new cell on the same row, call **InsertCell** again.
-- If **InsertCell** is called immediately after [endRow](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/endRow/) and the end of a row, the table will continue on a new row.
-- The [endTable](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/endTable/) method to end the table should only be called once after calling **EndRow**. Calling **EndTable** moves the cursor from the current cell to the position immediately after the table.
+- After calling [insertCell](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertCell/#default), a new cell is created, and any content you add using other methods of the [DocumentBuilder](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/) class will be added to the current cell. To create a new cell on the same row, call **insertCell** again.
+- If **insertCell** is called immediately after [endRow](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/endRow/) and the end of a row, the table will continue on a new row.
+- The [endTable](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/endTable/) method to end the table should only be called once after calling **endRow**. Calling **endTable** moves the cursor from the current cell to the position immediately after the table.
 
 {{% /alert %}}
 
@@ -93,9 +93,9 @@ The following code example shows how to build a new table from scratch by adding
 
 ##Create a Table from HTML
 
-Aspose.Words supports inserting content into a document from an HTML source using the [insertHtml](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertHtml/g) method. The input can be a complete HTML page or just a partial snippet.
+Aspose.Words supports inserting content into a document from an HTML source using the [insertHtml](https://reference.aspose.com/words/nodejs-net/aspose.words/documentbuilder/insertHtml/) method. The input can be a complete HTML page or just a partial snippet.
 
-Using the **InsertHtml** method, users can insert tables into the document via table tags like `<table>`, `<tr>`, `<td>`.
+Using the **insertHtml** method, users can insert tables into the document via table tags like `<table>`, `<tr>`, `<td>`.
 
 The following code example shows how to insert a table into a document from a string containing HTML tags:
 

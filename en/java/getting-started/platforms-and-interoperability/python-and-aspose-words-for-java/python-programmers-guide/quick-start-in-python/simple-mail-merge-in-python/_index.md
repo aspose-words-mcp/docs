@@ -30,6 +30,6 @@ doc.getMailMerge().execute(
 
 ## Download Running Code
 
-Download **Simple Mail Merge(Aspose.Words)** from any of the below mentioned social coding sites:
+Download **Simple Mail Merge (Aspose.Words)** from any of the below mentioned social coding sites:
 
 - [GitHub](https://github.com/aspose-words/Aspose.Words-for-Java/blob/master/Plugins/Aspose_Words_Java_for_Python/tests/quickstart/simplemailmerge/SimpleMailMerge.py)

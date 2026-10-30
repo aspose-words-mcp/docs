@@ -24,7 +24,7 @@ Aspose.Words allows to manage formatting marks using the following properties:
 - [showHiddenText](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/showhiddentext/) – a `Boolean` value, which specifies whether the hidden text is rendered.
 - [showParagraphMarks](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/showparagraphmarks/) – a `Boolean` value, which specifies whether paragraph mark characters are rendered.
 
-The page depicted in the example below contains three paragraphs. The second one is hidden. A user can change the [showHiddenText](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/showhiddentext/) option to display this hidden text on the page.Also, each paragraph has a paragraph mark at the end. The paragraph mark usually is not visible unless the [showParagraphMarks](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/showparagraphmarks/) propertyis set to render it.
+The page depicted in the example below contains three paragraphs. The second one is hidden. A user can change the [showHiddenText](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/showhiddentext/) option to display this hidden text on the page. Also, each paragraph has a paragraph mark at the end. The paragraph mark usually is not visible unless the [showParagraphMarks](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/showparagraphmarks/) property is set to render it.
 
 ![specify-layout-options_1](specify-layout-options-1.png)
 
@@ -34,7 +34,7 @@ In Microsoft Word, these parameters are set using the "File → Options → Disp
 
 ## Comments and Revisions
 
-With Aspose.Words, you can render document comments that will look the same as in Microsoft Word.To specify whether comments are rendered, use the [commentDisplayMode](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/commentdisplaymode/) property.
+With Aspose.Words, you can render document comments that will look the same as in Microsoft Word. To specify whether comments are rendered, use the [commentDisplayMode](https://reference.aspose.com/words/nodejs-net/aspose.words.layout/layoutoptions/commentdisplaymode/) property.
 
 In Microsoft Word, this parameter is set using the "Track Changes Options" dialog box, as shown below:
 

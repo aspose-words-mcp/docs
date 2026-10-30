@@ -62,7 +62,7 @@ To merge cells in a table created with the [DocumentBuilder](https://reference.a
 
 Also, you must remember to clear the merge setting for those cells where no merge is required – this can be done by setting the first non-merge cell to **CellMerge.None**. If this is not done, all cells in the table will be merged.
 
-The following code example shows how tocreate a table with two rows where the cells in the first row are merged horizontally:
+The following code example shows how to create a table with two rows where the cells in the first row are merged horizontally:
 
 {{< gist "aspose-words-gists" "93de23a2f74a7f2e4971ed203874c983" "horizontal-merge.cs" >}}
 
@@ -108,7 +108,7 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 ## Convert to Horizontally Merged Cells
 
-Sometimes it is not possible to detect which cells are merged because some newer versions of Microsoft Word nolonger use the merge flags when cells are merged horizontally. But for situations where cells are merged into a cell horizontally by their width using merge flags, Aspose.Words provides the `ConvertToHorizontallyMergedCells` method to convert cells. This method simply transforms the table and adds new cells as needed.
+Sometimes it is not possible to detect which cells are merged because some newer versions of Microsoft Word no longer use the merge flags when cells are merged horizontally. But for situations where cells are merged into a cell horizontally by their width using merge flags, Aspose.Words provides the `ConvertToHorizontallyMergedCells` method to convert cells. This method simply transforms the table and adds new cells as needed.
 
 The following code example shows the above method in operation:
 
@@ -131,4 +131,4 @@ The following code example shows the above method in operation:
    **A:** Yes. Create a helper method that sets the appropriate `HorizontalMerge` and `VerticalMerge` flags on the start and end cells of the block. The method can be turned into an extension method, e.g., `cell1.Merge(cell2)`, to simplify future calls.
 
 5. **Q:** What should I do when cells appear merged in a loaded document but the merge flags are missing?  
-   **A:** Use the `Document.ConvertToHorizontallyMergedCells` method. It analyses cell widths and inserts the necessary merge flags, converting the visual merge into proper logical merged cells.
+   **A:** Use the `Table.ConvertToHorizontallyMergedCells` method. It analyses cell widths and inserts the necessary merge flags, converting the visual merge into proper logical merged cells.

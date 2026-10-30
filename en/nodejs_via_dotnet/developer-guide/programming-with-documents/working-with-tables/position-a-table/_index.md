@@ -44,15 +44,15 @@ The following code example shows how to get the table's alignment:
 
  The position of a floating table is determined using the following properties: 
 
-* [horizontalAnchor](https://reference.aspose.com/words/nodejs-net/aspose.words/table/horizontalAnchor/) –an object for calculating the horizontal positioning of a floating table
+* [horizontalAnchor](https://reference.aspose.com/words/nodejs-net/aspose.words/table/horizontalAnchor/) – an object for calculating the horizontal positioning of a floating table
 * [verticalAnchor](https://reference.aspose.com/words/nodejs-net/aspose.words/table/verticalAnchor/) – an object for calculating the vertical positioning of a floating table
-* [absoluteHorizontalDistance](https://reference.aspose.com/words/nodejs-net/aspose.words/table/absoluteHorizontalDistance/) –absolute horizontal floating table position
+* [absoluteHorizontalDistance](https://reference.aspose.com/words/nodejs-net/aspose.words/table/absoluteHorizontalDistance/) – absolute horizontal floating table position
 * [absoluteVerticalDistance](https://reference.aspose.com/words/nodejs-net/aspose.words/table/absoluteVerticalDistance/) – absolute vertical floating table position
-* [allowOverlap](https://reference.aspose.com/words/nodejs-net/aspose.words/table/allowOverlap/) –option to enable/disable overlap with other floating objects
+* [allowOverlap](https://reference.aspose.com/words/nodejs-net/aspose.words/table/allowOverlap/) – option to enable/disable overlap with other floating objects
 * [relativeHorizontalAlignment](https://reference.aspose.com/words/nodejs-net/aspose.words/table/relativeHorizontalAlignment/) – floating table relative horizontal alignment.
 * [relativeVerticalAlignment](https://reference.aspose.com/words/nodejs-net/aspose.words/table/relativeVerticalAlignment/) – floating table relative vertical alignment.
 
-The following code exampleshows how to get the position of a floating table:
+The following code example shows how to get the position of a floating table:
 
 {{< gist "aspose-words-gists" "b55c18ec2f5fe3f033f8d24c508b6a0f" "get-floating-table-position.js" >}}
 
@@ -60,7 +60,7 @@ The following code exampleshows how to get the position of a floating table:
 
 Just like getting, you can set the position of a floating table using the same Aspose.Words API.
 
-It is important to know that alignment and horizontal and vertical distance are combined properties and one can reset the other. For example, setting the **RelativeHorizontalAlignment** will reset the **AbsoluteHorizontalDistance** to its default value and vice versa. The same is true for the vertical arrangement.
+It is important to know that alignment and horizontal and vertical distance are combined properties and one can reset the other. For example, setting the **relativeHorizontalAlignment** will reset the **absoluteHorizontalDistance** to its default value and vice versa. The same is true for the vertical arrangement.
 
 The following code example shows how to set the position of a floating table:
 
@@ -84,13 +84,13 @@ The following code example shows how to get the distance between a table and its
 ## FAQ
 
 1. **Q:** How can I change the horizontal alignment of a floating table in Node.js?  
-   **A:** Use the `relativeHorizontalAlignment` property of the `Table` object. Assign a value from the `RelativeHorizontalAlignment` enum (e.g., `RelativeHorizontalAlignment.Left`). Setting this property automatically resets any previously set `absoluteHorizontalDistance`.
+   **A:** Use the `relativeHorizontalAlignment` property of the `Table` object. Assign a value from the `HorizontalAlignment` enum (e.g., `HorizontalAlignment.Left`). Setting this property automatically resets any previously set `absoluteHorizontalDistance`.
 
 2. **Q:** Which property controls the vertical distance of a floating table from its anchor paragraph?  
    **A:** The `absoluteVerticalDistance` property defines the exact vertical offset (in points) from the anchor. You can set it directly, but note that changing `relativeVerticalAlignment` will reset this value to its default.
 
 3. **Q:** How do I prevent a floating table from overlapping other floating objects?  
-   **A:** Set the `allowOverlap` property to `false`. This tells Aspose.Words to automatically reposition the table if it would intersect another floating shape.
+   **A:** Aspose.Words cannot change this option: the `allowOverlap` property is read-only. It shows whether the floating table allows other floating objects to overlap it (`true` by default); change the setting in Microsoft Word if needed.
 
 4. **Q:** Can I retrieve the distances between a table and surrounding text?  
    **A:** Yes. Use the `distanceTop`, `distanceBottom`, `distanceLeft`, and `distanceRight` properties of the `Table` object. They return the spacing (in points) that the table maintains on each side.

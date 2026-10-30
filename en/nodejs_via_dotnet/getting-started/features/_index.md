@@ -44,7 +44,7 @@ Many customers worldwide rely on the thorough document import and export feature
 | `XML Paper Specification - XPS` | Convert any document to XPS with high fidelity. | {{< emoticons/tick >}} |
 | `Plain Text - TXT` | Easily extract text by saving in plain text format. | {{< emoticons/tick >}} |
 | `Digital Publishing EPUB` | EPUB is a popular format for eBooks. You can convert any document from Aspose.Words to the IDPF EPUB format. | {{< emoticons/tick >}} |
-| `Printer Command Language (PCL)` | Aspose.Words for .NET provides support to save document to PCL format. | {{< emoticons/tick >}} |
+| `Printer Command Language (PCL)` | Aspose.Words provides support to save document to PCL format. | {{< emoticons/tick >}} |
 
 ## Rendering and Printing
 
@@ -55,7 +55,7 @@ Aspose.Words now provides high fidelity rendering of document pages.
 | Layout document into pages with high fidelity (exactly like Microsoft Word® would do that) to all the formats below. | {{< emoticons/tick >}} |
 | Render individual pages or complete documents to PDF or XPS. | {{< emoticons/tick >}} |
 | Render document pages to BMP images | {{< emoticons/tick >}} |
-| Render document pages to images (PNG, EMF, JPEG,GIF). | {{< emoticons/tick >}} |
+| Render document pages to images (PNG, EMF, JPEG, GIF). | {{< emoticons/tick >}} |
 | Render individual shapes from the document into raster or vector images. | {{< emoticons/tick >}} |
 | Specify image resolution, quality, compression and other options. | {{< emoticons/tick >}} |
 | Render pages or shapes to a .NET Graphics object with transforms, to a specific size. | {{< emoticons/tick >}} |

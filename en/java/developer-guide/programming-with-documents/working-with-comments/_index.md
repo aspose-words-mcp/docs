@@ -120,13 +120,13 @@ You can download the sample file of this example from [Aspose.Words GitHub](http
 
 Using Aspose.Words you can also remove comments between the **CommentRangeStart** and **CommentRangeEnd** nodes.
 
-The following code example shows how to remove text between**CommentRangeStart** and **CommentRangeEnd**:
+The following code example shows how to remove text between **CommentRangeStart** and **CommentRangeEnd**:
 
 {{< gist "aspose-words-gists" "7e28ba7cc4edc360df780e7e9747e14c" "remove-range-text.java" >}}
 
 ## Add or Remove Comment's Reply
 
-The [addReply](https://reference.aspose.com/words/java/com.aspose.words/comment/#addReply-java.lang.String-java.lang.String-java.util.Date-java.lang.String) method adds a reply to this comment. Please note that due to the existing Microsoft Office limitations only 1 level of replies is allowed in the document. An exception of type *InvalidOperationException* will be raised if this method is called on the existing Reply comment.
+The [addReply](https://reference.aspose.com/words/java/com.aspose.words/comment/#addReply-java.lang.String-java.lang.String-java.util.Date-java.lang.String) method adds a reply to this comment. Please note that due to the existing Microsoft Office limitations only 1 level of replies is allowed in the document. An exception of type *IllegalStateException* will be raised if this method is called on the existing Reply comment.
 
 You can use the [removeReply](https://reference.aspose.com/words/java/com.aspose.words/comment/#removeReply-com.aspose.words.Comment) method to remove the specified reply to this comment.
 
@@ -136,7 +136,7 @@ The following code example shows how to add a reply to comment and remove commen
 
 ## Read Comment's Reply
 
-The [Replies](https://reference.aspose.com/words/java/com.aspose.words/comment/#getReplies) property returns a collection of the [Comment](https://reference.aspose.com/words/java/com.aspose.words/comment/) objects that are immediate children of the specified comment.
+The [getReplies()](https://reference.aspose.com/words/java/com.aspose.words/comment/#getReplies) property returns a collection of the [Comment](https://reference.aspose.com/words/java/com.aspose.words/comment/) objects that are immediate children of the specified comment.
 
 The following code example shows how to iterate through a comment's replies and resolved them:
 

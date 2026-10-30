@@ -89,13 +89,13 @@ Note that the **Font**, **ParagraphFormat**, and **PageSetup** properties are up
 - [Font](https://reference.aspose.com/words/python-net/aspose.words/font/)
 - [ParagraphFormat](https://reference.aspose.com/words/python-net/aspose.words/paragraphformat/)
 - [PageSetup](https://reference.aspose.com/words/python-net/aspose.words/pagesetup/)
-- [CellFormat](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/cell_format/)
-- [RowFormat](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/row_format/)
-- [DocumentBuilder.MoveToBookmark](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_bookmark/)
-- [DocumentBuilder.Write](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/write/)
-- [DocumentBuilder.Writeln](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/write/)
-- [DocumentBuilder.InsertField](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/)
-- [DocumentBuilder.InsertHtml](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_html/) 
+- [cell_format](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/cell_format/)
+- [row_format](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/row_format/)
+- [DocumentBuilder.move_to_bookmark](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/move_to_bookmark/)
+- [DocumentBuilder.write](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/write/)
+- [DocumentBuilder.writeln](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/writeln/)
+- [DocumentBuilder.insert_field](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_field/)
+- [DocumentBuilder.insert_html](https://reference.aspose.com/words/python-net/aspose.words/documentbuilder/insert_html/) 
 
 ## FAQ
 
@@ -103,7 +103,7 @@ Note that the **Font**, **ParagraphFormat**, and **PageSetup** properties are up
    **A:** After inserting another document, set the `Font.size` property on the `DocumentBuilder` before writing new text. The change affects all subsequent insertions.
 
 2. **Q:** Does `DocumentBuilder.insert_document` preserve the source document's formatting by default?  
-   **A:** No. By default the destination document's formatting is applied. To keep the source formatting, pass `ImportFormatMode.KEEP_SOURCE_FORMATTING` as the second argument.  
+   **A:** The import mode is a required second argument. Pass `ImportFormatMode.KEEP_SOURCE_FORMATTING` to keep the source formatting, or `ImportFormatMode.USE_DESTINATION_STYLES` to apply the destination document's styles.  
 
    ```python
    builder.insert_document(source_doc, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
@@ -125,4 +125,4 @@ Note that the **Font**, **ParagraphFormat**, and **PageSetup** properties are up
    ```
 
 5. **Q:** Does `Document.get_child_nodes(NodeType.PARAGRAPH, True)` include paragraphs that are inside headers and footers?  
-   **A:** No. The method only returns paragraphs from the main body of the document. To access header/footer paragraphs, iterate through each `Section` and then through its `HeadersFooters` collection.
+   **A:** Yes. With `is_deep=True` the method returns paragraphs from the whole document, including headers and footers. To get only body paragraphs, use `section.body.paragraphs` for each section.
