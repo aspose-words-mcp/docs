@@ -39,14 +39,8 @@ default:
 
 .rules:build:
   rules:
-    - if: '$CI_COMMIT_BRANCH == $BRANCH_NAME'
-      when: on_success
-
-    # TODO: remove after md testing
-    - if: '$CI_COMMIT_BRANCH == "UEX-603-md-endpoints"'
-      when: on_success
-
-    - when: never
+    # - if: '$CI_COMMIT_BRANCH == $BRANCH_NAME'
+    - when: on_success
 
 .rules:deploy:
   rules:
@@ -65,6 +59,7 @@ default:
 build:
   stage: build
   image: node:22
+  timeout: 2h
   extends: .rules:build
   cache:
     key: "$CI_COMMIT_REF_SLUG-apk-npm"
@@ -74,10 +69,19 @@ build:
     policy: pull-push
   before_script:
     # - *apk_cache_setup
+    - echo "MARY-TEST-123"
+
+    # Diagnostics
+    - date -u
+    - cat /etc/os-release
+    - cat /etc/apt/sources.list.d/debian.sources || true
 
     # Base tools
-    - apt-get update
-    - apt-get install -y bash curl tar git git-lfs
+    - apt-get clean
+    - rm -rf /var/lib/apt/lists/*
+    - apt-get update -o Debug::Acquire::gpgv=true
+    - apt-get install -y bash curl tar git git-lfs jq
+    - bash --version
 
     # Install Hugo Extended
     - mkdir -p /tmp/hugo
@@ -122,27 +126,24 @@ build:
 
   script:
     - echo "Navigate to docs template repository location..."
-    - mkdir -p $DOCS_TEMPLATE_CONTAINER_PATH
-    - cd $DOCS_TEMPLATE_CONTAINER_PATH
-    - echo "Fetch docs template repository..."
-    - git clone --depth $GIT_DEPTH https://$DOCS_TEMPLATE_PROJECT_NAME:$DOCS_TEMPLATE_CI_CD_ACCESS_TOKEN@$DOCS_TEMPLATE_GIT_URL .
-    - echo "Checkout template $DOCS_TEMPLATE_BRANCH_NAME branch..."
-    - git checkout $DOCS_TEMPLATE_BRANCH_NAME
+    - mkdir -p "$DOCS_TEMPLATE_CONTAINER_PATH"
+    - cd "$DOCS_TEMPLATE_CONTAINER_PATH"
 
-    - echo "Currently on docs template checked out $(git rev-parse HEAD) revision"
-    - echo "Replace content path in the docs.aspose.com-words.toml..."
+    - echo "Fetch docs template repository..."
+    - git clone --depth "$GIT_DEPTH" "https://$DOCS_TEMPLATE_PROJECT_NAME:$DOCS_TEMPLATE_CI_CD_ACCESS_TOKEN@$DOCS_TEMPLATE_GIT_URL" .
+
+    - echo "Checkout template $DOCS_TEMPLATE_BRANCH_NAME branch..."
+    - git checkout "$DOCS_TEMPLATE_BRANCH_NAME"
+
+    - echo "Replace content path in docs.aspose.com-words.toml..."
     - sed -i "s|../md-words|$CI_PROJECT_DIR|g" ./configs/docs.aspose.com-words.toml
-    - echo "Current directory $(pwd)"
-    - echo "Intalling project dependencies..."
-    # - npm config set strict-ssl false
-    # - npm config set registry http://registry.npmjs.org/
-    # - npm config set cafile $NPM_REGISTRY_CERT_PATH
-    # - npm config set registry https://registry.npmjs.org
+
+    - echo "Installing project dependencies..."
     - npm ci
 
     - echo "Documentation build started..."
     - |
-      $HUGO_PATH \
+      "$HUGO_PATH" \
         --templateMetrics \
         --templateMetricsHints \
         --cleanDestinationDir \
@@ -154,109 +155,265 @@ build:
 
     - |
       echo "===== BUILD SUMMARY ====="
-      echo "Markdown: $(find "$DOCS_BUILD_OUTPUT" -name '*.md' | wc -l)"
-      echo "HTML:     $(find "$DOCS_BUILD_OUTPUT" -name '*.html' | wc -l)"
+      echo "Markdown: $(find "$DOCS_BUILD_OUTPUT" -type f -name '*.md' | wc -l)"
+      echo "HTML:     $(find "$DOCS_BUILD_OUTPUT" -type f -name '*.html' | wc -l)"
 
     - |
+      echo "===== HTML INTEGRITY CHECK: BEFORE ====="
+
+      find "$DOCS_BUILD_OUTPUT" -type f -name "*.html" \
+          -exec sha256sum {} + | sort > /tmp/html-before.txt
+
+    - |
+      bash <<'BASH'
+      set -o pipefail
+
+      if [ -z "${GITHUB_TOKEN:-}" ]; then
+          echo "ERROR: GITHUB_TOKEN is empty or not set."
+          exit 1
+      fi
+
       echo "===== POST-PROCESSING MARKDOWN ====="
+      echo "===== START GIST PROCESSING ====="
+      date
 
-      while IFS= read -r file; do
+      set -o pipefail
 
-          # HTML → Markdown
-          sed -i -E 's|<div class="card-group">||g' "$file"
-          sed -i -E 's|<div class="container">||g' "$file"
-          sed -i -E 's|</div>||g' "$file"
+      declare -A gist_cache
+      declare -A source_cache
 
-          # card → link
-          sed -i -E ':a;N;$!ba;s|<a href="([^"]+)">[^<]*<h3>([^<]+)</h3>[^<]*<p>([^<]+)</p>|\[\2\](\1) - \3|g' "$file"
+      file_count=0
+      gist_count=0
+      replaced_count=0
+      failed_count=0
 
-          # highlight → fenced code block
-          sed -i -E 's|\{\{< *highlight +([a-zA-Z0-9]+) *>}}|```\1|g' "$file"
-          sed -i -E 's|\{\{< */highlight *>}}|```|g' "$file"
+      while IFS= read -r -d '' file; do
+          file_count=$((file_count + 1))
 
-          # hr-first
-          sed -i -E 's|\{\{< *hr-first *>}}|---|g' "$file"
+          if (( file_count % 2000 == 0 )); then
+              echo "Processed Markdown files: $file_count"
+          fi
 
-          # quote
-          sed -i -E 's|\{\{% *quote *%}}|> |g' "$file"
-          sed -i -E 's|\{\{% */quote *%}}||g' "$file"
+          mapfile -t shortcodes < <(
+              grep -oE '\{\{< *gist +"[^"]+" +"[^"]+" +"[^"]+" *>\}\}' "$file" |
+              sort -u || true
+          )
 
-          # alerts
-          sed -i -E 's|\{\{% *alert[^%]*%}}|```|g' "$file"
-          sed -i -E 's|\{\{% */alert[^%]*%}}|```|g' "$file"
+          for shortcode in "${shortcodes[@]}"; do
+              IFS=$'\t' read -r owner gist_id file_name < <(
+                  printf '%s\n' "$shortcode" |
+                  perl -ne '
+                      if (/\{\{<\s*gist\s+"([^"]+)"\s+"([^"]+)"\s+"([^"]+)"\s*>\}\}/) {
+                          print "$1\t$2\t$3\n";
+                      }
+                  '
+              )
 
-          # img
-          sed -i -E 's|<img[^>]*src="([^"]+)"[^>]*alt="([^"]+)"[^>]*/?>|![\2](\1)|g' "$file"
+              [ -n "$owner" ] && [ -n "$gist_id" ] && [ -n "$file_name" ] || continue
 
-          # i
-          sed -i -E 's|<i[^>]*>[^<]*</i>|* |g' "$file"
+              cache_key="${owner}/${gist_id}/${file_name}"
 
-          # span
-          sed -i -E 's|<span[^>]*>||g' "$file"
-          sed -i -E 's|</span>||g' "$file"
+              if [ -n "${source_cache[$cache_key]+x}" ]; then
+                  source_code="${source_cache[$cache_key]}"
+              else
+                  source_code=""
 
-          # strong
-          sed -i -E 's|<strong>|**|g' "$file"
-          sed -i -E 's|</strong>|**|g' "$file"
+                  # Get Gist metadata from cache or GitHub API.
+                  if [ -n "${gist_cache[$gist_id]+x}" ]; then
+                      gist_json="${gist_cache[$gist_id]}"
+                  else
+                      response_file=$(mktemp)
 
-          # links
-          sed -i -E 's|<a href="([^"]*)">|\1 - |g' "$file"
-          sed -i -E 's|</a>||g' "$file"
+                      http_code=$(curl -LsS \
+                          --connect-timeout 10 \
+                          --max-time 30 \
+                          --retry 2 \
+                          --retry-all-errors \
+                          -o "$response_file" \
+                          -w '%{http_code}' \
+                          -H 'Accept: application/vnd.github+json' \
+                          -H 'User-Agent: Aspose-Words-Documentation-Build' \
+                          -H 'X-GitHub-Api-Version: 2022-11-28' \
+                          -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+                          "https://api.github.com/gists/${gist_id}" \
+                          2>/dev/null || true)
 
-          # api download button
-          sed -i -E 's#<p id="api-button-id">[[:space:]]*<a href="([^"]+)".*>(⬇[[:space:]]*)?([^<]+)</a>[[:space:]]*</p>#(\3)[\1]#g' "$file"
+                      if [ "$http_code" = "200" ] &&
+                          jq -e '.files | type == "object"' \
+                              "$response_file" >/dev/null 2>&1; then
+                          gist_json=$(cat "$response_file")
+                          gist_cache["$gist_id"]="$gist_json"
+                          gist_count=$((gist_count + 1))
+                      else
+                          gist_json=""
+                          echo "Warning: Failed to retrieve Gist ${gist_id}; HTTP ${http_code:-unknown}."
+                      fi
 
-          # typography
-          sed -i -E 's/[“”]/"/g' "$file"
-          sed -i -E 's/[–—]/-/g' "$file"
-          sed -i -E 's/→/-/g' "$file"
+                      rm -f "$response_file"
+                  fi
 
-          # ul
-          sed -i -E 's|<ul[^>]*>||g' "$file"
-          sed -i -E 's|</ul>||g' "$file"
+                  # Resolve the exact requested filename.
+                  if [ -n "$gist_json" ]; then
+                      raw_url=$(printf '%s' "$gist_json" |
+                          jq -r --arg name "$file_name" \
+                              '.files[$name].raw_url // empty')
 
-          # u
-          sed -i -E 's|<u[^>]*>||g' "$file"
-          sed -i -E 's|</u>||g' "$file"
+                      # Download the source into a temporary file.
+                      if [ -n "$raw_url" ]; then
+                          source_file=$(mktemp)
 
-          # li
-          sed -i -E 's|<li[^>]*>||g' "$file"
-          sed -i -E 's|</li>||g' "$file"
+                          if curl -fLsS \
+                              --connect-timeout 10 \
+                              --max-time 30 \
+                              --retry 2 \
+                              --retry-all-errors \
+                              -o "$source_file" \
+                              "$raw_url" 2>/dev/null &&
+                              [ -s "$source_file" ]; then
+                              source_code=$(cat "$source_file")
+                          else
+                              source_code=""
+                              echo "Warning: Failed to retrieve ${owner}/${gist_id}/${file_name}."
+                          fi
 
-          # b
-          sed -i -E 's|<b[^>]*>||g' "$file"
-          sed -i -E 's|</b>||g' "$file"
+                          rm -f "$source_file"
+                      else
+                          echo "Warning: File '${file_name}' not found in Gist ${gist_id}."
+                      fi
+                  fi
 
-          # br
-          sed -i -E 's|<br[[:space:]]*/?>|\n|g' "$file"
-          sed -i -E 's|</br>|\n|g' "$file"
+                  # Cache successful and failed retrievals.
+                  source_cache["$cache_key"]="$source_code"
+              fi
 
-          # alert icon
-          sed -i -E 's|<sup class="alert-icon">||g' "$file"
-          sed -i -E 's|</sup>||g' "$file"
+              # Leave the original shortcode unchanged if retrieval failed.
+              if [ -z "$source_code" ]; then
+                  failed_count=$((failed_count + 1))
+                  continue
+              fi
 
-          # normalize encoding
-          iconv -f UTF-8 -t UTF-8 "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+              case "$file_name" in
+                  *.cs)       language="csharp" ;;
+                  *.java)     language="java" ;;
+                  *.py)       language="python" ;;
+                  *.cpp|*.h)  language="cpp" ;;
+                  *.js)       language="javascript" ;;
+                  *.ts)       language="typescript" ;;
+                  *.php)      language="php" ;;
+                  *.xml)      language="xml" ;;
+                  *.json)     language="json" ;;
+                  *.sql)      language="sql" ;;
+                  *.vb)       language="vb" ;;
+                  *.rb)       language="ruby" ;;
+                  *.go)       language="go" ;;
+                  *.sh)       language="bash" ;;
+                  *)          language="" ;;
+              esac
 
-          # cleanup
-          perl -i -pe 's/\r//g; s/[ \t]+$//;' "$file"
-          perl -i -0777 -pe 's/\n{3,}/\n\n/g' "$file"
+              code_block=$(printf '```%s\n%s\n```' "$language" "$source_code")
 
-      done < <(find "$DOCS_BUILD_OUTPUT" -type f -name "*.md")
+              SHORTCODE="$shortcode" CODE_BLOCK="$code_block" \
+              perl -0777 -i -pe '
+                  my $shortcode = $ENV{"SHORTCODE"};
+                  my $replacement = $ENV{"CODE_BLOCK"};
+                  s/\Q$shortcode\E/$replacement/g;
+              ' "$file"
+
+              replaced_count=$((replaced_count + 1))
+          done
+
+          # Preserve the existing Markdown transformations.
+          perl -0777 -i -pe '
+              s|<div class="card-group">||g;
+              s|<div class="container">||g;
+              s|</div>||g;
+
+              s|<a href="([^"]+)">[^<]*<h3>([^<]+)</h3>[^<]*<p>([^<]+)</p>|\[$2\]($1) - $3|g;
+
+              s|\{\{<\s*highlight\s+([a-zA-Z0-9]+)\s*>}}|```\1|g;
+              s|\{\{<\s*/highlight\s*>}}|```|g;
+              s|\{\{<\s*hr-first\s*>}}|---|g;
+
+              s|\{\{% *quote *%}}|> |g;
+              s|\{\{% */quote *%}}||g;
+
+              s|\{\{% *alert[^%]*%}}|```|g;
+              s|\{\{% */alert[^%]*%}}|```|g;
+
+              s|<img[^>]*src="([^"]+)"[^>]*alt="([^"]+)"[^>]*/?>|![$2]($1)|g;
+              s|<i[^>]*>[^<]*</i>|* |g;
+              s|<span[^>]*>||g;
+              s|</span>||g;
+              s|<strong>|**|g;
+              s|</strong>|**|g;
+              s|<a href="([^"]*)">|$1 - |g;
+              s|</a>||g;
+
+              s#<p id="api-button-id">\s*<a href="([^"]+)".*>(⬇\s*)?([^<]+)</a>\s*</p>#($3)[$1]#g;
+
+              s/\x{201C}/"/g;
+              s/\x{201D}/"/g;
+              s/\x{2013}/-/g;
+              s/\x{2014}/-/g;
+              s/\x{2192}/-/g;
+
+              s|<ul[^>]*>||g;
+              s|</ul>||g;
+              s|<u[^>]*>||g;
+              s|</u>||g;
+              s|<li[^>]*>||g;
+              s|</li>||g;
+              s|<b[^>]*>||g;
+              s|</b>||g;
+
+              s|<br[[:space:]]*/?>|\n|g;
+              s|</br>|\n|g;
+              s|<sup class="alert-icon">||g;
+              s|</sup>||g;
+
+              s/\r//g;
+          ' "$file"
+
+      done < <(find "$DOCS_BUILD_OUTPUT" -type f -name '*.md' -print0)
+
+      echo "Processed Markdown files: $file_count"
+      echo "Unique Gists fetched: $gist_count"
+      echo "Replaced Gist shortcodes: $replaced_count"
+      echo "Failed Gist retrievals: $failed_count"
+      echo "===== END GIST PROCESSING ====="
+      date
+
+      echo "===== GIST PROCESSING SUMMARY ====="
+      echo "Successfully replaced: $replaced_count"
+      echo "Failed retrievals: $failed_count"
+
+      if [ "$failed_count" -gt 0 ]; then
+          echo "WARNING: Some Gist shortcodes were preserved unchanged."
+      else
+          echo "All encountered Gist shortcodes were processed."
+      fi
+      BASH
 
     - |
-      echo "===== FINAL CLEANUP ====="
+      echo "===== HTML INTEGRITY CHECK: AFTER ====="
 
-      while IFS= read -r file; do
-          sed -i -E '/^[[:space:]]+$/d' "$file"
-      done < <(find "$DOCS_BUILD_OUTPUT" -type f -name "*.md")
+      find "$DOCS_BUILD_OUTPUT" -type f -name "*.html" \
+          -exec sha256sum {} + | sort > /tmp/html-after.txt
+
+      if ! diff -u /tmp/html-before.txt /tmp/html-after.txt; then
+          echo "ERROR: HTML files were modified during Markdown post-processing"
+          exit 1
+      fi
+
+      echo "HTML files integrity check passed."
 
     - echo "Compressing generated documentation..."
-    - cd $CI_HOME_FOLDER
-    - mkdir -p $DOCS_BUILD_OUTPUT_ARCHIVE
-    - tar --warning=all -czvf $DOCS_FULL_ARCHIVE_NAME ./$DOCS_BUILD_OUTPUT_FOLDER > /dev/null
-    - mv ./$DOCS_FULL_ARCHIVE_NAME $DOCS_BUILD_OUTPUT_ARCHIVE/$DOCS_FULL_ARCHIVE_NAME
+    - cd "$CI_HOME_FOLDER"
+    - mkdir -p "$DOCS_BUILD_OUTPUT_ARCHIVE"
+    - tar --warning=all -czf "$DOCS_FULL_ARCHIVE_NAME" "./$DOCS_BUILD_OUTPUT_FOLDER"
+    - mv "./$DOCS_FULL_ARCHIVE_NAME" "$DOCS_BUILD_OUTPUT_ARCHIVE/$DOCS_FULL_ARCHIVE_NAME"
     - echo "Documentation compressed."
+
   artifacts:
     paths:
       - $DOCS_BUILD_OUTPUT/
