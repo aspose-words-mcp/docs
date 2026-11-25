@@ -3,7 +3,7 @@ title: Working with Fonts in C++
 second_title: Aspose.Words for C++
 articleTitle: Working with Fonts
 linktitle: Working with Fonts
-description: "Font formatting in details using C++."
+description: "Font formatting in details using C++. Emphasis mark in C++. Get font line spacing using C++."
 type: docs
 weight: 230
 ai_search_scope: words_cpp
@@ -13,6 +13,14 @@ url: /cpp/working-with-fonts/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with fonts, including substitution rules and embedding.
+
+{{% /alert %}}
+
 A font is a set of characters with a certain size, color, and design. Aspose.Words allows you to work with fonts using the [Fonts](https://reference.aspose.com/words/cpp/aspose.words.fonts/) namespace and the [Font](https://reference.aspose.com/words/cpp/aspose.words/font/) class.
 
 ## Font Formatting
@@ -21,9 +29,9 @@ The current font formatting is represented by the **Font** object returned by th
 
 The following code example shows how to set font formatting:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderSetFormatting-DocumentBuilderSetFontFormatting.cpp" >}}
+{{< gist "aspose-words-gists" "e00715c52c515394f53a86270bd93368" "set-font-formatting.h" >}}
 
-Fill properties now are also available for fonts to set fill formatting of text. It gives an ability to change, for example, the foreground color or transparency of text fill.
+Fill properties are also available for fonts to set text fill formatting. This makes it possible to change, for example, the foreground color or the transparency of the text fill.
 
 ## Getting Font Line Spacing
 
@@ -31,12 +39,12 @@ Font line spacing is the vertical distance between the baselines of two consecut
 
 The [get_LineSpacing()](https://reference.aspose.com/words/cpp/aspose.words/font/get_linespacing/) property was introduced to the **Font** class to obtain this value, as shown in the example below:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-GetFontLineSpacing-GetFontLineSpacing.cpp" >}}
+{{< gist "aspose-words-gists" "e00715c52c515394f53a86270bd93368" "get-font-line-spacing.h" >}}
 
 ## Font EmphasisMark
 
-Some East Asian languages use a special emphasis mark to indicate an emphasis. The **Font** class provides the [get_EmphasisMark()](https://reference.aspose.com/words/cpp/aspose.words/font/get_emphasismark/) property to get or set the `EmphasisMark` enumeration values to be applied when formatting.
+Some East Asian languages use a special emphasis mark to indicate an emphasis. The **Font** class provides the [get_EmphasisMark()](https://reference.aspose.com/words/cpp/aspose.words/font/get_emphasismark/) property to get or set the [EmphasisMark](https://reference.aspose.com/words/cpp/aspose.words/emphasismark/) enumeration values to be applied when formatting.
 
 The following code example shows how to set the **EmphasisMark** property:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderSetFormatting-SetFontEmphasisMark.cpp" >}}
+{{< gist "aspose-words-gists" "e00715c52c515394f53a86270bd93368" "set-font-emphasis-mark.h" >}}

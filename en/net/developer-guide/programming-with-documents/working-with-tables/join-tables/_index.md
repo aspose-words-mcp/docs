@@ -32,7 +32,6 @@ The following code example shows how to merge rows from two tables into one:
 
 ## Related APIs
 
-
 - `Aspose.Words.Tables.Table` — Represents a table in the document.
 - `Aspose.Words.Tables.Row` — Represents a table row.
 - `Document.ImportNode(Node, bool)` — Imports a node from another document; `true` imports its child nodes as well.

@@ -13,6 +13,14 @@ url: /cpp/track-changes-in-a-document/
 timestamp: 2024-01-30-16-22-34
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to track changes in a document programmatically.
+
+{{% /alert %}}
+
 The functionality of track changes, also known as reviewing, allows you to track changes to content and formatting made by you or other users. This track changes feature with Aspose.Words supports track changes in Microsoft Word. With this functionality, you can access individual revisions in your document and apply different properties to them.
 
 When you enable the track changes feature, all inserted, deleted, and modified elements of the document will be visually highlighted with information about by whom, when, and what was changed. Objects that carry the information about what was changed are called “tracking changes”. For example, assume that you want to review a document and make important changes – this may mean that you need to make revisions. Also, you may need to insert comments to discuss some of the changes. That is where tracking changes in documents come in.
@@ -29,7 +37,7 @@ Note that the comment feature in Aspose.Words, as well as in Microsoft Word, can
 
 Before diving into revisions, let's explain the meaning of revisions. A [revision](https://reference.aspose.com/words/cpp/aspose.words/revision/) is a change that occurs in one node of a document while a revision group, represented by the [RevisionGroup](https://reference.aspose.com/words/cpp/aspose.words/revisiongroup/) class, is a group of sequential revisions that occur in many nodes of a document. Basically, revision is a tool for tracking changes.
 
-Revisions are used in the tracking changes feature and within the compare documents feature, where revisions appear as a result of the comparison. So, revisions within the tracking changes feature show by whom and what was changed.
+Revisions are used in the tracking changes feature and within the compare documents feature, where revisions appear as a result of comparison. So, revisions within the tracking changes feature show by whom and what was changed.
 
 {{% alert color="primary" %}}
 
@@ -51,7 +59,7 @@ Editing a document usually does not count as a revision until you begin tracking
 
 {{% alert color="primary" %}}
 
-Note that the `StartTrackRevisions` method does not change the status of the [set_TrackRevisions()](https://reference.aspose.com/words/cpp/aspose.words/document/set_trackrevisions/) property and does not use its value for the aim of revision tracking. In addition, if a node was moved from one location to another inside the tracked document, then move revisions will be created, including move-from and move-to range.
+Note that the `StartTrackingRevisions` method does not change the status of the [set_TrackRevisions()](https://reference.aspose.com/words/cpp/aspose.words/document/set_trackrevisions/) property and does not use its value for the aim of revision tracking. In addition, if a node was moved from one location to another inside the tracked document, then move revisions will be created, including move-from and move-to range.
 
 {{% /alert %}}
 
@@ -67,11 +75,11 @@ Note that the `AcceptAllRevisions` method is similar to the “Accept All Change
 
 The following code example shows how to work with tracking changes:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithRevisions-AcceptAllRevisions.cpp" >}}
+{{< gist "aspose-words-gists" "1cf6ffe8e9b563a577fc8a2337c7f7ee" "accept-all-revisions.h" >}}
 
 The following code example shows how revisions are generated when a node is moved within a tracked document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithRevisions-MoveNodeInTrackedDocument.cpp" >}}
+{{< gist "aspose-words-gists" "1cf6ffe8e9b563a577fc8a2337c7f7ee" "move-node-in-tracked-document.h" >}}
 
 ## Manage and Store Changes as Revisions
 
@@ -91,4 +99,17 @@ Note that there is no connection between the revisions themselves and the `get_T
 
 The following code example shows how to apply different properties with revisions:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithRevisions-ShapeRevision.cpp" >}}
+{{< gist "aspose-words-gists" "1cf6ffe8e9b563a577fc8a2337c7f7ee" "shape-revision.h" >}}
+
+## Related APIs
+
+- [Revision](https://reference.aspose.com/words/cpp/aspose.words/revision/)
+- [RevisionGroup](https://reference.aspose.com/words/cpp/aspose.words/revision/get_group/)
+- [RevisionType](https://reference.aspose.com/words/cpp/aspose.words/revisiontype/)
+- [Document::get_TrackRevisions()](https://reference.aspose.com/words/cpp/aspose.words/document/get_trackrevisions/)
+- [Document::StartTrackRevisions()](https://reference.aspose.com/words/cpp/aspose.words/document/starttrackrevisions/)
+- [Document::StopTrackRevisions()](https://reference.aspose.com/words/cpp/aspose.words/document/stoptrackrevisions/)
+- [Document::AcceptAllRevisions()](https://reference.aspose.com/words/cpp/aspose.words/document/acceptallrevisions/)
+- [RevisionCollection::RejectAll()](https://reference.aspose.com/words/cpp/aspose.words/revisioncollection/rejectall/)
+- [Revision::Accept()](https://reference.aspose.com/words/cpp/aspose.words/revision/accept/)
+- [Revision::Reject()](https://reference.aspose.com/words/cpp/aspose.words/revision/reject/)

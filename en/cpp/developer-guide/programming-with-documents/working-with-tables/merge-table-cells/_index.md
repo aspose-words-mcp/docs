@@ -13,6 +13,14 @@ url: /cpp/merge-table-cells/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with merged table cells.
+
+{{% /alert %}}
+
 Sometimes certain rows in a table require a heading or large blocks of text that take up the full width of the table. For proper design of the table, the user can merge several table cells into one. Aspose.Words supports merged cells when working with all input formats, including importing HTML content.
 
 ## How to Merge Table Cells
@@ -42,7 +50,13 @@ The following code example shows how to print the horizontal and vertical cell m
 
 {{< gist "aspose-words-gists" "03b0c69804cda6427adc3f12cc6ba2d3" "check-cells-merged.h" >}}
 
-## Merged Cells in a Table {#merge-cells-in-a-table}
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Table%20with%20merged%20cells.docx).
+
+{{% /alert %}}
+
+## Merge Table Cells When Using DocumentBuilder
 
 To merge cells in a table created with the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/), you need to set the appropriate merge type for each cell where the merge is expected – first **CellMerge::First** and then **CellMerge::Previous**.
 
@@ -68,7 +82,13 @@ The following code example shows how to merge a range of cells between two speci
 
 {{< gist "aspose-words-gists" "03b0c69804cda6427adc3f12cc6ba2d3" "merge-cell-range.h" >}}
 
-## Vertical and Horizontal Merged Cells in a Table {#vertical-and-Horizontal-merged-cells-in-the-table}
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Table%20with%20merged%20cells.docx).
+
+{{% /alert %}}
+
+## Vertical and Horizontal Merged Cells in HTML Table
 
 As we have said in previous articles, a table in Microsoft Word is a set of independent rows. Each row has a set of cells that are independent of the cells of other rows. Thus, in the Microsoft Word table there is no such object as a “column”, and “1st column” is something like “the set of the 1st cells of each row in the table”. This allows users to have a table in which, for example, the 1st row consists of two cells – 2cm and 1cm, and the 2nd row consists of two different cells – 1cm and 2cm wide. And Aspose.Words supports this concept of tables.
 
@@ -78,7 +98,13 @@ A table in HTML has a essentially different structure: each row has the same num
 
 {{< gist "aspose-words-gists" "03b0c69804cda6427adc3f12cc6ba2d3" "horizontal-and-vertical-merge-helper-classes.h" >}}
 
-## Convert to Horizontally Merged Cells {#convert-to-horizontally-merged-cells}
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Table%20with%20merged%20cells.docx).
+
+{{% /alert %}}
+
+## Convert to Horizontally Merged Cells
 
 Sometimes it is not possible to detect which cells are merged because some newer versions of Microsoft Word no longer use the merge flags when cells are merged horizontally. But for situations where cells are merged into a cell horizontally by their width using merge flags, Aspose.Words provides the `ConvertToHorizontallyMergedCells` method to convert cells. This method simply transforms the table and adds new cells as needed.
 

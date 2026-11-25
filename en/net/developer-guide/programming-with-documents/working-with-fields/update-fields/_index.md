@@ -75,7 +75,6 @@ The following code example shows how to update this property:
 
 ## Related APIs
 
-
 - [Document.UpdateFields()](https://reference.aspose.com/words/net/aspose.words/document/updatefields/) - Updates all fields in the document.
 - [Range.UpdateFields()](https://reference.aspose.com/words/net/aspose.words/range/updatefields/) - Updates fields within a specific range (e.g., section, header, paragraph).
 - [Field.Update()](https://reference.aspose.com/words/net/aspose.words.fields/field/update/) - Updates a single field.

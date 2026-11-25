@@ -40,7 +40,13 @@ The solution for retrieving text formatted with specific styles in a Word docume
 
 ### The Solution
 
-To illustrate how easily Aspose.Words handles retrieving content based on styles, let’s look at an example. In this example, we’re going to retrieve text formatted with a specific paragraph style and a character style from a sample Word document. At a high level, this will involve:# Opening a Word document using the [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) class.# Getting collections of all paragraphs and all runs in the document.# Selecting only the required paragraphs and runs. Specifically, we’ll retrieve text formatted with the ‘Heading 1’ paragraph style and the ‘Intense Emphasis’ character style from this sample Word document.
+To illustrate how easily Aspose.Words handles retrieving content based on styles, let's look at an example. In this example, we're going to retrieve text formatted with a specific paragraph style and a character style from a sample Word document. At a high level, this will involve:
+
+- Opening a Word document using the [Document](https://reference.aspose.com/words/python-net/aspose.words/document/) class.
+- Getting collections of all paragraphs and all runs in the document.
+- Selecting only the required paragraphs and runs. 
+
+Specifically, we’ll retrieve text formatted with the ‘Heading 1’ paragraph style and the ‘Intense Emphasis’ character style from this sample Word document.
 
 ![working-with-styles-and-themes-aspose-words-python](working-with-styles-and-themes-1.png)
 

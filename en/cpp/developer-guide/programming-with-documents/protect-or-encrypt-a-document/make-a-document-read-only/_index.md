@@ -16,6 +16,14 @@ aliases:
 timestamp: 2025-12-30-12-07-05
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to open a document in read-only mode programmatically.
+
+{{% /alert %}}
+
 Sometimes, you may have a document that needs a review, but you do not want reviewers to randomly modify your content. Aspose.Words allows you to make the permission of your document read-only so that the content can be copied or read, but not modified. This will prevent content from being removed or added to your document.
 
 {{% alert color="primary" %}}
@@ -32,7 +40,7 @@ Aspose.Words has the public class [WriteProtection](https://reference.aspose.com
 
 Write protection shows whether the author has recommended opening a document as read-only and/or requiring a password to modify the document.
 
-Aspose.Words allows you to make a document read-only to restrict editing by using the [get_ReadOnlyRecommended()](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_readonlyrecommended/) property and the [SetPassword](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/setpassword/) method.
+Aspose.Words allows you to make a document read-only to restrict editing by using [set_ReadOnlyRecommended()](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/set_readonlyrecommended/) and the [SetPassword](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/setpassword/) method.
 
 {{% alert color="primary" %}}
 
@@ -63,17 +71,23 @@ If you need to check if a document has a write protection password that restrict
 
 The following code example shows how to make a document read-only:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-ReadOnlyProtection.h" >}}
+{{< gist "aspose-words-gists" "1e82492d8963b601b589076c34b22c90" "read-only-protection.h" >}}
 
 ## Remove Read-Only Restriction
 
-If you do not want a user to open your document as read-only, you can simply set the **ReadOnlyRecommended** property to *false*.
+If you do not want a user to open your document as read-only, you can simply call [set_ReadOnlyRecommended(false)](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/set_readonlyrecommended/) or select **ProtectionType** as **NoProtection**.
 
 The following code example shows how to remove read-only access for a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-RemoveReadOnlyRestriction.h" >}}
+{{< gist "aspose-words-gists" "1e82492d8963b601b589076c34b22c90" "remove-read-only-restriction.h" >}}
 
-------
+## Related APIs
+
+- [WriteProtection](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/)  
+- [WriteProtection::get_ReadOnlyRecommended()](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_readonlyrecommended/)  
+- [WriteProtection::SetPassword](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/setpassword/)  
+- [WriteProtection::get_IsWriteProtected()](https://reference.aspose.com/words/cpp/aspose.words.settings/writeprotection/get_iswriteprotected/)  
+- [ProtectionType](https://reference.aspose.com/words/cpp/aspose.words/protectiontype/)
 
 ## FAQ
 

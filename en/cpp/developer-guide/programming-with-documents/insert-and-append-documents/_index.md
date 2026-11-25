@@ -3,7 +3,7 @@ title: Insert and Append Documents in C++
 second_title: Aspose.Words for C++
 articleTitle: Insert and Append Documents
 linktitle: Insert and Append Documents
-description: "Combine documents into one: insert or append a document into a new or existing one using find and replace, merge field, bookmark, or simply at the document end."
+description: "Combine documents into one: insert or append a document into a new or existing one using find and replace, merge field, bookmark, or simply at the document end in C++."
 type: docs
 aliases:
  - /cpp/join-and-appending-documents/
@@ -15,6 +15,14 @@ url: /cpp/insert-and-append-documents/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to insert and append documents programmatically.
+
+{{% /alert %}}
+
 Sometimes it is required to combine several documents into one. You can do this manually or you can use Aspose.Words insert or append feature.
 
 The insert operation allows you to insert the content of previously created documents into a new or existing one.
@@ -23,17 +31,21 @@ In turn, the append feature allows you to add a document only at the end of anot
 
 This article explains how to insert or append a document to another one in different ways and describes the common properties that you can apply while inserting or appending documents.
 
-## Insert a Document
+## Insert a Document {#insert-a-document}
 
 As mentioned above, in Aspose.Words a document is represented as a tree of nodes, and the operation of inserting one document into another is copying nodes from the first document tree to the second one.
 
 You can insert documents in a variety of locations in different ways. For example, you can insert a document through a replace operation, a merge field during a merge operation, or via a bookmark.
 
-You can also use the [InsertDocument](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertdocument/) method, which is similar to inserting a document in Microsoft Word, to insert a whole document at the current cursor position without any previous importing.
+You can also use the [InsertDocument](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertdocument/) or the [InsertDocumentInline](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertdocumentinline/) method, which is similar to inserting a document in Microsoft Word, to insert a whole document at the current cursor position without any previous importing.
 
 The following code example shows how to insert a document using the `InsertDocument` method:
 
 {{< gist "aspose-words-gists" "34934bfeabca5cf3dd3ca3c277e85771" "insert-document-with-builder.h" >}}
+
+The following code example shows how to insert a document using the **InsertDocumentInline** method:
+
+{{< gist "aspose-words-gists" "34934bfeabca5cf3dd3ca3c277e85771" "insert-document-inline-with-builder.h" >}}
 
 The following subsections describe the options during which you can insert one document into another.
 
@@ -61,7 +73,7 @@ The following code example shows how to insert a document into the merge field u
 
 {{< gist "aspose-words-gists" "34934bfeabca5cf3dd3ca3c277e85771" "insert-document-at-mail-merge.h" >}}
 
-### Insert a Document at Bookmark
+### Insert a Document at Bookmark {#insert-a-document-at-bookmark}
 
 You can import a text file into a document and insert it right after a bookmark that you have defined in the document. To do this, create a bookmarked paragraph where you want the document to be inserted.
 
@@ -75,7 +87,7 @@ Note that the bookmark should not enclose multiple paragraphs or text that you w
 
 {{% /alert %}}
 
-## Append a Document
+## Append a Document {#append-a-document}
 
 You may have a use case where you need to include additional pages from a document to the end of an existing document. To do this, you just need to call the [AppendDocument](https://reference.aspose.com/words/cpp/aspose.words/document/appenddocument/) method to add a document to the end of another one.
 
@@ -93,7 +105,7 @@ The following code example shows how to append a document to the end of another 
 
 Aspose.Words allows you to insert and append documents automatically without any previous importing requirements. However, if you need to insert or append a specific node of your document, such as a section or a paragraph, then first you need to import this node manually.
 
-When you need to insert or append one section or paragraph to another, you essentially need to import the nodes of the first document node tree into the second one using the [ImportNode](https://reference.aspose.com/words/cpp/aspose.words/nodeimporter/importnode/) method. After importing your nodes, you need to use the [InsertAfter](https://reference.aspose.com/words/cpp/aspose.words/compositenode/insertafter/)/[InsertBefore](https://reference.aspose.com/words/cpp/aspose.words/compositenode/insertbefore/) method to insert a new node after/before the reference node. This allows you to customize the inserting process by importing nodes from a document and inserting it at given positions.
+When you need to insert or append one section or paragraph to another, you essentially need to import the nodes of the first document node tree into the second one using the [ImportNode](https://reference.aspose.com/words/cpp/aspose.words/nodeimporter/importnode/) method. After importing your nodes, you need to use the [InsertAfter](https://reference.aspose.com/words/cpp/aspose.words/compositenode/insertafter/) / [InsertBefore](https://reference.aspose.com/words/cpp/aspose.words/compositenode/insertbefore/) method to insert a new node after/before the reference node. This allows you to customize the inserting process by importing nodes from a document and inserting it at given positions.
 
 You can also use the [AppendChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/appendchild/) method to add a new specified node to the end of the list of child nodes, for example, if you want to append content at the paragraph level instead of at the section level.
 
@@ -113,7 +125,7 @@ Content is imported into the destination document section by section, which mean
 
 Both [InsertDocument](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertdocument/) and [AppendDocument](https://reference.aspose.com/words/cpp/aspose.words/document/appenddocument/) methods accept [ImportFormatMode](https://reference.aspose.com/words/cpp/aspose.words/importformatmode/) and [ImportFormatOptions](https://reference.aspose.com/words/cpp/aspose.words/importformatoptions/) as input parameters. The **ImportFormatMode** allows you to control how document formatting is merged when you import content from one document into another by selecting different format modes such as [UseDestinationStyles](https://reference.aspose.com/words/cpp/aspose.words/importformatmode/), [KeepSourceFormatting](https://reference.aspose.com/words/cpp/aspose.words/importformatmode/), and [KeepDifferentStyles](https://reference.aspose.com/words/cpp/aspose.words/importformatmode/). The **ImportFormatOptions** allows you to select different import options such as [get_IgnoreHeaderFooter()](https://reference.aspose.com/words/cpp/aspose.words/importformatoptions/get_ignoreheaderfooter/), [get_IgnoreTextBoxes()](https://reference.aspose.com/words/cpp/aspose.words/importformatoptions/get_ignoretextboxes/), [get_KeepSourceNumbering()](https://reference.aspose.com/words/cpp/aspose.words/importformatoptions/get_keepsourcenumbering/), [get_MergePastedLists()](https://reference.aspose.com/words/cpp/aspose.words/importformatoptions/get_mergepastedlists/), and [get_SmartStyleBehavior()](https://reference.aspose.com/words/cpp/aspose.words/importformatoptions/get_smartstylebehavior/).
 
-Aspose.Words allows you to adjust the visualization of a resulting document when two documents are added together in an insert or append operation by using the [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) and [PageSetup](https://reference.aspose.com/words/cpp/aspose.words/pagesetup) properties. The **PageSetup** property contains all the attributes of a section such as [get_SectionStart()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_sectionstart/), [get_RestartPageNumbering()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_restartpagenumbering/), [get_PageStartingNumber()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_pagestartingnumber/), [get_Orientation()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_orientation/), and others. The most common use case is to set the **SectionStart** property to define if the added content will appear on the same page or split into a new one.
+Aspose.Words allows you to adjust the visualization of a resulting document when two documents are added together in an insert or append operation by using the [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) and [PageSetup](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/) properties. The **PageSetup** property contains all the attributes of a section such as [get_SectionStart()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_sectionstart/), [get_RestartPageNumbering()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_restartpagenumbering/), [get_PageStartingNumber()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_pagestartingnumber/), [get_Orientation()](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/get_orientation/), and others. The most common use case is to set the **SectionStart** property to define if the added content will appear on the same page or split into a new one.
 
 {{% alert color="primary" %}}
 

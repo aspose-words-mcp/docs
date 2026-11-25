@@ -13,19 +13,25 @@ url: /cpp/find-field-properties/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page describes how to locate field properties in a document programmatically.
+
+{{% /alert %}}
+
 A field that is inserted using [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/).[InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/) returns a [Field](https://reference.aspose.com/words/cpp/aspose.words.fields/field/) object. This is a facade class that provides useful methods to quickly find some properties of a field.
 
 The following code example shows how to find the field code and field result:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-FieldsCode.cpp" >}}
+{{< gist "aspose-words-gists" "a533bc4081a4b7d59a5f96eee09b2ee3" "field-code.h" >}}
 
 Note if you are only looking for the names of merge fields in a document, then you can instead use the built-in [GetFieldNames](https://reference.aspose.com/words/cpp/aspose.words.mailmerging/mailmerge/getfieldnames/) method.
 
 The following code example shows how to get names of all merge fields in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-GetFieldNames-GetFieldNames.cpp" >}}
-
-------  
+{{< gist "aspose-words-gists" "5c23f9f9a360347715de2a3123b0604f" "get-field-names.h" >}}  
 
 ## FAQ  
 

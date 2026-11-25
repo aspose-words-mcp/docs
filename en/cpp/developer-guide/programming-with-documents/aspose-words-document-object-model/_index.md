@@ -13,17 +13,25 @@ url: /cpp/aspose-words-document-object-model/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains the in-memory Document Object Model (DOM) provided by Aspose.Words for navigating and modifying Word documents programmatically.
+
+{{% /alert %}}
+
 The Aspose.Words Document Object Model (DOM) is an in-memory representation of a Word document. The Aspose.Words DOM allows you to programmatically read, manipulate, and modify the content and formatting of a Word document.
 
 This section describes the main classes of the Aspose.Words DOM and their relationships. By using the Aspose.Words DOM classes, you can obtain programmatic access to document elements and formatting.
 
-## Create Document Object Tree {#create-a-document-objects-tree}
+## Create a `Document` Object Tree {#create-a-document-objects-tree}
 
 When a document is read into the Aspose.Words DOM, then an object tree is built and different types of elements of the source document have their own DOM tree objects with various properties.
 
 ### Build Document Nodes Tree {#build-document-nodes-tree}
 
-When Aspose.Words reads a Word document into memory, it creates objects of different types that represent various document elements. Every run of a text, paragraph, table, or section is a node, and even the document itself is a node. Aspose.Words defines a class for every document node type.
+When Aspose.Words reads a Word document into memory, it creates objects of different types that represent various document elements. Every run of a text, paragraph, table, or a section is a node, and even the document itself is a node. Aspose.Words defines a class for every document node type.
 
 The document tree in Aspose.Words follows the Composite Design Pattern:
 
@@ -32,7 +40,7 @@ The document tree in Aspose.Words follows the Composite Design Pattern:
 
 The diagram provided below shows inheritance between node classes of the Aspose.Words Document Object Model (DOM). The names of abstract classes are in Italics.
 
-<img src="aspose-words-dom.png" alt="aspose-words-dom-aspose-words-cpp" style="width:700px"/>
+<img src="aspose-words-dom.png" alt="aspose-words-dom-cpp" style="width:700px"/>
 
 {{% alert color="primary" %}}
 
@@ -46,9 +54,9 @@ Let's look at an example. The following image shows a Microsoft Word document wi
 
 When reading the above document into the Aspose.Words DOM, the tree of objects is created, as shown in the schema below.
 
-<img src="document-example-dom.png" alt="document-example-dom-aspose-words-cpp" style="width:700px"/>
+<img src="document-example-dom.png" alt="dom-aspose-words-cpp" style="width:700px"/>
 
-[Document](https://reference.aspose.com/words/cpp/aspose.words/document/), [Section](https://reference.aspose.com/words/cpp/aspose.words/section/), [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/), [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape), [Run](https://reference.aspose.com/words/cpp/aspose.words/run/), and all other ellipses on the diagram are Aspose.Words objects that represent elements of the Word document.
+[Document](https://reference.aspose.com/words/cpp/aspose.words/document/), [Section](https://reference.aspose.com/words/cpp/aspose.words/section/), [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/), [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/), [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/), [Run](https://reference.aspose.com/words/cpp/aspose.words/run/), and all other ellipses on the diagram are Aspose.Words objects that represent elements of the Word document.
 
 ### Get a `Node` Type {#get-a-node-type}
 
@@ -58,7 +66,7 @@ The type of each node can be obtained using the [get_NodeType()](https://referen
 
 The following example shows how to get a node type using the **NodeType** enumeration:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-UseNodeType.cpp" >}}
+{{< gist "aspose-words-gists" "3561cee3e92118bcdc12ed2a4c0e77ce" "get-node-type.h" >}}
 
 ## Document Tree Navigation {#document-tree-navigation}
 
@@ -66,7 +74,13 @@ Aspose.Words represents a document as a node tree, which enables you to navigate
 
 When you open the sample document, presented earlier, in the Document Explorer, the node tree appears exactly as it is represented in Aspose.Words.
 
-<img src="document-in-document-explorer.png" alt="document-in-document-explorer-aspose-words-cpp" style="width:680px"/>
+<img src="document-in-document-explorer.png" alt="document-in-document-explorer-cpp" style="width:680px"/>
+
+{{% alert color="primary" %}}
+
+You can learn the sample project "Document Explorer" on the [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Showcases/DocumentExplorer).
+
+{{% /alert %}}
 
 ### Document Node Relationships {#document-nodes-relationships}
 
@@ -76,7 +90,7 @@ The nodes in the tree have relationships between them:
 - The node contained in the parent node is a *child.* Child nodes of the same parent are *sibling* nodes.
 - The *root* node is always the [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) node.
 
-The nodes that can contain other nodes derive from the [CompositeNode](https://reference.aspose.com/words/cpp/aspose.words/compositenode) class, and all nodes ultimately derive from the [Node](https://reference.aspose.com/words/cpp/aspose.words/node/) class. These two base classes provide common methods and properties for the tree structure navigation and modification.
+The nodes that can contain other nodes derive from the [CompositeNode](https://reference.aspose.com/words/cpp/aspose.words/compositenode/) class, and all nodes ultimately derive from the [Node](https://reference.aspose.com/words/cpp/aspose.words/node/) class. These two base classes provide common methods and properties for the tree structure navigation and modification.
 
 The following UML object diagram shows several nodes of the sample document and their relations to each other via the parent, child, and sibling properties:
 
@@ -96,7 +110,7 @@ When creating a new paragraph using [DocumentBuilder](https://reference.aspose.c
 
 The following code example shows that when creating any node, a document that will own the node is always defined:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-OwnerDocument.cpp" >}}
+{{< gist "aspose-words-gists" "3561cee3e92118bcdc12ed2a4c0e77ce" "owner-document.h" >}}
 
 #### Parent Node
 
@@ -108,23 +122,19 @@ Each node has a parent specified by the [get_ParentNode()](https://reference.asp
 
 You can remove a node from its parent by calling the [Remove](https://reference.aspose.com/words/cpp/aspose.words/node/remove/) method. The following code example shows how to access the parent node:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-GetParentNode.cpp" >}}
+{{< gist "aspose-words-gists" "3561cee3e92118bcdc12ed2a4c0e77ce" "get-parent-node.h" >}}
 
 #### Child Nodes
 
 The most efficient way to access child nodes of a [CompositeNode](https://reference.aspose.com/words/cpp/aspose.words/compositenode/) is via the [get_FirstChild()](https://reference.aspose.com/words/cpp/aspose.words/compositenode/get_firstchild/) and [get_LastChild()](https://reference.aspose.com/words/cpp/aspose.words/compositenode/get_lastchild/) properties that return the first and last child nodes, respectively. If there are no child nodes, these properties return *null*.
 
-**CompositeNode** also provides the [GetChildNodes](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchildnodes/) collection enabling indexed or enumerated access to the child nodes. The collection returned by **GetChildNodes** is a live collection of nodes, which means that whenever the document is changed, such as when nodes are removed or added, this collection is automatically updated.
+**CompositeNode** also provides the [GetChildNodes](https://reference.aspose.com/words/cpp/aspose.words/compositenode/getchildnodes/) method enabling indexed or enumerated access to the child nodes. The **ChildNodes** property is a live collection of nodes, which means that whenever the document is changed, such as when nodes are removed or added, the **ChildNodes** collection is automatically updated.
 
-If a node has no child, then **GetChildNodes** returns an empty collection. You can check whether the **CompositeNode** contains any child nodes using the [get_HasChildNodes()](https://reference.aspose.com/words/cpp/aspose.words/compositenode/get_haschildnodes/) property.
+If a node has no child, then the **ChildNodes** property returns an empty collection. You can check whether the **CompositeNode** contains any child nodes using the [get_HasChildNodes()](https://reference.aspose.com/words/cpp/aspose.words/compositenode/get_haschildnodes/) property.
 
-The following code example shows how to enumerate immediate child nodes of a `CompositeNode` using the enumerator provided by the collection that `GetChildNodes` returns:
+The following code example shows how to enumerate immediate child nodes of a `CompositeNode` using the enumerator provided by the `ChildNodes` collection:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-EnumerateChildNodes.cpp" >}}
-
-The following code example shows how to enumerate immediate child nodes of a `CompositeNode` using indexed access:
-
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-IndexChildNodes.cpp" >}}
+{{< gist "aspose-words-gists" "3561cee3e92118bcdc12ed2a4c0e77ce" "enumerate-child-nodes.h" >}}
 
 #### Sibling Nodes
 
@@ -132,13 +142,13 @@ You can obtain the node that immediately precedes or follows a particular node u
 
 The following code example shows how to efficiently visit all direct and indirect child nodes of a composite node:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-RecurseAllNodes.cpp" >}}
+{{< gist "aspose-words-gists" "3561cee3e92118bcdc12ed2a4c0e77ce" "recurse-all-nodes.h" >}}
 
-### Typed Access to Child and Parent Nodes
+### Typed Access to Child and Parent Nodes {#typed-access-to-child-and-parent-nodes}
 
-So far, we have discussed the properties that return one of the base types – **Node** or **CompositeNode**. But sometimes there are situations where you might need to cast values to a specific node class, such as **Run** or **Paragraph**. That is, you cannot completely get away from casting when working with the Aspose.Words DOM, which is composite.
+So far, we have discussed the properties that return one of the base types - **Node** or **CompositeNode**. But sometimes there are situations where you might need to cast values to a specific node class, such as **Run** or **Paragraph**. That is, you cannot completely get away from casting when working with the Aspose.Words DOM, which is composite.
 
-To reduce the need for casting, most Aspose.Words classes provide properties and collections that provide strongly-typed access. There are three basic patterns of typed access:
+To reduce the need for casting, most Aspose.Words classes provide properties and collections that provide strongly typed access. There are three basic patterns of typed access:
 
 - A parent node exposes typed **FirstXXX** and **LastXXX** properties. For example, the **Document** has [get_FirstSection()](https://reference.aspose.com/words/cpp/aspose.words/document/get_firstsection/) and [get_LastSection()](https://reference.aspose.com/words/cpp/aspose.words/document/get_lastsection/) properties. Similarly, **Table** has properties such as [get_FirstRow()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_firstrow/), [get_LastRow()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_lastrow/), and others.
 - A parent node exposes a typed collection of child nodes, such as [Document::get_Sections()](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/), [Body::get_Paragraphs()](https://reference.aspose.com/words/cpp/aspose.words/story/get_paragraphs/), and others.
@@ -148,4 +158,4 @@ Typed properties are merely useful shortcuts that sometimes provide easier acces
 
 The following code example shows how to use typed properties to access nodes of the document tree:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Node-ExNode-TypedAccess.cpp" >}}
+{{< gist "aspose-words-gists" "3561cee3e92118bcdc12ed2a4c0e77ce" "typed-access.h" >}}

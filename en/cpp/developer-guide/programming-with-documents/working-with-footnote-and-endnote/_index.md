@@ -1,5 +1,5 @@
 ---
-title: Working with Footnote and Endnote
+title: Working with Footnote and Endnote in C++
 second_title: Aspose.Words for C++
 articleTitle: Working with Footnote and Endnote
 linktitle: Working with Footnote and Endnote
@@ -13,25 +13,33 @@ url: /cpp/working-with-footnote-and-endnote/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with footnotes and endnotes.
+
+{{% /alert %}}
+
 Aspose.Words also provides some classes, methods and properties for working with footnotes and endnotes.
 
 ## Insert Endnote and Set Numbering Options
 
-If you want to insert a footnote or endnote in a Word document, please use the [InsertFootnote](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfootnote/) method. This method inserts a footnote or endnote into the document.
+If you want to insert footnote or endnote into Word document, please use the [InsertFootnote](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfootnote/) method. This method inserts a footnote or endnote into the document.
 
 [EndnoteOptions](https://reference.aspose.com/words/cpp/aspose.words.notes/endnoteoptions/) and [FootnoteOptions](https://reference.aspose.com/words/cpp/aspose.words.notes/footnoteoptions/) classes represent numbering options for footnote and endnote.
 
 The following code example shows how to insert endnote into the document and set its numbering options:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithFootnote-SetEndnoteOptions.cpp" >}}
+{{< gist "aspose-words-gists" "45dd4d7ee24fc402f3ab895d5c6a695a" "set-endnote-options.h" >}}
 
 ## Set Number of Footnote Layout Columns
 
-You can set the number of footnote layout columns using the [get_Columns()](https://reference.aspose.com/words/cpp/aspose.words.notes/footnoteoptions/get_columns/) property. If this property has a value of 0, the footnotes area is formatted with a number of columns based on the number of columns on the displayed page.
+You can set the number of footnote layout columns using the [get_Columns()](https://reference.aspose.com/words/cpp/aspose.words.notes/footnoteoptions/get_columns/) property. If this property has the value of 0, the footnotes area is formatted with a number of columns based on the number of columns on the displayed page.
 
 The following code example shows how to set the number of columns for footnote layout:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithFootnote-SetFootNoteColumns.cpp" >}}
+{{< gist "aspose-words-gists" "45dd4d7ee24fc402f3ab895d5c6a695a" "set-footnote-columns.h" >}}
 
 ## Set the Position of Footnote and EndNote
 
@@ -39,7 +47,7 @@ The footnote position can be at the bottom of each page or beneath the text on e
 
 The following code example shows how to set the position of footnote and endnote:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithFootnote-SetFootnoteAndEndNotePosition.cpp" >}}
+{{< gist "aspose-words-gists" "45dd4d7ee24fc402f3ab895d5c6a695a" "set-footnote-and-endnote-position.h" >}}
 
 ------ 
 

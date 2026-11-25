@@ -13,6 +13,14 @@ url: /cpp/split-table/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to split a table into multiple tables.
+
+{{% /alert %}}
+
 A table, represented in the Aspose.Words Document Object Model, is made up of independent rows and cells, making it easy to split a table.
 
 To manipulate a table to split it into two tables, we just need to move some of the rows from the original table to the new one. To do this, we need to pick the row by which we want to split the table.
@@ -26,6 +34,21 @@ The following code example shows how to split a table into two tables on a speci
 
 {{< gist "aspose-words-gists" "29ce7710cab8c3ef18e912a5813e0d36" "split-table.h" >}}
 
+## Limitations and Considerations
+
+- **Merged cells**: Aspose.Words does not change merge flags when rows are moved. If a vertically merged cell spans the split row, the first moved cell keeps `CellMerge::Previous`; call its `get_CellFormat()->set_VerticalMerge(CellMerge::First)` so that the merged block starts correctly in the new table.
+
+- **Formatting preservation**: The formatting applied to rows, cells, and the table itself is retained because the rows are moved, not recreated. Any style or direct formatting on the moved rows remains unchanged in the new table.
+
+- **Pagination effects**: Aspose.Words recalculates pagination automatically after the table structure changes. To avoid unexpected pagination shifts, perform the split operation before any layout-dependent processing (e.g., before saving or printing).
+
+## Related APIs
+
+- [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/)
+- [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/)
+- [Cell](https://reference.aspose.com/words/cpp/aspose.words.tables/cell/)
+- [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/)
+- [NodeCollection](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/)
 
 ------ 
 

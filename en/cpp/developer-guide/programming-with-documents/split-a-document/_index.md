@@ -13,6 +13,14 @@ url: /cpp/split-a-document/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to split a document into parts programmatically.
+
+{{% /alert %}}
+
 *Splitting* or *split a document* is the process of breaking a large document into a greater number of smaller files. There are various reasons to split a file. For example, you only need some pages from a specific document and not the entire one. Or for privacy reasons, you want to share only some parts of a document with others. With the splitting feature, you can get only the required parts of the document and do the necessary actions with them, for example, to mark up, save, or send.
 
 Aspose.Words provides you with an efficient way to split one document into multiple documents by headings or sections. You can also split a document by pages or by page ranges. Both splitting options will be described in this article.
@@ -48,19 +56,37 @@ When saving the output to HTML, Aspose.Words save each individual chapter as a s
 
 {{% alert color="primary" %}}
 
-You cannot split a document using the [DocumentSplitCriteria](https://reference.aspose.com/words/cpp/aspose.words.saving/documentsplitcriteria/) property when saving to MHTML format.
+You cannot split a document using the [get_DocumentSplitCriteria()](https://reference.aspose.com/words/cpp/aspose.words.saving/htmlsaveoptions/get_documentsplitcriteria/) property when saving to MHTML format.
 
 {{% /alert %}}
 
 In this section, we consider only some of the possible split criteria.
 
+### Split a Document by Headings {#split-a-document-by-headings}
+
+To split a document into chapters by headings, use the **HeadingParagraph** value of the **DocumentSplitCriteria** property.
+
+If you need to split a document by a specific level of heading paragraphs, such as headings 1, 2, and 3, use also the [set_DocumentSplitHeadingLevel()](https://reference.aspose.com/words/cpp/aspose.words.saving/htmlsaveoptions/set_documentsplitheadinglevel/) property. The output will be divided by paragraphs formatted with the specified heading level.
+
+The following code example shows how to split a document into smaller parts by heading:
+
+{{< gist "aspose-words-gists" "058a709735430153ce719761043ded8f" "split-document-by-headings.h" >}}
+
+Please note that for this criteria, Aspose.Words only supports saving to HTML format when splitting.
+
+When saving to EPUB, the document is not split into several files, and there will be only one output file.
+
 ### Split a Document by Sections {#split-a-document-by-sections}
 
 Aspose.Words also enables you to use section breaks to split documents and save them to HTML. For this purpose, use **SectionBreak** as the **DocumentSplitCriteria**:
 
+{{< gist "aspose-words-gists" "3d90ddfd148c3488cbff6fa9b8bea124" "split-document-by-sections-html.h" >}}
+
+There is another way to split the source document into multiple output documents, and you can choose any output format supported by Aspose.Words.
+
 The following code example shows how to split a document into smaller parts by section breaks (without using the `DocumentSplitCriteria` property):
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-SplitDocument-SplitDocumentBySections.cpp" >}}
+{{< gist "aspose-words-gists" "3d90ddfd148c3488cbff6fa9b8bea124" "split-document-by-sections.h" >}}
 
 ## Split by Pages {#splitting-by-pages}
 
@@ -86,7 +112,7 @@ Aspose.Words enables you to split a multi-page document page by page.
 
 The following code example shows how to divide a document and save each page as a separate document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Split Documents-Split document-SplitDocumentPageByPage.h" >}}
+{{< gist "aspose-words-gists" "3d90ddfd148c3488cbff6fa9b8bea124" "split-document-page-by-page.h" >}}
 
 ### Split a Document by Page Ranges {#split-a-document-by-page-ranges}
 
@@ -94,7 +120,13 @@ Aspose.Words allows splitting a multi-page document by page ranges. You can spli
 
 The following code example shows how to split a document into smaller parts by page range with specific start and end indexes:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Split Documents-Split document-SplitDocumentByPageRange.h" >}}
+{{< gist "aspose-words-gists" "3d90ddfd148c3488cbff6fa9b8bea124" "split-document-by-page-range.h" >}}
+
+## Callback Option to Save a Document {#callback-option-for-saving-a-document}
+
+You can use the [set_DocumentPartSavingCallback()](https://reference.aspose.com/words/cpp/aspose.words.saving/htmlsaveoptions/set_documentpartsavingcallback/) property to control how Aspose.Words saves document parts when this document is exported into HTML format. This property allows you to rename output files or even to redirect them into custom streams.
+
+Please note that this callback is not useful when saving to EPUB because all output parts must be saved into a single container – the .epub file. So, stream redirection is not supported, and the effect of renaming is not visible since files are renamed inside the container.
 
 ## Merge the Split Document with Another Document {#merge-the-split-document-with-another-file}
 
@@ -102,4 +134,26 @@ Aspose.Words enables you to merge the output split document with another documen
 
 The following code example shows how to merge a split document with another document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-SplitDocument-MergeSplitDocuments.cpp" >}}
+{{< gist "aspose-words-gists" "3d90ddfd148c3488cbff6fa9b8bea124" "merge-split-documents.h" >}}
+
+------ 
+
+## Troubleshoot
+
+1. **Problem:** Splitting by headings works only when saving to HTML, and attempts to save to PDF or DOCX produce a single file.  
+   **Solution:** The `DocumentSplitCriteria` enumeration is supported only for HTML output. For other formats, split the document manually using section breaks or the `ExtractPages` method. Example for PDF using page ranges:
+
+   ```cpp
+   auto srcDoc = System::MakeObject<Document>(u"input.docx");
+   auto part = srcDoc->ExtractPages(1, 5);
+   part->Save(u"output_part.pdf");
+   ```
+
+2. **Problem:** Attempting to split a document while saving to MHTML results in an error.  
+   **Solution:** MHTML does not support the `DocumentSplitCriteria` property. Use an alternative format (HTML, PDF, DOCX) for splitting, or split the document first and then convert each part to MHTML individually.
+
+3. **Problem:** After splitting by pages, the resulting documents show layout differences (missing headers/footers, shifted page numbers).  
+   **Solution:** Ensure each split part retains its original sections. When using `ExtractPages`, the method copies the entire section structure, preserving headers, footers, and page numbering. If custom headers/footers are defined per section, verify that the source document uses section breaks appropriately before splitting.
+
+4. **Problem:** Complex elements such as footnotes, endnotes, or fields are lost or rendered incorrectly in split documents.  
+   **Solution:** `ExtractPages` copies most document elements, but some complex structures may be re‑generated during saving. Use an `IDocumentPartSavingCallback` to inspect and adjust each part before it is saved, or split the document by section breaks where these elements are contained within a single section.

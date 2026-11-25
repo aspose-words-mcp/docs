@@ -13,6 +13,14 @@ url: /cpp/navigation-with-cursor/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to navigate a document using the document cursor and associated API operations.
+
+{{% /alert %}}
+
 While working with a document, even if it is a short or long one, you will need to navigate through your document. Navigation with a virtual cursor represents the ability to navigate between different nodes in a document.
 
 Within a short document, moving around in a document is simple as you can move the insertion point even by using the keyboard's arrow keys or by clicking the mouse to locate the insertion point wherever you want. But once you have a large document that has many pages, these basic techniques will be insufficient.
@@ -33,7 +41,7 @@ The main method is to be able to move the cursor position to a specific node in 
 
 The following code example shows how to move the **DocumentBuilder** to different nodes in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToNode.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-node.h" >}}
 
 But besides the basic **MoveTo** method, there are more specific ones.
 
@@ -43,7 +51,7 @@ You can go to the beginning or the end of your document using the [MoveToDocumen
 
 The following code example shows how to move the cursor position to the beginning or the end of a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToDocumentStartEnd.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-document-start-end.h" >}}
 
 ### Navigate With Bookmarks
 
@@ -51,7 +59,7 @@ You can mark a place that you want to find and move to it again easily. You can 
 
 The following code examples shows how to move a cursor position to a bookmark:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToBookmark.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-bookmark.h" >}}
 
 ### Navigate to Table Cells
 
@@ -59,7 +67,7 @@ You can move to a table cell by using the [MoveToCell](https://reference.aspose.
 
 The following code example shows how to move a cursor position to a specified table cell:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToTableCell.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-table-cell.h" >}}
 
 ### Navigate to a Field
 
@@ -67,15 +75,15 @@ You can move to a specific field in your document by using the [MoveToField](htt
 
 The following code example shows how to move the document builder cursor to a specific field:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToMergeField.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-merge-field.h" >}}
 
 ### Navigate to a Header or Footer
 
-You can move to the beginning of a header or footer by using the [MoveToHeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetoheaderfooter/) method. 
+You can move to the beginning of a header or footer by using the [MoveToHeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetoheaderfooter/) method.
 
 The following code example shows how to move document builder cursor to a document header or footer:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderHeadersAndFooters.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-headers-footers.h" >}}
 
 ### Navigate to a Section or Paragraph
 
@@ -83,4 +91,20 @@ You can move to a specific section or paragraph by using the [MoveToParagraph](h
 
 The following code example shows how to move to a specific section and a specific paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToSectionParagraph.cpp" >}}
+{{< gist "aspose-words-gists" "29653c28e674def7b4361784370faaee" "move-to-section.h" >}}
+
+## Related APIs
+
+- [DocumentBuilder::get_CurrentNode()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_currentnode/)
+- [DocumentBuilder::get_CurrentParagraph()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_currentparagraph/)
+- [DocumentBuilder::get_CurrentSection()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_currentsection/)
+- [DocumentBuilder::MoveTo](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/moveto/)
+- [DocumentBuilder::MoveToBookmark](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetobookmark/)
+- [DocumentBuilder::MoveToCell](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetocell/)
+- [DocumentBuilder::MoveToField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetofield/)
+- [DocumentBuilder::MoveToMergeField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetomergefield/)
+- [DocumentBuilder::MoveToHeaderFooter](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetoheaderfooter/)
+- [DocumentBuilder::MoveToParagraph](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetoparagraph/)
+- [DocumentBuilder::MoveToSection](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetosection/)
+- [DocumentBuilder::MoveToDocumentStart](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetodocumentstart/)
+- [DocumentBuilder::MoveToDocumentEnd](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetodocumentend/)

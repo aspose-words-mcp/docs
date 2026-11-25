@@ -14,6 +14,14 @@ aliases: [/cpp/how-to-remove-page-and-section-breaks/]
 timestamp: 2024-01-31-14-23-37
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with document sections.
+
+{{% /alert %}}
+
 Sometimes you want a document that does not have the same formatting across all pages. For example, you may need to modify page number formats, have different page size and orientation, or have the first document page as a cover page without any numbering. You can achieve that with sections.
 
 Sections are level nodes that control headers and footers, orientation, columns, margins, page number formatting, and others.
@@ -32,11 +40,11 @@ Section break is an option that divides document pages into sections with custom
 
 Aspose.Words allows you to split and format documents using different section breaks of the [BreakType](https://reference.aspose.com/words/cpp/aspose.words/breaktype/) enumeration:
 
-- SectionBreakContinuous
-- SectionBreakNewColumn
-- SectionBreakNewPage
-- SectionBreakEvenPage
-- SectionBreakOddPage
+* SectionBreakContinuous
+* SectionBreakNewColumn
+* SectionBreakNewPage
+* SectionBreakEvenPage
+* SectionBreakOddPage
 
 You can also use the [SectionStart](https://reference.aspose.com/words/cpp/aspose.words/sectionstart/) enumeration to choose a break type that applies only for the first section such as NewColumn, NewPage, EvenPage, and OddPage.
 
@@ -68,7 +76,7 @@ Note that a section break has information about the section that goes before it,
 
 ## Move a Section
 
-If you want to move a section from one position to another in your document, you need to get the index of that section. Aspose.Words allows you to get a section position from a [SectionCollection](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/). You can use the [get_Sections()](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/) property to get all sections in your document. But if you want to get only the first section, you can use the [get_FirstSection()](https://reference.aspose.com/words/cpp/aspose.words/document/get_firstsection/) property.
+To move a section, get the [SectionCollection](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/) with [Document::get_Sections()](https://reference.aspose.com/words/cpp/aspose.words/document/get_sections/) and call [IndexOf](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/indexof/) to find the section's zero-based index. To retrieve the first section directly, use [Document::get_FirstSection()](https://reference.aspose.com/words/cpp/aspose.words/document/get_firstsection/).
 
 The following code example shows how to access the first section and iterate through the children of a composite node:
 
@@ -78,10 +86,10 @@ The following code example shows how to access the first section and iterate thr
 
 Sometimes you want your document to look better by making creative layouts for different document sections. If you want to specify the type of the current section grid, you can choose a section layout mode using the [SectionLayoutMode](https://reference.aspose.com/words/cpp/aspose.words/sectionlayoutmode/) enumeration:
 
-- Default
-- Grid
-- LineGrid
-- SnapToChars
+* Default
+* Grid
+* LineGrid
+* SnapToChars
 
 The following code example shows how to limit the number of lines that each page may have:
 
@@ -158,8 +166,32 @@ The following code example shows how to modify the page properties in all sectio
 
 ## See Also
 
-- [Logical Levels of Nodes in a Document](/words/cpp/logical-levels-of-nodes-in-a-document/)
-- [Insert and Append Documents](/words/cpp/insert-and-append-documents/)
+* [Logical Levels of Nodes in a Document](/words/cpp/logical-levels-of-nodes-in-a-document/#document-and-section-logical-level)
+* [Insert and Append Documents](/words/cpp/insert-and-append-documents/)
+
+## Limitations and Considerations
+
+- When removing a section break, the section *before* the break adopts the formatting (including page setup, headers, and footers) of the section *after* the break. This is the opposite of what many developers expect. To avoid unintended layout changes, ensure you understand the section order before removal.
+
+- The `EnsureMinimum()` method only ensures the presence of a `Body` and at least one `Paragraph`. It does *not* create `HeaderFooter` nodes.
+
+- `section->Clone()` copies the section together with its `HeaderFooter` nodes. To insert the copy into another document, import it with `ImportNode` or `NodeImporter`. To stop a section from using the headers and footers of the previous section, call `section->get_HeadersFooters()->LinkToPrevious(false);`.
+
+- When copying sections between documents with a `NodeImporter`, create it with `ImportFormatMode::KeepSourceFormatting` to preserve the source formatting. Without this, the section may adopt formatting from the target document, potentially causing layout shifts.
+
+- Headers and footers are inherited from the previous section *unless* the current section has its own `HeaderFooter` nodes. To break the inheritance and enable independent editing, create or import a `HeaderFooter` for the desired type (e.g., `HeaderFooterType::HeaderPrimary`) and ensure the section's `PageSetup::get_DifferentFirstPageHeaderFooter()` and `PageSetup::get_OddAndEvenPagesHeaderFooter()` settings match your intent.
+
+- `PageSetup::set_LayoutMode` (see `SectionLayoutMode`) defines the document grid behavior of a section.
+
+{{% alert color="primary" %}}
+
+For additional details, see the official documentation:
+- [Section Class](https://reference.aspose.com/words/cpp/aspose.words/section/)
+- [SectionCollection Class](https://reference.aspose.com/words/cpp/aspose.words/sectioncollection/)
+- [PageSetup Class](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/)
+- [HeaderFooter Class](https://reference.aspose.com/words/cpp/aspose.words/headerfooter/)
+
+{{% /alert %}}
 
 ------ 
 

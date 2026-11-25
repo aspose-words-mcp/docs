@@ -105,7 +105,6 @@ Please see the result below:
 
 ![line-chart-chartseries-aspose-words-net](working-with-charts-7.png)
 
-
 All single [ChartSeries](https://reference.aspose.com/words/net/aspose.words.drawing.charts/chartseries/) have default [ChartDataPoint](https://reference.aspose.com/words/net/aspose.words.drawing.charts/chartdatapoint/) options, please try using the following code to change them:
 
 {{< gist "aspose-words-gists" "23d39c0b874655d7e7354f1ecc122e39" "chart-data-point.cs" >}}

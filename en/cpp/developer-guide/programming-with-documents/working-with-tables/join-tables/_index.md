@@ -14,6 +14,14 @@ aliases: [/cpp/joining-and-splitting-tables/]
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to join tables programmatically.
+
+{{% /alert %}}
+
 A table, represented in the Aspose.Words Document Object Model, is made up of independent rows and cells, making it easy to join tables.
 
 To manipulate a table to join with another table, we just need to move the rows from the second table to the end of the first one and remove the second table's container.
@@ -21,6 +29,14 @@ To manipulate a table to join with another table, we just need to move the rows 
 The following code example shows how to merge rows from two tables into one:
 
 {{< gist "aspose-words-gists" "e89b24cb8b77096687e8e6567018c087" "combine-rows.h" >}}
+
+## Related APIs
+
+- `Aspose::Words::Tables::Table` — Represents a table in the document.
+- `Aspose::Words::Tables::Row` — Represents a table row.
+- `Document::ImportNode(Node* node, bool importChildren)` — Imports a node from another document; `true` imports its child nodes as well.
+- `RowCollection::Add(Node* row)` — Adds a row to the table's row collection.
+- `Node::Remove()` — Removes the node from the document.
 
 ------ 
 

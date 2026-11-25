@@ -3,8 +3,8 @@ title: Working with SmartArt Cold Rendering in C++
 second_title: Aspose.Words for C++
 articleTitle: Working with SmartArt Cold Rendering
 linktitle: Working with SmartArt Cold Rendering
+description: "Introduction to SmartArt shapes using C++."
 type: docs
-description: "Aspose.Words for C++ performs SmartArt Cold Rendering, meaning that it lays out and renders SmartArt objects if the pre-rendered SmartArt drawing is missing or incorrect."
 weight: 330
 ai_search_scope: words_cpp
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
@@ -12,6 +12,14 @@ ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
 url: /cpp/working-with-smartart-cold-rendering/
 timestamp: 2024-01-27-14-07-04
 ---
+
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how SmartArt cold rendering works when converting documents.
+
+{{% /alert %}}
 
 SmartArt graphics are used to quickly and easily create a visual representation of information. You simply choose from a large number of layouts that best suits your situation. This ease of use makes SmartArt graphics quite popular for some purposes.
 
@@ -27,11 +35,11 @@ Aspose.Words allows you to use a pre-rendered drawing or perform cold rendering:
 
 The following code example shows how to update drawings for all diagrams in the document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Shapes-WorkingWithShapes-UpdateSmartArtDrawing.cpp" >}}
+{{< gist "aspose-words-gists" "aa168eae75395007a7c920823e9e8f40" "update-smart-art-drawing.h" >}}
 
 ## Support for Standard SmartArt Layouts
 
-Currently, only a limited number of standard Microsoft Word SmartArt layouts are supported. Also, some of these layouts are supported partially, meaning that significant nodes and shapes of the diagram are rendered, but there may be differences between Microsoft Word and Aspose.Words diagram layout.
+Currently, only a limited number of standard Microsoft Word SmartArt layouts are supported. Also, some of these layouts are supported partially, meaning that significant nodes and shapes of the diagram are rendered, but there may be differences between the Microsoft Word and Aspose.Words diagram layout.
 
 The table below lists the fully and partially supported layouts:
 

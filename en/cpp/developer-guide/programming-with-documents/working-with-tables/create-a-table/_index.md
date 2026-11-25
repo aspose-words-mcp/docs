@@ -14,20 +14,28 @@ aliases: [/cpp/introduction-and-creating-tables/]
 timestamp: 2024-10-21-11-17-44
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to create a table in a Word document programmatically and discusses styling, formatting, and content population.
+
+{{% /alert %}}
+
 Aspose.Words allows users to create tables in a document from scratch and provides several different methods for doing so. This article presents details on how to add formatted tables to your document using each method, as well as a comparison of each method at the end of the article.
 
 ## Default Table Styles
 
 The newly created table is given default values similar to those used in Microsoft Word:
 
-| Table Property | Default in Aspose.Words |
-| :- | :- |
-| `Border Style` | `Single` |
-| `Border Width` | 1/2 pt |
-| `Border Color` | `Black` |
-| `Left and Right Padding` | `5.4 pts` |
-| `AutoFit Mode` | `AutoFit to Window` |
-| `Allow AutoFit` | `True` |
+| Table Property         | Default in Aspose.Words |
+| :--------------------- | :---------------------- |
+| `Border Style`           | `Single` |
+| `Border Width`           | `1/2 pt`                  |
+| `Border Color`           | `Black` |
+| `Left and Right Padding` | `5.4 pts`                 |
+| `AutoFit Mode`           | `AutoFit to Window`       |
+| `Allow AutoFit`          | `true` |
 
 {{% alert color="primary" %}}
 
@@ -35,7 +43,7 @@ A table can be inline if it is tightly positioned, or floating if it can be posi
 
 {{% /alert %}}
 
-## Create a Table with DocumentBuilder  
+## Create a Table with DocumentBuilder
 
 In Aspose.Words, users can create a table in a document using the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/). The basic algorithm for creating a table is as follows:
 
@@ -53,16 +61,16 @@ In Aspose.Words, users can create a table in a document using the [DocumentBuild
 
 Important details:
 
-- [StartTable](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/starttable/) can also be called inside a cell, in which case it starts the creation of a nested table within the cell.
-- After calling [InsertCell](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcell/), a new cell is created, and any content you add using other methods of the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class will be added to the current cell. To create a new cell on the same row, call **InsertCell** again.
-- If **InsertCell** is called immediately after [EndRow](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endrow/) and the end of a row, the table will continue on a new row.
-- The [EndTable](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endtable/) method to end the table should only be called once after calling **EndRow**. Calling **EndTable** moves the cursor from the current cell to the position immediately after the table.
+* [StartTable](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/starttable/) can also be called inside a cell, in which case it starts the creation of a nested table within the cell.
+* After calling [InsertCell](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertcell/), a new cell is created, and any content you add using other methods of the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class will be added to the current cell. To create a new cell on the same row, call **InsertCell** again.
+* If **InsertCell** is called immediately after [EndRow](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endrow/) and the end of a row, the table will continue on a new row.
+* The [EndTable](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endtable/) method to end the table should only be called once after calling **EndRow**. Calling **EndTable** moves the cursor from the current cell to the position immediately after the table.
 
 {{% /alert %}}
 
 The process of creating a table can be clearly seen in the following picture:
 
-![creating-table-process](creating-table-process.jpg)
+![creating-table-process-cpp](creating-table-process.jpg)
 
 The following code example shows how to create a simple table using **DocumentBuilder** with default formatting:
 
@@ -112,9 +120,21 @@ The following code example shows how to duplicate a table using node constructor
 
 {{< gist "aspose-words-gists" "aa87055754447c86ae5fb2d4766130f3" "clone-complete-table.h" >}}
 
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
+
 The following code example shows how to clone the last row of a table and append it to the table:
 
 {{< gist "aspose-words-gists" "aa87055754447c86ae5fb2d4766130f3" "clone-last-row.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
 
 If you are looking at creating tables in a document that grow dynamically with each record from your data source, then the above method is not advised. Instead, the desired output is more easily achieved by using Mail merge with regions. You can learn more about this technique in the [Mail Merge with Regions](/words/cpp/types-of-mail-merge-operations/) section.
 
@@ -126,10 +146,20 @@ Let's take a closer look at these ways of creating tables and compare their pros
 
 | Method | Advantages | Disadvantages |
 | :- | :- | :- |
-| `DocumentBuilder` | The standard method for inserting tables and other document content | Sometimes difficult to create many varieties of tables at the same time with the same builder instance |
+| Via `DocumentBuilder` | The standard method for inserting tables and other document content | Sometimes difficult to create many varieties of tables at the same time with the same builder instance |
 | Via DOM | Fits in better with surrounding code that creates and inserts nodes directly into the DOM without using a **DocumentBuilder** | The table is created "empty": before performing most operations, you must call [EnsureMinimum](https://reference.aspose.com/words/cpp/aspose.words.tables/table/ensureminimum/) to create any missing child nodes |
 | From HTML | Can create a new table from HTML source using tags like `<table>`, `<tr>`, `<td>` | Not all possible Microsoft Word table formats can be applied to HTML |
 | Cloning an existing table | You can create a copy of an existing table while retaining all row and cell formatting | The appropriate child nodes must be removed before the table is ready for use |
+
+## Related APIs
+
+- [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/)
+- [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/)
+- [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/)
+- [Cell](https://reference.aspose.com/words/cpp/aspose.words.tables/cell/)
+- [Node::Clone](https://reference.aspose.com/words/cpp/aspose.words/node/clone/)
+- [DocumentBuilder::InsertHtml](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/inserthtml/)
+- [Table::EnsureMinimum](https://reference.aspose.com/words/cpp/aspose.words.tables/table/ensureminimum/)
 
 ------  
 

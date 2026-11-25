@@ -14,6 +14,14 @@ aliases: [/cpp/working-with-web-extensions/]
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with Office Add-ins that incorporate Aspose.Words.
+
+{{% /alert %}}
+
 Sometimes you might want to give access to interface controls that run code to modify documents. Aspose.Words API provides the `WebExtensions` namespace, which grants various classes to customize elements and attributes extending the XML vocabulary for representing Office Add-ins.
 
 WebExtensions namespace can be conditionally divided into:
@@ -25,7 +33,7 @@ WebExtensions namespace can be conditionally divided into:
 
 The task panes are interface surfaces that are displayed on the right side of the window in Microsoft Word. Task pane allows users to access interface controls that can run code to modify documents.
 
-For example, using Aspose.Words API, you can add a task pane add‑in and customize its appearance.
+For example, using Aspose.Words API, you can add a task pane add-in and customize its appearance.
 
 ## Using Web Extensions
 
@@ -35,15 +43,15 @@ Aspose.Words provides the ability to add Web Extensions of the Task Pane type us
 
 The following code example shows how to create task panes and add to web extension task panes with basic properties:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithWebExtension-UsingWebExtensionTaskPanes.cpp" >}}
+{{< gist "aspose-words-gists" "4a3dcb1881c9f8f88e1a8317546dcfa8" "web-extension-task-panes.h" >}}
 
 To see a list of task pane add‑ins, use the [get_WebExtensionTaskPanes()](https://reference.aspose.com/words/cpp/aspose.words/document/get_webextensiontaskpanes/) property.
 
-The following code example shows how to get such a list of add‑ins:
+The following code example shows how to get such a list of add-ins:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithWebExtension-GetListOfAddins.cpp" >}}
+{{< gist "aspose-words-gists" "4a3dcb1881c9f8f88e1a8317546dcfa8" "get-list-of-addins.h" >}}
 
------- 
+------
 
 ## FAQ
 

@@ -13,6 +13,14 @@ url: /cpp/restrict-document-editing/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to restrict editing of a document or selected parts.
+
+{{% /alert %}}
+
 Sometimes you may need to limit the ability to edit a document and only allow certain actions with it. This can be useful to prevent other people from editing sensitive and confidential information in your document.
 
 Aspose.Words allows you to restrict editing a document by setting a restriction type. In addition, Aspose.Words also enables you to specify write protection settings for a document.
@@ -29,7 +37,7 @@ Aspose.Words allows you to control the way you restrict the content using the [P
 * ReadOnly
 * NoProtection
 
-All types are password‑secured, and if this password is not entered correctly, a user will not be able to legally change the content of your document. Thus, if your document is returned to you without a requirement to provide the necessary password, this is a sign that something is wrong.
+All types are password-secured, and if this password is not entered correctly, a user will not be able to legally change the content of your document. Thus, if your document is returned to you without a requirement to provide the necessary password, this is a sign that something is wrong.
 
 If you did not set a password when choosing the security type, other users can simply ignore the protection of your document.
 
@@ -56,11 +64,11 @@ In Microsoft Word, you can restrict editing in a similar way using both:
 
 The following code example shows how to add password protection to your document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-PasswordProtection.h" >}}
+{{< gist "aspose-words-gists" "21646e2253e30ede115ff1cefdc76cca" "password-protection.h" >}}
 
 The following code example shows how to restrict editing in a document so only editing in form fields is possible:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-AllowOnlyFormFieldsProtect.h" >}}
+{{< gist "aspose-words-gists" "21646e2253e30ede115ff1cefdc76cca" "allow-only-form-fields-protect.h" >}}
 
 ## Remove Document Protection
 
@@ -68,7 +76,7 @@ Aspose.Words allows you to remove protection from a document with simple and dir
 
 The following code example shows how to remove protection from your document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-RemoveDocumentProtection.h" >}}
+{{< gist "aspose-words-gists" "21646e2253e30ede115ff1cefdc76cca" "remove-document-protection.h" >}}
 
 ## Specify Unrestricted Editable Regions
 
@@ -76,17 +84,30 @@ You can restrict editing of your document and at the same time allow changes to 
 
 Aspose.Words allows you to mark the parts that can be changed in your document using the [StartEditableRange](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/starteditablerange/) and [EndEditableRange](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endeditablerange/) methods.
 
-The following code example shows how to mark the whole document as read‑only and specify editable regions in it:
+The following code example shows how to mark the whole document as read-only and specify editable regions in it:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-UnrestrictedEditableRegions.h" >}}
+{{< gist "aspose-words-gists" "21646e2253e30ede115ff1cefdc76cca" "unrestricted-editable-regions.h" >}}
 
 You can also choose different document editing restrictions for different sections.
 
 The following code example shows how to add a restriction for the entire document, and then remove the restriction for one of the sections:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Protect or Encrypt Document-Document protection-UnrestrictedSection.h" >}}
+{{< gist "aspose-words-gists" "21646e2253e30ede115ff1cefdc76cca" "unrestricted-section.h" >}}
 
------- 
+## Limitations and Considerations
+
+- Aspose.Words protection is not encryption — it stores only a password hash in the document properties and does not secure the document content.
+- Protection does not prevent programmatic access or modification — any Aspose.Words application can remove protection or modify the document regardless of restrictions.
+- The `Protect` method only sets a metadata flag; it does not prevent changes via API calls such as `Document::Unprotect` or `DocumentBuilder::StartEditableRange`.
+- Editable ranges do not override section-level protection settings — they apply only to the document-level protection state and require correct section break types to function as expected.
+
+## Related APIs
+
+- [ProtectionType](https://reference.aspose.com/words/cpp/aspose.words/protectiontype/)
+- [Document::Protect(ProtectionType, String)](https://reference.aspose.com/words/cpp/aspose.words/document/protect/)
+- [Document::Unprotect()](https://reference.aspose.com/words/cpp/aspose.words/document/unprotect/)
+- [DocumentBuilder::StartEditableRange()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/starteditablerange/)
+- [DocumentBuilder::EndEditableRange()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endeditablerange/) 
 
 ## FAQ
 

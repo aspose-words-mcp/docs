@@ -13,6 +13,14 @@ url: /cpp/work-with-document-properties/
 timestamp: 2024-01-31-14-23-37
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to read and modify document properties.
+
+{{% /alert %}}
+
 Document properties allow storing some useful information about your document. These properties can be divided into two groups:
 
 * System or built-in that contain values such as document title, author name, document statistics, and others.
@@ -42,17 +50,17 @@ The [DocumentProperty](https://reference.aspose.com/words/cpp/aspose.words.prope
 
 The following code example shows how to enumerate all built-in and custom properties in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocProperties-EnumerateProperties.cpp" >}}
+{{< gist "aspose-words-gists" "a0884850400006e40a0b3d5a7092897b" "enumerate-properties.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Properties.docx).
 
 {{% /alert %}}
 
 In Microsoft Word, you can access document properties using the “File → Properties” menu.
 
-<img src="work-with-document-properties-1.png" alt="work-with-document-properties-aspose-words-cpp_1.png" style="width:400px"/>
+<img src="work-with-document-properties-1.png" alt="work-with-document-properties-1.png-cpp" style="width:400px"/>
 
 ## Add or Remove Document Properties
 
@@ -64,17 +72,17 @@ To remove custom properties, use the [Remove](https://reference.aspose.com/words
 
 The following code example checks whether a custom property with a given name exists in a document and adds a few more custom document properties:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocProperties-CustomAdd.cpp" >}}
+{{< gist "aspose-words-gists" "a0884850400006e40a0b3d5a7092897b" "add-custom-properties.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Properties.docx).
 
 {{% /alert %}}
 
 The following code example shows how to remove a custom document property:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocProperties-CustomRemove.cpp" >}}
+{{< gist "aspose-words-gists" "a0884850400006e40a0b3d5a7092897b" "remove-custom-properties.h" >}}
 
 ## Update Built-In Document Properties
 
@@ -83,7 +91,7 @@ Aspose.Words does not automatically update document properties, as Microsoft Wor
 * [get_Characters()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_characters/)
 * [get_CharactersWithSpaces()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_characterswithspaces/)
 * [get_Words()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_words/)
-* [Paragraphs](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_paragraphs/)
+* [get_Paragraphs()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_paragraphs/)
 * [get_Lines()](https://reference.aspose.com/words/cpp/aspose.words.properties/builtindocumentproperties/get_lines/)
 
 ## Create a New Custom Property Linked to Content
@@ -92,7 +100,7 @@ Aspose.Words provides the [AddLinkToContent](https://reference.aspose.com/words/
 
 The following code example shows how to configure a link to a custom property:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocProperties-ConfiguringLinkToContent.cpp" >}}
+{{< gist "aspose-words-gists" "a0884850400006e40a0b3d5a7092897b" "configuring-link-to-content.h" >}}
 
 ## Get Document Variables
 
@@ -100,11 +108,11 @@ You can get a collection of document variables using the [get_Variables()](https
 
 The following code example shows how to enumerate document variables:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-GetVariables-GetVariables.cpp" >}}
+{{< gist "aspose-words-gists" "a0884850400006e40a0b3d5a7092897b" "get-variables.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Properties.docx).
 
 {{% /alert %}}
 
@@ -114,7 +122,7 @@ If you want to share a Word document with other people, you may want to remove p
 
 The following code example shows how to remove personal information:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocProperties-RemovePersonalInformation.cpp" >}}
+{{< gist "aspose-words-gists" "a0884850400006e40a0b3d5a7092897b" "remove-personal-information.h" >}}
 
 {{% alert color="primary" %}}
 

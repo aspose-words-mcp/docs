@@ -1,7 +1,7 @@
 ---
-title: How to Add Group Shape into a Word Document
+title: How to Add Group Shape into Word Document
 second_title: Aspose.Words for C++
-articleTitle: Working with Group Shapes in Word Documents
+articleTitle: How to Add Group Shape into a Word Document
 linktitle: Working with Group Shapes in Word Documents
 description: "Grouping and ungrouping shapes using C++."
 type: docs
@@ -13,19 +13,27 @@ url: /cpp/how-to-add-group-shape-into-a-word-document/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page describes how to insert a group shape programmatically.
+
+{{% /alert %}}
+
 Sometimes you need to add a group shape into a Word document. Such a group shape consists of multiple shapes.
 
 In Microsoft Word, you can quickly add a group shape using the Group command/button. An individual shape in a group can be moved separately.
 
-In Aspose.Words it is very easy to add a group shape using the [GroupShape](https://reference.aspose.com/words/cpp/aspose.words.drawing/groupshape/) class. The shape is created separately using the [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/) class and then added to the **GroupShape** object using the [AppendChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/appendchild/) method.
+In Aspose.Words it is very easy to add a group shape using the [GroupShape](https://reference.aspose.com/words/cpp/aspose.words.drawing/groupshape/) class. **Shape** is created separately using the [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/) class and then added to the [GroupShape](https://reference.aspose.com/words/cpp/aspose.words.drawing/groupshape/) object using the [AppendChild](https://reference.aspose.com/words/cpp/aspose.words/compositenode/appendchild/) method.
 
 The following code example shows how to add a group shape into a Word document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-AddGroupShapeToDocument-AddGroupShapeToDocument.cpp" >}}
+{{< gist "aspose-words-gists" "80429079be65ac0af21e5c7a38fe9a7c" "add-group-shape.h" >}}
 
 {{% alert color="primary" %}}
 
-Below are some of the `Shape` types supported in Aspose.Words. For complete list, please visit [ShapeType](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapetype/):
+Below are some of the `Shape` types supported in Aspose.Words:
 
 - Rectangle
 - RoundRectangle
@@ -38,6 +46,8 @@ Below are some of the `Shape` types supported in Aspose.Words. For complete list
 - Trapezoid
 - Hexagon
 - Octagon
+
+For complete list, please check the [ShapeType](https://reference.aspose.com/words/cpp/aspose.words.drawing/shapetype/) class.
 
 {{% /alert %}}
 

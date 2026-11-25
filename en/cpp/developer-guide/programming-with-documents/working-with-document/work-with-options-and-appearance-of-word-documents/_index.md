@@ -14,6 +14,14 @@ aliases: [/cpp/work-with-document-options-and-settings/]
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains Word document options that affect appearance such as view, zoom, and compatibility settings.
+
+{{% /alert %}}
+
 Sometimes you may need to change the appearance of a document, for example, set language preferences or the number of lines per page. Aspose.Words provides the ability to control how the document will be displayed, as well as some additional options. This article describes such possibilities.
 
 ## Set Document Display Options
@@ -22,11 +30,11 @@ You can control how a document will be displayed in Microsoft Word using the [Vi
 
 The following code example shows how to ensure that a document is displayed at 50% when opened in Microsoft Word:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-SetViewOption-SetViewOption.cpp" >}}
+{{< gist "aspose-words-gists" "b67a28742c3da0d0c633915873701cd8" "set-view-option.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file for this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the template file for this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Document.docx).
 
 {{% /alert %}}
 
@@ -48,7 +56,7 @@ In Microsoft Word, you can set the same parameters using the "Document Grid" tab
 
 The following code example shows how to set the number of characters per line and the number of lines per page for a Microsoft Word document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentPageSetup-DocumentPageSetup.cpp" >}}
+{{< gist "aspose-words-gists" "b67a28742c3da0d0c633915873701cd8" "document-page-setup.h" >}}
 
 ## Set Language Preferences
 
@@ -64,11 +72,11 @@ If your Aspose.Words generated document does not look as expected, check the **L
 
 The following code example shows how to add Japanese to editing languages:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-Setuplanguagepreferences-AddJapaneseAsEditinglanguages.cpp" >}}
+{{< gist "aspose-words-gists" "f648a63c3023a789293f3406e54348d3" "add-editing-language.h" >}}
 
 The following code example shows how to set Russian as the default editing language:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-Setuplanguagepreferences-SetRussianAsDefaultEditingLanguage.cpp" >}}
+{{< gist "aspose-words-gists" "b67a28742c3da0d0c633915873701cd8" "set-russian-as-default-editing-language.h" >}}
 
 ## Optimize a Document for a Particular Word Version
 
@@ -76,7 +84,15 @@ The [OptimizeFor](https://reference.aspose.com/words/cpp/aspose.words.settings/c
 
 The following code example shows how to optimize document content for Microsoft Word 2016:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-SetCompatibilityOptions-OptimizeFor.cpp" >}}
+{{< gist "aspose-words-gists" "b67a28742c3da0d0c633915873701cd8" "optimize-for.h" >}}
+
+## Related APIs
+
+- [ViewOptions](https://reference.aspose.com/words/cpp/aspose.words.settings/viewoptions/)
+- [PageSetup](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/)
+- [LanguagePreferences](https://reference.aspose.com/words/cpp/aspose.words.loading/languagepreferences/)
+- [LoadOptions](https://reference.aspose.com/words/cpp/aspose.words.loading/loadoptions/)
+- [CompatibilityOptions](https://reference.aspose.com/words/cpp/aspose.words.settings/compatibilityoptions/)
 
 ------  
 

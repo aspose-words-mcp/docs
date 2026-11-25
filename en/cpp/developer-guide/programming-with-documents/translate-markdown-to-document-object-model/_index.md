@@ -13,6 +13,14 @@ url: /cpp/translate-markdown-to-document-object-model/
 timestamp: 2024-10-21-11-17-44
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to translate Markdown into the Document Object Model and how Aspose.Words interprets Markdown structures.
+
+{{% /alert %}}
+
 To programmatically read, manipulate, and modify the content and formatting of a document, you need to translate it to the Aspose.Words Document Object Model (DOM).
 
 In contrast to Word documents, Markdown does not conform to the DOM described in the [Aspose.Words Document Object Model (DOM)](/words/cpp/aspose-words-document-object-model/) article. However, Aspose.Words provides its own mechanism for translating Markdown documents to DOM and back, so that we can successfully work with their elements such as text formatting, tables, headers, and others.
@@ -40,24 +48,24 @@ We use [Font](https://reference.aspose.com/words/cpp/aspose.words/font/) formatt
 | Markdown feature              | Aspose.Words       |
 | ----------------------------- | ------------------ |
 | **Bold**<br />`**bold text**` | `get_Font()->set_Bold(true)` |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-BoldText.h" >}} |  |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "bold-text.h" >}} |  |
 | **Italic**<br />`*italic text*` | `get_Font()->set_Italic(true)` |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-ItalicText.h" >}} |  |
+| {{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "italic-text.h" >}} |  |
 | **Strikethrough**<br />`~Strikethrough text~` | `get_Font()->set_StrikeThrough(true)` |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Strikethrough.h" >}} |  |
+| {{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "strikethrough.h" >}} |  |
 
 We use a character style with a name that starts from the word `InlineCode`, followed by an optional dot `(.)` and a number of backticks ```(`)``` for the `InlineCode` feature. If a number of backticks is missed, then one backtick will be used by default.
 
 | Markdown feature              | Aspose.Words       |
 | ----------------------------- | ------------------ |
 | **InlineCode**<br />`**inline code**` | `get_Font()->set_StyleName(u"InlineCode[.][N]")` |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-InlineCode.h" >}} |  |
+| {{< gist "aspose-words-gists" "1739a7dc53ee2cce1ac97f4ef9fa7310" "inline-code.h" >}} |  |
 | **Autolink**<br />`<scheme://domain.com>`<br />`<email@domain.com>` | The [FieldHyperlink](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldhyperlink/) class. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Autolink.h" >}} |  |
+| {{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "autolink.h" >}} |  |
 | **Link**<br />`[link text](url)`<br />`[link text](<url> "title")`<br />`[link text](url 'title')`<br />`[link text](url (title))` | The [FieldHyperlink](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldhyperlink/) class. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Link.h" >}} |  |
+| {{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "link.h" >}} |  |
 | **Image**<br />`![](url)`<br />`![alt text](<url> “title”)`<br />`![alt text](url ‘title')`<br />`![alt text](url (title))` | The [Shape](https://reference.aspose.com/words/cpp/aspose.words.drawing/shape/) class. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Image.h" >}} |  |
+| {{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "image.h" >}} |  |
 
 ## Container Blocks
 
@@ -70,19 +78,19 @@ The table below shows examples of using Markdown Leaf blocks in Aspose.Words:
 | Markdown feature                                             | Aspose.Words                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **HorizontalRule**<br />`-----`                              | This is a simple paragraph with a corresponding HorizontalRule shape:<br />`DocumentBuilder::InsertHorizontalRule()` |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-HorizontalRule.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "horizontal-rule.h" >}} |                                                              |
 | **ATX Heading**<br />`# H1, ## H2, ### H3…`                  | `get_ParagraphFormat()->set_StyleName(u"Heading N")`, where (1<= N <= 9).<br />This is translated into a built-in style and should be exactly of the specified pattern (no suffixes or prefixes are allowed).<br />Otherwise, it will be just a regular paragraph with a corresponding style. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Heading.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "heading.h" >}} |                                                              |
 | **Setext Heading**<br />`===` (if Heading level 1),<br />`---` (if Heading level 2) | `get_ParagraphFormat->set_StyleName(u"SetextHeading[some suffix]")`, based on 'Heading N' style.<br />If (N >= 2), then 'Heading 2' will be used, otherwise 'Heading 1'.<br />Any suffix is allowed, but Aspose.Words importer uses numbers “1” and “2” respectively. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-SetextHeading.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "setext-heading.h" >}} |
 | **Indented Code**                                            | `get_ParagraphFormat->set_StyleName(u"IndentedCode[some suffix]")`    |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-IndentedCode.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "indented-code.h" >}} |                                                              |
 | **Fenced Code**<br />{{< highlight csharp >}}``` c#
 if ()
 then
 else
 ```{{< /highlight >}} | `get_ParagraphFormat()->set_StyleName(u"FencedCode[.][info string]")`<br />The `[.]` and `[info string]` are optional. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-FencedCode.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "fenced-code.h" >}} |                                                              |
 
 ### Complex Containers
 
@@ -91,20 +99,20 @@ The table below shows examples of using Markdown Complex Containers in Aspose.Wo
 | Markdown feature                                             | Aspose.Words                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Quote**<br />`> quote,`<br />`>> nested quote`             | `get_ParagraphFormat()->set_StyleName(u"Quote[some suffix]")`<br />The suffix in style name is optional, but Aspose.Words importer uses the ordered numbers 1, 2, 3, …. in case of nested quotes.<br />The nesting is defined via the inherited styles. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Quote.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "quote.h" >}} |
 | **BulletedList**<br />`- Item 1`<br />`- Item 2`<br />	`   - Item 2a`<br />	`   - Item 2b` | Bulleted lists are represented using paragraph numbering:<br />`get_ListFormat()->ApplyBulletDefault()`<br />There can be 3 types of bulleted lists. They are only diff in a numbering format of the very first level. These are: `‘-'`, `‘+'` or `‘*'` respectively. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-BulletedList.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "bulleted-list.h" >}} |                                                              |
 | **OrderedList**<br />`1. Item 1`<br />`2. Item 2`<br />	`1) Item 2a`<br />	`2) Item 2b` | Ordered lists are represented using paragraph numbering:<br />`get_ListFormat()->ApplyNumberDefault()`<br />There can be 2 number format markers: ‘.' and ‘)'. The default marker is ‘.'. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-OrderedList.h" >}} |                                                              |
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "ordered-list.h" >}} |                                                              |
 
 ### Tables
 
 Aspose.Words also allows to translate tables into DOM, as shown below:
 
-| Markdown feature                         | Aspose.Words                                                 |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| `Table`<br />`a|b`<br />`-|-`<br />`c|d` | [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/), [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) and [Cell](https://reference.aspose.com/words/cpp/aspose.words.tables/cell/) classes. |
-| {{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Markdown-Table.h" >}} |                                                              |
+| Markdown feature                                             | Aspose.Words                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `Table`<br />`a|b`<br />`-|-`<br />`c|d`                     | [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/), [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) and [Cell](https://reference.aspose.com/words/cpp/aspose.words.tables/cell/) classes. |
+| {{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "table.h" >}} |                                                              |
 
 ## See Also
 

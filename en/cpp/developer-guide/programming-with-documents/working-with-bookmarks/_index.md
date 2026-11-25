@@ -13,17 +13,31 @@ url: /cpp/working-with-bookmarks/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with bookmarks in Aspose.Words.
+
+{{% /alert %}}
+
 Bookmarks identify in a Microsoft Word document the locations or fragments that you name and identify for future reference. For example, you might use a bookmark to identify text that you want to revise later. Instead of scrolling through the document to locate the text, you can go to it by using the Bookmark dialog box.
 
-The actions that can be performed with bookmarks using Aspose.Words are the same as the ones you can perform using Microsoft Word. You can insert a new bookmark, delete, move to a bookmark, get or set a bookmark name, get or set text enclosed in it. With Aspose.Words, you can also use bookmarks in reports or documents to insert some data into the bookmark or apply special formatting to its content. You can also use bookmarks to retrieve text from a certain location in your document.
+The actions that can be performed with bookmarks using Aspose.Words are the same as the ones you can perform using Microsoft Word. You can insert a new bookmark, delete, move to a bookmark, get or set a bookmark name, get or set text enclosed in it.
 
 ## Insert a Bookmark
 
 Use [StartBookmark](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/startbookmark/) and [EndBookmark](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/endbookmark/) to create a bookmark by marking its start and end, respectively. Do not forget to pass the same bookmark name to both methods. Bookmarks in a document can overlap and span any range. Badly formed bookmarks or bookmarks with duplicate names will be ignored when the document is saved.
 
+{{% alert color="primary" %}}
+
+All white spaces in the bookmarks were replaced with underscores. This restriction came from Microsoft Word formats, since bookmarks in Word formats like DOCX or DOC cannot have white spaces. However, PDF allows such bookmarks. So now, if you need to use bookmarks in PDF or XPS outlines, you can use them with white spaces.
+
+{{% /alert %}}
+
 The following code example shows how to create a new bookmark:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Bookmarks-CreateBookmark-CreateBookmark.cpp" >}}
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "create-bookmark.h" >}}
 
 ## Obtain Bookmarks
 
@@ -31,27 +45,39 @@ Sometimes it is necessary to obtain a bookmark collection to iterate through boo
 
 The following code example shows how to obtain bookmarks from a bookmark collection:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Bookmarks-AccessBookmarks-AccessBookmarks.cpp" >}}
-
-The following code example shows how to get or set a bookmark name and text:
-
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Bookmarks-BookmarkNameAndText-BookmarkNameAndText.cpp" >}}
-
-The following code example shows how to bookmark a table:
-
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Bookmarks-BookmarkTable-BookmarkTable.cpp" >}}
-
-If you change the name of a bookmark to a name that already exists in the document, no error will be generated and only the first bookmark will be stored when you save the document.
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "access-bookmarks.h" >}}
 
 {{% alert color="primary" %}}
 
-Note that some bookmarks in the document are assigned to form fields. Moving to such a bookmark and inserting text there inserts the text into the form field code. Although this will not invalidate the form field, the inserted text will not be visible because it becomes part of the field code.
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Bookmarks.docx).
 
 {{% /alert %}}
 
+The following code example shows how to get or set a bookmark name and text:
+
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "update-bookmark-data.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Bookmarks.docx).
+
+{{% /alert %}}
+
+The following code example shows how to bookmark a table:
+
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "bookmark-table.h" >}}
+
+If you change the name of a bookmark to a name that already exists in the document, no error will be generated and only the first bookmark will be stored when you save the document.
+
+Note that some bookmarks in the document are assigned to form fields. Moving to such a bookmark and inserting text there inserts the text into the form field code. Although this will not invalidate the form field, the inserted text will not be visible because it becomes part of the field code.
+
+The following code example shows how to access columns of the bookmarked table:
+
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "bookmark-table-columns.h" >}}
+
 ## Move to a Bookmark
 
-If you need to insert rich content (not just plain text) into a bookmark, you should use [MoveToBookmark](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetobookmark/) to move the cursor to the bookmark and then use the [DocumentBuilder's](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) methods and properties to insert content.
+If you need to insert rich content (not just plain text) into a bookmark, you should use [MoveToBookmark](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetobookmark/) to move the cursor to the bookmark and then use [DocumentBuilder's](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) methods and properties to insert content.
 
 ## Show Hide Bookmark Content
 
@@ -59,4 +85,6 @@ The entire Bookmark (*including the bookmarked content*) can be encapsulated wit
 
 The following code example shows how to show/ hide bookmarks:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Bookmarks-ShowHideBookmarks-ShowHideBookmarks.cpp" >}}
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "show-hide-bookmarks.h" >}}
+
+{{< gist "aspose-words-gists" "ec6854decb690d88db77112408374f47" "show-hide-bookmarked-content.h" >}}

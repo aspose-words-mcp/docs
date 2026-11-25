@@ -13,6 +13,14 @@ url: /cpp/working-with-asian-typography/
 timestamp: 2024-02-01-16-17-05
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with Asian typography features such as line breaking and character spacing.
+
+{{% /alert %}}
+
 Asian Typography is a set of options for text paragraphs in documents written in Asian languages.
 
 Aspose.Words supports Asian Typography using the [ParagraphFormat](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/) class and some of its properties.
@@ -23,7 +31,7 @@ If you are designing a template with both East Asian and Latin text and  want to
 
 The following code example shows how to use **get_AddSpaceBetweenFarEastAndAlpha()** and **get_AddSpaceBetweenFarEastAndDigit()** properties:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderSetFormatting-DocumentBuilderSetSpacebetweenAsianandLatintext.cpp" >}}
+{{< gist "aspose-words-gists" "b9230cb4ed425511afbb57c3223c7c7a" "space-between-asian-and-latin-text.h" >}}
 
 ## Set Line Break Options
 
@@ -31,12 +39,14 @@ The Asian Typography tab of the paragraph properties dialog box in Microsoft Wor
 
 The following code example shows how to use these properties:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderSetFormatting-SetAsianTypographyLinebreakGroupProp.cpp" >}}
+{{< gist "aspose-words-gists" "b9230cb4ed425511afbb57c3223c7c7a" "asian-typography-line-break-group.h" >}}
+
+## Related APIs
+
+- [ParagraphFormat](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/)
 
 
-
-
------- 
+ 
 
 ## FAQ
 
