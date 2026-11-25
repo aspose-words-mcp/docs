@@ -10,7 +10,7 @@ ai_search_scope: words_python
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
 ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
 url: /python-net/what-s-new-in-aspose-words-for-python-net/
-timestamp: 2026-10-29-03-12-25
+timestamp: 2026-11-25-05-12-25
 ---
 
 {{% alert color="grey" %}}
@@ -23,11 +23,13 @@ This page lists the most notable new features and enhancements introduced in rec
 
 This page describes the most interesting new Aspose.Words features introduced in recent releases.
 
-## Aspose.Words for Python via .NET 26.9, 26.10
+## Aspose.Words for Python via .NET 26.9, 26.10, 26.11
 
 Aspose.Words 26.9 adds more control over document comparison and digital signature timestamping, and improves PDF accessibility. The release also enhances PDF layout tagging for footnotes and endnotes.
 
 Aspose.Words 26.10 introduces on-premise AI-powered document processing, improves floating table positioning, and expands chart customization capabilities. The release also enhances MathML and mathematical formula rendering and strengthens PDF/UA-2 compliance.
+
+Aspose.Words 26.11 expands document import capabilities with support for WordPerfect and Hangul Word Processor formats, and improves text mapping and document rendering. The release also introduces new APIs for tiled textured fills, enhances comment, chart, and table rendering, and simplifies digital signature configuration.
 
 ### AI-powered Features
 
@@ -40,6 +42,10 @@ The ability to process documents using AI without sending document content outsi
 #### PDF/UA-2 Compliance <sup>26.10</sup>
 
 PDF export has been enhanced by implementing structure destination (`/SD`) generation for document outline entries, ensuring compliance with PDF/UA-2 requirements.
+
+#### WordPerfect and Hangul Word Processor Formats <sup>26.11</sup>
+
+The ability to load and process documents in WordPerfect (.wpd) and Hangul Word Processor (.hwp) formats has been introduced, expanding document import and conversion capabilities.
 
 ### Rendering
 
@@ -67,16 +73,39 @@ MathML background rendering has been improved by implementing color remapping ac
 
 The ability to render `FormCheckBox` fields located within `OfficeMath` formulas has been introduced, improving the rendering of documents containing mathematical expressions and form fields.
 
+#### Symbolic Font Mapping <sup>26.11</sup>
+
+The ability to replace characters from symbolic fonts and glyphs with their corresponding Unicode characters has been introduced by adding the [symbolic_fonts](https://reference.aspose.com/words/python-net/aspose.words/cleanupoptions/symbolic_fonts/) property to the CleanupOptions class.
+
+#### Rendering Comments with Author-specific Colors <sup>26.11</sup>
+
+Comment rendering has been enhanced by implementing support for the [RevisionColor.ByAuthor](https://reference.aspose.com/words/python-net/aspose.words.layout/revisioncolor/) setting, which displays comment balloons in different colors depending on the author.
+
+#### Improved Chart Rendering in PDF <sup>26.11</sup>
+
+Chart rendering during DOCX-to-PDF conversion has been improved by refining scatter chart precision and plot-area layout calculations.
+
+#### Improved Table Layout with Vertical Text <sup>26.11</sup>
+
+Table layout calculation has been improved to provide more accurate cell measurements and text positioning when cells use vertical text orientation.
+
+#### Tiled Textured Fills <sup>26.11</sup>
+
+The ability to control the scale and tiling of textured fills has been introduced by adding the TextureHorizontalScale, TextureVerticalScale, and TextureTile properties to the Fill class.
+
 ### Other
 
 * The ability to control whether list definition content is included when comparing documents has been introduced by adding the **compare_list_definitions** property to the AdvancedCompareOptions class. <sup>26.9</sup>
 * The ability to add RFC 3161 timestamps to digital signatures has been introduced by adding the **timestamp_settings** property to the SignOptions class. <sup>26.9</sup>
+* The ability to automatically select an appropriate hash algorithm based on the provided private key has been introduced by adding the Auto value to the PdfDigitalSignatureHashAlgorithm enumeration. <sup>26.11</sup>
 
 {{% alert color="primary" %}}
 
 Learn more about [Aspose.Words for Python via .NET 26.9 Release Notes](https://releases.aspose.com/words/python/release-notes/2026/aspose-words-for-python-via-dotnet-26-9-release-notes/).
 
 Learn more about [Aspose.Words for Python via .NET 26.10 Release Notes](https://releases.aspose.com/words/python/release-notes/2026/aspose-words-for-python-via-dotnet-26-10-release-notes/).
+
+Learn more about [Aspose.Words for Python via .NET 26.11 Release Notes](https://releases.aspose.com/words/python/release-notes/2026/aspose-words-for-python-via-dotnet-26-11-release-notes/).
 
 {{% /alert %}}
 

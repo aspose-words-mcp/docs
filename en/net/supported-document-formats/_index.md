@@ -10,7 +10,7 @@ ai_search_scope: words_net
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
 ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
 url: /net/supported-document-formats/
-timestamp: 2026-01-20-11-12-25
+timestamp: 2026-11-25-05-12-25
 ---
 
 {{% alert color="grey" %}}
@@ -75,6 +75,8 @@ The following table indicates the input and output file formats supported by Asp
 | [JPEG](https://docs.fileformat.com/image/jpeg/) | Renders a page of the document and saves it as a JPEG file |  | {{< emoticons/tick >}} |  |
 | [GIF](https://docs.fileformat.com/image/gif/) | Renders a page of the document and saves it as a GIF file |  | {{< emoticons/tick >}} |  |
 | WebP | Google image compression format |  | {{< emoticons/tick >}} |  |
+| HWP | Hancom Hangul (HWP 5.0) binary document. Load only | {{< emoticons/tick >}} |  |  |
+| WORD_PERFECT | WordPerfect 6.x or later document | {{< emoticons/tick >}} |  |  |
 
 ------
 
