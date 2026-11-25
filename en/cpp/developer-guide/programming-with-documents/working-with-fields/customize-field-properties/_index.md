@@ -13,6 +13,14 @@ url: /cpp/customize-field-properties/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to customize field properties such as result formatting, switches, and update behavior.
+
+{{% /alert %}}
+
 Aspose.Words provides the ability to programmatically interact with various field properties. In this article, we will look at a couple of examples so that you understand the basic principle of working with field properties. You can see the full list of properties for each field type in the corresponding class in the [Fields namespace](https://reference.aspose.com/words/cpp/aspose.words.fields/).
 
 ## Field Property Update
@@ -21,12 +29,12 @@ Sometimes users need to change the value of a field property. For example, updat
 
 The following code example shows how to rename merge fields in a Word document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-RenameMergeFields-RenameMergeFields.cpp" >}}
+{{< gist "aspose-words-gists" "28b37ad590244b063877f1cbe1afd150" "rename-merge-fields.h" >}}
 
 ## Field Display Result
 
-Aspose.Words provides a property to obtain the field's result for fields that do not have a field separator node. We call this "fake result" or display result; Microsoft Word displays it in the document by calculating the field's value on the fly, but there is no such value in the document model.
+Aspose.Words provides a property to obtain the field's result for fields that do not have a field separator node. We call this "fake result" or display result; MS Word displays it in the document by calculating the field's value on the fly, but there is no such value in the document model.
 
 The following code example shows the usage of [get_DisplayResult()](https://reference.aspose.com/words/cpp/aspose.words.fields/field/get_displayresult/) property:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-FieldDisplayResults-FieldDisplayResults.cpp" >}}
+{{< gist "aspose-words-gists" "28b37ad590244b063877f1cbe1afd150" "field-display-results.h" >}}

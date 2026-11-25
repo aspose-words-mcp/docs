@@ -13,6 +13,14 @@ url: /cpp/fields-overview/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how fields work in Word documents and how to manipulate them via Aspose.Words.
+
+{{% /alert %}}
+
 Aspose.Words is a class library designed for server-side processing of Microsoft Word documents and supports fields in the following ways:
 
 - all fields in a document are preserved during open/save and conversions
@@ -20,33 +28,33 @@ Aspose.Words is a class library designed for server-side processing of Microsoft
 
 In this article, we will learn more about field structure, the fields supported in Aspose.Words, and details of working with such fields.
 
-## Fields Structure
+## Field Structure
 
 A field consists of:
 
 - The field start and separator nodes are used to encompass the content which makes up the field code (normally as plain text).
 - The field separator and field end encompass the field result. This can be made up of various types of content ranging from runs of text to paragraphs to tables.
 - Some fields may not have a separator which means the entire content makes up the field code.
-- The field code defines the behavior of the field and is comprised of the field identifier and often other parameters such as field names and switches.
-- The field result contains the most recent evaluation of the field. This value is stored in the field result and is what is displayed to the user. Some fields may not have any field results thus will not display anything in the document. Likewise, some fields may not be updated yet therefore will also have no field result.
+- The field code defines the behavior of the field and is comprised of the field identifier and often other parameters such as field name and switches.
+- The field result contains the most recent evaluation of the field. This value is stored in the field result and is what is displayed to the user. Some fields may not have any field result thus will not display anything in the document. Likewise, some fields may not be updated yet therefore will also have no field result.
 
-![fields-overview-aspose-words-cpp-1](fields-overview-1.png)
+![fields-aspose-words-cpp](fields-overview-1.png)
 
 The content which makes up the field code is stored as [Run](https://reference.aspose.com/words/cpp/aspose.words/run/) nodes between the [FieldStart](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldstart/) and [FieldSeparator](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldseparator/). The field result is stored between the **FieldSeparator** and [FieldEnd](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldend/) nodes and can be made up of various types of content. Normally the field result contains just text made up of **Run** nodes, however it is possible for the **FieldEnd** node to be located in a completely different paragraph, and thus making the field result comprised of [block-level nodes](/words/cpp/logical-levels-of-nodes-in-a-document/) such as **Table** and **Paragraph** nodes as well.
 
-Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”* example.
+Here is a view of how a field is stored in Aspose.Words by using the “*DocumentExplorer”* example which can be found on [Github](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Showcases/DocumentExplorer).
 
-![fields-overview-aspose-words-cpp-2](fields-overview-2.png)
+![document-explorer-aspose-words-cpp](fields-overview-2.png)
 
 ## Fields in the Aspose.Words Document Object Model (DOM)
 
-When a document is loaded into Aspose.Words, the fields of the document are loaded into the [Aspose.Words Document Object Model](/words/cpp/aspose-words-document-object-model/) as a set of separate components (nodes). A single field is loaded as a collection of **FieldStart**, **FieldSeparator** and **FieldEnd** nodes along with the content in between these nodes. If a field does not have a field result then there will be no **FieldSeparator** node. All of these nodes are always found inline (as children of [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/) or [SmartTag](https://reference.aspose.com/words/cpp/aspose.words.markup/smarttag/)).
+When a document is loaded into Aspose.Words, the fields of the document are loaded into the [Aspose.Words Document Object Model](/words/cpp/aspose-words-document-object-model/) as a set of separate components (nodes). A single field is loaded as a collection of **FieldStart**, **FieldSeparator** and **FieldEnd** nodes along with the content in between these nodes. If a field does not have a field result then there will be no **FieldSeparator** node. All of these nodes are always found inline (as children of [Paragraph](https://reference.aspose.com/words/cpp/aspose.words/paragraph/) or [SmartTag](https://reference.aspose.com/words/cpp/aspose.words.markup/smarttag/).
 
 In Aspose.Words each of the **FieldXXX** nodes derives from [FieldChar](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldchar/). This class provides a property to check the type of field represented by the specified node through the [get_FieldType()](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldchar/get_fieldtype/) property. For example **FieldType::FieldMergeField** represents a merge field in the document.
 
 {{% alert color="primary" %}}
 
-There are some particular fields that exist in a Word document that are not imported into Aspose.Words as a collection of **FieldXXX** nodes. For instance, the `LINK` field and `INCLUDEPICTURE` field are imported into Aspose.Words as a `Shape` object. This object provides properties to work with the image data normally stored in these fields. To import `INCLUDEPICTURE` field as **FieldXXX** nodes the [get_PreserveIncludePictureField()](https://reference.aspose.com/words/cpp/aspose.words.loading/loadoptions/get_preserveincludepicturefield/) option must be specified as **true**.
+There are some particular fields that exist in a Word document that are not imported into Aspose.Words as a collection of **FieldXXX** nodes. For instance, `LINK` field and `INCLUDEPICTURE` field are imported into Aspose.Words as a [get_PreserveIncludePictureField()](https://reference.aspose.com/words/cpp/aspose.words.loading/loadoptions/get_preserveincludepicturefield/) object. This object provides properties to work with the image data normally stored in these fields. To import `INCLUDEPICTURE` field as **FieldXXX** nodes the [get_PreserveIncludePictureField()](https://reference.aspose.com/words/cpp/aspose.words.loading/loadoptions/get_preserveincludepicturefield/) option must be specified as **true**.
 
 Form fields are also imported into Aspose.Words as their own special class. The [FormField](https://reference.aspose.com/words/cpp/aspose.words.fields/formfield/) class represents a form field in a Word document and provides additional methods that are particular to a form field.
 
@@ -212,11 +220,11 @@ When Aspose.Words calculates a field result, it often needs to parse a string in
 
 ### Formatting using the Current Thread's Culture
 
-To control the culture used during field calculation, just set the **CurrentCulture** property to a culture of your choice before invoking field calculation.
+To control the culture used during field calculation, just set the **Thread.CurrentThread.CurrentCulture** property to a culture of your choice before invoking field calculation.
 
 The following code example shows how to change the culture used in formatting fields during update:
 
-EXAMPLE
+{{< gist "aspose-words-gists" "ead1c6f9759fc606b185c59884366bdf" "change-locale.h" >}}
 
 Using the current culture to format fields allows a system to easily and consistently control how all fields in the document are formatted during field update.
 
@@ -228,4 +236,4 @@ The [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) cl
 
 The following code example shows how to specify where the culture used for date formatting during field update and Mail Merge is chosen from:
 
-EXAMPLE
+{{< gist "aspose-words-gists" "ead1c6f9759fc606b185c59884366bdf" "change-field-update-culture-source.h" >}}

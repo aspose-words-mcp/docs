@@ -13,13 +13,21 @@ url: /cpp/working-with-columns-and-rows/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with table columns and rows programmatically.
+
+{{% /alert %}}
+
 For more control over how tables work, learn how to manipulate columns and rows.
 
-## Find the Table Element Index
+## Find the Table Element Index {#find-the-index-of-table-elements}
 
 Columns, rows and cells are managed by accessing the selected document node by its index. Finding the index of any node involves gathering all child nodes of the element type from the parent node, and then using the [IndexOf](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/indexof/) method to find the index of the desired node in the collection.
 
-### Find the Index of a Table in a Document
+### Find the Index of a Table in a Document {#find-the-index-of-table-in-a-document}
 
 Sometimes you may need to make changes to a particular table in a document. To do this, you can refer to a table by its index.
 
@@ -43,7 +51,7 @@ The following code example shows how to retrieve the index of a cell in a row:
 
 {{< gist "aspose-words-gists" "08b4741d451b8f6519bcb0b916f18bb8" "retrieve-cell-index.h" >}}
 
-## Work with Columns
+## Work with Columns {#work-with-columns}
 
 In the Aspose.Words Document Object Model (DOM), the [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/) node consists of [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) nodes and then [Cell](https://reference.aspose.com/words/cpp/aspose.words.tables/cell/) nodes. Thus, in the `Document` Object Model of Aspose.Words, as in Word documents, there is no concept of a column.
 
@@ -83,7 +91,7 @@ The following code example shows how to build a table which includes Header Rows
 
 {{< gist "aspose-words-gists" "08b4741d451b8f6519bcb0b916f18bb8" "repeat-rows-on-subsequent-pages.h" >}}
 
-## Keep Tables and Rows from Breaking Across Pages
+## Keep Tables and Rows from Breaking Across Pages {#keep-tables-and-rows-from-breaking-across-pages}
 
 There are times where the contents of a table should not be split across pages. For instance, if a title is above a table, the title and table should always be kept together on the same page to preserve proper appearance.
 
@@ -96,11 +104,17 @@ By default, the above properties are disabled.
 
 ### Keep a Row from Breaking Across Pages {#keep-a-row-from-breaking-across-pages}
 
-This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can be found under Table Properties as the option “Allow row to break across pages”. In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) as the property [RowFormat::get_AllowBreakAcrossPages()](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_allowbreakacrosspages/).
+This involves restricting content inside the cells of a row from being split across a page. In Microsoft Word, this can found under Table Properties as the option “Allow row to break across pages”. In Aspose.Words this is found under the [RowFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/) object of a [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/) as the property [RowFormat::get_AllowBreakAcrossPages()](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_allowbreakacrosspages/).
 
 The following code example shows how to disable breaking rows across pages for each row in a table:
 
 {{< gist "aspose-words-gists" "08b4741d451b8f6519bcb0b916f18bb8" "row-format-disable-break-across-pages.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Table%20spanning%20two%20pages.docx).
+
+{{% /alert %}}
 
 ### Keep a Table from Breaking Across Pages {#keep-a-table-from-breaking-across-pages}
 
@@ -111,3 +125,19 @@ To do this, Aspose.Words uses a method, which allows users to select a table and
 The following code example shows how to set a table to stay together on the same page:
 
 {{< gist "aspose-words-gists" "08b4741d451b8f6519bcb0b916f18bb8" "keep-table-together.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Table%20spanning%20two%20pages.docx).
+
+{{% /alert %}}
+
+## Related APIs
+
+- [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/)
+- [Row](https://reference.aspose.com/words/cpp/aspose.words.tables/row/)
+- [Cell](https://reference.aspose.com/words/cpp/aspose.words.tables/cell/)
+- [RowFormat::get_HeadingFormat()](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_headingformat/)
+- [RowFormat::get_AllowBreakAcrossPages()](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/get_allowbreakacrosspages/)
+- [ParagraphFormat::get_KeepWithNext()](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/get_keepwithnext/)
+- [NodeCollection::IndexOf](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/indexof/)

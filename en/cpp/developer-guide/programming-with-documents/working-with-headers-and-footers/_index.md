@@ -3,7 +3,7 @@ title: Working with Headers and Footers in C++
 second_title: Aspose.Words for C++
 articleTitle: Working with Headers and Footers
 linktitle: Working with Headers and Footers
-description: "How to manipulate headers and footers using C++."
+description: "How to manipulate headers and footers using C++. Create headers and footers C++. Remove headers or footers C++."
 type: docs
 aliases:
  - /cpp/how-to-remove-footers-but-leave-headers-intact/
@@ -15,6 +15,14 @@ ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
 url: /cpp/working-with-headers-and-footers/
 timestamp: 2024-01-27-14-07-04
 ---
+
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with headers and footers using Aspose.Words.
+
+{{% /alert %}}
 
 Aspose.Words allows users to work with headers and footers in a document. A header is text that is placed at the top of a page, and a footer is text at the bottom of a page. Typically, these areas are used to insert information that should be repeated on all or some pages of the document, such as page numbers, creation date, company information, and so on.
 
@@ -33,7 +41,6 @@ When you add a header or footer to a document, you can set some advanced propert
 ### Specify Header or Footer Type
 
 You can specify three different header types and three different footer types for one document:
-
 1. Header and/or footer for the first page
 2. Header and/or footer for even pages
 3. Header and/or footer for odd pages
@@ -58,7 +65,7 @@ The following code example shows how to set the header for the first page only:
 
 ### Insert an Absolutely Positioned Image into the Header
 
-To place an image in a header or footer, use the **HeaderPrimary** header type or the **FooterPrimary** footer type and the `InsertImage` method.
+To place an image in a header or footer, use the **HeaderPrimary** header type or the **FooterPrimary** footer type and the [InsertImage](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertimage/) method.
 
 The following code example shows how to add an image to a header:
 
@@ -106,7 +113,7 @@ The following code example shows how to remove all footers from all sections but
 
 {{% alert color="primary" %}}
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Header%20and%20footer%20types.docx).
 
 {{% /alert %}}
 

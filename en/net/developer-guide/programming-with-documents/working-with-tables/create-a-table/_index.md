@@ -153,7 +153,6 @@ Let's take a closer look at these ways of creating tables and compare their pros
 
 ## Related APIs
 
-
 - [DocumentBuilder](https://reference.aspose.com/words/net/aspose.words/documentbuilder/)
 - [Table](https://reference.aspose.com/words/net/aspose.words.tables/table/)
 - [Row](https://reference.aspose.com/words/net/aspose.words.tables/row/)

@@ -13,6 +13,14 @@ url: /cpp/clean-up-a-document/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page outlines how to clean up unnecessary or redundant content in a Word document using Aspose.Words.
+
+{{% /alert %}}
+
 Sometimes you may need to remove unused or duplicate information to reduce the size of the output document and processing time.
 
 While you can find and remove unused data, such as styles or lists, or duplicate information manually, it will be much more convenient to do this using features and capabilities provided by Aspose.Words.
@@ -27,7 +35,7 @@ You can use the [get_UnusedLists()](https://reference.aspose.com/words/cpp/aspos
 
 The following code example shows how to remove only unused styles from a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Document-Working with document options and settings-CleanupUnusedStylesandLists.h" >}}
+{{< gist "aspose-words-gists" "6c31bbbeef22be0304e77b322569dd06" "cleanup-unused-styles-and-lists.h" >}}
 
 ## Remove Duplicate Information from a Document
 
@@ -35,9 +43,7 @@ You can also use the [get_DuplicateStyle()](https://reference.aspose.com/words/c
 
 The following code example shows how to remove duplicate styles from a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Document-Working with document options and settings-CleanupDuplicateStyle.h" >}}
-
------- 
+{{< gist "aspose-words-gists" "6c31bbbeef22be0304e77b322569dd06" "cleanup-duplicate-style.h" >}}
 
 ## FAQ
 

@@ -13,6 +13,14 @@ url: /cpp/applying-formatting/
 timestamp: 2024-10-21-11-17-44
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to apply styling and formatting to document content in Aspose.Words.
+
+{{% /alert %}}
+
 Each element of a table can be applied with different formatting. For example, table formatting will be applied to the entire table, row formatting to only particular rows, cell formatting to only certain cells.
 
 Aspose.Words provides a rich API to retrieve and apply formatting to a table. You can use the [Table](https://reference.aspose.com/words/cpp/aspose.words.tables/table/), [RowFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/rowformat/), and [CellFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/) nodes to set the formatting.
@@ -43,9 +51,21 @@ The following code example shows how to apply an outline border to a table:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "apply-outline-border.h" >}}
 
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
+
 The following code example shows how to build a table with all borders enabled (grid):
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "build-table-with-borders.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
 
 ### Row Level Formatting
 
@@ -64,6 +84,12 @@ The pictures below show a representation of the **Row** formatting features in M
 The following code example shows how to modify the table row formatting:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "modify-row-formatting.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
 
 ### Cell Level Formatting
 
@@ -86,6 +112,12 @@ The pictures below show a representation of the **Cell** formatting features in 
 The following code example shows how to modify the formatting of a table cell:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "modify-cell-formatting.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
 
 The following code example shows how to set the amount of space (in points) to add to the left/top/right/bottom of the contents of the cell:
 
@@ -112,7 +144,7 @@ The following code example shows how to create a table that contains a single ce
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "apply-row-formatting.h" >}}
 
-## Specifying Table and Cell Widths
+## Specify Table and Cell Widths
 
 A table in a Microsoft Word document provides several different ways to resize the table and individual cells. These properties allow considerable control over the appearance and behavior of the table, so that Aspose.Words supports the behavior of tables, as in Microsoft Word.
 
@@ -147,9 +179,9 @@ The desired width of a table or individual cells is defined through the preferre
 
 The appropriate preferred width type and value are set using the methods of the [PreferredWidth](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/) class:
 
-- the [Auto](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/auto/) method to specify auto or “no preferred width”
-- the [FromPercent](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/frompercent/) method to specify a percentage width
-- the [FromPoints](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/frompoints/) method to specify the width in points
+* the [Auto](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/auto/) method to specify auto or “no preferred width”
+* the [FromPercent](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/frompercent/) method to specify a percentage width
+* the [FromPoints](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/frompoints/) method to specify the width in points
 
 The pictures below show a representation of the *preferred width setting features* in Microsoft Word and their corresponding properties in Aspose.Words.
 
@@ -157,7 +189,7 @@ The pictures below show a representation of the *preferred width setting feature
 
 An example of how these options are applied to a real table in a document can be seen in the picture below.
 
-![todo:image_alt_text](applying-formatting-9.png)
+![table-applied-options-cpp](applying-formatting-9.png)
 
 {{% alert color="primary" %}}
 
@@ -181,7 +213,7 @@ By default, a table can be described as being fitted to 100% of the available sp
 
 Using the [Table::get_PreferredWidth()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_preferredwidth/) property will adjust its preferred width relative to its container: page, text column, or outer table cell if it is a nested table.
 
-The following code example shows how to set the table to auto‑fit to 50% of the page width:
+The following code example shows how to set the table to auto-fit to 50% of the page width:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "auto-fit-to-page-width.h" >}}
 
@@ -198,6 +230,12 @@ You can use the [get_Type()](https://reference.aspose.com/words/cpp/aspose.words
 The following code example shows how to retrieve the preferred width type of a table cell:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "retrieve-preferred-width-type.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
 
 ### How to Set Autofit
 
@@ -233,6 +271,12 @@ The following code example shows how to autofit a table to the page width:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "auto-fit-table-to-page-width.h" >}}
 
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
+
 #### AutoFit Table to Content
 
 When the table is autofitted the content, the following steps are actually performed behind the scenes:
@@ -242,13 +286,19 @@ When the table is autofitted the content, the following steps are actually perfo
 2. The preferred table width is removed from **Table::PreferredWidth**, **CellFormat::PreferredWidth** is removed for each table cell
    {{% alert color="primary" %}}
 
-   Note that this autofit option removes the preferred width from cells, just like in Microsoft Word. If you want to keep the column sizes and increase or decrease the columns to fit the content, you should set the **Table::AllowAutoFit** property to **True** on its own rather than using the autofit shortcut.{{% /alert %}}
+Note that this autofit option removes the preferred width from cells, just like in Microsoft Word. If you want to keep the column sizes and increase or decrease the columns to fit the content, you should set the **Table::AllowAutoFit** property to **true** on its own rather than using the autofit shortcut.{{% /alert %}}
 
 3. Column widths are recalculated for the current table content – the end result is a table where the column widths and the width of the entire table are automatically resized to best fit the content as the user edits the text
 
 The following code example shows how to autofit a table to its content:
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "auto-fit-table-to-contents.h" >}}
+
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
 
 #### Disable AutoFit in Table and Use Fixed Column Widths
 
@@ -268,6 +318,12 @@ The following code example shows how to disable autofit and enable fixed width f
 
 {{< gist "aspose-words-gists" "4f1d7039f19f9f49472a50cc0d0fc475" "auto-fit-table-to-fixed-column-widths.h" >}}
 
+{{% alert color="primary" %}}
+
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Tables.docx).
+
+{{% /alert %}}
+
 ### Order of Precedence when Calculating Cell Width
 
 Aspose.Words allows users to define the width of a table or cell through multiple objects, including [CellFormat](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/) – its [get_Width()](https://reference.aspose.com/words/cpp/aspose.words.tables/cellformat/get_width/) property is mostly left over from previous versions, however, it is still useful for simplifying setting the cell width.
@@ -276,11 +332,11 @@ It is important to know that the **CellFormat::Width** property works differentl
 
 Aspose.Words uses the following order for calculating cell widths:
 
-| Order | Property | Description |
-| :- | :- | :- |
-| 1 | [get_AllowAutoFit()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_allowautofit/) is determined | If **AutoFit** is enabled:<br/>- the table may grow past the preferred width to accommodate the content – it usually does not shrink below the preferred width<br/>- any change to the **CellFormat::Width** value is ignored and the cell will fit to its contents instead |
-| 2 | [PreferredWidthType](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/get_type/) with a value of **Points** or **Percent** | **CellFormat::Width** is ignored |
-| 3 | [PreferredWidthType](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/get_type/) with a value of **Auto** | The value from **CellFormat::Width** is copied and becomes the cell's preferred width (in points) |
+| Order | Property                                                     | Description |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1     | [get_AllowAutoFit()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_allowautofit/) is determined | If **AutoFit** is enabled:<br>- the table may grow past the preferred width to accommodate the content - it usually does not shrink below the preferred width<br>- any change to the **CellFormat::Width** value is ignored and the cell will fit to its contents instead |
+| 2     | [PreferredWidthType](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/get_type/) with a value of **Points** or **Percent** | **CellFormat::Width** is ignored                              |
+| 3     | [PreferredWidthType](https://reference.aspose.com/words/cpp/aspose.words.tables/preferredwidth/get_type/) with a value of **Auto** | The value from **CellFormat::Width** is copied and becomes the cell's preferred width (in points) |
 
 {{% alert color="primary" %}}
 

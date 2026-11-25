@@ -13,6 +13,14 @@ url: /cpp/applying-custom-formatting-to-fields/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page outlines how to apply custom formatting to fields (like merge fields or document variables) in Aspose.Words.
+
+{{% /alert %}}
+
 Sometimes users need to apply custom formatting to fields. In this article, we will look at a couple of examples of how this can be done.
 
 To learn more options, see the full list of properties for each field type in the corresponding class in the [Fields namespace](https://reference.aspose.com/words/cpp/aspose.words.fields/).
@@ -23,9 +31,9 @@ Aspose.Words provides API for custom formatting of field's result. You can imple
 
 The following code example shows how to apply custom formatting for the field result:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-FormatFieldResult-FormatFieldResult.cpp" >}}
+{{< gist "aspose-words-gists" "42b3509557d8f87efa8a4e4e36157753" "field-result-formatting.h" >}}
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-FieldResultFormatter-FieldResultFormatter.cpp" >}}
+{{< gist "aspose-words-gists" "42b3509557d8f87efa8a4e4e36157753" "field-result-formatter.h" >}}
 
 ## How to evaluate `IF` condition
 
@@ -33,7 +41,7 @@ If you want to evaluate `IF` condition after mail merge, you can use the [Evalua
 
 The following code example shows how to use this method:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-EvaluateIFCondition-EvaluateIFCondition.cpp" >}}
+{{< gist "aspose-words-gists" "42b3509557d8f87efa8a4e4e36157753" "evaluate-if-condition.h" >}}
 
 ## How to Apply Custom Formatting to Time Field
 
@@ -41,9 +49,16 @@ By default Aspose.Words updates `TIME` field with current culture short time for
 
 The following code examples shows how to apply custom formatting to the `TIME` field:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-FieldUpdateCulture-FieldUpdateCultureProvider.cpp" >}}
+{{< gist "aspose-words-gists" "42b3509557d8f87efa8a4e4e36157753" "field-update-culture.h" >}}
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-FieldUpdateCulture-FieldUpdateCultureProviderGetCulture.cpp" >}}
+{{< gist "aspose-words-gists" "42b3509557d8f87efa8a4e4e36157753" "field-update-culture-provider.h" >}}
+
+## Related APIs
+
+- [IFieldResultFormatter](https://reference.aspose.com/words/cpp/aspose.words.fields/ifieldresultformatter/)
+- [FieldIf::EvaluateCondition](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldif/evaluatecondition/)
+- [IFieldUpdateCultureProvider](https://reference.aspose.com/words/cpp/aspose.words.fields/ifieldupdatecultureprovider/)
+- [Fields namespace](https://reference.aspose.com/words/cpp/aspose.words.fields/)
 
 ------ 
 

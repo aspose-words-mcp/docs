@@ -10,8 +10,19 @@ ai_search_scope: words_cpp
 ai_search_endpoint: "https://docsearch.api.aspose.cloud/ask"
 ai_search_fast_endpoint: "https://docsearch.api.aspose.cloud/search"
 url: /cpp/document-builder-overview/
+aliases:
+  - /cpp/use-documentbuilder-to-insert-document-elements/
+  - /cpp/using-documentbuilder-to-modify-a-document-easily/
 timestamp: 2024-01-27-14-07-04
 ---
+
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains the basics of the DocumentBuilder API and shows how to construct document elements programmatically.
+
+{{% /alert %}}
 
 [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) is a powerful class that associates with [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) and enables you to build dynamic documents from scratch or add new elements to an existing one.
 
@@ -25,11 +36,11 @@ Operations that are possible with **DocumentBuilder** are also possible when usi
 
 ## Document Navigation
 
-Document navigation is based on the concept of a virtual cursor, with which you can move to another location in the document using various **DocumentBuilder::MoveToXXX** methods such as [MoveToDocumentStart](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetodocumentstart/) and [MoveToField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetofield/). This virtual cursor indicates where the text will be inserted when calling the methods [Write](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/write/), [Writeln](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/writeln/), [InsertBreak](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertbreak/), and others.
+Document navigation is based on the concept of a virtual cursor, with which you can move to another location in the document using various **DocumentBuilder::MoveToXXX** methods such as [MoveToDocumentStart](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetodocumentstart/) and [MoveToField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetofield/). This virtual cursor indicates where the text will be inserted when calling the methods [Write](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/write/), [Writeln](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/writeln/), [InsertBreak](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertbreak/), and others. See the following article "Navigation with Cursor" to learn more about the virtual cursor.
 
 The following code example shows how to navigate to a bookmark:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderMovingCursor-DocumentBuilderMoveToBookmarkEnd.cpp" >}}
+{{< gist "aspose-words-gists" "55e4e86e60ff8bbfd09feecffb47af52" "move-to-bookmark-end.h" >}}
 
 ## Document Building and Modifying
 
@@ -47,15 +58,15 @@ To insert a text, pass the string of text you need to insert into the document t
 
 The following code example shows how to create a simple document using a document builder.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Quick-Start-HelloWorld-HelloWorld.cpp" >}}
+{{< gist "aspose-words-gists" "9ed4780658a7b003eda4e472d9270e3b" "create-new-document.h" >}}
 
 ### Specify Document Formatting
 
-The [get_Font()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_font/) property defines text formatting. This object contains different font attributes (font name, font size, color, and so on). Some important font attributes are also represented by **DocumentBuilder** properties to allow you to access them directly. These are the [Font::get_Bold()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_bold/), [Font::get_Italic()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_italic/), and [Font::get_Underline()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_underline/) boolean properties.
+The [get_Font()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_font/) property defines text formatting. This object contains different font attributes (font name, font size, color, and so on). Some important font attributes are also represented by **DocumentBuilder** properties to allow you to access them directly. These are the [Font::get_Bold()](https://reference.aspose.com/words/cpp/aspose.words/font/get_bold/), [Font::get_Italic()](https://reference.aspose.com/words/cpp/aspose.words/font/get_italic/), and [Font::get_Underline()](https://reference.aspose.com/words/cpp/aspose.words/font/get_underline/) boolean properties.
 
 The following code example shows how to insert a formatted text using **DocumentBuilder**:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-DocumentBuilderInsertParagraph-DocumentBuilderInsertParagraph.cpp" >}}
+{{< gist "aspose-words-gists" "55e4e86e60ff8bbfd09feecffb47af52" "insert-paragraph.h" >}}
 
 {{% alert color="primary" %}}
 
@@ -73,3 +84,56 @@ In this situation, "current" means the position, paragraph, section, cell, or ro
 Note that the **Font**, **ParagraphFormat**, and **PageSetup** properties are updated whenever you navigate to a different location in the document to reflect the formatting properties of this location.
 
 {{% /alert %}}
+
+## Related APIs
+
+- [Document](https://reference.aspose.com/words/cpp/aspose.words/document/)
+- [Font](https://reference.aspose.com/words/cpp/aspose.words/font/)
+- [ParagraphFormat](https://reference.aspose.com/words/cpp/aspose.words/paragraphformat/)
+- [PageSetup](https://reference.aspose.com/words/cpp/aspose.words/pagesetup/)
+- [DocumentBuilder::get_CellFormat()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_cellformat/)
+- [DocumentBuilder::get_RowFormat()](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/get_rowformat/)
+- [DocumentBuilder::MoveToBookmark](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/movetobookmark/)
+- [DocumentBuilder::Write](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/write/)
+- [DocumentBuilder::Writeln](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/writeln/)
+- [DocumentBuilder::InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/)
+- [DocumentBuilder::InsertHtml](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/inserthtml/)
+
+## FAQ
+
+1. **Q:** How can I move the cursor to a header or footer using DocumentBuilder?  
+   **A:** Use the `MoveToHeaderFooter` method, specifying the desired `HeaderFooterType` (HeaderPrimary, FooterPrimary, etc.). After moving, any inserted content will appear in that header/footer.  
+
+   ```cpp
+   auto document = System::MakeObject<Document>();
+   auto builder = System::MakeObject<DocumentBuilder>(document);
+   // Move to the primary header of the first section
+   builder->MoveToHeaderFooter(HeaderFooterType::HeaderPrimary);
+   builder->Writeln(u"Header text");
+   ```
+
+2. **Q:** What is the easiest way to apply bold, italic, or underline formatting to text I write?  
+   **A:** Set the `get_Font()` properties on the `DocumentBuilder` before calling `Write` or `Writeln`. These settings affect all subsequent text until changed.  
+
+   ```cpp
+   auto builder = System::MakeObject<DocumentBuilder>(document);
+   builder->get_Font()->set_Name(u"Arial");
+   builder->get_Font()->set_Size(12);
+   builder->get_Font()->set_Bold(true);
+   builder->get_Font()->set_Italic(true);
+   builder->get_Font()->set_Underline(Underline::Single);
+   builder->Writeln(u"Bold, italic and underlined text");
+   ```
+
+3. **Q:** How can I create a bookmark and later move the cursor back to it?  
+   **A:** Use `StartBookmark` and `EndBookmark` to create the bookmark, then `MoveToBookmark` to reposition the cursor.  
+
+   ```cpp
+   auto builder = System::MakeObject<DocumentBuilder>(document);
+   builder->StartBookmark(u"MyBookmark");
+   builder->Writeln(u"Text inside the bookmark.");
+   builder->EndBookmark(u"MyBookmark");
+   // Later...
+   builder->MoveToBookmark(u"MyBookmark");
+   builder->Writeln(u"More text after moving back to the bookmark.");
+   ```

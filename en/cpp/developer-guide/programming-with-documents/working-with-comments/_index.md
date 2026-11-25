@@ -13,6 +13,14 @@ url: /cpp/working-with-comments/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with comments in a Word document.
+
+{{% /alert %}}
+
 {{% alert color="primary" %}}
 
 **Try online**
@@ -32,20 +40,20 @@ Aspose.Words allows you to add comments in several ways:
 
 The following code example shows how to add a comment to a paragraph using the **Comment** class:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-AddComments-AddComments.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "add-comments.h" >}}
 
 The following code example shows how to add a comment to a paragraph using a region of text and the **CommentRangeStart** and **CommentRangeEnd** classes:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-AnchorComment-AnchorComment.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "anchor-comment.h" >}}
 
 ## Extract or Remove Comments
 
 Using Comments in a Word document (in addition to Track Changes) is a common practice when reviewing documents, particularly when there are multiple reviewers. There can be situations where the only thing you need from a document is the comments. Say you want to generate a list of review findings, or perhaps you have collected all the useful information from the document and you simply want to remove unnecessary comments. You may want to view or remove the comments of a particular reviewer.
 
-In this sample, we are going to look at some simple methods for both gathering information from the comments within a document and for removing comments from a document. Specifically, we'll cover how to:
+In this sample we are going to look at some simple methods for both gathering information from the comments within a document and for removing comments from a document. Specifically we'll cover how to:
 
-- Extract all the comments from a document or only the ones made by a particular author.
-- Remove all the comments from a document or only from a particular author.
+- Extract all the comments from a document or only the ones made by a particular author
+- Remove all the comments from a document or only from a particular author
 
 ### How to Extract or Remove Comments
 
@@ -54,15 +62,15 @@ The code in this sample is actually quite simple and all methods are based on th
 To illustrate how to extract and remove comments from a document, we will go through the following steps:
 
 1. Open a Word document using the [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) class
-1. Get all comments from the document into a collection
-1. To extract comments:
+2. Get all comments from the document into a collection
+3. To extract comments:
    1. Go through the collection using the foreach operator
-   1. Extract and list the author name, date & time and text of all comments
-   1. Extract and list the author name, date & time and text of comments written by a specific author, in this case, the author `ks`
-1. To remove comments:
-   1. Go backwards through the collection using the for the operator
-   1. Remove comments
-1. Save the changes
+   2. Extract and list the author name, date & time and text of all comments
+   3. Extract and list the author name, date & time and text of comments written by a specific author, in this case the author `ks`
+4. To remove comments:
+   1. Go backwards through the collection using the for operator
+   2. Remove comments
+5. Save the changes
 
 ### How to Extract All Comments
 
@@ -70,7 +78,7 @@ The **GetChildNodes** method is very useful and you can use it every time you ne
 
 The following code example shows how to extract the author name, date&time and text of all comments in the document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-ProcessComments-ExtractComments.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "extract-comments.h" >}}
 
 ### How to Extract Comments of a Specified Author
 
@@ -80,31 +88,31 @@ The overloaded method that extracts the Comments from a particular author is alm
 
 The following code example shows how to extract the author name, date&time and text of the comments by the specified author:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-ProcessComments-ExtractCommentsByAuthor.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "extract-comments-by-author.h" >}}
 
 ### How to Remove Comments
 
-If you are removing all comments, there is no need to move through the collection deleting comments one by one; you can remove them by calling `NodeCollection::Clear` on the comments collection.
+If you are removing all comments, there is no need to move through the collection deleting comments one by one. You can remove them by calling the [Clear](https://reference.aspose.com/words/cpp/aspose.words/nodecollection/clear/) method on the comments collection.
 
 The following code example shows how to remove all comments in the document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-ProcessComments-RemoveComments.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "remove-comments.h" >}}
 
 When you need to selectively remove comments, the process becomes more similar to the code we used for comment extraction.
 
 The following code example shows how to remove comments by the specified author:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-ProcessComments-RemoveCommentsByAuthor.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "remove-comments-by-author.h" >}}
 
 The main point to highlight here is the use of the for operator. Unlike the simple extraction, here you want to delete a comment. A suitable trick is to iterate the collection backwards from the last Comment to the first one. The reason for this if you start from the end and move backwards, the index of the preceding items remains unchanged, and you can work your way back to the first item in the collection.
 
 The following code example shows the methods for the comments extraction and removal:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-ProcessComments-ProcessComments.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "process-comments.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Comments.docx).
 
 {{% /alert %}}
 
@@ -114,9 +122,9 @@ Using Aspose.Words you can also remove comments between the **CommentRangeStart*
 
 The following code example shows how to remove text between **CommentRangeStart** and **CommentRangeEnd**:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-RemoveRegionText-RemoveRegionText.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "remove-range-text.h" >}}
 
-## Add and Remove Comment's Reply
+## Add or Remove Comment's Reply
 
 The [AddReply](https://reference.aspose.com/words/cpp/aspose.words/comment/addreply/) method adds a reply to this comment. Please note that due to the existing Microsoft Office limitations only 1 level of replies is allowed in the document. An exception of type *InvalidOperationException* will be raised if this method is called on the existing Reply comment.
 
@@ -124,15 +132,15 @@ You can use the [RemoveReply](https://reference.aspose.com/words/cpp/aspose.word
 
 The following code example shows how to add a reply to comment and remove comment's reply:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-CommentReply-AddRemoveCommentReply.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "add-remove-comment-reply.h" >}}
 
 ## Read Comment's Reply
 
-The [get_Replies()](https://reference.aspose.com/words/cpp/aspose.words/comment/get_replies/) property returns a collection of the **Comment** objects that are immediate children of the specified comment.
+The [get_Replies()](https://reference.aspose.com/words/cpp/aspose.words/comment/get_replies/) property returns a collection of the [Comment](https://reference.aspose.com/words/cpp/aspose.words/comment/) objects that are immediate children of the specified comment.
 
 The following code example shows how to iterate through a comment's replies and resolved them:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Comments-ProcessComments-CommentResolvedandReplies.cpp" >}}
+{{< gist "aspose-words-gists" "2362574d04470ca298ba600ebb720012" "comment-resolved-and-replies.h" >}}
 
 ------ 
 

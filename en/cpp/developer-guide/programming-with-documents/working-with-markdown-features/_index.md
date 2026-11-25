@@ -13,6 +13,14 @@ url: /cpp/working-with-markdown-features/
 timestamp: 2024-01-31-14-23-37
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with Markdown features when loading or saving Markdown.
+
+{{% /alert %}}
+
 This topic discusses how to implement Markdown features using Aspose.Words. Markdown is a simple way to format plain text that can easily be converted to HTML. Aspose.Words supports the following Markdown features:
 
 - Headings
@@ -44,10 +52,9 @@ You can write **bold** or *italic* text.
 You can also write ***BoldItalic***text.
 {{< /highlight >}}
 
-The following code snippet can be used to produce the above-given markdown document.
+The following code snippet can be used to produce the above given markdown document.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithMarkdownFeatures-MarkdownDocumentWithEmphases.cpp" >}}
-
+{{< gist "aspose-words-gists" "7976171b2ed23e05b6148ea85f035327" "emphases.h" >}}
 
 ## Markdown Document with Headings
 
@@ -64,9 +71,9 @@ The following produces headings:
 # **Bold Heading1**
 {{< /highlight >}}
 
-The following code snippet can be used to produce the above-given markdown document.
+The following code snippet can be used to produce the above given markdown document.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithMarkdownFeatures-MarkdownDocumentWithHeadings.cpp" >}}
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "heading.h" >}}
 
 ## Markdown Document with Block Quotes
 
@@ -85,9 +92,9 @@ We support blockquotes in Markdown:
 >### Headings are allowed inside Quotes
 >{{< /highlight >}}
 
-The following code snippet can be used to produce the above-given markdown document.
+The following code snippet can be used to produce the above given markdown document.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithMarkdownFeatures-MarkdownDocumentWithBlockQuotes.cpp" >}}
+{{< gist "aspose-words-gists" "2fdbe9a41a38579df7855f264be5edad" "quote.h" >}}
 
 ## Markdown Document with Horizontal Rule
 
@@ -99,15 +106,15 @@ We support Horizontal rules (Thematic breaks) in Markdown:
 
 {{< /highlight >}}
 
-The following code snippet can be used to produce the above-given markdown document.
+The following code snippet can be used to produce the above given markdown document.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithMarkdownFeatures-MarkdownDocumentWithHorizontalRule.cpp" >}}
+{{< gist "aspose-words-gists" "954ada9988be69b7c0cc29f3280a0bb1" "insert-horizontal-rule.h" >}}
 
 ## Reading a Markdown Document
 
 The following code snippet shows you how to read a markdown document.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Document-WorkingWithMarkdownFeatures-ReadMarkdownDocument.cpp" >}}
+{{< gist "aspose-words-gists" "7976171b2ed23e05b6148ea85f035327" "read-markdown-document.h" >}}
 
 ## Specify Markdown Save Options
 
@@ -115,10 +122,10 @@ Aspose.Words API provides [MarkdownSaveOptions](https://reference.aspose.com/wor
 
 The following code example demonstrated how to specify various Markdown save options.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-SpecifyMarkdownSaveOptions-SaveAsMD.cpp" >}}
+{{< gist "aspose-words-gists" "1739a7dc53ee2cce1ac97f4ef9fa7310" "images-folder.h" >}}
 
 ## How to Align Content Inside the Table while Exporting into Markdown
 
-Aspose.Words API provides TableContentAlignment enumeration which defines alignment directions to align contents in tables while exporting into the Markdown document. The following code example demonstrates how to align content inside the table.
+Aspose.Words API provides [TableContentAlignment](https://reference.aspose.com/words/cpp/aspose.words.saving/tablecontentalignment/) enumeration which defines alignment directions to align contents in tables while exporting into the Markdown document. The following code example demonstrates how to align content inside the table.
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-SpecifyMarkdownSaveOptions-ExportIntoMarkdownWithTableContentAlignment.cpp" >}}
+{{< gist "aspose-words-gists" "7976171b2ed23e05b6148ea85f035327" "markdown-table-content-alignment.h" >}}

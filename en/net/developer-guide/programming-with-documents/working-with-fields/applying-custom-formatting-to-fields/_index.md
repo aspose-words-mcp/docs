@@ -55,7 +55,6 @@ The following code examples shows how to apply custom formatting to the `TIME` f
 
 ## Related APIs
 
-
 - [IFieldResultFormatter](https://reference.aspose.com/words/net/aspose.words.fields/ifieldresultformatter/)
 - [FieldIf.EvaluateCondition](https://reference.aspose.com/words/net/aspose.words.fields/fieldif/evaluatecondition/)
 - [IFieldUpdateCultureProvider](https://reference.aspose.com/words/net/aspose.words.fields/ifieldupdatecultureprovider/)

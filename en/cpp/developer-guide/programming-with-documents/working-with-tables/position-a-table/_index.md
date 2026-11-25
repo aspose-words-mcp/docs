@@ -13,6 +13,14 @@ url: /cpp/position-a-table/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to position tables precisely within a document using layout and formatting options.
+
+{{% /alert %}}
+
 There are floating tables and inline tables:
 
 * **Inline tables** are placed on the same layer as the text and are placed in a flow of text that only surrounds the table above and below. Inline tables will always appear between the paragraphs where you placed them.
@@ -78,6 +86,31 @@ Aspose.Words also provides an opportunity to find out the distances between tabl
 The following code example shows how to get the distance between a table and its surrounding text:
 
 {{< gist "aspose-words-gists" "eb66dfc4c4820add33be9df57ba4c4cd" "distance-between-table-surrounding-text.h" >}}
+
+## Limitations and Considerations
+
+Limitations and considerations for table positioning in Aspose.Words include:
+
+* Horizontal and vertical alignment properties (`get_RelativeHorizontalAlignment()`, `get_RelativeVerticalAlignment()`) and distance properties (`get_AbsoluteHorizontalDistance()`, `get_AbsoluteVerticalDistance()`) are interdependent. Setting one property in each pair will reset the other to its default value.
+* Inline tables can only be positioned using the `get_Alignment()` property and cannot be freely positioned like floating tables.
+* Floating tables require proper anchor setup and their position is always relative to a paragraph anchor, even when using absolute distances.
+* The `get_AllowOverlap()` property only affects the visual layering of floating objects and does not prevent layout conflicts.
+* Distance properties (`get_DistanceTop()`, `get_DistanceBottom()`, etc.) apply to both inline and floating tables but may behave differently depending on text wrapping settings.
+
+## Related APIs
+
+- [Table::get_Alignment()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_alignment/)
+- [Table::get_RelativeHorizontalAlignment()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_relativehorizontalalignment/)
+- [Table::get_RelativeVerticalAlignment()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_relativeverticalalignment/)
+- [Table::get_HorizontalAnchor()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_horizontalanchor/)
+- [Table::get_VerticalAnchor()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_verticalanchor/)
+- [Table::get_AbsoluteHorizontalDistance()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_absolutehorizontaldistance/)
+- [Table::get_AbsoluteVerticalDistance()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_absoluteverticaldistance/)
+- [Table::get_AllowOverlap()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_allowoverlap/)
+- [Table::get_DistanceTop()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_distancetop/)
+- [Table::get_DistanceBottom()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_distancebottom/)
+- [Table::get_DistanceLeft()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_distanceleft/)
+- [Table::get_DistanceRight()](https://reference.aspose.com/words/cpp/aspose.words.tables/table/get_distanceright/)
 
 ------ 
 

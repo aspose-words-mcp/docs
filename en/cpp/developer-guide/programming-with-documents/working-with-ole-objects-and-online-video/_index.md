@@ -1,8 +1,8 @@
 ---
-title: Working with OLE Objects in C++
+title: Working with OLE Objects and Online Video in C++
 second_title: Aspose.Words for C++
-articleTitle: Working with OLE Objects
-linktitle: Working with OLE Objects
+articleTitle: Working with OLE Objects and Online Video
+linktitle: Working with OLE Objects and Online Video
 description: "Create and modify OLE embedding in your document using C++."
 type: docs
 aliases:
@@ -15,9 +15,17 @@ url: /cpp/working-with-ole-objects/
 timestamp: 2024-01-27-14-07-04
 ---
 
-OLE (Object Linking and Embedding) is a technology by which users can work with documents containing "objects" created or edited by third‑party applications. That is, OLE allows an editing application to export these "objects" to another editing application and then import them with additional content.
+{{% alert color="grey" %}}
 
-In this article, we will talk about inserting an OLE object and setting its properties into a document.
+## Purpose Summary
+
+This page explains how to work with OLE objects embedded in Word documents.
+
+{{% /alert %}}
+
+OLE (Object Linking and Embedding) is a technology by which users can work with documents containing "objects" created or edited by third-party applications. That is, OLE allows an editing application to export these "objects" to another editing application and then import them with additional content.
+
+In this article, we will talk about inserting an OLE object and setting its properties, as well as inserting an online video into a document.
 
 ## Insert OLE Object
 
@@ -25,7 +33,7 @@ If you want OLE Object, call the [InsertOleObject](https://reference.aspose.com/
 
 The following code example shows how to insert OLE Object into a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-DocumentBuilderInsertOleObject.h" >}}
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "insert-ole-object.h" >}}
 
 ### Set File Name and Extension when Inserting OLE Object
 
@@ -35,7 +43,7 @@ Early Windows versions such as Windows 3.1, 95, and 98 had a Packager.exe applic
 
 The following code example shows how to set the file name, extension, and display name for OLE Package:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-InsertOleObjectwithOlePackage.h" >}}
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "insert-ole-objectwith-ole-package.h" >}}
 
 ### Get Access to OLE Object Raw Data
 
@@ -43,7 +51,7 @@ Users can access OLE object data using various properties and methods of the `Ol
 
 The following code example shows how to get OLE Object raw data using the [GetRawData](https://reference.aspose.com/words/cpp/aspose.words.drawing/oleformat/getrawdata/) method:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-GetAccessToOLEObjectRawData.h" >}}
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "get-access-to-ole-object-raw-data.h" >}}
 
 ### Insert Ole Object as an Icon
 
@@ -51,11 +59,17 @@ OLE objects can also be inserted into documents as images.
 
 The following code example shows how to insert OLE Object as an icon. For this purpose, the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class exposes the [InsertOleObjectAsIcon](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertoleobjectasicon/) method:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-InsertOLEObjectAsIcon.h" >}}
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "insert-ole-object-as-icon.h" >}}
 
 The following code example shows how to inserts an embedded OLE object as an icon from a stream into the document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with OleObjects and ActiveX-InsertOLEObjectAsIconUsingStream.h" >}}
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "insert-ole-object-as-icon-using-stream.h" >}}
+
+{{% alert color="primary" %}}
+
+Maximum size of the icon must be 32x32 for the correct display.
+
+{{% /alert %}}
 
 ## Insert Online Video
 
@@ -65,7 +79,7 @@ The [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/docume
 
 The following code example shows how to insert an online video from *Vimeo* into a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Document-Add content using DocumentBuilder-InsertOnlineVideo.h" >}}
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "insert-online-video.h" >}}
 
 The second overload works with all other video resources and takes embedded HTML code as a parameter. The HTML code for embedding a video may vary depending on the provider, so contact the respective provider for details.
 
@@ -77,9 +91,7 @@ Please note that the document will be automatically optimized for MS Word 2013 t
 
 The following code example shows how to insert an online video into a document using such HTML code:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Document-Add content using DocumentBuilder-InsertOnlineVideoWithEmbedHtml.h" >}}
-
------- 
+{{< gist "aspose-words-gists" "550cbdf1d4ae63f83571b6e1c5ff0ce6" "insert-online-video-with-embed-html.h" >}} 
 
 ## FAQ
 

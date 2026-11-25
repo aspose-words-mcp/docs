@@ -13,11 +13,19 @@ url: /cpp/inserting-fields/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to insert fields programmatically.
+
+{{% /alert %}}
+
 There are several different ways to insert fields into a document:
 
-- using [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/)
-- using [FieldBuilder](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldbuilder/)
-- using [Aspose.Words Document Object Model (DOM)](/words/cpp/aspose-words-document-object-model/)
+* using [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/)
+* using [FieldBuilder](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldbuilder/)
+* using [Aspose.Words Document Object Model (DOM)](/words/cpp/aspose-words-document-object-model/)
 
 In this article, we will look at each way in more detail and analyze how to insert certain fields using these options.
 
@@ -27,19 +35,19 @@ In Aspose.Words the [InsertField](https://reference.aspose.com/words/cpp/aspose.
 
 {{% alert color="primary" %}}
 
-If your field code has a parameter containing a space then it must be enclosed within speech marks. Otherwise the field in both Microsoft Word and Aspose.Words may not work as expected as the parameter is treated by both as being truncated
+If your field code has a parameter containing a space then it must be enclosed within speech marks. Otherwise the field in both Microsoft Word and Aspose.Words may not work as expected as the parameter is treated by both as being truncated.
 
 {{% /alert %}}
 
 The following code example shows how to inserts a merge field into a document using **DocumentBuilder**:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Fields-InsertField.h" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-field.h" >}}
 
 The same technique is used to insert fields nested within other fields.
 
 The following code example shows how to insert fields nested within another field using **DocumentBuilder**:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertNestedFields-InsertNestedFields.cpp" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-nested-fields.h" >}}
 
 ### Specify Locale at Field Level
 
@@ -47,15 +55,15 @@ A language identifier is a standard international numeric abbreviation for the l
 
 The following code example shows how to use this option:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-SpecifylocaleAtFieldlevel-SpecifylocaleAtFieldlevel.cpp" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "specify-locale-at-field-level.h" >}}
 
 ### Insert Untyped/Empty Field
 
-If you want to insert untyped/empty fields ({}) just like Microsoft Word allows, you can use the [InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield) method with the [FieldType::FieldNone](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldtype/) parameter. To insert a field into a Word document, you can press “Ctrl + F9” key combination.
+If you want to insert untyped/empty fields ({}) just like Microsoft Word allows, you can use the [InsertField](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/insertfield/) method with the [FieldType::FieldNone](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldtype/) parameter. To insert a field into a Word document, you can press “Ctrl + F9” key combination.
 
 The following code example shows how to insert an empty field into the document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertFieldNone-InsertFieldNone.cpp" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-field-none.h" >}}
 
 ## Inserting Fields into a Document using FieldBuilder
 
@@ -63,7 +71,7 @@ The alternative way to insert fields in Aspose.Words is the [FieldBuilder](https
 
 The following code example shows how to insert a field into a document using **FieldBuilder**:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertFieldUsingFieldBuilder-InsertFieldUsingFieldBuilder.cpp" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-field-using-field-builder.h" >}}
 
 ## Inserting Fields using DOM
 
@@ -73,9 +81,9 @@ You can also insert various types of fields using [Aspose.Words Document Object 
 
 The `MERGEFIELD` field in Word document can be represented by the [FieldMergeField](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/) class. You can use the **FieldMergeField** class to perform the following operations:
 
-- specify the name of the merge field
-- specify the formatting of the merge field
-- specify the text that is between the field separator and field end of the merge field
+- specify the name of merge field
+- specify the formatting of merge field
+- specify the text that is between the field separator and field end of merge field
 - specify the text to be inserted after the merge field if the field is not blank
 - specify the text to be inserted before the merge field if the field is not blank
 
@@ -87,17 +95,11 @@ For more details, see the [FieldMergeField](https://reference.aspose.com/words/c
 
 The following code example shows how to add the `MERGE` field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertMergeFieldUsingDOM-InsertMergeFieldUsingDOM.cpp" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-merge-field-using-dom.h" >}}
 
-{{% alert color="primary" %}}
+### Inserting Mail Merge `ADDRESSBLOCK` field into a Document using DOM
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
-
-{{% /alert %}}
-
-### Inserting Mail Merge Address Block field into a Document using DOM
-
-The `ADDRESSBLOCK` field is used to insert a Mail Merge address block in a Word document. `ADDRESSBLOCK` field in Word document can be represented by the [FieldAddressBlock](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldaddressblock/) class. You can use the **FieldAddressBlock** class to perform the following operations:
+The `ADDRESSBLOCK` field is used to insert a Mail Merge address block in Word document. `ADDRESSBLOCK` field in Word document can be represented by the [FieldAddressBlock](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldaddressblock/) class. You can use the **FieldAddressBlock** class to perform the following operations:
 
 - specify whether to include the name of the country/region in the field
 - specify whether to format the address according to the country/region of the recipient as defined by POST*CODE (Universal Postal Union 2006)
@@ -113,17 +115,11 @@ For more details, see the [FieldAddressBlock](https://reference.aspose.com/words
 
 The following code example shows how to add the Mail Merge `ADDRESSBLOCK` Field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertMailMergeAddressBlockFieldUsingDOM-InsertMailMergeAddressBlockFieldUsingDOM.cpp" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-address-block-field-using-dom.h" >}}
 
-{{% alert color="primary" %}}
+### Inserting `ADVANCE` field into a Document without using DocumentBuilder
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
-
-{{% /alert %}}
-
-### Inserting Advance field into a Document without using DocumentBuilder
-
-The `ADVANCE` field is used to offset subsequent text within a line to the left, right, up or down. The `ADVANCE` field in Word document can be represented by the [FieldAdvance](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldadvance/) class. You can use FieldAdvance class to perform the following operations:
+The `ADVANCE` field is used to offset subsequent text within a line to the left, right, up or down. The `ADVANCE` field in Word document can be represented by the [FieldAdvance](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldadvance/) class. You can use the **FieldAdvance** class to perform the following operations:
 
 - specify the number of points by which the text that follows the field should be moved vertically from the top edge of the page
 - specify the number of points by which the text that follows the field should be moved horizontally from the left edge of the column, frame, or text box
@@ -137,13 +133,7 @@ For more details, see the [FieldAdvance](https://reference.aspose.com/words/cpp/
 
 The following code example shows how to add the `ADVANCE` Field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertAdvanceFieldWithoutDocumentBuilder-InsertAdvanceFieldWithoutDocumentBuilder.cpp" >}}
-
-{{% alert color="primary" %}}
-
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
-
-{{% /alert %}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-advance-field-without-document-builder.h" >}}
 
 ### Inserting `ASK` field into a Document without using DocumentBuilder
 
@@ -156,23 +146,17 @@ The `ASK` field is used to prompt the user for text to assign to a Bookmark in W
 
 {{% alert color="primary" %}}
 
-For more details, see the [FieldAsk](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldask) class API.
+For more details, see the [FieldAsk](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldask/) class API.
 
 {{% /alert %}}
 
 The following code example shows how to add the `ASK` Field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertASKFieldWithoutDocumentBuilder-InsertASKFieldWithoutDocumentBuilder.cpp" >}}
-
-{{% alert color="primary" %}}
-
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
-
-{{% /alert %}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-ask-field-without-document-builder.h" >}}
 
 ### Inserting `AUTHOR` field into a Document without using DocumentBuilder
 
-The `AUTHOR` field is used to specify the name of the Document's author from the `Document` properties. The `AUTHOR` field in Word document can be represented by the [FieldAuthor](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldauthor/) class. You can use the **FieldAuthor** class to perform the following operations:
+The `AUTHOR` field is used to specify the name of Document's author from the `Document` properties. The `AUTHOR` field in Word document can be represented by the [FieldAuthor](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldauthor/) class. You can use the **FieldAuthor** class to perform the following operations:
 
 - specify the document author's name
 
@@ -184,13 +168,7 @@ For more details, see the [FieldAuthor](https://reference.aspose.com/words/cpp/a
 
 The following code example shows how to add the `AUTHOR` Field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertAuthorField-InsertAuthorField.cpp" >}}
-
-{{% alert color="primary" %}}
-
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
-
-{{% /alert %}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-author-field.h" >}}
 
 ### Inserting `INCLUDETEXT` field into a Document without using DocumentBuilder
 
@@ -207,7 +185,7 @@ For more details, see the [FieldIncludeText](https://reference.aspose.com/words/
 
 The following code example shows how to add the `INCLUDETEXT` field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Fields-InsertFieldIncludeTextWithoutDocumentBuilder.h" >}}
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-field-include-text-without-document-builder.h" >}}
 
 ### Inserting `TOA` field into a Document without using DocumentBuilder
 
@@ -223,4 +201,16 @@ For more details, see the [FieldToa](https://reference.aspose.com/words/cpp/aspo
 
 The following code example shows how to add the `TOA` field using DOM to a paragraph in a document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Fields-InsertTOAFieldWithoutDocumentBuilder-InsertTOAFieldWithoutDocumentBuilder.cpp" >}}/
+{{< gist "aspose-words-gists" "bc039a6fde01e5b22a160efa7cf071eb" "insert-toa-field-without-document-builder.h" >}}
+
+## Related APIs
+
+- [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/)
+- [FieldBuilder](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldbuilder/)
+- [FieldMergeField](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldmergefield/)
+- [FieldAddressBlock](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldaddressblock/)
+- [FieldAdvance](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldadvance/)
+- [FieldAsk](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldask/)
+- [FieldAuthor](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldauthor/)
+- [FieldIncludeText](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldincludetext/)
+- [FieldToa](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldtoa/)

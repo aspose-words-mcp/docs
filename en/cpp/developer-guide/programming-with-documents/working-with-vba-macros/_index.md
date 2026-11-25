@@ -13,19 +13,28 @@ url: /cpp/working-with-vba-macros/
 timestamp: 2024-01-30-16-22-34
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with VBA macros, including enabling and modifying them.
+
+{{% /alert %}}
+
 Visual Basic for Applications (VBA) for Microsoft Word is a simple but powerful programming language that can be used to extend the functionality. Aspose.Words API provides three classes to get access to the VBA project source code:
 
 - The [VbaProject](https://reference.aspose.com/words/cpp/aspose.words.vba/vbaproject/) class provides access to VBA project information
 - The [VbaModuleCollection](https://reference.aspose.com/words/cpp/aspose.words.vba/vbamodulecollection/) class returns the collection of VBA project modules
 - The [VbaModule](https://reference.aspose.com/words/cpp/aspose.words.vba/vbamodule/) class provides access to the VBA project module
+- The [VbaModuleType](https://reference.aspose.com/words/cpp/aspose.words.vba/vbamoduletype/) enumeration defines the types of a model in a VBA project. The module can be a procedural module, document module, class module, or designer module
 
 ## Create a VBA Project
 
-Aspose.Words API provides `Document::VbaProject` property to get or set VbaProject in the document.
+Aspose.Words API provides the [get_VbaProject()](https://reference.aspose.com/words/cpp/aspose.words/document/get_vbaproject/) property to get or set VbaProject in the document.
 
 The following code example demonstrates how to create a VBA project and VBA Module along with basic properties e.g. Name and Type:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-WorkingWithVbaMacros-CreateVbaProject.cpp" >}}
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "create-vba-project.h" >}}
 
 ## Read Macros
 
@@ -33,7 +42,7 @@ Aspose.Words also provides users with the ability to read VBA macros.
 
 The following code example shows how to read VBA Macros from the document:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-WorkingWithVbaMacros-ReadVbaMacros.cpp" >}}
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "read-vba-macros.h" >}}
 
 ## Write or Modify Macros
 
@@ -41,7 +50,7 @@ Using Aspose.Words, users can modify VBA macros.
 
 The following code example shows how to modify VBA Macros using the [get_SourceCode()](https://reference.aspose.com/words/cpp/aspose.words.vba/vbamodule/get_sourcecode/) property:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-WorkingWithVbaMacros-ModifyVbaMacros.cpp" >}}
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "modify-vba-macros.h" >}}
 
 ## Clone VBA Project
 
@@ -49,7 +58,7 @@ With Aspose.Words it is also possible to clone VBA projects.
 
 The following code example shows how to clone the VBA Project using the [Clone](https://reference.aspose.com/words/cpp/aspose.words.vba/vbamodule/clone/) property which creates a copy of the existing project:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-WorkingWithVbaMacros-CloneVbaProject.cpp" >}}
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "clone-vba-project.h" >}}
 
 ## Clone VBA Module
 
@@ -57,7 +66,17 @@ You can also clone VBA modules if needed.
 
 The following code example shows how to clone the VBA Module using the [Clone](https://reference.aspose.com/words/cpp/aspose.words.vba/vbamodule/clone/) property which creates a copy of the existing project:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "cpp-Loading-and-Saving-WorkingWithVbaMacros-CloneVbaModule.cpp" >}}
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "clone-vba-module.h" >}}
+
+## Work with the VBA Project References
+
+Aspose.Words API provides the [VbaReferenceCollection](https://reference.aspose.com/words/cpp/aspose.words.vba/vbareferencecollection/) class to work with VBA Project References representing a collection of VBA project references.
+
+The following code example shows how to remove some references from the collection of references from a VBA project:
+
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "remove-vba-references.h" >}}
+
+{{< gist "aspose-words-gists" "bd2f223d3ccca79547c221b0556dc355" "get-lib-id-and-reference-path.h" >}}
 
 
 ------ 

@@ -13,15 +13,23 @@ url: /cpp/logical-levels-of-nodes-in-a-document/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains the logical levels of document nodes and describes how Aspose.Words structures content internally.
+
+{{% /alert %}}
+
 This documentation sometimes refers to a group of node classes as belonging to a "level" in a document, such as "block-level", "inline-level" (also known as "inline"), or “row-level” nodes. These levels in a document are differentiated purely logically and are not explicitly expressed by inheritance or other Aspose.Words DOM means. The node level is used to describe the place in the document tree where the node would typically occur.
 
-In the previous article, we already talked about the relationship between nodes and the fact that not all nodes are allowed to be a child of any nodes. For example, Cell can only be a Row child, and a Row can only be a Table child, and so on. These relationships are also applicable for the logical division of nodes into levels in the document.
+In the previous article, we already talked about the relationship between nodes and the fact that not all nodes are allowed to be a child of any nodes. For example, Cell can only be a Row child, and a Row can only be a Table child, and so on. These relationships are also applicable for logical division of nodes into levels in the document.
 
 The following sections describe the logical levels of nodes in Aspose.Words and the classes that belong to each level.
 
 ## Document and Section Logical Level
 
-A Word document consists of one or more sections, represented by the [Section](https://reference.aspose.com/words/cpp/aspose.words/section) class and separated by section breaks. A section can define its own page size, margins, orientation, number of text columns, and headers and footers.
+A Word document consists of one or more sections, represented by the [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) class and separated by section breaks. A section can define its own page size, margins, orientation, number of text columns, and headers and footers.
 
 [Document](https://reference.aspose.com/words/cpp/aspose.words/document/) and [Section](https://reference.aspose.com/words/cpp/aspose.words/section/) level nodes have the structure as shown in the following diagram.
 
@@ -55,7 +63,7 @@ Block-level nodes are represented by the following classes:
 - Bookmarks, which occurs both at the block-level and at the inline-level
 - [StructuredDocumentTag](https://reference.aspose.com/words/cpp/aspose.words.markup/structureddocumenttag/), which represent custom markup and can contain both content and content controls
 
-The following diagram shows the block-level elements.
+The following diagram shows block-level elements.
 
 <img src="block-level.png" alt="block-level-aspose-words-cpp" style="width:550px"/>
 
@@ -70,7 +78,7 @@ Inline-level nodes represent the actual content of the document and can be conta
 Inline-level elements are represented by the following classes:
 
 - [Run](https://reference.aspose.com/words/cpp/aspose.words/run/) – runs of text formatted differently
-- [BookmarkStart](https://reference.aspose.com/words/cpp/aspose.words/bookmarkstart/) and [BookmarkEnd](https://reference.aspose.com/words/cpp/aspose.words/bookmarkend) represent bookmarks
+- [BookmarkStart](https://reference.aspose.com/words/cpp/aspose.words/bookmarkstart/) and [BookmarkEnd](https://reference.aspose.com/words/cpp/aspose.words/bookmarkend/) represent bookmarks
 - [CommentRangeStart](https://reference.aspose.com/words/cpp/aspose.words/commentrangestart/), [CommentRangeEnd](https://reference.aspose.com/words/cpp/aspose.words/commentrangeend/), [Comment](https://reference.aspose.com/words/cpp/aspose.words/comment/) and [Footnote](https://reference.aspose.com/words/cpp/aspose.words.notes/footnote/) represent annotations
 - [FieldStart](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldstart/), [FieldChar](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldchar/), [FieldSeparator](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldseparator/) and [FieldEnd](https://reference.aspose.com/words/cpp/aspose.words.fields/fieldend/) that represent field characters, and [FormField](https://reference.aspose.com/words/cpp/aspose.words.fields/formfield/) represent Word fields
 - [SpecialChar](https://reference.aspose.com/words/cpp/aspose.words/specialchar/) represents special characters in the document

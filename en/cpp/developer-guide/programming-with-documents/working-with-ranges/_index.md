@@ -13,6 +13,14 @@ url: /cpp/working-with-ranges/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with ranges to manipulate spans of content.
+
+{{% /alert %}}
+
 {{% alert color="primary" %}}
 
 In Aspose.Words, a Range is a “flat window” into an otherwise tree-like model of the document.
@@ -29,24 +37,24 @@ Use the [get_Text()](https://reference.aspose.com/words/cpp/aspose.words/range/g
 
 The following code example shows how to get a plain, unformatted text of a range:
 
-{{< gist aspose-words-gists "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Ranges-RangesGetText-RangesGetText.cpp" >}}
+{{< gist "aspose-words-gists" "43f50a5f45997e231191e3c67167522a" "ranges-get-text.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Document.docx).
 
 {{% /alert %}}
 
-## Deleting Text
+## Delete Text
 
 Range allows the deletion of all characters of the range by calling [Delete](https://reference.aspose.com/words/cpp/aspose.words/range/delete/).
 
 The following code example shows how to delete all characters of a range:
 
-{{< gist aspose-words-gists "d55d8631947d283b1f0da99afa06c492" "cpp-Programming-Documents-Ranges-RangesDeleteText-RangesDeleteText.cpp" >}}
+{{< gist "aspose-words-gists" "43f50a5f45997e231191e3c67167522a" "ranges-delete-text.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples).
+You can download the sample file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Document.docx).
 
 {{% /alert %}}

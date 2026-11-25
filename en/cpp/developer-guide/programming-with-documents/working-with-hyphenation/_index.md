@@ -13,6 +13,14 @@ url: /cpp/working-with-hyphenation/
 timestamp: 2024-01-30-16-22-34
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with hyphenation dictionaries and automatic hyphenation.
+
+{{% /alert %}}
+
 Sometimes it is necessary to use hyphenation for a more compact arrangement of text in a document. At the same time, it is important to understand that the specifics of word hyphenation may differ for each language.
 
 At the present time, hyphenation is not used as often as it used to be, especially in English texts. Nevertheless, the use of this feature can have a serious impact on user documents – hyphenation affects the layout and, as a result, the appearance of the output files, for example, in PDF format.
@@ -52,21 +60,21 @@ The following features of Aspose.Words algorithms should be taken into account:
 
 To use the hyphenation feature, first register a hyphenation dictionary. The following code example shows how to load hyphenation dictionaries for the specified languages from a file:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Hyphenation-HyphenateWordsOfLanguages.h" >}}
+{{< gist "aspose-words-gists" "372767fcfcac122ad46d1aa80da29416" "hyphenate-words.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples)
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Rendering.docx).
 
 {{% /alert %}}
 
 The following code example shows how to load hyphenation dictionaries for the specified language from a stream:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Hyphenation-LoadHyphenationDictionaryForLanguage.h" >}}
+{{< gist "aspose-words-gists" "372767fcfcac122ad46d1aa80da29416" "load-hyphenation-dictionary.h" >}}
 
 {{% alert color="primary" %}}
 
-You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/tree/master/Examples)
+You can download the template file of this example from [Aspose.Words GitHub](https://github.com/aspose-words/Aspose.Words-for-C/blob/master/Examples/Data/Rendering.docx).
 
 {{% /alert %}}
 
@@ -74,7 +82,7 @@ As an alternative to pre-registering hyphenation dictionaries, it is possible to
 
 The following code example shows how to implement the **IHyphenationCallback** interface:
 
-{{< gist "aspose-words-gists" "d55d8631947d283b1f0da99afa06c492" "Examples-DocsExamples-source-Programming with Documents-Working with Hyphenation-CustomHyphenation.h" >}}
+{{< gist "aspose-words-gists" "372767fcfcac122ad46d1aa80da29416" "custom-hyphenation.h" >}}
 
 ## Impact of Hyphenation on Layout
 

@@ -112,9 +112,7 @@ Limitations and considerations for table positioning in Aspose.Words include:
 - [Table.DistanceLeft](https://reference.aspose.com/words/net/aspose.words.tables/table/distanceleft/)
 - [Table.DistanceRight](https://reference.aspose.com/words/net/aspose.words.tables/table/distanceright/)
 
-
 ## FAQ
-
 
 1. **Q:** How do I set the alignment of an inline table?  
    **A:** Use the `Table.Alignment` property. For example, `Table.Alignment = TableAlignment.Center;` aligns the table to the center of the page. The property works only for inline tables.

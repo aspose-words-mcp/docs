@@ -13,6 +13,14 @@ url: /cpp/work-with-text-in-a-table/
 timestamp: 2024-01-27-14-07-04
 ---
 
+{{% alert color="grey" %}}
+
+## Purpose Summary
+
+This page explains how to work with text inside a table, including formatting and extraction.
+
+{{% /alert %}}
+
 As mentioned in previous articles, a table usually contains plain text, although other content such as images or even other tables can be placed in table cells.
 
 Adding text or other content to the table is carried out using the appropriate methods of the [DocumentBuilder](https://reference.aspose.com/words/cpp/aspose.words/documentbuilder/) class and is described in the **"Create a Table"** article. In this article, we will talk about how to work with text in an already existing table.
